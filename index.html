@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+    <title>제철음식 캘린더</title>
+    <meta name="description" content="12개월 × 초/중/하 36칸으로 제철 식재료를 빠르게 찾는 캘린더">
+    <meta property="og:title" content="제철음식 캘린더">
+    <meta property="og:description" content="36개 시기 기준으로 제철 식재료를 스와이프 + 카테고리/검색으로 찾기">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="images/og-1200.png">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="assets/style.css">
+  </head>
+  <body>
+    <header class="app-header">
+      <h1 class="visually-hidden">제철음식 캘린더</h1>
+      <div class="header-title">제철음식 캘린더</div>
+      <div id="currentPeriodLabel" class="period-label" aria-live="polite" aria-atomic="true">로딩 중…</div>
+    </header>
+
+    <main>
+      <section class="carousel" aria-label="시기 선택">
+        <div id="carouselContainer" class="carousel__container">
+          <div id="periodTrack" class="carousel__track" aria-live="polite"></div>
+        </div>
+      </section>
+
+      <section class="controls" aria-label="필터와 검색">
+        <form id="filtersForm" class="filters" onsubmit="return false;">
+          <fieldset class="category-toggle">
+            <legend class="visually-hidden">카테고리</legend>
+            <label class="toggle">
+              <input type="checkbox" name="category" value="해산물" checked>
+              <span class="icon" aria-hidden="true">🐟</span>
+              <span class="visually-hidden">해산물</span>
+            </label>
+            <label class="toggle">
+              <input type="checkbox" name="category" value="채소" checked>
+              <span class="icon" aria-hidden="true">🥦</span>
+              <span class="visually-hidden">채소</span>
+            </label>
+            <label class="toggle">
+              <input type="checkbox" name="category" value="과일" checked>
+              <span class="icon" aria-hidden="true">🍎</span>
+              <span class="visually-hidden">과일</span>
+            </label>
+            <label class="toggle">
+              <input type="checkbox" name="category" value="기타" checked>
+              <span class="icon" aria-hidden="true">🌰</span>
+              <span class="visually-hidden">기타</span>
+            </label>
+          </fieldset>
+          <input id="searchInput" class="search-input" type="search" placeholder="이름·설명 검색" autocomplete="off" inputmode="search" aria-describedby="searchHelp">
+          <p id="searchHelp" class="visually-hidden">이름과 설명에서 검색합니다. 대소문자를 구분하지 않습니다.</p>
+        </form>
+      </section>
+    </main>
+
+    <template id="panelTemplate">
+      <div class="panel" role="group" aria-roledescription="시기 패널">
+        <div class="grid" role="list"></div>
+        <div class="empty" role="status" aria-live="polite">검색 결과가 없습니다.</div>
+      </div>
+    </template>
+
+    <template id="cardTemplate">
+      <div class="card">
+        <div class="thumb" aria-hidden="true">
+          <img class="photo" src="" alt="" width="600" height="600" loading="lazy" />
+        </div>
+        <div class="title" aria-label="이름"></div>
+      </div>
+    </template>
+
+    <!-- 식재료 설명 모달 -->
+    <div id="ingredientModal" class="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle" aria-hidden="true">
+      <div class="modal__backdrop" aria-hidden="true"></div>
+      <div class="modal__content">
+        <button class="modal__close" aria-label="닫기" type="button">×</button>
+        <div class="modal__body">
+          <div class="modal__image">
+            <img id="modalImage" src="" alt="" width="120" height="120" />
+          </div>
+          <div class="modal__info">
+            <h3 id="modalTitle" class="modal__name"></h3>
+            <p id="modalDescription" class="modal__description"></p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="assets/script.js" defer></script>
+  </body>
+  </html>
+
+

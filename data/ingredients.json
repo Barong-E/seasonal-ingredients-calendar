@@ -1,0 +1,3002 @@
+[
+  {
+    "name_ko": "가지",
+    "category": "채소",
+    "periods": [
+      {
+        "month": 6,
+        "ten": "하순"
+      },
+      {
+        "month": 7,
+        "ten": "초순"
+      },
+      {
+        "month": 7,
+        "ten": "중순"
+      },
+      {
+        "month": 7,
+        "ten": "하순"
+      },
+      {
+        "month": 8,
+        "ten": "초순"
+      },
+      {
+        "month": 8,
+        "ten": "중순"
+      },
+      {
+        "month": 8,
+        "ten": "하순"
+      }
+    ],
+    "image": "eggplant.png",
+    "description_ko": "보라색 껍질에 안토시아닌이 풍부하며, 수분이 많고 식감이 부드러워 볶음, 찜, 무침 등 다양한 요리에 활용됩니다. 몸의 열을 식혀주는 효과가 있습니다.",
+    "external_url": "https://link.coupang.com/a/cTE8ro",
+    "name_en": "",
+    "name_ja": "",
+    "description_en": "",
+    "description_ja": ""
+  },
+  {
+    "name_ko": "감",
+    "category": "과일",
+    "periods": [
+      {
+        "month": 10,
+        "ten": "초순"
+      },
+      {
+        "month": 10,
+        "ten": "중순"
+      },
+      {
+        "month": 10,
+        "ten": "하순"
+      },
+      {
+        "month": 11,
+        "ten": "초순"
+      },
+      {
+        "month": 11,
+        "ten": "중순"
+      },
+      {
+        "month": 11,
+        "ten": "하순"
+      }
+    ],
+    "image": "persimmon.png",
+    "description_ko": "비타민 C와 A가 풍부하여 면역력 강화와 감기 예방에 좋습니다. 단감, 홍시, 곶감 등 다양한 형태로 즐길 수 있으며, 숙취 해소에도 도움을 줍니다.",
+    "external_url": "https://link.coupang.com/a/cTFc49",
+    "name_en": "",
+    "name_ja": "",
+    "description_en": "",
+    "description_ja": ""
+  },
+  {
+    "name_ko": "감자",
+    "category": "채소",
+    "periods": [
+      {
+        "month": 6,
+        "ten": "하순"
+      },
+      {
+        "month": 7,
+        "ten": "초순"
+      },
+      {
+        "month": 7,
+        "ten": "중순"
+      },
+      {
+        "month": 7,
+        "ten": "하순"
+      },
+      {
+        "month": 8,
+        "ten": "초순"
+      },
+      {
+        "month": 8,
+        "ten": "중순"
+      },
+      {
+        "month": 8,
+        "ten": "하순"
+      },
+      {
+        "month": 9,
+        "ten": "초순"
+      }
+    ],
+    "image": "potato.png",
+    "description_ko": "주성분은 녹말로 든든한 식사 대용으로 좋습니다. 비타민 C가 풍부하며 찌거나 굽거나 볶는 등 어떤 요리에도 잘 어울리는 만능 식재료입니다.",
+    "external_url": "https://link.coupang.com/a/cTE9oM",
+    "name_en": "",
+    "name_ja": "",
+    "description_en": "",
+    "description_ja": ""
+  },
+  {
+    "name_ko": "갈치",
+    "category": "해산물",
+    "periods": [
+      {
+        "month": 7,
+        "ten": "중순"
+      },
+      {
+        "month": 7,
+        "ten": "하순"
+      },
+      {
+        "month": 8,
+        "ten": "초순"
+      },
+      {
+        "month": 8,
+        "ten": "중순"
+      },
+      {
+        "month": 8,
+        "ten": "하순"
+      },
+      {
+        "month": 9,
+        "ten": "초순"
+      },
+      {
+        "month": 9,
+        "ten": "중순"
+      },
+      {
+        "month": 9,
+        "ten": "하순"
+      },
+      {
+        "month": 10,
+        "ten": "초순"
+      },
+      {
+        "month": 10,
+        "ten": "중순"
+      },
+      {
+        "month": 10,
+        "ten": "하순"
+      }
+    ],
+    "image": "beltfish.png",
+    "description_ko": "길고 은빛을 띠는 생선으로, 살이 부드럽고 맛이 담백하여 구이와 조림으로 인기가 높습니다. 단백질과 불포화지방산이 풍부하여 성장기 어린이에게 좋습니다.",
+    "external_url": "https://link.coupang.com/a/cTFfng",
+    "name_en": "",
+    "name_ja": "",
+    "description_en": "",
+    "description_ja": ""
+  },
+  {
+    "name_ko": "가리비",
+    "category": "해산물",
+    "periods": [
+      {
+        "month": 11,
+        "ten": "초순"
+      },
+      {
+        "month": 11,
+        "ten": "중순"
+      },
+      {
+        "month": 11,
+        "ten": "하순"
+      },
+      {
+        "month": 12,
+        "ten": "초순"
+      },
+      {
+        "month": 12,
+        "ten": "중순"
+      },
+      {
+        "month": 12,
+        "ten": "하순"
+      }
+    ],
+    "image": "scallop.png",
+    "description_ko": "쫄깃한 관자와 부드러운 속살이 일품인 조개. 칼로리와 콜레스테롤이 낮고 미네랄이 풍부합니다. 찜, 구이, 탕 등 다양한 요리로 즐길 수 있습니다.",
+    "external_url": "https://link.coupang.com/a/cTFfuh",
+    "name_en": "",
+    "name_ja": "",
+    "description_en": "",
+    "description_ja": ""
+  },
+  {
+    "name_ko": "광어",
+    "category": "해산물",
+    "periods": [
+      {
+        "month": 9,
+        "ten": "중순"
+      },
+      {
+        "month": 9,
+        "ten": "하순"
+      },
+      {
+        "month": 10,
+        "ten": "초순"
+      },
+      {
+        "month": 10,
+        "ten": "중순"
+      },
+      {
+        "month": 10,
+        "ten": "하순"
+      },
+      {
+        "month": 11,
+        "ten": "초순"
+      },
+      {
+        "month": 11,
+        "ten": "중순"
+      },
+      {
+        "month": 11,
+        "ten": "하순"
+      },
+      {
+        "month": 12,
+        "ten": "초순"
+      }
+    ],
+    "image": "flatfish.png",
+    "description_ko": "담백하고 쫄깃한 식감으로 횟감으로 인기가 매우 높은 생선입니다. 단백질이 풍부하고 지방이 적어 소화가 잘되며, 비린내가 적어 남녀노소 즐기기 좋습니다.",
+    "external_url": "https://link.coupang.com/a/cTFfAi",
+    "name_en": "",
+    "name_ja": "",
+    "description_en": "",
+    "description_ja": ""
+  },
+  {
+    "name_ko": "과메기",
+    "category": "해산물",
+    "periods": [
+      {
+        "month": 11,
+        "ten": "중순"
+      },
+      {
+        "month": 11,
+        "ten": "하순"
+      },
+      {
+        "month": 12,
+        "ten": "초순"
+      },
+      {
+        "month": 12,
+        "ten": "중순"
+      },
+      {
+        "month": 12,
+        "ten": "하순"
+      },
+      {
+        "month": 1,
+        "ten": "초순"
+      },
+      {
+        "month": 1,
+        "ten": "중순"
+      },
+      {
+        "month": 1,
+        "ten": "하순"
+      }
+    ],
+    "image": "gamaegi.png",
+    "description_ko": "꽁치나 청어를 차가운 바닷바람에 얼리고 녹이기를 반복하여 말린 것. 쫀득한 식감과 고소한 맛이 특징이며, 불포화지방산인 DHA와 EPA가 풍부합니다.",
+    "external_url": "https://link.coupang.com/a/cTFfGQ",
+    "name_en": "",
+    "name_ja": "",
+    "description_en": "",
+    "description_ja": ""
+  },
+  {
+    "name_ko": "고구마",
+    "category": "채소",
+    "periods": [
+      {
+        "month": 8,
+        "ten": "하순"
+      },
+      {
+        "month": 9,
+        "ten": "초순"
+      },
+      {
+        "month": 9,
+        "ten": "중순"
+      },
+      {
+        "month": 9,
+        "ten": "하순"
+      },
+      {
+        "month": 10,
+        "ten": "초순"
+      },
+      {
+        "month": 10,
+        "ten": "중순"
+      },
+      {
+        "month": 10,
+        "ten": "하순"
+      }
+    ],
+    "image": "sweet-potato.png",
+    "description_ko": "달콤한 맛과 풍부한 식이섬유로 사랑받는 뿌리채소. 베타카로틴이 풍부하여 항산화 작용에 도움을 주며, 든든한 간식이나 식사 대용으로 좋습니다.",
+    "external_url": "https://link.coupang.com/a/cTE9Ys",
+    "name_en": "",
+    "name_ja": "",
+    "description_en": "",
+    "description_ja": ""
+  },
+  {
+    "name_ko": "고등어",
+    "category": "해산물",
+    "periods": [
+      {
+        "month": 9,
+        "ten": "하순"
+      },
+      {
+        "month": 10,
+        "ten": "초순"
+      },
+      {
+        "month": 10,
+        "ten": "중순"
+      },
+      {
+        "month": 10,
+        "ten": "하순"
+      },
+      {
+        "month": 11,
+        "ten": "초순"
+      },
+      {
+        "month": 11,
+        "ten": "중순"
+      }
+    ],
+    "image": "mackerel.png",
+    "description_ko": "대한민국 대표 등푸른생선. 오메가-3 지방산이 풍부하여 뇌 건강과 혈관 질환 예방에 도움을 줍니다. 구이, 조림 등 다양한 방법으로 요리됩니다.",
+    "external_url": "https://link.coupang.com/a/cTFfL7",
+    "name_en": "",
+    "name_ja": "",
+    "description_en": "",
+    "description_ja": ""
+  },
+  {
+    "name_ko": "굴",
+    "category": "해산물",
+    "periods": [
+      {
+        "month": 11,
+        "ten": "초순"
+      },
+      {
+        "month": 11,
+        "ten": "중순"
+      },
+      {
+        "month": 11,
+        "ten": "하순"
+      },
+      {
+        "month": 12,
+        "ten": "초순"
+      },
+      {
+        "month": 12,
+        "ten": "중순"
+      },
+      {
+        "month": 12,
+        "ten": "하순"
+      },
+      {
+        "month": 1,
+        "ten": "초순"
+      },
+      {
+        "month": 1,
+        "ten": "중순"
+      },
+      {
+        "month": 1,
+        "ten": "하순"
+      },
+      {
+        "month": 2,
+        "ten": "초순"
+      },
+      {
+        "month": 2,
+        "ten": "중순"
+      },
+      {
+        "month": 2,
+        "ten": "하순"
+      }
+    ],
+    "image": "oyster.png",
+    "description_ko": "'바다의 우유'라 불릴 만큼 영양이 풍부합니다. 아연 함량이 높아 면역력 강화에 좋으며, 특유의 향과 부드러운 식감으로 생으로 먹거나 익혀 먹습니다.",
+    "external_url": "https://link.coupang.com/a/cTFfRG",
+    "name_en": "",
+    "name_ja": "",
+    "description_en": "",
+    "description_ja": ""
+  },
+  {
+    "name_ko": "꽁치",
+    "category": "해산물",
+    "periods": [
+      {
+        "month": 10,
+        "ten": "초순"
+      },
+      {
+        "month": 10,
+        "ten": "중순"
+      },
+      {
+        "month": 10,
+        "ten": "하순"
+      },
+      {
+        "month": 11,
+        "ten": "초순"
+      },
+      {
+        "month": 11,
+        "ten": "중순"
+      },
+      {
+        "month": 11,
+        "ten": "하순"
+      }
+    ],
+    "image": "sardine.png",
+    "description_ko": "가을철 대표적인 등푸른생선으로, 구웠을 때 나는 고소한 냄새가 일품입니다. 불포화지방산이 풍부하고, 과메기의 주재료로도 사용됩니다.",
+    "external_url": "https://link.coupang.com/a/cTFfYM",
+    "name_en": "",
+    "name_ja": "",
+    "description_en": "",
+    "description_ja": ""
+  },
+  {
+    "name_ko": "꼬막",
+    "category": "해산물",
+    "periods": [
+      {
+        "month": 11,
+        "ten": "중순"
+      },
+      {
+        "month": 11,
+        "ten": "하순"
+      },
+      {
+        "month": 12,
+        "ten": "초순"
+      },
+      {
+        "month": 12,
+        "ten": "중순"
+      },
+      {
+        "month": 12,
+        "ten": "하순"
+      },
+      {
+        "month": 1,
+        "ten": "초순"
+      },
+      {
+        "month": 1,
+        "ten": "중순"
+      },
+      {
+        "month": 1,
+        "ten": "하순"
+      },
+      {
+        "month": 2,
+        "ten": "초순"
+      },
+      {
+        "month": 2,
+        "ten": "중순"
+      },
+      {
+        "month": 2,
+        "ten": "하순"
+      },
+      {
+        "month": 3,
+        "ten": "초순"
+      }
+    ],
+    "image": "cockle.png",
+    "description_ko": "쫄깃한 식감과 감칠맛이 특징인 조개. 필수 아미노산과 철분이 풍부하여 빈혈 예방에 좋습니다. 삶아서 양념장에 찍어 먹거나 비빔밥 재료로 활용됩니다.",
+    "name_en": "",
+    "name_ja": "",
+    "description_en": "",
+    "description_ja": "",
+    "external_url": "https://link.coupang.com/a/cTFf7a"
+  },
+  {
+    "name_ko": "꽃게",
+    "category": "해산물",
+    "periods": [
+      {
+        "month": 9,
+        "ten": "초순"
+      },
+      {
+        "month": 9,
+        "ten": "중순"
+      },
+      {
+        "month": 9,
+        "ten": "하순"
+      },
+      {
+        "month": 10,
+        "ten": "초순"
+      },
+      {
+        "month": 10,
+        "ten": "중순"
+      },
+      {
+        "month": 10,
+        "ten": "하순"
+      }
+    ],
+    "image": "flower-crab.png",
+    "description_ko": "가을에는 살이 꽉 찬 수꽃게가 제철입니다. 달큰한 속살이 일품이며, 찜, 탕, 무침 등 어떤 요리로도 훌륭한 맛을 냅니다. 키토산이 풍부합니다.",
+    "name_en": "",
+    "name_ja": "",
+    "description_en": "",
+    "description_ja": "",
+    "external_url": "https://link.coupang.com/a/cTFgd2"
+  },
+  {
+    "name_ko": "깻잎",
+    "category": "채소",
+    "periods": [
+      {
+        "month": 6,
+        "ten": "초순"
+      },
+      {
+        "month": 6,
+        "ten": "중순"
+      },
+      {
+        "month": 6,
+        "ten": "하순"
+      },
+      {
+        "month": 7,
+        "ten": "초순"
+      },
+      {
+        "month": 7,
+        "ten": "중순"
+      },
+      {
+        "month": 7,
+        "ten": "하순"
+      },
+      {
+        "month": 8,
+        "ten": "초순"
+      },
+      {
+        "month": 8,
+        "ten": "중순"
+      }
+    ],
+    "image": "perilla-leaves.png",
+    "description_ko": "특유의 향긋한 향이 특징인 잎채소입니다. 철분이 시금치의 2배 이상 함유되어 있으며, 쌈 채소나 장아찌, 볶음 등 다양하게 활용됩니다.",
+    "name_en": "",
+    "name_ja": "",
+    "description_en": "",
+    "description_ja": "",
+    "external_url": "https://link.coupang.com/a/cTFaan"
+  },
+  {
+    "name_ko": "냉이",
+    "category": "채소",
+    "periods": [
+      {
+        "month": 3,
+        "ten": "초순"
+      },
+      {
+        "month": 3,
+        "ten": "중순"
+      },
+      {
+        "month": 3,
+        "ten": "하순"
+      },
+      {
+        "month": 4,
+        "ten": "초순"
+      },
+      {
+        "month": 4,
+        "ten": "중순"
+      }
+    ],
+    "image": "shepherd-purse.png",
+    "description_ko": "쌉쌀하면서도 향긋한 향이 봄의 시작을 알리는 대표적인 봄나물. 단백질 함량이 높고 비타민과 무기질이 풍부하여 춘곤증 예방에 좋습니다.",
+    "name_en": "",
+    "name_ja": "",
+    "description_en": "",
+    "description_ja": "",
+    "external_url": "https://link.coupang.com/a/cTFaja"
+  },
+  {
+    "name_ko": "농어",
+    "category": "해산물",
+    "periods": [
+      {
+        "month": 6,
+        "ten": "하순"
+      },
+      {
+        "month": 7,
+        "ten": "초순"
+      },
+      {
+        "month": 7,
+        "ten": "중순"
+      },
+      {
+        "month": 7,
+        "ten": "하순"
+      },
+      {
+        "month": 8,
+        "ten": "초순"
+      },
+      {
+        "month": 8,
+        "ten": "중순"
+      }
+    ],
+    "image": "sea-bass.png",
+    "description_ko": "여름철 대표 보양 생선으로, 살이 희고 담백하며 비린내가 적습니다. 회, 찜, 구이 등 다양한 요리에 잘 어울리며, 비타민과 단백질이 풍부합니다.",
+    "name_en": "",
+    "name_ja": "",
+    "description_en": "",
+    "description_ja": "",
+    "external_url": "https://link.coupang.com/a/cTFgkT"
+  },
+  {
+    "name_ko": "늙은 호박",
+    "category": "채소",
+    "periods": [
+      {
+        "month": 10,
+        "ten": "중순"
+      },
+      {
+        "month": 10,
+        "ten": "하순"
+      },
+      {
+        "month": 11,
+        "ten": "초순"
+      },
+      {
+        "month": 11,
+        "ten": "중순"
+      },
+      {
+        "month": 11,
+        "ten": "하순"
+      },
+      {
+        "month": 12,
+        "ten": "초순"
+      },
+      {
+        "month": 12,
+        "ten": "중순"
+      },
+      {
+        "month": 12,
+        "ten": "하순"
+      }
+    ],
+    "image": "pumpkin.png",
+    "description_ko": "베타카로틴이 풍부하여 눈 건강과 면역력에 좋습니다. 달콤한 맛으로 죽, 즙, 떡 등 다양한 요리에 활용되며, 이뇨 작용을 도와 부기 제거에 효과적입니다.",
+    "name_en": "",
+    "name_ja": "",
+    "description_en": "",
+    "description_ja": "",
+    "external_url": "https://link.coupang.com/a/cTFatG"
+  },
+  {
+    "name_ko": "달래",
+    "category": "채소",
+    "periods": [
+      {
+        "month": 3,
+        "ten": "초순"
+      },
+      {
+        "month": 3,
+        "ten": "중순"
+      },
+      {
+        "month": 3,
+        "ten": "하순"
+      },
+      {
+        "month": 4,
+        "ten": "초순"
+      },
+      {
+        "month": 4,
+        "ten": "중순"
+      }
+    ],
+    "image": "wild-chive.png",
+    "description_ko": "톡 쏘는 매운맛과 알싸한 향이 특징인 봄나물. 비타민 C와 칼슘이 풍부하여 식욕을 돋우고 빈혈 예방에 좋습니다. 주로 무침이나 양념장으로 활용됩니다.",
+    "name_en": "",
+    "name_ja": "",
+    "description_en": "",
+    "description_ja": "",
+    "external_url": "https://link.coupang.com/a/cTFaC7"
+  },
+  {
+    "name_ko": "대구",
+    "category": "해산물",
+    "periods": [
+      {
+        "month": 12,
+        "ten": "초순"
+      },
+      {
+        "month": 12,
+        "ten": "중순"
+      },
+      {
+        "month": 12,
+        "ten": "하순"
+      },
+      {
+        "month": 1,
+        "ten": "초순"
+      },
+      {
+        "month": 1,
+        "ten": "중순"
+      },
+      {
+        "month": 1,
+        "ten": "하순"
+      },
+      {
+        "month": 2,
+        "ten": "초순"
+      }
+    ],
+    "image": "cod.png",
+    "description_ko": "겨울철 대표적인 흰 살 생선. 지방이 적고 맛이 담백하여 맑은 탕(지리)이나 매운탕으로 끓이면 시원한 국물 맛이 일품입니다. 비타민 B군이 풍부합니다.",
+    "name_en": "",
+    "name_ja": "",
+    "description_en": "",
+    "description_ja": "",
+    "external_url": "https://link.coupang.com/a/cTFgAo"
+  },
+  {
+    "name_ko": "대하",
+    "category": "해산물",
+    "periods": [
+      {
+        "month": 9,
+        "ten": "초순"
+      },
+      {
+        "month": 9,
+        "ten": "중순"
+      },
+      {
+        "month": 9,
+        "ten": "하순"
+      },
+      {
+        "month": 10,
+        "ten": "초순"
+      },
+      {
+        "month": 10,
+        "ten": "중순"
+      },
+      {
+        "month": 10,
+        "ten": "하순"
+      },
+      {
+        "month": 11,
+        "ten": "초순"
+      },
+      {
+        "month": 11,
+        "ten": "중순"
+      },
+      {
+        "month": 11,
+        "ten": "하순"
+      }
+    ],
+    "image": "king-prawn.png",
+    "description_ko": "가을이 제철인 대표적인 갑각류. 껍질에 키토산이 풍부하고, 살이 통통하고 단맛이 강해 소금구이로 먹으면 최고의 맛을 즐길 수 있습니다.",
+    "name_en": "",
+    "name_ja": "",
+    "description_en": "",
+    "description_ja": "",
+    "external_url": "https://link.coupang.com/a/cTFgFR"
+  },
+  {
+    "name_ko": "더덕",
+    "category": "채소",
+    "periods": [
+      {
+        "month": 1,
+        "ten": "중순"
+      },
+      {
+        "month": 1,
+        "ten": "하순"
+      },
+      {
+        "month": 2,
+        "ten": "초순"
+      },
+      {
+        "month": 2,
+        "ten": "중순"
+      },
+      {
+        "month": 2,
+        "ten": "하순"
+      },
+      {
+        "month": 3,
+        "ten": "초순"
+      },
+      {
+        "month": 3,
+        "ten": "중순"
+      },
+      {
+        "month": 3,
+        "ten": "하순"
+      },
+      {
+        "month": 4,
+        "ten": "초순"
+      }
+    ],
+    "image": "deodeok.png",
+    "description_ko": "인삼과 비슷한 향을 내는 뿌리채소. 사포닌 성분이 풍부하여 기관지 건강과 면역력 증진에 도움을 줍니다. 구이, 무침, 튀김 등으로 섭취합니다.",
+    "name_en": "",
+    "name_ja": "",
+    "description_en": "",
+    "description_ja": "",
+    "external_url": "https://link.coupang.com/a/cTFaKD"
+  },
+  {
+    "name_ko": "도다리",
+    "category": "해산물",
+    "periods": [
+      {
+        "month": 3,
+        "ten": "초순"
+      },
+      {
+        "month": 3,
+        "ten": "중순"
+      },
+      {
+        "month": 3,
+        "ten": "하순"
+      },
+      {
+        "month": 4,
+        "ten": "초순"
+      },
+      {
+        "month": 4,
+        "ten": "중순"
+      }
+    ],
+    "image": "flatfish-spring.png",
+    "description_ko": "'봄 도다리'라는 말이 있을 정도로 봄철에 맛이 좋은 흰 살 생선입니다. 담백하고 쫄깃하여 쑥을 넣고 끓인 도다리쑥국이 별미입니다.",
+    "name_en": "",
+    "name_ja": "",
+    "description_en": "",
+    "description_ja": "",
+    "external_url": "https://link.coupang.com/a/cTFgsV"
+  },
+  {
+    "name_ko": "두릅",
+    "category": "채소",
+    "periods": [
+      {
+        "month": 4,
+        "ten": "초순"
+      },
+      {
+        "month": 4,
+        "ten": "중순"
+      },
+      {
+        "month": 4,
+        "ten": "하순"
+      },
+      {
+        "month": 5,
+        "ten": "초순"
+      }
+    ],
+    "image": "aralia-sprout.png",
+    "description_ko": "'산나물의 왕'이라 불리며 독특한 향과 쌉쌀한 맛이 특징입니다. 사포닌이 풍부하여 혈액순환에 도움을 줍니다. 살짝 데쳐서 초고추장에 찍어 먹습니다.",
+    "name_en": "",
+    "name_ja": "",
+    "description_en": "",
+    "description_ja": "",
+    "external_url": "https://link.coupang.com/a/cTFaSS"
+  },
+  {
+    "name_ko": "딸기",
+    "category": "과일",
+    "periods": [
+      {
+        "month": 2,
+        "ten": "하순"
+      },
+      {
+        "month": 3,
+        "ten": "초순"
+      },
+      {
+        "month": 3,
+        "ten": "중순"
+      },
+      {
+        "month": 3,
+        "ten": "하순"
+      },
+      {
+        "month": 4,
+        "ten": "초순"
+      },
+      {
+        "month": 4,
+        "ten": "중순"
+      },
+      {
+        "month": 4,
+        "ten": "하순"
+      },
+      {
+        "month": 5,
+        "ten": "초순"
+      }
+    ],
+    "image": "strawberry.png",
+    "description_ko": "새콤달콤한 맛으로 남녀노소에게 사랑받는 과일. 비타민 C가 레몬의 2배, 사과의 10배나 많아 피로 해소와 피부 미용에 탁월한 효과가 있습니다.",
+    "name_en": "",
+    "name_ja": "",
+    "description_en": "",
+    "description_ja": "",
+    "external_url": "https://link.coupang.com/a/cTFdc2"
+  },
+  {
+    "name_ko": "매생이",
+    "category": "해산물",
+    "periods": [
+      {
+        "month": 12,
+        "ten": "중순"
+      },
+      {
+        "month": 12,
+        "ten": "하순"
+      },
+      {
+        "month": 1,
+        "ten": "초순"
+      },
+      {
+        "month": 1,
+        "ten": "중순"
+      },
+      {
+        "month": 1,
+        "ten": "하순"
+      },
+      {
+        "month": 2,
+        "ten": "초순"
+      },
+      {
+        "month": 2,
+        "ten": "중순"
+      },
+      {
+        "month": 2,
+        "ten": "하순"
+      }
+    ],
+    "image": "seaweed-soup.png",
+    "description_ko": "머리카락보다 가늘고 부드러운 해조류. 철분과 칼슘이 풍부하며, 굴을 넣고 끓인 매생이굴국은 겨울철 별미이자 숙취 해소 음식으로 좋습니다.",
+    "name_en": "",
+    "name_ja": "",
+    "description_en": "",
+    "description_ja": ""
+  },
+  {
+    "name_ko": "매실",
+    "category": "과일",
+    "periods": [
+      {
+        "month": 5,
+        "ten": "하순"
+      },
+      {
+        "month": 6,
+        "ten": "초순"
+      },
+      {
+        "month": 6,
+        "ten": "중순"
+      }
+    ],
+    "image": "plum.png",
+    "description_ko": "신맛이 강한 것이 특징이며, 피로 해소에 좋은 구연산이 풍부합니다. 매실청, 장아찌, 주(酒) 등으로 담가 먹으며, 해독 작용과 소화 촉진에 도움을 줍니다.",
+    "name_en": "",
+    "name_ja": "",
+    "description_en": "",
+    "description_ja": "",
+    "external_url": "https://link.coupang.com/a/cTFdsw"
+  },
+  {
+    "name_ko": "멍게",
+    "category": "해산물",
+    "periods": [
+      {
+        "month": 4,
+        "ten": "초순"
+      },
+      {
+        "month": 4,
+        "ten": "중순"
+      },
+      {
+        "month": 4,
+        "ten": "하순"
+      },
+      {
+        "month": 5,
+        "ten": "초순"
+      },
+      {
+        "month": 5,
+        "ten": "중순"
+      }
+    ],
+    "image": "sea-squirt.png",
+    "description_ko": "특유의 향과 쌉쌀하면서도 달큼한 맛이 특징입니다. 신선한 멍게는 바다 향을 가득 품고 있으며, 노화 방지에 좋은 타우린과 항산화 성분이 풍부합니다.",
+    "name_en": "",
+    "name_ja": "",
+    "description_en": "",
+    "description_ja": "",
+    "external_url": "https://link.coupang.com/a/cTFgMq"
+  },
+  {
+    "name_ko": "멸치",
+    "category": "해산물",
+    "periods": [
+      {
+        "month": 4,
+        "ten": "중순"
+      },
+      {
+        "month": 4,
+        "ten": "하순"
+      },
+      {
+        "month": 5,
+        "ten": "초순"
+      },
+      {
+        "month": 5,
+        "ten": "중순"
+      },
+      {
+        "month": 5,
+        "ten": "하순"
+      },
+      {
+        "month": 6,
+        "ten": "초순"
+      }
+    ],
+    "image": "anchovy.png",
+    "description_ko": "'칼슘의 왕'이라 불리는 작은 생선. 뼈째 먹기 때문에 칼슘 섭취에 매우 효과적입니다. 볶음, 국물용 등 크기별로 다양하게 활용되는 국민 식재료입니다.",
+    "name_en": "",
+    "name_ja": "",
+    "description_en": "",
+    "description_ja": "",
+    "external_url": "https://link.coupang.com/a/cTFgTJ"
+  },
+  {
+    "name_ko": "명태(동태)",
+    "category": "해산물",
+    "periods": [
+      {
+        "month": 12,
+        "ten": "초순"
+      },
+      {
+        "month": 12,
+        "ten": "중순"
+      },
+      {
+        "month": 12,
+        "ten": "하순"
+      },
+      {
+        "month": 1,
+        "ten": "초순"
+      },
+      {
+        "month": 1,
+        "ten": "중순"
+      },
+      {
+        "month": 1,
+        "ten": "하순"
+      }
+    ],
+    "image": "pollock.png",
+    "description_ko": "얼린 상태의 명태를 동태라고 부릅니다. 지방이 적고 담백하며, 시원한 국물 맛을 내주어 탕이나 찌개 요리에 널리 사용됩니다.",
+    "name_en": "",
+    "name_ja": "",
+    "description_en": "",
+    "description_ja": "",
+    "external_url": "https://link.coupang.com/a/cTFg1y"
+  },
+  {
+    "name_ko": "무",
+    "category": "채소",
+    "periods": [
+      {
+        "month": 10,
+        "ten": "하순"
+      },
+      {
+        "month": 11,
+        "ten": "초순"
+      },
+      {
+        "month": 11,
+        "ten": "중순"
+      },
+      {
+        "month": 11,
+        "ten": "하순"
+      },
+      {
+        "month": 12,
+        "ten": "초순"
+      }
+    ],
+    "image": "radish.png",
+    "description_ko": "가을 무는 인삼에 비유될 만큼 맛과 영양이 뛰어납니다. 소화 효소인 디아스타아제가 풍부하여 소화를 돕고, 시원한 맛을 내 국물 요리에 필수적입니다.",
+    "name_en": "",
+    "name_ja": "",
+    "description_en": "",
+    "description_ja": "",
+    "external_url": "https://link.coupang.com/a/cTFcwl"
+  },
+  {
+    "name_ko": "무화과",
+    "category": "과일",
+    "periods": [
+      {
+        "month": 8,
+        "ten": "하순"
+      },
+      {
+        "month": 9,
+        "ten": "초순"
+      },
+      {
+        "month": 9,
+        "ten": "중순"
+      },
+      {
+        "month": 9,
+        "ten": "하순"
+      },
+      {
+        "month": 10,
+        "ten": "초순"
+      },
+      {
+        "month": 10,
+        "ten": "중순"
+      }
+    ],
+    "image": "fig.png",
+    "description_ko": "꽃이 열매 안에서 피는 독특한 과일. 달콤하고 부드러운 식감이 특징이며, 식이섬유가 풍부하여 변비 예방에 좋습니다. 소화 촉진 효과도 있습니다.",
+    "name_en": "",
+    "name_ja": "",
+    "description_en": "",
+    "description_ja": "",
+    "external_url": "https://link.coupang.com/a/cTFdkO"
+  },
+  {
+    "name_ko": "미꾸라지",
+    "category": "해산물",
+    "periods": [
+      {
+        "month": 9,
+        "ten": "중순"
+      },
+      {
+        "month": 9,
+        "ten": "하순"
+      },
+      {
+        "month": 10,
+        "ten": "초순"
+      },
+      {
+        "month": 10,
+        "ten": "중순"
+      },
+      {
+        "month": 10,
+        "ten": "하순"
+      }
+    ],
+    "image": "loach.png",
+    "description_ko": "가을철 대표적인 보양 식재료. 단백질과 비타민, 무기질이 풍부하여 원기 회복에 탁월합니다. 주로 통째로 갈아 추어탕으로 끓여 먹습니다.",
+    "name_en": "",
+    "name_ja": "",
+    "description_en": "",
+    "description_ja": "",
+    "external_url": "https://link.coupang.com/a/cTFjlT"
+  },
+  {
+    "name_ko": "미나리",
+    "category": "채소",
+    "periods": [
+      {
+        "month": 3,
+        "ten": "초순"
+      },
+      {
+        "month": 3,
+        "ten": "중순"
+      },
+      {
+        "month": 3,
+        "ten": "하순"
+      },
+      {
+        "month": 4,
+        "ten": "초순"
+      },
+      {
+        "month": 4,
+        "ten": "중순"
+      },
+      {
+        "month": 4,
+        "ten": "하순"
+      },
+      {
+        "month": 5,
+        "ten": "초순"
+      },
+      {
+        "month": 5,
+        "ten": "중순"
+      },
+      {
+        "month": 5,
+        "ten": "하순"
+      }
+    ],
+    "image": "water-celery.png",
+    "description_ko": "독특하고 향긋한 향이 특징이며, 해독 작용과 중금속 배출에 효과적입니다. 비타민과 무기질이 풍부하여 혈액을 맑게 하는 데 도움을 줍니다.",
+    "name_en": "",
+    "name_ja": "",
+    "description_en": "",
+    "description_ja": ""
+  },
+  {
+    "name_ko": "민어",
+    "category": "해산물",
+    "periods": [
+      {
+        "month": 7,
+        "ten": "중순"
+      },
+      {
+        "month": 7,
+        "ten": "하순"
+      },
+      {
+        "month": 8,
+        "ten": "초순"
+      },
+      {
+        "month": 8,
+        "ten": "중순"
+      }
+    ],
+    "image": "croaker.png",
+    "description_ko": "여름철 최고의 보양식으로 꼽히는 고급 어종. 소화 흡수가 잘 되는 단백질이 풍부하며, 담백하고 부드러운 살은 회, 탕, 전 등 어떤 요리로도 훌륭합니다.",
+    "name_en": "",
+    "name_ja": "",
+    "description_en": "",
+    "description_ja": "",
+    "external_url": "https://link.coupang.com/a/cTFhdM"
+  },
+  {
+    "name_ko": "바지락",
+    "category": "해산물",
+    "periods": [
+      {
+        "month": 3,
+        "ten": "초순"
+      },
+      {
+        "month": 3,
+        "ten": "중순"
+      },
+      {
+        "month": 3,
+        "ten": "하순"
+      },
+      {
+        "month": 4,
+        "ten": "초순"
+      },
+      {
+        "month": 4,
+        "ten": "중순"
+      },
+      {
+        "month": 4,
+        "ten": "하순"
+      }
+    ],
+    "image": "short-neck-clam.png",
+    "description_ko": "국물에 시원한 감칠맛을 더해주는 대표적인 조개. 칼국수, 순두부찌개 등 다양한 요리에 활용됩니다. 철분 함량이 높아 빈혈 예방에 효과적입니다.",
+    "name_en": "",
+    "name_ja": "",
+    "description_en": "",
+    "description_ja": "",
+    "external_url": "https://link.coupang.com/a/cTFhEY"
+  },
+  {
+    "name_ko": "밤",
+    "category": "기타",
+    "periods": [
+      {
+        "month": 9,
+        "ten": "초순"
+      },
+      {
+        "month": 9,
+        "ten": "중순"
+      },
+      {
+        "month": 9,
+        "ten": "하순"
+      },
+      {
+        "month": 10,
+        "ten": "초순"
+      },
+      {
+        "month": 10,
+        "ten": "중순"
+      },
+      {
+        "month": 10,
+        "ten": "하순"
+      }
+    ],
+    "image": "chestnut.png",
+    "description_ko": "탄수화물, 단백질, 비타민 등 5대 영양소를 고루 갖춘 영양 간식입니다. 위장 기능을 강화하고 근력을 키우는 데 도움을 줍니다. 찌거나 구워 먹습니다.",
+    "name_en": "",
+    "name_ja": "",
+    "description_en": "",
+    "description_ja": "",
+    "external_url": "https://link.coupang.com/a/cTFjMo"
+  },
+  {
+    "name_ko": "배",
+    "category": "과일",
+    "periods": [
+      {
+        "month": 9,
+        "ten": "초순"
+      },
+      {
+        "month": 9,
+        "ten": "중순"
+      },
+      {
+        "month": 9,
+        "ten": "하순"
+      },
+      {
+        "month": 10,
+        "ten": "초순"
+      },
+      {
+        "month": 10,
+        "ten": "중순"
+      },
+      {
+        "month": 10,
+        "ten": "하순"
+      },
+      {
+        "month": 11,
+        "ten": "초순"
+      },
+      {
+        "month": 11,
+        "ten": "중순"
+      },
+      {
+        "month": 11,
+        "ten": "하순"
+      }
+    ],
+    "image": "pear.png",
+    "description_ko": "아삭한 식감과 시원하고 달콤한 과즙이 특징입니다. 루테올린 성분이 풍부하여 기관지 건강에 도움을 주며, 해열 및 갈증 해소 효과가 있습니다.",
+    "name_en": "",
+    "name_ja": "",
+    "description_en": "",
+    "description_ja": "",
+    "external_url": "https://link.coupang.com/a/cTFe71"
+  },
+  {
+    "name_ko": "배추",
+    "category": "채소",
+    "periods": [
+      {
+        "month": 11,
+        "ten": "초순"
+      },
+      {
+        "month": 11,
+        "ten": "중순"
+      },
+      {
+        "month": 11,
+        "ten": "하순"
+      },
+      {
+        "month": 12,
+        "ten": "초순"
+      },
+      {
+        "month": 12,
+        "ten": "중순"
+      }
+    ],
+    "image": "cabbage.png",
+    "description_ko": "김치의 주재료로 한국인의 밥상에 빠질 수 없는 채소. 수분 함량이 높고 식이섬유가 풍부하여 장 건강에 좋습니다. 겨울 배추는 단맛이 특히 강합니다.",
+    "name_en": "",
+    "name_ja": "",
+    "description_en": "",
+    "description_ja": "",
+    "external_url": "https://link.coupang.com/a/cTFcC7"
+  },
+  {
+    "name_ko": "복분자",
+    "category": "과일",
+    "periods": [
+      {
+        "month": 6,
+        "ten": "중순"
+      },
+      {
+        "month": 6,
+        "ten": "하순"
+      },
+      {
+        "month": 7,
+        "ten": "초순"
+      }
+    ],
+    "image": "blackberry.png",
+    "description_ko": "검붉은 빛깔의 작은 열매로, 항산화 물질인 안토시아닌이 풍부하여 노화 방지에 도움을 줍니다. 기력 회복과 눈 건강에도 좋은 효과가 있습니다.",
+    "name_en": "",
+    "name_ja": "",
+    "description_en": "",
+    "description_ja": "",
+    "external_url": "https://link.coupang.com/a/cTFdGp"
+  },
+  {
+    "name_ko": "복숭아",
+    "category": "과일",
+    "periods": [
+      {
+        "month": 7,
+        "ten": "초순"
+      },
+      {
+        "month": 7,
+        "ten": "중순"
+      },
+      {
+        "month": 7,
+        "ten": "하순"
+      },
+      {
+        "month": 8,
+        "ten": "초순"
+      },
+      {
+        "month": 8,
+        "ten": "중순"
+      },
+      {
+        "month": 8,
+        "ten": "하순"
+      }
+    ],
+    "image": "peach.png",
+    "description_ko": "달콤한 향과 부드러운 과육이 매력적인 여름 대표 과일. 수분과 비타민이 풍부하여 피부 미용과 피로 해소에 좋습니다. 니코틴 해독 효과도 있습니다.",
+    "name_en": "",
+    "name_ja": "",
+    "description_en": "",
+    "description_ja": "",
+    "external_url": "https://link.coupang.com/a/cTFdQ3"
+  },
+  {
+    "name_ko": "봄동",
+    "category": "채소",
+    "periods": [
+      {
+        "month": 2,
+        "ten": "하순"
+      },
+      {
+        "month": 3,
+        "ten": "초순"
+      },
+      {
+        "month": 3,
+        "ten": "중순"
+      },
+      {
+        "month": 3,
+        "ten": "하순"
+      }
+    ],
+    "image": "spring-cabbage.png",
+    "description_ko": "겨울 노지에서 자라 속이 꽉 차지 않고 옆으로 퍼진 배추. 아삭한 식감과 고소한 맛이 특징이며, 비타민과 무기질이 풍부해 겉절이나 쌈 채소로 좋습니다.",
+    "name_en": "",
+    "name_ja": "",
+    "description_en": "",
+    "description_ja": "",
+    "external_url": "https://link.coupang.com/a/cTFa0L"
+  },
+  {
+    "name_ko": "블루베리",
+    "category": "과일",
+    "periods": [
+      {
+        "month": 7,
+        "ten": "초순"
+      },
+      {
+        "month": 7,
+        "ten": "중순"
+      },
+      {
+        "month": 7,
+        "ten": "하순"
+      },
+      {
+        "month": 8,
+        "ten": "초순"
+      },
+      {
+        "month": 8,
+        "ten": "중순"
+      },
+      {
+        "month": 8,
+        "ten": "하순"
+      },
+      {
+        "month": 9,
+        "ten": "초순"
+      }
+    ],
+    "image": "blueberry.png",
+    "description_ko": "세계 10대 슈퍼푸드로 꼽히는 과일. 안토시아닌이 풍부하여 시력 보호와 뇌 건강에 탁월한 효과가 있습니다. 항산화 작용이 매우 뛰어납니다.",
+    "name_en": "",
+    "name_ja": "",
+    "description_en": "",
+    "description_ja": "",
+    "external_url": "https://link.coupang.com/a/cTFeiV"
+  },
+  {
+    "name_ko": "사과",
+    "category": "과일",
+    "periods": [
+      {
+        "month": 9,
+        "ten": "초순"
+      },
+      {
+        "month": 9,
+        "ten": "중순"
+      },
+      {
+        "month": 9,
+        "ten": "하순"
+      },
+      {
+        "month": 10,
+        "ten": "초순"
+      },
+      {
+        "month": 10,
+        "ten": "중순"
+      },
+      {
+        "month": 10,
+        "ten": "하순"
+      },
+      {
+        "month": 11,
+        "ten": "초순"
+      },
+      {
+        "month": 11,
+        "ten": "중순"
+      },
+      {
+        "month": 11,
+        "ten": "하순"
+      }
+    ],
+    "image": "apple.png",
+    "description_ko": "아삭한 식감과 새콤달콤한 맛으로 사랑받는 과일. 식이섬유인 펙틴이 풍부하여 장 운동을 돕고, 아침에 먹으면 '금사과'라 불릴 만큼 건강에 좋습니다.",
+    "name_en": "",
+    "name_ja": "",
+    "description_en": "",
+    "description_ja": "",
+    "external_url": "https://link.coupang.com/a/cTFetT"
+  },
+  {
+    "name_ko": "삼치",
+    "category": "해산물",
+    "periods": [
+      {
+        "month": 10,
+        "ten": "하순"
+      },
+      {
+        "month": 11,
+        "ten": "초순"
+      },
+      {
+        "month": 11,
+        "ten": "중순"
+      },
+      {
+        "month": 11,
+        "ten": "하순"
+      },
+      {
+        "month": 12,
+        "ten": "초순"
+      },
+      {
+        "month": 12,
+        "ten": "중순"
+      },
+      {
+        "month": 12,
+        "ten": "하순"
+      },
+      {
+        "month": 1,
+        "ten": "초순"
+      },
+      {
+        "month": 1,
+        "ten": "중순"
+      },
+      {
+        "month": 1,
+        "ten": "하순"
+      },
+      {
+        "month": 2,
+        "ten": "초순"
+      },
+      {
+        "month": 2,
+        "ten": "중순"
+      }
+    ],
+    "image": "spanish-mackerel.png",
+    "description_ko": "고등어와 비슷한 등푸른생선이지만 살이 더 부드럽고 비린내가 적습니다. DHA가 풍부하여 두뇌 발달에 도움을 주며, 주로 구이로 많이 먹습니다.",
+    "name_en": "",
+    "name_ja": "",
+    "description_en": "",
+    "description_ja": "",
+    "external_url": "https://link.coupang.com/a/cTFhTc"
+  },
+  {
+    "name_ko": "석류",
+    "category": "과일",
+    "periods": [
+      {
+        "month": 9,
+        "ten": "중순"
+      },
+      {
+        "month": 9,
+        "ten": "하순"
+      },
+      {
+        "month": 10,
+        "ten": "초순"
+      },
+      {
+        "month": 10,
+        "ten": "중순"
+      },
+      {
+        "month": 10,
+        "ten": "하순"
+      },
+      {
+        "month": 11,
+        "ten": "초순"
+      },
+      {
+        "month": 11,
+        "ten": "중순"
+      },
+      {
+        "month": 11,
+        "ten": "하순"
+      },
+      {
+        "month": 12,
+        "ten": "초순"
+      }
+    ],
+    "image": "pomegranate.png",
+    "description_ko": "붉고 투명한 알갱이가 보석 같은 과일. 천연 식물성 에스트로겐이 풍부하여 특히 여성 건강에 좋은 것으로 알려져 있으며, 항산화 성분도 풍부합니다.",
+    "name_en": "",
+    "name_ja": "",
+    "description_en": "",
+    "description_ja": "",
+    "external_url": "https://link.coupang.com/a/cTFeAD"
+  },
+  {
+    "name_ko": "소라",
+    "category": "해산물",
+    "periods": [
+      {
+        "month": 3,
+        "ten": "중순"
+      },
+      {
+        "month": 3,
+        "ten": "하순"
+      },
+      {
+        "month": 4,
+        "ten": "초순"
+      },
+      {
+        "month": 4,
+        "ten": "중순"
+      },
+      {
+        "month": 4,
+        "ten": "하순"
+      },
+      {
+        "month": 5,
+        "ten": "초순"
+      },
+      {
+        "month": 5,
+        "ten": "중순"
+      },
+      {
+        "month": 5,
+        "ten": "하순"
+      },
+      {
+        "month": 6,
+        "ten": "초순"
+      }
+    ],
+    "image": "turban-shell.png",
+    "description_ko": "쫄깃한 식감이 일품인 고둥류. 타우린이 풍부하여 피로 해소와 시력 보호에 도움을 줍니다. 숙회, 무침, 구이 등 다양한 요리로 즐길 수 있습니다.",
+    "name_en": "",
+    "name_ja": "",
+    "description_en": "",
+    "description_ja": "",
+    "external_url": "https://link.coupang.com/a/cTFh2c"
+  },
+  {
+    "name_ko": "송이버섯",
+    "category": "기타",
+    "periods": [
+      {
+        "month": 9,
+        "ten": "중순"
+      },
+      {
+        "month": 9,
+        "ten": "하순"
+      },
+      {
+        "month": 10,
+        "ten": "초순"
+      },
+      {
+        "month": 10,
+        "ten": "중순"
+      }
+    ],
+    "image": "matsutake.png",
+    "description_ko": "소나무 숲에서 자라는 귀한 버섯으로, 짙고 독특한 솔 향이 특징입니다. 비타민 D와 식이섬유가 풍부하며, 항암 효과가 있는 것으로 알려져 있습니다.",
+    "name_en": "",
+    "name_ja": "",
+    "description_en": "",
+    "description_ja": "",
+    "external_url": "https://link.coupang.com/a/cTFjU3"
+  },
+  {
+    "name_ko": "수박",
+    "category": "과일",
+    "periods": [
+      {
+        "month": 7,
+        "ten": "초순"
+      },
+      {
+        "month": 7,
+        "ten": "중순"
+      },
+      {
+        "month": 7,
+        "ten": "하순"
+      },
+      {
+        "month": 8,
+        "ten": "초순"
+      },
+      {
+        "month": 8,
+        "ten": "중순"
+      }
+    ],
+    "image": "watermelon.png",
+    "description_ko": "여름철 갈증 해소에 최고인 과일. 90% 이상이 수분으로 이루어져 있으며, 이뇨 작용을 돕는 시트룰린 성분이 풍부하여 노폐물 배출에 효과적입니다.",
+    "name_en": "",
+    "name_ja": "",
+    "description_en": "",
+    "description_ja": "",
+    "external_url": "https://link.coupang.com/a/cTFeIx"
+  },
+  {
+    "name_ko": "쑥",
+    "category": "채소",
+    "periods": [
+      {
+        "month": 3,
+        "ten": "초순"
+      },
+      {
+        "month": 3,
+        "ten": "중순"
+      },
+      {
+        "month": 3,
+        "ten": "하순"
+      },
+      {
+        "month": 4,
+        "ten": "초순"
+      }
+    ],
+    "image": "mugwort.png",
+    "description_ko": "향긋한 향이 봄기운을 물씬 느끼게 하는 식물. 비타민과 미네랄이 풍부하여 몸을 따뜻하게 하고 혈액순환을 돕습니다. 쑥국, 쑥떡 등으로 만들어 먹습니다.",
+    "name_en": "",
+    "name_ja": "",
+    "description_en": "",
+    "description_ja": "",
+    "external_url": "https://link.coupang.com/a/cTFbgL"
+  },
+  {
+    "name_ko": "씀바귀",
+    "category": "채소",
+    "periods": [
+      {
+        "month": 3,
+        "ten": "중순"
+      },
+      {
+        "month": 3,
+        "ten": "하순"
+      },
+      {
+        "month": 4,
+        "ten": "초순"
+      },
+      {
+        "month": 4,
+        "ten": "중순"
+      },
+      {
+        "month": 4,
+        "ten": "하순"
+      }
+    ],
+    "image": "dandelion.png",
+    "description_ko": "쓴맛이 강한 것이 특징인 봄나물. '고채'라고도 불리며, 이 쓴맛이 소화 기능을 돕고 식욕을 돋웁니다. 주로 뿌리를 무쳐 먹습니다.",
+    "name_en": "",
+    "name_ja": "",
+    "description_en": "",
+    "description_ja": "",
+    "external_url": "https://link.coupang.com/a/cTFbrI"
+  },
+  {
+    "name_ko": "시금치",
+    "category": "채소",
+    "periods": [
+      {
+        "month": 11,
+        "ten": "하순"
+      },
+      {
+        "month": 12,
+        "ten": "초순"
+      },
+      {
+        "month": 12,
+        "ten": "중순"
+      },
+      {
+        "month": 12,
+        "ten": "하순"
+      },
+      {
+        "month": 1,
+        "ten": "초순"
+      },
+      {
+        "month": 1,
+        "ten": "중순"
+      },
+      {
+        "month": 1,
+        "ten": "하순"
+      },
+      {
+        "month": 2,
+        "ten": "초순"
+      },
+      {
+        "month": 2,
+        "ten": "중순"
+      }
+    ],
+    "image": "spinach.png",
+    "description_ko": "겨울철 시금치는 '포항초' 등으로 불리며 단맛이 강하고 영양이 풍부합니다. 철분, 엽산, 비타민이 풍부하여 빈혈 예방과 눈 건강에 좋습니다.",
+    "name_en": "",
+    "name_ja": "",
+    "description_en": "",
+    "description_ja": "",
+    "external_url": "https://link.coupang.com/a/cTFbCi"
+  },
+  {
+    "name_ko": "아귀",
+    "category": "해산물",
+    "periods": [
+      {
+        "month": 12,
+        "ten": "중순"
+      },
+      {
+        "month": 12,
+        "ten": "하순"
+      },
+      {
+        "month": 1,
+        "ten": "초순"
+      },
+      {
+        "month": 1,
+        "ten": "중순"
+      },
+      {
+        "month": 1,
+        "ten": "하순"
+      },
+      {
+        "month": 2,
+        "ten": "초순"
+      },
+      {
+        "month": 2,
+        "ten": "중순"
+      },
+      {
+        "month": 2,
+        "ten": "하순"
+      }
+    ],
+    "image": "monkfish.png",
+    "description_ko": "못생겼지만 맛은 뛰어난 생선. 저지방 고단백 식품으로, 쫄깃한 살과 부드러운 간(애)이 별미입니다. 주로 찜이나 탕으로 요리됩니다.",
+    "name_en": "",
+    "name_ja": "",
+    "description_en": "",
+    "description_ja": "",
+    "external_url": "https://link.coupang.com/a/cTFh7P"
+  },
+  {
+    "name_ko": "애호박",
+    "category": "채소",
+    "periods": [
+      {
+        "month": 6,
+        "ten": "중순"
+      },
+      {
+        "month": 6,
+        "ten": "하순"
+      },
+      {
+        "month": 7,
+        "ten": "초순"
+      },
+      {
+        "month": 7,
+        "ten": "중순"
+      },
+      {
+        "month": 7,
+        "ten": "하순"
+      },
+      {
+        "month": 8,
+        "ten": "초순"
+      },
+      {
+        "month": 8,
+        "ten": "중순"
+      },
+      {
+        "month": 8,
+        "ten": "하순"
+      }
+    ],
+    "image": "zucchini.png",
+    "description_ko": "단맛과 부드러운 식감으로 다양한 요리에 활용되는 채소. 비타민 A와 C가 풍부하며, 찌개, 볶음, 전 등 어떻게 요리해도 맛있습니다.",
+    "name_en": "",
+    "name_ja": "",
+    "description_en": "",
+    "description_ja": "",
+    "external_url": "https://link.coupang.com/a/cTFbKt"
+  },
+  {
+    "name_ko": "연근",
+    "category": "채소",
+    "periods": [
+      {
+        "month": 11,
+        "ten": "하순"
+      },
+      {
+        "month": 12,
+        "ten": "초순"
+      },
+      {
+        "month": 12,
+        "ten": "중순"
+      },
+      {
+        "month": 12,
+        "ten": "하순"
+      },
+      {
+        "month": 1,
+        "ten": "초순"
+      },
+      {
+        "month": 1,
+        "ten": "중순"
+      },
+      {
+        "month": 1,
+        "ten": "하순"
+      },
+      {
+        "month": 2,
+        "ten": "초순"
+      },
+      {
+        "month": 2,
+        "ten": "중순"
+      },
+      {
+        "month": 2,
+        "ten": "하순"
+      }
+    ],
+    "image": "lotus-root.png",
+    "description_ko": "연꽃의 뿌리줄기로, 아삭한 식감이 특징입니다. 철분과 비타민 C가 풍부하여 빈혈 예방에 좋으며, 주로 조림이나 튀김으로 먹습니다.",
+    "name_en": "",
+    "name_ja": "",
+    "description_en": "",
+    "description_ja": "",
+    "external_url": "https://link.coupang.com/a/cTFbRj"
+  },
+  {
+    "name_ko": "열무",
+    "category": "채소",
+    "periods": [
+      {
+        "month": 6,
+        "ten": "초순"
+      },
+      {
+        "month": 6,
+        "ten": "중순"
+      },
+      {
+        "month": 6,
+        "ten": "하순"
+      },
+      {
+        "month": 7,
+        "ten": "초순"
+      },
+      {
+        "month": 7,
+        "ten": "중순"
+      },
+      {
+        "month": 7,
+        "ten": "하순"
+      },
+      {
+        "month": 8,
+        "ten": "초순"
+      }
+    ],
+    "image": "young-radish.png",
+    "description_ko": "어린 무를 뜻하며, 시원하고 아삭한 맛이 특징입니다. 주로 열무김치를 담가 먹으며, 여름철 입맛을 돋우는 데 최고입니다.",
+    "name_en": "",
+    "name_ja": "",
+    "description_en": "",
+    "description_ja": "",
+    "external_url": "https://link.coupang.com/a/cTFb1K"
+  },
+  {
+    "name_ko": "오이",
+    "category": "채소",
+    "periods": [
+      {
+        "month": 6,
+        "ten": "중순"
+      },
+      {
+        "month": 6,
+        "ten": "하순"
+      },
+      {
+        "month": 7,
+        "ten": "초순"
+      },
+      {
+        "month": 7,
+        "ten": "중순"
+      },
+      {
+        "month": 7,
+        "ten": "하순"
+      },
+      {
+        "month": 8,
+        "ten": "초순"
+      },
+      {
+        "month": 8,
+        "ten": "중순"
+      },
+      {
+        "month": 8,
+        "ten": "하순"
+      }
+    ],
+    "image": "cucumber.png",
+    "description_ko": "수분 함량이 매우 높아 갈증 해소와 피부 미용에 좋습니다. 아삭한 식감과 시원한 향으로 무침, 냉국, 샐러드 등 여름 요리에 널리 쓰입니다.",
+    "name_en": "",
+    "name_ja": "",
+    "description_en": "",
+    "description_ja": "",
+    "external_url": "https://link.coupang.com/a/cTFb9m"
+  },
+  {
+    "name_ko": "오징어",
+    "category": "해산물",
+    "periods": [
+      {
+        "month": 6,
+        "ten": "초순"
+      },
+      {
+        "month": 6,
+        "ten": "중순"
+      },
+      {
+        "month": 6,
+        "ten": "하순"
+      },
+      {
+        "month": 7,
+        "ten": "초순"
+      },
+      {
+        "month": 7,
+        "ten": "중순"
+      },
+      {
+        "month": 7,
+        "ten": "하순"
+      },
+      {
+        "month": 8,
+        "ten": "초순"
+      },
+      {
+        "month": 8,
+        "ten": "중순"
+      },
+      {
+        "month": 8,
+        "ten": "하순"
+      }
+    ],
+    "image": "squid.png",
+    "description_ko": "쫄깃한 식감으로 사랑받는 대표적인 연체동물. 타우린이 풍부하여 피로 해소에 좋으며, 회, 볶음, 튀김, 건어물 등 활용도가 매우 높습니다.",
+    "name_en": "",
+    "name_ja": "",
+    "description_en": "",
+    "description_ja": "",
+    "external_url": "https://link.coupang.com/a/cTFiO9"
+  },
+  {
+    "name_ko": "옥수수",
+    "category": "채소",
+    "periods": [
+      {
+        "month": 7,
+        "ten": "중순"
+      },
+      {
+        "month": 7,
+        "ten": "하순"
+      },
+      {
+        "month": 8,
+        "ten": "초순"
+      },
+      {
+        "month": 8,
+        "ten": "중순"
+      },
+      {
+        "month": 8,
+        "ten": "하순"
+      }
+    ],
+    "image": "corn.png",
+    "description_ko": "톡톡 터지는 식감과 고소하고 달콤한 맛이 특징인 여름 간식. 식이섬유가 풍부하여 변비 예방에 좋으며, 주로 쪄서 먹습니다.",
+    "name_en": "",
+    "name_ja": "",
+    "description_en": "",
+    "description_ja": "",
+    "external_url": "https://link.coupang.com/a/cTFchg"
+  },
+  {
+    "name_ko": "우엉",
+    "category": "채소",
+    "periods": [
+      {
+        "month": 1,
+        "ten": "초순"
+      },
+      {
+        "month": 1,
+        "ten": "중순"
+      },
+      {
+        "month": 1,
+        "ten": "하순"
+      },
+      {
+        "month": 2,
+        "ten": "초순"
+      },
+      {
+        "month": 2,
+        "ten": "중순"
+      },
+      {
+        "month": 2,
+        "ten": "하순"
+      },
+      {
+        "month": 3,
+        "ten": "초순"
+      },
+      {
+        "month": 3,
+        "ten": "중순"
+      }
+    ],
+    "image": "burdock.png",
+    "description_ko": "아삭한 식감과 독특한 향을 가진 뿌리채소. 식이섬유인 이눌린이 풍부하여 장 건강에 도움을 줍니다. 주로 조림이나 볶음, 김밥 재료로 사용됩니다.",
+    "name_en": "",
+    "name_ja": "",
+    "description_en": "",
+    "description_ja": "",
+    "external_url": "https://link.coupang.com/a/cTFco1"
+  },
+  {
+    "name_ko": "유자",
+    "category": "과일",
+    "periods": [
+      {
+        "month": 11,
+        "ten": "중순"
+      },
+      {
+        "month": 11,
+        "ten": "하순"
+      },
+      {
+        "month": 12,
+        "ten": "초순"
+      },
+      {
+        "month": 12,
+        "ten": "중순"
+      }
+    ],
+    "image": "yuzu.png",
+    "description_ko": "향이 매우 강하고 신맛이 특징인 과일. 비타민 C가 레몬의 3배나 많아 감기 예방과 피로 해소에 탁월합니다. 주로 유자청을 담가 차로 마십니다.",
+    "name_en": "",
+    "name_ja": "",
+    "description_en": "",
+    "description_ja": "",
+    "external_url": "https://link.coupang.com/a/cTFfd1"
+  },
+  {
+    "name_ko": "은행",
+    "category": "기타",
+    "periods": [
+      {
+        "month": 9,
+        "ten": "중순"
+      },
+      {
+        "month": 9,
+        "ten": "하순"
+      },
+      {
+        "month": 10,
+        "ten": "초순"
+      },
+      {
+        "month": 10,
+        "ten": "중순"
+      }
+    ],
+    "image": "ginkgo-nut.png",
+    "description_ko": "은행나무의 열매로, 쫄깃한 식감과 특유의 향이 있습니다. 혈액순환 개선과 기관지 건강에 도움을 주지만, 소량만 섭취해야 합니다.",
+    "name_en": "",
+    "name_ja": "",
+    "description_en": "",
+    "description_ja": "",
+    "external_url": "https://link.coupang.com/a/cTFj33"
+  },
+  {
+    "name_ko": "자두",
+    "category": "과일",
+    "periods": [
+      {
+        "month": 7,
+        "ten": "초순"
+      },
+      {
+        "month": 7,
+        "ten": "중순"
+      },
+      {
+        "month": 7,
+        "ten": "하순"
+      },
+      {
+        "month": 8,
+        "ten": "초순"
+      },
+      {
+        "month": 8,
+        "ten": "중순"
+      }
+    ],
+    "image": "plum-fruit.png",
+    "description_ko": "새콤달콤한 맛이 특징인 여름 과일. 비타민과 식이섬유가 풍부하여 변비 예방과 눈 건강에 좋습니다. 펙틴 성분이 풍부합니다.",
+    "name_en": "",
+    "name_ja": "",
+    "description_en": "",
+    "description_ja": "",
+    "external_url": "https://link.coupang.com/a/cTFeOK"
+  },
+  {
+    "name_ko": "장어",
+    "category": "해산물",
+    "periods": [
+      {
+        "month": 6,
+        "ten": "초순"
+      },
+      {
+        "month": 6,
+        "ten": "중순"
+      },
+      {
+        "month": 6,
+        "ten": "하순"
+      },
+      {
+        "month": 7,
+        "ten": "초순"
+      },
+      {
+        "month": 7,
+        "ten": "중순"
+      },
+      {
+        "month": 7,
+        "ten": "하순"
+      },
+      {
+        "month": 8,
+        "ten": "초순"
+      }
+    ],
+    "image": "eel.png",
+    "description_ko": "대표적인 스태미나 음식. 단백질과 불포화지방산, 비타민 A가 풍부하여 기력 회복과 눈 건강에 좋습니다. 주로 양념구이로 즐겨 먹습니다.",
+    "name_en": "",
+    "name_ja": "",
+    "description_en": "",
+    "description_ja": "",
+    "external_url": "https://link.coupang.com/a/cTFiVo"
+  },
+  {
+    "name_ko": "전복",
+    "category": "해산물",
+    "periods": [
+      {
+        "month": 8,
+        "ten": "초순"
+      },
+      {
+        "month": 8,
+        "ten": "중순"
+      },
+      {
+        "month": 8,
+        "ten": "하순"
+      },
+      {
+        "month": 9,
+        "ten": "초순"
+      },
+      {
+        "month": 9,
+        "ten": "중순"
+      },
+      {
+        "month": 9,
+        "ten": "하순"
+      },
+      {
+        "month": 10,
+        "ten": "초순"
+      }
+    ],
+    "image": "abalone.png",
+    "description_ko": "'바다의 황제'라 불리는 고급 식재료. 쫄깃한 식감과 풍부한 영양을 자랑하며, 타우린과 아르기닌이 많아 원기 회복에 탁월합니다.",
+    "name_en": "",
+    "name_ja": "",
+    "description_en": "",
+    "description_ja": "",
+    "external_url": "https://link.coupang.com/a/cTFi20"
+  },
+  {
+    "name_ko": "전어",
+    "category": "해산물",
+    "periods": [
+      {
+        "month": 9,
+        "ten": "초순"
+      },
+      {
+        "month": 9,
+        "ten": "중순"
+      },
+      {
+        "month": 9,
+        "ten": "하순"
+      },
+      {
+        "month": 10,
+        "ten": "초순"
+      },
+      {
+        "month": 10,
+        "ten": "중순"
+      }
+    ],
+    "image": "yellow-croaker.png",
+    "description_ko": "'가을 전어는 깨가 서 말'이라는 말이 있을 정도로 가을에 맛이 가장 좋습니다. 고소한 맛이 일품이며, 뼈째 먹으면 칼슘을 풍부하게 섭취할 수 있습니다.",
+    "name_en": "",
+    "name_ja": "",
+    "description_en": "",
+    "description_ja": "",
+    "external_url": "https://link.coupang.com/a/cTFi9f"
+  },
+  {
+    "name_ko": "주꾸미",
+    "category": "해산물",
+    "periods": [
+      {
+        "month": 3,
+        "ten": "초순"
+      },
+      {
+        "month": 3,
+        "ten": "중순"
+      },
+      {
+        "month": 3,
+        "ten": "하순"
+      },
+      {
+        "month": 4,
+        "ten": "초순"
+      },
+      {
+        "month": 4,
+        "ten": "중순"
+      },
+      {
+        "month": 4,
+        "ten": "하순"
+      }
+    ],
+    "image": "webfoot-octopus.png",
+    "description_ko": "봄철에 알이 꽉 차 맛이 가장 좋은 연체동물. 타우린이 풍부하여 피로 해소에 매우 좋으며, 쫄깃한 식감으로 볶음이나 샤부샤부로 인기가 많습니다.",
+    "name_en": "",
+    "name_ja": "",
+    "description_en": "",
+    "description_ja": "",
+    "external_url": "https://link.coupang.com/a/cTFjfG"
+  },
+  {
+    "name_ko": "참외",
+    "category": "과일",
+    "periods": [
+      {
+        "month": 6,
+        "ten": "중순"
+      },
+      {
+        "month": 6,
+        "ten": "하순"
+      },
+      {
+        "month": 7,
+        "ten": "초순"
+      },
+      {
+        "month": 7,
+        "ten": "중순"
+      },
+      {
+        "month": 7,
+        "ten": "하순"
+      },
+      {
+        "month": 8,
+        "ten": "초순"
+      }
+    ],
+    "image": "oriental-melon.png",
+    "description_ko": "아삭하고 시원한 단맛이 특징인 여름 대표 과일. 수분 함량이 높고 칼륨이 풍부하여 이뇨 작용을 도와 몸의 부기를 빼는 데 효과적입니다.",
+    "name_en": "",
+    "name_ja": "",
+    "description_en": "",
+    "description_ja": ""
+  },
+  {
+    "name_ko": "취나물",
+    "category": "채소",
+    "periods": [
+      {
+        "month": 3,
+        "ten": "하순"
+      },
+      {
+        "month": 4,
+        "ten": "초순"
+      },
+      {
+        "month": 4,
+        "ten": "중순"
+      },
+      {
+        "month": 4,
+        "ten": "하순"
+      },
+      {
+        "month": 5,
+        "ten": "초순"
+      },
+      {
+        "month": 5,
+        "ten": "중순"
+      }
+    ],
+    "image": "chrysanthemum-greens.png",
+    "description_ko": "독특한 향이 입맛을 돋우는 대표적인 산나물. 칼륨 함량이 높아 체내 나트륨 배출에 도움을 줍니다. 주로 볶거나 무쳐서 먹습니다.",
+    "name_en": "",
+    "name_ja": "",
+    "description_en": "",
+    "description_ja": "",
+    "external_url": "https://link.coupang.com/a/cTFcKT"
+  },
+  {
+    "name_ko": "키조개",
+    "category": "해산물",
+    "periods": [
+      {
+        "month": 4,
+        "ten": "초순"
+      },
+      {
+        "month": 4,
+        "ten": "중순"
+      },
+      {
+        "month": 4,
+        "ten": "하순"
+      },
+      {
+        "month": 5,
+        "ten": "초순"
+      },
+      {
+        "month": 5,
+        "ten": "중순"
+      },
+      {
+        "month": 5,
+        "ten": "하순"
+      }
+    ],
+    "image": "ark-shell.png",
+    "description_ko": "껍데기가 큰 삼각형 모양인 조개. 다른 조개에 비해 단백질이 풍부하고 지방이 적으며, 특히 쫄깃한 관자는 구이나 볶음 요리로 인기가 높습니다.",
+    "name_en": "",
+    "name_ja": "",
+    "description_en": "",
+    "description_ja": "",
+    "external_url": "https://link.coupang.com/a/cTFjrQ"
+  },
+  {
+    "name_ko": "토란",
+    "category": "채소",
+    "periods": [
+      {
+        "month": 9,
+        "ten": "중순"
+      },
+      {
+        "month": 9,
+        "ten": "하순"
+      },
+      {
+        "month": 10,
+        "ten": "초순"
+      },
+      {
+        "month": 10,
+        "ten": "중순"
+      },
+      {
+        "month": 10,
+        "ten": "하순"
+      }
+    ],
+    "image": "taro.png",
+    "description_ko": "특유의 미끈거리는 식감이 특징인 땅속줄기. 칼륨이 풍부하여 나트륨 배출을 돕고, 소화가 잘되어 위장에 부담이 적습니다. 주로 국이나 탕으로 끓여 먹습니다.",
+    "name_en": "",
+    "name_ja": "",
+    "description_en": "",
+    "description_ja": "",
+    "external_url": "https://link.coupang.com/a/cTFcSB"
+  },
+  {
+    "name_ko": "파래",
+    "category": "해산물",
+    "periods": [
+      {
+        "month": 12,
+        "ten": "초순"
+      },
+      {
+        "month": 12,
+        "ten": "중순"
+      },
+      {
+        "month": 12,
+        "ten": "하순"
+      },
+      {
+        "month": 1,
+        "ten": "초순"
+      },
+      {
+        "month": 1,
+        "ten": "중순"
+      },
+      {
+        "month": 1,
+        "ten": "하순"
+      },
+      {
+        "month": 2,
+        "ten": "초순"
+      },
+      {
+        "month": 2,
+        "ten": "중순"
+      }
+    ],
+    "image": "sea-lettuce.png",
+    "description_ko": "향긋한 바다 내음이 특징인 해조류. 철분과 칼슘 등 무기질이 풍부하여 빈혈과 골다공증 예방에 좋습니다. 주로 무침으로 먹거나 전에 넣어 부쳐 먹습니다.",
+    "name_en": "",
+    "name_ja": "",
+    "description_en": "",
+    "description_ja": "",
+    "external_url": "https://link.coupang.com/a/cTFjyK"
+  },
+  {
+    "name_ko": "포도",
+    "category": "과일",
+    "periods": [
+      {
+        "month": 8,
+        "ten": "초순"
+      },
+      {
+        "month": 8,
+        "ten": "중순"
+      },
+      {
+        "month": 8,
+        "ten": "하순"
+      },
+      {
+        "month": 9,
+        "ten": "초순"
+      },
+      {
+        "month": 9,
+        "ten": "중순"
+      },
+      {
+        "month": 9,
+        "ten": "하순"
+      }
+    ],
+    "image": "grape.png",
+    "description_ko": "달콤한 과즙이 풍부한 여름 대표 과일. 포도당과 비타민이 풍부하여 피로 해소에 즉각적인 효과가 있습니다. 껍질과 씨에도 영양이 풍부합니다.",
+    "name_en": "",
+    "name_ja": "",
+    "description_en": "",
+    "description_ja": "",
+    "external_url": "https://link.coupang.com/a/cTFeVP"
+  },
+  {
+    "name_ko": "표고버섯",
+    "category": "기타",
+    "periods": [
+      {
+        "month": 9,
+        "ten": "초순"
+      },
+      {
+        "month": 9,
+        "ten": "중순"
+      },
+      {
+        "month": 9,
+        "ten": "하순"
+      },
+      {
+        "month": 10,
+        "ten": "초순"
+      },
+      {
+        "month": 10,
+        "ten": "중순"
+      },
+      {
+        "month": 10,
+        "ten": "하순"
+      },
+      {
+        "month": 11,
+        "ten": "초순"
+      }
+    ],
+    "image": "shiitake-mushroom.png",
+    "description_ko": "독특한 향과 쫄깃한 식감으로 사랑받는 버섯. 비타민 D가 풍부하여 칼슘 흡수를 돕고, 항암 효과가 있는 렌티난 성분을 함유하고 있습니다.",
+    "name_en": "",
+    "name_ja": "",
+    "description_en": "",
+    "description_ja": "",
+    "external_url": "https://link.coupang.com/a/cTFkay"
+  },
+  {
+    "name_ko": "한라봉",
+    "category": "과일",
+    "periods": [
+      {
+        "month": 12,
+        "ten": "하순"
+      },
+      {
+        "month": 1,
+        "ten": "초순"
+      },
+      {
+        "month": 1,
+        "ten": "중순"
+      },
+      {
+        "month": 1,
+        "ten": "하순"
+      },
+      {
+        "month": 2,
+        "ten": "초순"
+      },
+      {
+        "month": 2,
+        "ten": "중순"
+      },
+      {
+        "month": 2,
+        "ten": "하순"
+      },
+      {
+        "month": 3,
+        "ten": "초순"
+      }
+    ],
+    "image": "hallabong.png",
+    "description_ko": "꼭지가 튀어나온 모양이 특징인 감귤류. 과육이 풍부하고 당도가 높으며, 비타민 C가 많아 감기 예방과 피로 해소에 좋습니다.",
+    "name_en": "",
+    "name_ja": "",
+    "description_en": "",
+    "description_ja": "",
+    "external_url": "https://link.coupang.com/a/cTFe1c"
+  },
+  {
+    "name_ko": "홍합",
+    "category": "해산물",
+    "periods": [
+      {
+        "month": 10,
+        "ten": "하순"
+      },
+      {
+        "month": 11,
+        "ten": "초순"
+      },
+      {
+        "month": 11,
+        "ten": "중순"
+      },
+      {
+        "month": 11,
+        "ten": "하순"
+      },
+      {
+        "month": 12,
+        "ten": "초순"
+      },
+      {
+        "month": 12,
+        "ten": "중순"
+      },
+      {
+        "month": 12,
+        "ten": "하순"
+      }
+    ],
+    "image": "mussel.png",
+    "description_ko": "저렴하면서도 시원한 국물 맛을 내주는 고마운 조개. 타우린이 풍부하여 숙취 해소에 좋으며, 칼슘, 인, 철분 등 미네랄이 풍부합니다.",
+    "name_en": "",
+    "name_ja": "",
+    "description_en": "",
+    "description_ja": "",
+    "external_url": "https://link.coupang.com/a/cTFjEK"
+  }
+]
