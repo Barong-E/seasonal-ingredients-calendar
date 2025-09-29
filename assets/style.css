@@ -3,22 +3,16 @@
 
 html, body {
   overflow-x: hidden; /* Prevent horizontal scroll on the page */
-  height: 100%;
 }
 
 body {
-  display: flex;
-  flex-direction: column;
   margin: 0;
   background: var(--bg-gradient);
   color: var(--text);
-  overscroll-behavior-y: contain;
 }
 
 main {
-  flex: 1; /* Allow main to grow and fill available space */
-  overflow-y: auto; /* Allow content to scroll within main */
-  -webkit-overflow-scrolling: touch;
+  /* 내부 스크롤 제거: 문서(body)만 스크롤 */
 }
 
 /* Colors - 태극기 컨셉 + 모던 그라데이션 */
@@ -58,8 +52,10 @@ main {
   backdrop-filter: blur(24px);
   border-bottom: 1px solid var(--glass-border);
   box-shadow: var(--shadow-md);
-  position: sticky;
+  position: fixed;
   top: 0;
+  left: 0;
+  right: 0;
   z-index: 100;
 }
 
@@ -74,16 +70,34 @@ main {
   border-radius: 0 0 10px 10px;
 }
 
-.header-title {
-  font-size: 0.85rem;
-  color: #6b7280;
-  text-align: center;
-  margin-bottom: 8px;
-  font-weight: 500;
-  letter-spacing: 0.5px;
-  text-transform: uppercase;
-  opacity: 0.8;
+.header-bar {
+  display: flex;
+  align-items: center;
+  gap: 12px;
 }
+
+.brand {
+  display: flex;
+  align-items: baseline;
+  gap: 6px;
+  font-weight: 800;
+}
+.brand__primary {
+  font-size: 1.2rem;
+  background: var(--primary-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+.brand__secondary {
+  font-size: 1.2rem;
+  background: var(--accent-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.header-search { flex: 1; }
 
 .period-label {
   font-weight: 800;
@@ -97,40 +111,41 @@ main {
   position: relative;
 }
 
-/* Carousel */
+/* Vertical layout styles */
 .carousel {
-  padding: 12px 0; /* 패딩을 컨테이너로 이동 */
-  /* padding-bottom 제거 - 하단 컨트롤이 sticky이므로 불필요 */
-}
-.carousel__container {
-  overflow-x: auto; /* 수평 스크롤 허용 (네이티브 스와이프) */
-  overflow-y: hidden;
-  -webkit-overflow-scrolling: touch;
-  scroll-snap-type: x mandatory; /* 스크롤 스냅 */
-  scroll-padding-left: var(--peek);
-  scroll-padding-right: var(--peek);
-  padding-left: var(--peek);
-  padding-right: var(--peek);
-  touch-action: pan-x pan-y; /* 수평, 수직 스크롤 모두 허용 */
-  transition: height .2s ease; /* 패널 전환 시 높이 부드럽게 */
-  min-height: calc(100vh - var(--header-h) - var(--controls-h)); /* Ensure viewport is filled when items are few */
-}
-.carousel__track {
-  display: flex;
-  gap: 16px;
-  /* will-change 제거: 네이티브 스크롤 사용 */
-  touch-action: pan-x pan-y; /* 수평, 수직 스크롤 모두 허용 */
-  align-items: flex-start; /* 각 패널이 독립적인 높이를 갖도록 설정 */
+  padding: calc(var(--header-offset, 0px) + 12px) 20px 20px;
 }
 
-.panel {
-  width: calc(100vw - var(--peek) * 2);
-  margin: 8px 0 0;
-  flex-shrink: 0;
-  scroll-snap-align: start; /* 각 패널의 스냅 지점 */
-  height: auto !important;
-  min-height: auto !important;
-  max-height: none !important;
+.carousel__container {
+  /* Remove horizontal scroll styles */
+}
+
+.carousel__track {
+  display: block; /* Change from flex to block for vertical layout */
+}
+
+/* Period header styles */
+.period-header {
+  font-weight: 800;
+  background: var(--primary-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  font-size: 1.4rem;
+  text-align: center;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  margin: 32px 0 16px;
+  padding: 16px 0;
+  border-bottom: 2px solid var(--muted);
+}
+
+.period-header:first-child {
+  margin-top: 16px;
+}
+
+/* Period grid container */
+.period-grid {
+  margin-bottom: 24px;
 }
 
 /* Grid */
@@ -165,6 +180,8 @@ main {
   transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
   box-shadow: var(--shadow-sm);
   overflow: hidden;
+  -webkit-tap-highlight-color: transparent; /* Android tap highlight 제거 */
+  -webkit-touch-callout: none;
 }
 
 .card::before {
@@ -178,15 +195,14 @@ main {
   transition: left 0.6s ease;
 }
 
-.card:hover {
-  transform: translateY(-4px) scale(1.02);
-  box-shadow: var(--shadow-lg);
-  border-color: var(--primary);
-  background: rgba(255, 255, 255, 0.95);
-}
-
-.card:hover::before {
-  left: 100%;
+@media (hover: hover) and (pointer: fine) {
+  .card:hover {
+    transform: translateY(-4px) scale(1.02);
+    box-shadow: var(--shadow-lg);
+    border-color: var(--primary);
+    background: rgba(255, 255, 255, 0.95);
+  }
+  .card:hover::before { left: 100%; }
 }
 .card:focus,
 .card:focus-visible,
@@ -219,13 +235,12 @@ main {
   transition: opacity 0.3s ease;
 }
 
-.card:hover .thumb {
-  transform: scale(1.1) rotate(2deg);
-  box-shadow: var(--shadow-lg);
-}
-
-.card:hover .thumb::after {
-  opacity: 1;
+@media (hover: hover) and (pointer: fine) {
+  .card:hover .thumb {
+    transform: scale(1.1) rotate(2deg);
+    box-shadow: var(--shadow-lg);
+  }
+  .card:hover .thumb::after { opacity: 1; }
 }
 
 .thumb .photo { width: 100%; height: 100%; object-fit: cover; display: block; }
@@ -333,6 +348,8 @@ main {
   position: sticky;
   bottom: 0;
   z-index: 100;
+  /* 모바일 브라우저 최적화 */
+  position: -webkit-sticky;
 }
 
 .controls::before {
@@ -346,56 +363,7 @@ main {
   border-radius: 10px 10px 0 0;
 }
 
-.category-toggle { 
-  display: flex; 
-  gap: 12px; 
-  flex-wrap: wrap; 
-  justify-content: center;
-  border: 0; 
-  margin: 0 0 16px; 
-  padding: 0; 
-}
-
-.toggle {
-  display: inline-flex;
-  align-items: center;
-  gap: 10px;
-  padding: 12px 16px;
-  border: 1px solid var(--glass-border);
-  border-radius: 999px;
-  user-select: none;
-  background: var(--glass-bg);
-  backdrop-filter: blur(16px);
-  transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
-  box-shadow: var(--shadow-sm);
-  position: relative;
-  overflow: hidden;
-}
-
-.toggle::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: -100%;
-  width: 100%;
-  height: 100%;
-  background: var(--primary-gradient);
-  opacity: 0.1;
-  transition: left 0.4s ease;
-}
-
-.toggle:hover {
-  transform: translateY(-2px) scale(1.05);
-  box-shadow: var(--shadow-md);
-  border-color: var(--primary);
-  background: rgba(255, 255, 255, 0.95);
-}
-
-.toggle:hover::before {
-  left: 0;
-}
-.toggle input { accent-color: var(--primary); }
-.toggle .icon { font-size: 18px; line-height: 1; }
+/* Category toggle styles removed */
 .search-label { display: block; font-size: 12px; color: #666; margin: 6px 0; font-weight: 500; }
 .search-input {
   width: 100%;
@@ -425,21 +393,20 @@ main {
 
 /* Reduce motion respect */
 @media (prefers-reduced-motion: reduce) {
-  .card, .toggle, .search-input { transition: none; }
-  .card:hover, .toggle:hover, .search-input:focus { transform: none; }
+  .card, .search-input { transition: none; }
+  .card:hover, .search-input:focus { transform: none; }
 }
 
 /* Dragging performance guard */
 .is-dragging .card { backdrop-filter: none !important; background: rgba(255, 255, 255, 0.95); }
-.is-dragging .card, .is-dragging .toggle, .is-dragging .search-input, .is-dragging .thumb { transition: none !important; }
+.is-dragging .card, .is-dragging .search-input, .is-dragging .thumb { transition: none !important; }
 .card, .thumb .photo { backface-visibility: hidden; transform: translateZ(0); }
 
 /* 모바일 최적화 */
 @media (max-width: 767px) {
   .app-header { padding: 12px 16px; }
   .controls { padding: 12px 16px; }
-  .toggle { padding: 6px 10px; }
-  .search-input { padding: 10px 12px; }
+  .search-input { padding: 12px 16px; }
   
   .modal { padding: 16px; }
   .modal__content { max-width: none; }

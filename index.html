@@ -2,7 +2,10 @@
 <html lang="ko">
   <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, user-scalable=no">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
     <title>제철음식 캘린더</title>
     <meta name="description" content="12개월 × 초/중/하 36칸으로 제철 식재료를 빠르게 찾는 캘린더">
     <meta property="og:title" content="제철음식 캘린더">
@@ -15,8 +18,16 @@
   <body>
     <header class="app-header">
       <h1 class="visually-hidden">제철음식 캘린더</h1>
-      <div class="header-title">제철음식 캘린더</div>
-      <div id="currentPeriodLabel" class="period-label" aria-live="polite" aria-atomic="true">로딩 중…</div>
+      <div class="header-bar" role="banner">
+        <div class="brand" aria-label="브랜드">
+          <span class="brand__primary">재철</span>
+          <span class="brand__secondary">음식</span>
+        </div>
+        <form id="filtersForm" class="header-search" onsubmit="return false;" role="search">
+          <input id="searchInput" class="search-input" type="search" placeholder="이름·설명 검색" autocomplete="off" inputmode="search" aria-describedby="searchHelp">
+          <p id="searchHelp" class="visually-hidden">이름과 설명에서 검색합니다. 대소문자를 구분하지 않습니다.</p>
+        </form>
+      </div>
     </header>
 
     <main>
@@ -26,35 +37,7 @@
         </div>
       </section>
 
-      <section class="controls" aria-label="필터와 검색">
-        <form id="filtersForm" class="filters" onsubmit="return false;">
-          <fieldset class="category-toggle">
-            <legend class="visually-hidden">카테고리</legend>
-            <label class="toggle">
-              <input type="checkbox" name="category" value="해산물" checked>
-              <span class="icon" aria-hidden="true">🐟</span>
-              <span class="visually-hidden">해산물</span>
-            </label>
-            <label class="toggle">
-              <input type="checkbox" name="category" value="채소" checked>
-              <span class="icon" aria-hidden="true">🥦</span>
-              <span class="visually-hidden">채소</span>
-            </label>
-            <label class="toggle">
-              <input type="checkbox" name="category" value="과일" checked>
-              <span class="icon" aria-hidden="true">🍎</span>
-              <span class="visually-hidden">과일</span>
-            </label>
-            <label class="toggle">
-              <input type="checkbox" name="category" value="기타" checked>
-              <span class="icon" aria-hidden="true">🌰</span>
-              <span class="visually-hidden">기타</span>
-            </label>
-          </fieldset>
-          <input id="searchInput" class="search-input" type="search" placeholder="이름·설명 검색" autocomplete="off" inputmode="search" aria-describedby="searchHelp">
-          <p id="searchHelp" class="visually-hidden">이름과 설명에서 검색합니다. 대소문자를 구분하지 않습니다.</p>
-        </form>
-      </section>
+      
     </main>
 
     <template id="panelTemplate">
