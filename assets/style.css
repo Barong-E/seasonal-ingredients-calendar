@@ -15,15 +15,15 @@ main {
   /* 내부 스크롤 제거: 문서(body)만 스크롤 */
 }
 
-/* Colors - 태극기 컨셉 + 모던 그라데이션 */
+/* Colors - 기본 변수 (계절 테마로 오버라이드됨) */
 :root {
   --text: #1a1a1a;
   --bg: #fafbfc;
   --bg-gradient: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
-  --primary: #0055A4;
-  --primary-gradient: linear-gradient(135deg, #0055A4 0%, #003d82 100%);
-  --accent: #D62828;
-  --accent-gradient: linear-gradient(135deg, #D62828 0%, #b91c1c 100%);
+  --primary: #3b82f6; /* 기본 파랑 */
+  --primary-gradient: linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%);
+  --accent: #ef4444; /* 기본 레드 */
+  --accent-gradient: linear-gradient(135deg, #ef4444 0%, #b91c1c 100%);
   --muted: #e9ecef;
   --glass-bg: rgba(255, 255, 255, 0.9);
   --glass-border: rgba(255, 255, 255, 0.3);
@@ -36,6 +36,39 @@ main {
   /* Dynamic layout metrics (set from JS) */
   --header-h: 0px;
   --controls-h: 0px;
+}
+
+/* Seasonal Themes - 변수만 바꿔 전체 톤을 전환 */
+body.theme-spring {
+  --bg-gradient: linear-gradient(180deg, #f4fbf6 0%, #e9f7ee 100%);
+  --primary: #2e7d32; /* 신록 그린 */
+  --primary-gradient: linear-gradient(135deg, #43a047 0%, #2e7d32 100%);
+  --accent: #ff6f61; /* 봄꽃 코랄 */
+  --accent-gradient: linear-gradient(135deg, #ff8a75 0%, #ff6f61 100%);
+}
+
+body.theme-summer {
+  --bg-gradient: linear-gradient(180deg, #eaf7ff 0%, #dff3ff 100%);
+  --primary: #0284c7; /* 청량 블루 */
+  --primary-gradient: linear-gradient(135deg, #38bdf8 0%, #0284c7 100%);
+  --accent: #10b981; /* 민트 그린 */
+  --accent-gradient: linear-gradient(135deg, #34d399 0%, #10b981 100%);
+}
+
+body.theme-autumn {
+  --bg-gradient: linear-gradient(180deg, #fff5e7 0%, #ffe9cc 100%);
+  --primary: #d97706; /* 호박 오렌지 */
+  --primary-gradient: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);
+  --accent: #b45309; /* 카라멜 브라운 */
+  --accent-gradient: linear-gradient(135deg, #f97316 0%, #b45309 100%);
+}
+
+body.theme-winter {
+  --bg-gradient: linear-gradient(180deg, #f7fbff 0%, #eef4ff 100%);
+  --primary: #475569; /* 차분한 슬레이트 */
+  --primary-gradient: linear-gradient(135deg, #64748b 0%, #475569 100%);
+  --accent: #0ea5e9; /* 차가운 스카이 */
+  --accent-gradient: linear-gradient(135deg, #7dd3fc 0%, #0ea5e9 100%);
 }
 
 .visually-hidden {
@@ -97,7 +130,57 @@ main {
   background-clip: text;
 }
 
+.header-controls {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex: 1;
+}
+
 .header-search { flex: 1; }
+
+.today-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  background: var(--primary);
+  color: white;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  box-shadow: var(--shadow-sm);
+  flex-shrink: 0;
+}
+
+.today-button:hover {
+  background: var(--primary-gradient);
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-md);
+}
+
+.today-button:active {
+  transform: translateY(0);
+  box-shadow: var(--shadow-sm);
+}
+
+.today-button:disabled {
+  background: var(--muted);
+  color: #999;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
+
+.today-icon {
+  transition: transform 0.2s ease;
+}
+
+.today-button:not(:disabled):hover .today-icon {
+  transform: scale(1.1);
+}
 
 .period-label {
   font-weight: 800;

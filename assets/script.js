@@ -37,6 +37,23 @@ function formatPeriodLabel(month, ten) {
   return `${month}월 ${ten}`;
 }
 
+// 계절 판별 (1: 겨울, 2: 겨울, 3~5: 봄, 6~8: 여름, 9~11: 가을, 12: 겨울)
+function getSeasonByMonth(month) {
+  if (month === 12 || month === 1 || month === 2) return 'winter';
+  if (month >= 3 && month <= 5) return 'spring';
+  if (month >= 6 && month <= 8) return 'summer';
+  return 'autumn';
+}
+
+function applySeasonThemeByPeriodIndex(periodIndex) {
+  const period = AppState.periods[periodIndex];
+  if (!period) return;
+  const season = getSeasonByMonth(period.month);
+  const body = document.body;
+  body.classList.remove('theme-spring', 'theme-summer', 'theme-autumn', 'theme-winter');
+  body.classList.add(`theme-${season}`);
+}
+
 // 로컬 캐시 로딩
 async function loadIngredients() {
   try {
@@ -112,7 +129,9 @@ const AppState = {
   searchText: '',
   renderCache: new Map(),
   lastScrollPosition: 0, // 검색 전 스크롤 위치 저장
-  isSearching: false // 검색 중인지 여부
+  isSearching: false, // 검색 중인지 여부
+  currentPeriodIndex: 0, // 현재 보고 있는 시기 인덱스
+  isProgrammaticScroll: false // 프로그램으로 스크롤 중 여부(버튼 클릭 등)
 };
 
 // 헤더 높이 계산
@@ -324,6 +343,49 @@ function scrollToPeriod(periodIndex) {
   const offset = getHeaderHeight() + 8; // 헤더 높이 + 여유
   const y = (window.pageYOffset || document.documentElement.scrollTop) + periodHeader.getBoundingClientRect().top - offset;
   window.scrollTo({ top: y, behavior: 'smooth' });
+  AppState.currentPeriodIndex = periodIndex; // 현재 시기 인덱스 업데이트
+  applySeasonThemeByPeriodIndex(periodIndex);
+}
+
+// 오늘 버튼 상태를 전역에서 동기화하는 헬퍼
+function syncTodayButtonState() {
+  const todayButton = document.getElementById('todayButton');
+  if (!todayButton) return;
+  const currentIndex = getCurrentPeriodIndex();
+  const isAtCurrentPeriod = AppState.currentPeriodIndex === currentIndex;
+  todayButton.disabled = isAtCurrentPeriod;
+}
+
+// 현재 화면에 보이는 시기 인덱스 감지
+function getCurrentVisiblePeriodIndex() {
+  const periodHeaders = document.querySelectorAll('.period-header');
+  if (!periodHeaders.length) return -1;
+
+  const headerOffset = getHeaderHeight() + 8; // 헤더 높이 + 여유
+
+  // 화면 상단(헤더 아래) 기준으로 첫 번째로 아래에 보이는 헤더를 찾고,
+  // 그 바로 이전 헤더를 "현재 시기"로 간주
+  let firstBelow = -1;
+  for (let i = 0; i < periodHeaders.length; i++) {
+    const top = periodHeaders[i].getBoundingClientRect().top - headerOffset;
+    if (top >= 0) { firstBelow = i; break; }
+  }
+
+  if (firstBelow === -1) {
+    // 전부 화면 위에 있다면 마지막 헤더가 현재 시기
+    return parseInt(periodHeaders[periodHeaders.length - 1].getAttribute('data-period-index'));
+  }
+  if (firstBelow === 0) {
+    // 아직 어떤 헤더도 위로 지나가지 않았다면 첫 번째 시기
+    return parseInt(periodHeaders[0].getAttribute('data-period-index'));
+  }
+  // 첫 아래 헤더가 헤더 바로 아래에 거의 붙어있다면 그 헤더를 현재 시기로 간주
+  const topFromOffset = periodHeaders[firstBelow].getBoundingClientRect().top - headerOffset;
+  if (Math.abs(topFromOffset) <= 8) {
+    return parseInt(periodHeaders[firstBelow].getAttribute('data-period-index'));
+  }
+  // 그렇지 않다면 그 바로 이전 헤더가 현재 시기
+  return parseInt(periodHeaders[firstBelow - 1].getAttribute('data-period-index'));
 }
 
 // 검색 결과가 있는 첫 번째 시기로 스크롤
@@ -398,20 +460,77 @@ function initModal() {
 }
 
 // 메인 초기화
+function initTodayButton() {
+  const todayButton = document.getElementById('todayButton');
+  if (!todayButton) return;
+
+  todayButton.addEventListener('click', () => {
+    const currentIndex = getCurrentPeriodIndex();
+    AppState.isProgrammaticScroll = true;
+    scrollToPeriod(currentIndex);
+    // 클릭 직후에도 바로 비활성화되도록 상태 갱신
+    // (scrollToPeriod에서 AppState.currentPeriodIndex가 갱신됨)
+    updateTodayButtonState();
+    // 스크롤 애니메이션이 끝날 시간을 고려해 잠시 후 플래그 해제 및 최종 동기화
+    setTimeout(() => {
+      AppState.isProgrammaticScroll = false;
+      updateTodayButtonState();
+    }, 400);
+  });
+
+  // 현재 시기인지 확인하여 버튼 상태 업데이트
+  function updateTodayButtonState() {
+    const currentIndex = getCurrentPeriodIndex();
+    const isAtCurrentPeriod = AppState.currentPeriodIndex === currentIndex;
+    todayButton.disabled = isAtCurrentPeriod;
+  }
+
+  // 스크롤 이벤트로 실시간 상태 업데이트
+  let scrollTimeout;
+  window.addEventListener('scroll', () => {
+    clearTimeout(scrollTimeout);
+    scrollTimeout = setTimeout(() => {
+      if (!AppState.isProgrammaticScroll) {
+        // 스크롤 위치 기반으로 현재 시기 감지
+        const currentPeriodIndex = getCurrentVisiblePeriodIndex();
+        if (currentPeriodIndex !== -1) {
+          AppState.currentPeriodIndex = currentPeriodIndex;
+        }
+        updateTodayButtonState();
+        applySeasonThemeByPeriodIndex(AppState.currentPeriodIndex);
+      }
+    }, 100); // 스크롤 완료 후 100ms 뒤에 상태 업데이트
+  });
+
+  // 주기적으로 버튼 상태 업데이트 (날짜가 바뀔 수 있으므로)
+  setInterval(updateTodayButtonState, 60000); // 1분마다
+  updateTodayButtonState(); // 초기 상태 설정
+}
+
 async function init() {
   try {
     AppState.allIngredients = await loadIngredients();
     renderAllPeriods();
     initSearch();
     initModal();
+    initTodayButton();
     syncHeaderOffset();
     window.addEventListener('resize', () => { requestAnimationFrame(syncHeaderOffset); });
     window.addEventListener('orientationchange', () => { setTimeout(syncHeaderOffset, 250); });
     
-    // 초기 로드 시 현재 날짜에 해당하는 시기로 스크롤
+    // 초기 로드 시 현재 날짜에 해당하는 시기로 스크롤 (프로그램적 스크롤로 처리)
     setTimeout(() => {
       const currentIndex = getCurrentPeriodIndex();
+      AppState.isProgrammaticScroll = true;
       scrollToPeriod(currentIndex);
+      // 초기 렌더 직후 레이아웃/이미지 로딩 지연을 감안해 여러 번 동기화
+      setTimeout(syncTodayButtonState, 50);
+      setTimeout(syncTodayButtonState, 200);
+      setTimeout(() => {
+        AppState.isProgrammaticScroll = false;
+        syncTodayButtonState();
+        applySeasonThemeByPeriodIndex(AppState.currentPeriodIndex);
+      }, 500);
     }, 300);
   } catch (err) {
     console.error('초기화 실패:', err);
