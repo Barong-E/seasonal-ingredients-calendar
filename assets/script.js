@@ -1,7 +1,7 @@
 // 제철음식 캘린더 메인 스크립트
 // 규칙: ES 모듈 없이 단일 페이지 스크립트
 
-const CACHE_KEY = 'seasons:ingredients:v6';
+const CACHE_KEY = 'seasons:ingredients:v7';
 const CACHE_TTL_MS = 24 * 60 * 60 * 1000; // 24h
 
 const CATEGORY_ORDER = { '해산물': 1, '채소': 2, '과일': 3, '기타': 4 };
@@ -66,7 +66,7 @@ async function loadIngredients() {
     }
   } catch {}
 
-  const res = await fetch('data/ingredients.json?v=v6', { cache: 'no-cache' });
+    const res = await fetch('data/ingredients.json?v=v7', { cache: 'no-cache' });
   if (!res.ok) throw new Error('데이터 로드 실패');
   const data = await res.json();
   try {
@@ -159,7 +159,7 @@ function createCard(item) {
   const img = node.querySelector('.photo');
 
   title.textContent = item.name_ko || '';
-  const imgPath = `images/${item.image || '_fallback.png'}`;
+  const imgPath = `images/${item.image || '_fallback.png'}?v=v7`;
   img.alt = item.name_ko ? `${item.name_ko} 이미지` : '재료 이미지';
   img.onerror = () => { 
     img.onerror = null; 
@@ -178,7 +178,7 @@ function createCard(item) {
 
 // 모달 열기
 function openModal(item) {
-  modalImageEl.src = `images/${item.image || '_fallback.png'}`;
+  modalImageEl.src = `images/${item.image || '_fallback.png'}?v=v7`;
   modalImageEl.alt = item.name_ko ? `${item.name_ko} 이미지` : '재료 이미지';
   modalTitleEl.textContent = item.name_ko || '';
   modalDescriptionEl.textContent = item.description_ko || '';
