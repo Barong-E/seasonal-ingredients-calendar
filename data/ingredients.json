@@ -1553,43 +1553,6 @@
     "external_url": "https://link.coupang.com/a/cTFhEY"
   },
   {
-    "name_ko": "밤",
-    "category": "기타",
-    "periods": [
-      {
-        "month": 9,
-        "ten": "초순"
-      },
-      {
-        "month": 9,
-        "ten": "중순"
-      },
-      {
-        "month": 9,
-        "ten": "하순"
-      },
-      {
-        "month": 10,
-        "ten": "초순"
-      },
-      {
-        "month": 10,
-        "ten": "중순"
-      },
-      {
-        "month": 10,
-        "ten": "하순"
-      }
-    ],
-    "image": "chestnut.png",
-    "description_ko": "탄수화물, 단백질, 비타민 등 5대 영양소를 고루 갖춘 영양 간식입니다. 위장 기능을 강화하고 근력을 키우는 데 도움을 줍니다. 찌거나 구워 먹습니다.",
-    "name_en": "",
-    "name_ja": "",
-    "description_en": "",
-    "description_ja": "",
-    "external_url": "https://link.coupang.com/a/cTFjMo"
-  },
-  {
     "name_ko": "배",
     "category": "과일",
     "periods": [
@@ -2050,35 +2013,6 @@
     "description_en": "",
     "description_ja": "",
     "external_url": "https://link.coupang.com/a/cTFh2c"
-  },
-  {
-    "name_ko": "송이버섯",
-    "category": "기타",
-    "periods": [
-      {
-        "month": 9,
-        "ten": "중순"
-      },
-      {
-        "month": 9,
-        "ten": "하순"
-      },
-      {
-        "month": 10,
-        "ten": "초순"
-      },
-      {
-        "month": 10,
-        "ten": "중순"
-      }
-    ],
-    "image": "matsutake.png",
-    "description_ko": "소나무 숲에서 자라는 귀한 버섯으로, 짙고 독특한 솔 향이 특징입니다. 비타민 D와 식이섬유가 풍부하며, 항암 효과가 있는 것으로 알려져 있습니다.",
-    "name_en": "",
-    "name_ja": "",
-    "description_en": "",
-    "description_ja": "",
-    "external_url": "https://link.coupang.com/a/cTFjU3"
   },
   {
     "name_ko": "수박",
@@ -2660,35 +2594,7 @@
     "description_ja": "",
     "external_url": "https://link.coupang.com/a/cTFfd1"
   },
-  {
-    "name_ko": "은행",
-    "category": "기타",
-    "periods": [
-      {
-        "month": 9,
-        "ten": "중순"
-      },
-      {
-        "month": 9,
-        "ten": "하순"
-      },
-      {
-        "month": 10,
-        "ten": "초순"
-      },
-      {
-        "month": 10,
-        "ten": "중순"
-      }
-    ],
-    "image": "ginkgo-nut.png",
-    "description_ko": "은행나무의 열매로, 쫄깃한 식감과 특유의 향이 있습니다. 혈액순환 개선과 기관지 건강에 도움을 주지만, 소량만 섭취해야 합니다.",
-    "name_en": "",
-    "name_ja": "",
-    "description_en": "",
-    "description_ja": "",
-    "external_url": "https://link.coupang.com/a/cTFj33"
-  },
+  
   {
     "name_ko": "자두",
     "category": "과일",
@@ -3143,47 +3049,7 @@
     "description_ja": "",
     "external_url": "https://link.coupang.com/a/cTFe1c"
   },
-  {
-    "name_ko": "밤",
-    "category": "기타",
-    "periods": [
-      {
-        "month": 9,
-        "ten": "초순"
-      },
-      {
-        "month": 9,
-        "ten": "중순"
-      },
-      {
-        "month": 9,
-        "ten": "하순"
-      },
-      {
-        "month": 10,
-        "ten": "초순"
-      },
-      {
-        "month": 10,
-        "ten": "중순"
-      },
-      {
-        "month": 10,
-        "ten": "하순"
-      }
-    ],
-    "image": "chestnut.png",
-    "description_ko": "탄수화물, 단백질, 비타민 등 5대 영양소를 고루 갖춘 영양 간식입니다. 위장 기능을 강화하고 근력을 키우는 데 도움을 줍니다. 찌거나 구워 먹습니다.",
-    "preparation_ko": "겉껍질 벗기고 데쳐 율피 제거, 물기 빼 준비하면 손질이 쉽습니다.",
-    "storage_room_temp": "서늘·건조한 그늘에 단기 보관, 벌레 발생 우려 있어 주의.",
-    "storage_refrigerator": "껍질째 신문지로 싸 비닐에 넣어 보관, 2주 내 섭취 권장.",
-    "storage_freezer": "껍질 벗겨 소분 밀봉해 냉동, 최대 3개월 보관 가능합니다.",
-    "name_en": "",
-    "name_ja": "",
-    "description_en": "",
-    "description_ja": "",
-    "external_url": "https://link.coupang.com/a/cTFjU3"
-  },
+  
   {
     "name_ko": "송이버섯",
     "category": "기타",
@@ -3234,7 +3100,7 @@
         "ten": "하순"
       }
     ],
-    "image": "ginkgo.png",
+    "image": "ginkgo-nut.png",
     "description_ko": "고소한 풍미와 쫄깃한 식감이 특징. 과다 섭취는 피해야 하지만, 소량으로 영양 간식이나 요리 재료로 좋습니다.",
     "preparation_ko": "겉 껍질 제거 후 삶아 껍질을 벗기고 과육만 사용합니다.",
     "storage_room_temp": "",
