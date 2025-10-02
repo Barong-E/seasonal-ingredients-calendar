@@ -1,7 +1,7 @@
 // 제철음식 캘린더 메인 스크립트
 // 규칙: ES 모듈 없이 단일 페이지 스크립트
 
-const CACHE_KEY = 'seasons:ingredients:v5';
+const CACHE_KEY = 'seasons:ingredients:v6';
 const CACHE_TTL_MS = 24 * 60 * 60 * 1000; // 24h
 
 const CATEGORY_ORDER = { '해산물': 1, '채소': 2, '과일': 3, '기타': 4 };
@@ -66,7 +66,7 @@ async function loadIngredients() {
     }
   } catch {}
 
-  const res = await fetch('data/ingredients.json', { cache: 'no-cache' });
+  const res = await fetch('data/ingredients.json?v=v6', { cache: 'no-cache' });
   if (!res.ok) throw new Error('데이터 로드 실패');
   const data = await res.json();
   try {
@@ -122,6 +122,10 @@ const modalTitleEl = document.getElementById('modalTitle');
 const modalDescriptionEl = document.getElementById('modalDescription');
 const modalCloseEl = document.querySelector('.modal__close');
 const modalPurchaseButtonEl = document.getElementById('modalPurchaseButton');
+const modalPreparationEl = document.getElementById('modalPreparation');
+const modalPreparationTextEl = document.getElementById('modalPreparationText');
+const modalStorageEl = document.getElementById('modalStorage');
+const modalStorageContentEl = document.getElementById('modalStorageContent');
 
 // 전역 상태
 const AppState = {
@@ -178,6 +182,40 @@ function openModal(item) {
   modalImageEl.alt = item.name_ko ? `${item.name_ko} 이미지` : '재료 이미지';
   modalTitleEl.textContent = item.name_ko || '';
   modalDescriptionEl.textContent = item.description_ko || '';
+  
+  // 손질법 설정
+  if (item.preparation_ko) {
+    modalPreparationEl.style.display = 'block';
+    modalPreparationTextEl.textContent = item.preparation_ko;
+  } else {
+    modalPreparationEl.style.display = 'none';
+  }
+  
+  // 보관법 설정
+  if (item.storage_room_temp || item.storage_refrigerator || item.storage_freezer) {
+    modalStorageEl.style.display = 'block';
+    modalStorageContentEl.innerHTML = '';
+    
+    const storageTypes = [
+      { type: '실온', icon: '🏠', method: item.storage_room_temp },
+      { type: '냉장', icon: '🧊', method: item.storage_refrigerator },
+      { type: '냉동', icon: '❄️', method: item.storage_freezer }
+    ];
+    
+    storageTypes.forEach(storage => {
+      if (storage.method) {
+        const storageItem = document.createElement('div');
+        storageItem.className = 'modal__storage-item';
+        storageItem.innerHTML = `
+          <span class="modal__storage-type">${storage.icon} ${storage.type}</span>
+          <span class="modal__storage-method">${storage.method}</span>
+        `;
+        modalStorageContentEl.appendChild(storageItem);
+      }
+    });
+  } else {
+    modalStorageEl.style.display = 'none';
+  }
   
   // 구매하기 버튼 설정
   if (item.external_url) {

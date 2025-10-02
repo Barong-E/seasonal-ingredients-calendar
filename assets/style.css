@@ -421,6 +421,64 @@ body.theme-winter {
   color: #555;
 }
 
+/* 손질법과 보관법 섹션 */
+.modal__preparation,
+.modal__storage {
+  margin-top: 16px;
+  padding-top: 16px;
+  border-top: 1px solid #e9ecef;
+}
+
+.modal__section-header {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-bottom: 8px;
+}
+
+.modal__icon {
+  font-size: 1rem;
+}
+
+.modal__section-title {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--primary);
+}
+
+.modal__preparation-text {
+  margin: 0;
+  font-size: 0.85rem;
+  line-height: 1.5;
+  color: #666;
+}
+
+.modal__storage-content {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.modal__storage-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  font-size: 0.85rem;
+  line-height: 1.4;
+}
+
+.modal__storage-type {
+  font-weight: 600;
+  color: var(--accent);
+  min-width: 40px;
+  flex-shrink: 0;
+}
+
+.modal__storage-method {
+  color: #666;
+  flex: 1;
+}
+
 /* 모달 푸터 */
 .modal__footer {
   padding: 16px 24px 24px;
@@ -538,6 +596,9 @@ body.theme-winter {
   .modal__description { font-size: 0.85rem; }
   .modal__footer { padding: 12px 20px 20px; }
   .modal__purchase-btn { padding: 10px 20px; font-size: 0.9rem; min-width: 100px; }
+  .modal__preparation, .modal__storage { margin-top: 12px; padding-top: 12px; }
+  .modal__preparation-text, .modal__storage-item { font-size: 0.8rem; }
+  .modal__section-title { font-size: 0.9rem; }
 }
 
 /* Larger thumbnail on bigger screens */
