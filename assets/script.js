@@ -121,6 +121,7 @@ const modalImageEl = document.getElementById('modalImage');
 const modalTitleEl = document.getElementById('modalTitle');
 const modalDescriptionEl = document.getElementById('modalDescription');
 const modalCloseEl = document.querySelector('.modal__close');
+const modalPurchaseButtonEl = document.getElementById('modalPurchaseButton');
 
 // 전역 상태
 const AppState = {
@@ -162,100 +163,11 @@ function createCard(item) {
   };
   img.src = imgPath;
 
-  // 롱프레스로 모달 열기 (모바일 + PC 모두)
-  let pressTimer = null;
-  let touchStartPos = { x: 0, y: 0 };
-  let hasMoved = false;
-  let isLongPress = false;
-  let touchStarted = false;
-  
-  // 터치 이벤트 (모바일)
-  node.addEventListener('touchstart', (e) => {
-    hasMoved = false;
-    const touch = e.touches[0];
-    touchStartPos = { x: touch.clientX, y: touch.clientY };
-    touchStarted = true;
-    pressTimer = setTimeout(() => {
-      if (!hasMoved) {
-        isLongPress = true;
-        openModal(item);
-      }
-    }, 380);
-  }, { passive: true });
-  
-  node.addEventListener('touchmove', (e) => {
-    if (pressTimer) {
-      const touch = e.touches[0];
-      const deltaX = Math.abs(touch.clientX - touchStartPos.x);
-      const deltaY = Math.abs(touch.clientY - touchStartPos.y);
-      
-      // 10px 이상 움직이면 스크롤로 판단
-      if (deltaX > 10 || deltaY > 10) {
-        hasMoved = true;
-        clearTimeout(pressTimer);
-        pressTimer = null;
-      }
-    }
-  }, { passive: true });
-  
-  node.addEventListener('touchend', (e) => {
-    clearTimeout(pressTimer);
-    pressTimer = null;
-    
-    // 일반 터치인 경우 외부 링크로 이동
-    if (touchStarted && !isLongPress && !hasMoved && item.external_url) {
-      e.preventDefault();
-      window.open(item.external_url, '_blank', 'noopener,noreferrer');
-    }
-    isLongPress = false; // 터치 후 플래그 리셋
-    touchStarted = false;
+  // 클릭으로 모달 열기 (모바일 + PC 모두)
+  node.addEventListener('click', (e) => {
+    e.preventDefault();
+    openModal(item);
   });
-  node.addEventListener('touchcancel', () => { 
-    clearTimeout(pressTimer);
-    pressTimer = null;
-  });
-  
-  // 마우스 이벤트 (PC)
-  let mouseStartPos = { x: 0, y: 0 };
-  let mouseHasMoved = false;
-  
-  node.addEventListener('mousedown', (e) => {
-    mouseHasMoved = false;
-    mouseStartPos = { x: e.clientX, y: e.clientY };
-    pressTimer = setTimeout(() => {
-      if (!mouseHasMoved) {
-        isLongPress = true;
-        openModal(item);
-      }
-    }, 380);
-  });
-  
-  node.addEventListener('mousemove', (e) => {
-    if (pressTimer) {
-      const deltaX = Math.abs(e.clientX - mouseStartPos.x);
-      const deltaY = Math.abs(e.clientY - mouseStartPos.y);
-      
-      // 10px 이상 움직이면 드래그로 판단
-      if (deltaX > 10 || deltaY > 10) {
-        mouseHasMoved = true;
-        clearTimeout(pressTimer);
-        pressTimer = null;
-      }
-    }
-  });
-  
-  node.addEventListener('mouseup', (e) => {
-    clearTimeout(pressTimer);
-    pressTimer = null;
-    
-    // 일반 클릭인 경우 외부 링크로 이동
-    if (!isLongPress && !mouseHasMoved && item.external_url) {
-      e.preventDefault();
-      window.open(item.external_url, '_blank', 'noopener,noreferrer');
-    }
-    isLongPress = false; // 마우스 업 후 플래그 리셋
-  });
-  node.addEventListener('mouseleave', () => { clearTimeout(pressTimer); });
 
   return node;
 }
@@ -266,6 +178,16 @@ function openModal(item) {
   modalImageEl.alt = item.name_ko ? `${item.name_ko} 이미지` : '재료 이미지';
   modalTitleEl.textContent = item.name_ko || '';
   modalDescriptionEl.textContent = item.description_ko || '';
+  
+  // 구매하기 버튼 설정
+  if (item.external_url) {
+    modalPurchaseButtonEl.style.display = 'block';
+    modalPurchaseButtonEl.onclick = () => {
+      window.open(item.external_url, '_blank', 'noopener,noreferrer');
+    };
+  } else {
+    modalPurchaseButtonEl.style.display = 'none';
+  }
   
   modalEl.setAttribute('aria-hidden', 'false');
   modalEl.style.display = 'flex';

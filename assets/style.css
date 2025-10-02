@@ -421,6 +421,45 @@ body.theme-winter {
   color: #555;
 }
 
+/* 모달 푸터 */
+.modal__footer {
+  padding: 16px 24px 24px;
+  border-top: 1px solid #e9ecef;
+  display: flex;
+  justify-content: center;
+}
+
+.modal__purchase-btn {
+  background: var(--primary-gradient);
+  color: white;
+  border: none;
+  border-radius: var(--border-radius-md);
+  padding: 12px 24px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  min-width: 120px;
+}
+
+.modal__purchase-btn:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.modal__purchase-btn:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+.modal__purchase-btn:disabled {
+  background: #ccc;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
+
 /* Controls - Sticky bottom controls */
 .controls {
   padding: 20px;
@@ -497,6 +536,8 @@ body.theme-winter {
   .modal__image img { width: 60px; height: 60px; }
   .modal__name { font-size: 1.1rem; }
   .modal__description { font-size: 0.85rem; }
+  .modal__footer { padding: 12px 20px 20px; }
+  .modal__purchase-btn { padding: 10px 20px; font-size: 0.9rem; min-width: 100px; }
 }
 
 /* Larger thumbnail on bigger screens */
