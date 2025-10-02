@@ -1,7 +1,7 @@
 // 제철음식 캘린더 메인 스크립트
 // 규칙: ES 모듈 없이 단일 페이지 스크립트
 
-const CACHE_KEY = 'seasons:ingredients:v7';
+const CACHE_KEY = 'seasons:ingredients:v8';
 const CACHE_TTL_MS = 24 * 60 * 60 * 1000; // 24h
 
 const CATEGORY_ORDER = { '해산물': 1, '채소': 2, '과일': 3, '기타': 4 };
@@ -66,7 +66,7 @@ async function loadIngredients() {
     }
   } catch {}
 
-    const res = await fetch('data/ingredients.json?v=v7', { cache: 'no-cache' });
+    const res = await fetch('data/ingredients.json?v=v8', { cache: 'no-cache' });
   if (!res.ok) throw new Error('데이터 로드 실패');
   const data = await res.json();
   try {
@@ -159,7 +159,7 @@ function createCard(item) {
   const img = node.querySelector('.photo');
 
   title.textContent = item.name_ko || '';
-  const imgPath = `images/${item.image || '_fallback.png'}?v=v7`;
+  const imgPath = `images/${item.image || '_fallback.png'}?v=v8`;
   img.alt = item.name_ko ? `${item.name_ko} 이미지` : '재료 이미지';
   img.onerror = () => { 
     img.onerror = null; 
@@ -178,7 +178,7 @@ function createCard(item) {
 
 // 모달 열기
 function openModal(item) {
-  modalImageEl.src = `images/${item.image || '_fallback.png'}?v=v7`;
+  modalImageEl.src = `images/${item.image || '_fallback.png'}?v=v8`;
   modalImageEl.alt = item.name_ko ? `${item.name_ko} 이미지` : '재료 이미지';
   modalTitleEl.textContent = item.name_ko || '';
   modalDescriptionEl.textContent = item.description_ko || '';
@@ -280,7 +280,12 @@ function renderAllPeriods() {
     const signature = `${period.key}__${catsSig}__${searchSig}`;
     
     // 캐시가 동일하면 스킵
-    if (renderCache.get(period.key) === signature && grid.children.length > 0) continue;
+    if (renderCache.get(period.key) === signature && grid.children.length > 0) {
+      continue;
+    }
+    
+    // 기존 카드들 제거 (중복 방지)
+    grid.innerHTML = '';
     
     // 식재료 렌더링
     const items = queryItems(allIngredients, searchText, period.key);
@@ -288,8 +293,13 @@ function renderAllPeriods() {
       empty.style.display = 'block';
     } else {
       empty.style.display = 'none';
+      // 중복 제거: 이미 추가된 식재료는 건너뛰기
+      const addedItems = new Set();
       for (const item of items) {
-        grid.appendChild(createCard(item));
+        if (!addedItems.has(item.name_ko)) {
+          addedItems.add(item.name_ko);
+          grid.appendChild(createCard(item));
+        }
       }
     }
     renderCache.set(period.key, signature);
