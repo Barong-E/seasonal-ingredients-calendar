@@ -892,8 +892,7 @@
     "name_en": "",
     "name_ja": "",
     "description_en": "",
-    "description_ja": "",
-    "external_url": "https://link.coupang.com/a/cTFgAo"
+    "description_ja": ""
   },
   {
     "name_ko": "대하",
@@ -1162,7 +1161,8 @@
     "name_en": "",
     "name_ja": "",
     "description_en": "",
-    "description_ja": ""
+    "description_ja": "",
+    "external_url": "https://link.coupang.com/a/cU37hx"
   },
   {
     "name_ko": "매실",
@@ -1424,7 +1424,8 @@
     "name_en": "",
     "name_ja": "",
     "description_en": "",
-    "description_ja": ""
+    "description_ja": "",
+    "external_url": "https://link.coupang.com/a/cU37LM"
   },
   {
     "name_ko": "미나리",
@@ -1476,7 +1477,8 @@
     "name_en": "",
     "name_ja": "",
     "description_en": "",
-    "description_ja": ""
+    "description_ja": "",
+    "external_url": "https://link.coupang.com/a/cU37U5"
   },
   {
     "name_ko": "민어",
@@ -1669,7 +1671,7 @@
     "name_ja": "",
     "description_en": "",
     "description_ja": "",
-    "external_url": "https://link.coupang.com/a/cTFdGp"
+    "external_url": "https://link.coupang.com/a/cU39MC"
   },
   {
     "name_ko": "복숭아",
@@ -1959,7 +1961,7 @@
     "name_ja": "",
     "description_en": "",
     "description_ja": "",
-    "external_url": "https://link.coupang.com/a/cTFdGp"
+    "external_url": "https://link.coupang.com/a/cU4arn"
   },
   {
     "name_ko": "소라",
@@ -2473,7 +2475,8 @@
     "name_en": "",
     "name_ja": "",
     "description_en": "",
-    "description_ja": ""
+    "description_ja": "",
+    "external_url": "https://link.coupang.com/a/cU4a7W"
   },
   {
     "name_ko": "옥수수",
@@ -2594,7 +2597,6 @@
     "description_ja": "",
     "external_url": "https://link.coupang.com/a/cTFfd1"
   },
-  
   {
     "name_ko": "자두",
     "category": "과일",
@@ -2838,7 +2840,8 @@
     "name_en": "",
     "name_ja": "",
     "description_en": "",
-    "description_ja": ""
+    "description_ja": "",
+    "external_url": "https://link.coupang.com/a/cU4bzq"
   },
   {
     "name_ko": "취나물",
@@ -2921,6 +2924,43 @@
     "description_en": "",
     "description_ja": "",
     "external_url": "https://link.coupang.com/a/cTFjrQ"
+  },
+  {
+    "name_ko": "밤",
+    "category": "기타",
+    "periods": [
+      {
+        "month": 9,
+        "ten": "초순"
+      },
+      {
+        "month": 9,
+        "ten": "중순"
+      },
+      {
+        "month": 9,
+        "ten": "하순"
+      },
+      {
+        "month": 10,
+        "ten": "초순"
+      },
+      {
+        "month": 10,
+        "ten": "중순"
+      }
+    ],
+    "image": "chestnut.png",
+    "description_ko": "가을의 대표적인 영양 간식. 탄수화물, 단백질, 비타민이 풍부하여 성장과 피로 해소에 좋습니다. 삶거나 구워 먹으면 고소하고 달콤한 맛이 일품입니다.",
+    "preparation_ko": "겉껍질 벗기고 데쳐 율피 제거, 물기 빼 준비하면 손질이 쉽습니다.",
+    "storage_room_temp": "서늘·건조한 그늘에 단기 보관, 벌레 발생 우려 있어 주의.",
+    "storage_refrigerator": "껍질째 신문지로 싸 비닐에 넣어 보관, 2주 내 섭취 권장.",
+    "storage_freezer": "껍질 벗겨 소분 밀봉해 냉동, 최대 3개월 보관 가능합니다.",
+    "name_en": "",
+    "name_ja": "",
+    "description_en": "",
+    "description_ja": "",
+    "external_url": "https://link.coupang.com/a/cU4bVS"
   },
   {
     "name_ko": "토란",
@@ -3047,9 +3087,8 @@
     "name_ja": "",
     "description_en": "",
     "description_ja": "",
-    "external_url": "https://link.coupang.com/a/cTFe1c"
+    "external_url": "https://link.coupang.com/a/cU4ciX"
   },
-  
   {
     "name_ko": "송이버섯",
     "category": "기타",
@@ -3110,7 +3149,7 @@
     "name_ja": "",
     "description_en": "",
     "description_ja": "",
-    "external_url": "https://link.coupang.com/a/cTFfd1"
+    "external_url": "https://link.coupang.com/a/cU4cuO"
   },
   {
     "name_ko": "표고버섯",
@@ -3151,6 +3190,6 @@
     "name_ja": "",
     "description_en": "",
     "description_ja": "",
-    "external_url": "https://link.coupang.com/a/cTFeVP"
+    "external_url": "https://link.coupang.com/a/cU4cMJ"
   }
 ]
