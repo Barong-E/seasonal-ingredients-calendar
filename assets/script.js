@@ -221,6 +221,15 @@ function openModal(item) {
   if (item.external_url) {
     modalPurchaseButtonEl.style.display = 'block';
     modalPurchaseButtonEl.onclick = () => {
+      // Google Analytics 이벤트 추적
+      if (typeof gtag !== 'undefined') {
+        gtag('event', 'click', {
+          event_category: 'engagement',
+          event_label: 'purchase_link',
+          item_name: item.name_ko,
+          item_category: item.category
+        });
+      }
       window.open(item.external_url, '_blank', 'noopener,noreferrer');
     };
   } else {
@@ -230,6 +239,16 @@ function openModal(item) {
   modalEl.setAttribute('aria-hidden', 'false');
   modalEl.style.display = 'flex';
   document.body.style.overflow = 'hidden';
+  
+  // Google Analytics 이벤트 추적 - 모달 열기
+  if (typeof gtag !== 'undefined') {
+    gtag('event', 'view_item', {
+      event_category: 'engagement',
+      item_name: item.name_ko,
+      item_category: item.category,
+      item_period: item.periods ? item.periods.map(p => `${p.month}월${p.ten}`).join(',') : ''
+    });
+  }
   
   // 모바일 뒤로가기 처리를 위한 히스토리 추가
   if (history.pushState) {
@@ -398,6 +417,8 @@ function restoreScrollPosition() {
 
 // 검색 이벤트
 function initSearch() {
+  let searchTimeout;
+  
   searchInputEl.addEventListener('input', (e) => {
     const searchValue = e.target.value.trim();
     const previousSearchText = AppState.searchText.trim();
@@ -410,6 +431,19 @@ function initSearch() {
     
     AppState.searchText = e.target.value;
     renderAllPeriods();
+    
+    // 검색어 입력 완료 후 Google Analytics 이벤트 추적 (디바운싱)
+    clearTimeout(searchTimeout);
+    if (searchValue && searchValue.length >= 2) {
+      searchTimeout = setTimeout(() => {
+        if (typeof gtag !== 'undefined') {
+          gtag('event', 'search', {
+            event_category: 'engagement',
+            search_term: searchValue
+          });
+        }
+      }, 1000); // 1초 후 추적
+    }
     
     if (searchValue) {
       // 검색어가 있으면 첫 번째 결과로 스크롤
