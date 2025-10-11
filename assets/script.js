@@ -231,6 +231,11 @@ function openModal(item) {
   modalEl.style.display = 'flex';
   document.body.style.overflow = 'hidden';
   
+  // 모바일 뒤로가기 처리를 위한 히스토리 추가
+  if (history.pushState) {
+    history.pushState({ modalOpen: true, item: item.name_ko }, '', window.location.href);
+  }
+  
   // 포커스를 모달로 이동
   modalCloseEl.focus();
 }
@@ -240,6 +245,11 @@ function closeModal() {
   modalEl.setAttribute('aria-hidden', 'true');
   modalEl.style.display = 'none';
   document.body.style.overflow = '';
+  
+  // 모바일 뒤로가기 처리를 위한 히스토리 복원
+  if (history.state && history.state.modalOpen && history.back) {
+    history.back();
+  }
 }
 
 // 모든 시기 렌더링 (세로 배치)
@@ -425,6 +435,16 @@ function initModal() {
   document.addEventListener('keydown', (e) => {
     if (e.key === 'Escape' && modalEl.getAttribute('aria-hidden') === 'false') {
       closeModal();
+    }
+  });
+  
+  // 모바일 뒤로가기 버튼 처리
+  window.addEventListener('popstate', (e) => {
+    // 모달이 열려있고 히스토리 상태가 모달 관련이면 모달 닫기
+    if (modalEl.getAttribute('aria-hidden') === 'false' && e.state && e.state.modalOpen) {
+      modalEl.setAttribute('aria-hidden', 'true');
+      modalEl.style.display = 'none';
+      document.body.style.overflow = '';
     }
   });
 }
