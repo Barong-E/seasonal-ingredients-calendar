@@ -157,6 +157,7 @@ function createCard(item) {
   const title = node.querySelector('.title');
   const thumb = node.querySelector('.thumb');
   const img = node.querySelector('.photo');
+  const caloriesValue = node.querySelector('.calories-value');
 
   title.textContent = item.name_ko || '';
   const imgPath = `images/${item.image || '_fallback.png'}?v=v8`;
@@ -166,6 +167,13 @@ function createCard(item) {
     img.src = 'data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDgiIGhlaWdodD0iNDgiIHZpZXdCb3g9IjAgMCA0OCA0OCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjQ4IiBoZWlnaHQ9IjQ4IiBmaWxsPSIjRjVGNUY1Ii8+CjxwYXRoIGQ9Ik0xMiAxMkgzNlYzNkgxMlYxMloiIGZpbGw9IiNEOUQ5RDkiLz4KPHN2Zz4K';
   };
   img.src = imgPath;
+
+  // 칼로리 정보 표시
+  if (item.calories_per_100g) {
+    caloriesValue.textContent = `${item.calories_per_100g}kcal`;
+  } else {
+    caloriesValue.textContent = '-';
+  }
 
   // 클릭으로 모달 열기 (모바일 + PC 모두)
   node.addEventListener('click', (e) => {
@@ -182,6 +190,23 @@ function openModal(item) {
   modalImageEl.alt = item.name_ko ? `${item.name_ko} 이미지` : '재료 이미지';
   modalTitleEl.textContent = item.name_ko || '';
   modalDescriptionEl.textContent = item.description_ko || '';
+  
+  // 칼로리 정보 설정
+  const modalCaloriesEl = document.getElementById('modalCalories');
+  const modalCaloriesPer100gEl = document.getElementById('modalCaloriesPer100g');
+  const modalCaloriesPerServingEl = document.getElementById('modalCaloriesPerServing');
+  
+  if (item.calories_per_100g) {
+    modalCaloriesEl.style.display = 'block';
+    modalCaloriesPer100gEl.textContent = `${item.calories_per_100g}kcal`;
+    if (item.calories_per_serving) {
+      modalCaloriesPerServingEl.textContent = item.calories_per_serving;
+    } else {
+      modalCaloriesPerServingEl.textContent = '';
+    }
+  } else {
+    modalCaloriesEl.style.display = 'none';
+  }
   
   // 손질법 설정
   if (item.preparation_ko) {

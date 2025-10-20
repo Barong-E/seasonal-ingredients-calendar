@@ -85,7 +85,13 @@
         <div class="thumb" aria-hidden="true">
           <img class="photo" src="" alt="" width="600" height="600" loading="lazy" />
         </div>
-        <div class="title" aria-label="이름"></div>
+        <div class="card-content">
+          <div class="title" aria-label="이름"></div>
+          <div class="calories" aria-label="칼로리">
+            <span class="calories-icon">🔥</span>
+            <span class="calories-value"></span>
+          </div>
+        </div>
       </div>
     </template>
 
@@ -101,6 +107,22 @@
           <div class="modal__info">
             <h3 id="modalTitle" class="modal__name"></h3>
             <p id="modalDescription" class="modal__description"></p>
+            
+            <div id="modalCalories" class="modal__calories" style="display: none;">
+              <div class="modal__section-header">
+                <span class="modal__icon">🔥</span>
+                <span class="modal__section-title">칼로리 정보</span>
+              </div>
+              <div class="modal__calories-content">
+                <div class="calories-row">
+                  <span class="calories-label">100g당</span>
+                  <span id="modalCaloriesPer100g" class="calories-number"></span>
+                </div>
+                <div class="calories-row">
+                  <span id="modalCaloriesPerServing" class="calories-serving"></span>
+                </div>
+              </div>
+            </div>
             
             <div id="modalPreparation" class="modal__preparation" style="display: none;">
               <div class="modal__section-header">
