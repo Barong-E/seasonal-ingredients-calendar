@@ -11,9 +11,7 @@ body {
   color: var(--text);
 }
 
-main {
-  /* 내부 스크롤 제거: 문서(body)만 스크롤 */
-}
+/* main 스타일은 필요에 따라 추가 */
 
 /* Colors - 기본 변수 (계절 테마로 오버라이드됨) */
 :root {
@@ -90,6 +88,86 @@ body.theme-winter {
   left: 0;
   right: 0;
   z-index: 100;
+}
+
+.holiday-banner {
+  position: fixed;
+  top: var(--header-offset);
+  left: 0;
+  right: 0;
+  z-index: 99;
+  width: 100%;
+  cursor: pointer;
+  transition: transform 0.4s ease-out;
+  border-top: 1px solid var(--glass-border);
+  background-color: #f5f8ff;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.holiday-banner.hidden {
+  transform: translateY(-100%);
+}
+
+.holiday-banner:hover {
+  background-color: #eaf1ff;
+}
+
+.holiday-banner__content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.holiday-banner__text {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.holiday-banner__text p {
+  margin: 0;
+  color: #333;
+}
+
+.holiday-banner__date {
+  font-weight: 600;
+  font-size: 1rem;
+  color: #2c5282;
+}
+
+.holiday-banner__description {
+  font-size: 0.9rem;
+  margin-top: 4px;
+  color: #4a5568;
+}
+
+.holiday-banner__image {
+  width: 60px;
+  height: 60px;
+  border-radius: 12px;
+  object-fit: cover;
+  background-color: #f0f0f0;
+  border: 1px solid rgba(0,0,0,0.05);
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+@media (max-width: 600px) {
+  .holiday-banner__content {
+    padding: 10px 16px;
+  }
+  .holiday-banner__date {
+    font-size: 0.9rem;
+  }
+  .holiday-banner__description {
+    font-size: 0.8rem;
+  }
+  .holiday-banner__image {
+    width: 50px;
+    height: 50px;
+  }
 }
 
 .app-header::before {
@@ -199,9 +277,12 @@ body.theme-winter {
   padding: calc(var(--header-offset, 0px) + 12px) 20px 20px;
 }
 
-.carousel__container {
-  /* Remove horizontal scroll styles */
+/* 배너가 있을 때 메인 콘텐츠 패딩 조정 */
+body.has-banner .carousel {
+  padding-top: calc(var(--header-offset, 0px) + 80px + 12px); /* 헤더 + 배너 높이 + 여유 */
 }
+
+/* carousel__container 스타일은 필요에 따라 추가 */
 
 .carousel__track {
   display: block; /* Change from flex to block for vertical layout */
@@ -400,6 +481,8 @@ body.theme-winter {
   overflow: hidden;
   transform: scale(0.9) translateY(20px);
   transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  display: flex;
+  flex-direction: column;
 }
 .modal[aria-hidden="false"] .modal__content {
   transform: scale(1) translateY(0);
@@ -423,6 +506,28 @@ body.theme-winter {
   display: flex;
   padding: 24px;
   gap: 16px;
+  flex: 1;
+  overflow-y: auto;
+  min-height: 0; /* flexbox에서 스크롤을 위해 필요 */
+}
+
+/* 모달 스크롤바 스타일링 */
+.modal__body::-webkit-scrollbar {
+  width: 6px;
+}
+
+.modal__body::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 3px;
+}
+
+.modal__body::-webkit-scrollbar-thumb {
+  background: #c1c1c1;
+  border-radius: 3px;
+}
+
+.modal__body::-webkit-scrollbar-thumb:hover {
+  background: #a8a8a8;
 }
 .modal__image {
   flex: 0 0 auto;
@@ -553,12 +658,65 @@ body.theme-winter {
   flex: 1;
 }
 
+/* 명절 모달 관련 스타일 */
+.modal__section {
+  margin-top: 16px;
+  padding-top: 16px;
+  border-top: 1px solid #e9ecef;
+}
+
+.modal__section-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+.modal__icon {
+  font-size: 1.2rem;
+  margin-right: 8px;
+}
+
+.modal__section-title {
+  font-weight: 600;
+  font-size: 1rem;
+  color: #333;
+}
+
+.modal__section-content .item {
+  margin-bottom: 10px;
+}
+
+.modal__section-content .item__name {
+  font-weight: 600;
+  color: #555;
+  display: block;
+  margin-bottom: 4px;
+}
+
+.modal__section-content .item__description {
+  font-size: 0.9rem;
+  color: #666;
+  line-height: 1.6;
+}
+
+.modal__story {
+  margin-top: 16px;
+  padding: 12px;
+  background-color: #f8f9fa;
+  border-left: 3px solid #6c757d;
+  border-radius: 6px;
+  font-size: 0.85rem;
+  color: #495057;
+  line-height: 1.6;
+}
+
 /* 모달 푸터 */
 .modal__footer {
   padding: 16px 24px 24px;
   border-top: 1px solid #e9ecef;
   display: flex;
   justify-content: center;
+  flex-shrink: 0; /* 푸터가 축소되지 않도록 */
 }
 
 .modal__purchase-btn {
@@ -663,8 +821,15 @@ body.theme-winter {
   .search-input { padding: 12px 16px; }
   
   .modal { padding: 16px; }
-  .modal__content { max-width: none; }
-  .modal__body { padding: 20px; gap: 12px; }
+  .modal__content { 
+    max-width: none; 
+    max-height: 95vh; /* 모바일에서 더 많은 공간 사용 */
+  }
+  .modal__body { 
+    padding: 20px; 
+    gap: 12px; 
+    max-height: calc(95vh - 120px); /* 푸터 공간 확보 */
+  }
   .modal__image img { width: 60px; height: 60px; }
   .modal__name { font-size: 1.1rem; }
   .modal__description { font-size: 0.85rem; }

@@ -59,11 +59,21 @@
               <path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/>
             </svg>
           </button>
-        </div>
-      </div>
-    </header>
+    </div>
+  </div>
+</header>
 
-    <main>
+<section id="holidayBanner" class="holiday-banner" style="display: none;" role="banner" aria-label="다가오는 명절·절기 정보">
+  <div class="holiday-banner__content">
+    <div class="holiday-banner__text">
+      <p class="holiday-banner__date"></p>
+      <p class="holiday-banner__description"></p>
+    </div>
+    <img class="holiday-banner__image" src="" alt="" width="80" height="80" />
+  </div>
+</section>
+
+<main>
       <section class="carousel" aria-label="시기 선택">
         <div id="carouselContainer" class="carousel__container">
           <div id="periodTrack" class="carousel__track" aria-live="polite"></div>
@@ -143,11 +153,48 @@
         </div>
         <div class="modal__footer">
           <button id="modalPurchaseButton" class="modal__purchase-btn" type="button">구매하기</button>
+    </div>
+  </div>
+</div>
+
+<!-- 명절/절기 상세 정보 모달 -->
+<div id="holidayModal" class="modal" role="dialog" aria-modal="true" aria-labelledby="holidayModalTitle" aria-hidden="true">
+  <div class="modal__backdrop" aria-hidden="true"></div>
+  <div class="modal__content">
+    <button class="modal__close" aria-label="닫기" type="button">×</button>
+    <div class="modal__body">
+      <div class="modal__image">
+        <img id="holidayModalImage" src="" alt="" width="120" height="120" />
+      </div>
+      <div class="modal__info">
+        <h3 id="holidayModalTitle" class="modal__name"></h3>
+        <p id="holidayModalSummary" class="modal__description"></p>
+        
+        <div id="holidayModalStory" class="modal__story" style="display: none;">
+          <p id="holidayModalStoryContent"></p>
+        </div>
+
+        <div id="holidayModalFoods" class="modal__section" style="display: none;">
+          <div class="modal__section-header">
+            <span class="modal__icon">🍲</span>
+            <span class="modal__section-title">대표 음식</span>
+          </div>
+          <div id="holidayModalFoodsContent" class="modal__section-content"></div>
+        </div>
+        
+        <div id="holidayModalCustoms" class="modal__section" style="display: none;">
+          <div class="modal__section-header">
+            <span class="modal__icon">🎎</span>
+            <span class="modal__section-title">대표 풍습</span>
+          </div>
+          <div id="holidayModalCustomsContent" class="modal__section-content"></div>
         </div>
       </div>
     </div>
+  </div>
+</div>
 
-    <script src="assets/script.js?v=v8" defer></script>
+<script src="assets/script.js?v=v10" defer></script>
   </body>
   </html>
 

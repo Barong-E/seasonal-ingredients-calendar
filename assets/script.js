@@ -1,11 +1,245 @@
 // 제철음식 캘린더 메인 스크립트
 // 규칙: ES 모듈 없이 단일 페이지 스크립트
 
-const CACHE_KEY = 'seasons:ingredients:v8';
+const CACHE_KEY = 'seasons:ingredients:v10';
 const CACHE_TTL_MS = 24 * 60 * 60 * 1000; // 24h
 
 const CATEGORY_ORDER = { '해산물': 1, '채소': 2, '과일': 3, '기타': 4 };
 const TENS = ['초순', '중순', '하순'];
+
+// --- 명절/절기 관련 로직 시작 ---
+
+async function loadHolidays() {
+  try {
+    const res = await fetch('data/holidays.json?v=v10');
+    if (!res.ok) throw new Error('명절 데이터 로드 실패');
+    return await res.json();
+  } catch (err) {
+    console.error(err);
+    return [];
+  }
+}
+
+function getUpcomingHoliday(holidays) {
+  const today = new Date();
+  today.setHours(0, 0, 0, 0);
+  const currentYear = today.getFullYear();
+  
+  let upcoming = null;
+  let minDiff = Infinity;
+
+  // 헬퍼: 연도별 양력 오버라이드 우선 적용
+  function getSolarOverrideDate(holiday, year) {
+    const overrides = holiday.solar_overrides;
+    if (!overrides) return null;
+    const key = String(year);
+    const data = overrides[key];
+    if (!data) return null;
+    if (typeof data === 'string') {
+      const parts = data.split('-');
+      if (parts.length !== 2) return null;
+      const mm = parseInt(parts[0], 10);
+      const dd = parseInt(parts[1], 10);
+      if (!mm || !dd) return null;
+      return new Date(year, mm - 1, dd);
+    }
+    if (typeof data === 'object' && data.month && data.day) {
+      return new Date(year, data.month - 1, data.day);
+    }
+    return null;
+  }
+
+  holidays.forEach(holiday => {
+    let holidayDate;
+    const { type, month, day } = holiday.date;
+
+    // 1) 오버라이드 우선
+    holidayDate = getSolarOverrideDate(holiday, currentYear);
+    // 2) 오버라이드 없으면 타입별 계산
+    if (!holidayDate) {
+      if (type === 'lunar') {
+        // solar_overrides가 신뢰도의 원천이므로, 여기서의 계산은 매우 대략적인 fallback임
+        holidayDate = new Date(currentYear, month - 1, day);
+      } else if (type === 'solar') {
+        holidayDate = new Date(currentYear, month - 1, day);
+      } else { // 'dynamic' for 동지
+        if (currentYear === 2025) {
+          holidayDate = new Date(2025, 11, 22); // 수정: 22일
+        } else if (currentYear === 2026) {
+          holidayDate = new Date(2026, 11, 22);
+        } else {
+          holidayDate = new Date(currentYear, 11, 22); // 기본값
+        }
+      }
+    }
+
+    // 이미 지난 날짜면 내년 날짜로 계산
+    if (holidayDate < today) {
+      const nextYear = currentYear + 1;
+      // 1) 내년도 오버라이드 우선
+      let nextDate = getSolarOverrideDate(holiday, nextYear);
+      if (!nextDate) {
+        if (type === 'lunar') {
+          nextDate = new Date(nextYear, month - 1, day);
+        } else if (type === 'solar') {
+          nextDate = new Date(nextYear, month - 1, day);
+        } else {
+          if (nextYear === 2025) {
+            nextDate = new Date(2025, 11, 22); // 수정: 22일
+          } else if (nextYear === 2026) {
+            nextDate = new Date(2026, 11, 22);
+          } else {
+            nextDate = new Date(nextYear, 11, 22); // 기본값
+          }
+        }
+      }
+      holidayDate = nextDate;
+    }
+
+    const diff = holidayDate.getTime() - today.getTime();
+    if (diff >= 0 && diff < minDiff) {
+      minDiff = diff;
+      upcoming = { ...holiday, solarDate: holidayDate };
+    }
+  });
+
+  return upcoming;
+}
+
+function displayHolidayBanner(holiday) {
+  if (!holiday) return;
+
+  const banner = document.getElementById('holidayBanner');
+  const dateEl = banner.querySelector('.holiday-banner__date');
+  const descriptionEl = banner.querySelector('.holiday-banner__description');
+  const imageEl = banner.querySelector('.holiday-banner__image');
+
+  const month = holiday.solarDate.getMonth() + 1;
+  const day = holiday.solarDate.getDate();
+
+  dateEl.textContent = `${month}월 ${day}일은 ${holiday.name}입니다.`;
+  descriptionEl.textContent = `${holiday.name}에는 ${holiday.main_food} 먹어요`;
+  imageEl.src = `images/${holiday.image}`;
+  imageEl.alt = holiday.name;
+
+  banner.style.display = 'block';
+  document.body.classList.add('has-banner'); // 배너가 있을 때 body에 클래스 추가
+  
+  banner.addEventListener('click', () => {
+    openHolidayModal(holiday);
+  });
+}
+
+// 배너 스크롤 동작 - 헤더와 함께 움직이도록 수정
+function initBannerScroll() {
+  const banner = document.getElementById('holidayBanner');
+  if (!banner) return;
+
+  let lastScrollY = window.scrollY;
+  let ticking = false;
+
+  const updateBanner = () => {
+    const currentScrollY = window.scrollY;
+    const headerHeight = getHeaderHeight();
+    
+    // 배너 위치를 헤더 아래로 동적으로 조정
+    banner.style.top = `${headerHeight}px`;
+    
+    // 스크롤을 올리거나 최상단 근처일 때 배너 보임
+    if (currentScrollY < lastScrollY || currentScrollY <= 50) {
+      banner.classList.remove('hidden');
+      document.body.classList.add('has-banner');
+    } else {
+      // 아래로 스크롤할 때 배너 숨김
+      banner.classList.add('hidden');
+      document.body.classList.remove('has-banner');
+    }
+    
+    lastScrollY = currentScrollY <= 0 ? 0 : currentScrollY;
+    ticking = false;
+  };
+
+  // 초기 배너 위치 설정
+  updateBanner();
+
+  window.addEventListener('scroll', () => {
+    if (!ticking) {
+      window.requestAnimationFrame(updateBanner);
+      ticking = true;
+    }
+  });
+
+  // 윈도우 리사이즈 시에도 배너 위치 업데이트
+  window.addEventListener('resize', () => {
+    requestAnimationFrame(updateBanner);
+  });
+}
+
+function openHolidayModal(holiday) {
+  const modal = document.getElementById('holidayModal');
+  if (!modal) return;
+
+  // DOM 요소들 가져오기
+  modal.querySelector('#holidayModalTitle').textContent = holiday.name;
+  modal.querySelector('#holidayModalSummary').textContent = holiday.summary;
+  modal.querySelector('#holidayModalImage').src = `images/${holiday.image}`;
+  modal.querySelector('#holidayModalImage').alt = holiday.name;
+
+  // 관련 이야기
+  const storyEl = modal.querySelector('#holidayModalStory');
+  if (holiday.story) {
+    const storyContent = `<strong>${holiday.story.title}</strong><br>${holiday.story.content}`;
+    modal.querySelector('#holidayModalStoryContent').innerHTML = storyContent;
+    storyEl.style.display = 'block';
+  } else {
+    storyEl.style.display = 'none';
+  }
+
+  // 대표 음식
+  const foodsEl = modal.querySelector('#holidayModalFoods');
+  const foodsContentEl = modal.querySelector('#holidayModalFoodsContent');
+  if (holiday.details.foods && holiday.details.foods.length > 0) {
+    foodsContentEl.innerHTML = holiday.details.foods.map(food => `
+      <div class="item">
+        <span class="item__name">${food.name}</span>
+        <p class="item__description">${food.description}</p>
+      </div>
+    `).join('');
+    foodsEl.style.display = 'block';
+  } else {
+    foodsEl.style.display = 'none';
+  }
+
+  // 대표 풍습
+  const customsEl = modal.querySelector('#holidayModalCustoms');
+  const customsContentEl = modal.querySelector('#holidayModalCustomsContent');
+  if (holiday.details.customs && holiday.details.customs.length > 0) {
+    customsContentEl.innerHTML = holiday.details.customs.map(custom => `
+      <div class="item">
+        <span class="item__name">${custom.name}</span>
+        <p class="item__description">${custom.description}</p>
+      </div>
+    `).join('');
+    customsEl.style.display = 'block';
+  } else {
+    customsEl.style.display = 'none';
+  }
+
+  modal.setAttribute('aria-hidden', 'false');
+  modal.style.display = 'flex';
+  document.body.style.overflow = 'hidden';
+  modal.querySelector('.modal__close').focus();
+}
+
+function closeHolidayModal() {
+  const modal = document.getElementById('holidayModal');
+  if (!modal) return;
+  modal.setAttribute('aria-hidden', 'true');
+  modal.style.display = 'none';
+  document.body.style.overflow = '';
+}
+
+// --- 명절/절기 관련 로직 끝 ---
 
 // 유틸: 날짜 → ten
 function getTenByDay(day) {
@@ -446,10 +680,26 @@ function initModal() {
       closeModal();
     }
   });
+
+  // 명절 모달 이벤트 핸들러 추가
+  const holidayModal = document.getElementById('holidayModal');
+  if (holidayModal) {
+    holidayModal.querySelector('.modal__close').addEventListener('click', closeHolidayModal);
+    holidayModal.addEventListener('click', (e) => {
+      if (e.target === holidayModal || e.target.classList.contains('modal__backdrop')) {
+        closeHolidayModal();
+      }
+    });
+  }
   
   document.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape' && modalEl.getAttribute('aria-hidden') === 'false') {
-      closeModal();
+    if (e.key === 'Escape') {
+      if (modalEl.getAttribute('aria-hidden') === 'false') {
+        closeModal();
+      }
+      if (holidayModal && holidayModal.getAttribute('aria-hidden') === 'false') {
+        closeHolidayModal();
+      }
     }
   });
 }
@@ -505,10 +755,17 @@ function initTodayButton() {
 async function init() {
   try {
     AppState.allIngredients = await loadIngredients();
+    
+    // 명절/절기 배너 로드 및 표시
+    const holidays = await loadHolidays();
+    const upcomingHoliday = getUpcomingHoliday(holidays);
+    displayHolidayBanner(upcomingHoliday);
+
     renderAllPeriods();
     initSearch();
     initModal();
     initTodayButton();
+    initBannerScroll(); // 배너 스크롤 기능 초기화
     syncHeaderOffset();
     window.addEventListener('resize', () => { requestAnimationFrame(syncHeaderOffset); });
     window.addEventListener('orientationchange', () => { setTimeout(syncHeaderOffset, 250); });
