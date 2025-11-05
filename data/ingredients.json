@@ -44,7 +44,8 @@
     "name_en": "",
     "name_ja": "",
     "description_en": "",
-    "description_ja": ""
+    "description_ja": "",
+    "popular_dish": "가지나물, 가지볶음"
   },
   {
     "name_ko": "감",
@@ -87,7 +88,8 @@
     "name_en": "",
     "name_ja": "",
     "description_en": "",
-    "description_ja": ""
+    "description_ja": "",
+    "popular_dish": "생과일로 먹거나 곶감으로 즐깁니다"
   },
   {
     "name_ko": "감자",
@@ -138,7 +140,8 @@
     "name_en": "",
     "name_ja": "",
     "description_en": "",
-    "description_ja": ""
+    "description_ja": "",
+    "popular_dish": "감자조림, 감자전"
   },
   {
     "name_ko": "갈치",
@@ -201,7 +204,8 @@
     "name_en": "",
     "name_ja": "",
     "description_en": "",
-    "description_ja": ""
+    "description_ja": "",
+    "popular_dish": "갈치조림"
   },
   {
     "name_ko": "가리비",
@@ -244,7 +248,8 @@
     "name_en": "",
     "name_ja": "",
     "description_en": "",
-    "description_ja": ""
+    "description_ja": "",
+    "popular_dish": "가리비구이"
   },
   {
     "name_ko": "광어",
@@ -299,7 +304,8 @@
     "name_en": "",
     "name_ja": "",
     "description_en": "",
-    "description_ja": ""
+    "description_ja": "",
+    "popular_dish": "광어회"
   },
   {
     "name_ko": "과메기",
@@ -350,7 +356,8 @@
     "name_en": "",
     "name_ja": "",
     "description_en": "",
-    "description_ja": ""
+    "description_ja": "",
+    "popular_dish": "과메기 무채 곁들임"
   },
   {
     "name_ko": "고구마",
@@ -397,7 +404,8 @@
     "name_en": "",
     "name_ja": "",
     "description_en": "",
-    "description_ja": ""
+    "description_ja": "",
+    "popular_dish": "군고구마, 고구마맛탕"
   },
   {
     "name_ko": "고등어",
@@ -440,7 +448,8 @@
     "name_en": "",
     "name_ja": "",
     "description_en": "",
-    "description_ja": ""
+    "description_ja": "",
+    "popular_dish": "고등어조림, 고등어구이"
   },
   {
     "name_ko": "굴",
@@ -507,7 +516,8 @@
     "description_en": "",
     "description_ja": "",
     "calories_per_100g": 97,
-    "calories_per_serving": "생굴 5개(100g) 약 97kcal"
+    "calories_per_serving": "생굴 5개(100g) 약 97kcal",
+    "popular_dish": "굴전, 굴국밥"
   },
   {
     "name_ko": "꽁치",
@@ -550,7 +560,8 @@
     "description_en": "",
     "description_ja": "",
     "calories_per_100g": 310,
-    "calories_per_serving": "1마리(120g) 약 372kcal"
+    "calories_per_serving": "1마리(120g) 약 372kcal",
+    "popular_dish": "꽁치구이"
   },
   {
     "name_ko": "꼬막",
@@ -617,7 +628,8 @@
     "description_ja": "",
     "external_url": "https://link.coupang.com/a/cTFf7a",
     "calories_per_100g": 76,
-    "calories_per_serving": "삶은 살 10개(50g) 약 38kcal"
+    "calories_per_serving": "삶은 살 10개(50g) 약 38kcal",
+    "popular_dish": "꼬막무침, 꼬막비빔밥"
   },
   {
     "name_ko": "꽃게",
@@ -660,7 +672,8 @@
     "description_ja": "",
     "external_url": "https://link.coupang.com/a/cTFgd2",
     "calories_per_100g": 72,
-    "calories_per_serving": "1마리 살(100g) 약 72kcal"
+    "calories_per_serving": "1마리 살(100g) 약 72kcal",
+    "popular_dish": "꽃게찜, 간장게장"
   },
   {
     "name_ko": "깻잎",
@@ -711,7 +724,8 @@
     "description_ja": "",
     "external_url": "https://link.coupang.com/a/cTFaan",
     "calories_per_100g": 41,
-    "calories_per_serving": "10장(20g) 약 8kcal"
+    "calories_per_serving": "10장(20g) 약 8kcal",
+    "popular_dish": "깻잎찜, 깻잎김치"
   },
   {
     "name_ko": "냉이",
@@ -750,7 +764,8 @@
     "description_ja": "",
     "external_url": "https://link.coupang.com/a/cTFaja",
     "calories_per_100g": 34,
-    "calories_per_serving": "한 줌(50g) 약 17kcal"
+    "calories_per_serving": "한 줌(50g) 약 17kcal",
+    "popular_dish": "냉이국, 냉이무침"
   },
   {
     "name_ko": "농어",
@@ -793,7 +808,8 @@
     "description_en": "",
     "description_ja": "",
     "calories_per_100g": 105,
-    "calories_per_serving": "회 1인분(120g) 약 126kcal"
+    "calories_per_serving": "회 1인분(120g) 약 126kcal",
+    "popular_dish": "농어회, 농어탕"
   },
   {
     "name_ko": "늙은 호박",
@@ -844,7 +860,8 @@
     "description_ja": "",
     "external_url": "https://link.coupang.com/a/cTFatG",
     "calories_per_100g": 27,
-    "calories_per_serving": "죽 1그릇분(200g) 약 54kcal"
+    "calories_per_serving": "죽 1그릇분(200g) 약 54kcal",
+    "popular_dish": "호박죽, 호박전"
   },
   {
     "name_ko": "달래",
@@ -883,7 +900,8 @@
     "description_ja": "",
     "external_url": "https://link.coupang.com/a/cTFaC7",
     "calories_per_100g": 37,
-    "calories_per_serving": "한 줌(30g) 약 11kcal"
+    "calories_per_serving": "한 줌(30g) 약 11kcal",
+    "popular_dish": "달래장, 달래무침"
   },
   {
     "name_ko": "대구",
@@ -930,7 +948,8 @@
     "description_en": "",
     "description_ja": "",
     "calories_per_100g": 82,
-    "calories_per_serving": "1토막(100g) 약 82kcal"
+    "calories_per_serving": "1토막(100g) 약 82kcal",
+    "popular_dish": "대구탕, 대구찜"
   },
   {
     "name_ko": "대하",
@@ -985,7 +1004,8 @@
     "storage_freezer": "머리 떼고 소분 냉동, 해동 후 즉시 조리하면 식감 유지.",
     "external_url": "https://link.coupang.com/a/cTFgFR",
     "calories_per_100g": 99,
-    "calories_per_serving": "큰 것 1마리(50g) 약 50kcal"
+    "calories_per_serving": "큰 것 1마리(50g) 약 50kcal",
+    "popular_dish": "대하구이, 대하찜"
   },
   {
     "name_ko": "더덕",
@@ -1040,7 +1060,8 @@
     "description_ja": "",
     "external_url": "https://link.coupang.com/a/cTFaKD",
     "calories_per_100g": 69,
-    "calories_per_serving": "1뿌리(50g) 약 35kcal"
+    "calories_per_serving": "1뿌리(50g) 약 35kcal",
+    "popular_dish": "더덕구이"
   },
   {
     "name_ko": "도다리",
@@ -1079,7 +1100,8 @@
     "description_en": "",
     "description_ja": "",
     "calories_per_100g": 86,
-    "calories_per_serving": "1토막(100g) 약 86kcal"
+    "calories_per_serving": "1토막(100g) 약 86kcal",
+    "popular_dish": "도다리쑥국"
   },
   {
     "name_ko": "두릅",
@@ -1114,7 +1136,8 @@
     "description_ja": "",
     "external_url": "https://link.coupang.com/a/cTFaSS",
     "calories_per_100g": 38,
-    "calories_per_serving": "10순(50g) 약 19kcal"
+    "calories_per_serving": "10순(50g) 약 19kcal",
+    "popular_dish": "두릅무침"
   },
   {
     "name_ko": "딸기",
@@ -1165,7 +1188,8 @@
     "description_ja": "",
     "external_url": "https://link.coupang.com/a/cTFdc2",
     "calories_per_100g": 34,
-    "calories_per_serving": "중간 크기 1개(15g) 약 5kcal"
+    "calories_per_serving": "중간 크기 1개(15g) 약 5kcal",
+    "popular_dish": "생과일로 먹거나 딸기잼을 만듭니다"
   },
   {
     "name_ko": "매생이",
@@ -1212,7 +1236,8 @@
     "description_ja": "",
     "external_url": "https://link.coupang.com/a/cU37hx",
     "calories_per_100g": 16,
-    "calories_per_serving": "국 1그릇(50g) 약 8kcal"
+    "calories_per_serving": "국 1그릇(50g) 약 8kcal",
+    "popular_dish": "매생이굴국"
   },
   {
     "name_ko": "매실",
@@ -1243,7 +1268,8 @@
     "description_ja": "",
     "external_url": "https://link.coupang.com/a/cTFdsw",
     "calories_per_100g": 28,
-    "calories_per_serving": "1개(20g) 약 6kcal"
+    "calories_per_serving": "1개(20g) 약 6kcal",
+    "popular_dish": "매실청, 매실장아찌"
   },
   {
     "name_ko": "멍게",
@@ -1282,7 +1308,8 @@
     "description_ja": "",
     "external_url": "https://link.coupang.com/a/cTFgMq",
     "calories_per_100g": 70,
-    "calories_per_serving": "1개(50g) 약 35kcal"
+    "calories_per_serving": "1개(50g) 약 35kcal",
+    "popular_dish": "멍게초무침, 멍게비빔밥"
   },
   {
     "name_ko": "멸치",
@@ -1325,7 +1352,8 @@
     "description_ja": "",
     "external_url": "https://link.coupang.com/a/cTFgTJ",
     "calories_per_100g": 224,
-    "calories_per_serving": "한 줌(20g) 약 45kcal"
+    "calories_per_serving": "한 줌(20g) 약 45kcal",
+    "popular_dish": "멸치볶음"
   },
   {
     "name_ko": "명태(동태)",
@@ -1368,7 +1396,8 @@
     "description_ja": "",
     "external_url": "https://link.coupang.com/a/cTFg1y",
     "calories_per_100g": 83,
-    "calories_per_serving": "1토막(100g) 약 83kcal"
+    "calories_per_serving": "1토막(100g) 약 83kcal",
+    "popular_dish": "동태찌개, 명태조림"
   },
   {
     "name_ko": "무",
@@ -1407,7 +1436,8 @@
     "description_ja": "",
     "external_url": "https://link.coupang.com/a/cTFcwl",
     "calories_per_100g": 18,
-    "calories_per_serving": "중간 크기 1개(1kg) 약 180kcal"
+    "calories_per_serving": "중간 크기 1개(1kg) 약 180kcal",
+    "popular_dish": "무국, 무조림, 깍두기"
   },
   {
     "name_ko": "무화과",
@@ -1450,7 +1480,8 @@
     "description_ja": "",
     "external_url": "https://link.coupang.com/a/cTFdkO",
     "calories_per_100g": 54,
-    "calories_per_serving": "1개(60g) 약 32kcal"
+    "calories_per_serving": "1개(60g) 약 32kcal",
+    "popular_dish": "생과일로 섭취합니다"
   },
   {
     "name_ko": "미꾸라지",
@@ -1489,7 +1520,8 @@
     "description_ja": "",
     "external_url": "https://link.coupang.com/a/cU37LM",
     "calories_per_100g": 90,
-    "calories_per_serving": "10마리(100g) 약 90kcal"
+    "calories_per_serving": "10마리(100g) 약 90kcal",
+    "popular_dish": "추어탕"
   },
   {
     "name_ko": "미나리",
@@ -1544,7 +1576,8 @@
     "description_ja": "",
     "external_url": "https://link.coupang.com/a/cU37U5",
     "calories_per_100g": 18,
-    "calories_per_serving": "한 줌(100g) 약 18kcal"
+    "calories_per_serving": "한 줌(100g) 약 18kcal",
+    "popular_dish": "미나리무침, 미나리전"
   },
   {
     "name_ko": "민어",
@@ -1579,7 +1612,8 @@
     "description_ja": "",
     "external_url": "https://link.coupang.com/a/cTFhdM",
     "calories_per_100g": 118,
-    "calories_per_serving": "1토막(100g) 약 118kcal"
+    "calories_per_serving": "1토막(100g) 약 118kcal",
+    "popular_dish": "민어회, 민어구이"
   },
   {
     "name_ko": "바지락",
@@ -1622,7 +1656,8 @@
     "description_ja": "",
     "external_url": "https://link.coupang.com/a/cTFhEY",
     "calories_per_100g": 60,
-    "calories_per_serving": "살 한 줌(100g) 약 60kcal"
+    "calories_per_serving": "살 한 줌(100g) 약 60kcal",
+    "popular_dish": "바지락칼국수, 바지락술찜"
   },
   {
     "name_ko": "배",
@@ -1677,7 +1712,8 @@
     "description_ja": "",
     "external_url": "https://link.coupang.com/a/cTFe71",
     "calories_per_100g": 51,
-    "calories_per_serving": "중간 크기 1개(300g) 약 153kcal"
+    "calories_per_serving": "중간 크기 1개(300g) 약 153kcal",
+    "popular_dish": "생과일로 먹거나 배숙을 만듭니다"
   },
   {
     "name_ko": "배추",
@@ -1716,7 +1752,8 @@
     "description_ja": "",
     "external_url": "https://link.coupang.com/a/cTFcC7",
     "calories_per_100g": 14,
-    "calories_per_serving": "중간 크기 1포기(2kg) 약 280kcal"
+    "calories_per_serving": "중간 크기 1포기(2kg) 약 280kcal",
+    "popular_dish": "김치, 배추국"
   },
   {
     "name_ko": "복분자",
@@ -1747,7 +1784,8 @@
     "description_ja": "",
     "external_url": "https://link.coupang.com/a/cU39MC",
     "calories_per_100g": 52,
-    "calories_per_serving": "한 줌(100g) 약 52kcal"
+    "calories_per_serving": "한 줌(100g) 약 52kcal",
+    "popular_dish": "복분자주, 복분자청"
   },
   {
     "name_ko": "복숭아",
@@ -1790,7 +1828,8 @@
     "description_ja": "",
     "external_url": "https://link.coupang.com/a/cTFdQ3",
     "calories_per_100g": 39,
-    "calories_per_serving": "중간 크기 1개(200g) 약 78kcal"
+    "calories_per_serving": "중간 크기 1개(200g) 약 78kcal",
+    "popular_dish": "생과일로 섭취합니다"
   },
   {
     "name_ko": "봄동",
@@ -1825,7 +1864,8 @@
     "description_ja": "",
     "external_url": "https://link.coupang.com/a/cTFa0L",
     "calories_per_100g": 15,
-    "calories_per_serving": "1포기(300g) 약 45kcal"
+    "calories_per_serving": "1포기(300g) 약 45kcal",
+    "popular_dish": "봄동겉절이"
   },
   {
     "name_ko": "블루베리",
@@ -1872,7 +1912,8 @@
     "description_ja": "",
     "external_url": "https://link.coupang.com/a/cTFeiV",
     "calories_per_100g": 57,
-    "calories_per_serving": "한 줌(100g) 약 57kcal"
+    "calories_per_serving": "한 줌(100g) 약 57kcal",
+    "popular_dish": "생과일로 먹거나 스무디를 만듭니다"
   },
   {
     "name_ko": "사과",
@@ -1927,7 +1968,8 @@
     "description_ja": "",
     "external_url": "https://link.coupang.com/a/cTFetT",
     "calories_per_100g": 52,
-    "calories_per_serving": "중간 크기 1개(250g) 약 130kcal"
+    "calories_per_serving": "중간 크기 1개(250g) 약 130kcal",
+    "popular_dish": "생과일로 섭취합니다"
   },
   {
     "name_ko": "삼치",
@@ -1994,7 +2036,8 @@
     "description_ja": "",
     "external_url": "https://link.coupang.com/a/cTFhTc",
     "calories_per_100g": 139,
-    "calories_per_serving": "1토막(100g) 약 139kcal"
+    "calories_per_serving": "1토막(100g) 약 139kcal",
+    "popular_dish": "삼치구이"
   },
   {
     "name_ko": "석류",
@@ -2049,7 +2092,8 @@
     "description_ja": "",
     "external_url": "https://link.coupang.com/a/cU4arn",
     "calories_per_100g": 83,
-    "calories_per_serving": "1개 알맹이(100g) 약 83kcal"
+    "calories_per_serving": "1개 알맹이(100g) 약 83kcal",
+    "popular_dish": "생과일로 먹거나 석류주스를 만듭니다"
   },
   {
     "name_ko": "소라",
@@ -2104,7 +2148,8 @@
     "description_ja": "",
     "external_url": "https://link.coupang.com/a/cTFh2c",
     "calories_per_100g": 84,
-    "calories_per_serving": "삶은 살 5개(100g) 약 84kcal"
+    "calories_per_serving": "삶은 살 5개(100g) 약 84kcal",
+    "popular_dish": "소라무침"
   },
   {
     "name_ko": "수박",
@@ -2143,7 +2188,8 @@
     "description_ja": "",
     "external_url": "https://link.coupang.com/a/cTFeIx",
     "calories_per_100g": 30,
-    "calories_per_serving": "1조각(200g) 약 60kcal"
+    "calories_per_serving": "1조각(200g) 약 60kcal",
+    "popular_dish": "생과일로 섭취합니다"
   },
   {
     "name_ko": "쑥",
@@ -2178,7 +2224,8 @@
     "description_ja": "",
     "external_url": "https://link.coupang.com/a/cTFbgL",
     "calories_per_100g": 37,
-    "calories_per_serving": "한 줌(50g) 약 19kcal"
+    "calories_per_serving": "한 줌(50g) 약 19kcal",
+    "popular_dish": "쑥국, 쑥떡"
   },
   {
     "name_ko": "씀바귀",
@@ -2217,7 +2264,8 @@
     "description_ja": "",
     "external_url": "https://link.coupang.com/a/cTFbrI",
     "calories_per_100g": 31,
-    "calories_per_serving": "한 줌(50g) 약 16kcal"
+    "calories_per_serving": "한 줌(50g) 약 16kcal",
+    "popular_dish": "씀바귀나물"
   },
   {
     "name_ko": "시금치",
@@ -2272,7 +2320,8 @@
     "description_ja": "",
     "external_url": "https://link.coupang.com/a/cTFbCi",
     "calories_per_100g": 23,
-    "calories_per_serving": "한 줌(100g) 약 23kcal"
+    "calories_per_serving": "한 줌(100g) 약 23kcal",
+    "popular_dish": "시금치나물"
   },
   {
     "name_ko": "아귀",
@@ -2323,7 +2372,8 @@
     "description_ja": "",
     "external_url": "https://link.coupang.com/a/cTFh7P",
     "calories_per_100g": 72,
-    "calories_per_serving": "1토막(100g) 약 72kcal"
+    "calories_per_serving": "1토막(100g) 약 72kcal",
+    "popular_dish": "아귀찜"
   },
   {
     "name_ko": "애호박",
@@ -2374,7 +2424,8 @@
     "description_ja": "",
     "external_url": "https://link.coupang.com/a/cTFbKt",
     "calories_per_100g": 18,
-    "calories_per_serving": "1개(300g) 약 54kcal"
+    "calories_per_serving": "1개(300g) 약 54kcal",
+    "popular_dish": "애호박볶음, 애호박전"
   },
   {
     "name_ko": "연근",
@@ -2433,7 +2484,8 @@
     "description_ja": "",
     "external_url": "https://link.coupang.com/a/cTFbRj",
     "calories_per_100g": 74,
-    "calories_per_serving": "1마디(100g) 약 74kcal"
+    "calories_per_serving": "1마디(100g) 약 74kcal",
+    "popular_dish": "연근조림"
   },
   {
     "name_ko": "열무",
@@ -2480,7 +2532,8 @@
     "description_ja": "",
     "external_url": "https://link.coupang.com/a/cTFb1K",
     "calories_per_100g": 19,
-    "calories_per_serving": "1단(300g) 약 57kcal"
+    "calories_per_serving": "1단(300g) 약 57kcal",
+    "popular_dish": "열무김치"
   },
   {
     "name_ko": "오이",
@@ -2531,7 +2584,8 @@
     "description_ja": "",
     "external_url": "https://link.coupang.com/a/cTFb9m",
     "calories_per_100g": 12,
-    "calories_per_serving": "1개(100g) 약 12kcal"
+    "calories_per_serving": "1개(100g) 약 12kcal",
+    "popular_dish": "오이무침, 오이냉국"
   },
   {
     "name_ko": "오징어",
@@ -2586,7 +2640,8 @@
     "description_ja": "",
     "external_url": "https://link.coupang.com/a/cU4a7W",
     "calories_per_100g": 87,
-    "calories_per_serving": "1마리(200g) 약 174kcal"
+    "calories_per_serving": "1마리(200g) 약 174kcal",
+    "popular_dish": "오징어볶음"
   },
   {
     "name_ko": "옥수수",
@@ -2625,7 +2680,8 @@
     "description_ja": "",
     "external_url": "https://link.coupang.com/a/cTFchg",
     "calories_per_100g": 96,
-    "calories_per_serving": "1개(150g) 약 144kcal"
+    "calories_per_serving": "1개(150g) 약 144kcal",
+    "popular_dish": "찐 옥수수, 옥수수전"
   },
   {
     "name_ko": "우엉",
@@ -2676,7 +2732,8 @@
     "description_ja": "",
     "external_url": "https://link.coupang.com/a/cTFco1",
     "calories_per_100g": 65,
-    "calories_per_serving": "1뿌리(150g) 약 98kcal"
+    "calories_per_serving": "1뿌리(150g) 약 98kcal",
+    "popular_dish": "우엉조림"
   },
   {
     "name_ko": "유자",
@@ -2711,7 +2768,8 @@
     "description_ja": "",
     "external_url": "https://link.coupang.com/a/cTFfd1",
     "calories_per_100g": 59,
-    "calories_per_serving": "1개(100g) 약 59kcal"
+    "calories_per_serving": "1개(100g) 약 59kcal",
+    "popular_dish": "유자차"
   },
   {
     "name_ko": "자두",
@@ -2750,7 +2808,8 @@
     "description_ja": "",
     "external_url": "https://link.coupang.com/a/cTFeOK",
     "calories_per_100g": 46,
-    "calories_per_serving": "1개(70g) 약 32kcal"
+    "calories_per_serving": "1개(70g) 약 32kcal",
+    "popular_dish": "생과일로 섭취합니다"
   },
   {
     "name_ko": "장어",
@@ -2797,7 +2856,8 @@
     "description_ja": "",
     "external_url": "https://link.coupang.com/a/cTFiVo",
     "calories_per_100g": 303,
-    "calories_per_serving": "1인분(150g) 약 455kcal"
+    "calories_per_serving": "1인분(150g) 약 455kcal",
+    "popular_dish": "장어구이"
   },
   {
     "name_ko": "전복",
@@ -2844,7 +2904,8 @@
     "description_ja": "",
     "external_url": "https://link.coupang.com/a/cTFi20",
     "calories_per_100g": 73,
-    "calories_per_serving": "1개 살(40g) 약 29kcal"
+    "calories_per_serving": "1개 살(40g) 약 29kcal",
+    "popular_dish": "전복죽, 전복구이"
   },
   {
     "name_ko": "전어",
@@ -2883,7 +2944,8 @@
     "description_ja": "",
     "external_url": "https://link.coupang.com/a/cTFi9f",
     "calories_per_100g": 194,
-    "calories_per_serving": "1마리(120g) 약 233kcal"
+    "calories_per_serving": "1마리(120g) 약 233kcal",
+    "popular_dish": "전어구이"
   },
   {
     "name_ko": "주꾸미",
@@ -2926,7 +2988,8 @@
     "description_ja": "",
     "external_url": "https://link.coupang.com/a/cTFjfG",
     "calories_per_100g": 74,
-    "calories_per_serving": "1마리(80g) 약 59kcal"
+    "calories_per_serving": "1마리(80g) 약 59kcal",
+    "popular_dish": "주꾸미볶음"
   },
   {
     "name_ko": "참외",
@@ -2969,7 +3032,8 @@
     "description_ja": "",
     "external_url": "https://link.coupang.com/a/cU4bzq",
     "calories_per_100g": 31,
-    "calories_per_serving": "1개(300g) 약 93kcal"
+    "calories_per_serving": "1개(300g) 약 93kcal",
+    "popular_dish": "생과일로 섭취합니다"
   },
   {
     "name_ko": "취나물",
@@ -3012,7 +3076,8 @@
     "description_ja": "",
     "external_url": "https://link.coupang.com/a/cTFcKT",
     "calories_per_100g": 31,
-    "calories_per_serving": "한 줌(50g) 약 16kcal"
+    "calories_per_serving": "한 줌(50g) 약 16kcal",
+    "popular_dish": "취나물무침"
   },
   {
     "name_ko": "키조개",
@@ -3055,7 +3120,8 @@
     "description_ja": "",
     "external_url": "https://link.coupang.com/a/cTFjrQ",
     "calories_per_100g": 80,
-    "calories_per_serving": "패주 1개(40g) 약 32kcal"
+    "calories_per_serving": "패주 1개(40g) 약 32kcal",
+    "popular_dish": "키조개구이, 키조개회"
   },
   {
     "name_ko": "밤",
@@ -3094,7 +3160,8 @@
     "description_ja": "",
     "external_url": "https://link.coupang.com/a/cU4bVS",
     "calories_per_100g": 146,
-    "calories_per_serving": "10알(100g) 약 146kcal"
+    "calories_per_serving": "10알(100g) 약 146kcal",
+    "popular_dish": "군밤, 밤조림"
   },
   {
     "name_ko": "토란",
@@ -3133,7 +3200,8 @@
     "description_ja": "",
     "external_url": "https://link.coupang.com/a/cTFcSB",
     "calories_per_100g": 58,
-    "calories_per_serving": "5개(100g) 약 58kcal"
+    "calories_per_serving": "5개(100g) 약 58kcal",
+    "popular_dish": "토란국"
   },
   {
     "name_ko": "파래",
@@ -3184,7 +3252,8 @@
     "description_ja": "",
     "external_url": "https://link.coupang.com/a/cTFjyK",
     "calories_per_100g": 36,
-    "calories_per_serving": "한 줌(50g) 약 18kcal"
+    "calories_per_serving": "한 줌(50g) 약 18kcal",
+    "popular_dish": "파래전"
   },
   {
     "name_ko": "홍합",
@@ -3227,7 +3296,8 @@
     "description_ja": "",
     "external_url": "https://link.coupang.com/a/cU4ciX",
     "calories_per_100g": 86,
-    "calories_per_serving": "살 10개(100g) 약 86kcal"
+    "calories_per_serving": "살 10개(100g) 약 86kcal",
+    "popular_dish": "홍합탕, 홍합밥"
   },
   {
     "name_ko": "송이버섯",
@@ -3262,7 +3332,8 @@
     "description_ja": "",
     "external_url": "https://link.coupang.com/a/cTFjU3",
     "calories_per_100g": 29,
-    "calories_per_serving": "1개(80g) 약 23kcal"
+    "calories_per_serving": "1개(80g) 약 23kcal",
+    "popular_dish": "송이구이, 송이전골"
   },
   {
     "name_ko": "은행",
@@ -3293,7 +3364,8 @@
     "description_ja": "",
     "external_url": "https://link.coupang.com/a/cU4cuO",
     "calories_per_100g": 182,
-    "calories_per_serving": "10알(20g) 약 36kcal"
+    "calories_per_serving": "10알(20g) 약 36kcal",
+    "popular_dish": "은행구이"
   },
   {
     "name_ko": "표고버섯",
@@ -3336,6 +3408,7 @@
     "description_ja": "",
     "external_url": "https://link.coupang.com/a/cU4cMJ",
     "calories_per_100g": 34,
-    "calories_per_serving": "1개(20g) 약 7kcal"
+    "calories_per_serving": "1개(20g) 약 7kcal",
+    "popular_dish": "표고볶음, 표고전"
   }
 ]

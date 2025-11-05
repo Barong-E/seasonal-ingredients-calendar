@@ -658,6 +658,35 @@ body.has-banner .carousel {
   flex: 1;
 }
 
+.modal__dish {
+  margin-top: 16px;
+  padding-top: 16px;
+  border-top: 1px solid #e9ecef;
+}
+
+.modal__dish-text {
+  font-size: 0.9rem;
+  line-height: 1.5;
+  color: #495057;
+  margin: 0;
+}
+
+.dish-link {
+  color: var(--primary);
+  text-decoration: none;
+  font-weight: 600;
+  transition: opacity 0.2s;
+}
+
+.dish-link:hover {
+  opacity: 0.7;
+  text-decoration: underline;
+}
+
+.dish-link:active {
+  opacity: 0.5;
+}
+
 /* 명절 모달 관련 스타일 */
 .modal__section {
   margin-top: 16px;
@@ -835,8 +864,8 @@ body.has-banner .carousel {
   .modal__description { font-size: 0.85rem; }
   .modal__footer { padding: 12px 20px 20px; }
   .modal__purchase-btn { padding: 10px 20px; font-size: 0.9rem; min-width: 100px; }
-  .modal__preparation, .modal__storage, .modal__calories { margin-top: 12px; padding-top: 12px; }
-  .modal__preparation-text, .modal__storage-item, .calories-serving { font-size: 0.8rem; }
+  .modal__preparation, .modal__storage, .modal__calories, .modal__dish { margin-top: 12px; padding-top: 12px; }
+  .modal__preparation-text, .modal__storage-item, .modal__dish-text, .calories-serving { font-size: 0.8rem; }
   .modal__section-title { font-size: 0.9rem; }
   .calories-number { font-size: 1.1rem; }
   .calories { font-size: 0.7rem; padding: 2px 6px; }

@@ -199,12 +199,33 @@ function openHolidayModal(holiday) {
   const foodsEl = modal.querySelector('#holidayModalFoods');
   const foodsContentEl = modal.querySelector('#holidayModalFoodsContent');
   if (holiday.details.foods && holiday.details.foods.length > 0) {
-    foodsContentEl.innerHTML = holiday.details.foods.map(food => `
-      <div class="item">
-        <span class="item__name">${food.name}</span>
-        <p class="item__description">${food.description}</p>
-      </div>
-    `).join('');
+    foodsContentEl.innerHTML = '';
+    holiday.details.foods.forEach(food => {
+      const recipeId = getRecipeIdFromDishName(food.name);
+      const item = document.createElement('div');
+      item.className = 'item';
+      
+      const nameEl = document.createElement('span');
+      nameEl.className = 'item__name';
+      if (recipeId) {
+        const link = document.createElement('a');
+        // 해시 기반 + 확장자 명시 (정적 호스팅 호환)
+        link.href = `recipe.html#${recipeId}`;
+        link.className = 'dish-link';
+        link.textContent = food.name;
+        nameEl.appendChild(link);
+      } else {
+        nameEl.textContent = food.name;
+      }
+      
+      const descEl = document.createElement('p');
+      descEl.className = 'item__description';
+      descEl.textContent = food.description;
+      
+      item.appendChild(nameEl);
+      item.appendChild(descEl);
+      foodsContentEl.appendChild(item);
+    });
     foodsEl.style.display = 'block';
   } else {
     foodsEl.style.display = 'none';
@@ -240,6 +261,21 @@ function closeHolidayModal() {
 }
 
 // --- 명절/절기 관련 로직 끝 ---
+
+// 요리 이름을 레시피 ID로 매핑
+function getRecipeIdFromDishName(dishName) {
+  const mapping = {
+    '갈치조림': 'galchi-jorim',
+    '고등어조림': 'godeungeo-jorim',
+    '고등어구이': 'godeungeo-jorim',
+    '굴전': 'gul-jeon',
+    '굴국밥': 'gul-jeon',
+    '떡국': 'tteokguk',
+    '송편': 'songpyeon',
+    '팥죽': 'patjuk'
+  };
+  return mapping[dishName] || null;
+}
 
 // 유틸: 날짜 → ten
 function getTenByDay(day) {
@@ -360,6 +396,8 @@ const modalPreparationEl = document.getElementById('modalPreparation');
 const modalPreparationTextEl = document.getElementById('modalPreparationText');
 const modalStorageEl = document.getElementById('modalStorage');
 const modalStorageContentEl = document.getElementById('modalStorageContent');
+const modalDishEl = document.getElementById('modalDish');
+const modalDishTextEl = document.getElementById('modalDishText');
 
 // 전역 상태
 const AppState = {
@@ -474,6 +512,37 @@ function openModal(item) {
     });
   } else {
     modalStorageEl.style.display = 'none';
+  }
+  
+  // 대표 요리 설정
+  if (item.popular_dish) {
+    modalDishEl.style.display = 'block';
+    modalDishTextEl.innerHTML = '';
+    
+    // 대표 요리를 쉼표로 분리하여 각각 링크로 만들기
+    const dishes = item.popular_dish.split(',').map(d => d.trim());
+    dishes.forEach((dish, index) => {
+      const recipeId = getRecipeIdFromDishName(dish);
+      
+      if (recipeId) {
+        const link = document.createElement('a');
+        // 해시 기반 + 확장자 명시 (정적 호스팅 호환)
+        link.href = `recipe.html#${recipeId}`;
+        link.className = 'dish-link';
+        link.textContent = dish;
+        modalDishTextEl.appendChild(link);
+      } else {
+        const span = document.createElement('span');
+        span.textContent = dish;
+        modalDishTextEl.appendChild(span);
+      }
+      
+      if (index < dishes.length - 1) {
+        modalDishTextEl.appendChild(document.createTextNode(', '));
+      }
+    });
+  } else {
+    modalDishEl.style.display = 'none';
   }
   
   // 구매하기 버튼 설정

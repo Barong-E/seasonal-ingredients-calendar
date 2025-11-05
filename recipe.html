@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, user-scalable=no">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <title>레시피 - 제철음식 캘린더 | seasonalfood.net</title>
+    <meta name="description" content="제철 식재료로 만드는 한국 전통 요리 레시피">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="assets/style.css">
+    <link rel="stylesheet" href="assets/recipe.css">
+  </head>
+  <body>
+    <header class="app-header">
+      <h1 class="visually-hidden">레시피 페이지</h1>
+      <div class="header-bar" role="banner">
+        <button id="backButton" class="back-button" type="button" aria-label="뒤로 가기" title="뒤로 가기">
+          <svg class="back-icon" viewBox="0 0 24 24" width="24" height="24" fill="currentColor">
+            <path d="M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.41-1.41L7.83 13H20v-2z"/>
+          </svg>
+        </button>
+        <div class="brand" aria-label="브랜드">
+          <span class="brand__primary">제철</span>
+          <span class="brand__secondary">음식</span>
+        </div>
+        <div class="header-spacer"></div>
+      </div>
+    </header>
+
+    <main class="recipe-main">
+      <div class="recipe-container">
+        <!-- 레시피 헤더 -->
+        <section class="recipe-header">
+          <div class="recipe-image-wrapper">
+            <img id="recipeImage" class="recipe-image" src="" alt="" width="600" height="400">
+          </div>
+          <div class="recipe-title-section">
+            <h2 id="recipeName" class="recipe-name"></h2>
+            <p id="recipeDescription" class="recipe-description"></p>
+          </div>
+        </section>
+
+        <!-- 레시피 정보 -->
+        <section class="recipe-info">
+          <div class="info-item">
+            <span class="info-icon">👥</span>
+            <span class="info-label">분량</span>
+            <span id="recipeServings" class="info-value"></span>
+          </div>
+          <div class="info-item">
+            <span class="info-icon">⏱️</span>
+            <span class="info-label">조리시간</span>
+            <span id="recipeCookTime" class="info-value"></span>
+          </div>
+          <div class="info-item">
+            <span class="info-icon">📊</span>
+            <span class="info-label">난이도</span>
+            <span id="recipeDifficulty" class="info-value"></span>
+          </div>
+        </section>
+
+        <!-- 재료 섹션 -->
+        <section class="recipe-section">
+          <h3 class="section-title">
+            <span class="section-icon">🥬</span>
+            재료
+          </h3>
+          <div id="ingredientsList" class="ingredients-list"></div>
+        </section>
+
+        <!-- 양념 섹션 -->
+        <section id="seasoningSection" class="recipe-section" style="display: none;">
+          <h3 class="section-title">
+            <span class="section-icon">🧂</span>
+            양념
+          </h3>
+          <div id="seasoningList" class="ingredients-list"></div>
+        </section>
+
+        <!-- 조리 과정 섹션 -->
+        <section class="recipe-section">
+          <h3 class="section-title">
+            <span class="section-icon">👨‍🍳</span>
+            조리 과정
+          </h3>
+          <div id="stepsList" class="steps-list"></div>
+        </section>
+
+        <!-- 팁 섹션 -->
+        <section id="tipsSection" class="recipe-section" style="display: none;">
+          <h3 class="section-title">
+            <span class="section-icon">💡</span>
+            조리 팁
+          </h3>
+          <ul id="tipsList" class="tips-list"></ul>
+        </section>
+
+        <!-- 관련 정보 섹션 -->
+        <section id="relatedSection" class="recipe-section" style="display: none;">
+          <h3 class="section-title">
+            <span class="section-icon">🔗</span>
+            관련 정보
+          </h3>
+          <div id="relatedContent" class="related-content"></div>
+        </section>
+      </div>
+    </main>
+
+    <script src="assets/recipe.js" defer></script>
+  </body>
+</html>
+
