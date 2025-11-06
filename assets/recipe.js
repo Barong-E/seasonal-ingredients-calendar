@@ -43,13 +43,7 @@ function renderRecipe(recipe) {
   document.getElementById('recipeCookTime').textContent = recipe.cookTime;
   document.getElementById('recipeDifficulty').textContent = recipe.difficulty;
 
-  // 이미지
-  const recipeImage = document.getElementById('recipeImage');
-  recipeImage.src = `images/${recipe.image}`;
-  recipeImage.alt = `${recipe.name} 이미지`;
-  recipeImage.onerror = () => {
-    recipeImage.src = 'data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAwIiBoZWlnaHQ9IjQwMCIgdmlld0JveD0iMCAwIDYwMCA0MDAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxyZWN0IHdpZHRoPSI2MDAiIGhlaWdodD0iNDAwIiBmaWxsPSIjRjVGNUY1Ii8+Cjwvc3ZnPgo=';
-  };
+  // 이미지 섹션 제거됨
 
   // 재료
   renderIngredients(recipe.ingredients);
@@ -67,11 +61,7 @@ function renderRecipe(recipe) {
     renderTips(recipe.tips);
   }
 
-  // 관련 정보
-  if ((recipe.relatedIngredients && recipe.relatedIngredients.length > 0) ||
-      (recipe.relatedHolidays && recipe.relatedHolidays.length > 0)) {
-    renderRelatedInfo(recipe.relatedIngredients, recipe.relatedHolidays);
-  }
+  // 관련 정보 섹션은 사용하지 않음 (삭제)
 
   // 페이지 타이틀 업데이트
   document.title = `${recipe.name} 레시피 - 제철음식 캘린더`;
@@ -145,77 +135,7 @@ function renderTips(tips) {
 }
 
 // 관련 정보 렌더링
-function renderRelatedInfo(ingredients, holidays) {
-  const section = document.getElementById('relatedSection');
-  const container = document.getElementById('relatedContent');
-  section.style.display = 'block';
-  container.innerHTML = '';
-
-  // 관련 식재료
-  if (ingredients && ingredients.length > 0) {
-    const item = document.createElement('div');
-    item.className = 'related-item';
-    
-    const label = document.createElement('div');
-    label.className = 'related-label';
-    label.textContent = '제철 식재료';
-    
-    const tags = document.createElement('div');
-    tags.className = 'related-tags';
-    
-    ingredients.forEach(ingredient => {
-      const tag = document.createElement('span');
-      tag.className = 'related-tag';
-      tag.textContent = ingredient;
-      tag.addEventListener('click', () => {
-        window.location.href = `index.html?search=${encodeURIComponent(ingredient)}`;
-      });
-      tags.appendChild(tag);
-    });
-    
-    item.appendChild(label);
-    item.appendChild(tags);
-    container.appendChild(item);
-  }
-
-  // 관련 명절
-  if (holidays && holidays.length > 0) {
-    const item = document.createElement('div');
-    item.className = 'related-item';
-    
-    const label = document.createElement('div');
-    label.className = 'related-label';
-    label.textContent = '관련 명절/절기';
-    
-    const tags = document.createElement('div');
-    tags.className = 'related-tags';
-    
-    holidays.forEach(holidayId => {
-      const tag = document.createElement('span');
-      tag.className = 'related-tag';
-      // 명절 이름 매핑
-      const holidayNames = {
-        'seollal': '설날',
-        'daeboreum': '정월대보름',
-        'hansik': '한식',
-        'samjinnal': '삼짇날',
-        'dano': '단오',
-        'yudu': '유두',
-        'chilseok': '칠석',
-        'baekjung': '백중',
-        'chuseok': '추석',
-        'jungyangjeol': '중양절',
-        'dongji': '동지'
-      };
-      tag.textContent = holidayNames[holidayId] || holidayId;
-      tags.appendChild(tag);
-    });
-    
-    item.appendChild(label);
-    item.appendChild(tags);
-    container.appendChild(item);
-  }
-}
+// (관련 정보 렌더링 로직 제거)
 
 // 에러 표시
 function showError() {
@@ -266,6 +186,13 @@ async function init() {
   if (!recipeId) {
     showError();
     return;
+  }
+
+  // 헤더 높이만큼 상단 오프셋 적용
+  const header = document.querySelector('.app-header');
+  if (header) {
+    const headerH = Math.ceil(header.getBoundingClientRect().height);
+    document.documentElement.style.setProperty('--header-offset', headerH + 'px');
   }
 
   showLoading();
