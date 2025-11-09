@@ -145,14 +145,17 @@ function initBannerScroll() {
     // 배너 위치를 헤더 아래로 동적으로 조정
     banner.style.top = `${headerHeight}px`;
     
-    // 스크롤을 올리거나 최상단 근처일 때 배너 보임
-    if (currentScrollY < lastScrollY || currentScrollY <= 50) {
-      banner.classList.remove('hidden');
-      document.body.classList.add('has-banner');
-    } else {
-      // 아래로 스크롤할 때 배너 숨김
-      banner.classList.add('hidden');
-      document.body.classList.remove('has-banner');
+    // 스크롤 방향이 실제로 변경되었을 때만 배너 상태 변경
+    if (currentScrollY !== lastScrollY) {
+      // 스크롤을 올리거나 최상단 근처일 때 배너 보임
+      if (currentScrollY < lastScrollY || currentScrollY <= 50) {
+        banner.classList.remove('hidden');
+        document.body.classList.add('has-banner');
+      } else {
+        // 아래로 스크롤할 때 배너 숨김
+        banner.classList.add('hidden');
+        document.body.classList.remove('has-banner');
+      }
     }
     
     lastScrollY = currentScrollY <= 0 ? 0 : currentScrollY;
