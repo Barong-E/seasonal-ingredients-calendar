@@ -39,6 +39,9 @@
     <meta name="msvalidate.01" content="8F2EA7B62F5E146CFAB87473167632ED" />
     
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="manifest" href="/manifest.webmanifest">
+    <meta name="theme-color" content="#0A7B34">
+    <link rel="icon" href="/images/icons/app-icon.svg" type="image/svg+xml">
     <link rel="stylesheet" href="assets/style.css">
   </head>
   <body>
@@ -203,6 +206,16 @@
 </div>
 
 <script src="assets/script.js?v=v10" defer></script>
+<script>
+  if ('serviceWorker' in navigator) {
+    window.addEventListener('load', function() {
+      navigator.serviceWorker.register('/service-worker.js').catch(function(){});
+    });
+  }
+  if (window.matchMedia && window.matchMedia('(display-mode: standalone)').matches) {
+    document.documentElement.classList.add('app-installed');
+  }
+</script>
   </body>
   </html>
 

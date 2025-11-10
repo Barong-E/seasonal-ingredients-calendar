@@ -8,6 +8,9 @@
     <meta name="apple-mobile-web-app-status-bar-style" content="default">
     <title>레시피 - 제철음식 캘린더 | seasonalfood.net</title>
     <meta name="description" content="제철 식재료로 만드는 한국 전통 요리 레시피">
+    <link rel="manifest" href="/manifest.webmanifest">
+    <meta name="theme-color" content="#0A7B34">
+    <link rel="icon" href="/images/icons/app-icon.svg" type="image/svg+xml">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="stylesheet" href="assets/style.css">
     <link rel="stylesheet" href="assets/recipe.css">
@@ -99,6 +102,16 @@
     </main>
 
     <script src="assets/recipe.js" defer></script>
+    <script>
+      if ('serviceWorker' in navigator) {
+        window.addEventListener('load', function() {
+          navigator.serviceWorker.register('/service-worker.js').catch(function(){});
+        });
+      }
+      if (window.matchMedia && window.matchMedia('(display-mode: standalone)').matches) {
+        document.documentElement.classList.add('app-installed');
+      }
+    </script>
   </body>
 </html>
 

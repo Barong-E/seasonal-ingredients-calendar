@@ -1,0 +1,20 @@
+{
+  "name": "제철음식 알리미",
+  "short_name": "제철 알리미",
+  "description": "오늘의 제철 식재료와 절기 정보를 알림으로 받아보세요.",
+  "start_url": "/index.html",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#0A7B34",
+  "icons": [
+    {
+      "src": "/images/icons/app-icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    }
+  ]
+}
+
+
