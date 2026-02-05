@@ -1,0 +1,8 @@
+.DS_Store
+node_modules/
+dist/
+docs/.vite/
+android/.idea/
+android/app/google-services.json
+www/
+*.log

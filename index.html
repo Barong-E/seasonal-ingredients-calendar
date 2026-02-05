@@ -44,6 +44,7 @@
     <link rel="icon" href="/images/icons/app-icon-192.png" type="image/png">
     <link rel="apple-touch-icon" href="/images/icons/app-icon-192.png">
     <link rel="stylesheet" href="assets/style.css">
+    <link rel="stylesheet" href="assets/setting.css">
   </head>
   <body>
     <header class="app-header">
@@ -58,9 +59,9 @@
             <input id="searchInput" class="search-input" type="search" placeholder="이름·설명 검색" autocomplete="off" inputmode="search" aria-describedby="searchHelp">
             <p id="searchHelp" class="visually-hidden">이름과 설명에서 검색합니다. 대소문자를 구분하지 않습니다.</p>
           </form>
-          <button id="todayButton" class="today-button" type="button" aria-label="오늘로 돌아가기" title="오늘로 돌아가기">
-            <svg class="today-icon" viewBox="0 0 24 24" width="20" height="20" fill="currentColor">
-              <path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/>
+          <button id="settingButton" class="setting-button" type="button" aria-label="알림 설정" title="알림 설정">
+            <svg class="setting-icon" viewBox="0 0 24 24" width="20" height="20" fill="currentColor">
+              <path d="M19.14 12.94c.04-.3.06-.61.06-.94 0-.32-.02-.64-.07-.94l2.03-1.58a.49.49 0 0 0 .12-.61l-1.92-3.32a.488.488 0 0 0-.59-.22l-2.39.96c-.5-.38-1.03-.7-1.62-.94l-.36-2.54a.484.484 0 0 0-.48-.41h-3.84c-.24 0-.43.17-.47.41l-.36 2.54c-.59.24-1.13.57-1.62.94l-2.39-.96c-.22-.08-.47 0-.59.22L2.74 8.87c-.12.21-.08.47.12.61l2.03 1.58c-.05.3-.09.63-.09.94s.02.64.07.94l-2.03 1.58a.49.49 0 0 0-.12.61l1.92 3.32c.12.22.37.29.59.22l2.39-.96c.5.38 1.03.7 1.62.94l.36 2.54c.05.24.24.41.48.41h3.84c.24 0 .44-.17.47-.41l.36-2.54c.59-.24 1.13-.56 1.62-.94l2.39.96c.22.08.47 0 .59-.22l1.92-3.32c.12-.22.07-.47-.12-.61l-2.01-1.58zM12 15.6c-1.98 0-3.6-1.62-3.6-3.6s1.62-3.6 3.6-3.6 3.6 1.62 3.6 3.6-1.62 3.6-3.6 3.6z"/>
             </svg>
           </button>
     </div>
@@ -206,7 +207,75 @@
   </div>
 </div>
 
-<script src="assets/script.js?v=v10" defer></script>
+<!-- 설정 모달 -->
+<div id="settingModal" class="modal" role="dialog" aria-modal="true" aria-labelledby="settingModalTitle" aria-hidden="true">
+  <div class="modal__backdrop" aria-hidden="true"></div>
+  <div class="modal__content setting-modal-content">
+    <button class="modal__close" aria-label="닫기" type="button">×</button>
+    <div class="modal__header">
+      <h3 id="settingModalTitle" class="modal__title">알림 설정</h3>
+    </div>
+    <div class="modal__body setting-body">
+      
+      <!-- 1. 제철 식재료 알림 -->
+      <div class="setting-group">
+        <div class="setting-row">
+          <div class="setting-label">
+            <span class="setting-icon">🥦</span>
+            <span class="setting-name">새로운 제철 식재료 알림</span>
+            <p class="setting-desc">매달 새로 등장하는 제철 식재료를 알려드려요.</p>
+          </div>
+          <label class="switch">
+            <input type="checkbox" id="ingredientNotiToggle">
+            <span class="slider round"></span>
+          </label>
+        </div>
+        <div id="ingredientNotiDetail" class="setting-detail" style="display: none;">
+          <label for="ingredientNotiDay">알림 받을 날짜</label>
+          <select id="ingredientNotiDay" class="setting-select">
+            <!-- 1일 ~ 31일 JS로 생성 -->
+          </select>
+          <span class="setting-unit">일</span>
+          <p class="setting-sub-desc">* 해당 월에 없는 날짜면 마지막 날에 알려드려요.</p>
+        </div>
+      </div>
+
+      <div class="setting-divider"></div>
+
+      <!-- 2. 명절/절기 알림 -->
+      <div class="setting-group">
+        <div class="setting-row">
+          <div class="setting-label">
+            <span class="setting-icon">🌕</span>
+            <span class="setting-name">명절·절기 알림</span>
+            <p class="setting-desc">명절과 절기에 먹는 음식을 미리 알려드려요.</p>
+          </div>
+          <label class="switch">
+            <input type="checkbox" id="holidayNotiToggle">
+            <span class="slider round"></span>
+          </label>
+        </div>
+        <div id="holidayNotiDetail" class="setting-detail" style="display: none;">
+          <label for="holidayNotiDday">알림 시점</label>
+          <select id="holidayNotiDday" class="setting-select">
+            <option value="0">당일 오전 9시</option>
+            <option value="1">1일 전 오전 9시</option>
+            <option value="2">2일 전 오전 9시</option>
+            <option value="3">3일 전 오전 9시</option>
+            <option value="5">5일 전 오전 9시</option>
+            <option value="7">7일 전 오전 9시</option>
+          </select>
+        </div>
+      </div>
+
+    </div>
+    <div class="modal__footer">
+      <button id="saveSettingButton" class="modal__purchase-btn full-width" type="button">저장하기</button>
+    </div>
+  </div>
+</div>
+
+<script type="module" src="assets/script.js?v=v10"></script>
 <script>
   if ('serviceWorker' in navigator) {
     window.addEventListener('load', function() {

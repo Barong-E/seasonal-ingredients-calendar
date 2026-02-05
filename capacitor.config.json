@@ -1,15 +1,9 @@
 {
   "appId": "net.seasonalfood.app",
   "appName": "제철음식 알리미",
-  "webDir": ".",
+  "webDir": "docs",
   "bundledWebRuntime": false,
   "server": {
     "androidScheme": "https"
   }
-}
-
-{
-  "appId": "net.seasonalfood.app",
-  "appName": "Seasonal Food Notifier",
-  "webDir": "."
 }

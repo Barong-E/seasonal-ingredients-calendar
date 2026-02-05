@@ -1,3 +1,5 @@
+import { initPush } from './push.js';
+
 // 제철음식 캘린더 메인 스크립트
 // 규칙: ES 모듈 없이 단일 페이지 스크립트
 
@@ -761,13 +763,9 @@ function scrollToPeriod(periodIndex) {
   applySeasonThemeByPeriodIndex(periodIndex);
 }
 
-// 오늘 버튼 상태를 전역에서 동기화하는 헬퍼
+// 오늘 버튼 상태를 전역에서 동기화하는 헬퍼 (삭제됨)
 function syncTodayButtonState() {
-  const todayButton = document.getElementById('todayButton');
-  if (!todayButton) return;
-  const currentIndex = getCurrentPeriodIndex();
-  const isAtCurrentPeriod = AppState.currentPeriodIndex === currentIndex;
-  todayButton.disabled = isAtCurrentPeriod;
+  // 더 이상 사용하지 않음
 }
 
 // 현재 화면에 보이는 시기 인덱스 감지
@@ -890,32 +888,33 @@ function initModal() {
 }
 
 // 메인 초기화
-function initTodayButton() {
-  const todayButton = document.getElementById('todayButton');
-  if (!todayButton) return;
+function initHeaderControls() {
+  const brandEl = document.querySelector('.brand');
+  const settingButton = document.getElementById('settingButton');
 
-  todayButton.addEventListener('click', () => {
-    const currentIndex = getCurrentPeriodIndex();
-    AppState.isProgrammaticScroll = true;
-    scrollToPeriod(currentIndex);
-    // 클릭 직후에도 바로 비활성화되도록 상태 갱신
-    // (scrollToPeriod에서 AppState.currentPeriodIndex가 갱신됨)
-    updateTodayButtonState();
-    // 스크롤 애니메이션이 끝날 시간을 고려해 잠시 후 플래그 해제 및 최종 동기화
-    setTimeout(() => {
-      AppState.isProgrammaticScroll = false;
-      updateTodayButtonState();
-    }, 400);
-  });
-
-  // 현재 시기인지 확인하여 버튼 상태 업데이트
-  function updateTodayButtonState() {
-    const currentIndex = getCurrentPeriodIndex();
-    const isAtCurrentPeriod = AppState.currentPeriodIndex === currentIndex;
-    todayButton.disabled = isAtCurrentPeriod;
+  // 브랜드 클릭 시 오늘 날짜로 이동
+  if (brandEl) {
+    brandEl.addEventListener('click', () => {
+      const currentIndex = getCurrentPeriodIndex();
+      AppState.isProgrammaticScroll = true;
+      scrollToPeriod(currentIndex);
+      
+      // 스크롤 후 플래그 해제
+      setTimeout(() => {
+        AppState.isProgrammaticScroll = false;
+        applySeasonThemeByPeriodIndex(currentIndex);
+      }, 500);
+    });
   }
 
-  // 스크롤 이벤트로 실시간 상태 업데이트
+  // 설정 버튼 클릭
+  if (settingButton) {
+    settingButton.addEventListener('click', () => {
+      openSettingModal(); // 설정 모달 열기
+    });
+  }
+
+  // 스크롤 이벤트로 실시간 테마/상태 업데이트
   let scrollTimeout;
   window.addEventListener('scroll', () => {
     clearTimeout(scrollTimeout);
@@ -926,15 +925,10 @@ function initTodayButton() {
         if (currentPeriodIndex !== -1) {
           AppState.currentPeriodIndex = currentPeriodIndex;
         }
-        updateTodayButtonState();
         applySeasonThemeByPeriodIndex(AppState.currentPeriodIndex);
       }
-    }, 100); // 스크롤 완료 후 100ms 뒤에 상태 업데이트
+    }, 100);
   });
-
-  // 주기적으로 버튼 상태 업데이트 (날짜가 바뀔 수 있으므로)
-  setInterval(updateTodayButtonState, 60000); // 1분마다
-  updateTodayButtonState(); // 초기 상태 설정
 }
 
 async function init() {
@@ -943,13 +937,35 @@ async function init() {
     
     // 명절/절기 배너 로드 및 표시
     const holidays = await loadHolidays();
+    // 전역 상태에 저장 (알림 예약을 위해)
+    AppState.holidays = holidays;
+    
+    // solarDate 미리 계산해서 넣어두기
+    const today = new Date();
+    const currentYear = today.getFullYear();
+    AppState.holidays.forEach(h => {
+        // (간소화) getUpcomingHoliday 로직의 일부를 사용하여 올해/내년 날짜 계산
+        // *실제로는 getUpcomingHoliday 함수를 재활용하거나 별도 날짜 계산 모듈이 필요함*
+        // 일단 단순하게 올해 기준으로만 solarDate를 임시 할당 (정확한 구현은 추후 보완)
+        if(h.date.type === 'solar') {
+            h.solarDate = new Date(currentYear, h.date.month - 1, h.date.day);
+        } else {
+            // 음력/동지 등은 복잡하므로 일단 패스하거나, getUpcomingHoliday 결과를 활용해야 함
+        }
+    });
+
     const upcomingHoliday = getUpcomingHoliday(holidays);
     displayHolidayBanner(upcomingHoliday);
 
     renderAllPeriods();
     initSearch();
     initModal();
-    initTodayButton();
+    initPush(); // Push 알림 초기화
+    initHeaderControls();
+    
+    // 설정 모달 초기화
+    const { initSettingModal } = await import('./setting.js');
+    initSettingModal();
     initBannerScroll(); // 배너 스크롤 기능 초기화
     syncHeaderOffset();
     window.addEventListener('resize', () => { requestAnimationFrame(syncHeaderOffset); });

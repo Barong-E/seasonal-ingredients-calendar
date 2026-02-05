@@ -1,0 +1,293 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, user-scalable=no">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <title>제철음식 캘린더 - 계절별 제철 식재료 한눈에 보기 | seasonalfood.net</title>
+    <meta name="description" content="봄, 여름, 가을, 겨울 계절별 제철 식재료를 한눈에! 12개월 36시기로 정리된 제철음식 캘린더로 신선하고 맛있는 식재료를 찾아보세요. 채소, 과일, 해산물 정보 제공.">
+    <meta name="keywords" content="제철음식, 제철 식재료, 계절 음식, 제철 채소, 제철 과일, 제철 해산물, 계절별 식재료, 봄 제철, 여름 제철, 가을 제철, 겨울 제철">
+    <meta name="author" content="제철음식 캘린더">
+    <meta name="robots" content="index, follow">
+    
+    <!-- Open Graph (페이스북, 네이버 블로그 등) -->
+    <meta property="og:title" content="제철음식 캘린더 - 계절별 제철 식재료 한눈에 보기">
+    <meta property="og:description" content="봄, 여름, 가을, 겨울 계절별 제철 식재료를 한눈에! 12개월 36시기로 정리된 제철음식 캘린더로 신선하고 맛있는 식재료를 찾아보세요.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://seasonalfood.net/">
+    <meta property="og:image" content="https://seasonalfood.net/images/og-1200.png">
+    <meta property="og:site_name" content="제철음식 캘린더">
+    
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="제철음식 캘린더 - 계절별 제철 식재료 한눈에 보기">
+    <meta name="twitter:description" content="봄, 여름, 가을, 겨울 계절별 제철 식재료를 한눈에! 12개월 36시기로 정리된 제철음식 캘린더">
+    <meta name="twitter:image" content="https://seasonalfood.net/images/og-1200.png">
+    
+    <!-- 네이버 웹마스터 도구 -->
+    <meta name="naver-site-verification" content="8ec80c7ccb1393e7f84e2729b957293259a6c5f6" />
+    
+    <!-- 구글 서치 콘솔 -->
+    <meta name="google-site-verification" content="PUszPwGfNxuQBdXuVuvFj34tiQop12fZJKmrdPU1iWM">
+    
+    <!-- 다음 사이트 등록 -->
+    <meta name="daum-site-verification" content="">
+    
+    <!-- Bing 웹마스터 도구 -->
+    <meta name="msvalidate.01" content="8F2EA7B62F5E146CFAB87473167632ED" />
+    
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="manifest" href="/assets/manifest-CXvgVXAa.webmanifest">
+    <meta name="theme-color" content="#0A7B34">
+    <link rel="icon" href="/images/icons/app-icon-192.png" type="image/png">
+    <link rel="apple-touch-icon" href="/images/icons/app-icon-192.png">
+    <script type="module" crossorigin src="/assets/main-B3kA7os0.js"></script>
+    <link rel="modulepreload" crossorigin href="/assets/style-DGAzWC-q.js">
+    <link rel="stylesheet" crossorigin href="/assets/style-Ba9N6Mu3.css">
+    <link rel="stylesheet" crossorigin href="/assets/main-BfkjlthG.css">
+  </head>
+  <body>
+    <header class="app-header">
+      <h1 class="visually-hidden">대한민국 제철음식 캘린더</h1>
+      <div class="header-bar" role="banner">
+        <div class="brand" aria-label="브랜드">
+          <span class="brand__primary">제철</span>
+          <span class="brand__secondary">음식</span>
+        </div>
+        <div class="header-controls">
+          <form id="filtersForm" class="header-search" onsubmit="return false;" role="search">
+            <input id="searchInput" class="search-input" type="search" placeholder="이름·설명 검색" autocomplete="off" inputmode="search" aria-describedby="searchHelp">
+            <p id="searchHelp" class="visually-hidden">이름과 설명에서 검색합니다. 대소문자를 구분하지 않습니다.</p>
+          </form>
+          <button id="settingButton" class="setting-button" type="button" aria-label="알림 설정" title="알림 설정">
+            <svg class="setting-icon" viewBox="0 0 24 24" width="20" height="20" fill="currentColor">
+              <path d="M19.14 12.94c.04-.3.06-.61.06-.94 0-.32-.02-.64-.07-.94l2.03-1.58a.49.49 0 0 0 .12-.61l-1.92-3.32a.488.488 0 0 0-.59-.22l-2.39.96c-.5-.38-1.03-.7-1.62-.94l-.36-2.54a.484.484 0 0 0-.48-.41h-3.84c-.24 0-.43.17-.47.41l-.36 2.54c-.59.24-1.13.57-1.62.94l-2.39-.96c-.22-.08-.47 0-.59.22L2.74 8.87c-.12.21-.08.47.12.61l2.03 1.58c-.05.3-.09.63-.09.94s.02.64.07.94l-2.03 1.58a.49.49 0 0 0-.12.61l1.92 3.32c.12.22.37.29.59.22l2.39-.96c.5.38 1.03.7 1.62.94l.36 2.54c.05.24.24.41.48.41h3.84c.24 0 .44-.17.47-.41l.36-2.54c.59-.24 1.13-.56 1.62-.94l2.39.96c.22.08.47 0 .59-.22l1.92-3.32c.12-.22.07-.47-.12-.61l-2.01-1.58zM12 15.6c-1.98 0-3.6-1.62-3.6-3.6s1.62-3.6 3.6-3.6 3.6 1.62 3.6 3.6-1.62 3.6-3.6 3.6z"/>
+            </svg>
+          </button>
+    </div>
+  </div>
+</header>
+
+<section id="holidayBanner" class="holiday-banner" style="display: none;" role="banner" aria-label="다가오는 명절·절기 정보">
+  <div class="holiday-banner__content">
+    <div class="holiday-banner__text">
+      <p class="holiday-banner__date"></p>
+      <p class="holiday-banner__description"></p>
+    </div>
+    <img class="holiday-banner__image" src="" alt="" width="80" height="80" />
+  </div>
+</section>
+
+<main>
+      <section class="carousel" aria-label="시기 선택">
+        <div id="carouselContainer" class="carousel__container">
+          <div id="periodTrack" class="carousel__track" aria-live="polite"></div>
+        </div>
+      </section>
+
+      
+    </main>
+
+    <template id="panelTemplate">
+      <div class="panel" role="group" aria-roledescription="시기 패널">
+        <div class="grid" role="list"></div>
+        <div class="empty" role="status" aria-live="polite">검색 결과가 없습니다.</div>
+      </div>
+    </template>
+
+    <template id="cardTemplate">
+      <div class="card" role="listitem">
+        <div class="thumb" aria-hidden="true">
+          <img class="photo" src="" alt="" width="600" height="600" loading="lazy" />
+        </div>
+        <div class="card-content">
+          <div class="title" aria-label="이름"></div>
+          <div class="calories" aria-label="칼로리">
+            <span class="calories-icon">🔥</span>
+            <span class="calories-value"></span>
+          </div>
+        </div>
+      </div>
+    </template>
+
+    <!-- 식재료 설명 모달 -->
+    <div id="ingredientModal" class="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle" aria-hidden="true">
+      <div class="modal__backdrop" aria-hidden="true"></div>
+      <div class="modal__content">
+        <button class="modal__close" aria-label="닫기" type="button">×</button>
+        <div class="modal__body">
+          <div class="modal__image">
+            <img id="modalImage" src="" alt="" width="120" height="120" />
+          </div>
+          <div class="modal__info">
+            <h3 id="modalTitle" class="modal__name"></h3>
+            <p id="modalDescription" class="modal__description"></p>
+            
+            <div id="modalCalories" class="modal__calories" style="display: none;">
+              <div class="modal__section-header">
+                <span class="modal__icon">🔥</span>
+                <span class="modal__section-title">칼로리 정보</span>
+              </div>
+              <div class="modal__calories-content">
+                <div class="calories-row">
+                  <span class="calories-label">100g당</span>
+                  <span id="modalCaloriesPer100g" class="calories-number"></span>
+                </div>
+                <div class="calories-row">
+                  <span id="modalCaloriesPerServing" class="calories-serving"></span>
+                </div>
+              </div>
+            </div>
+            
+            <div id="modalPreparation" class="modal__preparation" style="display: none;">
+              <div class="modal__section-header">
+                <span class="modal__icon">✂️</span>
+                <span class="modal__section-title">손질법</span>
+              </div>
+              <p id="modalPreparationText" class="modal__preparation-text"></p>
+            </div>
+            
+            <div id="modalStorage" class="modal__storage" style="display: none;">
+              <div class="modal__section-header">
+                <span class="modal__icon">❄️</span>
+                <span class="modal__section-title">보관법</span>
+              </div>
+              <div id="modalStorageContent" class="modal__storage-content"></div>
+            </div>
+            
+            <div id="modalDish" class="modal__dish" style="display: none;">
+              <div class="modal__section-header">
+                <span class="modal__icon">🍽️</span>
+                <span class="modal__section-title">대표 요리</span>
+              </div>
+              <p id="modalDishText" class="modal__dish-text"></p>
+            </div>
+          </div>
+        </div>
+        <div class="modal__footer">
+          <button id="modalPurchaseButton" class="modal__purchase-btn" type="button">구매하기</button>
+    </div>
+  </div>
+</div>
+
+<!-- 명절/절기 상세 정보 모달 -->
+<div id="holidayModal" class="modal" role="dialog" aria-modal="true" aria-labelledby="holidayModalTitle" aria-hidden="true">
+  <div class="modal__backdrop" aria-hidden="true"></div>
+  <div class="modal__content">
+    <button class="modal__close" aria-label="닫기" type="button">×</button>
+    <div class="modal__body">
+      <div class="modal__image">
+        <img id="holidayModalImage" src="" alt="" width="120" height="120" />
+      </div>
+      <div class="modal__info">
+        <h3 id="holidayModalTitle" class="modal__name"></h3>
+        <p id="holidayModalSummary" class="modal__description"></p>
+        
+        <div id="holidayModalStory" class="modal__story" style="display: none;">
+          <p id="holidayModalStoryContent"></p>
+        </div>
+
+        <div id="holidayModalFoods" class="modal__section" style="display: none;">
+          <div class="modal__section-header">
+            <span class="modal__icon">🍲</span>
+            <span class="modal__section-title">대표 음식</span>
+          </div>
+          <div id="holidayModalFoodsContent" class="modal__section-content"></div>
+        </div>
+        
+        <div id="holidayModalCustoms" class="modal__section" style="display: none;">
+          <div class="modal__section-header">
+            <span class="modal__icon">🎎</span>
+            <span class="modal__section-title">대표 풍습</span>
+          </div>
+          <div id="holidayModalCustomsContent" class="modal__section-content"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- 설정 모달 -->
+<div id="settingModal" class="modal" role="dialog" aria-modal="true" aria-labelledby="settingModalTitle" aria-hidden="true">
+  <div class="modal__backdrop" aria-hidden="true"></div>
+  <div class="modal__content setting-modal-content">
+    <button class="modal__close" aria-label="닫기" type="button">×</button>
+    <div class="modal__header">
+      <h3 id="settingModalTitle" class="modal__title">알림 설정</h3>
+    </div>
+    <div class="modal__body setting-body">
+      
+      <!-- 1. 제철 식재료 알림 -->
+      <div class="setting-group">
+        <div class="setting-row">
+          <div class="setting-label">
+            <span class="setting-icon">🥦</span>
+            <span class="setting-name">새로운 제철 식재료 알림</span>
+            <p class="setting-desc">매달 새로 등장하는 제철 식재료를 알려드려요.</p>
+          </div>
+          <label class="switch">
+            <input type="checkbox" id="ingredientNotiToggle">
+            <span class="slider round"></span>
+          </label>
+        </div>
+        <div id="ingredientNotiDetail" class="setting-detail" style="display: none;">
+          <label for="ingredientNotiDay">알림 받을 날짜</label>
+          <select id="ingredientNotiDay" class="setting-select">
+            <!-- 1일 ~ 31일 JS로 생성 -->
+          </select>
+          <span class="setting-unit">일</span>
+          <p class="setting-sub-desc">* 해당 월에 없는 날짜면 마지막 날에 알려드려요.</p>
+        </div>
+      </div>
+
+      <div class="setting-divider"></div>
+
+      <!-- 2. 명절/절기 알림 -->
+      <div class="setting-group">
+        <div class="setting-row">
+          <div class="setting-label">
+            <span class="setting-icon">🌕</span>
+            <span class="setting-name">명절·절기 알림</span>
+            <p class="setting-desc">명절과 절기에 먹는 음식을 미리 알려드려요.</p>
+          </div>
+          <label class="switch">
+            <input type="checkbox" id="holidayNotiToggle">
+            <span class="slider round"></span>
+          </label>
+        </div>
+        <div id="holidayNotiDetail" class="setting-detail" style="display: none;">
+          <label for="holidayNotiDday">알림 시점</label>
+          <select id="holidayNotiDday" class="setting-select">
+            <option value="0">당일 오전 9시</option>
+            <option value="1">1일 전 오전 9시</option>
+            <option value="2">2일 전 오전 9시</option>
+            <option value="3">3일 전 오전 9시</option>
+            <option value="5">5일 전 오전 9시</option>
+            <option value="7">7일 전 오전 9시</option>
+          </select>
+        </div>
+      </div>
+
+    </div>
+    <div class="modal__footer">
+      <button id="saveSettingButton" class="modal__purchase-btn full-width" type="button">저장하기</button>
+    </div>
+  </div>
+</div>
+
+<script>
+  if ('serviceWorker' in navigator) {
+    window.addEventListener('load', function() {
+      navigator.serviceWorker.register('/service-worker.js').catch(function(){});
+    });
+  }
+  if (window.matchMedia && window.matchMedia('(display-mode: standalone)').matches) {
+    document.documentElement.classList.add('app-installed');
+  }
+</script>
+  </body>
+  </html>
+
+

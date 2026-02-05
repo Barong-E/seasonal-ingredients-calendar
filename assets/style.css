@@ -192,6 +192,12 @@ body.theme-winter {
   align-items: baseline;
   gap: 6px;
   font-weight: 800;
+  cursor: pointer; /* 클릭 가능 표시 */
+  transition: opacity 0.2s;
+}
+
+.brand:active {
+  opacity: 0.7;
 }
 .brand__primary {
   font-size: 1.2rem;
@@ -217,47 +223,36 @@ body.theme-winter {
 
 .header-search { flex: 1; }
 
-.today-button {
+.setting-button {
   display: flex;
   align-items: center;
   justify-content: center;
   width: 40px;
   height: 40px;
-  background: var(--primary);
-  color: white;
+  background: transparent;
+  color: #666;
   border: none;
   border-radius: 50%;
   cursor: pointer;
   transition: all 0.2s ease;
-  box-shadow: var(--shadow-sm);
   flex-shrink: 0;
 }
 
-.today-button:hover {
-  background: var(--primary-gradient);
-  transform: translateY(-1px);
-  box-shadow: var(--shadow-md);
+.setting-button:hover {
+  background: rgba(0, 0, 0, 0.05);
+  color: #333;
 }
 
-.today-button:active {
-  transform: translateY(0);
-  box-shadow: var(--shadow-sm);
+.setting-button:active {
+  transform: scale(0.95);
 }
 
-.today-button:disabled {
-  background: var(--muted);
-  color: #999;
-  cursor: not-allowed;
-  transform: none;
-  box-shadow: none;
+.setting-icon {
+  transition: transform 0.3s ease;
 }
 
-.today-icon {
-  transition: transform 0.2s ease;
-}
-
-.today-button:not(:disabled):hover .today-icon {
-  transform: scale(1.1);
+.setting-button:hover .setting-icon {
+  transform: rotate(30deg);
 }
 
 .period-label {
