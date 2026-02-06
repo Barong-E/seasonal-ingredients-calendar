@@ -1,4 +1,5 @@
 import { initPush } from './push.js';
+import KoreanLunarCalendar from 'korean-lunar-calendar';
 
 // 제철음식 캘린더 메인 스크립트
 // 규칙: ES 모듈 없이 단일 페이지 스크립트
@@ -22,81 +23,72 @@ async function loadHolidays() {
   }
 }
 
+function getSolarOverrideDate(holiday, year) {
+  const overrides = holiday.solar_overrides;
+  if (!overrides) return null;
+  const key = String(year);
+  const data = overrides[key];
+  if (!data) return null;
+  if (typeof data === 'string') {
+    const parts = data.split('-');
+    if (parts.length !== 2) return null;
+    const mm = parseInt(parts[0], 10);
+    const dd = parseInt(parts[1], 10);
+    if (!mm || !dd) return null;
+    return new Date(year, mm - 1, dd);
+  }
+  if (typeof data === 'object' && data.month && data.day) {
+    return new Date(year, data.month - 1, data.day);
+  }
+  return null;
+}
+
+function getHolidaySolarDateForYear(holiday, year) {
+  const { type, month, day } = holiday.date;
+
+  // 1) 연도별 오버라이드 우선
+  const overrideDate = getSolarOverrideDate(holiday, year);
+  if (overrideDate) return overrideDate;
+
+  // 2) 타입별 계산
+  if (type === 'lunar') {
+    const calendar = new KoreanLunarCalendar();
+    const intercalation = Boolean(holiday.date.intercalation);
+    const ok = calendar.setLunarDate(year, month, day, intercalation);
+    if (!ok) return null;
+    const solar = calendar.getSolarCalendar();
+    if (!solar || !solar.year || !solar.month || !solar.day) return null;
+    return new Date(solar.year, solar.month - 1, solar.day);
+  }
+  if (type === 'solar') {
+    return new Date(year, month - 1, day);
+  }
+  // 'dynamic' for 동지
+  if (year === 2025) return new Date(2025, 11, 22);
+  if (year === 2026) return new Date(2026, 11, 22);
+  return new Date(year, 11, 22);
+}
+
+function getHolidaySolarDate(holiday, today) {
+  const baseYear = today.getFullYear();
+  let date = getHolidaySolarDateForYear(holiday, baseYear);
+  if (!date) return null;
+  if (date < today) {
+    date = getHolidaySolarDateForYear(holiday, baseYear + 1);
+  }
+  return date;
+}
+
 function getUpcomingHoliday(holidays) {
   const today = new Date();
   today.setHours(0, 0, 0, 0);
-  const currentYear = today.getFullYear();
   
   let upcoming = null;
   let minDiff = Infinity;
 
-  // 헬퍼: 연도별 양력 오버라이드 우선 적용
-  function getSolarOverrideDate(holiday, year) {
-    const overrides = holiday.solar_overrides;
-    if (!overrides) return null;
-    const key = String(year);
-    const data = overrides[key];
-    if (!data) return null;
-    if (typeof data === 'string') {
-      const parts = data.split('-');
-      if (parts.length !== 2) return null;
-      const mm = parseInt(parts[0], 10);
-      const dd = parseInt(parts[1], 10);
-      if (!mm || !dd) return null;
-      return new Date(year, mm - 1, dd);
-    }
-    if (typeof data === 'object' && data.month && data.day) {
-      return new Date(year, data.month - 1, data.day);
-    }
-    return null;
-  }
-
   holidays.forEach(holiday => {
-    let holidayDate;
-    const { type, month, day } = holiday.date;
-
-    // 1) 오버라이드 우선
-    holidayDate = getSolarOverrideDate(holiday, currentYear);
-    // 2) 오버라이드 없으면 타입별 계산
-    if (!holidayDate) {
-      if (type === 'lunar') {
-        // solar_overrides가 신뢰도의 원천이므로, 여기서의 계산은 매우 대략적인 fallback임
-        holidayDate = new Date(currentYear, month - 1, day);
-      } else if (type === 'solar') {
-        holidayDate = new Date(currentYear, month - 1, day);
-      } else { // 'dynamic' for 동지
-        if (currentYear === 2025) {
-          holidayDate = new Date(2025, 11, 22); // 수정: 22일
-        } else if (currentYear === 2026) {
-          holidayDate = new Date(2026, 11, 22);
-        } else {
-          holidayDate = new Date(currentYear, 11, 22); // 기본값
-        }
-      }
-    }
-
-    // 이미 지난 날짜면 내년 날짜로 계산
-    if (holidayDate < today) {
-      const nextYear = currentYear + 1;
-      // 1) 내년도 오버라이드 우선
-      let nextDate = getSolarOverrideDate(holiday, nextYear);
-      if (!nextDate) {
-        if (type === 'lunar') {
-          nextDate = new Date(nextYear, month - 1, day);
-        } else if (type === 'solar') {
-          nextDate = new Date(nextYear, month - 1, day);
-        } else {
-          if (nextYear === 2025) {
-            nextDate = new Date(2025, 11, 22); // 수정: 22일
-          } else if (nextYear === 2026) {
-            nextDate = new Date(2026, 11, 22);
-          } else {
-            nextDate = new Date(nextYear, 11, 22); // 기본값
-          }
-        }
-      }
-      holidayDate = nextDate;
-    }
+    const holidayDate = getHolidaySolarDate(holiday, today);
+    if (!holidayDate) return;
 
     const diff = holidayDate.getTime() - today.getTime();
     if (diff >= 0 && diff < minDiff) {
@@ -942,16 +934,9 @@ async function init() {
     
     // solarDate 미리 계산해서 넣어두기
     const today = new Date();
-    const currentYear = today.getFullYear();
+    today.setHours(0, 0, 0, 0);
     AppState.holidays.forEach(h => {
-        // (간소화) getUpcomingHoliday 로직의 일부를 사용하여 올해/내년 날짜 계산
-        // *실제로는 getUpcomingHoliday 함수를 재활용하거나 별도 날짜 계산 모듈이 필요함*
-        // 일단 단순하게 올해 기준으로만 solarDate를 임시 할당 (정확한 구현은 추후 보완)
-        if(h.date.type === 'solar') {
-            h.solarDate = new Date(currentYear, h.date.month - 1, h.date.day);
-        } else {
-            // 음력/동지 등은 복잡하므로 일단 패스하거나, getUpcomingHoliday 결과를 활용해야 함
-        }
+        h.solarDate = getHolidaySolarDate(h, today);
     });
 
     const upcomingHoliday = getUpcomingHoliday(holidays);

@@ -4,11 +4,13 @@ import { LocalNotifications } from '@capacitor/local-notifications';
 const Settings = {
   ingredient: {
     enabled: false,
-    day: 1
+    day: 1,
+    time: '09:00'
   },
   holiday: {
     enabled: false,
-    dDay: 3
+    dDay: 3,
+    time: '09:00'
   }
 };
 
@@ -42,10 +44,12 @@ export function initSettingModal() {
   const ingToggle = document.getElementById('ingredientNotiToggle');
   const ingDetail = document.getElementById('ingredientNotiDetail');
   const ingDaySelect = document.getElementById('ingredientNotiDay');
+  const ingTimeInput = document.getElementById('ingredientNotiTime');
   
   const holiToggle = document.getElementById('holidayNotiToggle');
   const holiDetail = document.getElementById('holidayNotiDetail');
   const holiDdaySelect = document.getElementById('holidayNotiDday');
+  const holiTimeInput = document.getElementById('holidayNotiTime');
   
   const saveBtn = document.getElementById('saveSettingButton');
 
@@ -62,10 +66,12 @@ export function initSettingModal() {
     ingToggle.checked = Settings.ingredient.enabled;
     ingDetail.style.display = Settings.ingredient.enabled ? 'block' : 'none';
     ingDaySelect.value = Settings.ingredient.day;
+    ingTimeInput.value = Settings.ingredient.time || '09:00';
     
     holiToggle.checked = Settings.holiday.enabled;
     holiDetail.style.display = Settings.holiday.enabled ? 'block' : 'none';
     holiDdaySelect.value = Settings.holiday.dDay;
+    holiTimeInput.value = Settings.holiday.time || '09:00';
   });
 
   // 토글 이벤트
@@ -82,11 +88,13 @@ export function initSettingModal() {
     const newSettings = {
       ingredient: {
         enabled: ingToggle.checked,
-        day: parseInt(ingDaySelect.value)
+        day: parseInt(ingDaySelect.value),
+        time: ingTimeInput.value || '09:00'
       },
       holiday: {
         enabled: holiToggle.checked,
-        dDay: parseInt(holiDdaySelect.value)
+        dDay: parseInt(holiDdaySelect.value),
+        time: holiTimeInput.value || '09:00'
       }
     };
     
@@ -126,6 +134,8 @@ async function updateNotificationSchedule() {
   }
 
   const notis = [];
+  const ingredientTime = parseTimeString(Settings.ingredient.time, { hours: 9, minutes: 0 });
+  const holidayTime = parseTimeString(Settings.holiday.time, { hours: 9, minutes: 0 });
 
   // 2. 식재료 알림 예약 (향후 12개월 치)
   if (Settings.ingredient.enabled) {
@@ -135,7 +145,14 @@ async function updateNotificationSchedule() {
     // 이달에 아직 날짜가 안 지났으면 이번 달부터, 지났으면 다음 달부터
     // (간단히 다음 달부터 12개월 예약으로 구현)
     for (let i = 0; i < 12; i++) {
-      const targetDate = new Date(now.getFullYear(), now.getMonth() + i, day, 9, 0, 0); // 오전 9시
+      const targetDate = new Date(
+        now.getFullYear(),
+        now.getMonth() + i,
+        day,
+        ingredientTime.hours,
+        ingredientTime.minutes,
+        0
+      );
       
       // 만약 해당 월에 그 날짜가 없으면 (예: 2월 31일), 그 달의 마지막 날로 조정
       if (targetDate.getMonth() !== (now.getMonth() + i) % 12) {
@@ -187,7 +204,7 @@ async function updateNotificationSchedule() {
 
       const notiDate = new Date(holiday.solarDate);
       notiDate.setDate(notiDate.getDate() - dDay);
-      notiDate.setHours(9, 0, 0);
+      notiDate.setHours(holidayTime.hours, holidayTime.minutes, 0);
 
       if (notiDate > new Date()) {
         const foodNames = holiday.details?.foods?.slice(0, 2).map(f => f.name).join(', ') || '맛있는 음식';
@@ -227,4 +244,13 @@ function getNewIngredientsForMonth(month) {
 
     return hasThisMonth && !hasPrevMonth;
   });
+}
+
+function parseTimeString(timeValue, fallback) {
+  if (!timeValue || typeof timeValue !== 'string') return fallback;
+  const [hoursStr, minutesStr] = timeValue.split(':');
+  const hours = Number(hoursStr);
+  const minutes = Number(minutesStr);
+  if (Number.isNaN(hours) || Number.isNaN(minutes)) return fallback;
+  return { hours, minutes };
 }
