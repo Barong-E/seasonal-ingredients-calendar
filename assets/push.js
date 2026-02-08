@@ -46,7 +46,7 @@ export async function initPush() {
       // 포그라운드에서도 상단 배너 알림을 띄우기 위해 LocalNotification 사용
       await LocalNotifications.schedule({
         notifications: [{
-          title: notification.title || '제철음식 캘린더',
+          title: notification.title || '제철·명절 음식 알리미',
           body: notification.body || '새로운 알림이 도착했습니다.',
           id: new Date().getTime(),
           schedule: { at: new Date(Date.now() + 100) },
@@ -71,7 +71,7 @@ export async function initPush() {
     await PushNotifications.createChannel({
       id: 'default',
       name: '기본 알림',
-      description: '제철음식 캘린더 기본 알림',
+      description: '제철·명절 음식 알리미 기본 알림',
       importance: 3,
       visibility: 1
     });

@@ -64,7 +64,7 @@ function renderRecipe(recipe) {
   // 관련 정보 섹션은 사용하지 않음 (삭제)
 
   // 페이지 타이틀 업데이트
-  document.title = `${recipe.name} 레시피 - 제철음식 캘린더`;
+  document.title = `${recipe.name} 레시피 - 제철·명절 음식 알리미`;
 }
 
 // 재료 렌더링
