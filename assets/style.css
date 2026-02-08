@@ -323,6 +323,44 @@ body.has-banner .carousel {
 
 .empty { text-align: center; padding: 24px; color: #666; display: none; }
 
+.offline-notice {
+  position: fixed;
+  top: calc(var(--header-offset) + 8px);
+  left: 0;
+  right: 0;
+  z-index: 98;
+  display: flex;
+  justify-content: center;
+  padding: 0 16px;
+}
+
+.offline-notice__box {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 14px;
+  background: #fffaf0;
+  border: 1px solid #f6ad55;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+}
+
+.offline-notice__icon {
+  font-size: 1.1rem;
+}
+
+.offline-notice__text strong {
+  display: block;
+  color: #9c4221;
+  font-size: 0.95rem;
+}
+
+.offline-notice__text p {
+  margin: 2px 0 0;
+  color: #7b341e;
+  font-size: 0.85rem;
+}
+
 /* Card */
 .card {
   position: relative;

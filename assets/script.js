@@ -17,10 +17,11 @@ async function loadHolidays() {
   try {
     const res = await fetch('data/holidays.json?v=v10');
     if (!res.ok) throw new Error('명절 데이터 로드 실패');
-    return await res.json();
+    const data = await res.json();
+    return { holidays: data, error: null };
   } catch (err) {
     console.error(err);
-    return [];
+    return { holidays: [], error: err };
   }
 }
 
@@ -44,12 +45,27 @@ function getSolarOverrideDate(holiday, year) {
   return null;
 }
 
+function getDongjiDateForYear(year) {
+  if (year === 2025) return new Date(2025, 11, 22);
+  if (year === 2026) return new Date(2026, 11, 22);
+  return new Date(year, 11, 22);
+}
+
 function getHolidaySolarDateForYear(holiday, year) {
   const { type, month, day } = holiday.date;
 
   // 1) 연도별 오버라이드 우선
   const overrideDate = getSolarOverrideDate(holiday, year);
   if (overrideDate) return overrideDate;
+
+  // 한식: 동지로부터 105일째
+  if (holiday.id === 'hansik') {
+    const dongjiDate = getDongjiDateForYear(year - 1);
+    if (!dongjiDate) return null;
+    const hansikDate = new Date(dongjiDate);
+    hansikDate.setDate(hansikDate.getDate() + 105);
+    return hansikDate;
+  }
 
   // 2) 타입별 계산
   if (type === 'lunar') {
@@ -65,9 +81,7 @@ function getHolidaySolarDateForYear(holiday, year) {
     return new Date(year, month - 1, day);
   }
   // 'dynamic' for 동지
-  if (year === 2025) return new Date(2025, 11, 22);
-  if (year === 2026) return new Date(2026, 11, 22);
-  return new Date(year, 11, 22);
+  return getDongjiDateForYear(year);
 }
 
 function getHolidaySolarDate(holiday, today) {
@@ -120,9 +134,32 @@ function displayHolidayBanner(holiday) {
   banner.style.display = 'block';
   document.body.classList.add('has-banner'); // 배너가 있을 때 body에 클래스 추가
   
-  banner.addEventListener('click', () => {
+  banner.onclick = () => {
     openHolidayModal(holiday);
-  });
+  };
+}
+
+function displayHolidayError() {
+  const banner = document.getElementById('holidayBanner');
+  if (!banner) return;
+  const dateEl = banner.querySelector('.holiday-banner__date');
+  const descriptionEl = banner.querySelector('.holiday-banner__description');
+  const imageEl = banner.querySelector('.holiday-banner__image');
+
+  banner.classList.add('holiday-banner--error');
+  banner.style.cursor = 'default';
+  banner.onclick = null;
+
+  if (dateEl) dateEl.textContent = '명절 정보를 불러올 수 없습니다.';
+  if (descriptionEl) descriptionEl.textContent = '네트워크 상태를 확인해 주세요.';
+  if (imageEl) {
+    imageEl.removeAttribute('src');
+    imageEl.alt = '';
+    imageEl.style.display = 'none';
+  }
+
+  banner.style.display = 'block';
+  document.body.classList.add('has-banner');
 }
 
 // 배너 스크롤 동작 - 헤더와 함께 움직이도록 수정
@@ -509,6 +546,7 @@ const modalStorageEl = document.getElementById('modalStorage');
 const modalStorageContentEl = document.getElementById('modalStorageContent');
 const modalDishEl = document.getElementById('modalDish');
 const modalDishTextEl = document.getElementById('modalDishText');
+const offlineNoticeEl = document.getElementById('offlineNotice');
 
 // 전역 상태
 const AppState = {
@@ -532,6 +570,17 @@ function getHeaderHeight() {
 function syncHeaderOffset() {
   const headerH = getHeaderHeight();
   document.documentElement.style.setProperty('--header-offset', `${headerH}px`);
+}
+
+function updateOfflineNotice() {
+  if (!offlineNoticeEl) return;
+  offlineNoticeEl.hidden = navigator.onLine;
+}
+
+function initOfflineNotice() {
+  updateOfflineNotice();
+  window.addEventListener('online', updateOfflineNotice);
+  window.addEventListener('offline', updateOfflineNotice);
 }
 
 // 카드 생성
@@ -937,11 +986,10 @@ function showWebNotificationInfoModal() {
   modal.className = 'info-modal';
   modal.setAttribute('role', 'dialog');
   modal.setAttribute('aria-modal', 'true');
-  modal.setAttribute('aria-labelledby', 'webNotificationInfoModalTitle');
   modal.innerHTML = `
     <div class="info-modal__backdrop"></div>
     <div class="info-modal__content">
-      <p id="webNotificationInfoModalTitle" class="info-modal__message">알림은 앱에서만 받을 수 있습니다. 스토어에서 설치해주세요.</p>
+      <p class="info-modal__message">알림은 앱에서만 받을 수 있습니다. 스토어에서 설치해주세요.</p>
       <button type="button" class="info-modal__close">닫기</button>
     </div>
   `;
@@ -954,17 +1002,22 @@ function showWebNotificationInfoModal() {
   modal.querySelector('.info-modal__backdrop').addEventListener('click', close);
   modal.querySelector('.info-modal__close').addEventListener('click', close);
 
-  document.body.style.overflow = 'hidden';
   document.body.appendChild(modal);
-  modal.querySelector('.info-modal__close').focus();
+  document.body.style.overflow = 'hidden';
 }
 
 async function init() {
   try {
+    // 초기 로딩 표시 (느린 네트워크 대응)
+    if (trackEl) {
+      trackEl.innerHTML = '<div class="loading"><span class="loading__spinner" aria-hidden="true"></span><span class="loading__text">데이터를 불러오는 중입니다...</span></div>';
+    }
+
     AppState.allIngredients = await loadIngredients();
     
     // 명절/절기 배너 로드 및 표시
-    const holidays = await loadHolidays();
+    const holidayResult = await loadHolidays();
+    const holidays = holidayResult.holidays;
     // 전역 상태에 저장 (알림 예약을 위해)
     AppState.holidays = holidays;
     
@@ -975,8 +1028,12 @@ async function init() {
         h.solarDate = getHolidaySolarDate(h, today);
     });
 
-    const upcomingHoliday = getUpcomingHoliday(holidays);
-    displayHolidayBanner(upcomingHoliday);
+    if (holidayResult.error) {
+      displayHolidayError();
+    } else {
+      const upcomingHoliday = getUpcomingHoliday(holidays);
+      displayHolidayBanner(upcomingHoliday);
+    }
 
     renderAllPeriods();
     initSearch();
@@ -987,6 +1044,7 @@ async function init() {
     // 설정 모달 초기화
     const { initSettingModal } = await import('./setting.js');
     initSettingModal();
+    initOfflineNotice();
     initBannerScroll(); // 배너 스크롤 기능 초기화
     syncHeaderOffset();
     window.addEventListener('resize', () => { requestAnimationFrame(syncHeaderOffset); });
