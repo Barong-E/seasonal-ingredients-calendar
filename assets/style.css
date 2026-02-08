@@ -497,6 +497,49 @@ body.has-banner .carousel {
   background: #f5f5f5;
   color: #333;
 }
+
+/* 웹 전용: 알림은 앱에서만 가능 안내 모달 */
+.info-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 210;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+}
+.info-modal__backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.4);
+}
+.info-modal__content {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  max-width: 360px;
+  background: #fff;
+  border-radius: 16px;
+  padding: 20px;
+  box-shadow: 0 12px 24px rgba(0,0,0,0.2);
+  text-align: center;
+}
+.info-modal__message {
+  margin: 0 0 16px;
+  font-size: 0.95rem;
+  color: #333;
+  line-height: 1.4;
+}
+.info-modal__close {
+  border: 0;
+  border-radius: 10px;
+  padding: 10px 18px;
+  font-size: 0.9rem;
+  background: var(--primary);
+  color: #fff;
+  cursor: pointer;
+}
+
 .modal__body {
   display: flex;
   padding: 24px;
