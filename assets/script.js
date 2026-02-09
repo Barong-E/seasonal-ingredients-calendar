@@ -2,7 +2,7 @@ import { Capacitor } from '@capacitor/core';
 import { initPush } from './push.js';
 import KoreanLunarCalendar from 'korean-lunar-calendar';
 
-// 제철·명절 음식 알리미 메인 스크립트
+// 제철 알리미 메인 스크립트
 // 규칙: ES 모듈 없이 단일 페이지 스크립트
 
 const CACHE_KEY = 'seasons:ingredients:v10';
