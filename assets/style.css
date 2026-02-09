@@ -334,6 +334,10 @@ body.has-banner .carousel {
   padding: 0 16px;
 }
 
+.offline-notice[hidden] {
+  display: none;
+}
+
 .offline-notice__box {
   display: inline-flex;
   align-items: center;
