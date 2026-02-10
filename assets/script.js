@@ -184,9 +184,11 @@ function initBannerScroll() {
         banner.classList.remove('hidden');
         document.body.classList.add('has-banner');
       } else {
-        // 아래로 스크롤할 때 배너 숨김
-        banner.classList.add('hidden');
-        document.body.classList.remove('has-banner');
+        // 아래로 스크롤할 때 배너 숨김 (단, 프로그램적 스크롤 중이 아닐 때만)
+        if (!AppState.isProgrammaticScroll) {
+          banner.classList.add('hidden');
+          document.body.classList.remove('has-banner');
+        }
       }
     }
     
