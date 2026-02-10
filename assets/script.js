@@ -941,6 +941,14 @@ function initHeaderControls() {
     brandEl.addEventListener('click', () => {
       const currentIndex = getCurrentPeriodIndex();
       AppState.isProgrammaticScroll = true;
+      
+      // 앱에서 배너가 즉시 사라지는 문제 해결을 위해 강제로 표시
+      const banner = document.getElementById('holidayBanner');
+      if (banner) {
+        banner.classList.remove('hidden');
+        document.body.classList.add('has-banner');
+      }
+
       scrollToPeriod(currentIndex);
       
       // 스크롤 후 플래그 해제
@@ -1056,6 +1064,14 @@ async function init() {
     setTimeout(() => {
       const currentIndex = getCurrentPeriodIndex();
       AppState.isProgrammaticScroll = true;
+      
+      // 앱에서 배너가 즉시 사라지는 문제 해결을 위해 강제로 표시
+      const banner = document.getElementById('holidayBanner');
+      if (banner) {
+        banner.classList.remove('hidden');
+        document.body.classList.add('has-banner');
+      }
+
       scrollToPeriod(currentIndex);
       // 초기 렌더 직후 레이아웃/이미지 로딩 지연을 감안해 여러 번 동기화
       setTimeout(syncTodayButtonState, 50);
