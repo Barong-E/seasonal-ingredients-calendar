@@ -947,7 +947,7 @@ function initHeaderControls() {
       setTimeout(() => {
         AppState.isProgrammaticScroll = false;
         applySeasonThemeByPeriodIndex(currentIndex);
-      }, 500);
+      }, 2000);
     });
   }
 
