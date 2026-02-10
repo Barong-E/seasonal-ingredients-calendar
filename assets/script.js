@@ -1064,7 +1064,7 @@ async function init() {
         AppState.isProgrammaticScroll = false;
         syncTodayButtonState();
         applySeasonThemeByPeriodIndex(AppState.currentPeriodIndex);
-      }, 500);
+      }, 2000);
     }, 300);
   } catch (err) {
     console.error('초기화 실패:', err);
