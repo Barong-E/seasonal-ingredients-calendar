@@ -582,6 +582,30 @@ body.has-banner .carousel {
   cursor: pointer;
 }
 
+.inline-toast {
+  position: fixed;
+  left: 50%;
+  bottom: 92px;
+  transform: translate(-50%, 12px);
+  z-index: 260;
+  max-width: calc(100vw - 32px);
+  padding: 10px 14px;
+  border-radius: 999px;
+  background: rgba(17, 24, 39, 0.92);
+  color: #fff;
+  font-size: 0.9rem;
+  line-height: 1.2;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.24);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.18s ease, transform 0.18s ease;
+}
+
+.inline-toast--visible {
+  opacity: 1;
+  transform: translate(-50%, 0);
+}
+
 .modal__body {
   display: flex;
   padding: 24px;

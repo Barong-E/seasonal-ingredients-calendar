@@ -711,7 +711,10 @@ function openModal(item) {
   if (item.external_url) {
     modalPurchaseButtonEl.style.display = 'block';
     modalPurchaseButtonEl.onclick = () => {
-      window.open(item.external_url, '_blank', 'noopener,noreferrer');
+      showInlineToast('쿠팡으로 이동 중이에요');
+      setTimeout(() => {
+        window.open(item.external_url, '_blank', 'noopener,noreferrer');
+      }, 450);
     };
   } else {
     modalPurchaseButtonEl.style.display = 'none';
@@ -730,6 +733,28 @@ function closeModal() {
   modalEl.setAttribute('aria-hidden', 'true');
   modalEl.style.display = 'none';
   document.body.style.overflow = '';
+}
+
+function showInlineToast(message, duration = 1200) {
+  const existing = document.getElementById('inlineToast');
+  if (existing) existing.remove();
+
+  const toast = document.createElement('div');
+  toast.id = 'inlineToast';
+  toast.className = 'inline-toast';
+  toast.setAttribute('role', 'status');
+  toast.setAttribute('aria-live', 'polite');
+  toast.textContent = message;
+
+  document.body.appendChild(toast);
+  requestAnimationFrame(() => {
+    toast.classList.add('inline-toast--visible');
+  });
+
+  setTimeout(() => {
+    toast.classList.remove('inline-toast--visible');
+    setTimeout(() => toast.remove(), 180);
+  }, duration);
 }
 
 // 모든 시기 렌더링 (세로 배치)
