@@ -5,7 +5,7 @@ import KoreanLunarCalendar from 'korean-lunar-calendar';
 // 제철 알리미 메인 스크립트
 // 규칙: ES 모듈 없이 단일 페이지 스크립트
 
-const CACHE_KEY = 'seasons:ingredients:v10';
+const CACHE_KEY = 'seasons:ingredients:v11';
 const CACHE_TTL_MS = 24 * 60 * 60 * 1000; // 24h
 
 const CATEGORY_ORDER = { '해산물': 1, '채소': 2, '과일': 3, '기타': 4 };
