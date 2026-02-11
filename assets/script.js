@@ -216,6 +216,7 @@ function openHolidayModal(holiday) {
   const modal = document.getElementById('holidayModal');
   if (!modal) return;
 
+  history.pushState({ modal: 'holiday' }, '', location.href);
   // DOM 요소들 가져오기
   modal.querySelector('#holidayModalTitle').textContent = holiday.name;
   modal.querySelector('#holidayModalSummary').textContent = holiday.summary;
@@ -721,6 +722,7 @@ function openModal(item) {
     modalPurchaseButtonEl.style.display = 'none';
   }
   
+  history.pushState({ modal: 'ingredient' }, '', location.href);
   modalEl.setAttribute('aria-hidden', 'false');
   modalEl.style.display = 'flex';
   document.body.style.overflow = 'hidden';
@@ -744,10 +746,11 @@ function showCoupangRedirectOverlay() {
   overlay.setAttribute('role', 'status');
   overlay.setAttribute('aria-live', 'polite');
   overlay.innerHTML = `
-    <p class="redirect-overlay__text">쿠팡으로 이동 중이에요</p>
+    <p class="redirect-overlay__text"><span class="redirect-overlay__highlight">쿠팡</span>으로 이동 중이에요</p>
     <div class="redirect-overlay__arrow" aria-hidden="true"></div>
   `;
   document.body.appendChild(overlay);
+  history.pushState({ modal: 'coupang' }, '', location.href);
   requestAnimationFrame(() => overlay.classList.add('redirect-overlay--visible'));
 }
 
@@ -956,6 +959,32 @@ function initModal() {
       }
     }
   });
+
+  // 모바일 뒤로가기: 팝업/오버레이가 열려 있으면 팝업만 닫기
+  window.addEventListener('popstate', () => {
+    if (document.getElementById('coupangRedirectOverlay')) {
+      removeCoupangRedirectOverlay();
+      return;
+    }
+    if (modalEl.getAttribute('aria-hidden') === 'false') {
+      closeModal();
+      return;
+    }
+    if (holidayModal && holidayModal.getAttribute('aria-hidden') === 'false') {
+      closeHolidayModal();
+      return;
+    }
+    const webNoti = document.getElementById('webNotificationInfoModal');
+    if (webNoti) {
+      webNoti.remove();
+      document.body.style.overflow = '';
+      return;
+    }
+    const settingModal = document.getElementById('settingModal');
+    if (settingModal && settingModal.getAttribute('aria-hidden') === 'false' && typeof window.closeSettingModal === 'function') {
+      window.closeSettingModal();
+    }
+  });
 }
 
 // 메인 초기화
@@ -1041,6 +1070,7 @@ function showWebNotificationInfoModal() {
 
   document.body.appendChild(modal);
   document.body.style.overflow = 'hidden';
+  history.pushState({ modal: 'webNotification' }, '', location.href);
 }
 
 async function init() {

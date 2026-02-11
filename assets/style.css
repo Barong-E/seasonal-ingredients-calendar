@@ -609,6 +609,10 @@ body.has-banner .carousel {
   color: #1a1a1a;
 }
 
+.redirect-overlay__highlight {
+  color: #e53935;
+}
+
 .redirect-overlay__arrow {
   width: 48px;
   height: 24px;
