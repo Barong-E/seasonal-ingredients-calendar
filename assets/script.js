@@ -711,9 +711,10 @@ function openModal(item) {
   if (item.external_url) {
     modalPurchaseButtonEl.style.display = 'block';
     modalPurchaseButtonEl.onclick = () => {
-      showInlineToast('쿠팡으로 이동 중이에요');
+      showCoupangRedirectOverlay();
       setTimeout(() => {
         window.open(item.external_url, '_blank', 'noopener,noreferrer');
+        setTimeout(removeCoupangRedirectOverlay, 400);
       }, 600);
     };
   } else {
@@ -735,26 +736,27 @@ function closeModal() {
   document.body.style.overflow = '';
 }
 
-function showInlineToast(message, duration = 1200) {
-  const existing = document.getElementById('inlineToast');
-  if (existing) existing.remove();
+function showCoupangRedirectOverlay() {
+  removeCoupangRedirectOverlay();
+  const overlay = document.createElement('div');
+  overlay.id = 'coupangRedirectOverlay';
+  overlay.className = 'redirect-overlay';
+  overlay.setAttribute('role', 'status');
+  overlay.setAttribute('aria-live', 'polite');
+  overlay.innerHTML = `
+    <p class="redirect-overlay__text">쿠팡으로 이동 중이에요</p>
+    <div class="redirect-overlay__arrow" aria-hidden="true"></div>
+  `;
+  document.body.appendChild(overlay);
+  requestAnimationFrame(() => overlay.classList.add('redirect-overlay--visible'));
+}
 
-  const toast = document.createElement('div');
-  toast.id = 'inlineToast';
-  toast.className = 'inline-toast';
-  toast.setAttribute('role', 'status');
-  toast.setAttribute('aria-live', 'polite');
-  toast.textContent = message;
-
-  document.body.appendChild(toast);
-  requestAnimationFrame(() => {
-    toast.classList.add('inline-toast--visible');
-  });
-
-  setTimeout(() => {
-    toast.classList.remove('inline-toast--visible');
-    setTimeout(() => toast.remove(), 180);
-  }, duration);
+function removeCoupangRedirectOverlay() {
+  const overlay = document.getElementById('coupangRedirectOverlay');
+  if (overlay) {
+    overlay.classList.remove('redirect-overlay--visible');
+    setTimeout(() => overlay.remove(), 200);
+  }
 }
 
 // 모든 시기 렌더링 (세로 배치)
