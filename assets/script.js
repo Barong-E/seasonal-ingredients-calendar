@@ -714,7 +714,7 @@ function openModal(item) {
       showInlineToast('쿠팡으로 이동 중이에요');
       setTimeout(() => {
         window.open(item.external_url, '_blank', 'noopener,noreferrer');
-      }, 450);
+      }, 600);
     };
   } else {
     modalPurchaseButtonEl.style.display = 'none';
