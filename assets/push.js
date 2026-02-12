@@ -1,6 +1,7 @@
 import { Capacitor } from '@capacitor/core';
 import { PushNotifications } from '@capacitor/push-notifications';
 import { LocalNotifications } from '@capacitor/local-notifications';
+import { showPermissionPrompt } from './permission.js';
 
 export async function initPush() {
   if (!Capacitor.isNativePlatform()) {
@@ -15,6 +16,13 @@ export async function initPush() {
     let permStatus = await PushNotifications.checkPermissions();
 
     if (permStatus.receive === 'prompt') {
+      const confirmed = await showPermissionPrompt({
+        title: '알림 권한 안내',
+        description: '제철 식재료와 명절 알림을 받으려면 알림 권한이 필요합니다.',
+        confirmText: '허용하기',
+        cancelText: '나중에'
+      });
+      if (!confirmed) return;
       permStatus = await PushNotifications.requestPermissions();
     }
 
@@ -46,7 +54,7 @@ export async function initPush() {
       // 포그라운드에서도 상단 배너 알림을 띄우기 위해 LocalNotification 사용
       await LocalNotifications.schedule({
         notifications: [{
-          title: notification.title || '제철음식 캘린더',
+          title: notification.title || '제철 알리미',
           body: notification.body || '새로운 알림이 도착했습니다.',
           id: new Date().getTime(),
           schedule: { at: new Date(Date.now() + 100) },
@@ -71,7 +79,7 @@ export async function initPush() {
     await PushNotifications.createChannel({
       id: 'default',
       name: '기본 알림',
-      description: '제철음식 캘린더 기본 알림',
+      description: '제철 알리미 기본 알림',
       importance: 3,
       visibility: 1
     });

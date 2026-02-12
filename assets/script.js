@@ -1,10 +1,11 @@
+import { Capacitor } from '@capacitor/core';
 import { initPush } from './push.js';
 import KoreanLunarCalendar from 'korean-lunar-calendar';
 
-// 제철음식 캘린더 메인 스크립트
+// 제철 알리미 메인 스크립트
 // 규칙: ES 모듈 없이 단일 페이지 스크립트
 
-const CACHE_KEY = 'seasons:ingredients:v10';
+const CACHE_KEY = 'seasons:ingredients:v11';
 const CACHE_TTL_MS = 24 * 60 * 60 * 1000; // 24h
 
 const CATEGORY_ORDER = { '해산물': 1, '채소': 2, '과일': 3, '기타': 4 };
@@ -16,10 +17,11 @@ async function loadHolidays() {
   try {
     const res = await fetch('data/holidays.json?v=v10');
     if (!res.ok) throw new Error('명절 데이터 로드 실패');
-    return await res.json();
+    const data = await res.json();
+    return { holidays: data, error: null };
   } catch (err) {
     console.error(err);
-    return [];
+    return { holidays: [], error: err };
   }
 }
 
@@ -43,12 +45,27 @@ function getSolarOverrideDate(holiday, year) {
   return null;
 }
 
+function getDongjiDateForYear(year) {
+  if (year === 2025) return new Date(2025, 11, 22);
+  if (year === 2026) return new Date(2026, 11, 22);
+  return new Date(year, 11, 22);
+}
+
 function getHolidaySolarDateForYear(holiday, year) {
   const { type, month, day } = holiday.date;
 
   // 1) 연도별 오버라이드 우선
   const overrideDate = getSolarOverrideDate(holiday, year);
   if (overrideDate) return overrideDate;
+
+  // 한식: 동지로부터 105일째
+  if (holiday.id === 'hansik') {
+    const dongjiDate = getDongjiDateForYear(year - 1);
+    if (!dongjiDate) return null;
+    const hansikDate = new Date(dongjiDate);
+    hansikDate.setDate(hansikDate.getDate() + 105);
+    return hansikDate;
+  }
 
   // 2) 타입별 계산
   if (type === 'lunar') {
@@ -64,9 +81,7 @@ function getHolidaySolarDateForYear(holiday, year) {
     return new Date(year, month - 1, day);
   }
   // 'dynamic' for 동지
-  if (year === 2025) return new Date(2025, 11, 22);
-  if (year === 2026) return new Date(2026, 11, 22);
-  return new Date(year, 11, 22);
+  return getDongjiDateForYear(year);
 }
 
 function getHolidaySolarDate(holiday, today) {
@@ -119,9 +134,32 @@ function displayHolidayBanner(holiday) {
   banner.style.display = 'block';
   document.body.classList.add('has-banner'); // 배너가 있을 때 body에 클래스 추가
   
-  banner.addEventListener('click', () => {
+  banner.onclick = () => {
     openHolidayModal(holiday);
-  });
+  };
+}
+
+function displayHolidayError() {
+  const banner = document.getElementById('holidayBanner');
+  if (!banner) return;
+  const dateEl = banner.querySelector('.holiday-banner__date');
+  const descriptionEl = banner.querySelector('.holiday-banner__description');
+  const imageEl = banner.querySelector('.holiday-banner__image');
+
+  banner.classList.add('holiday-banner--error');
+  banner.style.cursor = 'default';
+  banner.onclick = null;
+
+  if (dateEl) dateEl.textContent = '명절 정보를 불러올 수 없습니다.';
+  if (descriptionEl) descriptionEl.textContent = '네트워크 상태를 확인해 주세요.';
+  if (imageEl) {
+    imageEl.removeAttribute('src');
+    imageEl.alt = '';
+    imageEl.style.display = 'none';
+  }
+
+  banner.style.display = 'block';
+  document.body.classList.add('has-banner');
 }
 
 // 배너 스크롤 동작 - 헤더와 함께 움직이도록 수정
@@ -146,9 +184,11 @@ function initBannerScroll() {
         banner.classList.remove('hidden');
         document.body.classList.add('has-banner');
       } else {
-        // 아래로 스크롤할 때 배너 숨김
-        banner.classList.add('hidden');
-        document.body.classList.remove('has-banner');
+        // 아래로 스크롤할 때 배너 숨김 (단, 프로그램적 스크롤 중이 아닐 때만)
+        if (!AppState.isProgrammaticScroll) {
+          banner.classList.add('hidden');
+          document.body.classList.remove('has-banner');
+        }
       }
     }
     
@@ -176,6 +216,7 @@ function openHolidayModal(holiday) {
   const modal = document.getElementById('holidayModal');
   if (!modal) return;
 
+  history.pushState({ modal: 'holiday' }, '', location.href);
   // DOM 요소들 가져오기
   modal.querySelector('#holidayModalTitle').textContent = holiday.name;
   modal.querySelector('#holidayModalSummary').textContent = holiday.summary;
@@ -508,6 +549,7 @@ const modalStorageEl = document.getElementById('modalStorage');
 const modalStorageContentEl = document.getElementById('modalStorageContent');
 const modalDishEl = document.getElementById('modalDish');
 const modalDishTextEl = document.getElementById('modalDishText');
+const offlineNoticeEl = document.getElementById('offlineNotice');
 
 // 전역 상태
 const AppState = {
@@ -531,6 +573,17 @@ function getHeaderHeight() {
 function syncHeaderOffset() {
   const headerH = getHeaderHeight();
   document.documentElement.style.setProperty('--header-offset', `${headerH}px`);
+}
+
+function updateOfflineNotice() {
+  if (!offlineNoticeEl) return;
+  offlineNoticeEl.hidden = navigator.onLine;
+}
+
+function initOfflineNotice() {
+  updateOfflineNotice();
+  window.addEventListener('online', updateOfflineNotice);
+  window.addEventListener('offline', updateOfflineNotice);
 }
 
 // 카드 생성
@@ -659,12 +712,17 @@ function openModal(item) {
   if (item.external_url) {
     modalPurchaseButtonEl.style.display = 'block';
     modalPurchaseButtonEl.onclick = () => {
-      window.open(item.external_url, '_blank', 'noopener,noreferrer');
+      showCoupangRedirectOverlay();
+      setTimeout(() => {
+        window.open(item.external_url, '_blank', 'noopener,noreferrer');
+        setTimeout(removeCoupangRedirectOverlay, 400);
+      }, 600);
     };
   } else {
     modalPurchaseButtonEl.style.display = 'none';
   }
   
+  history.pushState({ modal: 'ingredient' }, '', location.href);
   modalEl.setAttribute('aria-hidden', 'false');
   modalEl.style.display = 'flex';
   document.body.style.overflow = 'hidden';
@@ -678,6 +736,30 @@ function closeModal() {
   modalEl.setAttribute('aria-hidden', 'true');
   modalEl.style.display = 'none';
   document.body.style.overflow = '';
+}
+
+function showCoupangRedirectOverlay() {
+  removeCoupangRedirectOverlay();
+  const overlay = document.createElement('div');
+  overlay.id = 'coupangRedirectOverlay';
+  overlay.className = 'redirect-overlay';
+  overlay.setAttribute('role', 'status');
+  overlay.setAttribute('aria-live', 'polite');
+  overlay.innerHTML = `
+    <p class="redirect-overlay__text"><span class="redirect-overlay__highlight">쿠팡</span>으로 이동 중이에요</p>
+    <div class="redirect-overlay__arrow" aria-hidden="true"></div>
+  `;
+  document.body.appendChild(overlay);
+  history.pushState({ modal: 'coupang' }, '', location.href);
+  requestAnimationFrame(() => overlay.classList.add('redirect-overlay--visible'));
+}
+
+function removeCoupangRedirectOverlay() {
+  const overlay = document.getElementById('coupangRedirectOverlay');
+  if (overlay) {
+    overlay.classList.remove('redirect-overlay--visible');
+    setTimeout(() => overlay.remove(), 200);
+  }
 }
 
 // 모든 시기 렌더링 (세로 배치)
@@ -877,6 +959,32 @@ function initModal() {
       }
     }
   });
+
+  // 모바일 뒤로가기: 팝업/오버레이가 열려 있으면 팝업만 닫기
+  window.addEventListener('popstate', () => {
+    if (document.getElementById('coupangRedirectOverlay')) {
+      removeCoupangRedirectOverlay();
+      return;
+    }
+    if (modalEl.getAttribute('aria-hidden') === 'false') {
+      closeModal();
+      return;
+    }
+    if (holidayModal && holidayModal.getAttribute('aria-hidden') === 'false') {
+      closeHolidayModal();
+      return;
+    }
+    const webNoti = document.getElementById('webNotificationInfoModal');
+    if (webNoti) {
+      webNoti.remove();
+      document.body.style.overflow = '';
+      return;
+    }
+    const settingModal = document.getElementById('settingModal');
+    if (settingModal && settingModal.getAttribute('aria-hidden') === 'false' && typeof window.closeSettingModal === 'function') {
+      window.closeSettingModal();
+    }
+  });
 }
 
 // 메인 초기화
@@ -889,19 +997,31 @@ function initHeaderControls() {
     brandEl.addEventListener('click', () => {
       const currentIndex = getCurrentPeriodIndex();
       AppState.isProgrammaticScroll = true;
+      
+      // 앱에서 배너가 즉시 사라지는 문제 해결을 위해 강제로 표시
+      const banner = document.getElementById('holidayBanner');
+      if (banner) {
+        banner.classList.remove('hidden');
+        document.body.classList.add('has-banner');
+      }
+
       scrollToPeriod(currentIndex);
       
       // 스크롤 후 플래그 해제
       setTimeout(() => {
         AppState.isProgrammaticScroll = false;
         applySeasonThemeByPeriodIndex(currentIndex);
-      }, 500);
+      }, 2000);
     });
   }
 
-  // 설정 버튼 클릭
+  // 설정 버튼 클릭 (웹에서는 알림 안내 모달만 표시, 앱에서는 설정 모달)
   if (settingButton) {
     settingButton.addEventListener('click', () => {
+      if (!Capacitor.isNativePlatform()) {
+        showWebNotificationInfoModal();
+        return;
+      }
       openSettingModal(); // 설정 모달 열기
     });
   }
@@ -923,12 +1043,48 @@ function initHeaderControls() {
   });
 }
 
+function showWebNotificationInfoModal() {
+  const existing = document.getElementById('webNotificationInfoModal');
+  if (existing) existing.remove();
+
+  const modal = document.createElement('div');
+  modal.id = 'webNotificationInfoModal';
+  modal.className = 'info-modal';
+  modal.setAttribute('role', 'dialog');
+  modal.setAttribute('aria-modal', 'true');
+  modal.innerHTML = `
+    <div class="info-modal__backdrop"></div>
+    <div class="info-modal__content">
+      <p class="info-modal__message">알림은 앱에서만 받을 수 있습니다. 스토어에서 설치해주세요.</p>
+      <button type="button" class="info-modal__close">닫기</button>
+    </div>
+  `;
+
+  function close() {
+    modal.remove();
+    document.body.style.overflow = '';
+  }
+
+  modal.querySelector('.info-modal__backdrop').addEventListener('click', close);
+  modal.querySelector('.info-modal__close').addEventListener('click', close);
+
+  document.body.appendChild(modal);
+  document.body.style.overflow = 'hidden';
+  history.pushState({ modal: 'webNotification' }, '', location.href);
+}
+
 async function init() {
   try {
+    // 초기 로딩 표시 (느린 네트워크 대응)
+    if (trackEl) {
+      trackEl.innerHTML = '<div class="loading"><span class="loading__spinner" aria-hidden="true"></span><span class="loading__text">데이터를 불러오는 중입니다...</span></div>';
+    }
+
     AppState.allIngredients = await loadIngredients();
     
     // 명절/절기 배너 로드 및 표시
-    const holidays = await loadHolidays();
+    const holidayResult = await loadHolidays();
+    const holidays = holidayResult.holidays;
     // 전역 상태에 저장 (알림 예약을 위해)
     AppState.holidays = holidays;
     
@@ -939,8 +1095,12 @@ async function init() {
         h.solarDate = getHolidaySolarDate(h, today);
     });
 
-    const upcomingHoliday = getUpcomingHoliday(holidays);
-    displayHolidayBanner(upcomingHoliday);
+    if (holidayResult.error) {
+      displayHolidayError();
+    } else {
+      const upcomingHoliday = getUpcomingHoliday(holidays);
+      displayHolidayBanner(upcomingHoliday);
+    }
 
     renderAllPeriods();
     initSearch();
@@ -951,6 +1111,7 @@ async function init() {
     // 설정 모달 초기화
     const { initSettingModal } = await import('./setting.js');
     initSettingModal();
+    initOfflineNotice();
     initBannerScroll(); // 배너 스크롤 기능 초기화
     syncHeaderOffset();
     window.addEventListener('resize', () => { requestAnimationFrame(syncHeaderOffset); });
@@ -960,6 +1121,14 @@ async function init() {
     setTimeout(() => {
       const currentIndex = getCurrentPeriodIndex();
       AppState.isProgrammaticScroll = true;
+      
+      // 앱에서 배너가 즉시 사라지는 문제 해결을 위해 강제로 표시
+      const banner = document.getElementById('holidayBanner');
+      if (banner) {
+        banner.classList.remove('hidden');
+        document.body.classList.add('has-banner');
+      }
+
       scrollToPeriod(currentIndex);
       // 초기 렌더 직후 레이아웃/이미지 로딩 지연을 감안해 여러 번 동기화
       setTimeout(syncTodayButtonState, 50);
@@ -968,7 +1137,7 @@ async function init() {
         AppState.isProgrammaticScroll = false;
         syncTodayButtonState();
         applySeasonThemeByPeriodIndex(AppState.currentPeriodIndex);
-      }, 500);
+      }, 2000);
     }, 300);
   } catch (err) {
     console.error('초기화 실패:', err);

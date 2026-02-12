@@ -114,6 +114,7 @@ export function initSettingModal() {
   backdrop.addEventListener('click', close);
   
   window.openSettingModal = () => {
+    history.pushState({ modal: 'setting' }, '', location.href);
     modal.setAttribute('aria-hidden', 'false');
     modal.style.display = 'flex';
     document.body.style.overflow = 'hidden';

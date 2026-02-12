@@ -1,7 +1,7 @@
 <?xml version='1.0' encoding='utf-8'?>
 <resources>
-    <string name="app_name">Seasonal Food Notifier</string>
-    <string name="title_activity_main">Seasonal Food Notifier</string>
+    <string name="app_name">제철 알리미</string>
+    <string name="title_activity_main">제철 알리미</string>
     <string name="package_name">net.seasonalfood.app</string>
     <string name="custom_url_scheme">net.seasonalfood.app</string>
 </resources>

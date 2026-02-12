@@ -1,6 +1,6 @@
 {
   "appId": "net.seasonalfood.app",
-  "appName": "제철음식 알리미",
+  "appName": "제철 알리미",
   "webDir": "docs",
   "bundledWebRuntime": false,
   "server": {

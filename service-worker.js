@@ -1,4 +1,4 @@
-/* 제철음식 알리미 - PWA Service Worker (부분 오프라인 전략)
+/* 제철 알리미 - PWA Service Worker (부분 오프라인 전략)
  * - 정적 자원: stale-while-revalidate
  * - 데이터(/data/*): network-first (오프라인 시 캐시 fallback)
  */
