@@ -777,7 +777,7 @@
       {"name": "찹쌀가루", "amount": "2컵"},
       {"name": "뜨거운 물", "amount": "2/3컵"},
       {"name": "소금", "amount": "1/4작은술"},
-      {"name": "진달래꽃", "amount": "20~30송이"},
+      {"name": "진달래", "amount": "20~30송이"},
       {"name": "식용유", "amount": "적당량"}
     ],
     "seasoning": [
@@ -880,7 +880,7 @@
       {"name": "찹쌀가루", "amount": "2컵"},
       {"name": "뜨거운 물", "amount": "2/3컵"},
       {"name": "소금", "amount": "1/4작은술"},
-      {"name": "식용 국화꽃", "amount": "20송이"},
+      {"name": "국화", "amount": "20송이"},
       {"name": "식용유", "amount": "적당량"}
     ],
     "seasoning": [
@@ -1539,7 +1539,7 @@
     "cookTime": "25분",
     "difficulty": "초급",
     "ingredients": [
-      {"name": "동태", "amount": "1마리 (토막)"},
+      {"name": "명태(동태)", "amount": "1마리 (토막)"},
       {"name": "무", "amount": "1/4개"},
       {"name": "두부", "amount": "1/2모"},
       {"name": "대파", "amount": "1대"},
@@ -2963,7 +2963,7 @@
     "cookTime": "15분 + 침출 7일",
     "difficulty": "중급",
     "ingredients": [
-      {"name": "창포 뿌리", "amount": "50g(잘 씻어 편썰기)"},
+      {"name": "창포", "amount": "50g(잘 씻어 편썰기)"},
       {"name": "소주(30% 내외)", "amount": "1.8L"},
       {"name": "꿀 또는 설탕(선택)", "amount": "2~3큰술"}
     ],
@@ -2990,7 +2990,7 @@
     "cookTime": "20분 + 침출 10일",
     "difficulty": "중급",
     "ingredients": [
-      {"name": "식용 국화꽃", "amount": "30~40송이"},
+      {"name": "국화", "amount": "30~40송이"},
       {"name": "소주(25~30%)", "amount": "1.8L"},
       {"name": "꿀(선택)", "amount": "2~3큰술"}
     ],
@@ -3017,7 +3017,7 @@
     "cookTime": "10분",
     "difficulty": "초급",
     "ingredients": [
-      {"name": "진달래꽃(식용 가능)", "amount": "한 줌"},
+      {"name": "진달래", "amount": "한 줌"},
       {"name": "꿀", "amount": "2~3큰술"},
       {"name": "오미자청 또는 오미자 물(선택)", "amount": "1컵"},
       {"name": "물", "amount": "3컵"},
@@ -3209,7 +3209,7 @@
     "cookTime": "25분",
     "difficulty": "초급",
     "ingredients": [
-      {"name": "명태", "amount": "1마리(토막)"},
+      {"name": "명태(동태)", "amount": "1마리(토막)"},
       {"name": "무", "amount": "200g"},
       {"name": "대파", "amount": "1/2대"}
     ],
@@ -3224,7 +3224,7 @@
       {"step": 2, "description": "중약불로 줄여 12~15분 조리고 대파를 넣어 마무리합니다."}
     ],
     "tips": ["무를 먼저 깔아 눌어붙지 않게 합니다."],
-    "relatedIngredients": ["명태", "무"],
+    "relatedIngredients": ["명태(동태)", "무"],
     "relatedHolidays": []
   }
   ,
