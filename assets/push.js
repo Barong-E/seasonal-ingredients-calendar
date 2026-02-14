@@ -51,7 +51,8 @@ export async function initPush() {
           id: new Date().getTime(),
           schedule: { at: new Date(Date.now() + 100) },
           extra: notification.data,
-          smallIcon: 'ic_stat_icon_config_sample' // 기본 아이콘 사용
+          channelId: 'default',
+          smallIcon: 'ic_launcher'
         }]
       });
     });

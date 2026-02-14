@@ -1094,6 +1094,10 @@ async function init() {
     AppState.holidays.forEach(h => {
         h.solarDate = getHolidaySolarDate(h, today);
     });
+    
+    // AppState를 전역으로 노출 (setting.js에서 접근 가능하도록)
+    window.AppState = AppState;
+    console.log('✅ AppState 전역 노출 완료, allIngredients 수:', AppState.allIngredients.length);
 
     if (holidayResult.error) {
       displayHolidayError();

@@ -98,9 +98,14 @@ export function initSettingModal() {
       }
     };
     
-    await saveSettings(newSettings);
-    closeSettingModal();
-    alert('설정이 저장되고 알림이 예약되었습니다.');
+    try {
+      await saveSettings(newSettings);
+      closeSettingModal();
+      alert('설정이 저장되고 알림이 예약되었습니다.');
+    } catch (error) {
+      console.error('알림 설정 저장 실패:', error);
+      alert('알림 권한이 필요합니다.\n기기 설정에서 알림을 허용해주세요.');
+    }
   });
 
   // 닫기 이벤트
@@ -127,11 +132,37 @@ export function initSettingModal() {
 // --------------------------------------------------------
 
 async function updateNotificationSchedule() {
+  // 0. LocalNotifications 권한 확인 및 요청
+  const permStatus = await LocalNotifications.checkPermissions();
+  if (permStatus.display !== 'granted') {
+    const requested = await LocalNotifications.requestPermissions();
+    if (requested.display !== 'granted') {
+      console.error('LocalNotifications 권한이 거부되었습니다.');
+      throw new Error('알림 권한이 필요합니다.');
+    }
+  }
+
+  // 0-1. LocalNotifications용 채널 생성 (Android 필수)
+  try {
+    await LocalNotifications.createChannel({
+      id: 'default',
+      name: '기본 알림',
+      description: '제철 알리미 로컬 알림',
+      importance: 4, // 높음 (소리 + 팝업)
+      visibility: 1, // 공개
+      sound: 'default'
+    });
+    console.log('LocalNotifications 채널 생성 완료');
+  } catch (e) {
+    console.warn('채널 생성 실패 (이미 존재하거나 웹 환경):', e);
+  }
+
   // 1. 기존 알림 모두 취소 (ID 10000~19999: 식재료, 20000~29999: 명절)
   // 단순화를 위해 전체 취소 후 재등록
   const pending = await LocalNotifications.getPending();
   if (pending.notifications.length > 0) {
     await LocalNotifications.cancel(pending);
+    console.log(`기존 알림 ${pending.notifications.length}개 취소됨`);
   }
 
   const notis = [];
@@ -179,7 +210,8 @@ async function updateNotificationSchedule() {
           body: `${month}월에는 ${bodyText}`,
           schedule: { at: targetDate },
           extra: { type: 'ingredient', month: month },
-          smallIcon: 'ic_stat_icon_config_sample'
+          channelId: 'default',
+          smallIcon: 'ic_launcher'
         });
       }
     }
@@ -216,7 +248,8 @@ async function updateNotificationSchedule() {
           body: `${holiday.name}에는 ${foodNames}을(를) 먹어요.`,
           schedule: { at: notiDate },
           extra: { type: 'holiday', name: holiday.name },
-          smallIcon: 'ic_stat_icon_config_sample'
+          channelId: 'default',
+          smallIcon: 'ic_launcher'
         });
       }
     });
@@ -224,7 +257,23 @@ async function updateNotificationSchedule() {
 
   if (notis.length > 0) {
     await LocalNotifications.schedule({ notifications: notis });
-    console.log(`${notis.length}개의 알림이 예약되었습니다.`);
+    console.log(`✅ ${notis.length}개의 알림이 예약되었습니다.`);
+    
+    // 디버깅: 예약된 알림 상세 출력
+    console.log('📅 예약된 알림 목록:');
+    notis.forEach(n => {
+      const date = new Date(n.schedule.at);
+      console.log(`  - [${n.id}] ${n.title} | ${date.toLocaleString('ko-KR')}`);
+    });
+    
+    // 최종 확인: 실제 예약된 알림 목록
+    const confirmedPending = await LocalNotifications.getPending();
+    console.log(`📋 시스템에 등록된 알림 수: ${confirmedPending.notifications.length}개`);
+  } else {
+    console.warn('⚠️ 예약할 알림이 0개입니다. (AppState.allIngredients 비어있거나 조건 미충족)');
+    console.log('  - AppState.allIngredients 길이:', window.AppState?.allIngredients?.length || 0);
+    console.log('  - 식재료 알림 활성화:', Settings.ingredient.enabled);
+    console.log('  - 명절 알림 활성화:', Settings.holiday.enabled);
   }
 }
 
