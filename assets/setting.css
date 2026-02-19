@@ -197,3 +197,23 @@ input:checked + .slider:before {
 .full-width {
   width: 100%;
 }
+
+/* 설정 모달 푸터: 저장 버튼 아래에 개인정보처리방침 배치 */
+#settingModal .modal__footer {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 8px;
+}
+
+#settingModal .modal__footer .full-width {
+  width: 100%;
+}
+
+#settingModal .privacy-link {
+  align-self: flex-end;
+  font-size: 0.82rem;
+  color: #4b5563;
+  text-decoration: underline;
+  line-height: 1.2;
+}

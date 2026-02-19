@@ -211,7 +211,7 @@ async function updateNotificationSchedule() {
           schedule: { at: targetDate },
           extra: { type: 'ingredient', month: month },
           channelId: 'default',
-          smallIcon: 'ic_launcher'
+          smallIcon: 'ic_notification'
         });
       }
     }
@@ -249,7 +249,7 @@ async function updateNotificationSchedule() {
           schedule: { at: notiDate },
           extra: { type: 'holiday', name: holiday.name },
           channelId: 'default',
-          smallIcon: 'ic_launcher'
+          smallIcon: 'ic_notification'
         });
       }
     });

@@ -1,4 +1,4 @@
-<!doctype html>
+﻿<!doctype html>
 <html lang="ko">
   <head>
     <meta charset="utf-8">
@@ -42,17 +42,18 @@
     <link rel="manifest" href="/assets/manifest-CjCgzzUt.webmanifest">
     <meta name="theme-color" content="#0A7B34">
     <link rel="icon" href="/images/icons/app-icon-192.png" type="image/png">
-    <link rel="apple-touch-icon" href="/images/icons/app-icon-192.png">
-    <script type="module" crossorigin src="/assets/main-DThI6SoP.js"></script>
-    <link rel="stylesheet" crossorigin href="/assets/main-BB-JCbOv.css">
+    <link rel="apple-touch-icon" href="/images/icons/app-icon-192.png">
+    <script type="module" crossorigin src="/assets/main-wyj_kQ_h.js"></script>
+    <link rel="modulepreload" crossorigin href="/assets/style-CgXtxQZB.js">
+    <link rel="stylesheet" crossorigin href="/assets/style-CIral02b.css">
+    <link rel="stylesheet" crossorigin href="/assets/main-CwPL7O0h.css">
   </head>
   <body>
     <header class="app-header">
-      <h1 class="visually-hidden">제철 알리미</h1>
+      <h1 class="visually-hidden">띵동 제철음식</h1>
       <div class="header-bar" role="banner">
         <div class="brand" aria-label="브랜드">
-          <span class="brand__primary">제철·명절</span>
-          <span class="brand__secondary">음식</span>
+          <span class="brand__primary">띵동 제철음식</span>
         </div>
         <div class="header-controls">
           <form id="filtersForm" class="header-search" onsubmit="return false;" role="search">
@@ -291,10 +292,11 @@
     </div>
     <div class="modal__footer">
       <button id="saveSettingButton" class="modal__purchase-btn full-width" type="button">저장하기</button>
+      <button class="privacy-link" type="button" onclick="window.openPrivacyModal()">개인정보처리방침</button>
     </div>
   </div>
 </div>
-
+
 <script>
   if ('serviceWorker' in navigator) {
     window.addEventListener('load', function() {
@@ -305,7 +307,51 @@
     document.documentElement.classList.add('app-installed');
   }
 </script>
+  
+<!-- 개인정보처리방침 모달 -->
+<div id="privacyModal" class="modal" role="dialog" aria-modal="true" aria-labelledby="privacyModalTitle" aria-hidden="true" style="z-index:10000;">
+  <div class="modal__backdrop" aria-hidden="true" onclick="window.closePrivacyModal()"></div>
+  <div class="modal__content" style="max-height:85vh;">
+    <button class="modal__close" aria-label="닫기" type="button" onclick="window.closePrivacyModal()">×</button>
+    <div class="modal__body" style="padding:16px 20px 24px;overflow-y:auto;max-height:70vh;">
+      <h2 id="privacyModalTitle" style="margin-top:0;font-size:1.1rem;">개인정보처리방침</h2>
+      <p>띵동 제철음식은 이용자의 개인정보를 수집·저장·전송하지 않습니다.</p>
+      <h3 style="margin-top:20px;font-size:1rem;">1. 수집하는 개인정보</h3>
+      <p>본 앱은 이름, 이메일, 전화번호, 주소, 위치정보 등 어떠한 개인정보도 수집하지 않습니다.</p>
+      <h3 style="font-size:1rem;">2. 개인정보의 이용 및 제공</h3>
+      <p>개인정보를 수집하지 않으므로 이용하거나 제3자에게 제공하지 않습니다.</p>
+      <h3 style="font-size:1rem;">3. 기기 내 저장</h3>
+      <p>알림 설정 등 앱 사용에 필요한 일부 정보는 기기 내부(LocalStorage)에만 저장됩니다.</p>
+      <p>이 정보는 앱 기능 제공을 위한 목적이며, 외부 서버로 전송되지 않습니다.</p>
+      <h3 style="font-size:1rem;">4. 알림</h3>
+      <p>푸시/로컬 알림은 사용자 설정에 따라 기기 내에서만 동작합니다.</p>
+      <p>알림 전송을 위해 개인정보를 서버에 전송하지 않습니다.</p>
+      <h3 style="font-size:1rem;">5. 분석/광고 SDK</h3>
+      <p>본 앱은 분석/광고 SDK를 사용하지 않습니다.</p>
+      <h3 style="font-size:1rem;">6. 문의</h3>
+      <p>문의: <a href="mailto:dodaeland@gmail.com" style="color:#2563eb;">dodaeland@gmail.com</a></p>
+      <p style="margin-top:24px;color:#666;font-size:0.9rem;">최종 업데이트: 2026-02-08</p>
+    </div>
+    <div class="modal__footer">
+      <button class="modal__purchase-btn full-width" type="button" onclick="window.closePrivacyModal()">닫기</button>
+    </div>
+  </div>
+</div>
+
+<script>
+  window.openPrivacyModal = function() {
+    var m = document.getElementById('privacyModal');
+    m.setAttribute('aria-hidden', 'false');
+    m.style.display = 'flex';
+  };
+  window.closePrivacyModal = function() {
+    var m = document.getElementById('privacyModal');
+    m.setAttribute('aria-hidden', 'true');
+    m.style.display = 'none';
+  };
+</script>
   </body>
   </html>
+
 
 

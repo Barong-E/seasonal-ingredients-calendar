@@ -1,7 +1,6 @@
 import { Capacitor } from '@capacitor/core';
 import { PushNotifications } from '@capacitor/push-notifications';
 import { LocalNotifications } from '@capacitor/local-notifications';
-import { showPermissionPrompt } from './permission.js';
 
 export async function initPush() {
   if (!Capacitor.isNativePlatform()) {
@@ -16,13 +15,6 @@ export async function initPush() {
     let permStatus = await PushNotifications.checkPermissions();
 
     if (permStatus.receive === 'prompt') {
-      const confirmed = await showPermissionPrompt({
-        title: '알림 권한 안내',
-        description: '제철 식재료와 명절 알림을 받으려면 알림 권한이 필요합니다.',
-        confirmText: '허용하기',
-        cancelText: '나중에'
-      });
-      if (!confirmed) return;
       permStatus = await PushNotifications.requestPermissions();
     }
 
@@ -60,7 +52,7 @@ export async function initPush() {
           schedule: { at: new Date(Date.now() + 100) },
           extra: notification.data,
           channelId: 'default',
-          smallIcon: 'ic_launcher'
+          smallIcon: 'ic_notification'
         }]
       });
     });
