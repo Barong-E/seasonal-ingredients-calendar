@@ -8,6 +8,7 @@ export default defineConfig({
       input: {
         main: resolve(__dirname, 'index.html'),
         recipe: resolve(__dirname, 'recipe.html'),
+        privacy: resolve(__dirname, 'privacy.html'),
       },
     },
   },
