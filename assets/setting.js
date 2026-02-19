@@ -147,7 +147,7 @@ async function updateNotificationSchedule() {
     await LocalNotifications.createChannel({
       id: 'default',
       name: '기본 알림',
-      description: '제철 알리미 로컬 알림',
+      description: '띵동 제철음식 로컬 알림',
       importance: 4, // 높음 (소리 + 팝업)
       visibility: 1, // 공개
       sound: 'default'
