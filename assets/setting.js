@@ -1,4 +1,98 @@
 import { LocalNotifications } from '@capacitor/local-notifications';
+import KoreanLunarCalendar from 'korean-lunar-calendar';
+
+// 전역 데이터 캐시 (로컬 스토리지에 캐시할 수도 있지만, 설정 팝업에서 간단히 메모리로 사용)
+let cachedIngredients = null;
+let cachedHolidays = null;
+
+async function getIngredientsData() {
+  if (cachedIngredients) return cachedIngredients;
+  try {
+    const res = await fetch('data/ingredients.json');
+    cachedIngredients = await res.json();
+    return cachedIngredients;
+  } catch (err) {
+    console.error('식재료 데이터 로드 실패:', err);
+    return [];
+  }
+}
+
+async function getHolidaysData() {
+  if (cachedHolidays) return cachedHolidays;
+  try {
+    const res = await fetch('data/holidays.json');
+    cachedHolidays = await res.json();
+    return cachedHolidays;
+  } catch (err) {
+    console.error('명절 데이터 로드 실패:', err);
+    return [];
+  }
+}
+
+// 명절/절기 날짜 계산 로직 모음
+function getSolarOverrideDate(holiday, year) {
+  const overrides = holiday.solar_overrides;
+  if (!overrides) return null;
+  const key = String(year);
+  const data = overrides[key];
+  if (!data) return null;
+  if (typeof data === 'string') {
+    const parts = data.split('-');
+    if (parts.length !== 2) return null;
+    const mm = parseInt(parts[0], 10);
+    const dd = parseInt(parts[1], 10);
+    if (!mm || !dd) return null;
+    return new Date(year, mm - 1, dd);
+  }
+  if (typeof data === 'object' && data.month && data.day) {
+    return new Date(year, data.month - 1, data.day);
+  }
+  return null;
+}
+
+function getDongjiDateForYear(year) {
+  if (year === 2025) return new Date(2025, 11, 22);
+  if (year === 2026) return new Date(2026, 11, 22);
+  return new Date(year, 11, 22);
+}
+
+function getHolidaySolarDateForYear(holiday, year) {
+  const { type, month, day } = holiday.date;
+  const overrideDate = getSolarOverrideDate(holiday, year);
+  if (overrideDate) return overrideDate;
+
+  if (holiday.id === 'hansik') {
+    const dongjiDate = getDongjiDateForYear(year - 1);
+    if (!dongjiDate) return null;
+    const hansikDate = new Date(dongjiDate);
+    hansikDate.setDate(hansikDate.getDate() + 105);
+    return hansikDate;
+  }
+
+  if (type === 'lunar') {
+    const calendar = new KoreanLunarCalendar();
+    const intercalation = Boolean(holiday.date.intercalation);
+    const ok = calendar.setLunarDate(year, month, day, intercalation);
+    if (!ok) return null;
+    const solar = calendar.getSolarCalendar();
+    if (!solar || !solar.year || !solar.month || !solar.day) return null;
+    return new Date(solar.year, solar.month - 1, solar.day);
+  }
+  if (type === 'solar') {
+    return new Date(year, month - 1, day);
+  }
+  return getDongjiDateForYear(year);
+}
+
+function getHolidaySolarDate(holiday, today) {
+  const baseYear = today.getFullYear();
+  let date = getHolidaySolarDateForYear(holiday, baseYear);
+  if (!date) return null;
+  if (date < today) {
+    date = getHolidaySolarDateForYear(holiday, baseYear + 1);
+  }
+  return date;
+}
 
 // 설정 상태 관리
 const Settings = {
@@ -36,11 +130,7 @@ export async function saveSettings(newSettings) {
 }
 
 // UI 초기화
-export function initSettingModal() {
-  const modal = document.getElementById('settingModal');
-  const closeBtn = modal.querySelector('.modal__close');
-  const backdrop = modal.querySelector('.modal__backdrop');
-  
+export function initSettingsPage() {
   const ingToggle = document.getElementById('ingredientNotiToggle');
   const ingDetail = document.getElementById('ingredientNotiDetail');
   const ingDaySelect = document.getElementById('ingredientNotiDay');
@@ -53,12 +143,23 @@ export function initSettingModal() {
   
   const saveBtn = document.getElementById('saveSettingButton');
 
-  // 날짜 옵션 생성 (1~31)
+  // 요소가 없으면 중단
+  if (!ingToggle || !saveBtn) return;
+
+  // 식재료 날짜 옵션 생성 (1~31)
   for (let i = 1; i <= 31; i++) {
     const opt = document.createElement('option');
     opt.value = i;
     opt.textContent = `매월 ${i}일`;
     ingDaySelect.appendChild(opt);
+  }
+
+  // 명절 d-day 옵션 생성 (0~30)
+  for (let i = 0; i <= 30; i++) {
+    const opt = document.createElement('option');
+    opt.value = i;
+    opt.textContent = i === 0 ? '당일' : `${i}일 전`;
+    holiDdaySelect.appendChild(opt);
   }
 
   // 초기값 반영
@@ -100,31 +201,29 @@ export function initSettingModal() {
     
     try {
       await saveSettings(newSettings);
-      closeSettingModal();
-      alert('설정이 저장되고 알림이 예약되었습니다.');
+      const overlay = document.getElementById('savingOverlay');
+      if (overlay) {
+        overlay.classList.add('show');
+        setTimeout(() => {
+          overlay.classList.remove('show');
+          history.back(); // 뒤로가기
+        }, 500);
+      } else {
+        alert('설정이 저장되고 알림이 예약되었습니다.');
+        history.back(); // 뒤로가기
+      }
     } catch (error) {
       console.error('알림 설정 저장 실패:', error);
       alert('알림 권한이 필요합니다.\n기기 설정에서 알림을 허용해주세요.');
     }
   });
+}
 
-  // 닫기 이벤트
-  const close = () => {
-    modal.setAttribute('aria-hidden', 'true');
-    modal.style.display = 'none';
-    document.body.style.overflow = '';
-  };
-
-  closeBtn.addEventListener('click', close);
-  backdrop.addEventListener('click', close);
-  
-  window.openSettingModal = () => {
-    history.pushState({ modal: 'setting' }, '', location.href);
-    modal.setAttribute('aria-hidden', 'false');
-    modal.style.display = 'flex';
-    document.body.style.overflow = 'hidden';
-  };
-  window.closeSettingModal = close;
+// 스크립트가 로드되면 자동 초기화
+if (document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', initSettingsPage);
+} else {
+  initSettingsPage();
 }
 
 // --------------------------------------------------------
@@ -174,8 +273,9 @@ async function updateNotificationSchedule() {
     const day = Settings.ingredient.day;
     const now = new Date();
     
-    // 이달에 아직 날짜가 안 지났으면 이번 달부터, 지났으면 다음 달부터
-    // (간단히 다음 달부터 12개월 예약으로 구현)
+    // 식재료 데이터 가져오기
+    const allIngredients = await getIngredientsData();
+    
     for (let i = 0; i < 12; i++) {
       const targetDate = new Date(
         now.getFullYear(),
@@ -186,19 +286,18 @@ async function updateNotificationSchedule() {
         0
       );
       
-      // 만약 해당 월에 그 날짜가 없으면 (예: 2월 31일), 그 달의 마지막 날로 조정
       if (targetDate.getMonth() !== (now.getMonth() + i) % 12) {
-        targetDate.setDate(0); // 전달 마지막 날 = 원래 달의 마지막 날
+        targetDate.setDate(0); 
       }
 
-      if (targetDate < now) continue; // 이미 지난 시간 제외
+      if (targetDate < now) continue;
 
-      // 해당 월의 "새로운" 식재료 찾기
       const month = targetDate.getMonth() + 1;
-      const newIngredients = getNewIngredientsForMonth(month);
+      // 독립적인 allIngredients 변수를 파라미터로 넘겨 새 제철 음식을 검색합니다.
+      const newIngredients = getNewIngredientsForMonth(month, allIngredients);
       
       if (newIngredients.length > 0) {
-        const names = newIngredients.slice(0, 3).map(i => i.name_ko).join(', ');
+        const names = newIngredients.slice(0, 3).map(item => item.name_ko).join(', ');
         const count = newIngredients.length;
         const bodyText = count > 3 
           ? `${names} 등 ${count}가지가 제철이에요.` 
@@ -220,22 +319,16 @@ async function updateNotificationSchedule() {
   // 3. 명절 알림 예약 (향후 1년 치)
   if (Settings.holiday.enabled) {
     const dDay = Settings.holiday.dDay;
-    // holidays.json 데이터 필요 (전역 AppState 등에서 접근 가능해야 함)
-    // 여기서는 fetch로 다시 가져오거나 window.AppState 사용
-    const holidays = window.AppState?.holidays || []; // script.js에서 AppState.holidays 저장 필요
+    const holidays = await getHolidaysData();
+    const today = new Date();
+    today.setHours(0, 0, 0, 0);
     
     holidays.forEach((holiday, idx) => {
-      // 명절 날짜 계산 (태양력/음력 변환 로직은 script.js에 있음 - 여기선 solarDate 활용)
-      // *주의: script.js의 getUpcomingHoliday 로직 재사용 필요*
-      // 간단히: 현재 시점 이후의 명절 날짜를 구했다고 가정
-      
-      // *실제 구현을 위해선 script.js의 로직을 모듈화하거나, 여기서 직접 계산해야 함*
-      // 여기서는 window.AppState.holidays에 이미 계산된 solarDate가 있다고 가정하고 진행
-      // (script.js 수정 필요: loadHolidays 시 solarDate 계산해서 저장해두기)
-      
-      if (!holiday.solarDate) return;
+      // 위에서 선언한 날짜 계산 로직을 사용해서 solarDate 산출
+      const solarDate = getHolidaySolarDate(holiday, today);
+      if (!solarDate) return;
 
-      const notiDate = new Date(holiday.solarDate);
+      const notiDate = new Date(solarDate);
       notiDate.setDate(notiDate.getDate() - dDay);
       notiDate.setHours(holidayTime.hours, holidayTime.minutes, 0);
 
@@ -277,14 +370,10 @@ async function updateNotificationSchedule() {
   }
 }
 
-// 헬퍼: 해당 월에 "새로 시작하는" 식재료 찾기
-function getNewIngredientsForMonth(month) {
-  // AppState.allIngredients 사용
-  const all = window.AppState?.allIngredients || [];
+// 헬퍼: 해당 월에 "새로 시작하는" 식재료 찾기 (allIngredients를 주입받아 처리)
+function getNewIngredientsForMonth(month, allIngredients) {
+  const all = allIngredients || [];
   return all.filter(item => {
-    // periods 배열 중 "시작 월"이 month인 것이 있는지 확인
-    // (단순화: periods의 첫 번째 요소의 month가 이번 달인 경우)
-    // 더 정확히는: 직전 달(month-1)에는 없었는데 이번 달(month)에는 있는 것
     const periods = item.periods || [];
     const hasThisMonth = periods.some(p => p.month === month);
     

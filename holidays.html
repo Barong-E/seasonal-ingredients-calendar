@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, user-scalable=no">
+    <title>띵동 제철음식 - 명절·절기</title>
+    
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="assets/style.css">
+    
+    <style>
+      .holidays-header {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 100;
+        background: var(--glass-bg);
+        backdrop-filter: blur(24px);
+        border-bottom: 1px solid var(--glass-border);
+        box-shadow: var(--shadow-md);
+        padding: 20px;
+        text-align: center;
+      }
+      .holidays-title {
+        margin: 0;
+        font-size: 1.3rem;
+        font-weight: 800;
+        color: var(--primary);
+      }
+      .holidays-container {
+        padding: calc(var(--header-offset, 80px) + 20px) 20px 80px;
+        max-width: 800px;
+        margin: 0 auto;
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+      }
+      .holiday-item {
+        display: flex;
+        align-items: center;
+        gap: 16px;
+        background: #fff;
+        padding: 16px;
+        border-radius: var(--border-radius-sm);
+        box-shadow: var(--shadow-sm);
+        text-decoration: none;
+        color: inherit;
+        border: 1px solid var(--glass-border);
+        transition: transform 0.2s;
+      }
+      .holiday-item:hover {
+        transform: translateY(-2px);
+        box-shadow: var(--shadow-md);
+      }
+      .holiday-thumb {
+        width: 64px;
+        height: 64px;
+        border-radius: 12px;
+        object-fit: cover;
+        background: #f0f0f0;
+      }
+      .holiday-info {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        gap: 4px;
+      }
+      .holiday-name {
+        font-size: 1.1rem;
+        font-weight: 700;
+        margin: 0;
+        color: var(--text);
+      }
+      .holiday-date {
+        font-size: 0.85rem;
+        color: var(--primary);
+        font-weight: 600;
+      }
+      .holiday-desc {
+        font-size: 0.9rem;
+        color: #666;
+        margin: 0;
+        line-height: 1.4;
+      }
+    </style>
+  </head>
+  <body>
+    <header class="holidays-header">
+      <h1 class="holidays-title">명절·절기 음식</h1>
+    </header>
+
+    <main class="holidays-container" id="holidayListContainer">
+      <!-- JS로 리스트 렌더링 -->
+    </main>
+
+    <!-- 하단 탭바 (GNB) -->
+    <nav class="gnb" aria-label="하단 네비게이션">
+      <a href="index.html" class="gnb__item">
+        <svg class="gnb__icon" viewBox="0 0 24 24" width="24" height="24" fill="currentColor">
+          <path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/>
+        </svg>
+        <span class="gnb__label">제철 식재료</span>
+      </a>
+      <a href="holidays.html" class="gnb__item active" aria-current="page">
+        <svg class="gnb__icon" viewBox="0 0 24 24" width="24" height="24" fill="currentColor">
+          <path d="M19 4h-1V2h-2v2H8V2H6v2H5c-1.11 0-1.99.9-1.99 2L3 20a2 2 0 002 2h14c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 16H5V10h14v10z"/>
+        </svg>
+        <span class="gnb__label">명절·절기</span>
+      </a>
+    </nav>
+
+    <script type="module" src="assets/holidays-list.js?v=1"></script>
+    <script>
+      window.addEventListener('load', () => {
+        const header = document.querySelector('.holidays-header');
+        if (header) {
+          document.documentElement.style.setProperty('--header-offset', `${header.offsetHeight}px`);
+        }
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,257 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, user-scalable=no">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <title>띵동 제철음식 - 식재료 상세</title>
+    
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="manifest" href="/manifest.webmanifest">
+    <meta name="theme-color" content="#0A7B34">
+    <link rel="icon" href="/images/icons/app-icon-192.png" type="image/png">
+    <link rel="apple-touch-icon" href="/images/icons/app-icon-192.png">
+    
+    <link rel="stylesheet" href="assets/style.css">
+    <style>
+      /* 상세 페이지 전용 스타일 */
+      .page-header {
+        display: flex;
+        align-items: center;
+        gap: 16px;
+      }
+      .back-button {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 40px;
+        height: 40px;
+        background: transparent;
+        color: #333;
+        border: none;
+        border-radius: 50%;
+        cursor: pointer;
+        transition: background 0.2s;
+        margin-left: -8px; /* 정렬 보정 */
+      }
+      .back-button:hover {
+        background: rgba(0, 0, 0, 0.05);
+      }
+      
+      .detail-container {
+        padding: calc(var(--header-offset, 80px) + 20px) 20px 80px;
+        max-width: 600px;
+        margin: 0 auto;
+        display: none; /* 로딩 전 숨김 */
+      }
+      
+      .detail-card {
+        background: #fff;
+        border-radius: var(--border-radius-lg, 24px);
+        box-shadow: var(--shadow-md, 0 8px 24px rgba(0,0,0,0.12));
+        overflow: hidden;
+      }
+      
+      .detail-header-row {
+        display: flex;
+        gap: 16px;
+        padding: 24px 24px 8px 24px;
+      }
+
+      .detail-image-wrap {
+        flex-shrink: 0;
+        width: 110px;
+        height: 110px;
+        position: relative;
+        border-radius: var(--border-radius-md, 16px);
+        overflow: hidden;
+        background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+        box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+      }
+      
+      .detail-image {
+        position: absolute;
+        top: 0; left: 0; width: 100%; height: 100%;
+        object-fit: cover;
+      }
+
+      .detail-header-text {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+      }
+      
+      .detail-body {
+        padding: 8px 24px 24px 24px;
+      }
+      
+      .detail-title {
+        margin: 0 0 6px 0;
+        font-size: 1.0rem;
+        font-weight: 800;
+        background: var(--primary-gradient);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        line-height: 1.2;
+      }
+      
+      .detail-desc {
+        font-size: 0.85rem;
+        line-height: 1.5;
+        color: #444;
+        margin: 0;
+        word-break: keep-all;
+      }
+      
+      @media (max-width: 767px) {
+        .detail-title {
+          font-size: 0.95rem;
+        }
+        .detail-desc {
+          font-size: 0.8rem;
+        }
+      }
+      
+      .bottom-bar {
+        position: fixed;
+        bottom: 0; left: 0; right: 0;
+        padding: 16px 20px;
+        background: var(--glass-bg);
+        backdrop-filter: blur(20px);
+        border-top: 1px solid var(--glass-border);
+        box-shadow: 0 -4px 20px rgba(0,0,0,0.08);
+        display: flex;
+        justify-content: center;
+        z-index: 100;
+      }
+      
+      .btn-purchase {
+        width: 100%;
+        max-width: 400px;
+        background: var(--primary-gradient);
+        color: white;
+        border: none;
+        border-radius: var(--border-radius-md, 12px);
+        padding: 16px;
+        font-size: 1.1rem;
+        font-weight: 700;
+        cursor: pointer;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+        transition: transform 0.2s;
+      }
+      .btn-purchase:active {
+        transform: scale(0.98);
+      }
+      
+      /* section 공통 처리 (style.css의 modal 섹션 재사용 유도 및 변형) */
+      .info-section {
+        margin-top: 24px;
+        padding-top: 24px;
+        border-top: 1px solid #eee;
+      }
+      
+      /* 로딩 상태 */
+      .loading {
+        padding-top: 120px;
+        text-align: center;
+        color: #666;
+      }
+    </style>
+  </head>
+  <body>
+    <header class="app-header">
+      <div class="header-bar page-header">
+        <button class="back-button" onclick="history.back()" aria-label="뒤로가기">
+          <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="15 18 9 12 15 6"></polyline>
+          </svg>
+        </button>
+        <div class="brand">
+          <span class="brand__primary">식재료 상세</span>
+        </div>
+      </div>
+    </header>
+
+    <div id="loading" class="loading">정보를 불러오는 중입니다...</div>
+    <div id="error" class="loading" style="display:none; color: var(--accent);">식재료를 찾을 수 없습니다.</div>
+
+    <main id="detailContainer" class="detail-container">
+      <article class="detail-card">
+        <div class="detail-header-row">
+          <div class="detail-image-wrap">
+            <img id="detailImage" class="detail-image" src="" alt="" />
+          </div>
+          <div class="detail-header-text">
+            <h1 id="detailTitle" class="detail-title"></h1>
+            <p id="detailDesc" class="detail-desc"></p>
+          </div>
+        </div>
+        <div class="detail-body">
+
+          <!-- 칼로리 정보 -->
+          <div id="caloriesSection" class="info-section modal__calories" style="display: none; margin-top:0; padding-top:0; border:none;">
+            <div class="modal__section-header">
+              <span class="modal__icon">🔥</span>
+              <span class="modal__section-title">칼로리 정보</span>
+            </div>
+            <div class="modal__calories-content">
+              <div class="calories-row">
+                <span class="calories-label">100g당</span>
+                <span id="caloriesPer100g" class="calories-number"></span>
+              </div>
+              <div class="calories-row">
+                <span id="caloriesPerServing" class="calories-serving"></span>
+              </div>
+            </div>
+          </div>
+
+          <!-- 손질법 -->
+          <div id="prepSection" class="info-section modal__preparation" style="display: none;">
+            <div class="modal__section-header">
+              <span class="modal__icon">✂️</span>
+              <span class="modal__section-title">손질법</span>
+            </div>
+            <p id="prepText" class="modal__preparation-text"></p>
+          </div>
+
+          <!-- 보관법 -->
+          <div id="storageSection" class="info-section modal__storage" style="display: none;">
+            <div class="modal__section-header">
+              <span class="modal__icon">❄️</span>
+              <span class="modal__section-title">보관법</span>
+            </div>
+            <div id="storageContent" class="modal__storage-content"></div>
+          </div>
+
+          <!-- 대표 요리 -->
+          <div id="dishSection" class="info-section modal__dish" style="display: none;">
+            <div class="modal__section-header">
+              <span class="modal__icon">🍽️</span>
+              <span class="modal__section-title">대표 요리</span>
+            </div>
+            <p id="dishText" class="modal__dish-text"></p>
+          </div>
+        </div>
+      </article>
+    </main>
+
+    <div id="bottomBar" class="bottom-bar" style="display:none;">
+      <button id="btnPurchase" class="btn-purchase" type="button">구매하기</button>
+    </div>
+
+    <script type="module" src="assets/ingredient.js?v=v11"></script>
+    <script>
+      // 헤더 높이 계산하여 여백 주기
+      window.addEventListener('load', () => {
+        const header = document.querySelector('.app-header');
+        if (header) {
+          document.documentElement.style.setProperty('--header-offset', `${header.offsetHeight}px`);
+        }
+      });
+    </script>
+  </body>
+</html>

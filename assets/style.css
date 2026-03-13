@@ -1050,4 +1050,66 @@ body.has-banner .carousel {
 /* --- Single-scroll hard guard (forces only body to scroll) --- */
 html, body { overflow-x: hidden !important; overflow-y: auto !important; }
 
+/* --- 하단 탭바 (GNB) --- */
+.gnb {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 64px;
+  background: var(--glass-bg);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border-top: 1px solid var(--glass-border);
+  box-shadow: 0 -4px 12px rgba(0, 0, 0, 0.05);
+  display: flex;
+  align-items: stretch;
+  justify-content: space-around;
+  z-index: 100;
+  padding-bottom: env(safe-area-inset-bottom); /* iOS 노치 등 하단 여백 대응 */
+}
+
+/* GNB 공간만큼 main 하단에 여백 주기 (64px + safe-area + 여유 10px) */
+main {
+  padding-bottom: calc(74px + env(safe-area-inset-bottom));
+}
+
+.gnb__item {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  color: #adb5bd;
+  text-decoration: none;
+  transition: all 0.2s ease;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.gnb__item:hover, .gnb__item:focus {
+  color: #868e96;
+}
+
+.gnb__icon {
+  transition: transform 0.2s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.gnb__label {
+  font-size: 0.75rem;
+  font-weight: 500;
+}
+
+/* 활성화 상태 */
+.gnb__item.active {
+  color: var(--primary);
+}
+
+.gnb__item.active .gnb__icon {
+  transform: translateY(-2px) scale(1.1);
+}
+
+.gnb__item.active .gnb__label {
+  font-weight: 700;
+}
 

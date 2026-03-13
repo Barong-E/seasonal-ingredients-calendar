@@ -1,0 +1,190 @@
+// ingredient.js
+// 식재료 상세 페이지 로직
+
+async function loadIngredientData() {
+  try {
+    const res = await fetch('data/ingredients.json?v=v11', { cache: 'no-cache' });
+    if (!res.ok) throw new Error('Failed to load data');
+    return await res.json();
+  } catch (err) {
+    console.error(err);
+    return null;
+  }
+}
+
+// 요리 이름을 레시피 ID로 매핑 (assets/script.js에서 복사)
+function getRecipeIdFromDishName(dishName) {
+  const mapping = {
+    '갈치조림': 'galchi-jorim',
+    '고등어조림': 'godeungeo-jorim',
+    '고등어구이': 'godeungeo-gui',
+    '굴전': 'gul-jeon',
+    '굴국밥': 'gul-gukbap',
+    '떡국': 'tteokguk',
+    '송편': 'songpyeon',
+    '팥죽': 'patjuk',
+    '도다리쑥국': 'dodari-ssukguk',
+    '바지락칼국수': 'bajirak-kalguksu',
+    '주꾸미볶음': 'jukumi-bokkeum',
+    '오징어볶음': 'ojingeo-bokkeum',
+    '전복죽': 'jeonbok-juk',
+    '삼치구이': 'samchi-gui',
+    '오곡밥': 'ogokbap',
+    '묵은 나물': 'mukeun-namul',
+    '밀전병': 'miljeonbyeong',
+    '잡채': 'japchae',
+    '전·잡채·갈비찜 등': 'japchae',
+    '전': 'jeon',
+    '화전': 'hwajeon',
+    '수리취떡': 'surichwitteok',
+    '밀국수': 'milguksu',
+    '국수': 'milguksu',
+    '국화전': 'gukwha-jeon',
+    '갈비찜': 'galbijjim',
+    // ... 더 많은 매핑 (필요 시 공통 파일로 분리 추천)
+    '감자조림': 'gamja-jorim',
+    '감자전': 'gamja-jeon',
+    '가지나물': 'gaji-namul',
+    '가지볶음': 'gaji-bokkeum',
+  };
+  return mapping[dishName] || null;
+}
+
+function showCoupangRedirectOverlay() {
+  const overlay = document.createElement('div');
+  overlay.id = 'coupangRedirectOverlay';
+  overlay.className = 'redirect-overlay';
+  overlay.setAttribute('role', 'status');
+  overlay.innerHTML = `
+    <p class="redirect-overlay__text"><span class="redirect-overlay__highlight">쿠팡</span>으로 이동 중이에요</p>
+    <div class="redirect-overlay__arrow" aria-hidden="true"></div>
+  `;
+  document.body.appendChild(overlay);
+  requestAnimationFrame(() => overlay.classList.add('redirect-overlay--visible'));
+}
+
+function removeCoupangRedirectOverlay() {
+  const overlay = document.getElementById('coupangRedirectOverlay');
+  if (overlay) {
+    overlay.classList.remove('redirect-overlay--visible');
+    setTimeout(() => overlay.remove(), 200);
+  }
+}
+
+async function init() {
+  const params = new URLSearchParams(window.location.search);
+  const id = params.get('id');
+
+  if (!id) {
+    document.getElementById('loading').style.display = 'none';
+    document.getElementById('error').style.display = 'block';
+    return;
+  }
+
+  const data = await loadIngredientData();
+  if (!data) {
+    document.getElementById('loading').style.display = 'none';
+    document.getElementById('error').textContent = '데이터를 불러올 수 없습니다.';
+    document.getElementById('error').style.display = 'block';
+    return;
+  }
+
+  const item = data.find(i => i.name_ko === id);
+  if (!item) {
+    document.getElementById('loading').style.display = 'none';
+    document.getElementById('error').style.display = 'block';
+    return;
+  }
+
+  // 렌더링
+  document.title = `띵동 제철음식 - ${item.name_ko}`;
+  document.getElementById('loading').style.display = 'none';
+  document.getElementById('detailContainer').style.display = 'block';
+
+  document.getElementById('detailImage').src = `images/${item.image || '_fallback.png'}`;
+  document.getElementById('detailImage').alt = item.name_ko;
+  document.getElementById('detailTitle').textContent = item.name_ko;
+  document.getElementById('detailDesc').textContent = item.description_ko || '';
+
+  // 계절 테마 설정
+  if (item.periods && item.periods.length > 0) {
+    const firstPeriodMonth = item.periods[0].month;
+    let season = 'autumn';
+    if (firstPeriodMonth === 12 || firstPeriodMonth <= 2) season = 'winter';
+    else if (firstPeriodMonth >= 3 && firstPeriodMonth <= 5) season = 'spring';
+    else if (firstPeriodMonth >= 6 && firstPeriodMonth <= 8) season = 'summer';
+    document.body.classList.add(`theme-${season}`);
+  }
+
+  // 칼로리 설정
+  if (item.calories_per_100g) {
+    document.getElementById('caloriesSection').style.display = 'block';
+    document.getElementById('caloriesPer100g').textContent = `${item.calories_per_100g}kcal`;
+    document.getElementById('caloriesPerServing').textContent = item.calories_per_serving || '';
+  }
+
+  // 손질법
+  if (item.preparation_ko) {
+    document.getElementById('prepSection').style.display = 'block';
+    document.getElementById('prepText').textContent = item.preparation_ko;
+  }
+
+  // 보관법
+  if (item.storage_room_temp || item.storage_refrigerator || item.storage_freezer) {
+    document.getElementById('storageSection').style.display = 'block';
+    const storageEl = document.getElementById('storageContent');
+    
+    const types = [
+      { t: '실온', i: '🏠', m: item.storage_room_temp },
+      { t: '냉장', i: '🧊', m: item.storage_refrigerator },
+      { t: '냉동', i: '❄️', m: item.storage_freezer }
+    ];
+    
+    types.forEach(s => {
+      if (s.m) {
+        const div = document.createElement('div');
+        div.className = 'modal__storage-item'; // CSS reuse
+        div.innerHTML = `<span class="modal__storage-type">${s.i} ${s.t}</span><span class="modal__storage-method">${s.m}</span>`;
+        storageEl.appendChild(div);
+      }
+    });
+  }
+
+  // 대표 요리
+  if (item.popular_dish) {
+    document.getElementById('dishSection').style.display = 'block';
+    const dishEl = document.getElementById('dishText');
+    const dishes = item.popular_dish.split(',').map(d => d.trim());
+    
+    dishes.forEach((dish, index) => {
+      const recipeId = getRecipeIdFromDishName(dish);
+      if (recipeId) {
+        const a = document.createElement('a');
+        a.href = `recipe.html#${recipeId}`;
+        a.className = 'dish-link';
+        a.textContent = dish;
+        dishEl.appendChild(a);
+      } else {
+        const text = document.createTextNode(dish);
+        dishEl.appendChild(text);
+      }
+      if (index < dishes.length - 1) {
+        dishEl.appendChild(document.createTextNode(', '));
+      }
+    });
+  }
+
+  // 구매하기
+  if (item.external_url) {
+    document.getElementById('bottomBar').style.display = 'flex';
+    document.getElementById('btnPurchase').onclick = () => {
+      showCoupangRedirectOverlay();
+      setTimeout(() => {
+        window.open(item.external_url, '_blank', 'noopener,noreferrer');
+        setTimeout(removeCoupangRedirectOverlay, 400);
+      }, 600);
+    };
+  }
+}
+
+document.addEventListener('DOMContentLoaded', init);

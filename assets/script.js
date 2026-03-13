@@ -119,6 +119,8 @@ function displayHolidayBanner(holiday) {
   if (!holiday) return;
 
   const banner = document.getElementById('holidayBanner');
+  if (!banner) return;
+
   const dateEl = banner.querySelector('.holiday-banner__date');
   const descriptionEl = banner.querySelector('.holiday-banner__description');
   const imageEl = banner.querySelector('.holiday-banner__image');
@@ -135,7 +137,7 @@ function displayHolidayBanner(holiday) {
   document.body.classList.add('has-banner'); // 배너가 있을 때 body에 클래스 추가
   
   banner.onclick = () => {
-    openHolidayModal(holiday);
+    window.location.href = `holiday.html?id=${encodeURIComponent(holiday.id)}`;
   };
 }
 
@@ -212,93 +214,7 @@ function initBannerScroll() {
   });
 }
 
-function openHolidayModal(holiday) {
-  const modal = document.getElementById('holidayModal');
-  if (!modal) return;
-
-  history.pushState({ modal: 'holiday' }, '', location.href);
-  // DOM 요소들 가져오기
-  modal.querySelector('#holidayModalTitle').textContent = holiday.name;
-  modal.querySelector('#holidayModalSummary').textContent = holiday.summary;
-  modal.querySelector('#holidayModalImage').src = `images/${holiday.image}`;
-  modal.querySelector('#holidayModalImage').alt = holiday.name;
-
-  // 관련 이야기
-  const storyEl = modal.querySelector('#holidayModalStory');
-  if (holiday.story) {
-    const storyContent = `<strong>${holiday.story.title}</strong><br>${holiday.story.content}`;
-    modal.querySelector('#holidayModalStoryContent').innerHTML = storyContent;
-    storyEl.style.display = 'block';
-  } else {
-    storyEl.style.display = 'none';
-  }
-
-  // 대표 음식
-  const foodsEl = modal.querySelector('#holidayModalFoods');
-  const foodsContentEl = modal.querySelector('#holidayModalFoodsContent');
-  if (holiday.details.foods && holiday.details.foods.length > 0) {
-    foodsContentEl.innerHTML = '';
-    holiday.details.foods.forEach(food => {
-      const recipeId = getRecipeIdFromDishName(food.name);
-      const item = document.createElement('div');
-      item.className = 'item';
-      
-      const nameEl = document.createElement('span');
-      nameEl.className = 'item__name';
-      if (recipeId) {
-        const link = document.createElement('a');
-        // 해시 기반 + 확장자 명시 (정적 호스팅 호환)
-        link.href = `recipe.html#${recipeId}`;
-        link.className = 'dish-link';
-        link.textContent = food.name;
-        nameEl.appendChild(link);
-      } else {
-        nameEl.textContent = food.name;
-      }
-      
-      const descEl = document.createElement('p');
-      descEl.className = 'item__description';
-      descEl.textContent = food.description;
-      
-      item.appendChild(nameEl);
-      item.appendChild(descEl);
-      foodsContentEl.appendChild(item);
-    });
-    foodsEl.style.display = 'block';
-  } else {
-    foodsEl.style.display = 'none';
-  }
-
-  // 대표 풍습
-  const customsEl = modal.querySelector('#holidayModalCustoms');
-  const customsContentEl = modal.querySelector('#holidayModalCustomsContent');
-  if (holiday.details.customs && holiday.details.customs.length > 0) {
-    customsContentEl.innerHTML = holiday.details.customs.map(custom => `
-      <div class="item">
-        <span class="item__name">${custom.name}</span>
-        <p class="item__description">${custom.description}</p>
-      </div>
-    `).join('');
-    customsEl.style.display = 'block';
-  } else {
-    customsEl.style.display = 'none';
-  }
-
-  modal.setAttribute('aria-hidden', 'false');
-  modal.style.display = 'flex';
-  document.body.style.overflow = 'hidden';
-  modal.querySelector('.modal__close').focus();
-}
-
-function closeHolidayModal() {
-  const modal = document.getElementById('holidayModal');
-  if (!modal) return;
-  modal.setAttribute('aria-hidden', 'true');
-  modal.style.display = 'none';
-  document.body.style.overflow = '';
-}
-
-// --- 명절/절기 관련 로직 끝 ---
+// 명절 모달 관련 로직 제거됨 (holiday.html로 이동)
 
 // 요리 이름을 레시피 ID로 매핑
 function getRecipeIdFromDishName(dishName) {
@@ -537,18 +453,6 @@ function queryItems(allItems, searchText, periodKey) {
 const trackEl = document.getElementById('periodTrack');
 const searchInputEl = document.getElementById('searchInput');
 const cardTpl = document.getElementById('cardTemplate');
-const modalEl = document.getElementById('ingredientModal');
-const modalImageEl = document.getElementById('modalImage');
-const modalTitleEl = document.getElementById('modalTitle');
-const modalDescriptionEl = document.getElementById('modalDescription');
-const modalCloseEl = document.querySelector('.modal__close');
-const modalPurchaseButtonEl = document.getElementById('modalPurchaseButton');
-const modalPreparationEl = document.getElementById('modalPreparation');
-const modalPreparationTextEl = document.getElementById('modalPreparationText');
-const modalStorageEl = document.getElementById('modalStorage');
-const modalStorageContentEl = document.getElementById('modalStorageContent');
-const modalDishEl = document.getElementById('modalDish');
-const modalDishTextEl = document.getElementById('modalDishText');
 const offlineNoticeEl = document.getElementById('offlineNotice');
 
 // 전역 상태
@@ -610,157 +514,16 @@ function createCard(item) {
     caloriesValue.textContent = '-';
   }
 
-  // 클릭으로 모달 열기 (모바일 + PC 모두)
+  // 클릭으로 상세 페이지 열기
   node.addEventListener('click', (e) => {
     e.preventDefault();
-    openModal(item);
+    window.location.href = `ingredient.html?id=${encodeURIComponent(item.name_ko)}`;
   });
 
   return node;
 }
 
-// 모달 열기
-function openModal(item) {
-  modalImageEl.src = `images/${item.image || '_fallback.png'}?v=v8`;
-  modalImageEl.alt = item.name_ko ? `${item.name_ko} 이미지` : '재료 이미지';
-  modalTitleEl.textContent = item.name_ko || '';
-  modalDescriptionEl.textContent = item.description_ko || '';
-  
-  // 칼로리 정보 설정
-  const modalCaloriesEl = document.getElementById('modalCalories');
-  const modalCaloriesPer100gEl = document.getElementById('modalCaloriesPer100g');
-  const modalCaloriesPerServingEl = document.getElementById('modalCaloriesPerServing');
-  
-  if (item.calories_per_100g) {
-    modalCaloriesEl.style.display = 'block';
-    modalCaloriesPer100gEl.textContent = `${item.calories_per_100g}kcal`;
-    if (item.calories_per_serving) {
-      modalCaloriesPerServingEl.textContent = item.calories_per_serving;
-    } else {
-      modalCaloriesPerServingEl.textContent = '';
-    }
-  } else {
-    modalCaloriesEl.style.display = 'none';
-  }
-  
-  // 손질법 설정
-  if (item.preparation_ko) {
-    modalPreparationEl.style.display = 'block';
-    modalPreparationTextEl.textContent = item.preparation_ko;
-  } else {
-    modalPreparationEl.style.display = 'none';
-  }
-  
-  // 보관법 설정
-  if (item.storage_room_temp || item.storage_refrigerator || item.storage_freezer) {
-    modalStorageEl.style.display = 'block';
-    modalStorageContentEl.innerHTML = '';
-    
-    const storageTypes = [
-      { type: '실온', icon: '🏠', method: item.storage_room_temp },
-      { type: '냉장', icon: '🧊', method: item.storage_refrigerator },
-      { type: '냉동', icon: '❄️', method: item.storage_freezer }
-    ];
-    
-    storageTypes.forEach(storage => {
-      if (storage.method) {
-        const storageItem = document.createElement('div');
-        storageItem.className = 'modal__storage-item';
-        storageItem.innerHTML = `
-          <span class="modal__storage-type">${storage.icon} ${storage.type}</span>
-          <span class="modal__storage-method">${storage.method}</span>
-        `;
-        modalStorageContentEl.appendChild(storageItem);
-      }
-    });
-  } else {
-    modalStorageEl.style.display = 'none';
-  }
-  
-  // 대표 요리 설정
-  if (item.popular_dish) {
-    modalDishEl.style.display = 'block';
-    modalDishTextEl.innerHTML = '';
-    
-    // 대표 요리를 쉼표로 분리하여 각각 링크로 만들기
-    const dishes = item.popular_dish.split(',').map(d => d.trim());
-    dishes.forEach((dish, index) => {
-      const recipeId = getRecipeIdFromDishName(dish);
-      
-      if (recipeId) {
-        const link = document.createElement('a');
-        // 해시 기반 + 확장자 명시 (정적 호스팅 호환)
-        link.href = `recipe.html#${recipeId}`;
-        link.className = 'dish-link';
-        link.textContent = dish;
-        modalDishTextEl.appendChild(link);
-      } else {
-        const span = document.createElement('span');
-        span.textContent = dish;
-        modalDishTextEl.appendChild(span);
-      }
-      
-      if (index < dishes.length - 1) {
-        modalDishTextEl.appendChild(document.createTextNode(', '));
-      }
-    });
-  } else {
-    modalDishEl.style.display = 'none';
-  }
-  
-  // 구매하기 버튼 설정
-  if (item.external_url) {
-    modalPurchaseButtonEl.style.display = 'block';
-    modalPurchaseButtonEl.onclick = () => {
-      showCoupangRedirectOverlay();
-      setTimeout(() => {
-        window.open(item.external_url, '_blank', 'noopener,noreferrer');
-        setTimeout(removeCoupangRedirectOverlay, 400);
-      }, 600);
-    };
-  } else {
-    modalPurchaseButtonEl.style.display = 'none';
-  }
-  
-  history.pushState({ modal: 'ingredient' }, '', location.href);
-  modalEl.setAttribute('aria-hidden', 'false');
-  modalEl.style.display = 'flex';
-  document.body.style.overflow = 'hidden';
-  
-  // 포커스를 모달로 이동
-  modalCloseEl.focus();
-}
-
-// 모달 닫기
-function closeModal() {
-  modalEl.setAttribute('aria-hidden', 'true');
-  modalEl.style.display = 'none';
-  document.body.style.overflow = '';
-}
-
-function showCoupangRedirectOverlay() {
-  removeCoupangRedirectOverlay();
-  const overlay = document.createElement('div');
-  overlay.id = 'coupangRedirectOverlay';
-  overlay.className = 'redirect-overlay';
-  overlay.setAttribute('role', 'status');
-  overlay.setAttribute('aria-live', 'polite');
-  overlay.innerHTML = `
-    <p class="redirect-overlay__text"><span class="redirect-overlay__highlight">쿠팡</span>으로 이동 중이에요</p>
-    <div class="redirect-overlay__arrow" aria-hidden="true"></div>
-  `;
-  document.body.appendChild(overlay);
-  history.pushState({ modal: 'coupang' }, '', location.href);
-  requestAnimationFrame(() => overlay.classList.add('redirect-overlay--visible'));
-}
-
-function removeCoupangRedirectOverlay() {
-  const overlay = document.getElementById('coupangRedirectOverlay');
-  if (overlay) {
-    overlay.classList.remove('redirect-overlay--visible');
-    setTimeout(() => overlay.remove(), 200);
-  }
-}
+// 식재료 모달 관련 코드 제거 (상세 페이지로 이동)
 
 // 모든 시기 렌더링 (세로 배치)
 function renderAllPeriods() {
@@ -928,64 +691,7 @@ function initSearch() {
   });
 }
 
-// 모달 이벤트
-function initModal() {
-  modalCloseEl.addEventListener('click', closeModal);
-  
-  modalEl.addEventListener('click', (e) => {
-    if (e.target === modalEl || e.target.classList.contains('modal__backdrop')) {
-      closeModal();
-    }
-  });
 
-  // 명절 모달 이벤트 핸들러 추가
-  const holidayModal = document.getElementById('holidayModal');
-  if (holidayModal) {
-    holidayModal.querySelector('.modal__close').addEventListener('click', closeHolidayModal);
-    holidayModal.addEventListener('click', (e) => {
-      if (e.target === holidayModal || e.target.classList.contains('modal__backdrop')) {
-        closeHolidayModal();
-      }
-    });
-  }
-  
-  document.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape') {
-      if (modalEl.getAttribute('aria-hidden') === 'false') {
-        closeModal();
-      }
-      if (holidayModal && holidayModal.getAttribute('aria-hidden') === 'false') {
-        closeHolidayModal();
-      }
-    }
-  });
-
-  // 모바일 뒤로가기: 팝업/오버레이가 열려 있으면 팝업만 닫기
-  window.addEventListener('popstate', () => {
-    if (document.getElementById('coupangRedirectOverlay')) {
-      removeCoupangRedirectOverlay();
-      return;
-    }
-    if (modalEl.getAttribute('aria-hidden') === 'false') {
-      closeModal();
-      return;
-    }
-    if (holidayModal && holidayModal.getAttribute('aria-hidden') === 'false') {
-      closeHolidayModal();
-      return;
-    }
-    const webNoti = document.getElementById('webNotificationInfoModal');
-    if (webNoti) {
-      webNoti.remove();
-      document.body.style.overflow = '';
-      return;
-    }
-    const settingModal = document.getElementById('settingModal');
-    if (settingModal && settingModal.getAttribute('aria-hidden') === 'false' && typeof window.closeSettingModal === 'function') {
-      window.closeSettingModal();
-    }
-  });
-}
 
 // 메인 초기화
 function initHeaderControls() {
@@ -1015,14 +721,14 @@ function initHeaderControls() {
     });
   }
 
-  // 설정 버튼 클릭 (웹에서는 알림 안내 모달만 표시, 앱에서는 설정 모달)
+  // 설정 버튼 클릭 (웹에서는 알림 안내 모달만 표시, 앱에서는 설정 페이지로 이동)
   if (settingButton) {
     settingButton.addEventListener('click', () => {
       if (!Capacitor.isNativePlatform()) {
         showWebNotificationInfoModal();
         return;
       }
-      openSettingModal(); // 설정 모달 열기
+      window.location.href = 'setting.html';
     });
   }
 
@@ -1108,13 +814,9 @@ async function init() {
 
     renderAllPeriods();
     initSearch();
-    initModal();
     initPush(); // Push 알림 초기화
     initHeaderControls();
     
-    // 설정 모달 초기화
-    const { initSettingModal } = await import('./setting.js');
-    initSettingModal();
     initOfflineNotice();
     initBannerScroll(); // 배너 스크롤 기능 초기화
     syncHeaderOffset();

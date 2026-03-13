@@ -39,14 +39,16 @@
     <meta name="msvalidate.01" content="8F2EA7B62F5E146CFAB87473167632ED" />
     
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="manifest" href="/assets/manifest-CjCgzzUt.webmanifest">
+    <link rel="manifest" href="/assets/manifest.webmanifest">
     <meta name="theme-color" content="#0A7B34">
     <link rel="icon" href="/images/icons/app-icon-192.png" type="image/png">
-    <link rel="apple-touch-icon" href="/images/icons/app-icon-192.png">
-    <script type="module" crossorigin src="/assets/main-bBZtseXa.js"></script>
-    <link rel="modulepreload" crossorigin href="/assets/style-CgXtxQZB.js">
-    <link rel="stylesheet" crossorigin href="/assets/style-CIral02b.css">
-    <link rel="stylesheet" crossorigin href="/assets/main-BkNZhoie.css">
+    <link rel="apple-touch-icon" href="/images/icons/app-icon-192.png">
+    <script type="module" crossorigin src="/assets/main.js"></script>
+    <link rel="modulepreload" crossorigin href="/assets/modulepreload-polyfill.js">
+    <link rel="modulepreload" crossorigin href="/assets/index.js">
+    <link rel="modulepreload" crossorigin href="/assets/korean-lunar-calendar.js">
+    <link rel="stylesheet" crossorigin href="/assets/index.css">
+    <link rel="stylesheet" crossorigin href="/assets/style.css">
   </head>
   <body>
     <header class="app-header">
@@ -65,39 +67,43 @@
               <path d="M12 22c1.1 0 2-.9 2-2h-4c0 1.1.89 2 2 2zm6-6v-5c0-3.07-1.64-5.64-4.5-6.32V4c0-.83-.67-1.5-1.5-1.5s-1.5.67-1.5 1.5v.68C7.63 5.36 6 7.92 6 11v5l-2 2v1h16v-1l-2-2z"/>
             </svg>
           </button>
-    </div>
-  </div>
-</header>
+        </div>
+      </div>
+    </header>
 
-<section id="holidayBanner" class="holiday-banner" style="display: none;" role="banner" aria-label="다가오는 명절·절기 정보">
-  <div class="holiday-banner__content">
-    <div class="holiday-banner__text">
-      <p class="holiday-banner__date"></p>
-      <p class="holiday-banner__description"></p>
+    <div id="offlineNotice" class="offline-notice" role="status" aria-live="polite" hidden>
+      <div class="offline-notice__box">
+        <span class="offline-notice__icon" aria-hidden="true">📶</span>
+        <div class="offline-notice__text">
+          <strong>오프라인 상태입니다.</strong>
+          <p>네트워크 연결을 확인해 주세요. 저장된 데이터는 계속 이용할 수 있습니다.</p>
+        </div>
+      </div>
     </div>
-    <img class="holiday-banner__image" src="" alt="" width="80" height="80" />
-  </div>
-</section>
 
-<div id="offlineNotice" class="offline-notice" role="status" aria-live="polite" hidden>
-  <div class="offline-notice__box">
-    <span class="offline-notice__icon" aria-hidden="true">📶</span>
-    <div class="offline-notice__text">
-      <strong>오프라인 상태입니다.</strong>
-      <p>네트워크 연결을 확인해 주세요. 저장된 데이터는 계속 이용할 수 있습니다.</p>
-    </div>
-  </div>
-</div>
-
-<main>
+    <main>
       <section class="carousel" aria-label="시기 선택">
         <div id="carouselContainer" class="carousel__container">
           <div id="periodTrack" class="carousel__track" aria-live="polite"></div>
         </div>
       </section>
-
-      
     </main>
+
+    <!-- 하단 탭바 (GNB) -->
+    <nav class="gnb" aria-label="하단 네비게이션">
+      <a href="index.html" class="gnb__item active" aria-current="page">
+        <svg class="gnb__icon" viewBox="0 0 24 24" width="24" height="24" fill="currentColor">
+          <path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/>
+        </svg>
+        <span class="gnb__label">제철 식재료</span>
+      </a>
+      <a href="holidays.html" class="gnb__item">
+        <svg class="gnb__icon" viewBox="0 0 24 24" width="24" height="24" fill="currentColor">
+          <path d="M19 4h-1V2h-2v2H8V2H6v2H5c-1.11 0-1.99.9-1.99 2L3 20a2 2 0 002 2h14c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 16H5V10h14v10z"/>
+        </svg>
+        <span class="gnb__label">명절·절기</span>
+      </a>
+    </nav>
 
     <template id="panelTemplate">
       <div class="panel" role="group" aria-roledescription="시기 패널">
@@ -121,238 +127,15 @@
       </div>
     </template>
 
-    <!-- 식재료 설명 모달 -->
-    <div id="ingredientModal" class="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle" aria-hidden="true">
-      <div class="modal__backdrop" aria-hidden="true"></div>
-      <div class="modal__content">
-        <button class="modal__close" aria-label="닫기" type="button">×</button>
-        <div class="modal__body">
-          <div class="modal__image">
-            <img id="modalImage" src="" alt="" width="120" height="120" />
-          </div>
-          <div class="modal__info">
-            <h3 id="modalTitle" class="modal__name"></h3>
-            <p id="modalDescription" class="modal__description"></p>
-            
-            <div id="modalCalories" class="modal__calories" style="display: none;">
-              <div class="modal__section-header">
-                <span class="modal__icon">🔥</span>
-                <span class="modal__section-title">칼로리 정보</span>
-              </div>
-              <div class="modal__calories-content">
-                <div class="calories-row">
-                  <span class="calories-label">100g당</span>
-                  <span id="modalCaloriesPer100g" class="calories-number"></span>
-                </div>
-                <div class="calories-row">
-                  <span id="modalCaloriesPerServing" class="calories-serving"></span>
-                </div>
-              </div>
-            </div>
-            
-            <div id="modalPreparation" class="modal__preparation" style="display: none;">
-              <div class="modal__section-header">
-                <span class="modal__icon">✂️</span>
-                <span class="modal__section-title">손질법</span>
-              </div>
-              <p id="modalPreparationText" class="modal__preparation-text"></p>
-            </div>
-            
-            <div id="modalStorage" class="modal__storage" style="display: none;">
-              <div class="modal__section-header">
-                <span class="modal__icon">❄️</span>
-                <span class="modal__section-title">보관법</span>
-              </div>
-              <div id="modalStorageContent" class="modal__storage-content"></div>
-            </div>
-            
-            <div id="modalDish" class="modal__dish" style="display: none;">
-              <div class="modal__section-header">
-                <span class="modal__icon">🍽️</span>
-                <span class="modal__section-title">대표 요리</span>
-              </div>
-              <p id="modalDishText" class="modal__dish-text"></p>
-            </div>
-          </div>
-        </div>
-        <div class="modal__footer privacy-modal__footer">
-          <button id="modalPurchaseButton" class="modal__purchase-btn" type="button">구매하기</button>
-    </div>
-  </div>
-</div>
-
-<!-- 명절/절기 상세 정보 모달 -->
-<div id="holidayModal" class="modal" role="dialog" aria-modal="true" aria-labelledby="holidayModalTitle" aria-hidden="true">
-  <div class="modal__backdrop" aria-hidden="true"></div>
-  <div class="modal__content">
-    <button class="modal__close" aria-label="닫기" type="button">×</button>
-    <div class="modal__body">
-      <div class="modal__image">
-        <img id="holidayModalImage" src="" alt="" width="120" height="120" />
-      </div>
-      <div class="modal__info">
-        <h3 id="holidayModalTitle" class="modal__name"></h3>
-        <p id="holidayModalSummary" class="modal__description"></p>
-        
-        <div id="holidayModalStory" class="modal__story" style="display: none;">
-          <p id="holidayModalStoryContent"></p>
-        </div>
-
-        <div id="holidayModalFoods" class="modal__section" style="display: none;">
-          <div class="modal__section-header">
-            <span class="modal__icon">🍲</span>
-            <span class="modal__section-title">대표 음식</span>
-          </div>
-          <div id="holidayModalFoodsContent" class="modal__section-content"></div>
-        </div>
-        
-        <div id="holidayModalCustoms" class="modal__section" style="display: none;">
-          <div class="modal__section-header">
-            <span class="modal__icon">🎎</span>
-            <span class="modal__section-title">대표 풍습</span>
-          </div>
-          <div id="holidayModalCustomsContent" class="modal__section-content"></div>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-
-<!-- 설정 모달 -->
-<div id="settingModal" class="modal" role="dialog" aria-modal="true" aria-labelledby="settingModalTitle" aria-hidden="true">
-  <div class="modal__backdrop" aria-hidden="true"></div>
-  <div class="modal__content setting-modal-content">
-    <button class="modal__close" aria-label="닫기" type="button">×</button>
-    <div class="modal__header">
-      <h3 id="settingModalTitle" class="modal__title">알림 설정</h3>
-    </div>
-    <div class="modal__body setting-body">
-      
-      <!-- 1. 제철 식재료 알림 -->
-      <div class="setting-group">
-        <div class="setting-row">
-          <div class="setting-label">
-            <span class="setting-icon">🥦</span>
-            <span class="setting-name">새로운 제철 식재료 알림</span>
-            <p class="setting-desc">매달 새로 등장하는 제철 식재료를 알려드려요.</p>
-          </div>
-          <label class="switch">
-            <input type="checkbox" id="ingredientNotiToggle">
-            <span class="slider round"></span>
-          </label>
-        </div>
-        <div id="ingredientNotiDetail" class="setting-detail" style="display: none;">
-          <div class="setting-field setting-field--row">
-            <label for="ingredientNotiDay" class="setting-field__label">알림 받을 날짜</label>
-            <select id="ingredientNotiDay" class="setting-select">
-              <!-- 1일 ~ 31일 JS로 생성 -->
-            </select>
-          </div>
-          <div class="setting-field setting-field--row">
-            <label for="ingredientNotiTime" class="setting-field__label">알림 받을 시간</label>
-            <input id="ingredientNotiTime" class="setting-select setting-time" type="time" step="300">
-          </div>
-        </div>
-      </div>
-
-      <div class="setting-divider"></div>
-
-      <!-- 2. 명절/절기 알림 -->
-      <div class="setting-group">
-        <div class="setting-row">
-          <div class="setting-label">
-            <span class="setting-icon">🌕</span>
-            <span class="setting-name">명절·절기 알림</span>
-            <p class="setting-desc">명절과 절기에 먹는 음식을 미리 알려드려요.</p>
-          </div>
-          <label class="switch">
-            <input type="checkbox" id="holidayNotiToggle">
-            <span class="slider round"></span>
-          </label>
-        </div>
-        <div id="holidayNotiDetail" class="setting-detail" style="display: none;">
-          <div class="setting-field setting-field--row">
-            <label for="holidayNotiDday" class="setting-field__label">알림 시점</label>
-            <select id="holidayNotiDday" class="setting-select">
-              <option value="0">당일</option>
-              <option value="1">1일 전</option>
-              <option value="2">2일 전</option>
-              <option value="3">3일 전</option>
-              <option value="5">5일 전</option>
-              <option value="7">7일 전</option>
-            </select>
-          </div>
-          <div class="setting-field setting-field--row">
-            <label for="holidayNotiTime" class="setting-field__label">알림 받을 시간</label>
-            <input id="holidayNotiTime" class="setting-select setting-time" type="time" step="300">
-          </div>
-        </div>
-      </div>
-
-    </div>
-    <div class="modal__footer privacy-modal__footer">
-      <button id="saveSettingButton" class="modal__purchase-btn full-width" type="button">저장하기</button>
-      <button class="privacy-link" type="button" onclick="window.openPrivacyModal()">개인정보처리방침</button>
-    </div>
-  </div>
-</div>
-
-<script>
-  if ('serviceWorker' in navigator) {
-    window.addEventListener('load', function() {
-      navigator.serviceWorker.register('/service-worker.js').catch(function(){});
-    });
-  }
-  if (window.matchMedia && window.matchMedia('(display-mode: standalone)').matches) {
-    document.documentElement.classList.add('app-installed');
-  }
-</script>
-  
-<!-- 개인정보처리방침 모달 -->
-<div id="privacyModal" class="modal" role="dialog" aria-modal="true" aria-labelledby="privacyModalTitle" aria-hidden="true">
-  <div class="modal__backdrop" aria-hidden="true" onclick="window.closePrivacyModal()"></div>
-  <div class="modal__content privacy-modal__content">
-    <button class="modal__close" aria-label="닫기" type="button" onclick="window.closePrivacyModal()">×</button>
-    <div class="privacy-modal__body">
-      <h2 id="privacyModalTitle">개인정보처리방침</h2>
-      <p>띵동 제철음식은 이용자의 개인정보를 수집·저장·전송하지 않습니다.</p>
-      <h3>1. 수집하는 개인정보</h3>
-      <p>본 앱은 이름, 이메일, 전화번호, 주소, 위치정보 등 어떠한 개인정보도 수집하지 않습니다.</p>
-      <h3>2. 개인정보의 이용 및 제공</h3>
-      <p>개인정보를 수집하지 않으므로 이용하거나 제3자에게 제공하지 않습니다.</p>
-      <h3>3. 기기 내 저장</h3>
-      <p>알림 설정 등 앱 사용에 필요한 일부 정보는 기기 내부(LocalStorage)에만 저장됩니다.</p>
-      <p>이 정보는 앱 기능 제공을 위한 목적이며, 외부 서버로 전송되지 않습니다.</p>
-      <h3>4. 알림</h3>
-      <p>푸시/로컬 알림은 사용자 설정에 따라 기기 내에서만 동작합니다.</p>
-      <p>알림 전송을 위해 개인정보를 서버에 전송하지 않습니다.</p>
-      <h3>5. 분석/광고 SDK</h3>
-      <p>본 앱은 분석/광고 SDK를 사용하지 않습니다.</p>
-      <h3>6. 문의</h3>
-      <p>문의: <a href="mailto:dodaeland@gmail.com" style="color:#2563eb;">dodaeland@gmail.com</a></p>
-      <p style="margin-top:24px;color:#666;font-size:0.9rem;">최종 업데이트: 2026-02-08</p>
-    </div>
-    <div class="modal__footer privacy-modal__footer">
-      <button class="modal__purchase-btn full-width" type="button" onclick="window.closePrivacyModal()">닫기</button>
-    </div>
-  </div>
-</div>
-
-<script>
-  window.openPrivacyModal = function() {
-    var m = document.getElementById('privacyModal');
-    m.setAttribute('aria-hidden', 'false');
-
-  };
-  window.closePrivacyModal = function() {
-    var m = document.getElementById('privacyModal');
-    m.setAttribute('aria-hidden', 'true');
-
-  };
-</script>
+    <script>
+      if ('serviceWorker' in navigator) {
+        window.addEventListener('load', function() {
+          navigator.serviceWorker.register('/service-worker.js').catch(function(){});
+        });
+      }
+      if (window.matchMedia && window.matchMedia('(display-mode: standalone)').matches) {
+        document.documentElement.classList.add('app-installed');
+      }
+    </script>
   </body>
-  </html>
-
-
-
-
+</html>

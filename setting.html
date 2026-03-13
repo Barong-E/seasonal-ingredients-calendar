@@ -1,0 +1,138 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, user-scalable=no">
+    <title>띵동 제철음식 - 알림 설정</title>
+    
+    <link rel="stylesheet" href="assets/style.css">
+    <link rel="stylesheet" href="assets/setting.css">
+    <style>
+      .page-header { display: flex; align-items: center; gap: 16px; }
+      .back-button {
+        display: flex; align-items: center; justify-content: center;
+        width: 40px; height: 40px; background: transparent; color: #333;
+        border: none; border-radius: 50%; cursor: pointer; margin-left: -8px; 
+      }
+      .back-button:hover { background: rgba(0, 0, 0, 0.05); }
+      
+      .setting-container {
+        padding: calc(var(--header-offset, 80px) + 20px) 20px 80px;
+        max-width: 500px; margin: 0 auto;
+      }
+      .setting-card {
+        background: #fff; border-radius: var(--border-radius-lg, 24px);
+        box-shadow: var(--shadow-md, 0 8px 24px rgba(0,0,0,0.12));
+        padding: 24px;
+      }
+      .setting-card-title {
+        margin: 0 0 24px; font-size: 1.5rem; font-weight: 800; color: var(--primary);
+      }
+      .saving-overlay {
+        position: fixed; top: 0; left: 0; right: 0; bottom: 0;
+        background: rgba(255,255,255,0.8); backdrop-filter: blur(4px);
+        display: flex; align-items: center; justify-content: center;
+        z-index: 1000; font-size: 1.2rem; font-weight: bold; color: var(--primary);
+        opacity: 0; pointer-events: none; transition: opacity 0.3s;
+      }
+      .saving-overlay.show { opacity: 1; pointer-events: all; }
+    </style>
+  </head>
+  <body>
+    <header class="app-header">
+      <div class="header-bar page-header">
+        <button class="back-button" onclick="history.back()" aria-label="뒤로가기">
+          <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="15 18 9 12 15 6"></polyline>
+          </svg>
+        </button>
+        <div class="brand">
+          <span class="brand__primary">알림 설정</span>
+        </div>
+      </div>
+    </header>
+
+    <main class="setting-container">
+      <article class="setting-card">
+        <h1 class="setting-card-title">알림 설정</h1>
+        
+        <div class="setting-body" style="padding: 0;">
+          <!-- 1. 제철 식재료 알림 -->
+          <div class="setting-group">
+            <div class="setting-row">
+              <div class="setting-label">
+                <span class="setting-icon">🥦</span>
+                <span class="setting-name">새로운 제철 식재료 알림</span>
+                <p class="setting-desc">매달 새로 등장하는 제철 식재료를 알려드려요.</p>
+              </div>
+              <label class="switch">
+                <input type="checkbox" id="ingredientNotiToggle">
+                <span class="slider round"></span>
+              </label>
+            </div>
+            <div id="ingredientNotiDetail" class="setting-detail" style="display: none;">
+              <div class="setting-field setting-field--row">
+                <label for="ingredientNotiDay" class="setting-field__label">알림 받을 날짜</label>
+                <select id="ingredientNotiDay" class="setting-select">
+                  <!-- JS로 채움 -->
+                </select>
+              </div>
+              <div class="setting-field setting-field--row">
+                <label for="ingredientNotiTime" class="setting-field__label">알림 받을 시간</label>
+                <input id="ingredientNotiTime" class="setting-select setting-time" type="time" step="300">
+              </div>
+            </div>
+          </div>
+
+          <div class="setting-divider"></div>
+
+          <!-- 2. 명절/절기 알림 -->
+          <div class="setting-group">
+            <div class="setting-row">
+              <div class="setting-label">
+                <span class="setting-icon">🌕</span>
+                <span class="setting-name">명절·절기 알림</span>
+                <p class="setting-desc">명절과 절기에 먹는 음식을 미리 알려드려요.</p>
+              </div>
+              <label class="switch">
+                <input type="checkbox" id="holidayNotiToggle">
+                <span class="slider round"></span>
+              </label>
+            </div>
+            <div id="holidayNotiDetail" class="setting-detail" style="display: none;">
+              <div class="setting-field setting-field--row">
+                <label for="holidayNotiDday" class="setting-field__label">알림 시점</label>
+                <select id="holidayNotiDday" class="setting-select">
+                  <!-- JS로 채움 -->
+                </select>
+              </div>
+              <div class="setting-field setting-field--row">
+                <label for="holidayNotiTime" class="setting-field__label">알림 받을 시간</label>
+                <input id="holidayNotiTime" class="setting-select setting-time" type="time" step="300">
+              </div>
+            </div>
+          </div>
+          
+          <div class="setting-divider"></div>
+          
+          <button id="saveSettingButton" class="modal__purchase-btn full-width" type="button" style="margin-top: 16px;">저장하기</button>
+          <div style="text-align: right; margin-top: 16px;">
+            <a href="privacy.html" class="privacy-link" style="color: #666; font-size: 0.85rem; text-decoration: underline;">개인정보처리방침</a>
+          </div>
+        </div>
+      </article>
+    </main>
+
+    <div id="savingOverlay" class="saving-overlay">저장되었습니다</div>
+
+    <script type="module" src="assets/setting.js?v=v11"></script>
+    <script>
+      window.addEventListener('load', () => {
+        const header = document.querySelector('.app-header');
+        if (header) {
+          document.documentElement.style.setProperty('--header-offset', `${header.offsetHeight}px`);
+        }
+      });
+    </script>
+  </body>
+</html>

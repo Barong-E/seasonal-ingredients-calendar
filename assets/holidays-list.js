@@ -1,0 +1,132 @@
+import KoreanLunarCalendar from 'korean-lunar-calendar';
+
+async function loadHolidays() {
+  try {
+    const res = await fetch('data/holidays.json');
+    if (!res.ok) throw new Error('명절 데이터 로드 실패');
+    return await res.json();
+  } catch (err) {
+    console.error(err);
+    return [];
+  }
+}
+
+// 명절/절기 날짜 계산 로직 모음
+function getSolarOverrideDate(holiday, year) {
+  const overrides = holiday.solar_overrides;
+  if (!overrides) return null;
+  const key = String(year);
+  const data = overrides[key];
+  if (!data) return null;
+  if (typeof data === 'string') {
+    const parts = data.split('-');
+    if (parts.length !== 2) return null;
+    const mm = parseInt(parts[0], 10);
+    const dd = parseInt(parts[1], 10);
+    if (!mm || !dd) return null;
+    return new Date(year, mm - 1, dd);
+  }
+  if (typeof data === 'object' && data.month && data.day) {
+    return new Date(year, data.month - 1, data.day);
+  }
+  return null;
+}
+
+function getDongjiDateForYear(year) {
+  if (year === 2025) return new Date(2025, 11, 22);
+  if (year === 2026) return new Date(2026, 11, 22);
+  return new Date(year, 11, 22);
+}
+
+function getHolidaySolarDateForYear(holiday, year) {
+  const { type, month, day } = holiday.date;
+  const overrideDate = getSolarOverrideDate(holiday, year);
+  if (overrideDate) return overrideDate;
+
+  if (holiday.id === 'hansik') {
+    const dongjiDate = getDongjiDateForYear(year - 1);
+    if (!dongjiDate) return null;
+    const hansikDate = new Date(dongjiDate);
+    hansikDate.setDate(hansikDate.getDate() + 105);
+    return hansikDate;
+  }
+
+  if (type === 'lunar') {
+    const calendar = new KoreanLunarCalendar();
+    const intercalation = Boolean(holiday.date.intercalation);
+    const ok = calendar.setLunarDate(year, month, day, intercalation);
+    if (!ok) return null;
+    const solar = calendar.getSolarCalendar();
+    if (!solar || !solar.year || !solar.month || !solar.day) return null;
+    return new Date(solar.year, solar.month - 1, solar.day);
+  }
+  if (type === 'solar') {
+    return new Date(year, month - 1, day);
+  }
+  return getDongjiDateForYear(year);
+}
+
+// 당해 년도를 기준으로 날짜 계산
+function getHolidaySolarDate(holiday, today) {
+  const baseYear = today.getFullYear();
+  let date = getHolidaySolarDateForYear(holiday, baseYear);
+  if (!date) return null;
+  return date;
+}
+
+function formatDateString(date) {
+  const year = date.getFullYear();
+  const month = date.getMonth() + 1;
+  const day = date.getDate();
+  return `${year}년 ${month}월 ${day}일`;
+}
+
+async function renderHolidaysList() {
+  const container = document.getElementById('holidayListContainer');
+  const holidays = await loadHolidays();
+  const today = new Date();
+  today.setHours(0, 0, 0, 0);
+
+  // 날짜 계산 및 배열에 추가
+  const parsedHolidays = holidays.map(h => {
+    const solarDate = getHolidaySolarDate(h, today);
+    return { ...h, solarDate };
+  }).filter(h => h.solarDate !== null);
+
+  // 날짜 순 정렬 (올해 기준)
+  parsedHolidays.sort((a, b) => a.solarDate.getTime() - b.solarDate.getTime());
+
+  container.innerHTML = ''; // Clear loading state or previous data
+  
+  if (parsedHolidays.length === 0) {
+    container.innerHTML = '<p style="text-align: center; color: #666;">데이터를 불러올 수 없습니다.</p>';
+    return;
+  }
+
+  parsedHolidays.forEach(holiday => {
+    const link = document.createElement('a');
+    link.href = `holiday.html?id=${encodeURIComponent(holiday.id)}`;
+    link.className = 'holiday-item';
+    
+    // 이미 다 지난 명절은 약간 흐리게 표시할지 여부 (일단 기본 스타일 유지)
+    if (holiday.solarDate < today) {
+      link.style.opacity = '0.6';
+    }
+
+    const dateStr = formatDateString(holiday.solarDate);
+    const imgSrc = holiday.image ? `images/${holiday.image}` : `images/_fallback.png`;
+
+    link.innerHTML = `
+      <img src="${imgSrc}" alt="${holiday.name}" class="holiday-thumb" loading="lazy">
+      <div class="holiday-info">
+        <h3 class="holiday-name">${holiday.name}</h3>
+        <span class="holiday-date">${dateStr}</span>
+        <p class="holiday-desc">${holiday.main_food} 등</p>
+      </div>
+    `;
+
+    container.appendChild(link);
+  });
+}
+
+document.addEventListener('DOMContentLoaded', renderHolidaysList);
