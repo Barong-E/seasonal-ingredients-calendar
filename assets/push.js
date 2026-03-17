@@ -57,10 +57,10 @@ export async function initPush() {
       });
     });
 
-    // 알림 클릭 시 액션
-    PushNotifications.addListener('pushNotificationActionPerformed', (notification) => {
-      console.log('알림 클릭됨:', notification);
-      const data = notification.notification.data;
+    // 알림 클릭 공통 처리 로직
+    const handleNotificationAction = (notification) => {
+      console.log('알림 액션 발생:', notification);
+      const data = notification.notification.extra || notification.notification.data;
       
       if (data && data.url) {
         // 절대 경로 이동 (예: holiday.html?id=hansik)
@@ -69,7 +69,13 @@ export async function initPush() {
         // 해시 이동 (#galchi-jorim 등)
         window.location.hash = data.path;
       }
-    });
+    };
+
+    // 푸시 알림 클릭 시 액션
+    PushNotifications.addListener('pushNotificationActionPerformed', handleNotificationAction);
+
+    // 로컬 알림 클릭 시 액션 (사용자가 설정한 제철/명절 알림용)
+    LocalNotifications.addListener('localNotificationActionPerformed', handleNotificationAction);
 
     // 4. 안드로이드 알림 채널 생성
     await PushNotifications.createChannel({
