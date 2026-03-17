@@ -358,7 +358,7 @@ function getCurrentMonthIndex() {
 }
 
 function formatMonthLabel(month) {
-  return `${month}월의 제철 식재료`;
+  return `${month}월`;
 }
 
 // 계절 판별 (1: 겨울, 2: 겨울, 3~5: 봄, 6~8: 여름, 9~11: 가을, 12: 겨울)
