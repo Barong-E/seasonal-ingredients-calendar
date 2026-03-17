@@ -8,25 +8,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     
     <style>
-      .holidays-header {
-        position: fixed;
-        top: 0;
-        left: 0;
-        right: 0;
-        z-index: 100;
-        background: var(--glass-bg);
-        backdrop-filter: blur(24px);
-        border-bottom: 1px solid var(--glass-border);
-        box-shadow: var(--shadow-md);
-        padding: 20px;
-        text-align: center;
-      }
-      .holidays-title {
-        margin: 0;
-        font-size: 1.3rem;
-        font-weight: 800;
-        color: var(--primary);
-      }
+
       .holidays-container {
         padding: calc(var(--header-offset, 80px) + 20px) 20px 80px;
         max-width: 800px;
@@ -89,8 +71,24 @@
     <link rel="stylesheet" crossorigin href="/assets/style.css">
   </head>
   <body>
-    <header class="holidays-header">
-      <h1 class="holidays-title">명절·절기 음식</h1>
+    <header class="app-header">
+      <h1 class="visually-hidden">띵동 제철음식</h1>
+      <div class="header-bar" role="banner">
+        <div class="brand" aria-label="브랜드">
+          <span class="brand__primary">띵동 제철음식</span>
+        </div>
+        <div class="header-controls">
+          <form id="filtersForm" class="header-search" onsubmit="return false;" role="search">
+            <input id="searchInput" class="search-input" type="search" placeholder="이름·설명 검색" autocomplete="off" inputmode="search" aria-describedby="searchHelp">
+            <p id="searchHelp" class="visually-hidden">이름과 설명에서 검색합니다. 대소문자를 구분하지 않습니다.</p>
+          </form>
+          <button id="settingButton" class="setting-button" type="button" aria-label="알림 설정" title="알림 설정">
+            <svg class="setting-icon" viewBox="0 0 24 24" width="20" height="20" fill="currentColor">
+              <path d="M12 22c1.1 0 2-.9 2-2h-4c0 1.1.89 2 2 2zm6-6v-5c0-3.07-1.64-5.64-4.5-6.32V4c0-.83-.67-1.5-1.5-1.5s-1.5.67-1.5 1.5v.68C7.63 5.36 6 7.92 6 11v5l-2 2v1h16v-1l-2-2z"/>
+            </svg>
+          </button>
+        </div>
+      </div>
     </header>
 
     <main class="holidays-container" id="holidayListContainer">

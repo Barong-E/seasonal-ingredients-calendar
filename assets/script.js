@@ -5,11 +5,18 @@ import KoreanLunarCalendar from 'korean-lunar-calendar';
 // 띵동 제철음식 메인 스크립트
 // 규칙: ES 모듈 없이 단일 페이지 스크립트
 
-const CACHE_KEY = 'seasons:ingredients:v11';
+const CACHE_KEY = 'seasons:ingredients:v12';
 const CACHE_TTL_MS = 24 * 60 * 60 * 1000; // 24h
 
+// 구버전 캐시 강제 삭제 (버전 충돌 방지)
+try {
+  localStorage.removeItem('seasons:ingredients:v11');
+  localStorage.removeItem('seasons:ingredients:v10');
+  console.log('구버전 캐시 초기화 완료 (v12)');
+} catch(e) {}
+
 const CATEGORY_ORDER = { '해산물': 1, '채소': 2, '과일': 3, '기타': 4 };
-const TENS = ['초순', '중순', '하순'];
+// const TENS = ['초순', '중순', '하순']; // 삭제됨
 
 // --- 명절/절기 관련 로직 시작 ---
 
@@ -344,34 +351,14 @@ function getRecipeIdFromDishName(dishName) {
   return mapping[dishName] || null;
 }
 
-// 유틸: 날짜 → ten
-function getTenByDay(day) {
-  if (day <= 10) return '초순';
-  if (day <= 20) return '중순';
-  return '하순';
-}
-
-// 현재 날짜에 해당하는 시기 인덱스 계산
-function getCurrentPeriodIndex() {
+// 시기 관련 유틸 삭제 및 단순화
+function getCurrentMonthIndex() {
   const now = new Date();
-  const month = now.getMonth() + 1; // 0-11 → 1-12
-  const day = now.getDate();
-  const ten = getTenByDay(day);
-  return getPeriodIndex(month, ten);
+  return now.getMonth(); // 0-11
 }
 
-// 유틸: month, ten → 0..35 인덱스
-function getPeriodIndex(month, ten) {
-  const tenIndex = { '초순': 0, '중순': 1, '하순': 2 }[ten];
-  return (month - 1) * 3 + tenIndex;
-}
-
-function getPeriodKey(month, ten) {
-  return `${month}-${ten}`;
-}
-
-function formatPeriodLabel(month, ten) {
-  return `${month}월 ${ten}`;
+function formatMonthLabel(month) {
+  return `${month}월의 제철 식재료`;
 }
 
 // 계절 판별 (1: 겨울, 2: 겨울, 3~5: 봄, 6~8: 여름, 9~11: 가을, 12: 겨울)
@@ -382,16 +369,15 @@ function getSeasonByMonth(month) {
   return 'autumn';
 }
 
-function applySeasonThemeByPeriodIndex(periodIndex) {
-  const period = AppState.periods[periodIndex];
-  if (!period) return;
-  const season = getSeasonByMonth(period.month);
+function applySeasonThemeByMonthIndex(monthIndex) {
+  const m = monthIndex + 1;
+  const season = getSeasonByMonth(m);
   const body = document.body;
   body.classList.remove('theme-spring', 'theme-summer', 'theme-autumn', 'theme-winter');
   body.classList.add(`theme-${season}`);
 }
 
-// 로컬 캐시 로딩
+// 로컬 캐시 로딩 후 months 필드로 필터링 (초/중/하순 모두 포함된 것만 이미 변환됨)
 async function loadIngredients() {
   try {
     const cached = localStorage.getItem(CACHE_KEY);
@@ -403,7 +389,7 @@ async function loadIngredients() {
     }
   } catch {}
 
-    const res = await fetch('data/ingredients.json?v=v8', { cache: 'no-cache' });
+  const res = await fetch('data/ingredients.json?v=v12', { cache: 'no-cache' });
   if (!res.ok) throw new Error('데이터 로드 실패');
   const data = await res.json();
   try {
@@ -412,33 +398,29 @@ async function loadIngredients() {
   return data;
 }
 
-// 36개 시기 생성
-function createAllPeriods() {
+// 12개월 시기 생성
+function createAllMonths() {
   const list = [];
   for (let m = 1; m <= 12; m++) {
-    for (const ten of TENS) {
-      list.push({ month: m, ten, key: getPeriodKey(m, ten) });
-    }
+    list.push({ month: m, key: `month-${m}` });
   }
   return list;
 }
 
-// 필터/검색/시기 결합 후 정렬 (카테고리 필터 제거)
-function queryItems(allItems, searchText, periodKey) {
+// 필터/검색/시기 결합 후 정렬
+function queryItems(allItems, searchText, month) {
   const normalized = (searchText || '').trim().toLowerCase();
-  console.log(`queryItems - periodKey: ${periodKey}, 검색어: "${normalized}"`);
   
   const items = allItems.filter((it) => {
-    // 시기 포함
-    const includesPeriod = it.periods?.some(p => getPeriodKey(p.month, p.ten) === periodKey);
-    if (!includesPeriod) return false;
+    // 시기(월) 포함 여부 확인
+    const includesMonth = it.months?.includes(month);
+    if (!includesMonth) return false;
+    
     // 검색 AND
     if (!normalized) return true;
     const hay = `${it.name_ko || ''}\n${it.description_ko || ''}`.toLowerCase();
     return hay.includes(normalized);
   });
-
-  console.log(`필터링 전 총 식재료: ${allItems.length}, 필터링 후: ${items.length}`);
 
   items.sort((a, b) => {
     const ca = CATEGORY_ORDER[a.category] || 99;
@@ -458,13 +440,13 @@ const offlineNoticeEl = document.getElementById('offlineNotice');
 // 전역 상태
 const AppState = {
   allIngredients: [],
-  periods: createAllPeriods(),
+  months: createAllMonths(),
   searchText: '',
   renderCache: new Map(),
-  lastScrollPosition: 0, // 검색 전 스크롤 위치 저장
-  isSearching: false, // 검색 중인지 여부
-  currentPeriodIndex: 0, // 현재 보고 있는 시기 인덱스
-  isProgrammaticScroll: false // 프로그램으로 스크롤 중 여부(버튼 클릭 등)
+  lastScrollPosition: 0,
+  isSearching: false,
+  currentMonthIndex: 0,
+  isProgrammaticScroll: false
 };
 
 // 헤더 높이 계산
@@ -525,21 +507,22 @@ function createCard(item) {
 
 // 식재료 모달 관련 코드 제거 (상세 페이지로 이동)
 
-// 모든 시기 렌더링 (세로 배치)
-function renderAllPeriods() {
-  const { periods, allIngredients, searchText, renderCache } = AppState;
+// 모든 월 렌더링 (세로 배치)
+function renderAllMonths() {
+  const { months, allIngredients, searchText, renderCache } = AppState;
   
   trackEl.innerHTML = '';
   
-  for (const period of periods) {
-    // 시기 헤더 생성
-    const periodHeader = document.createElement('div');
-    periodHeader.className = 'period-header';
-    periodHeader.textContent = formatPeriodLabel(period.month, period.ten);
-    periodHeader.setAttribute('data-period-index', getPeriodIndex(period.month, period.ten));
-    trackEl.appendChild(periodHeader);
+  for (const item of months) {
+    const month = item.month;
+    // 월별 헤더 생성
+    const monthHeader = document.createElement('div');
+    monthHeader.className = 'period-header';
+    monthHeader.textContent = formatMonthLabel(month);
+    monthHeader.setAttribute('data-month-index', month - 1);
+    trackEl.appendChild(monthHeader);
     
-    // 시기별 식재료 그리드 생성
+    // 월별 식재료 그리드 생성
     const gridContainer = document.createElement('div');
     gridContainer.className = 'period-grid';
     
@@ -558,46 +541,38 @@ function renderAllPeriods() {
     trackEl.appendChild(gridContainer);
     
     // 캐시 확인
-    const catsSig = 'all'; // 카테고리 필터 제거
     const searchSig = (searchText || '').trim().toLowerCase();
-    const signature = `${period.key}__${catsSig}__${searchSig}`;
+    const signature = `${month}__${searchSig}`;
     
-    // 캐시가 동일하면 스킵
-    if (renderCache.get(period.key) === signature && grid.children.length > 0) {
+    if (renderCache.get(month) === signature && grid.children.length > 0) {
       continue;
     }
     
-    // 기존 카드들 제거 (중복 방지)
     grid.innerHTML = '';
     
-    // 식재료 렌더링
-    const items = queryItems(allIngredients, searchText, period.key);
-    if (items.length === 0) {
+    // 식재료 렌더링 (월 단위)
+    const filteredItems = queryItems(allIngredients, searchText, month);
+    if (filteredItems.length === 0) {
       empty.style.display = 'block';
     } else {
       empty.style.display = 'none';
-      // 중복 제거: 이미 추가된 식재료는 건너뛰기
-      const addedItems = new Set();
-      for (const item of items) {
-        if (!addedItems.has(item.name_ko)) {
-          addedItems.add(item.name_ko);
-          grid.appendChild(createCard(item));
-        }
-      }
+      filteredItems.forEach(item => {
+        grid.appendChild(createCard(item));
+      });
     }
-    renderCache.set(period.key, signature);
+    renderCache.set(month, signature);
   }
 }
 
-// 특정 시기로 스크롤
-function scrollToPeriod(periodIndex) {
-  const periodHeader = document.querySelector(`[data-period-index="${periodIndex}"]`);
-  if (!periodHeader) return;
-  const offset = getHeaderHeight() + 8; // 헤더 높이 + 여유
-  const y = (window.pageYOffset || document.documentElement.scrollTop) + periodHeader.getBoundingClientRect().top - offset;
+// 특정 월로 스크롤
+function scrollToMonth(monthIndex) {
+  const monthHeader = document.querySelector(`[data-month-index="${monthIndex}"]`);
+  if (!monthHeader) return;
+  const offset = getHeaderHeight() + 8;
+  const y = (window.pageYOffset || document.documentElement.scrollTop) + monthHeader.getBoundingClientRect().top - offset;
   window.scrollTo({ top: y, behavior: 'smooth' });
-  AppState.currentPeriodIndex = periodIndex; // 현재 시기 인덱스 업데이트
-  applySeasonThemeByPeriodIndex(periodIndex);
+  AppState.currentMonthIndex = monthIndex;
+  applySeasonThemeByMonthIndex(monthIndex); // 기존 함수명 유지하되 monthIndex로 동작
 }
 
 // 오늘 버튼 상태를 전역에서 동기화하는 헬퍼 (삭제됨)
@@ -605,48 +580,42 @@ function syncTodayButtonState() {
   // 더 이상 사용하지 않음
 }
 
-// 현재 화면에 보이는 시기 인덱스 감지
-function getCurrentVisiblePeriodIndex() {
-  const periodHeaders = document.querySelectorAll('.period-header');
-  if (!periodHeaders.length) return -1;
+// 현재 화면에 보이는 월 인덱스 감지
+function getCurrentVisibleMonthIndex() {
+  const monthHeaders = document.querySelectorAll('.period-header');
+  if (!monthHeaders.length) return -1;
 
-  const headerOffset = getHeaderHeight() + 8; // 헤더 높이 + 여유
+  const headerOffset = getHeaderHeight() + 8;
 
-  // 화면 상단(헤더 아래) 기준으로 첫 번째로 아래에 보이는 헤더를 찾고,
-  // 그 바로 이전 헤더를 "현재 시기"로 간주
   let firstBelow = -1;
-  for (let i = 0; i < periodHeaders.length; i++) {
-    const top = periodHeaders[i].getBoundingClientRect().top - headerOffset;
+  for (let i = 0; i < monthHeaders.length; i++) {
+    const top = monthHeaders[i].getBoundingClientRect().top - headerOffset;
     if (top >= 0) { firstBelow = i; break; }
   }
 
   if (firstBelow === -1) {
-    // 전부 화면 위에 있다면 마지막 헤더가 현재 시기
-    return parseInt(periodHeaders[periodHeaders.length - 1].getAttribute('data-period-index'));
+    return parseInt(monthHeaders[monthHeaders.length - 1].getAttribute('data-month-index'));
   }
   if (firstBelow === 0) {
-    // 아직 어떤 헤더도 위로 지나가지 않았다면 첫 번째 시기
-    return parseInt(periodHeaders[0].getAttribute('data-period-index'));
+    return parseInt(monthHeaders[0].getAttribute('data-month-index'));
   }
-  // 첫 아래 헤더가 헤더 바로 아래에 거의 붙어있다면 그 헤더를 현재 시기로 간주
-  const topFromOffset = periodHeaders[firstBelow].getBoundingClientRect().top - headerOffset;
+  const topFromOffset = monthHeaders[firstBelow].getBoundingClientRect().top - headerOffset;
   if (Math.abs(topFromOffset) <= 8) {
-    return parseInt(periodHeaders[firstBelow].getAttribute('data-period-index'));
+    return parseInt(monthHeaders[firstBelow].getAttribute('data-month-index'));
   }
-  // 그렇지 않다면 그 바로 이전 헤더가 현재 시기
-  return parseInt(periodHeaders[firstBelow - 1].getAttribute('data-period-index'));
+  return parseInt(monthHeaders[firstBelow - 1].getAttribute('data-month-index'));
 }
 
-// 검색 결과가 있는 첫 번째 시기로 스크롤
+// 검색 결과가 있는 첫 번째 월로 스크롤
 function scrollToFirstSearchResult() {
-  const periodHeaders = document.querySelectorAll('.period-header');
-  for (const header of periodHeaders) {
-    const periodIndex = parseInt(header.getAttribute('data-period-index'));
-    const period = AppState.periods[periodIndex];
-    const items = queryItems(AppState.allIngredients, AppState.searchText, period.key);
+  const monthHeaders = document.querySelectorAll('.period-header');
+  for (const header of monthHeaders) {
+    const monthIndex = parseInt(header.getAttribute('data-month-index'));
+    const month = monthIndex + 1;
+    const items = queryItems(AppState.allIngredients, AppState.searchText, month);
     
     if (items.length > 0) {
-      scrollToPeriod(periodIndex);
+      scrollToMonth(monthIndex);
       break;
     }
   }
@@ -678,13 +647,11 @@ function initSearch() {
     }
     
     AppState.searchText = e.target.value;
-    renderAllPeriods();
+    renderAllMonths();
     
     if (searchValue) {
-      // 검색어가 있으면 첫 번째 결과로 스크롤
       setTimeout(() => scrollToFirstSearchResult(), 100);
     } else if (AppState.isSearching && !searchValue && previousSearchText) {
-      // 검색어를 모두 지웠으면 원래 위치로 복원
       AppState.isSearching = false;
       setTimeout(() => restoreScrollPosition(), 100);
     }
@@ -701,22 +668,20 @@ function initHeaderControls() {
   // 브랜드 클릭 시 오늘 날짜로 이동
   if (brandEl) {
     brandEl.addEventListener('click', () => {
-      const currentIndex = getCurrentPeriodIndex();
+      const currentMonthIndex = getCurrentMonthIndex();
       AppState.isProgrammaticScroll = true;
       
-      // 앱에서 배너가 즉시 사라지는 문제 해결을 위해 강제로 표시
       const banner = document.getElementById('holidayBanner');
       if (banner) {
         banner.classList.remove('hidden');
         document.body.classList.add('has-banner');
       }
 
-      scrollToPeriod(currentIndex);
+      scrollToMonth(currentMonthIndex);
       
-      // 스크롤 후 플래그 해제
       setTimeout(() => {
         AppState.isProgrammaticScroll = false;
-        applySeasonThemeByPeriodIndex(currentIndex);
+        applySeasonThemeByMonthIndex(currentMonthIndex);
       }, 2000);
     });
   }
@@ -738,12 +703,11 @@ function initHeaderControls() {
     clearTimeout(scrollTimeout);
     scrollTimeout = setTimeout(() => {
       if (!AppState.isProgrammaticScroll) {
-        // 스크롤 위치 기반으로 현재 시기 감지
-        const currentPeriodIndex = getCurrentVisiblePeriodIndex();
-        if (currentPeriodIndex !== -1) {
-          AppState.currentPeriodIndex = currentPeriodIndex;
+        const currentMonthIndex = getCurrentVisibleMonthIndex();
+        if (currentMonthIndex !== -1) {
+          AppState.currentMonthIndex = currentMonthIndex;
         }
-        applySeasonThemeByPeriodIndex(AppState.currentPeriodIndex);
+        applySeasonThemeByMonthIndex(AppState.currentMonthIndex);
       }
     }, 100);
   });
@@ -812,7 +776,7 @@ async function init() {
       displayHolidayBanner(upcomingHoliday);
     }
 
-    renderAllPeriods();
+    renderAllMonths();
     initSearch();
     initPush(); // Push 알림 초기화
     initHeaderControls();
@@ -823,26 +787,22 @@ async function init() {
     window.addEventListener('resize', () => { requestAnimationFrame(syncHeaderOffset); });
     window.addEventListener('orientationchange', () => { setTimeout(syncHeaderOffset, 250); });
     
-    // 초기 로드 시 현재 날짜에 해당하는 시기로 스크롤 (프로그램적 스크롤로 처리)
+    // 초기 로드 시 현재 월로 스크롤
     setTimeout(() => {
-      const currentIndex = getCurrentPeriodIndex();
+      const currentMonthIndex = getCurrentMonthIndex();
       AppState.isProgrammaticScroll = true;
       
-      // 앱에서 배너가 즉시 사라지는 문제 해결을 위해 강제로 표시
       const banner = document.getElementById('holidayBanner');
       if (banner) {
         banner.classList.remove('hidden');
         document.body.classList.add('has-banner');
       }
 
-      scrollToPeriod(currentIndex);
-      // 초기 렌더 직후 레이아웃/이미지 로딩 지연을 감안해 여러 번 동기화
-      setTimeout(syncTodayButtonState, 50);
-      setTimeout(syncTodayButtonState, 200);
+      scrollToMonth(currentMonthIndex);
+      
       setTimeout(() => {
         AppState.isProgrammaticScroll = false;
-        syncTodayButtonState();
-        applySeasonThemeByPeriodIndex(AppState.currentPeriodIndex);
+        applySeasonThemeByMonthIndex(AppState.currentMonthIndex);
       }, 2000);
     }, 300);
   } catch (err) {

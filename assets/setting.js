@@ -98,13 +98,11 @@ function getHolidaySolarDate(holiday, today) {
 const Settings = {
   ingredient: {
     enabled: false,
-    day: 1,
-    time: '09:00'
+    list: [] // { id: number, day: number, time: string }
   },
   holiday: {
     enabled: false,
-    dDay: 3,
-    time: '09:00'
+    list: [] // { id: number, dDay: number, time: string }
   }
 };
 
@@ -113,6 +111,23 @@ export async function loadSettings() {
   const saved = localStorage.getItem('app_settings');
   if (saved) {
     const parsed = JSON.parse(saved);
+    
+    // 이전 단일 설정 데이터가 있을 경우 배열 구조로 마이그레이션
+    if (parsed.ingredient && !parsed.ingredient.list) {
+      const oldIng = parsed.ingredient;
+      parsed.ingredient = {
+        enabled: oldIng.enabled,
+        list: oldIng.enabled ? [{ id: Date.now(), day: oldIng.day || 1, time: oldIng.time || '09:00' }] : []
+      };
+    }
+    if (parsed.holiday && !parsed.holiday.list) {
+      const oldHol = parsed.holiday;
+      parsed.holiday = {
+        enabled: oldHol.enabled,
+        list: oldHol.enabled ? [{ id: Date.now() + 1, dDay: oldHol.dDay || 3, time: oldHol.time || '09:00' }] : []
+      };
+    }
+
     Settings.ingredient = { ...Settings.ingredient, ...parsed.ingredient };
     Settings.holiday = { ...Settings.holiday, ...parsed.holiday };
   }
@@ -129,24 +144,81 @@ export async function saveSettings(newSettings) {
   await updateNotificationSchedule();
 }
 
+// 알림 리스트 렌더링
+function renderNotificationList(type) {
+  const listContainer = document.getElementById(`${type}NotiList`);
+  if (!listContainer) return;
+  
+  listContainer.innerHTML = '';
+  const list = Settings[type].list;
+  
+  list.forEach(item => {
+    const itemEl = document.createElement('div');
+    itemEl.className = 'noti-item';
+    
+    let infoText = '';
+    if (type === 'ingredient') {
+      infoText = `매월 ${item.day}일 ${item.time}`;
+    } else {
+      infoText = `${item.dDay === 0 ? '당일' : item.dDay + '일 전'} ${item.time}`;
+    }
+    
+    itemEl.innerHTML = `
+      <span class="noti-item__info">${infoText}</span>
+      <button class="noti-item__remove" type="button" data-id="${item.id}">-</button>
+    `;
+    
+    const removeBtn = itemEl.querySelector('.noti-item__remove');
+    removeBtn.addEventListener('click', () => {
+      removeNotification(type, item.id);
+    });
+    
+    listContainer.appendChild(itemEl);
+  });
+}
+
+function addNotification(type) {
+  const dayValue = type === 'ingredient' 
+    ? parseInt(document.getElementById('ingredientNotiDay').value)
+    : parseInt(document.getElementById('holidayNotiDday').value);
+  const timeValue = document.getElementById(`${type}NotiTime`).value || '09:00';
+  
+  const newItem = {
+    id: Date.now(),
+    time: timeValue
+  };
+  
+  if (type === 'ingredient') newItem.day = dayValue;
+  else newItem.dDay = dayValue;
+  
+  Settings[type].list.push(newItem);
+  renderNotificationList(type);
+}
+
+function removeNotification(type, id) {
+  Settings[type].list = Settings[type].list.filter(item => item.id !== id);
+  renderNotificationList(type);
+}
+
 // UI 초기화
 export function initSettingsPage() {
   const ingToggle = document.getElementById('ingredientNotiToggle');
   const ingDetail = document.getElementById('ingredientNotiDetail');
   const ingDaySelect = document.getElementById('ingredientNotiDay');
   const ingTimeInput = document.getElementById('ingredientNotiTime');
+  const addIngBtn = document.getElementById('addIngredientNoti');
   
   const holiToggle = document.getElementById('holidayNotiToggle');
   const holiDetail = document.getElementById('holidayNotiDetail');
   const holiDdaySelect = document.getElementById('holidayNotiDday');
   const holiTimeInput = document.getElementById('holidayNotiTime');
+  const addHoliBtn = document.getElementById('addHolidayNoti');
   
   const saveBtn = document.getElementById('saveSettingButton');
 
-  // 요소가 없으면 중단
   if (!ingToggle || !saveBtn) return;
 
-  // 식재료 날짜 옵션 생성 (1~31)
+  // 식재료 날짜 옵션 생성
   for (let i = 1; i <= 31; i++) {
     const opt = document.createElement('option');
     opt.value = i;
@@ -154,7 +226,7 @@ export function initSettingsPage() {
     ingDaySelect.appendChild(opt);
   }
 
-  // 명절 d-day 옵션 생성 (0~30)
+  // 명절 d-day 옵션 생성
   for (let i = 0; i <= 30; i++) {
     const opt = document.createElement('option');
     opt.value = i;
@@ -166,16 +238,14 @@ export function initSettingsPage() {
   loadSettings().then(() => {
     ingToggle.checked = Settings.ingredient.enabled;
     ingDetail.style.display = Settings.ingredient.enabled ? 'block' : 'none';
-    ingDaySelect.value = Settings.ingredient.day;
-    ingTimeInput.value = Settings.ingredient.time || '09:00';
+    renderNotificationList('ingredient');
     
     holiToggle.checked = Settings.holiday.enabled;
     holiDetail.style.display = Settings.holiday.enabled ? 'block' : 'none';
-    holiDdaySelect.value = Settings.holiday.dDay;
-    holiTimeInput.value = Settings.holiday.time || '09:00';
+    renderNotificationList('holiday');
   });
 
-  // 토글 이벤트
+  // 이벤트 리스너
   ingToggle.addEventListener('change', (e) => {
     ingDetail.style.display = e.target.checked ? 'block' : 'none';
   });
@@ -184,18 +254,19 @@ export function initSettingsPage() {
     holiDetail.style.display = e.target.checked ? 'block' : 'none';
   });
 
+  addIngBtn.addEventListener('click', () => addNotification('ingredient'));
+  addHoliBtn.addEventListener('click', () => addNotification('holiday'));
+
   // 저장 버튼
   saveBtn.addEventListener('click', async () => {
     const newSettings = {
       ingredient: {
         enabled: ingToggle.checked,
-        day: parseInt(ingDaySelect.value),
-        time: ingTimeInput.value || '09:00'
+        list: Settings.ingredient.list
       },
       holiday: {
         enabled: holiToggle.checked,
-        dDay: parseInt(holiDdaySelect.value),
-        time: holiTimeInput.value || '09:00'
+        list: Settings.holiday.list
       }
     };
     
@@ -206,11 +277,11 @@ export function initSettingsPage() {
         overlay.classList.add('show');
         setTimeout(() => {
           overlay.classList.remove('show');
-          history.back(); // 뒤로가기
+          history.back();
         }, 500);
       } else {
         alert('설정이 저장되고 알림이 예약되었습니다.');
-        history.back(); // 뒤로가기
+        history.back();
       }
     } catch (error) {
       console.error('알림 설정 저장 실패:', error);
@@ -265,86 +336,91 @@ async function updateNotificationSchedule() {
   }
 
   const notis = [];
-  const ingredientTime = parseTimeString(Settings.ingredient.time, { hours: 9, minutes: 0 });
-  const holidayTime = parseTimeString(Settings.holiday.time, { hours: 9, minutes: 0 });
 
-  // 2. 식재료 알림 예약 (향후 12개월 치)
-  if (Settings.ingredient.enabled) {
-    const day = Settings.ingredient.day;
-    const now = new Date();
-    
-    // 식재료 데이터 가져오기
+  // 2. 식재료 알림 예약
+  if (Settings.ingredient.enabled && Settings.ingredient.list.length > 0) {
     const allIngredients = await getIngredientsData();
-    
-    for (let i = 0; i < 12; i++) {
-      const targetDate = new Date(
-        now.getFullYear(),
-        now.getMonth() + i,
-        day,
-        ingredientTime.hours,
-        ingredientTime.minutes,
-        0
-      );
-      
-      if (targetDate.getMonth() !== (now.getMonth() + i) % 12) {
-        targetDate.setDate(0); 
+    const now = new Date();
+
+    Settings.ingredient.list.forEach((ingItem, listIdx) => {
+      const ingredientTime = parseTimeString(ingItem.time, { hours: 9, minutes: 0 });
+      const day = ingItem.day;
+
+      for (let i = 0; i < 12; i++) {
+        const targetDate = new Date(
+          now.getFullYear(),
+          now.getMonth() + i,
+          day,
+          ingredientTime.hours,
+          ingredientTime.minutes,
+          0
+        );
+        
+        if (targetDate.getMonth() !== (now.getMonth() + i) % 12) {
+          targetDate.setDate(0); 
+        }
+        if (targetDate < now) continue;
+
+        const month = targetDate.getMonth() + 1;
+        const newIngredients = getNewIngredientsForMonth(month, allIngredients);
+        
+        if (newIngredients.length > 0) {
+          const names = newIngredients.slice(0, 3).map(item => item.name_ko).join(', ');
+          const count = newIngredients.length;
+          const bodyText = count > 3 
+            ? `${names} 등 ${count}가지가 제철이에요.` 
+            : `${names}이(가) 제철이에요.`;
+
+          notis.push({
+            id: 10000 + (listIdx * 100) + i, // 리스트 인덱스별로 ID 대역 분리
+            title: `${month}월의 제철 식재료 🥦`,
+            body: `${month}월에는 ${bodyText}`,
+            schedule: { at: targetDate },
+            extra: { type: 'ingredient', month: month },
+            channelId: 'default',
+            smallIcon: 'ic_notification'
+          });
+        }
       }
-
-      if (targetDate < now) continue;
-
-      const month = targetDate.getMonth() + 1;
-      // 독립적인 allIngredients 변수를 파라미터로 넘겨 새 제철 음식을 검색합니다.
-      const newIngredients = getNewIngredientsForMonth(month, allIngredients);
-      
-      if (newIngredients.length > 0) {
-        const names = newIngredients.slice(0, 3).map(item => item.name_ko).join(', ');
-        const count = newIngredients.length;
-        const bodyText = count > 3 
-          ? `${names} 등 ${count}가지가 제철이에요.` 
-          : `${names}이(가) 제철이에요.`;
-
-        notis.push({
-          id: 10000 + i,
-          title: `${month}월의 제철 식재료 🥦`,
-          body: `${month}월에는 ${bodyText}`,
-          schedule: { at: targetDate },
-          extra: { type: 'ingredient', month: month },
-          channelId: 'default',
-          smallIcon: 'ic_notification'
-        });
-      }
-    }
+    });
   }
 
-  // 3. 명절 알림 예약 (향후 1년 치)
-  if (Settings.holiday.enabled) {
-    const dDay = Settings.holiday.dDay;
+  // 3. 명절 알림 예약
+  if (Settings.holiday.enabled && Settings.holiday.list.length > 0) {
     const holidays = await getHolidaysData();
     const today = new Date();
     today.setHours(0, 0, 0, 0);
-    
-    holidays.forEach((holiday, idx) => {
-      // 위에서 선언한 날짜 계산 로직을 사용해서 solarDate 산출
-      const solarDate = getHolidaySolarDate(holiday, today);
-      if (!solarDate) return;
 
-      const notiDate = new Date(solarDate);
-      notiDate.setDate(notiDate.getDate() - dDay);
-      notiDate.setHours(holidayTime.hours, holidayTime.minutes, 0);
+    Settings.holiday.list.forEach((holItem, listIdx) => {
+      const holidayTime = parseTimeString(holItem.time, { hours: 9, minutes: 0 });
+      const dDay = holItem.dDay;
 
-      if (notiDate > new Date()) {
-        const foodNames = holiday.details?.foods?.slice(0, 2).map(f => f.name).join(', ') || '맛있는 음식';
-        
-        notis.push({
-          id: 20000 + idx,
-          title: `곧 ${holiday.name}입니다 🌕`,
-          body: `${holiday.name}에는 ${foodNames}을(를) 먹어요.`,
-          schedule: { at: notiDate },
-          extra: { type: 'holiday', name: holiday.name },
-          channelId: 'default',
-          smallIcon: 'ic_notification'
-        });
-      }
+      holidays.forEach((holiday, idx) => {
+        const solarDate = getHolidaySolarDate(holiday, today);
+        if (!solarDate) return;
+
+        const notiDate = new Date(solarDate);
+        notiDate.setDate(notiDate.getDate() - dDay);
+        notiDate.setHours(holidayTime.hours, holidayTime.minutes, 0);
+
+        if (notiDate > new Date()) {
+          const foodNames = holiday.details?.foods?.slice(0, 2).map(f => f.name).join(', ') || '맛있는 음식';
+          
+          notis.push({
+            id: 20000 + (listIdx * 1000) + idx, // 리스트 인덱스별로 ID 대역 분리
+            title: `곧 ${holiday.name}입니다 🌕`,
+            body: `${holiday.name}에는 ${foodNames}을(를) 먹어요.`,
+            schedule: { at: notiDate },
+            extra: { 
+              type: 'holiday', 
+              name: holiday.name,
+              url: `holiday.html?id=${holiday.id}` // 클릭 시 랜딩할 URL
+            },
+            channelId: 'default',
+            smallIcon: 'ic_notification'
+          });
+        }
+      });
     });
   }
 
@@ -374,13 +450,14 @@ async function updateNotificationSchedule() {
 function getNewIngredientsForMonth(month, allIngredients) {
   const all = allIngredients || [];
   return all.filter(item => {
-    const periods = item.periods || [];
-    const hasThisMonth = periods.some(p => p.month === month);
+    const months = item.months || [];
+    const hasThisMonth = months.includes(month);
     
     let prevMonth = month - 1;
     if (prevMonth === 0) prevMonth = 12;
-    const hasPrevMonth = periods.some(p => p.month === prevMonth);
+    const hasPrevMonth = months.includes(prevMonth);
 
+    // 전달에는 없고 이번 달에만 있는 (새로 등장한) 식재료만 알림
     return hasThisMonth && !hasPrevMonth;
   });
 }

@@ -62,8 +62,11 @@ export async function initPush() {
       console.log('알림 클릭됨:', notification);
       const data = notification.notification.data;
       
-      // 예: data.path가 있으면 해당 해시로 이동 (#galchi-jorim 등)
-      if (data && data.path) {
+      if (data && data.url) {
+        // 절대 경로 이동 (예: holiday.html?id=hansik)
+        window.location.href = data.url;
+      } else if (data && data.path) {
+        // 해시 이동 (#galchi-jorim 등)
         window.location.hash = data.path;
       }
     });

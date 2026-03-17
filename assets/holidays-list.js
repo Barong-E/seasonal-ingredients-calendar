@@ -81,17 +81,25 @@ function formatDateString(date) {
   return `${year}년 ${month}월 ${day}일`;
 }
 
-async function renderHolidaysList() {
+async function renderHolidaysList(searchText = '') {
   const container = document.getElementById('holidayListContainer');
   const holidays = await loadHolidays();
   const today = new Date();
   today.setHours(0, 0, 0, 0);
 
+  const normalized = searchText.trim().toLowerCase();
+
   // 날짜 계산 및 배열에 추가
   const parsedHolidays = holidays.map(h => {
     const solarDate = getHolidaySolarDate(h, today);
     return { ...h, solarDate };
-  }).filter(h => h.solarDate !== null);
+  }).filter(h => {
+    if (h.solarDate === null) return false;
+    if (!normalized) return true;
+    
+    const hay = `${h.name || ''} ${h.main_food || ''}`.toLowerCase();
+    return hay.includes(normalized);
+  });
 
   // 날짜 순 정렬 (올해 기준)
   parsedHolidays.sort((a, b) => a.solarDate.getTime() - b.solarDate.getTime());
@@ -99,7 +107,7 @@ async function renderHolidaysList() {
   container.innerHTML = ''; // Clear loading state or previous data
   
   if (parsedHolidays.length === 0) {
-    container.innerHTML = '<p style="text-align: center; color: #666;">데이터를 불러올 수 없습니다.</p>';
+    container.innerHTML = '<p style="text-align: center; color: #666;">' + (normalized ? '검색 결과가 없습니다.' : '데이터를 불러올 수 없습니다.') + '</p>';
     return;
   }
 
@@ -129,4 +137,16 @@ async function renderHolidaysList() {
   });
 }
 
-document.addEventListener('DOMContentLoaded', renderHolidaysList);
+function initSearch() {
+  const searchInput = document.getElementById('searchInput');
+  if (!searchInput) return;
+
+  searchInput.addEventListener('input', (e) => {
+    renderHolidaysList(e.target.value);
+  });
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+  renderHolidaysList();
+  initSearch();
+});

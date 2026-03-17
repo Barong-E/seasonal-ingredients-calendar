@@ -2,36 +2,6 @@
   {
     "name_ko": "가지",
     "category": "채소",
-    "periods": [
-      {
-        "month": 6,
-        "ten": "하순"
-      },
-      {
-        "month": 7,
-        "ten": "초순"
-      },
-      {
-        "month": 7,
-        "ten": "중순"
-      },
-      {
-        "month": 7,
-        "ten": "하순"
-      },
-      {
-        "month": 8,
-        "ten": "초순"
-      },
-      {
-        "month": 8,
-        "ten": "중순"
-      },
-      {
-        "month": 8,
-        "ten": "하순"
-      }
-    ],
     "image": "eggplant.png",
     "description_ko": "보라색 껍질에 안토시아닌이 풍부하며, 수분이 많고 식감이 부드러워 볶음, 찜, 무침 등 다양한 요리에 활용됩니다. 몸의 열을 식혀주는 효과가 있습니다.",
     "preparation_ko": "꼭지를 잘라 흐르는 물에 문질러 씻고, 껍질째 사용해도 됩니다.",
@@ -45,37 +15,15 @@
     "name_ja": "",
     "description_en": "",
     "description_ja": "",
-    "popular_dish": "가지나물, 가지볶음"
+    "popular_dish": "가지나물, 가지볶음",
+    "months": [
+      7,
+      8
+    ]
   },
   {
     "name_ko": "감",
     "category": "과일",
-    "periods": [
-      {
-        "month": 10,
-        "ten": "초순"
-      },
-      {
-        "month": 10,
-        "ten": "중순"
-      },
-      {
-        "month": 10,
-        "ten": "하순"
-      },
-      {
-        "month": 11,
-        "ten": "초순"
-      },
-      {
-        "month": 11,
-        "ten": "중순"
-      },
-      {
-        "month": 11,
-        "ten": "하순"
-      }
-    ],
     "image": "persimmon.png",
     "description_ko": "비타민 C와 A가 풍부하여 면역력 강화와 감기 예방에 좋습니다. 단감, 홍시, 곶감 등 다양한 형태로 즐길 수 있으며, 숙취 해소에도 도움을 줍니다.",
     "preparation_ko": "흐르는 물에 씻고 꼭지 제거, 상처 난 부위는 도려냅니다.",
@@ -89,45 +37,15 @@
     "name_ja": "",
     "description_en": "",
     "description_ja": "",
-    "popular_dish": "생과일로 먹거나 곶감으로 즐깁니다"
+    "popular_dish": "생과일로 먹거나 곶감으로 즐깁니다",
+    "months": [
+      10,
+      11
+    ]
   },
   {
     "name_ko": "감자",
     "category": "채소",
-    "periods": [
-      {
-        "month": 6,
-        "ten": "하순"
-      },
-      {
-        "month": 7,
-        "ten": "초순"
-      },
-      {
-        "month": 7,
-        "ten": "중순"
-      },
-      {
-        "month": 7,
-        "ten": "하순"
-      },
-      {
-        "month": 8,
-        "ten": "초순"
-      },
-      {
-        "month": 8,
-        "ten": "중순"
-      },
-      {
-        "month": 8,
-        "ten": "하순"
-      },
-      {
-        "month": 9,
-        "ten": "초순"
-      }
-    ],
     "image": "potato.png",
     "description_ko": "주성분은 녹말로 든든한 식사 대용으로 좋습니다. 비타민 C가 풍부하며 찌거나 굽거나 볶는 등 어떤 요리에도 잘 어울리는 만능 식재료입니다.",
     "preparation_ko": "솔로 흙을 털어내고 싹은 도려낸 뒤, 흐르는 물로 가볍게 씻습니다.",
@@ -141,57 +59,15 @@
     "name_ja": "",
     "description_en": "",
     "description_ja": "",
-    "popular_dish": "감자조림, 감자전"
+    "popular_dish": "감자조림, 감자전",
+    "months": [
+      7,
+      8
+    ]
   },
   {
     "name_ko": "갈치",
     "category": "해산물",
-    "periods": [
-      {
-        "month": 7,
-        "ten": "중순"
-      },
-      {
-        "month": 7,
-        "ten": "하순"
-      },
-      {
-        "month": 8,
-        "ten": "초순"
-      },
-      {
-        "month": 8,
-        "ten": "중순"
-      },
-      {
-        "month": 8,
-        "ten": "하순"
-      },
-      {
-        "month": 9,
-        "ten": "초순"
-      },
-      {
-        "month": 9,
-        "ten": "중순"
-      },
-      {
-        "month": 9,
-        "ten": "하순"
-      },
-      {
-        "month": 10,
-        "ten": "초순"
-      },
-      {
-        "month": 10,
-        "ten": "중순"
-      },
-      {
-        "month": 10,
-        "ten": "하순"
-      }
-    ],
     "image": "beltfish.png",
     "description_ko": "길고 은빛을 띠는 생선으로, 살이 부드럽고 맛이 담백하여 구이와 조림으로 인기가 높습니다. 단백질과 불포화지방산이 풍부하여 성장기 어린이에게 좋습니다.",
     "preparation_ko": "비늘과 내장을 제거해 깨끗이 씻고 물기 빼 토막 내어 준비합니다.",
@@ -205,37 +81,16 @@
     "name_ja": "",
     "description_en": "",
     "description_ja": "",
-    "popular_dish": "갈치조림"
+    "popular_dish": "갈치조림",
+    "months": [
+      8,
+      9,
+      10
+    ]
   },
   {
     "name_ko": "가리비",
     "category": "해산물",
-    "periods": [
-      {
-        "month": 11,
-        "ten": "초순"
-      },
-      {
-        "month": 11,
-        "ten": "중순"
-      },
-      {
-        "month": 11,
-        "ten": "하순"
-      },
-      {
-        "month": 12,
-        "ten": "초순"
-      },
-      {
-        "month": 12,
-        "ten": "중순"
-      },
-      {
-        "month": 12,
-        "ten": "하순"
-      }
-    ],
     "image": "scallop.png",
     "description_ko": "쫄깃한 관자와 부드러운 속살이 일품인 조개. 칼로리와 콜레스테롤이 낮고 미네랄이 풍부합니다. 찜, 구이, 탕 등 다양한 요리로 즐길 수 있습니다.",
     "preparation_ko": "껍질을 솔로 문질러 세척, 내장 제거 후 살만 분리해 사용합니다.",
@@ -249,49 +104,15 @@
     "name_ja": "",
     "description_en": "",
     "description_ja": "",
-    "popular_dish": "가리비구이"
+    "popular_dish": "가리비구이",
+    "months": [
+      11,
+      12
+    ]
   },
   {
     "name_ko": "광어",
     "category": "해산물",
-    "periods": [
-      {
-        "month": 9,
-        "ten": "중순"
-      },
-      {
-        "month": 9,
-        "ten": "하순"
-      },
-      {
-        "month": 10,
-        "ten": "초순"
-      },
-      {
-        "month": 10,
-        "ten": "중순"
-      },
-      {
-        "month": 10,
-        "ten": "하순"
-      },
-      {
-        "month": 11,
-        "ten": "초순"
-      },
-      {
-        "month": 11,
-        "ten": "중순"
-      },
-      {
-        "month": 11,
-        "ten": "하순"
-      },
-      {
-        "month": 12,
-        "ten": "초순"
-      }
-    ],
     "image": "flatfish.png",
     "description_ko": "담백하고 쫄깃한 식감으로 횟감으로 인기가 매우 높은 생선입니다. 단백질이 풍부하고 지방이 적어 소화가 잘되며, 비린내가 적어 남녀노소 즐기기 좋습니다.",
     "preparation_ko": "비늘·내장 제거 후 깨끗이 씻고 뼈·껍질 분리해 횟감은 냉장 숙성.",
@@ -305,45 +126,15 @@
     "name_ja": "",
     "description_en": "",
     "description_ja": "",
-    "popular_dish": "광어회"
+    "popular_dish": "광어회",
+    "months": [
+      10,
+      11
+    ]
   },
   {
     "name_ko": "과메기",
     "category": "해산물",
-    "periods": [
-      {
-        "month": 11,
-        "ten": "중순"
-      },
-      {
-        "month": 11,
-        "ten": "하순"
-      },
-      {
-        "month": 12,
-        "ten": "초순"
-      },
-      {
-        "month": 12,
-        "ten": "중순"
-      },
-      {
-        "month": 12,
-        "ten": "하순"
-      },
-      {
-        "month": 1,
-        "ten": "초순"
-      },
-      {
-        "month": 1,
-        "ten": "중순"
-      },
-      {
-        "month": 1,
-        "ten": "하순"
-      }
-    ],
     "image": "gamaegi.png",
     "description_ko": "꽁치나 청어를 차가운 바닷바람에 얼리고 녹이기를 반복하여 말린 것. 쫀득한 식감과 고소한 맛이 특징이며, 불포화지방산인 DHA와 EPA가 풍부합니다.",
     "preparation_ko": "포장을 개봉해 표면 수분을 닦고 먹기 크기로 절단해 사용합니다.",
@@ -357,41 +148,15 @@
     "name_ja": "",
     "description_en": "",
     "description_ja": "",
-    "popular_dish": "과메기 무채 곁들임"
+    "popular_dish": "과메기 무채 곁들임",
+    "months": [
+      1,
+      12
+    ]
   },
   {
     "name_ko": "고구마",
     "category": "채소",
-    "periods": [
-      {
-        "month": 8,
-        "ten": "하순"
-      },
-      {
-        "month": 9,
-        "ten": "초순"
-      },
-      {
-        "month": 9,
-        "ten": "중순"
-      },
-      {
-        "month": 9,
-        "ten": "하순"
-      },
-      {
-        "month": 10,
-        "ten": "초순"
-      },
-      {
-        "month": 10,
-        "ten": "중순"
-      },
-      {
-        "month": 10,
-        "ten": "하순"
-      }
-    ],
     "image": "sweet-potato.png",
     "description_ko": "달콤한 맛과 풍부한 식이섬유로 사랑받는 뿌리채소. 베타카로틴이 풍부하여 항산화 작용에 도움을 주며, 든든한 간식이나 식사 대용으로 좋습니다.",
     "preparation_ko": "흙을 부드럽게 털고 필요 시 솔질 후, 물로 씻어 표면을 말려둡니다.",
@@ -405,37 +170,15 @@
     "name_ja": "",
     "description_en": "",
     "description_ja": "",
-    "popular_dish": "군고구마, 고구마맛탕"
+    "popular_dish": "군고구마, 고구마맛탕",
+    "months": [
+      9,
+      10
+    ]
   },
   {
     "name_ko": "고등어",
     "category": "해산물",
-    "periods": [
-      {
-        "month": 9,
-        "ten": "하순"
-      },
-      {
-        "month": 10,
-        "ten": "초순"
-      },
-      {
-        "month": 10,
-        "ten": "중순"
-      },
-      {
-        "month": 10,
-        "ten": "하순"
-      },
-      {
-        "month": 11,
-        "ten": "초순"
-      },
-      {
-        "month": 11,
-        "ten": "중순"
-      }
-    ],
     "image": "mackerel.png",
     "description_ko": "대한민국 대표 등푸른생선. 오메가-3 지방산이 풍부하여 뇌 건강과 혈관 질환 예방에 도움을 줍니다. 구이, 조림 등 다양한 방법으로 요리됩니다.",
     "preparation_ko": "내장과 핏물을 제거해 깨끗이 씻고 물기 제거 후 토막 내어 준비.",
@@ -449,61 +192,14 @@
     "name_ja": "",
     "description_en": "",
     "description_ja": "",
-    "popular_dish": "고등어조림, 고등어구이"
+    "popular_dish": "고등어조림, 고등어구이",
+    "months": [
+      10
+    ]
   },
   {
     "name_ko": "굴",
     "category": "해산물",
-    "periods": [
-      {
-        "month": 11,
-        "ten": "초순"
-      },
-      {
-        "month": 11,
-        "ten": "중순"
-      },
-      {
-        "month": 11,
-        "ten": "하순"
-      },
-      {
-        "month": 12,
-        "ten": "초순"
-      },
-      {
-        "month": 12,
-        "ten": "중순"
-      },
-      {
-        "month": 12,
-        "ten": "하순"
-      },
-      {
-        "month": 1,
-        "ten": "초순"
-      },
-      {
-        "month": 1,
-        "ten": "중순"
-      },
-      {
-        "month": 1,
-        "ten": "하순"
-      },
-      {
-        "month": 2,
-        "ten": "초순"
-      },
-      {
-        "month": 2,
-        "ten": "중순"
-      },
-      {
-        "month": 2,
-        "ten": "하순"
-      }
-    ],
     "image": "oyster.png",
     "description_ko": "'바다의 우유'라 불릴 만큼 영양이 풍부합니다. 아연 함량이 높아 면역력 강화에 좋으며, 특유의 향과 부드러운 식감으로 생으로 먹거나 익혀 먹습니다.",
     "preparation_ko": "패각 솔질 후 알만 분리, 약한 소금물로 흔들어 이물 제거합니다.",
@@ -517,37 +213,17 @@
     "description_ja": "",
     "calories_per_100g": 97,
     "calories_per_serving": "생굴 5개(100g) 약 97kcal",
-    "popular_dish": "굴전, 굴국밥"
+    "popular_dish": "굴전, 굴국밥",
+    "months": [
+      1,
+      2,
+      11,
+      12
+    ]
   },
   {
     "name_ko": "꽁치",
     "category": "해산물",
-    "periods": [
-      {
-        "month": 10,
-        "ten": "초순"
-      },
-      {
-        "month": 10,
-        "ten": "중순"
-      },
-      {
-        "month": 10,
-        "ten": "하순"
-      },
-      {
-        "month": 11,
-        "ten": "초순"
-      },
-      {
-        "month": 11,
-        "ten": "중순"
-      },
-      {
-        "month": 11,
-        "ten": "하순"
-      }
-    ],
     "image": "sardine.png",
     "description_ko": "가을철 대표적인 등푸른생선으로, 구웠을 때 나는 고소한 냄새가 일품입니다. 불포화지방산이 풍부하고, 과메기의 주재료로도 사용됩니다.",
     "preparation_ko": "비늘과 내장을 제거하고 흐르는 물로 헹군 뒤 물기를 충분히 뺍니다.",
@@ -561,61 +237,15 @@
     "description_ja": "",
     "calories_per_100g": 310,
     "calories_per_serving": "1마리(120g) 약 372kcal",
-    "popular_dish": "꽁치구이"
+    "popular_dish": "꽁치구이",
+    "months": [
+      10,
+      11
+    ]
   },
   {
     "name_ko": "꼬막",
     "category": "해산물",
-    "periods": [
-      {
-        "month": 11,
-        "ten": "중순"
-      },
-      {
-        "month": 11,
-        "ten": "하순"
-      },
-      {
-        "month": 12,
-        "ten": "초순"
-      },
-      {
-        "month": 12,
-        "ten": "중순"
-      },
-      {
-        "month": 12,
-        "ten": "하순"
-      },
-      {
-        "month": 1,
-        "ten": "초순"
-      },
-      {
-        "month": 1,
-        "ten": "중순"
-      },
-      {
-        "month": 1,
-        "ten": "하순"
-      },
-      {
-        "month": 2,
-        "ten": "초순"
-      },
-      {
-        "month": 2,
-        "ten": "중순"
-      },
-      {
-        "month": 2,
-        "ten": "하순"
-      },
-      {
-        "month": 3,
-        "ten": "초순"
-      }
-    ],
     "image": "cockle.png",
     "description_ko": "쫄깃한 식감과 감칠맛이 특징인 조개. 필수 아미노산과 철분이 풍부하여 빈혈 예방에 좋습니다. 삶아서 양념장에 찍어 먹거나 비빔밥 재료로 활용됩니다.",
     "preparation_ko": "솔질로 껍질 세척 후 해감해 모래 제거, 끓는 물에 살짝 데쳐 사용.",
@@ -629,37 +259,16 @@
     "external_url": "https://link.coupang.com/a/cTFf7a",
     "calories_per_100g": 76,
     "calories_per_serving": "삶은 살 10개(50g) 약 38kcal",
-    "popular_dish": "꼬막무침, 꼬막비빔밥"
+    "popular_dish": "꼬막무침, 꼬막비빔밥",
+    "months": [
+      1,
+      2,
+      12
+    ]
   },
   {
     "name_ko": "꽃게",
     "category": "해산물",
-    "periods": [
-      {
-        "month": 9,
-        "ten": "초순"
-      },
-      {
-        "month": 9,
-        "ten": "중순"
-      },
-      {
-        "month": 9,
-        "ten": "하순"
-      },
-      {
-        "month": 10,
-        "ten": "초순"
-      },
-      {
-        "month": 10,
-        "ten": "중순"
-      },
-      {
-        "month": 10,
-        "ten": "하순"
-      }
-    ],
     "image": "flower-crab.png",
     "description_ko": "가을에는 살이 꽉 찬 수꽃게가 제철입니다. 달큰한 속살이 일품이며, 찜, 탕, 무침 등 어떤 요리로도 훌륭한 맛을 냅니다. 키토산이 풍부합니다.",
     "preparation_ko": "솔로 껍질 문질러 세척, 아가미·모래주머니 제거 후 물기 빼 준비.",
@@ -673,45 +282,15 @@
     "external_url": "https://link.coupang.com/a/cTFgd2",
     "calories_per_100g": 72,
     "calories_per_serving": "1마리 살(100g) 약 72kcal",
-    "popular_dish": "꽃게찜, 간장게장"
+    "popular_dish": "꽃게찜, 간장게장",
+    "months": [
+      9,
+      10
+    ]
   },
   {
     "name_ko": "깻잎",
     "category": "채소",
-    "periods": [
-      {
-        "month": 6,
-        "ten": "초순"
-      },
-      {
-        "month": 6,
-        "ten": "중순"
-      },
-      {
-        "month": 6,
-        "ten": "하순"
-      },
-      {
-        "month": 7,
-        "ten": "초순"
-      },
-      {
-        "month": 7,
-        "ten": "중순"
-      },
-      {
-        "month": 7,
-        "ten": "하순"
-      },
-      {
-        "month": 8,
-        "ten": "초순"
-      },
-      {
-        "month": 8,
-        "ten": "중순"
-      }
-    ],
     "image": "perilla-leaves.png",
     "description_ko": "특유의 향긋한 향이 특징인 잎채소입니다. 철분이 시금치의 2배 이상 함유되어 있으며, 쌈 채소나 장아찌, 볶음 등 다양하게 활용됩니다.",
     "preparation_ko": "흐르는 물에 가볍게 흔들어 세척하고, 물기를 털어 잎과 줄기를 정리합니다.",
@@ -725,33 +304,15 @@
     "external_url": "https://link.coupang.com/a/cTFaan",
     "calories_per_100g": 41,
     "calories_per_serving": "10장(20g) 약 8kcal",
-    "popular_dish": "깻잎찜, 깻잎김치"
+    "popular_dish": "깻잎찜, 깻잎김치",
+    "months": [
+      6,
+      7
+    ]
   },
   {
     "name_ko": "냉이",
     "category": "채소",
-    "periods": [
-      {
-        "month": 3,
-        "ten": "초순"
-      },
-      {
-        "month": 3,
-        "ten": "중순"
-      },
-      {
-        "month": 3,
-        "ten": "하순"
-      },
-      {
-        "month": 4,
-        "ten": "초순"
-      },
-      {
-        "month": 4,
-        "ten": "중순"
-      }
-    ],
     "image": "shepherd-purse.png",
     "description_ko": "쌉쌀하면서도 향긋한 향이 봄의 시작을 알리는 대표적인 봄나물. 단백질 함량이 높고 비타민과 무기질이 풍부하여 춘곤증 예방에 좋습니다.",
     "preparation_ko": "뿌리와 잔흙을 털고 살짝 담가 불린 뒤, 흐르는 물로 헹궈 잔뿌리 정리.",
@@ -765,37 +326,14 @@
     "external_url": "https://link.coupang.com/a/cTFaja",
     "calories_per_100g": 34,
     "calories_per_serving": "한 줌(50g) 약 17kcal",
-    "popular_dish": "냉이국, 냉이무침"
+    "popular_dish": "냉이국, 냉이무침",
+    "months": [
+      3
+    ]
   },
   {
     "name_ko": "농어",
     "category": "해산물",
-    "periods": [
-      {
-        "month": 6,
-        "ten": "하순"
-      },
-      {
-        "month": 7,
-        "ten": "초순"
-      },
-      {
-        "month": 7,
-        "ten": "중순"
-      },
-      {
-        "month": 7,
-        "ten": "하순"
-      },
-      {
-        "month": 8,
-        "ten": "초순"
-      },
-      {
-        "month": 8,
-        "ten": "중순"
-      }
-    ],
     "image": "sea-bass.png",
     "description_ko": "여름철 대표 보양 생선으로, 살이 희고 담백하며 비린내가 적습니다. 회, 찜, 구이 등 다양한 요리에 잘 어울리며, 비타민과 단백질이 풍부합니다.",
     "preparation_ko": "비늘·내장 제거 후 깨끗이 씻고, 포 떠서 물기 제거합니다.",
@@ -809,45 +347,14 @@
     "description_ja": "",
     "calories_per_100g": 105,
     "calories_per_serving": "회 1인분(120g) 약 126kcal",
-    "popular_dish": "농어회, 농어탕"
+    "popular_dish": "농어회, 농어탕",
+    "months": [
+      7
+    ]
   },
   {
     "name_ko": "늙은 호박",
     "category": "채소",
-    "periods": [
-      {
-        "month": 10,
-        "ten": "중순"
-      },
-      {
-        "month": 10,
-        "ten": "하순"
-      },
-      {
-        "month": 11,
-        "ten": "초순"
-      },
-      {
-        "month": 11,
-        "ten": "중순"
-      },
-      {
-        "month": 11,
-        "ten": "하순"
-      },
-      {
-        "month": 12,
-        "ten": "초순"
-      },
-      {
-        "month": 12,
-        "ten": "중순"
-      },
-      {
-        "month": 12,
-        "ten": "하순"
-      }
-    ],
     "image": "pumpkin.png",
     "description_ko": "베타카로틴이 풍부하여 눈 건강과 면역력에 좋습니다. 달콤한 맛으로 죽, 즙, 떡 등 다양한 요리에 활용되며, 이뇨 작용을 도와 부기 제거에 효과적입니다.",
     "preparation_ko": "겉면을 솔질해 씻고 반으로 갈라 씨와 섬유질을 긁어내어 먹기 좋게 절단.",
@@ -861,33 +368,15 @@
     "external_url": "https://link.coupang.com/a/cTFatG",
     "calories_per_100g": 27,
     "calories_per_serving": "죽 1그릇분(200g) 약 54kcal",
-    "popular_dish": "호박죽, 호박전"
+    "popular_dish": "호박죽, 호박전",
+    "months": [
+      11,
+      12
+    ]
   },
   {
     "name_ko": "달래",
     "category": "채소",
-    "periods": [
-      {
-        "month": 3,
-        "ten": "초순"
-      },
-      {
-        "month": 3,
-        "ten": "중순"
-      },
-      {
-        "month": 3,
-        "ten": "하순"
-      },
-      {
-        "month": 4,
-        "ten": "초순"
-      },
-      {
-        "month": 4,
-        "ten": "중순"
-      }
-    ],
     "image": "wild-chive.png",
     "description_ko": "톡 쏘는 매운맛과 알싸한 향이 특징인 봄나물. 비타민 C와 칼슘이 풍부하여 식욕을 돋우고 빈혈 예방에 좋습니다. 주로 무침이나 양념장으로 활용됩니다.",
     "preparation_ko": "뿌리 끝과 누런 잎을 다듬고, 잔흙 제거 위해 살짝 담갔다 헹궈 건집니다.",
@@ -901,41 +390,14 @@
     "external_url": "https://link.coupang.com/a/cTFaC7",
     "calories_per_100g": 37,
     "calories_per_serving": "한 줌(30g) 약 11kcal",
-    "popular_dish": "달래장, 달래무침"
+    "popular_dish": "달래장, 달래무침",
+    "months": [
+      3
+    ]
   },
   {
     "name_ko": "대구",
     "category": "해산물",
-    "periods": [
-      {
-        "month": 12,
-        "ten": "초순"
-      },
-      {
-        "month": 12,
-        "ten": "중순"
-      },
-      {
-        "month": 12,
-        "ten": "하순"
-      },
-      {
-        "month": 1,
-        "ten": "초순"
-      },
-      {
-        "month": 1,
-        "ten": "중순"
-      },
-      {
-        "month": 1,
-        "ten": "하순"
-      },
-      {
-        "month": 2,
-        "ten": "초순"
-      }
-    ],
     "image": "cod.png",
     "description_ko": "겨울철 대표적인 흰 살 생선. 지방이 적고 맛이 담백하여 맑은 탕(지리)이나 매운탕으로 끓이면 시원한 국물 맛이 일품입니다. 비타민 B군이 풍부합니다.",
     "preparation_ko": "핏물 제거해 비린내 줄이고, 토막 내어 물기 충분히 뺍니다.",
@@ -949,49 +411,15 @@
     "description_ja": "",
     "calories_per_100g": 82,
     "calories_per_serving": "1토막(100g) 약 82kcal",
-    "popular_dish": "대구탕, 대구찜"
+    "popular_dish": "대구탕, 대구찜",
+    "months": [
+      1,
+      12
+    ]
   },
   {
     "name_ko": "대하",
     "category": "해산물",
-    "periods": [
-      {
-        "month": 9,
-        "ten": "초순"
-      },
-      {
-        "month": 9,
-        "ten": "중순"
-      },
-      {
-        "month": 9,
-        "ten": "하순"
-      },
-      {
-        "month": 10,
-        "ten": "초순"
-      },
-      {
-        "month": 10,
-        "ten": "중순"
-      },
-      {
-        "month": 10,
-        "ten": "하순"
-      },
-      {
-        "month": 11,
-        "ten": "초순"
-      },
-      {
-        "month": 11,
-        "ten": "중순"
-      },
-      {
-        "month": 11,
-        "ten": "하순"
-      }
-    ],
     "image": "king-prawn.png",
     "description_ko": "가을이 제철인 대표적인 갑각류. 껍질에 키토산이 풍부하고, 살이 통통하고 단맛이 강해 소금구이로 먹으면 최고의 맛을 즐길 수 있습니다.",
     "preparation_ko": "수염·다리 정리 후 내장선 제거, 흐르는 물에 가볍게 헹굽니다.",
@@ -1005,49 +433,16 @@
     "external_url": "https://link.coupang.com/a/cTFgFR",
     "calories_per_100g": 99,
     "calories_per_serving": "큰 것 1마리(50g) 약 50kcal",
-    "popular_dish": "대하구이, 대하찜"
+    "popular_dish": "대하구이, 대하찜",
+    "months": [
+      9,
+      10,
+      11
+    ]
   },
   {
     "name_ko": "더덕",
     "category": "채소",
-    "periods": [
-      {
-        "month": 1,
-        "ten": "중순"
-      },
-      {
-        "month": 1,
-        "ten": "하순"
-      },
-      {
-        "month": 2,
-        "ten": "초순"
-      },
-      {
-        "month": 2,
-        "ten": "중순"
-      },
-      {
-        "month": 2,
-        "ten": "하순"
-      },
-      {
-        "month": 3,
-        "ten": "초순"
-      },
-      {
-        "month": 3,
-        "ten": "중순"
-      },
-      {
-        "month": 3,
-        "ten": "하순"
-      },
-      {
-        "month": 4,
-        "ten": "초순"
-      }
-    ],
     "image": "deodeok.png",
     "description_ko": "인삼과 비슷한 향을 내는 뿌리채소. 사포닌 성분이 풍부하여 기관지 건강과 면역력 증진에 도움을 줍니다. 구이, 무침, 튀김 등으로 섭취합니다.",
     "preparation_ko": "칼등이나 수저로 껍질을 긁어 벗긴 후, 갈변 방지 위해 물에 씻어둡니다.",
@@ -1061,33 +456,15 @@
     "external_url": "https://link.coupang.com/a/cTFaKD",
     "calories_per_100g": 69,
     "calories_per_serving": "1뿌리(50g) 약 35kcal",
-    "popular_dish": "더덕구이"
+    "popular_dish": "더덕구이",
+    "months": [
+      2,
+      3
+    ]
   },
   {
     "name_ko": "도다리",
     "category": "해산물",
-    "periods": [
-      {
-        "month": 3,
-        "ten": "초순"
-      },
-      {
-        "month": 3,
-        "ten": "중순"
-      },
-      {
-        "month": 3,
-        "ten": "하순"
-      },
-      {
-        "month": 4,
-        "ten": "초순"
-      },
-      {
-        "month": 4,
-        "ten": "중순"
-      }
-    ],
     "image": "flatfish-spring.png",
     "description_ko": "'봄 도다리'라는 말이 있을 정도로 봄철에 맛이 좋은 흰 살 생선입니다. 담백하고 쫄깃하여 쑥을 넣고 끓인 도다리쑥국이 별미입니다.",
     "preparation_ko": "비늘과 내장을 제거하고 껍질 분리, 깨끗이 헹궈 준비합니다.",
@@ -1101,29 +478,14 @@
     "description_ja": "",
     "calories_per_100g": 86,
     "calories_per_serving": "1토막(100g) 약 86kcal",
-    "popular_dish": "도다리쑥국"
+    "popular_dish": "도다리쑥국",
+    "months": [
+      3
+    ]
   },
   {
     "name_ko": "두릅",
     "category": "채소",
-    "periods": [
-      {
-        "month": 4,
-        "ten": "초순"
-      },
-      {
-        "month": 4,
-        "ten": "중순"
-      },
-      {
-        "month": 4,
-        "ten": "하순"
-      },
-      {
-        "month": 5,
-        "ten": "초순"
-      }
-    ],
     "image": "aralia-sprout.png",
     "description_ko": "'산나물의 왕'이라 불리며 독특한 향과 쌉쌀한 맛이 특징입니다. 사포닌이 풍부하여 혈액순환에 도움을 줍니다. 살짝 데쳐서 초고추장에 찍어 먹습니다.",
     "preparation_ko": "끝부분의 질긴 가시와 마른 잎을 떼고, 사용 전 짧게 데쳐 한 번 헹굽니다.",
@@ -1137,45 +499,14 @@
     "external_url": "https://link.coupang.com/a/cTFaSS",
     "calories_per_100g": 38,
     "calories_per_serving": "10순(50g) 약 19kcal",
-    "popular_dish": "두릅무침"
+    "popular_dish": "두릅무침",
+    "months": [
+      4
+    ]
   },
   {
     "name_ko": "딸기",
     "category": "과일",
-    "periods": [
-      {
-        "month": 2,
-        "ten": "하순"
-      },
-      {
-        "month": 3,
-        "ten": "초순"
-      },
-      {
-        "month": 3,
-        "ten": "중순"
-      },
-      {
-        "month": 3,
-        "ten": "하순"
-      },
-      {
-        "month": 4,
-        "ten": "초순"
-      },
-      {
-        "month": 4,
-        "ten": "중순"
-      },
-      {
-        "month": 4,
-        "ten": "하순"
-      },
-      {
-        "month": 5,
-        "ten": "초순"
-      }
-    ],
     "image": "strawberry.png",
     "description_ko": "새콤달콤한 맛으로 남녀노소에게 사랑받는 과일. 비타민 C가 레몬의 2배, 사과의 10배나 많아 피로 해소와 피부 미용에 탁월한 효과가 있습니다.",
     "preparation_ko": "꼭지 붙인 채 가볍게 헹구고, 먹기 직전 꼭지를 뗍니다.",
@@ -1189,45 +520,15 @@
     "external_url": "https://link.coupang.com/a/cTFdc2",
     "calories_per_100g": 34,
     "calories_per_serving": "중간 크기 1개(15g) 약 5kcal",
-    "popular_dish": "생과일로 먹거나 딸기잼을 만듭니다"
+    "popular_dish": "생과일로 먹거나 딸기잼을 만듭니다",
+    "months": [
+      3,
+      4
+    ]
   },
   {
     "name_ko": "매생이",
     "category": "해산물",
-    "periods": [
-      {
-        "month": 12,
-        "ten": "중순"
-      },
-      {
-        "month": 12,
-        "ten": "하순"
-      },
-      {
-        "month": 1,
-        "ten": "초순"
-      },
-      {
-        "month": 1,
-        "ten": "중순"
-      },
-      {
-        "month": 1,
-        "ten": "하순"
-      },
-      {
-        "month": 2,
-        "ten": "초순"
-      },
-      {
-        "month": 2,
-        "ten": "중순"
-      },
-      {
-        "month": 2,
-        "ten": "하순"
-      }
-    ],
     "image": "seaweed-soup.png",
     "description_ko": "머리카락보다 가늘고 부드러운 해조류. 철분과 칼슘이 풍부하며, 굴을 넣고 끓인 매생이굴국은 겨울철 별미이자 숙취 해소 음식으로 좋습니다.",
     "name_en": "",
@@ -1237,25 +538,15 @@
     "external_url": "https://link.coupang.com/a/cU37hx",
     "calories_per_100g": 16,
     "calories_per_serving": "국 1그릇(50g) 약 8kcal",
-    "popular_dish": "매생이굴국"
+    "popular_dish": "매생이굴국",
+    "months": [
+      1,
+      2
+    ]
   },
   {
     "name_ko": "매실",
     "category": "과일",
-    "periods": [
-      {
-        "month": 5,
-        "ten": "하순"
-      },
-      {
-        "month": 6,
-        "ten": "초순"
-      },
-      {
-        "month": 6,
-        "ten": "중순"
-      }
-    ],
     "image": "plum.png",
     "description_ko": "신맛이 강한 것이 특징이며, 피로 해소에 좋은 구연산이 풍부합니다. 매실청, 장아찌, 주(酒) 등으로 담가 먹으며, 해독 작용과 소화 촉진에 도움을 줍니다.",
     "preparation_ko": "꼭지 끝 핀 제거 후 깨끗이 씻어 물기 말려 사용합니다.",
@@ -1269,33 +560,12 @@
     "external_url": "https://link.coupang.com/a/cTFdsw",
     "calories_per_100g": 28,
     "calories_per_serving": "1개(20g) 약 6kcal",
-    "popular_dish": "매실청, 매실장아찌"
+    "popular_dish": "매실청, 매실장아찌",
+    "months": []
   },
   {
     "name_ko": "멍게",
     "category": "해산물",
-    "periods": [
-      {
-        "month": 4,
-        "ten": "초순"
-      },
-      {
-        "month": 4,
-        "ten": "중순"
-      },
-      {
-        "month": 4,
-        "ten": "하순"
-      },
-      {
-        "month": 5,
-        "ten": "초순"
-      },
-      {
-        "month": 5,
-        "ten": "중순"
-      }
-    ],
     "image": "sea-squirt.png",
     "description_ko": "특유의 향과 쌉쌀하면서도 달큼한 맛이 특징입니다. 신선한 멍게는 바다 향을 가득 품고 있으며, 노화 방지에 좋은 타우린과 항산화 성분이 풍부합니다.",
     "preparation_ko": "껍질 끝 절개해 내장과 이물 제거, 바닷물 농도 소금물 헹굽니다.",
@@ -1309,37 +579,14 @@
     "external_url": "https://link.coupang.com/a/cTFgMq",
     "calories_per_100g": 70,
     "calories_per_serving": "1개(50g) 약 35kcal",
-    "popular_dish": "멍게초무침, 멍게비빔밥"
+    "popular_dish": "멍게초무침, 멍게비빔밥",
+    "months": [
+      4
+    ]
   },
   {
     "name_ko": "멸치",
     "category": "해산물",
-    "periods": [
-      {
-        "month": 4,
-        "ten": "중순"
-      },
-      {
-        "month": 4,
-        "ten": "하순"
-      },
-      {
-        "month": 5,
-        "ten": "초순"
-      },
-      {
-        "month": 5,
-        "ten": "중순"
-      },
-      {
-        "month": 5,
-        "ten": "하순"
-      },
-      {
-        "month": 6,
-        "ten": "초순"
-      }
-    ],
     "image": "anchovy.png",
     "description_ko": "'칼슘의 왕'이라 불리는 작은 생선. 뼈째 먹기 때문에 칼슘 섭취에 매우 효과적입니다. 볶음, 국물용 등 크기별로 다양하게 활용되는 국민 식재료입니다.",
     "preparation_ko": "내장·머리 제거 후 깨끗이 헹궈 물기 제거해 사용합니다.",
@@ -1353,37 +600,14 @@
     "external_url": "https://link.coupang.com/a/cTFgTJ",
     "calories_per_100g": 224,
     "calories_per_serving": "한 줌(20g) 약 45kcal",
-    "popular_dish": "멸치볶음"
+    "popular_dish": "멸치볶음",
+    "months": [
+      5
+    ]
   },
   {
     "name_ko": "명태(동태)",
     "category": "해산물",
-    "periods": [
-      {
-        "month": 12,
-        "ten": "초순"
-      },
-      {
-        "month": 12,
-        "ten": "중순"
-      },
-      {
-        "month": 12,
-        "ten": "하순"
-      },
-      {
-        "month": 1,
-        "ten": "초순"
-      },
-      {
-        "month": 1,
-        "ten": "중순"
-      },
-      {
-        "month": 1,
-        "ten": "하순"
-      }
-    ],
     "image": "pollock.png",
     "description_ko": "얼린 상태의 명태를 동태라고 부릅니다. 지방이 적고 담백하며, 시원한 국물 맛을 내주어 탕이나 찌개 요리에 널리 사용됩니다.",
     "preparation_ko": "비늘·내장 제거 후 세척, 핏물 빼고 먹기 크기로 절단합니다.",
@@ -1397,33 +621,15 @@
     "external_url": "https://link.coupang.com/a/cTFg1y",
     "calories_per_100g": 83,
     "calories_per_serving": "1토막(100g) 약 83kcal",
-    "popular_dish": "동태찌개, 명태조림"
+    "popular_dish": "동태찌개, 명태조림",
+    "months": [
+      1,
+      12
+    ]
   },
   {
     "name_ko": "무",
     "category": "채소",
-    "periods": [
-      {
-        "month": 10,
-        "ten": "하순"
-      },
-      {
-        "month": 11,
-        "ten": "초순"
-      },
-      {
-        "month": 11,
-        "ten": "중순"
-      },
-      {
-        "month": 11,
-        "ten": "하순"
-      },
-      {
-        "month": 12,
-        "ten": "초순"
-      }
-    ],
     "image": "radish.png",
     "description_ko": "가을 무는 인삼에 비유될 만큼 맛과 영양이 뛰어납니다. 소화 효소인 디아스타아제가 풍부하여 소화를 돕고, 시원한 맛을 내 국물 요리에 필수적입니다.",
     "preparation_ko": "겉흙 털고 솔질 후 씻어 물기 제거, 잎은 분리해 따로 사용합니다.",
@@ -1437,37 +643,14 @@
     "external_url": "https://link.coupang.com/a/cTFcwl",
     "calories_per_100g": 18,
     "calories_per_serving": "중간 크기 1개(1kg) 약 180kcal",
-    "popular_dish": "무국, 무조림, 깍두기"
+    "popular_dish": "무국, 무조림, 깍두기",
+    "months": [
+      11
+    ]
   },
   {
     "name_ko": "무화과",
     "category": "과일",
-    "periods": [
-      {
-        "month": 8,
-        "ten": "하순"
-      },
-      {
-        "month": 9,
-        "ten": "초순"
-      },
-      {
-        "month": 9,
-        "ten": "중순"
-      },
-      {
-        "month": 9,
-        "ten": "하순"
-      },
-      {
-        "month": 10,
-        "ten": "초순"
-      },
-      {
-        "month": 10,
-        "ten": "중순"
-      }
-    ],
     "image": "fig.png",
     "description_ko": "꽃이 열매 안에서 피는 독특한 과일. 달콤하고 부드러운 식감이 특징이며, 식이섬유가 풍부하여 변비 예방에 좋습니다. 소화 촉진 효과도 있습니다.",
     "preparation_ko": "매우 약하니 살짝 헹군 뒤 물기 닦아 바로 섭취합니다.",
@@ -1481,33 +664,14 @@
     "external_url": "https://link.coupang.com/a/cTFdkO",
     "calories_per_100g": 54,
     "calories_per_serving": "1개(60g) 약 32kcal",
-    "popular_dish": "생과일로 섭취합니다"
+    "popular_dish": "생과일로 섭취합니다",
+    "months": [
+      9
+    ]
   },
   {
     "name_ko": "미꾸라지",
     "category": "해산물",
-    "periods": [
-      {
-        "month": 9,
-        "ten": "중순"
-      },
-      {
-        "month": 9,
-        "ten": "하순"
-      },
-      {
-        "month": 10,
-        "ten": "초순"
-      },
-      {
-        "month": 10,
-        "ten": "중순"
-      },
-      {
-        "month": 10,
-        "ten": "하순"
-      }
-    ],
     "image": "loach.png",
     "description_ko": "가을철 대표적인 보양 식재료. 단백질과 비타민, 무기질이 풍부하여 원기 회복에 탁월합니다. 주로 통째로 갈아 추어탕으로 끓여 먹습니다.",
     "preparation_ko": "굵은소금으로 문질러 점액 제거, 내장 정리 후 흐르는 물 세척.",
@@ -1521,49 +685,14 @@
     "external_url": "https://link.coupang.com/a/cU37LM",
     "calories_per_100g": 90,
     "calories_per_serving": "10마리(100g) 약 90kcal",
-    "popular_dish": "추어탕"
+    "popular_dish": "추어탕",
+    "months": [
+      10
+    ]
   },
   {
     "name_ko": "미나리",
     "category": "채소",
-    "periods": [
-      {
-        "month": 3,
-        "ten": "초순"
-      },
-      {
-        "month": 3,
-        "ten": "중순"
-      },
-      {
-        "month": 3,
-        "ten": "하순"
-      },
-      {
-        "month": 4,
-        "ten": "초순"
-      },
-      {
-        "month": 4,
-        "ten": "중순"
-      },
-      {
-        "month": 4,
-        "ten": "하순"
-      },
-      {
-        "month": 5,
-        "ten": "초순"
-      },
-      {
-        "month": 5,
-        "ten": "중순"
-      },
-      {
-        "month": 5,
-        "ten": "하순"
-      }
-    ],
     "image": "water-celery.png",
     "description_ko": "독특하고 향긋한 향이 특징이며, 해독 작용과 중금속 배출에 효과적입니다. 비타민과 무기질이 풍부하여 혈액을 맑게 하는 데 도움을 줍니다.",
     "preparation_ko": "뿌리와 노랗게 시든 잎을 정리하고, 흐르는 물에 여러 번 헹궈 잔흙 제거.",
@@ -1577,29 +706,16 @@
     "external_url": "https://link.coupang.com/a/cU37U5",
     "calories_per_100g": 18,
     "calories_per_serving": "한 줌(100g) 약 18kcal",
-    "popular_dish": "미나리무침, 미나리전"
+    "popular_dish": "미나리무침, 미나리전",
+    "months": [
+      3,
+      4,
+      5
+    ]
   },
   {
     "name_ko": "민어",
     "category": "해산물",
-    "periods": [
-      {
-        "month": 7,
-        "ten": "중순"
-      },
-      {
-        "month": 7,
-        "ten": "하순"
-      },
-      {
-        "month": 8,
-        "ten": "초순"
-      },
-      {
-        "month": 8,
-        "ten": "중순"
-      }
-    ],
     "image": "croaker.png",
     "description_ko": "여름철 최고의 보양식으로 꼽히는 고급 어종. 소화 흡수가 잘 되는 단백질이 풍부하며, 담백하고 부드러운 살은 회, 탕, 전 등 어떤 요리로도 훌륭합니다.",
     "preparation_ko": "비늘·내장 제거, 두께 맞춰 포를 뜨고 물기 충분히 제거합니다.",
@@ -1613,37 +729,12 @@
     "external_url": "https://link.coupang.com/a/cTFhdM",
     "calories_per_100g": 118,
     "calories_per_serving": "1토막(100g) 약 118kcal",
-    "popular_dish": "민어회, 민어구이"
+    "popular_dish": "민어회, 민어구이",
+    "months": []
   },
   {
     "name_ko": "바지락",
     "category": "해산물",
-    "periods": [
-      {
-        "month": 3,
-        "ten": "초순"
-      },
-      {
-        "month": 3,
-        "ten": "중순"
-      },
-      {
-        "month": 3,
-        "ten": "하순"
-      },
-      {
-        "month": 4,
-        "ten": "초순"
-      },
-      {
-        "month": 4,
-        "ten": "중순"
-      },
-      {
-        "month": 4,
-        "ten": "하순"
-      }
-    ],
     "image": "short-neck-clam.png",
     "description_ko": "국물에 시원한 감칠맛을 더해주는 대표적인 조개. 칼국수, 순두부찌개 등 다양한 요리에 활용됩니다. 철분 함량이 높아 빈혈 예방에 효과적입니다.",
     "preparation_ko": "해감해 모래 제거, 껍질 솔질 후 헹궈 체에 받쳐 물기 뺍니다.",
@@ -1657,49 +748,15 @@
     "external_url": "https://link.coupang.com/a/cTFhEY",
     "calories_per_100g": 60,
     "calories_per_serving": "살 한 줌(100g) 약 60kcal",
-    "popular_dish": "바지락칼국수, 바지락술찜"
+    "popular_dish": "바지락칼국수, 바지락술찜",
+    "months": [
+      3,
+      4
+    ]
   },
   {
     "name_ko": "배",
     "category": "과일",
-    "periods": [
-      {
-        "month": 9,
-        "ten": "초순"
-      },
-      {
-        "month": 9,
-        "ten": "중순"
-      },
-      {
-        "month": 9,
-        "ten": "하순"
-      },
-      {
-        "month": 10,
-        "ten": "초순"
-      },
-      {
-        "month": 10,
-        "ten": "중순"
-      },
-      {
-        "month": 10,
-        "ten": "하순"
-      },
-      {
-        "month": 11,
-        "ten": "초순"
-      },
-      {
-        "month": 11,
-        "ten": "중순"
-      },
-      {
-        "month": 11,
-        "ten": "하순"
-      }
-    ],
     "image": "pear.png",
     "description_ko": "아삭한 식감과 시원하고 달콤한 과즙이 특징입니다. 루테올린 성분이 풍부하여 기관지 건강에 도움을 주며, 해열 및 갈증 해소 효과가 있습니다.",
     "preparation_ko": "겉면을 문질러 씻고 물기 제거 후 껍질은 기호에 맞게 처리합니다.",
@@ -1713,33 +770,16 @@
     "external_url": "https://link.coupang.com/a/cTFe71",
     "calories_per_100g": 51,
     "calories_per_serving": "중간 크기 1개(300g) 약 153kcal",
-    "popular_dish": "생과일로 먹거나 배숙을 만듭니다"
+    "popular_dish": "생과일로 먹거나 배숙을 만듭니다",
+    "months": [
+      9,
+      10,
+      11
+    ]
   },
   {
     "name_ko": "배추",
     "category": "채소",
-    "periods": [
-      {
-        "month": 11,
-        "ten": "초순"
-      },
-      {
-        "month": 11,
-        "ten": "중순"
-      },
-      {
-        "month": 11,
-        "ten": "하순"
-      },
-      {
-        "month": 12,
-        "ten": "초순"
-      },
-      {
-        "month": 12,
-        "ten": "중순"
-      }
-    ],
     "image": "cabbage.png",
     "description_ko": "김치의 주재료로 한국인의 밥상에 빠질 수 없는 채소. 수분 함량이 높고 식이섬유가 풍부하여 장 건강에 좋습니다. 겨울 배추는 단맛이 특히 강합니다.",
     "preparation_ko": "겉잎 떼고 밑동 가른 뒤, 잎 사이를 펼쳐 흐르는 물에 세척합니다.",
@@ -1753,25 +793,14 @@
     "external_url": "https://link.coupang.com/a/cTFcC7",
     "calories_per_100g": 14,
     "calories_per_serving": "중간 크기 1포기(2kg) 약 280kcal",
-    "popular_dish": "김치, 배추국"
+    "popular_dish": "김치, 배추국",
+    "months": [
+      11
+    ]
   },
   {
     "name_ko": "복분자",
     "category": "과일",
-    "periods": [
-      {
-        "month": 6,
-        "ten": "중순"
-      },
-      {
-        "month": 6,
-        "ten": "하순"
-      },
-      {
-        "month": 7,
-        "ten": "초순"
-      }
-    ],
     "image": "blackberry.png",
     "description_ko": "검붉은 빛깔의 작은 열매로, 항산화 물질인 안토시아닌이 풍부하여 노화 방지에 도움을 줍니다. 기력 회복과 눈 건강에도 좋은 효과가 있습니다.",
     "preparation_ko": "손상되기 쉬우니 살짝 헹구고 체에 밭쳐 물기만 털어냅니다.",
@@ -1785,37 +814,12 @@
     "external_url": "https://link.coupang.com/a/cU39MC",
     "calories_per_100g": 52,
     "calories_per_serving": "한 줌(100g) 약 52kcal",
-    "popular_dish": "복분자주, 복분자청"
+    "popular_dish": "복분자주, 복분자청",
+    "months": []
   },
   {
     "name_ko": "복숭아",
     "category": "과일",
-    "periods": [
-      {
-        "month": 7,
-        "ten": "초순"
-      },
-      {
-        "month": 7,
-        "ten": "중순"
-      },
-      {
-        "month": 7,
-        "ten": "하순"
-      },
-      {
-        "month": 8,
-        "ten": "초순"
-      },
-      {
-        "month": 8,
-        "ten": "중순"
-      },
-      {
-        "month": 8,
-        "ten": "하순"
-      }
-    ],
     "image": "peach.png",
     "description_ko": "달콤한 향과 부드러운 과육이 매력적인 여름 대표 과일. 수분과 비타민이 풍부하여 피부 미용과 피로 해소에 좋습니다. 니코틴 해독 효과도 있습니다.",
     "preparation_ko": "껍질째 부드럽게 씻고, 덜 익었으면 실온에서 후숙합니다.",
@@ -1829,29 +833,15 @@
     "external_url": "https://link.coupang.com/a/cTFdQ3",
     "calories_per_100g": 39,
     "calories_per_serving": "중간 크기 1개(200g) 약 78kcal",
-    "popular_dish": "생과일로 섭취합니다"
+    "popular_dish": "생과일로 섭취합니다",
+    "months": [
+      7,
+      8
+    ]
   },
   {
     "name_ko": "봄동",
     "category": "채소",
-    "periods": [
-      {
-        "month": 2,
-        "ten": "하순"
-      },
-      {
-        "month": 3,
-        "ten": "초순"
-      },
-      {
-        "month": 3,
-        "ten": "중순"
-      },
-      {
-        "month": 3,
-        "ten": "하순"
-      }
-    ],
     "image": "spring-cabbage.png",
     "description_ko": "겨울 노지에서 자라 속이 꽉 차지 않고 옆으로 퍼진 배추. 아삭한 식감과 고소한 맛이 특징이며, 비타민과 무기질이 풍부해 겉절이나 쌈 채소로 좋습니다.",
     "preparation_ko": "겉잎을 떼고 밑동을 정리한 뒤, 잎 사이를 펼쳐 흐르는 물로 깨끗이 씻습니다.",
@@ -1865,41 +855,14 @@
     "external_url": "https://link.coupang.com/a/cTFa0L",
     "calories_per_100g": 15,
     "calories_per_serving": "1포기(300g) 약 45kcal",
-    "popular_dish": "봄동겉절이"
+    "popular_dish": "봄동겉절이",
+    "months": [
+      3
+    ]
   },
   {
     "name_ko": "블루베리",
     "category": "과일",
-    "periods": [
-      {
-        "month": 7,
-        "ten": "초순"
-      },
-      {
-        "month": 7,
-        "ten": "중순"
-      },
-      {
-        "month": 7,
-        "ten": "하순"
-      },
-      {
-        "month": 8,
-        "ten": "초순"
-      },
-      {
-        "month": 8,
-        "ten": "중순"
-      },
-      {
-        "month": 8,
-        "ten": "하순"
-      },
-      {
-        "month": 9,
-        "ten": "초순"
-      }
-    ],
     "image": "blueberry.png",
     "description_ko": "세계 10대 슈퍼푸드로 꼽히는 과일. 안토시아닌이 풍부하여 시력 보호와 뇌 건강에 탁월한 효과가 있습니다. 항산화 작용이 매우 뛰어납니다.",
     "preparation_ko": "먹기 직전만 씻고 평소엔 세척 금지, 물기 접촉을 줄입니다.",
@@ -1913,49 +876,15 @@
     "external_url": "https://link.coupang.com/a/cTFeiV",
     "calories_per_100g": 57,
     "calories_per_serving": "한 줌(100g) 약 57kcal",
-    "popular_dish": "생과일로 먹거나 스무디를 만듭니다"
+    "popular_dish": "생과일로 먹거나 스무디를 만듭니다",
+    "months": [
+      7,
+      8
+    ]
   },
   {
     "name_ko": "사과",
     "category": "과일",
-    "periods": [
-      {
-        "month": 9,
-        "ten": "초순"
-      },
-      {
-        "month": 9,
-        "ten": "중순"
-      },
-      {
-        "month": 9,
-        "ten": "하순"
-      },
-      {
-        "month": 10,
-        "ten": "초순"
-      },
-      {
-        "month": 10,
-        "ten": "중순"
-      },
-      {
-        "month": 10,
-        "ten": "하순"
-      },
-      {
-        "month": 11,
-        "ten": "초순"
-      },
-      {
-        "month": 11,
-        "ten": "중순"
-      },
-      {
-        "month": 11,
-        "ten": "하순"
-      }
-    ],
     "image": "apple.png",
     "description_ko": "아삭한 식감과 새콤달콤한 맛으로 사랑받는 과일. 식이섬유인 펙틴이 풍부하여 장 운동을 돕고, 아침에 먹으면 '금사과'라 불릴 만큼 건강에 좋습니다.",
     "preparation_ko": "문질러 씻어 왁스·먼지 제거, 껍질은 기호에 맞춰 사용합니다.",
@@ -1969,61 +898,16 @@
     "external_url": "https://link.coupang.com/a/cTFetT",
     "calories_per_100g": 52,
     "calories_per_serving": "중간 크기 1개(250g) 약 130kcal",
-    "popular_dish": "생과일로 섭취합니다"
+    "popular_dish": "생과일로 섭취합니다",
+    "months": [
+      9,
+      10,
+      11
+    ]
   },
   {
     "name_ko": "삼치",
     "category": "해산물",
-    "periods": [
-      {
-        "month": 10,
-        "ten": "하순"
-      },
-      {
-        "month": 11,
-        "ten": "초순"
-      },
-      {
-        "month": 11,
-        "ten": "중순"
-      },
-      {
-        "month": 11,
-        "ten": "하순"
-      },
-      {
-        "month": 12,
-        "ten": "초순"
-      },
-      {
-        "month": 12,
-        "ten": "중순"
-      },
-      {
-        "month": 12,
-        "ten": "하순"
-      },
-      {
-        "month": 1,
-        "ten": "초순"
-      },
-      {
-        "month": 1,
-        "ten": "중순"
-      },
-      {
-        "month": 1,
-        "ten": "하순"
-      },
-      {
-        "month": 2,
-        "ten": "초순"
-      },
-      {
-        "month": 2,
-        "ten": "중순"
-      }
-    ],
     "image": "spanish-mackerel.png",
     "description_ko": "고등어와 비슷한 등푸른생선이지만 살이 더 부드럽고 비린내가 적습니다. DHA가 풍부하여 두뇌 발달에 도움을 주며, 주로 구이로 많이 먹습니다.",
     "preparation_ko": "내장·핏물 제거 후 토막 내어 물기 제거, 소금간해 준비합니다.",
@@ -2037,49 +921,16 @@
     "external_url": "https://link.coupang.com/a/cTFhTc",
     "calories_per_100g": 139,
     "calories_per_serving": "1토막(100g) 약 139kcal",
-    "popular_dish": "삼치구이"
+    "popular_dish": "삼치구이",
+    "months": [
+      1,
+      11,
+      12
+    ]
   },
   {
     "name_ko": "석류",
     "category": "과일",
-    "periods": [
-      {
-        "month": 9,
-        "ten": "중순"
-      },
-      {
-        "month": 9,
-        "ten": "하순"
-      },
-      {
-        "month": 10,
-        "ten": "초순"
-      },
-      {
-        "month": 10,
-        "ten": "중순"
-      },
-      {
-        "month": 10,
-        "ten": "하순"
-      },
-      {
-        "month": 11,
-        "ten": "초순"
-      },
-      {
-        "month": 11,
-        "ten": "중순"
-      },
-      {
-        "month": 11,
-        "ten": "하순"
-      },
-      {
-        "month": 12,
-        "ten": "초순"
-      }
-    ],
     "image": "pomegranate.png",
     "description_ko": "붉고 투명한 알갱이가 보석 같은 과일. 천연 식물성 에스트로겐이 풍부하여 특히 여성 건강에 좋은 것으로 알려져 있으며, 항산화 성분도 풍부합니다.",
     "preparation_ko": "칼집 내 물에 담가 껍질을 벌려 알만 분리해 세척합니다.",
@@ -2093,49 +944,15 @@
     "external_url": "https://link.coupang.com/a/cU4arn",
     "calories_per_100g": 83,
     "calories_per_serving": "1개 알맹이(100g) 약 83kcal",
-    "popular_dish": "생과일로 먹거나 석류주스를 만듭니다"
+    "popular_dish": "생과일로 먹거나 석류주스를 만듭니다",
+    "months": [
+      10,
+      11
+    ]
   },
   {
     "name_ko": "소라",
     "category": "해산물",
-    "periods": [
-      {
-        "month": 3,
-        "ten": "중순"
-      },
-      {
-        "month": 3,
-        "ten": "하순"
-      },
-      {
-        "month": 4,
-        "ten": "초순"
-      },
-      {
-        "month": 4,
-        "ten": "중순"
-      },
-      {
-        "month": 4,
-        "ten": "하순"
-      },
-      {
-        "month": 5,
-        "ten": "초순"
-      },
-      {
-        "month": 5,
-        "ten": "중순"
-      },
-      {
-        "month": 5,
-        "ten": "하순"
-      },
-      {
-        "month": 6,
-        "ten": "초순"
-      }
-    ],
     "image": "turban-shell.png",
     "description_ko": "쫄깃한 식감이 일품인 고둥류. 타우린이 풍부하여 피로 해소와 시력 보호에 도움을 줍니다. 숙회, 무침, 구이 등 다양한 요리로 즐길 수 있습니다.",
     "preparation_ko": "껍질 솔질 후 삶아 살만 분리, 내장과 이물 제거해 세척합니다.",
@@ -2149,33 +966,15 @@
     "external_url": "https://link.coupang.com/a/cTFh2c",
     "calories_per_100g": 84,
     "calories_per_serving": "삶은 살 5개(100g) 약 84kcal",
-    "popular_dish": "소라무침"
+    "popular_dish": "소라무침",
+    "months": [
+      4,
+      5
+    ]
   },
   {
     "name_ko": "수박",
     "category": "과일",
-    "periods": [
-      {
-        "month": 7,
-        "ten": "초순"
-      },
-      {
-        "month": 7,
-        "ten": "중순"
-      },
-      {
-        "month": 7,
-        "ten": "하순"
-      },
-      {
-        "month": 8,
-        "ten": "초순"
-      },
-      {
-        "month": 8,
-        "ten": "중순"
-      }
-    ],
     "image": "watermelon.png",
     "description_ko": "여름철 갈증 해소에 최고인 과일. 90% 이상이 수분으로 이루어져 있으며, 이뇨 작용을 돕는 시트룰린 성분이 풍부하여 노폐물 배출에 효과적입니다.",
     "preparation_ko": "겉을 씻어 반 갈라 씨 제거, 단면은 랩으로 밀착합니다.",
@@ -2189,29 +988,14 @@
     "external_url": "https://link.coupang.com/a/cTFeIx",
     "calories_per_100g": 30,
     "calories_per_serving": "1조각(200g) 약 60kcal",
-    "popular_dish": "생과일로 섭취합니다"
+    "popular_dish": "생과일로 섭취합니다",
+    "months": [
+      7
+    ]
   },
   {
     "name_ko": "쑥",
     "category": "채소",
-    "periods": [
-      {
-        "month": 3,
-        "ten": "초순"
-      },
-      {
-        "month": 3,
-        "ten": "중순"
-      },
-      {
-        "month": 3,
-        "ten": "하순"
-      },
-      {
-        "month": 4,
-        "ten": "초순"
-      }
-    ],
     "image": "mugwort.png",
     "description_ko": "향긋한 향이 봄기운을 물씬 느끼게 하는 식물. 비타민과 미네랄이 풍부하여 몸을 따뜻하게 하고 혈액순환을 돕습니다. 쑥국, 쑥떡 등으로 만들어 먹습니다.",
     "preparation_ko": "연한 잎만 골라 굵은 줄기는 덜어내고, 가볍게 흔들어 씻어 물기를 빼줍니다.",
@@ -2225,33 +1009,14 @@
     "external_url": "https://link.coupang.com/a/cTFbgL",
     "calories_per_100g": 37,
     "calories_per_serving": "한 줌(50g) 약 19kcal",
-    "popular_dish": "쑥국, 쑥떡"
+    "popular_dish": "쑥국, 쑥떡",
+    "months": [
+      3
+    ]
   },
   {
     "name_ko": "씀바귀",
     "category": "채소",
-    "periods": [
-      {
-        "month": 3,
-        "ten": "중순"
-      },
-      {
-        "month": 3,
-        "ten": "하순"
-      },
-      {
-        "month": 4,
-        "ten": "초순"
-      },
-      {
-        "month": 4,
-        "ten": "중순"
-      },
-      {
-        "month": 4,
-        "ten": "하순"
-      }
-    ],
     "image": "dandelion.png",
     "description_ko": "쓴맛이 강한 것이 특징인 봄나물. '고채'라고도 불리며, 이 쓴맛이 소화 기능을 돕고 식욕을 돋웁니다. 주로 뿌리를 무쳐 먹습니다.",
     "preparation_ko": "시든 잎과 뿌리 끝을 정리하고, 흐르는 물에 여러 번 헹궈 쓴맛 나는 유액을 줄입니다.",
@@ -2265,49 +1030,14 @@
     "external_url": "https://link.coupang.com/a/cTFbrI",
     "calories_per_100g": 31,
     "calories_per_serving": "한 줌(50g) 약 16kcal",
-    "popular_dish": "씀바귀나물"
+    "popular_dish": "씀바귀나물",
+    "months": [
+      4
+    ]
   },
   {
     "name_ko": "시금치",
     "category": "채소",
-    "periods": [
-      {
-        "month": 11,
-        "ten": "하순"
-      },
-      {
-        "month": 12,
-        "ten": "초순"
-      },
-      {
-        "month": 12,
-        "ten": "중순"
-      },
-      {
-        "month": 12,
-        "ten": "하순"
-      },
-      {
-        "month": 1,
-        "ten": "초순"
-      },
-      {
-        "month": 1,
-        "ten": "중순"
-      },
-      {
-        "month": 1,
-        "ten": "하순"
-      },
-      {
-        "month": 2,
-        "ten": "초순"
-      },
-      {
-        "month": 2,
-        "ten": "중순"
-      }
-    ],
     "image": "spinach.png",
     "description_ko": "겨울철 시금치는 '포항초' 등으로 불리며 단맛이 강하고 영양이 풍부합니다. 철분, 엽산, 비타민이 풍부하여 빈혈 예방과 눈 건강에 좋습니다.",
     "preparation_ko": "뿌리 흙 털고 누런잎 제거, 흐르는 물에 여러 번 헹굽니다.",
@@ -2321,45 +1051,15 @@
     "external_url": "https://link.coupang.com/a/cTFbCi",
     "calories_per_100g": 23,
     "calories_per_serving": "한 줌(100g) 약 23kcal",
-    "popular_dish": "시금치나물"
+    "popular_dish": "시금치나물",
+    "months": [
+      1,
+      12
+    ]
   },
   {
     "name_ko": "아귀",
     "category": "해산물",
-    "periods": [
-      {
-        "month": 12,
-        "ten": "중순"
-      },
-      {
-        "month": 12,
-        "ten": "하순"
-      },
-      {
-        "month": 1,
-        "ten": "초순"
-      },
-      {
-        "month": 1,
-        "ten": "중순"
-      },
-      {
-        "month": 1,
-        "ten": "하순"
-      },
-      {
-        "month": 2,
-        "ten": "초순"
-      },
-      {
-        "month": 2,
-        "ten": "중순"
-      },
-      {
-        "month": 2,
-        "ten": "하순"
-      }
-    ],
     "image": "monkfish.png",
     "description_ko": "못생겼지만 맛은 뛰어난 생선. 저지방 고단백 식품으로, 쫄깃한 살과 부드러운 간(애)이 별미입니다. 주로 찜이나 탕으로 요리됩니다.",
     "preparation_ko": "껍질 벗기고 내장·아가미 제거, 깨끗이 씻어 물기 충분히 뺍니다.",
@@ -2373,45 +1073,15 @@
     "external_url": "https://link.coupang.com/a/cTFh7P",
     "calories_per_100g": 72,
     "calories_per_serving": "1토막(100g) 약 72kcal",
-    "popular_dish": "아귀찜"
+    "popular_dish": "아귀찜",
+    "months": [
+      1,
+      2
+    ]
   },
   {
     "name_ko": "애호박",
     "category": "채소",
-    "periods": [
-      {
-        "month": 6,
-        "ten": "중순"
-      },
-      {
-        "month": 6,
-        "ten": "하순"
-      },
-      {
-        "month": 7,
-        "ten": "초순"
-      },
-      {
-        "month": 7,
-        "ten": "중순"
-      },
-      {
-        "month": 7,
-        "ten": "하순"
-      },
-      {
-        "month": 8,
-        "ten": "초순"
-      },
-      {
-        "month": 8,
-        "ten": "중순"
-      },
-      {
-        "month": 8,
-        "ten": "하순"
-      }
-    ],
     "image": "zucchini.png",
     "description_ko": "단맛과 부드러운 식감으로 다양한 요리에 활용되는 채소. 비타민 A와 C가 풍부하며, 찌개, 볶음, 전 등 어떻게 요리해도 맛있습니다.",
     "preparation_ko": "겉면 솔질 후 씻고 꼭지 제거, 필요 크기로 썰어 준비합니다.",
@@ -2425,53 +1095,15 @@
     "external_url": "https://link.coupang.com/a/cTFbKt",
     "calories_per_100g": 18,
     "calories_per_serving": "1개(300g) 약 54kcal",
-    "popular_dish": "애호박볶음, 애호박전"
+    "popular_dish": "애호박볶음, 애호박전",
+    "months": [
+      7,
+      8
+    ]
   },
   {
     "name_ko": "연근",
     "category": "채소",
-    "periods": [
-      {
-        "month": 11,
-        "ten": "하순"
-      },
-      {
-        "month": 12,
-        "ten": "초순"
-      },
-      {
-        "month": 12,
-        "ten": "중순"
-      },
-      {
-        "month": 12,
-        "ten": "하순"
-      },
-      {
-        "month": 1,
-        "ten": "초순"
-      },
-      {
-        "month": 1,
-        "ten": "중순"
-      },
-      {
-        "month": 1,
-        "ten": "하순"
-      },
-      {
-        "month": 2,
-        "ten": "초순"
-      },
-      {
-        "month": 2,
-        "ten": "중순"
-      },
-      {
-        "month": 2,
-        "ten": "하순"
-      }
-    ],
     "image": "lotus-root.png",
     "description_ko": "연꽃의 뿌리줄기로, 아삭한 식감이 특징입니다. 철분과 비타민 C가 풍부하여 빈혈 예방에 좋으며, 주로 조림이나 튀김으로 먹습니다.",
     "preparation_ko": "껍질 문질러 씻고 굴곡은 솔질, 갈변 방지 위해 식초물에 담갔다 사용합니다.",
@@ -2485,41 +1117,16 @@
     "external_url": "https://link.coupang.com/a/cTFbRj",
     "calories_per_100g": 74,
     "calories_per_serving": "1마디(100g) 약 74kcal",
-    "popular_dish": "연근조림"
+    "popular_dish": "연근조림",
+    "months": [
+      1,
+      2,
+      12
+    ]
   },
   {
     "name_ko": "열무",
     "category": "채소",
-    "periods": [
-      {
-        "month": 6,
-        "ten": "초순"
-      },
-      {
-        "month": 6,
-        "ten": "중순"
-      },
-      {
-        "month": 6,
-        "ten": "하순"
-      },
-      {
-        "month": 7,
-        "ten": "초순"
-      },
-      {
-        "month": 7,
-        "ten": "중순"
-      },
-      {
-        "month": 7,
-        "ten": "하순"
-      },
-      {
-        "month": 8,
-        "ten": "초순"
-      }
-    ],
     "image": "young-radish.png",
     "description_ko": "어린 무를 뜻하며, 시원하고 아삭한 맛이 특징입니다. 주로 열무김치를 담가 먹으며, 여름철 입맛을 돋우는 데 최고입니다.",
     "preparation_ko": "뿌리 흙과 누런 잎 제거, 살짝 담갔다 헹궈 물기 빼 사용합니다.",
@@ -2533,45 +1140,15 @@
     "external_url": "https://link.coupang.com/a/cTFb1K",
     "calories_per_100g": 19,
     "calories_per_serving": "1단(300g) 약 57kcal",
-    "popular_dish": "열무김치"
+    "popular_dish": "열무김치",
+    "months": [
+      6,
+      7
+    ]
   },
   {
     "name_ko": "오이",
     "category": "채소",
-    "periods": [
-      {
-        "month": 6,
-        "ten": "중순"
-      },
-      {
-        "month": 6,
-        "ten": "하순"
-      },
-      {
-        "month": 7,
-        "ten": "초순"
-      },
-      {
-        "month": 7,
-        "ten": "중순"
-      },
-      {
-        "month": 7,
-        "ten": "하순"
-      },
-      {
-        "month": 8,
-        "ten": "초순"
-      },
-      {
-        "month": 8,
-        "ten": "중순"
-      },
-      {
-        "month": 8,
-        "ten": "하순"
-      }
-    ],
     "image": "cucumber.png",
     "description_ko": "수분 함량이 매우 높아 갈증 해소와 피부 미용에 좋습니다. 아삭한 식감과 시원한 향으로 무침, 냉국, 샐러드 등 여름 요리에 널리 쓰입니다.",
     "preparation_ko": "소금으로 문질러 비벼 씻고, 흐르는 물로 헹궈 잔여물을 제거합니다.",
@@ -2585,49 +1162,15 @@
     "external_url": "https://link.coupang.com/a/cTFb9m",
     "calories_per_100g": 12,
     "calories_per_serving": "1개(100g) 약 12kcal",
-    "popular_dish": "오이무침, 오이냉국"
+    "popular_dish": "오이무침, 오이냉국",
+    "months": [
+      7,
+      8
+    ]
   },
   {
     "name_ko": "오징어",
     "category": "해산물",
-    "periods": [
-      {
-        "month": 6,
-        "ten": "초순"
-      },
-      {
-        "month": 6,
-        "ten": "중순"
-      },
-      {
-        "month": 6,
-        "ten": "하순"
-      },
-      {
-        "month": 7,
-        "ten": "초순"
-      },
-      {
-        "month": 7,
-        "ten": "중순"
-      },
-      {
-        "month": 7,
-        "ten": "하순"
-      },
-      {
-        "month": 8,
-        "ten": "초순"
-      },
-      {
-        "month": 8,
-        "ten": "중순"
-      },
-      {
-        "month": 8,
-        "ten": "하순"
-      }
-    ],
     "image": "squid.png",
     "description_ko": "쫄깃한 식감으로 사랑받는 대표적인 연체동물. 타우린이 풍부하여 피로 해소에 좋으며, 회, 볶음, 튀김, 건어물 등 활용도가 매우 높습니다.",
     "preparation_ko": "내장·투명뼈·눈·입 제거 후 흐르는 물로 깨끗이 헹굽니다.",
@@ -2641,33 +1184,16 @@
     "external_url": "https://link.coupang.com/a/cU4a7W",
     "calories_per_100g": 87,
     "calories_per_serving": "1마리(200g) 약 174kcal",
-    "popular_dish": "오징어볶음"
+    "popular_dish": "오징어볶음",
+    "months": [
+      6,
+      7,
+      8
+    ]
   },
   {
     "name_ko": "옥수수",
     "category": "채소",
-    "periods": [
-      {
-        "month": 7,
-        "ten": "중순"
-      },
-      {
-        "month": 7,
-        "ten": "하순"
-      },
-      {
-        "month": 8,
-        "ten": "초순"
-      },
-      {
-        "month": 8,
-        "ten": "중순"
-      },
-      {
-        "month": 8,
-        "ten": "하순"
-      }
-    ],
     "image": "corn.png",
     "description_ko": "톡톡 터지는 식감과 고소하고 달콤한 맛이 특징인 여름 간식. 식이섬유가 풍부하여 변비 예방에 좋으며, 주로 쪄서 먹습니다.",
     "preparation_ko": "껍질 일부 남겨 수염 제거, 흐르는 물에 가볍게 씻어 둡니다.",
@@ -2681,45 +1207,14 @@
     "external_url": "https://link.coupang.com/a/cTFchg",
     "calories_per_100g": 96,
     "calories_per_serving": "1개(150g) 약 144kcal",
-    "popular_dish": "찐 옥수수, 옥수수전"
+    "popular_dish": "찐 옥수수, 옥수수전",
+    "months": [
+      8
+    ]
   },
   {
     "name_ko": "우엉",
     "category": "채소",
-    "periods": [
-      {
-        "month": 1,
-        "ten": "초순"
-      },
-      {
-        "month": 1,
-        "ten": "중순"
-      },
-      {
-        "month": 1,
-        "ten": "하순"
-      },
-      {
-        "month": 2,
-        "ten": "초순"
-      },
-      {
-        "month": 2,
-        "ten": "중순"
-      },
-      {
-        "month": 2,
-        "ten": "하순"
-      },
-      {
-        "month": 3,
-        "ten": "초순"
-      },
-      {
-        "month": 3,
-        "ten": "중순"
-      }
-    ],
     "image": "burdock.png",
     "description_ko": "아삭한 식감과 독특한 향을 가진 뿌리채소. 식이섬유인 이눌린이 풍부하여 장 건강에 도움을 줍니다. 주로 조림이나 볶음, 김밥 재료로 사용됩니다.",
     "preparation_ko": "솔로 문질러 흙 제거, 갈변 방지 위해 식초물에 담갔다 사용합니다.",
@@ -2733,29 +1228,15 @@
     "external_url": "https://link.coupang.com/a/cTFco1",
     "calories_per_100g": 65,
     "calories_per_serving": "1뿌리(150g) 약 98kcal",
-    "popular_dish": "우엉조림"
+    "popular_dish": "우엉조림",
+    "months": [
+      1,
+      2
+    ]
   },
   {
     "name_ko": "유자",
     "category": "과일",
-    "periods": [
-      {
-        "month": 11,
-        "ten": "중순"
-      },
-      {
-        "month": 11,
-        "ten": "하순"
-      },
-      {
-        "month": 12,
-        "ten": "초순"
-      },
-      {
-        "month": 12,
-        "ten": "중순"
-      }
-    ],
     "image": "yuzu.png",
     "description_ko": "향이 매우 강하고 신맛이 특징인 과일. 비타민 C가 레몬의 3배나 많아 감기 예방과 피로 해소에 탁월합니다. 주로 유자청을 담가 차로 마십니다.",
     "preparation_ko": "표면 왁스·먼지 제거 위해 솔질 후 씻고, 과피·과육 분리해 사용.",
@@ -2769,33 +1250,12 @@
     "external_url": "https://link.coupang.com/a/cTFfd1",
     "calories_per_100g": 59,
     "calories_per_serving": "1개(100g) 약 59kcal",
-    "popular_dish": "유자차"
+    "popular_dish": "유자차",
+    "months": []
   },
   {
     "name_ko": "자두",
     "category": "과일",
-    "periods": [
-      {
-        "month": 7,
-        "ten": "초순"
-      },
-      {
-        "month": 7,
-        "ten": "중순"
-      },
-      {
-        "month": 7,
-        "ten": "하순"
-      },
-      {
-        "month": 8,
-        "ten": "초순"
-      },
-      {
-        "month": 8,
-        "ten": "중순"
-      }
-    ],
     "image": "plum-fruit.png",
     "description_ko": "새콤달콤한 맛이 특징인 여름 과일. 비타민과 식이섬유가 풍부하여 변비 예방과 눈 건강에 좋습니다. 펙틴 성분이 풍부합니다.",
     "preparation_ko": "가볍게 씻고 키친타월로 물기 제거, 덜 익으면 후숙합니다.",
@@ -2809,41 +1269,14 @@
     "external_url": "https://link.coupang.com/a/cTFeOK",
     "calories_per_100g": 46,
     "calories_per_serving": "1개(70g) 약 32kcal",
-    "popular_dish": "생과일로 섭취합니다"
+    "popular_dish": "생과일로 섭취합니다",
+    "months": [
+      7
+    ]
   },
   {
     "name_ko": "장어",
     "category": "해산물",
-    "periods": [
-      {
-        "month": 6,
-        "ten": "초순"
-      },
-      {
-        "month": 6,
-        "ten": "중순"
-      },
-      {
-        "month": 6,
-        "ten": "하순"
-      },
-      {
-        "month": 7,
-        "ten": "초순"
-      },
-      {
-        "month": 7,
-        "ten": "중순"
-      },
-      {
-        "month": 7,
-        "ten": "하순"
-      },
-      {
-        "month": 8,
-        "ten": "초순"
-      }
-    ],
     "image": "eel.png",
     "description_ko": "대표적인 스태미나 음식. 단백질과 불포화지방산, 비타민 A가 풍부하여 기력 회복과 눈 건강에 좋습니다. 주로 양념구이로 즐겨 먹습니다.",
     "preparation_ko": "점액 제거 위해 굵은소금 문질러 씻고 내장 제거해 준비합니다.",
@@ -2857,41 +1290,15 @@
     "external_url": "https://link.coupang.com/a/cTFiVo",
     "calories_per_100g": 303,
     "calories_per_serving": "1인분(150g) 약 455kcal",
-    "popular_dish": "장어구이"
+    "popular_dish": "장어구이",
+    "months": [
+      6,
+      7
+    ]
   },
   {
     "name_ko": "전복",
     "category": "해산물",
-    "periods": [
-      {
-        "month": 8,
-        "ten": "초순"
-      },
-      {
-        "month": 8,
-        "ten": "중순"
-      },
-      {
-        "month": 8,
-        "ten": "하순"
-      },
-      {
-        "month": 9,
-        "ten": "초순"
-      },
-      {
-        "month": 9,
-        "ten": "중순"
-      },
-      {
-        "month": 9,
-        "ten": "하순"
-      },
-      {
-        "month": 10,
-        "ten": "초순"
-      }
-    ],
     "image": "abalone.png",
     "description_ko": "'바다의 황제'라 불리는 고급 식재료. 쫄깃한 식감과 풍부한 영양을 자랑하며, 타우린과 아르기닌이 많아 원기 회복에 탁월합니다.",
     "preparation_ko": "솔로 껍질·이끼 문질러 씻고, 내장을 분리해 살만 깨끗이 정리.",
@@ -2905,33 +1312,15 @@
     "external_url": "https://link.coupang.com/a/cTFi20",
     "calories_per_100g": 73,
     "calories_per_serving": "1개 살(40g) 약 29kcal",
-    "popular_dish": "전복죽, 전복구이"
+    "popular_dish": "전복죽, 전복구이",
+    "months": [
+      8,
+      9
+    ]
   },
   {
     "name_ko": "전어",
     "category": "해산물",
-    "periods": [
-      {
-        "month": 9,
-        "ten": "초순"
-      },
-      {
-        "month": 9,
-        "ten": "중순"
-      },
-      {
-        "month": 9,
-        "ten": "하순"
-      },
-      {
-        "month": 10,
-        "ten": "초순"
-      },
-      {
-        "month": 10,
-        "ten": "중순"
-      }
-    ],
     "image": "yellow-croaker.png",
     "description_ko": "'가을 전어는 깨가 서 말'이라는 말이 있을 정도로 가을에 맛이 가장 좋습니다. 고소한 맛이 일품이며, 뼈째 먹으면 칼슘을 풍부하게 섭취할 수 있습니다.",
     "preparation_ko": "비늘·내장 제거 후 깨끗이 씻어 물기 빼고 알맞게 토막 냅니다.",
@@ -2945,37 +1334,14 @@
     "external_url": "https://link.coupang.com/a/cTFi9f",
     "calories_per_100g": 194,
     "calories_per_serving": "1마리(120g) 약 233kcal",
-    "popular_dish": "전어구이"
+    "popular_dish": "전어구이",
+    "months": [
+      9
+    ]
   },
   {
     "name_ko": "주꾸미",
     "category": "해산물",
-    "periods": [
-      {
-        "month": 3,
-        "ten": "초순"
-      },
-      {
-        "month": 3,
-        "ten": "중순"
-      },
-      {
-        "month": 3,
-        "ten": "하순"
-      },
-      {
-        "month": 4,
-        "ten": "초순"
-      },
-      {
-        "month": 4,
-        "ten": "중순"
-      },
-      {
-        "month": 4,
-        "ten": "하순"
-      }
-    ],
     "image": "webfoot-octopus.png",
     "description_ko": "봄철에 알이 꽉 차 맛이 가장 좋은 연체동물. 타우린이 풍부하여 피로 해소에 매우 좋으며, 쫄깃한 식감으로 볶음이나 샤부샤부로 인기가 많습니다.",
     "preparation_ko": "눈·입·내장 제거, 밀가루로 문질러 점액 제거 후 깨끗이 헹굽니다.",
@@ -2989,37 +1355,15 @@
     "external_url": "https://link.coupang.com/a/cTFjfG",
     "calories_per_100g": 74,
     "calories_per_serving": "1마리(80g) 약 59kcal",
-    "popular_dish": "주꾸미볶음"
+    "popular_dish": "주꾸미볶음",
+    "months": [
+      3,
+      4
+    ]
   },
   {
     "name_ko": "참외",
     "category": "과일",
-    "periods": [
-      {
-        "month": 6,
-        "ten": "중순"
-      },
-      {
-        "month": 6,
-        "ten": "하순"
-      },
-      {
-        "month": 7,
-        "ten": "초순"
-      },
-      {
-        "month": 7,
-        "ten": "중순"
-      },
-      {
-        "month": 7,
-        "ten": "하순"
-      },
-      {
-        "month": 8,
-        "ten": "초순"
-      }
-    ],
     "image": "oriental-melon.png",
     "description_ko": "아삭하고 시원한 단맛이 특징인 여름 대표 과일. 수분 함량이 높고 칼륨이 풍부하여 이뇨 작용을 도와 몸의 부기를 빼는 데 효과적입니다.",
     "preparation_ko": "겉을 씻고 세척수 제거 후, 먹기 직전 반 갈라 씨를 긁어냅니다.",
@@ -3033,37 +1377,14 @@
     "external_url": "https://link.coupang.com/a/cU4bzq",
     "calories_per_100g": 31,
     "calories_per_serving": "1개(300g) 약 93kcal",
-    "popular_dish": "생과일로 섭취합니다"
+    "popular_dish": "생과일로 섭취합니다",
+    "months": [
+      7
+    ]
   },
   {
     "name_ko": "취나물",
     "category": "채소",
-    "periods": [
-      {
-        "month": 3,
-        "ten": "하순"
-      },
-      {
-        "month": 4,
-        "ten": "초순"
-      },
-      {
-        "month": 4,
-        "ten": "중순"
-      },
-      {
-        "month": 4,
-        "ten": "하순"
-      },
-      {
-        "month": 5,
-        "ten": "초순"
-      },
-      {
-        "month": 5,
-        "ten": "중순"
-      }
-    ],
     "image": "chrysanthemum-greens.png",
     "description_ko": "독특한 향이 입맛을 돋우는 대표적인 산나물. 칼륨 함량이 높아 체내 나트륨 배출에 도움을 줍니다. 주로 볶거나 무쳐서 먹습니다.",
     "preparation_ko": "질긴 줄기와 시든 잎 골라내고, 가볍게 헹궈 물기를 빼 사용합니다.",
@@ -3077,37 +1398,14 @@
     "external_url": "https://link.coupang.com/a/cTFcKT",
     "calories_per_100g": 31,
     "calories_per_serving": "한 줌(50g) 약 16kcal",
-    "popular_dish": "취나물무침"
+    "popular_dish": "취나물무침",
+    "months": [
+      4
+    ]
   },
   {
     "name_ko": "키조개",
     "category": "해산물",
-    "periods": [
-      {
-        "month": 4,
-        "ten": "초순"
-      },
-      {
-        "month": 4,
-        "ten": "중순"
-      },
-      {
-        "month": 4,
-        "ten": "하순"
-      },
-      {
-        "month": 5,
-        "ten": "초순"
-      },
-      {
-        "month": 5,
-        "ten": "중순"
-      },
-      {
-        "month": 5,
-        "ten": "하순"
-      }
-    ],
     "image": "ark-shell.png",
     "description_ko": "껍데기가 큰 삼각형 모양인 조개. 다른 조개에 비해 단백질이 풍부하고 지방이 적으며, 특히 쫄깃한 관자는 구이나 볶음 요리로 인기가 높습니다.",
     "preparation_ko": "껍질을 열어 패주만 분리, 검은 막 제거 후 깨끗이 세척합니다.",
@@ -3121,33 +1419,15 @@
     "external_url": "https://link.coupang.com/a/cTFjrQ",
     "calories_per_100g": 80,
     "calories_per_serving": "패주 1개(40g) 약 32kcal",
-    "popular_dish": "키조개구이, 키조개회"
+    "popular_dish": "키조개구이, 키조개회",
+    "months": [
+      4,
+      5
+    ]
   },
   {
     "name_ko": "밤",
     "category": "기타",
-    "periods": [
-      {
-        "month": 9,
-        "ten": "초순"
-      },
-      {
-        "month": 9,
-        "ten": "중순"
-      },
-      {
-        "month": 9,
-        "ten": "하순"
-      },
-      {
-        "month": 10,
-        "ten": "초순"
-      },
-      {
-        "month": 10,
-        "ten": "중순"
-      }
-    ],
     "image": "chestnut.png",
     "description_ko": "가을의 대표적인 영양 간식. 탄수화물, 단백질, 비타민이 풍부하여 성장과 피로 해소에 좋습니다. 삶거나 구워 먹으면 고소하고 달콤한 맛이 일품입니다.",
     "preparation_ko": "겉껍질 벗기고 데쳐 율피 제거, 물기 빼 준비하면 손질이 쉽습니다.",
@@ -3161,33 +1441,14 @@
     "external_url": "https://link.coupang.com/a/cU4bVS",
     "calories_per_100g": 146,
     "calories_per_serving": "10알(100g) 약 146kcal",
-    "popular_dish": "군밤, 밤조림"
+    "popular_dish": "군밤, 밤조림",
+    "months": [
+      9
+    ]
   },
   {
     "name_ko": "토란",
     "category": "채소",
-    "periods": [
-      {
-        "month": 9,
-        "ten": "중순"
-      },
-      {
-        "month": 9,
-        "ten": "하순"
-      },
-      {
-        "month": 10,
-        "ten": "초순"
-      },
-      {
-        "month": 10,
-        "ten": "중순"
-      },
-      {
-        "month": 10,
-        "ten": "하순"
-      }
-    ],
     "image": "taro.png",
     "description_ko": "특유의 미끈거리는 식감이 특징인 땅속줄기. 칼륨이 풍부하여 나트륨 배출을 돕고, 소화가 잘되어 위장에 부담이 적습니다. 주로 국이나 탕으로 끓여 먹습니다.",
     "preparation_ko": "흙을 털고 솔질 후 씻어 삶은 뒤 껍질을 벗기면 미끄러움이 줄어듭니다.",
@@ -3201,45 +1462,14 @@
     "external_url": "https://link.coupang.com/a/cTFcSB",
     "calories_per_100g": 58,
     "calories_per_serving": "5개(100g) 약 58kcal",
-    "popular_dish": "토란국"
+    "popular_dish": "토란국",
+    "months": [
+      10
+    ]
   },
   {
     "name_ko": "파래",
     "category": "해산물",
-    "periods": [
-      {
-        "month": 12,
-        "ten": "초순"
-      },
-      {
-        "month": 12,
-        "ten": "중순"
-      },
-      {
-        "month": 12,
-        "ten": "하순"
-      },
-      {
-        "month": 1,
-        "ten": "초순"
-      },
-      {
-        "month": 1,
-        "ten": "중순"
-      },
-      {
-        "month": 1,
-        "ten": "하순"
-      },
-      {
-        "month": 2,
-        "ten": "초순"
-      },
-      {
-        "month": 2,
-        "ten": "중순"
-      }
-    ],
     "image": "sea-lettuce.png",
     "description_ko": "향긋한 바다 내음이 특징인 해조류. 철분과 칼슘 등 무기질이 풍부하여 빈혈과 골다공증 예방에 좋습니다. 주로 무침으로 먹거나 전에 넣어 부쳐 먹습니다.",
     "preparation_ko": "흐르는 물에 가볍게 헹궈 모래·이물질 제거 후 물기를 뺍니다.",
@@ -3253,37 +1483,15 @@
     "external_url": "https://link.coupang.com/a/cTFjyK",
     "calories_per_100g": 36,
     "calories_per_serving": "한 줌(50g) 약 18kcal",
-    "popular_dish": "파래전"
+    "popular_dish": "파래전",
+    "months": [
+      1,
+      12
+    ]
   },
   {
     "name_ko": "홍합",
     "category": "해산물",
-    "periods": [
-      {
-        "month": 1,
-        "ten": "초순"
-      },
-      {
-        "month": 1,
-        "ten": "중순"
-      },
-      {
-        "month": 1,
-        "ten": "하순"
-      },
-      {
-        "month": 2,
-        "ten": "초순"
-      },
-      {
-        "month": 2,
-        "ten": "중순"
-      },
-      {
-        "month": 2,
-        "ten": "하순"
-      }
-    ],
     "image": "mussel.png",
     "description_ko": "국, 찜, 파스타까지 활용도가 높은 해산물. 단백질과 철분이 풍부하며, 진한 국물 맛을 내는 감칠맛이 특징입니다.",
     "preparation_ko": "수염을 잡아 떼고 껍질 솔질 후 충분히 헹궈 이물과 모래를 제거.",
@@ -3297,29 +1505,15 @@
     "external_url": "https://link.coupang.com/a/cU4ciX",
     "calories_per_100g": 86,
     "calories_per_serving": "살 10개(100g) 약 86kcal",
-    "popular_dish": "홍합탕, 홍합밥"
+    "popular_dish": "홍합탕, 홍합밥",
+    "months": [
+      1,
+      2
+    ]
   },
   {
     "name_ko": "송이버섯",
     "category": "기타",
-    "periods": [
-      {
-        "month": 9,
-        "ten": "중순"
-      },
-      {
-        "month": 9,
-        "ten": "하순"
-      },
-      {
-        "month": 10,
-        "ten": "초순"
-      },
-      {
-        "month": 10,
-        "ten": "중순"
-      }
-    ],
     "image": "matsutake.png",
     "description_ko": "소나무 숲에서 자라는 귀한 버섯으로, 짙고 독특한 솔 향이 특징입니다. 비타민 D와 식이섬유가 풍부하며, 항암 효과가 있는 것으로 알려져 있습니다.",
     "preparation_ko": "물세척 피하고 마른 솔로 흙만 털어 향과 식감을 최대한 지킵니다.",
@@ -3333,25 +1527,12 @@
     "external_url": "https://link.coupang.com/a/cTFjU3",
     "calories_per_100g": 29,
     "calories_per_serving": "1개(80g) 약 23kcal",
-    "popular_dish": "송이구이, 송이전골"
+    "popular_dish": "송이구이, 송이전골",
+    "months": []
   },
   {
     "name_ko": "은행",
     "category": "기타",
-    "periods": [
-      {
-        "month": 10,
-        "ten": "초순"
-      },
-      {
-        "month": 10,
-        "ten": "중순"
-      },
-      {
-        "month": 10,
-        "ten": "하순"
-      }
-    ],
     "image": "ginkgo-nut.png",
     "description_ko": "고소한 풍미와 쫄깃한 식감이 특징. 과다 섭취는 피해야 하지만, 소량으로 영양 간식이나 요리 재료로 좋습니다.",
     "preparation_ko": "겉 껍질 제거 후 삶아 껍질을 벗기고 과육만 사용합니다.",
@@ -3365,37 +1546,14 @@
     "external_url": "https://link.coupang.com/a/cU4cuO",
     "calories_per_100g": 182,
     "calories_per_serving": "10알(20g) 약 36kcal",
-    "popular_dish": "은행구이"
+    "popular_dish": "은행구이",
+    "months": [
+      10
+    ]
   },
   {
     "name_ko": "표고버섯",
     "category": "기타",
-    "periods": [
-      {
-        "month": 10,
-        "ten": "초순"
-      },
-      {
-        "month": 10,
-        "ten": "중순"
-      },
-      {
-        "month": 10,
-        "ten": "하순"
-      },
-      {
-        "month": 11,
-        "ten": "초순"
-      },
-      {
-        "month": 11,
-        "ten": "중순"
-      },
-      {
-        "month": 11,
-        "ten": "하순"
-      }
-    ],
     "image": "shiitake-mushroom.png",
     "description_ko": "독특한 향과 쫄깃한 식감으로 사랑받는 버섯. 비타민 D가 풍부하여 칼슘 흡수를 돕고, 항암 효과가 있는 렌티난 성분을 함유하고 있습니다.",
     "preparation_ko": "물세척은 피하고 마른솔·키친타월로 흙만 털어 정리합니다.",
@@ -3409,6 +1567,10 @@
     "external_url": "https://link.coupang.com/a/cU4cMJ",
     "calories_per_100g": 34,
     "calories_per_serving": "1개(20g) 약 7kcal",
-    "popular_dish": "표고볶음, 표고전"
+    "popular_dish": "표고볶음, 표고전",
+    "months": [
+      10,
+      11
+    ]
   }
 ]

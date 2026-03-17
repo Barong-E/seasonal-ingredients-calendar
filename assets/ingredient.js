@@ -107,12 +107,12 @@ async function init() {
   document.getElementById('detailDesc').textContent = item.description_ko || '';
 
   // 계절 테마 설정
-  if (item.periods && item.periods.length > 0) {
-    const firstPeriodMonth = item.periods[0].month;
+  if (item.months && item.months.length > 0) {
+    const firstMonth = item.months[0];
     let season = 'autumn';
-    if (firstPeriodMonth === 12 || firstPeriodMonth <= 2) season = 'winter';
-    else if (firstPeriodMonth >= 3 && firstPeriodMonth <= 5) season = 'spring';
-    else if (firstPeriodMonth >= 6 && firstPeriodMonth <= 8) season = 'summer';
+    if (firstMonth === 12 || firstMonth <= 2) season = 'winter';
+    else if (firstMonth >= 3 && firstMonth <= 5) season = 'spring';
+    else if (firstMonth >= 6 && firstMonth <= 8) season = 'summer';
     document.body.classList.add(`theme-${season}`);
   }
 
