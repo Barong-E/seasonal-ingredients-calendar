@@ -150,11 +150,14 @@ function handleRedirect() {
   const urlParams = new URLSearchParams(window.location.search);
   const redirectId = urlParams.get('redirectId');
   if (redirectId) {
+    const fromNoti = urlParams.get('fromNoti');
     // 히스토리에서 파라미터 제거 (뒤로가기 시 무한 루프 방지)
     const newUrl = window.location.pathname;
     window.history.replaceState({}, '', newUrl);
-    // 상세 페이지로 이동
-    window.location.href = `holiday.html?id=${encodeURIComponent(redirectId)}`;
+    // 상세 페이지로 이동 (fromNoti 플래그 전달)
+    let detailUrl = `holiday.html?id=${encodeURIComponent(redirectId)}`;
+    if (fromNoti) detailUrl += `&fromNoti=true`;
+    window.location.href = detailUrl;
   }
 }
 

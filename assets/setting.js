@@ -414,7 +414,7 @@ async function updateNotificationSchedule() {
             extra: { 
               type: 'holiday', 
               name: holiday.name,
-              url: `holidays.html?redirectId=${holiday.id}` // 목록을 거쳐 상세로 이동하도록 변경
+              url: `holidays.html?redirectId=${holiday.id}&fromNoti=true` // 목록을 거쳐 상세로 이동하도록 변경
             },
             channelId: 'default',
             smallIcon: 'ic_notification'

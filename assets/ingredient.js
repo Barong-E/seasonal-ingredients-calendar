@@ -187,4 +187,16 @@ async function init() {
   }
 }
 
+window.handleSmartBack = function(defaultUrl) {
+  const params = new URLSearchParams(window.location.search);
+  const fromNoti = params.get('fromNoti');
+  
+  // 알림을 통해 들어왔거나 히스토리가 없는 경우 강제 이동
+  if (fromNoti === 'true' || window.history.length <= 1) {
+    window.location.href = defaultUrl || 'index.html';
+  } else {
+    window.history.back();
+  }
+};
+
 document.addEventListener('DOMContentLoaded', init);
