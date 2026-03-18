@@ -146,7 +146,20 @@ function initSearch() {
   });
 }
 
+function handleRedirect() {
+  const urlParams = new URLSearchParams(window.location.search);
+  const redirectId = urlParams.get('redirectId');
+  if (redirectId) {
+    // 히스토리에서 파라미터 제거 (뒤로가기 시 무한 루프 방지)
+    const newUrl = window.location.pathname;
+    window.history.replaceState({}, '', newUrl);
+    // 상세 페이지로 이동
+    window.location.href = `holiday.html?id=${encodeURIComponent(redirectId)}`;
+  }
+}
+
 document.addEventListener('DOMContentLoaded', () => {
+  handleRedirect(); // 리다이렉트 체크 우선 실행
   renderHolidaysList();
   initSearch();
 });
