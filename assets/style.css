@@ -307,6 +307,51 @@ body.has-banner .carousel {
   margin-bottom: 24px;
 }
 
+/* 신규 식재료 섹션 추가 스타일 */
+.new-ingredients-section {
+  margin-bottom: 24px;
+}
+.existing-ingredients-section {
+  margin-bottom: 16px;
+  position: relative;
+}
+
+/* 기존 식재료 구역 상단 구분선 (자연스러운 구분) */
+.existing-ingredients-section::before {
+  content: '';
+  display: block;
+  width: 100%;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(0,0,0,0.05) 50%, transparent);
+  margin: 12px 0 24px 0;
+}
+
+.new-ingredients-header {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--primary);
+  margin-bottom: 12px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 12px;
+  background: linear-gradient(135deg, rgba(255,255,255,0.8), rgba(255,255,255,0.4));
+  border-radius: var(--border-radius-sm);
+  border: 1px solid var(--glass-border);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.02);
+  backdrop-filter: blur(8px);
+}
+
+.new-icon {
+  font-size: 1.2rem;
+  animation: float 2s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-3px); }
+}
+
 /* Grid */
 .grid {
   display: grid;
@@ -434,6 +479,25 @@ body.has-banner .carousel {
   background: linear-gradient(135deg, rgba(0, 85, 164, 0.1) 0%, rgba(214, 40, 40, 0.1) 100%);
   opacity: 0;
   transition: opacity 0.3s ease;
+}
+
+/* 카테고리 라벨 */
+.card-category-label {
+  position: absolute;
+  top: 4px;
+  left: 4px;
+  z-index: 10;
+  font-size: 0.65rem;
+  font-weight: 700;
+  color: #fff;
+  background: rgba(0, 0, 0, 0.45);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  padding: 2px 6px;
+  border-radius: 6px;
+  letter-spacing: -0.3px;
+  pointer-events: none; /* 클릭 방해 방지 */
+  border: 1px solid rgba(255, 255, 255, 0.2);
 }
 
 @media (hover: hover) and (pointer: fine) {

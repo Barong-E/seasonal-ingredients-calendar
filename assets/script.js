@@ -489,6 +489,13 @@ function createCard(item) {
   };
   img.src = imgPath;
 
+  if (item.category) {
+    const catLabel = document.createElement('div');
+    catLabel.className = 'card-category-label';
+    catLabel.textContent = item.category;
+    thumb.appendChild(catLabel);
+  }
+
   // 칼로리 정보 표시
   if (item.calories_per_100g) {
     caloriesValue.textContent = `${item.calories_per_100g}kcal`;
@@ -526,39 +533,73 @@ function renderAllMonths() {
     const gridContainer = document.createElement('div');
     gridContainer.className = 'period-grid';
     
-    const grid = document.createElement('div');
-    grid.className = 'grid';
-    grid.setAttribute('role', 'list');
-    
     const empty = document.createElement('div');
     empty.className = 'empty';
     empty.setAttribute('role', 'status');
     empty.setAttribute('aria-live', 'polite');
     empty.textContent = '검색 결과가 없습니다.';
     
-    gridContainer.appendChild(grid);
-    gridContainer.appendChild(empty);
     trackEl.appendChild(gridContainer);
     
     // 캐시 확인
     const searchSig = (searchText || '').trim().toLowerCase();
     const signature = `${month}__${searchSig}`;
     
-    if (renderCache.get(month) === signature && grid.children.length > 0) {
-      continue;
-    }
-    
-    grid.innerHTML = '';
+    gridContainer.innerHTML = '';
     
     // 식재료 렌더링 (월 단위)
     const filteredItems = queryItems(allIngredients, searchText, month);
     if (filteredItems.length === 0) {
+      gridContainer.appendChild(empty);
       empty.style.display = 'block';
     } else {
       empty.style.display = 'none';
+      
+      const prevMonth = month === 1 ? 12 : month - 1;
+      const newItems = [];
+      const existingItems = [];
+      
       filteredItems.forEach(item => {
-        grid.appendChild(createCard(item));
+        const isNew = item.months && item.months.includes(month) && !item.months.includes(prevMonth);
+        if (isNew) {
+          newItems.push(item);
+        } else {
+          existingItems.push(item);
+        }
       });
+      
+      if (newItems.length > 0) {
+        const newSection = document.createElement('div');
+        newSection.className = 'new-ingredients-section';
+        
+        const newHeader = document.createElement('div');
+        newHeader.className = 'new-ingredients-header';
+        newHeader.innerHTML = '<span class="new-icon">✨</span> 이번 달 새로운 식재료';
+        newSection.appendChild(newHeader);
+        
+        const newGrid = document.createElement('div');
+        newGrid.className = 'grid';
+        newGrid.setAttribute('role', 'list');
+        newItems.forEach(item => newGrid.appendChild(createCard(item)));
+        newSection.appendChild(newGrid);
+        
+        gridContainer.appendChild(newSection);
+      }
+      
+      if (existingItems.length > 0) {
+        const existSection = document.createElement('div');
+        existSection.className = 'existing-ingredients-section';
+        
+        const existGrid = document.createElement('div');
+        existGrid.className = 'grid';
+        existGrid.setAttribute('role', 'list');
+        existingItems.forEach(item => existGrid.appendChild(createCard(item)));
+        existSection.appendChild(existGrid);
+        
+        gridContainer.appendChild(existSection);
+      }
+      
+      gridContainer.appendChild(empty);
     }
     renderCache.set(month, signature);
   }
