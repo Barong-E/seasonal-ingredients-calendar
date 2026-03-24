@@ -1,138 +1,139 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="ko">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, user-scalable=no">
-    <meta name="mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="default">
-    <title>띵동 제철음식 - 계절별 제철 식재료·명절 음식 한눈에</title>
-    <meta name="description" content="봄, 여름, 가을, 겨울 제철 식재료와 명절·절기 음식을 한눈에. 12개월 36시기 제철 정보와 설·추석·한식 등 명절 음식 안내. 채소, 과일, 해산물 정보 제공.">
-    <meta name="keywords" content="제철음식, 명절 음식, 제철 식재료, 계절 음식, 제철 채소, 제철 과일, 설 음식, 추석 음식, 한식, 절기, 계절별 식재료">
-    <meta name="author" content="띵동 제철음식">
-    <meta name="robots" content="index, follow">
-    
-    <!-- Open Graph (페이스북, 네이버 블로그 등) -->
-    <meta property="og:title" content="띵동 제철음식 - 계절별 제철 식재료·명절 음식 한눈에">
-    <meta property="og:description" content="봄, 여름, 가을, 겨울 제철 식재료와 명절·절기 음식을 한눈에. 12개월 36시기 제철 정보와 설·추석·한식 등 명절 음식 안내.">
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://seasonalfood.net/">
-    <meta property="og:image" content="https://seasonalfood.net/images/og-1200.png">
-    <meta property="og:site_name" content="띵동 제철음식">
-    
-    <!-- Twitter Card -->
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="띵동 제철음식 - 계절별 제철 식재료·명절 음식 한눈에">
-    <meta name="twitter:description" content="봄, 여름, 가을, 겨울 제철 식재료와 명절·절기 음식을 한눈에. 12개월 36시기 제철 정보와 설·추석·한식 등 명절 음식 안내.">
-    <meta name="twitter:image" content="https://seasonalfood.net/images/og-1200.png">
-    
-    <!-- 네이버 웹마스터 도구 -->
-    <meta name="naver-site-verification" content="8ec80c7ccb1393e7f84e2729b957293259a6c5f6" />
-    
-    <!-- 구글 서치 콘솔 -->
-    <meta name="google-site-verification" content="PUszPwGfNxuQBdXuVuvFj34tiQop12fZJKmrdPU1iWM">
-    
-    <!-- 다음 사이트 등록 -->
-    <meta name="daum-site-verification" content="">
-    
-    <!-- Bing 웹마스터 도구 -->
-    <meta name="msvalidate.01" content="8F2EA7B62F5E146CFAB87473167632ED" />
-    
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="manifest" href="/manifest.webmanifest">
-    <meta name="theme-color" content="#0A7B34">
-    <link rel="icon" href="/images/icons/app-icon-192.png" type="image/png">
-    <link rel="apple-touch-icon" href="/images/icons/app-icon-192.png">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+    <title>Seasonal Gourmet | 제철 미식 달력</title>
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Main Style Sheet -->
     <link rel="stylesheet" href="assets/style.css">
-    <link rel="stylesheet" href="assets/setting.css">
-  </head>
-  <body>
-    <header class="app-header">
-      <h1 class="visually-hidden">띵동 제철음식</h1>
-      <div class="header-bar" role="banner">
-        <div class="brand" aria-label="브랜드">
-          <span class="brand__primary">띵동 제철음식</span>
-        </div>
-        <div class="header-controls">
-          <form id="filtersForm" class="header-search" onsubmit="return false;" role="search">
-            <input id="searchInput" class="search-input" type="search" placeholder="이름·설명 검색" autocomplete="off" inputmode="search" aria-describedby="searchHelp">
-            <p id="searchHelp" class="visually-hidden">이름과 설명에서 검색합니다. 대소문자를 구분하지 않습니다.</p>
-          </form>
-          <button id="settingButton" class="setting-button" type="button" aria-label="알림 설정" title="알림 설정">
-            <svg class="setting-icon" viewBox="0 0 24 24" width="20" height="20" fill="currentColor">
-              <path d="M12 22c1.1 0 2-.9 2-2h-4c0 1.1.89 2 2 2zm6-6v-5c0-3.07-1.64-5.64-4.5-6.32V4c0-.83-.67-1.5-1.5-1.5s-1.5.67-1.5 1.5v.68C7.63 5.36 6 7.92 6 11v5l-2 2v1h16v-1l-2-2z"/>
-            </svg>
-          </button>
-        </div>
-      </div>
-    </header>
+</head>
+<body>
 
-    <div id="offlineNotice" class="offline-notice" role="status" aria-live="polite" hidden>
-      <div class="offline-notice__box">
-        <span class="offline-notice__icon" aria-hidden="true">📶</span>
-        <div class="offline-notice__text">
-          <strong>오프라인 상태입니다.</strong>
-          <p>네트워크 연결을 확인해 주세요. 저장된 데이터는 계속 이용할 수 있습니다.</p>
-        </div>
-      </div>
+    <div class="app-container">
+        
+        <!-- 1. 메인 홈 섹션 (Home view) -->
+        <section id="view-home" class="view-section active">
+            <div class="hero">
+                <img src="https://images.unsplash.com/photo-1549419142-ffb79417c805?auto=format&fit=crop&q=80&w=1200" alt="Featured Crop" class="hero-img">
+                <div class="hero-content">
+                    <span class="item-tag fade-in">Featured Ingredient</span>
+                    <h1 class="section-title fade-in">3월의 선물: <br><span class="editorial-italic">싱그러운 봄의 전령</span></h1>
+                    <p class="fade-in" style="font-size: 0.9rem; opacity: 0.8;">지금 가장 신선한 식재료들을 만나보세요.</p>
+                </div>
+            </div>
+
+            <div class="section">
+                <div class="filters fade-in">
+                    <div class="chip active" onclick="filterCategory('all')">전체</div>
+                    <div class="chip" onclick="filterCategory('vegetable')">채소</div>
+                    <div class="chip" onclick="filterCategory('fruit')">과일</div>
+                    <div class="chip" onclick="filterCategory('seafood')">수산물</div>
+                </div>
+
+                <h2 class="section-title fade-in" style="font-size: 1.5rem; padding: 0 var(--spacing-unit);">이달의 식재료</h2>
+                <div id="ingredient-list" class="ingredient-grid fade-in">
+                    <!-- JavaScript로 식재료 카드가 생성됩니다 -->
+                </div>
+            </div>
+
+            <!-- 명절 및 절기 섹션 (Home 하단에 살짝 노출) -->
+            <div class="section tradition-section fade-in">
+                <div class="holiday-bubble">
+                    <p class="editorial-italic" style="color: var(--accent-emerald); font-size: 0.8rem; margin-bottom: 4px;">Ancestral Wisdom</p>
+                    <h2 class="holiday-title">다가오는 절기: <span class="editorial-italic">곡우(穀雨)</span></h2>
+                    <p style="font-size: 0.85rem; opacity: 0.8;">봄비가 내려 백곡을 기름지게 하는 날, <br>가장 맛있는 봄나물을 제안합니다.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 2. 캘린더 섹션 (Calendar view) -->
+        <section id="view-calendar" class="view-section">
+            <div class="section">
+                <h1 class="section-title editorial-italic">The Seasonal <br>Archive</h1>
+                <p style="font-size: 0.9rem; opacity: 0.7; margin-bottom: 2rem;">열두 달의 신선함을 한눈에 확인하세요.</p>
+                
+                <div class="filters">
+                    <div class="chip active">3월</div>
+                    <div class="chip">4월</div>
+                    <div class="chip">5월</div>
+                    <div class="chip">6월</div>
+                    <div class="chip">7월</div>
+                </div>
+
+                <div id="calendar-grid" class="ingredient-grid">
+                    <!-- 특정 달의 식재료 목록 -->
+                </div>
+            </div>
+        </section>
+
+        <!-- 3. 명절/절기 전용 섹션 (Tradition view) -->
+        <section id="view-tradition" class="view-section">
+            <div class="section">
+                <h1 class="section-title">조상의 지혜, <br><span class="editorial-italic">절기의 맛</span></h1>
+                
+                <div class="glass-card fade-in" style="margin-top: 2rem;">
+                    <div class="holiday-card">
+                        <img src="https://images.unsplash.com/photo-1577906067332-680459353995?auto=format&fit=crop&q=80&w=400" alt="Seollal" class="holiday-img">
+                        <div>
+                            <h3 class="item-name">설날 (Seollal)</h3>
+                            <p style="font-size: 0.8rem; opacity: 0.7;">새해 첫날, 무병장수를 기원하는 가래떡과 떡국.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="glass-card fade-in">
+                    <div class="holiday-card">
+                        <img src="https://images.unsplash.com/photo-1528660493888-ab6f4761e036?auto=format&fit=crop&q=80&w=400" alt="Chuseok" class="holiday-img">
+                        <div>
+                            <h3 class="item-name">추석 (Chuseok)</h3>
+                            <p style="font-size: 0.8rem; opacity: 0.7;">햇곡식으로 빚은 송편과 풍요로운 가을의 맛.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <h3 class="editorial-italic" style="margin: 2rem 0 1rem; color: var(--accent-emerald);">24 절기 순환</h3>
+                <div class="filters">
+                    <div class="chip">입춘</div>
+                    <div class="chip">우수</div>
+                    <div class="chip active">곡우</div>
+                    <div class="chip">입하</div>
+                    <div class="chip">소만</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 4. 상세 정보 섹션 (Detail view - Dynamic) -->
+        <section id="view-detail" class="view-section" style="padding-bottom: 120px;">
+            <div id="ingredient-detail-content">
+                <!-- JavaScript로 상세 내용이 주입됩니다 -->
+            </div>
+        </section>
+
+        <!-- 하단 네비게이션 바 -->
+        <nav class="bottom-nav">
+            <div class="nav-item active" onclick="switchView('home')">
+                <i class="fa-solid fa-house-chimney"></i>
+                <span>홈</span>
+            </div>
+            <div class="nav-item" onclick="switchView('calendar')">
+                <i class="fa-solid fa-calendar-days"></i>
+                <span>캘린더</span>
+            </div>
+            <div class="nav-item" onclick="switchView('tradition')">
+                <i class="fa-solid fa-moon"></i>
+                <span>절기/명절</span>
+            </div>
+            <div class="nav-item" onclick="switchView('settings')">
+                <i class="fa-solid fa-circle-user"></i>
+                <span>나의 정원</span>
+            </div>
+        </nav>
+
     </div>
 
-    <main>
-      <section class="carousel" aria-label="시기 선택">
-        <div id="carouselContainer" class="carousel__container">
-          <div id="periodTrack" class="carousel__track" aria-live="polite"></div>
-        </div>
-      </section>
-    </main>
-
-    <!-- 하단 탭바 (GNB) -->
-    <nav class="gnb" aria-label="하단 네비게이션">
-      <a href="index.html" class="gnb__item active" aria-current="page">
-        <svg class="gnb__icon" viewBox="0 0 24 24" width="24" height="24" fill="currentColor">
-          <path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/>
-        </svg>
-        <span class="gnb__label">제철 식재료</span>
-      </a>
-      <a href="holidays.html" class="gnb__item">
-        <svg class="gnb__icon" viewBox="0 0 24 24" width="24" height="24" fill="currentColor">
-          <path d="M19 4h-1V2h-2v2H8V2H6v2H5c-1.11 0-1.99.9-1.99 2L3 20a2 2 0 002 2h14c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 16H5V10h14v10z"/>
-        </svg>
-        <span class="gnb__label">명절·절기</span>
-      </a>
-    </nav>
-
-    <template id="panelTemplate">
-      <div class="panel" role="group" aria-roledescription="시기 패널">
-        <div class="grid" role="list"></div>
-        <div class="empty" role="status" aria-live="polite">검색 결과가 없습니다.</div>
-      </div>
-    </template>
-
-    <template id="cardTemplate">
-      <div class="card" role="listitem">
-        <div class="thumb" aria-hidden="true">
-          <img class="photo" src="" alt="" width="600" height="600" loading="lazy" />
-        </div>
-        <div class="card-content">
-          <div class="title" aria-label="이름"></div>
-          <div class="calories" aria-label="칼로리">
-            <span class="calories-icon">🔥</span>
-            <span class="calories-value"></span>
-          </div>
-        </div>
-      </div>
-    </template>
-
-    <script type="module" src="assets/script.js?v=v12"></script>
-    <script>
-      if ('serviceWorker' in navigator) {
-        window.addEventListener('load', function() {
-          navigator.serviceWorker.register('/service-worker.js').catch(function(){});
-        });
-      }
-      if (window.matchMedia && window.matchMedia('(display-mode: standalone)').matches) {
-        document.documentElement.classList.add('app-installed');
-      }
-    </script>
-  </body>
+    <!-- Main Logic Script -->
+    <script src="assets/script.js"></script>
+</body>
 </html>
