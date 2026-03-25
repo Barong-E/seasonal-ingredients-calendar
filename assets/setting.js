@@ -103,6 +103,10 @@ const Settings = {
   holiday: {
     enabled: false,
     list: [] // { id: number, dDay: number, time: string }
+  },
+  editing: {
+    type: null,
+    id: null
   }
 };
 
@@ -167,14 +171,44 @@ function renderNotificationList(type) {
       <span class="noti-item__info">${infoText}</span>
       <button class="noti-item__remove" type="button" data-id="${item.id}">-</button>
     `;
+
+    // 알림 클릭 시 수정 모드로 전환
+    const infoArea = itemEl.querySelector('.noti-item__info');
+    infoArea.addEventListener('click', () => {
+      loadToEditForm(type, item);
+    });
     
     const removeBtn = itemEl.querySelector('.noti-item__remove');
-    removeBtn.addEventListener('click', () => {
+    removeBtn.addEventListener('click', (e) => {
+      e.stopPropagation(); // 부모 클릭 이벤트 방지
       removeNotification(type, item.id);
     });
     
     listContainer.appendChild(itemEl);
   });
+}
+
+function loadToEditForm(type, item) {
+  Settings.editing = { type, id: item.id };
+  
+  if (type === 'ingredient') {
+    document.getElementById('ingredientNotiDay').value = item.day;
+    document.getElementById('ingredientNotiTime').value = item.time;
+    document.getElementById('addIngredientNoti').textContent = '수정';
+  } else {
+    document.getElementById('holidayNotiDday').value = item.dDay;
+    document.getElementById('holidayNotiTime').value = item.time;
+    document.getElementById('addHolidayNoti').textContent = '수정';
+  }
+  
+  // 시각적으로 어떤 항목이 선택되었는지 강조 (옵션)
+  document.querySelectorAll('.noti-item').forEach(el => el.classList.remove('editing'));
+  const currentItems = document.querySelectorAll(`#${type}NotiList .noti-item`);
+  const list = Settings[type].list;
+  const idx = list.findIndex(i => i.id === item.id);
+  if (idx !== -1 && currentItems[idx]) {
+    currentItems[idx].classList.add('editing');
+  }
 }
 
 function addNotification(type) {
@@ -183,19 +217,38 @@ function addNotification(type) {
     : parseInt(document.getElementById('holidayNotiDday').value);
   const timeValue = document.getElementById(`${type}NotiTime`).value || '09:00';
   
-  const newItem = {
-    id: Date.now(),
-    time: timeValue
-  };
+  // 수정 모드인 경우
+  if (Settings.editing.type === type && Settings.editing.id) {
+    const item = Settings[type].list.find(i => i.id === Settings.editing.id);
+    if (item) {
+      if (type === 'ingredient') item.day = dayValue;
+      else item.dDay = dayValue;
+      item.time = timeValue;
+    }
+    // 수정 모드 해제
+    Settings.editing = { type: null, id: null };
+    document.getElementById(type === 'ingredient' ? 'addIngredientNoti' : 'addHolidayNoti').textContent = '추가';
+  } else {
+    // 일반 추가 모드
+    const newItem = {
+      id: Date.now(),
+      time: timeValue
+    };
+    
+    if (type === 'ingredient') newItem.day = dayValue;
+    else newItem.dDay = dayValue;
+    
+    Settings[type].list.push(newItem);
+  }
   
-  if (type === 'ingredient') newItem.day = dayValue;
-  else newItem.dDay = dayValue;
-  
-  Settings[type].list.push(newItem);
   renderNotificationList(type);
 }
 
 function removeNotification(type, id) {
+  if (Settings.editing.id === id) {
+    Settings.editing = { type: null, id: null };
+    document.getElementById(type === 'ingredient' ? 'addIngredientNoti' : 'addHolidayNoti').textContent = '추가';
+  }
   Settings[type].list = Settings[type].list.filter(item => item.id !== id);
   renderNotificationList(type);
 }
