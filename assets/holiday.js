@@ -1,5 +1,7 @@
 // holiday.js
 // 명절 상세 페이지 로직
+import { getRecipeIdFromDishName } from './recipe-mapper.js';
+
 
 async function loadHolidayData() {
   try {
@@ -12,27 +14,6 @@ async function loadHolidayData() {
   }
 }
 
-// 요리 이름을 레시피 ID로 매핑 (assets/script.js 참조)
-function getRecipeIdFromDishName(dishName) {
-  const mapping = {
-    '떡국': 'tteokguk',
-    '송편': 'songpyeon',
-    '팥죽': 'patjuk',
-    '오곡밥': 'ogokbap',
-    '묵은 나물': 'mukeun-namul',
-    '밀전병': 'miljeonbyeong',
-    '잡채': 'japchae',
-    '전·잡채·갈비찜 등': 'japchae',
-    '전': 'jeon',
-    '화전': 'hwajeon',
-    '수리취떡': 'surichwitteok',
-    '밀국수': 'milguksu',
-    '국수': 'milguksu',
-    '국화전': 'gukwha-jeon',
-    '갈비찜': 'galbijjim'
-  };
-  return mapping[dishName] || null;
-}
 
 async function init() {
   const params = new URLSearchParams(window.location.search);

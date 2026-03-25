@@ -1,5 +1,7 @@
 // ingredient.js
 // 식재료 상세 페이지 로직
+import { getRecipeIdFromDishName } from './recipe-mapper.js';
+
 
 async function loadIngredientData() {
   try {
@@ -12,43 +14,7 @@ async function loadIngredientData() {
   }
 }
 
-// 요리 이름을 레시피 ID로 매핑 (assets/script.js에서 복사)
-function getRecipeIdFromDishName(dishName) {
-  const mapping = {
-    '갈치조림': 'galchi-jorim',
-    '고등어조림': 'godeungeo-jorim',
-    '고등어구이': 'godeungeo-gui',
-    '굴전': 'gul-jeon',
-    '굴국밥': 'gul-gukbap',
-    '떡국': 'tteokguk',
-    '송편': 'songpyeon',
-    '팥죽': 'patjuk',
-    '도다리쑥국': 'dodari-ssukguk',
-    '바지락칼국수': 'bajirak-kalguksu',
-    '주꾸미볶음': 'jukumi-bokkeum',
-    '오징어볶음': 'ojingeo-bokkeum',
-    '전복죽': 'jeonbok-juk',
-    '삼치구이': 'samchi-gui',
-    '오곡밥': 'ogokbap',
-    '묵은 나물': 'mukeun-namul',
-    '밀전병': 'miljeonbyeong',
-    '잡채': 'japchae',
-    '전·잡채·갈비찜 등': 'japchae',
-    '전': 'jeon',
-    '화전': 'hwajeon',
-    '수리취떡': 'surichwitteok',
-    '밀국수': 'milguksu',
-    '국수': 'milguksu',
-    '국화전': 'gukwha-jeon',
-    '갈비찜': 'galbijjim',
-    // ... 더 많은 매핑 (필요 시 공통 파일로 분리 추천)
-    '감자조림': 'gamja-jorim',
-    '감자전': 'gamja-jeon',
-    '가지나물': 'gaji-namul',
-    '가지볶음': 'gaji-bokkeum',
-  };
-  return mapping[dishName] || null;
-}
+
 
 function showCoupangRedirectOverlay() {
   const overlay = document.createElement('div');
