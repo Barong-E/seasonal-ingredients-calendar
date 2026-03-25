@@ -1598,28 +1598,6 @@
     ]
   },
   {
-    "name_ko": "참두릅",
-    "category": "채소",
-    "image": "cham_dureup.png",
-    "description_ko": "봄철 산나물의 제왕이라 불리는 고급 산나물. 쌉싸름한 맛과 짙은 향이 일품이며, 피로 회복과 면역력 증진에 좋습니다.",
-    "preparation_ko": "밑동을 자르고 겉잎을 뗀 후 반으로 갈라 끓는 물에 소금을 넣고 살짝 데칩니다.",
-    "storage_room_temp": "",
-    "storage_refrigerator": "종이행주로 감싸 밀폐용기에 넣어 보관, 가급적 1~2일 내 섭취.",
-    "storage_freezer": "데친 후 물기를 짜서 밀폐 냉동 보관.",
-    "external_url": "https://link.coupang.com/a/cTFaSS",
-    "calories_per_100g": 38,
-    "calories_per_serving": "100g당 약 38kcal",
-    "name_en": "",
-    "name_ja": "",
-    "description_en": "",
-    "description_ja": "",
-    "popular_dish": "참두릅 숙회, 참두릅 소고기말이",
-    "months": [
-      4,
-      5
-    ]
-  },
-  {
     "name_ko": "한치",
     "category": "해산물",
     "image": "hanchi.png",
