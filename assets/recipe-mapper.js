@@ -121,7 +121,16 @@ export function getRecipeIdFromDishName(dishName) {
     '국화주': 'gukwha-ju',
     '진달래 화채': 'jindallae-hwachae',
     '진달래화채': 'jindallae-hwachae',
-    '앵두화채': 'aengdu-hwachae'
+    '앵두화채': 'aengdu-hwachae',
+    // 2026 추가 신규 요리 8종
+    '참두릅 숙회': 'cham-dureup-sukhoe',
+    '참두릅 소고기말이': 'cham-dureup-beef-roll',
+    '한치 물회': 'hanchi-mulhoe',
+    '한치 통오븐구이': 'hanchi-oven-roast',
+    '낙지볶음': 'nakji-bokkeum',
+    '연포탕': 'nakji-yeonpotang',
+    '방어회 무침': 'bangeo-hoe-muchim',
+    '방어 대가리 무조림': 'bangeo-radish-stew'
   };
   return mapping[dishName] || null;
 }

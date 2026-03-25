@@ -1596,5 +1596,97 @@
       10,
       11
     ]
+  },
+  {
+    "name_ko": "참두릅",
+    "category": "채소",
+    "image": "cham_dureup.png",
+    "description_ko": "봄철 산나물의 제왕이라 불리는 고급 산나물. 쌉싸름한 맛과 짙은 향이 일품이며, 피로 회복과 면역력 증진에 좋습니다.",
+    "preparation_ko": "밑동을 자르고 겉잎을 뗀 후 반으로 갈라 끓는 물에 소금을 넣고 살짝 데칩니다.",
+    "storage_room_temp": "",
+    "storage_refrigerator": "종이행주로 감싸 밀폐용기에 넣어 보관, 가급적 1~2일 내 섭취.",
+    "storage_freezer": "데친 후 물기를 짜서 밀폐 냉동 보관.",
+    "external_url": "https://link.coupang.com/a/cTFaSS",
+    "calories_per_100g": 38,
+    "calories_per_serving": "100g당 약 38kcal",
+    "name_en": "",
+    "name_ja": "",
+    "description_en": "",
+    "description_ja": "",
+    "popular_dish": "참두릅 숙회, 참두릅 소고기말이",
+    "months": [
+      4,
+      5
+    ]
+  },
+  {
+    "name_ko": "한치",
+    "category": "해산물",
+    "image": "hanchi.png",
+    "description_ko": "오징어보다 부드럽고 쫄깃한 식감이 특징인 여름 바다의 별미. 비타민 E와 타우린이 풍부하여 심혈관 건강에 도움을 줍니다.",
+    "preparation_ko": "내장과 먹물을 조심스럽게 제거하고 껍질을 벗겨 깨끗이 씻습니다.",
+    "storage_room_temp": "",
+    "storage_refrigerator": "손질 후 밀폐 보관, 가급적 당일 소비.",
+    "storage_freezer": "손질 후 진공 포장하여 냉동 보관.",
+    "external_url": "https://link.coupang.com/a/cTFfng",
+    "calories_per_100g": 80,
+    "calories_per_serving": "100g당 약 80kcal",
+    "name_en": "",
+    "name_ja": "",
+    "description_en": "",
+    "description_ja": "",
+    "popular_dish": "한치 물회, 한치 통오븐구이",
+    "months": [
+      6,
+      7,
+      8
+    ]
+  },
+  {
+    "name_ko": "낙지",
+    "category": "해산물",
+    "image": "nakji.png",
+    "description_ko": "가을 갯벌의 산삼이라 불릴 만큼 원기 회복에 탁월한 해산물. 타우린과 무기질이 풍부하여 피로에 지친 몸에 활력을 불어넣습니다.",
+    "preparation_ko": "밀가루나 굵은 소금으로 바락바락 주물러 뻘과 빨판의 이물질을 제거합니다.",
+    "storage_room_temp": "",
+    "storage_refrigerator": "내장을 제거하고 깨끗이 씻어 냉장 보관하며 하루를 넘기지 않습니다.",
+    "storage_freezer": "손질한 뒤 소분하여 급속 냉동 보관.",
+    "external_url": "https://link.coupang.com/a/cTFhdM",
+    "calories_per_100g": 53,
+    "calories_per_serving": "1마리(약 100g) 약 53kcal",
+    "name_en": "",
+    "name_ja": "",
+    "description_en": "",
+    "description_ja": "",
+    "popular_dish": "낙지볶음, 연포탕",
+    "months": [
+      9,
+      10,
+      11
+    ]
+  },
+  {
+    "name_ko": "방어",
+    "category": "해산물",
+    "image": "bangeo.png",
+    "description_ko": "추운 겨울을 이겨내기 위해 지방질을 가득 축적한 최고의 겨울 횟감. 비타민 D와 오메가3가 풍부하여 노화예방과 뼈 건강에 좋습니다.",
+    "preparation_ko": "비늘과 내장을 제거하고 깨끗한 천으로 수분을 완전히 제거하여 손질합니다.",
+    "storage_room_temp": "",
+    "storage_refrigerator": "포를 뜬 상태로 공기를 차단해 냉장 숙성(1~2일 내 섭취).",
+    "storage_freezer": "밀봉하여 단기 냉동 구이/조림용으로 활용 가능.",
+    "external_url": "https://link.coupang.com/a/cTFgAo",
+    "calories_per_100g": 146,
+    "calories_per_serving": "100g당 약 146kcal",
+    "name_en": "",
+    "name_ja": "",
+    "description_en": "",
+    "description_ja": "",
+    "popular_dish": "방어회 무침, 방어 대가리 무조림",
+    "months": [
+      11,
+      12,
+      1,
+      2
+    ]
   }
 ]
