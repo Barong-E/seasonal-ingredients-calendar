@@ -14,26 +14,27 @@ body {
 /* main 스타일은 필요에 따라 추가 */
 
 /* Colors - 기본 변수 (계절 테마로 오버라이드됨) */
+/* Colors - 에메랄드 노아르 라이트 에디토리얼 */
 :root {
-  --text: #1a1a1a;
-  --bg: #fafbfc;
-  --bg-gradient: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
-  --primary: #3b82f6; /* 기본 파랑 */
-  --primary-gradient: linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%);
-  --accent: #ef4444; /* 기본 레드 */
-  --accent-gradient: linear-gradient(135deg, #ef4444 0%, #b91c1c 100%);
-  --muted: #e9ecef;
-  --glass-bg: rgba(255, 255, 255, 0.9);
-  --glass-border: rgba(255, 255, 255, 0.3);
-  --shadow-sm: 0 4px 12px rgba(0, 0, 0, 0.08);
-  --shadow-md: 0 8px 24px rgba(0, 0, 0, 0.12);
-  --shadow-lg: 0 16px 40px rgba(0, 0, 0, 0.16);
-  --peek: 12px;
-  --border-radius: 20px;
-  --border-radius-sm: 16px;
-  /* Dynamic layout metrics (set from JS) */
-  --header-h: 0px;
-  --controls-h: 0px;
+  --text: #111827;
+  --text-muted: #6b7280;
+  --bg: #f9fafb;
+  --bg-gradient: linear-gradient(180deg, #ffffff 0%, #f3f4f6 100%);
+  --primary: #065f46; /* 딥 에메랄드 */
+  --primary-light: #10b981;
+  --primary-gradient: linear-gradient(135deg, #065f46 0%, #059669 100%);
+  --accent: #991b1b; /* 딥 레드 */
+  --accent-gradient: linear-gradient(135deg, #991b1b 0%, #dc2626 100%);
+  --muted: #f3f4f6;
+  --glass-bg: rgba(255, 255, 255, 0.85);
+  --glass-border: rgba(255, 255, 255, 0.5);
+  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.08);
+  --shadow-lg: 0 10px 30px rgba(0, 0, 0, 0.12);
+  --border-radius: 16px;
+  --border-radius-sm: 12px;
+  --header-offset: 0px;
+  --serif-font: "Playfair Display", "Apple SD Gothic Neo", serif;
 }
 
 /* Seasonal Themes - 변수만 바꿔 전체 톤을 전환 */
@@ -200,18 +201,15 @@ body.theme-winter {
   opacity: 0.7;
 }
 .brand__primary {
-  font-size: 1.2rem;
-  background: var(--primary-gradient);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+  font-family: var(--serif-font);
+  font-size: 1.25rem;
+  color: var(--primary);
+  letter-spacing: -0.5px;
 }
 .brand__secondary {
-  font-size: 1.2rem;
-  background: var(--accent-gradient);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+  font-size: 1rem;
+  color: var(--text-muted);
+  font-weight: 400;
 }
 
 .header-controls {
@@ -285,21 +283,19 @@ body.has-banner .carousel {
 
 /* Period header styles */
 .period-header {
-  font-weight: 800;
-  background: var(--primary-gradient);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  font-size: 1.4rem;
-  text-align: center;
-  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  margin: 32px 0 16px;
-  padding: 16px 0;
-  border-bottom: 2px solid var(--muted);
+  font-family: var(--serif-font);
+  font-weight: 700;
+  color: var(--primary);
+  font-size: 1.5rem;
+  text-align: left;
+  margin: 48px 0 20px;
+  padding: 0 0 12px;
+  border-bottom: 3px double var(--muted);
+  letter-spacing: -0.5px;
 }
 
 .period-header:first-child {
-  margin-top: 16px;
+  margin-top: 24px;
 }
 
 /* Period grid container */
@@ -327,19 +323,24 @@ body.has-banner .carousel {
 }
 
 .new-ingredients-header {
-  font-size: 1.1rem;
+  font-size: 0.85rem;
   font-weight: 700;
-  color: var(--primary);
-  margin-bottom: 12px;
+  color: #059669;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 16px;
   display: flex;
   align-items: center;
-  gap: 6px;
-  padding: 8px 12px;
-  background: linear-gradient(135deg, rgba(255,255,255,0.8), rgba(255,255,255,0.4));
-  border-radius: var(--border-radius-sm);
-  border: 1px solid var(--glass-border);
-  box-shadow: 0 2px 8px rgba(0,0,0,0.02);
-  backdrop-filter: blur(8px);
+  gap: 8px;
+  padding: 0 4px;
+}
+
+.new-ingredients-header::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: linear-gradient(90deg, #10b981, transparent);
+  opacity: 0.3;
 }
 
 .new-icon {
@@ -414,20 +415,17 @@ body.has-banner .carousel {
 .card {
   position: relative;
   display: flex;
-  align-items: flex-start;
+  align-items: center;
   gap: 16px;
   width: 100%;
-  padding: 16px;
-  border: 1px solid var(--glass-border);
-  border-radius: var(--border-radius-sm);
-  background: var(--glass-bg);
-  backdrop-filter: blur(16px);
+  padding: 12px;
+  border: 1px solid #f3f4f6;
+  border-radius: 12px;
+  background: #ffffff;
   cursor: pointer;
-  transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
-  box-shadow: var(--shadow-sm);
+  transition: all 0.3s ease;
   overflow: hidden;
-  -webkit-tap-highlight-color: transparent; /* Android tap highlight 제거 */
-  -webkit-touch-callout: none;
+  -webkit-tap-highlight-color: transparent;
 }
 
 .card::before {
@@ -458,14 +456,12 @@ body.has-banner .carousel {
 }
 
 .thumb {
-  flex: 0 0 52px;
-  width: 52px;
-  height: 52px;
-  border-radius: var(--border-radius-sm);
+  flex: 0 0 48px;
+  width: 48px;
+  height: 48px;
+  border-radius: 10px;
   overflow: hidden;
-  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
-  box-shadow: var(--shadow-md);
-  transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+  background: #f3f4f6;
   position: relative;
 }
 
@@ -518,10 +514,11 @@ body.has-banner .carousel {
 }
 
 .title {
-  font-weight: 600;
+  font-family: var(--serif-font);
+  font-weight: 700;
   color: var(--text);
   font-size: 0.95rem;
-  line-height: 1.4;
+  line-height: 1.3;
   margin: 0;
 }
 
@@ -529,14 +526,9 @@ body.has-banner .carousel {
 .calories {
   display: flex;
   align-items: center;
-  gap: 4px;
-  font-size: 0.8rem;
-  font-weight: 500;
-  color: var(--accent);
-  background: linear-gradient(135deg, rgba(255, 111, 97, 0.1) 0%, rgba(239, 68, 68, 0.1) 100%);
-  padding: 3px 8px;
-  border-radius: 10px;
-  white-space: nowrap;
+  gap: 3px;
+  font-size: 0.75rem;
+  color: var(--text-muted);
   width: fit-content;
 }
 

@@ -489,12 +489,15 @@ function createCard(item) {
   };
   img.src = imgPath;
 
+  // 카테고리 라벨 제거 요청에 따라 주석 처리
+  /*
   if (item.category) {
     const catLabel = document.createElement('div');
     catLabel.className = 'card-category-label';
     catLabel.textContent = item.category;
     thumb.appendChild(catLabel);
   }
+  */
 
   // 칼로리 정보 표시
   if (item.calories_per_100g) {
@@ -574,7 +577,7 @@ function renderAllMonths() {
         
         const newHeader = document.createElement('div');
         newHeader.className = 'new-ingredients-header';
-        newHeader.innerHTML = '<span class="new-icon">✨</span> 이번 달 새로운 식재료';
+        newHeader.innerHTML = '<span class="new-icon">✦</span> 이달의 새로운 맛';
         newSection.appendChild(newHeader);
         
         const newGrid = document.createElement('div');
