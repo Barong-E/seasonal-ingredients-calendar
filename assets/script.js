@@ -593,6 +593,11 @@ function renderAllMonths() {
         const existSection = document.createElement('div');
         existSection.className = 'existing-ingredients-section';
         
+        const existHeader = document.createElement('div');
+        existHeader.className = 'existing-ingredients-header';
+        existHeader.textContent = '계속해서 제철인 맛';
+        existSection.appendChild(existHeader);
+        
         const existGrid = document.createElement('div');
         existGrid.className = 'grid';
         existGrid.setAttribute('role', 'list');

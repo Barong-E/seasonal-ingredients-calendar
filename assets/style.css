@@ -305,42 +305,59 @@ body.has-banner .carousel {
 
 /* 신규 식재료 섹션 추가 스타일 */
 .new-ingredients-section {
-  margin-bottom: 24px;
+  margin-bottom: 40px;
+  background-color: #f0fdf4; /* 매우 연한 에메랄드 그린 */
+  padding: 20px 14px;
+  border-radius: var(--border-radius);
+  border: 1px solid #d1fae5;
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.02);
 }
+
 .existing-ingredients-section {
-  margin-bottom: 16px;
-  position: relative;
-}
-
-/* 기존 식재료 구역 상단 구분선 (자연스러운 구분) */
-.existing-ingredients-section::before {
-  content: '';
-  display: block;
-  width: 100%;
-  height: 1px;
-  background: linear-gradient(90deg, transparent, rgba(0,0,0,0.05) 50%, transparent);
-  margin: 12px 0 24px 0;
-}
-
-.new-ingredients-header {
-  font-size: 0.85rem;
-  font-weight: 700;
-  color: #059669;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  margin-bottom: 16px;
-  display: flex;
-  align-items: center;
-  gap: 8px;
+  margin-top: 24px;
+  margin-bottom: 32px;
   padding: 0 4px;
 }
 
+.new-ingredients-header {
+  font-size: 0.82rem;
+  font-weight: 800;
+  color: #047857;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+  margin-bottom: 16px;
+  padding-left: 4px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
 .new-ingredients-header::after {
+  content: 'NEW';
+  background: #059669;
+  color: white;
+  font-size: 10px;
+  padding: 1px 6px;
+  border-radius: 4px;
+  font-weight: 900;
+}
+
+.existing-ingredients-header {
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--text-muted);
+  margin-bottom: 16px;
+  padding-left: 4px;
+  display: flex;
+  align-items: center;
+}
+
+.existing-ingredients-header::after {
   content: '';
   flex: 1;
   height: 1px;
-  background: linear-gradient(90deg, #10b981, transparent);
-  opacity: 0.3;
+  background: var(--muted);
+  margin-left: 12px;
 }
 
 .new-icon {
