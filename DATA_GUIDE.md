@@ -56,6 +56,7 @@
 식재료 이미지를 생성할 때는 기존 앱의 **만화/일러스트 톤앤매너**를 유지해야 합니다.
 - **추천 프롬프트 스타일**: 
   > `Cute 2D cartoon style vector illustration of [식재료 영문명], bright colors, clean white background, simple outlines, food icon style`
+- **⚠️ 중요 (여백 조절)**: 이미지가 너무 작게 보이지 않도록 **피사체가 화면에 꽉 차게(Filling the frame)** 생성해야 합니다. 프롬프트에 `close up`, `filling the frame with minimal margins`와 같은 키워드를 추가하여 여백이 너무 많이 남지 않도록 조절하세요.
 
 ---
 
