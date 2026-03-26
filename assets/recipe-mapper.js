@@ -128,7 +128,25 @@ export function getRecipeIdFromDishName(dishName) {
     '낙지볶음': 'nakji-bokkeum',
     '연포탕': 'nakji-yeonpotang',
     '방어회 무침': 'bangeo-hoe-muchim',
-    '방어 대가리 무조림': 'bangeo-radish-stew'
+    '방어 대가리 무조림': 'bangeo-radish-stew',
+    // 2026 과일 보강 및 데이터 정제 레시피 17종
+    '포도잼': 'grape-jam',
+    '포도주스': 'grape-juice',
+    '살구잼': 'apricot-jam',
+    '살구청': 'apricot-cheong',
+    '앵두편': 'aengdu-pyeon',
+    '한라봉청': 'hallabong-cheong',
+    '한라봉에이드': 'hallabong-ade',
+    '무화과잼': 'fig-jam',
+    '복숭아잼': 'peach-jam',
+    '사과잼': 'apple-jam',
+    '수박화채': 'watermelon-hwachae',
+    '자두청': 'plum-cheong',
+    '참외무침': 'chamoe-muchim',
+    '곶감': 'gotgam',
+    '딸기잼': 'strawberry-jam',
+    '배숙': 'baesuk',
+    '블루베리 스무디': 'blueberry-smoothie'
   };
   return mapping[dishName] || null;
 }

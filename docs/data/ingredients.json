@@ -37,7 +37,7 @@
     "name_ja": "",
     "description_en": "",
     "description_ja": "",
-    "popular_dish": "생과일로 먹거나 곶감으로 즐깁니다",
+    "popular_dish": "곶감",
     "months": [
       10,
       11
@@ -525,7 +525,7 @@
     "external_url": "https://link.coupang.com/a/cTFdc2",
     "calories_per_100g": 34,
     "calories_per_serving": "중간 크기 1개(15g) 약 5kcal",
-    "popular_dish": "생과일로 먹거나 딸기잼을 만듭니다",
+    "popular_dish": "딸기잼",
     "months": [
       1,
       2,
@@ -674,7 +674,7 @@
     "external_url": "https://link.coupang.com/a/cTFdkO",
     "calories_per_100g": 54,
     "calories_per_serving": "1개(60g) 약 32kcal",
-    "popular_dish": "생과일로 섭취합니다",
+    "popular_dish": "무화과잼",
     "months": [
       9
     ]
@@ -783,7 +783,7 @@
     "external_url": "https://link.coupang.com/a/cTFe71",
     "calories_per_100g": 51,
     "calories_per_serving": "중간 크기 1개(300g) 약 153kcal",
-    "popular_dish": "생과일로 먹거나 배숙을 만듭니다",
+    "popular_dish": "배숙",
     "months": [
       9,
       10,
@@ -850,7 +850,7 @@
     "external_url": "https://link.coupang.com/a/cTFdQ3",
     "calories_per_100g": 39,
     "calories_per_serving": "중간 크기 1개(200g) 약 78kcal",
-    "popular_dish": "생과일로 섭취합니다",
+    "popular_dish": "복숭아잼",
     "months": [
       7,
       8
@@ -893,7 +893,7 @@
     "external_url": "https://link.coupang.com/a/cTFeiV",
     "calories_per_100g": 57,
     "calories_per_serving": "한 줌(100g) 약 57kcal",
-    "popular_dish": "생과일로 먹거나 스무디를 만듭니다",
+    "popular_dish": "블루베리 스무디",
     "months": [
       7,
       8
@@ -915,7 +915,7 @@
     "external_url": "https://link.coupang.com/a/cTFetT",
     "calories_per_100g": 52,
     "calories_per_serving": "중간 크기 1개(250g) 약 130kcal",
-    "popular_dish": "생과일로 섭취합니다",
+    "popular_dish": "사과잼",
     "months": [
       9,
       10,
@@ -961,7 +961,7 @@
     "external_url": "https://link.coupang.com/a/cU4arn",
     "calories_per_100g": 83,
     "calories_per_serving": "1개 알맹이(100g) 약 83kcal",
-    "popular_dish": "생과일로 먹거나 석류주스를 만듭니다",
+    "popular_dish": "석류주스",
     "months": [
       10,
       11
@@ -1005,7 +1005,7 @@
     "external_url": "https://link.coupang.com/a/cTFeIx",
     "calories_per_100g": 30,
     "calories_per_serving": "1조각(200g) 약 60kcal",
-    "popular_dish": "생과일로 섭취합니다",
+    "popular_dish": "수박화채",
     "months": [
       7,
       8
@@ -1290,7 +1290,7 @@
     "external_url": "https://link.coupang.com/a/cTFeOK",
     "calories_per_100g": 46,
     "calories_per_serving": "1개(70g) 약 32kcal",
-    "popular_dish": "생과일로 섭취합니다",
+    "popular_dish": "자두청",
     "months": [
       7
     ]
@@ -1398,7 +1398,7 @@
     "external_url": "https://link.coupang.com/a/cU4bzq",
     "calories_per_100g": 31,
     "calories_per_serving": "1개(300g) 약 93kcal",
-    "popular_dish": "생과일로 섭취합니다",
+    "popular_dish": "참외무침",
     "months": [
       7
     ]
@@ -1683,7 +1683,7 @@
     "external_url": "https://link.coupang.com/a/cTFeIx",
     "calories_per_100g": 60,
     "calories_per_serving": "100g당 약 60kcal",
-    "popular_dish": "생과일, 포도주스, 포도잼",
+    "popular_dish": "포도주스, 포도잼",
     "months": [
       8,
       9
@@ -1705,7 +1705,7 @@
     "external_url": "https://link.coupang.com/a/cTFeIx",
     "calories_per_100g": 28,
     "calories_per_serving": "100g당 약 28kcal",
-    "popular_dish": "생과일, 살구잼, 살구청",
+    "popular_dish": "살구잼, 살구청",
     "months": [
       6,
       7
@@ -1727,7 +1727,7 @@
     "external_url": "https://link.coupang.com/a/cTFeIx",
     "calories_per_100g": 36,
     "calories_per_serving": "100g당 약 36kcal",
-    "popular_dish": "생과일, 앵두편, 앵두화채",
+    "popular_dish": "앵두편, 앵두화채",
     "months": [
       6
     ]
@@ -1748,7 +1748,7 @@
     "external_url": "https://link.coupang.com/a/cTFfTx",
     "calories_per_100g": 48,
     "calories_per_serving": "100g당 약 48kcal",
-    "popular_dish": "생과일, 한라봉청, 한라봉에이드",
+    "popular_dish": "한라봉청, 한라봉에이드",
     "months": [
       1,
       2,
