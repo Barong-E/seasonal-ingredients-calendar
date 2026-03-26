@@ -7,17 +7,18 @@ import { getRecipeIdFromDishName } from './recipe-mapper.js';
 // 띵동 제철음식 메인 스크립트
 // 규칙: ES 모듈 없이 단일 페이지 스크립트
 
-const CACHE_KEY = 'seasons:ingredients:v15';
+const CACHE_KEY = 'seasons:ingredients:v16';
 const CACHE_TTL_MS = 24 * 60 * 60 * 1000; // 24h
 
 // 구버전 캐시 강제 삭제 (버전 충돌 방지)
 try {
+  localStorage.removeItem('seasons:ingredients:v15');
   localStorage.removeItem('seasons:ingredients:v14');
   localStorage.removeItem('seasons:ingredients:v13');
   localStorage.removeItem('seasons:ingredients:v12');
   localStorage.removeItem('seasons:ingredients:v11');
   localStorage.removeItem('seasons:ingredients:v10');
-  console.log('구버전 캐시 초기화 완료 (v15)');
+  console.log('구버전 캐시 초기화 완료 (v16)');
 } catch (e) {
   // ignore
 }

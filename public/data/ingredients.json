@@ -1666,5 +1666,93 @@
       1,
       2
     ]
+  },
+  {
+    "name_ko": "포도",
+    "category": "과일",
+    "image": "grape.png",
+    "description_ko": "달콤하고 과즙이 풍부한 여름과 가을의 대표 과일. 안토시아닌이 풍부해 눈 건강과 항산화에 좋으며, 구연산이 들어있어 피로 회복에 탁월합니다.",
+    "preparation_ko": "송이째 물에 잠시 담갔다 흐르는 물에 헹구며, 식초를 한 방울 떨어뜨리면 더 깨끗이 세척됩니다.",
+    "storage_room_temp": "",
+    "storage_refrigerator": "씻지 않은 상태로 신문지나 랩에 싸서 냉장 보관합니다.",
+    "storage_freezer": "알알이 떼어 씻은 후 물기를 닦고 급속 냉동하여 셔벗처럼 즐깁니다.",
+    "name_en": "",
+    "name_ja": "",
+    "description_en": "",
+    "description_ja": "",
+    "external_url": "https://link.coupang.com/a/cTFeIx",
+    "calories_per_100g": 60,
+    "calories_per_serving": "100g당 약 60kcal",
+    "popular_dish": "생과일, 포도주스, 포도잼",
+    "months": [
+      8,
+      9
+    ]
+  },
+  {
+    "name_ko": "살구",
+    "category": "과일",
+    "image": "apricot.png",
+    "description_ko": "노란빛의 새콤달콤한 과일로 비타민 A와 베타카로틴이 풍부합니다. 야맹증 예방과 피부 미용에 좋으며, 기관지 건강에도 도움을 줍니다.",
+    "preparation_ko": "흐르는 물에 가볍게 씻은 뒤 씨를 제거하고 먹습니다.",
+    "storage_room_temp": "딱딱한 살구는 실온에서 1~2일 후숙하여 말랑해지면 섭취합니다.",
+    "storage_refrigerator": "후숙 후에는 키친타월로 개별 포장하여 냉장 보관합니다.",
+    "storage_freezer": "씨를 제거하고 과육만 소분하여 냉동 보관 후 스무디로 활용합니다.",
+    "name_en": "",
+    "name_ja": "",
+    "description_en": "",
+    "description_ja": "",
+    "external_url": "https://link.coupang.com/a/cTFeIx",
+    "calories_per_100g": 28,
+    "calories_per_serving": "100g당 약 28kcal",
+    "popular_dish": "생과일, 살구잼, 살구청",
+    "months": [
+      6,
+      7
+    ]
+  },
+  {
+    "name_ko": "앵두",
+    "category": "과일",
+    "image": "korean-cherry.png",
+    "description_ko": "빨갛고 작은 보석 같은 과일로 유기산이 풍부해 식욕을 돋우고 피로를 풀어줍니다. 수분 대사를 도와 부기를 빼는 데도 효과적입니다.",
+    "preparation_ko": "쉽게 물러지므로 먹기 직전에 가볍게 흔들어 씻습니다.",
+    "storage_room_temp": "",
+    "storage_refrigerator": "수분이 닿지 않게 밀폐 용기에 담아 1~2일 내로 섭취합니다.",
+    "storage_freezer": "깨끗이 씻어 물기를 닦은 후 설탕과 1:1로 버무려 냉동 보관합니다.",
+    "name_en": "",
+    "name_ja": "",
+    "description_en": "",
+    "description_ja": "",
+    "external_url": "https://link.coupang.com/a/cTFeIx",
+    "calories_per_100g": 36,
+    "calories_per_serving": "100g당 약 36kcal",
+    "popular_dish": "생과일, 앵두편, 앵두화채",
+    "months": [
+      6
+    ]
+  },
+  {
+    "name_ko": "한라봉",
+    "category": "과일",
+    "image": "hallabong.png",
+    "description_ko": "꼭지가 튀어나온 모양이 한라산을 닮은 제주 특산품. 비타민 C가 매우 풍부해 면역력 강화와 감기 예방, 피부 미용에 아주 좋습니다.",
+    "preparation_ko": "껍질을 벗겨 과육만 먹거나, 껍질째 씻어 청을 담급니다.",
+    "storage_room_temp": "서늘한 실온에서 며칠 숙성하면 신맛이 빠지고 당도가 높아집니다.",
+    "storage_refrigerator": "숙성 후에는 개별 포장해 냉장 보관하면 수분이 덜 빠집니다.",
+    "storage_freezer": "착즙하거나 과육만 발라내어 소분 냉동 보관합니다.",
+    "name_en": "",
+    "name_ja": "",
+    "description_en": "",
+    "description_ja": "",
+    "external_url": "https://link.coupang.com/a/cTFfTx",
+    "calories_per_100g": 48,
+    "calories_per_serving": "100g당 약 48kcal",
+    "popular_dish": "생과일, 한라봉청, 한라봉에이드",
+    "months": [
+      1,
+      2,
+      3
+    ]
   }
 ]
