@@ -21,6 +21,12 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
+/* 명절 페이지 전용 스냅 */
+body.page-holidays {
+  scroll-snap-type: y mandatory;
+  overflow-y: scroll;
+}
+
 /* main 스타일은 필요에 따라 추가 */
 
 /* Colors - 기본 변수 (계절 테마로 오버라이드됨) */
@@ -1145,6 +1151,12 @@ body.has-banner .carousel {
 /* --- Single-scroll hard guard (forces only body to scroll) --- */
 html, body { overflow-x: hidden !important; overflow-y: auto !important; }
 
+/* 명절 리스트 컨테이너 여백 조정 */
+.holidays-container {
+  padding-top: 40vh !important;
+  padding-bottom: 40vh !important;
+}
+
 /* --- 하단 탭바 (GNB) --- */
 .gnb {
   position: fixed;
@@ -1200,10 +1212,12 @@ main {
   color: inherit;
   box-shadow: var(--shadow-sm);
   transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-  margin-bottom: 20px;
+  margin-bottom: 24px; /* 간격 살짝 확대 */
   overflow: hidden;
   border: 1px solid rgba(0,0,0,0.05);
   position: relative;
+  scroll-snap-align: center; /* 중앙 스냅 */
+  scroll-snap-stop: always;
 }
 
 .holiday-item.active {

@@ -169,7 +169,7 @@ async function renderHolidaysList(searchText = '') {
 function initFocusObserver() {
   const options = {
     root: null,
-    rootMargin: '-40% 0% -40% 0%', // 화면 중앙 부근 감지
+    rootMargin: '-45% 0% -45% 0%', // 화면 중앙 부근 (중앙 10% 영역) 감지
     threshold: 0
   };
 
@@ -177,7 +177,9 @@ function initFocusObserver() {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
         // 기존 active 제거
-        document.querySelectorAll('.holiday-item.active').forEach(el => el.classList.remove('active'));
+        document.querySelectorAll('.holiday-item.active').forEach(el => {
+          if (el !== entry.target) el.classList.remove('active');
+        });
         // 현재 아이템 active 추가
         entry.target.classList.add('active');
       }
@@ -187,6 +189,25 @@ function initFocusObserver() {
   document.querySelectorAll('.holiday-item').forEach(item => {
     observer.observe(item);
   });
+
+  // 스크롤이 맨 위나 맨 아래일 때 첫/끝 항목 강제 활성화 보정
+  window.addEventListener('scroll', () => {
+    const items = document.querySelectorAll('.holiday-item');
+    if (items.length === 0) return;
+
+    if (window.scrollY < 50) {
+      if (!items[0].classList.contains('active')) {
+        items.forEach(el => el.classList.remove('active'));
+        items[0].classList.add('active');
+      }
+    } else if (window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - 50) {
+      const lastIdx = items.length - 1;
+      if (!items[lastIdx].classList.contains('active')) {
+        items.forEach(el => el.classList.remove('active'));
+        items[lastIdx].classList.add('active');
+      }
+    }
+  }, { passive: true });
 }
 
 function scrollToClosestHoliday(holidays, today) {
