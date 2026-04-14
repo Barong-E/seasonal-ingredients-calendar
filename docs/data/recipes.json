@@ -8348,5 +8348,30 @@
       { "step": 4, "description": "진간장을 넣어 간을 하고 가볍게 더 볶아 마무리합니다." }
     ],
     "relatedIngredients": ["팽이버섯"]
+  },
+  {
+    "id": "dried-enoki-tea",
+    "name": "말린 팽이버섯 차",
+    "category": "채소",
+    "description": "햇볕에 말려 영양이 응축된 팽이버섯을 덖어 만든 건강 차입니다. 고소한 풍미와 다이어트 효능이 뛰어납니다.",
+    "image": "enoki-mushroom.png",
+    "servings": 1,
+    "cookTime": "15분",
+    "difficulty": "중급",
+    "ingredients": [
+      { "name": "말린 팽이버섯", "amount": "5g-10g" },
+      { "name": "물", "amount": "500ml" }
+    ],
+    "steps": [
+      { "step": 1, "description": "팽이버섯의 밑동을 자르고 가닥가닥 떼어 햇볕이나 건조기에 1-2일 바짝 말립니다." },
+      { "step": 2, "description": "아무것도 두르지 않은 마른 팬에 말린 팽이버섯을 넣고 약불에서 노릇하게 덖어 풍미를 높입니다." },
+      { "step": 3, "description": "주전자에 물과 덖은 팽이버섯을 넣고 한소끔 끓인 뒤, 약불로 줄여 10분 정도 충분히 우려냅니다." },
+      { "step": 4, "description": "버섯 건더기와 함께 찻잔에 담아 따뜻하게 마십니다." }
+    ],
+    "tips": [
+      "팽이버섯을 말리면 비타민 D 함량이 높아지고 지방 분해 성분이 응축됩니다.",
+      "우려내고 남은 버섯 건더기에는 식이섬유가 풍부하므로 함께 드시는 것이 좋습니다."
+    ],
+    "relatedIngredients": ["팽이버섯"]
   }
 ]

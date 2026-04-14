@@ -149,6 +149,7 @@ export function getRecipeIdFromDishName(dishName) {
     '블루베리 스무디': 'blueberry-smoothie',
     '팽이버섯전': 'enoki-mushroom-pancake',
     '팽이버섯볶음': 'enoki-mushroom-stir-fry',
+    '말린 팽이버섯 차': 'dried-enoki-tea',
     '명이나물 장아찌': 'pickled-wild-garlic',
     '명이나물 쌈': 'pickled-wild-garlic'
   };

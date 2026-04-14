@@ -18,7 +18,7 @@ function getRecipeIdFromUrl() {
 // 레시피 데이터 로드
 async function loadRecipe(recipeId) {
   try {
-    const res = await fetch('data/recipes.json?v=v24');
+    const res = await fetch('data/recipes.json?v=v25');
     if (!res.ok) throw new Error('레시피 데이터 로드 실패');
     const recipes = await res.json();
     return recipes.find(recipe => recipe.id === recipeId);
