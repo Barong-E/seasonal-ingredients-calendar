@@ -189,25 +189,6 @@ function initFocusObserver() {
   document.querySelectorAll('.holiday-item').forEach(item => {
     observer.observe(item);
   });
-
-  // 스크롤이 맨 위나 맨 아래일 때 첫/끝 항목 강제 활성화 보정
-  window.addEventListener('scroll', () => {
-    const items = document.querySelectorAll('.holiday-item');
-    if (items.length === 0) return;
-
-    if (window.scrollY < 50) {
-      if (!items[0].classList.contains('active')) {
-        items.forEach(el => el.classList.remove('active'));
-        items[0].classList.add('active');
-      }
-    } else if (window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - 50) {
-      const lastIdx = items.length - 1;
-      if (!items[lastIdx].classList.contains('active')) {
-        items.forEach(el => el.classList.remove('active'));
-        items[lastIdx].classList.add('active');
-      }
-    }
-  }, { passive: true });
 }
 
 function scrollToClosestHoliday(holidays, today) {
@@ -235,6 +216,9 @@ function scrollToClosestHoliday(holidays, today) {
     const items = document.querySelectorAll('.holiday-item');
     if (items[closestIndex]) {
       setTimeout(() => {
+        // 기존 active 제거 (충돌 방지)
+        document.querySelectorAll('.holiday-item.active').forEach(el => el.classList.remove('active'));
+        
         items[closestIndex].scrollIntoView({ behavior: 'smooth', block: 'center' });
         items[closestIndex].classList.add('active');
       }, 300);

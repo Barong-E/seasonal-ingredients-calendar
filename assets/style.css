@@ -1153,8 +1153,8 @@ html, body { overflow-x: hidden !important; overflow-y: auto !important; }
 
 /* 명절 리스트 컨테이너 여백 조정 */
 .holidays-container {
-  padding-top: 40vh !important;
-  padding-bottom: 40vh !important;
+  padding-top: 50vh !important;
+  padding-bottom: 50vh !important;
 }
 
 /* --- 하단 탭바 (GNB) --- */
