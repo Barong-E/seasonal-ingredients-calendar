@@ -272,7 +272,7 @@ async function loadIngredients() {
     }
   } catch {}
 
-  const res = await fetch('data/ingredients.json?v=v18', { cache: 'no-cache' });
+  const res = await fetch('data/ingredients.json?v=v19', { cache: 'no-cache' });
   if (!res.ok) throw new Error('데이터 로드 실패');
   const data = await res.json();
   try {
@@ -364,7 +364,7 @@ function createCard(item) {
   const caloriesValue = node.querySelector('.calories-value');
 
   title.textContent = item.name_ko || '';
-  const imgPath = `images/${item.image || '_fallback.png'}?v=v9`;
+  const imgPath = `images/${item.image || '_fallback.png'}?v=v10`;
   img.alt = item.name_ko ? `${item.name_ko} 이미지` : '재료 이미지';
   img.onerror = () => { 
     img.onerror = null; 

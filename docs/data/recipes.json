@@ -8277,5 +8277,52 @@
       "블루베리"
     ],
     "relatedHolidays": []
+  },
+  {
+    "id": "enoki-mushroom-pancake",
+    "name": "팽이버섯전",
+    "category": "채소",
+    "description": "쫄깃한 팽이버섯과 고소한 계란이 어우러진 간단하고 맛있는 전 요리입니다.",
+    "image": "enoki-pancake.png",
+    "servings": 2,
+    "cookTime": "15분",
+    "difficulty": "초급",
+    "ingredients": [
+      { "name": "팽이버섯", "amount": "1봉지" },
+      { "name": "계란", "amount": "2개" },
+      { "name": "쪽파", "amount": "2대" },
+      { "name": "소금", "amount": "약간" }
+    ],
+    "steps": [
+      { "step": 1, "description": "팽이버섯 밑동을 자르고 가닥가닥 찢어 준비합니다." },
+      { "step": 2, "description": "쪽파를 송송 썰어 준비합니다." },
+      { "step": 3, "description": "볼에 계란을 풀고 소금으로 간한 뒤, 팽이버섯과 채소를 넣어 잘 섞습니다." },
+      { "step": 4, "description": "달군 팬에 식용유를 두르고 한 숟갈씩 떠서 노릇하게 지집니다." }
+    ],
+    "relatedIngredients": ["팽이버섯"]
+  },
+  {
+    "id": "pickled-wild-garlic",
+    "name": "명이나물 장아찌",
+    "category": "채소",
+    "description": "알싸한 명이 특유의 향을 오래 즐길 수 있는 고기 도둑 장아찌입니다.",
+    "image": "pickled-wild-garlic.png",
+    "servings": 4,
+    "cookTime": "20분",
+    "difficulty": "중급",
+    "ingredients": [
+      { "name": "명이나물", "amount": "300g" },
+      { "name": "간장", "amount": "1컵" },
+      { "name": "설탕", "amount": "1컵" },
+      { "name": "식초", "amount": "1컵" },
+      { "name": "물", "amount": "1컵" }
+    ],
+    "steps": [
+      { "step": 1, "description": "명이나물을 깨끗이 씻어 물기를 완전히 제거합니다." },
+      { "step": 2, "description": "간장, 설탕, 식초, 물을 냄비에 넣고 한소끔 끓인 뒤 한김 식힙니다." },
+      { "step": 3, "description": "용기에 명이나물을 차곡차곡 담고 준비한 양념장을 붓습니다." },
+      { "step": 4, "description": "상온에서 하루 숙성 후 냉장 보관하며, 2-3일 뒤부터 드시면 좋습니다." }
+    ],
+    "relatedIngredients": ["명이나물"]
   }
 ]

@@ -146,7 +146,9 @@ export function getRecipeIdFromDishName(dishName) {
     '곶감': 'gotgam',
     '딸기잼': 'strawberry-jam',
     '배숙': 'baesuk',
-    '블루베리 스무디': 'blueberry-smoothie'
+    '블루베리 스무디': 'blueberry-smoothie',
+    '팽이버섯전': 'enoki-mushroom-pancake',
+    '명이나물 장아찌': 'pickled-wild-garlic'
   };
   return mapping[dishName] || null;
 }
