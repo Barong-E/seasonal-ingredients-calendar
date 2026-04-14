@@ -125,8 +125,8 @@ async function renderHolidaysList(searchText = '') {
     const imgSrc = holiday.image ? `images/${holiday.image}` : `images/_fallback.png`;
 
     // 대표 음식/풍습 이름만 추출
-    const foodNames = (holiday.foods || []).map(f => f.name);
-    const customNames = (holiday.customs || []).map(c => c.name);
+    const foodNames = (holiday.details?.foods || []).map(f => f.name);
+    const customNames = (holiday.details?.customs || []).map(c => c.name);
 
     link.innerHTML = `
       <div class="holiday-item-top">
