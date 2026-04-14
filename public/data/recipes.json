@@ -1,4 +1,60 @@
-,
+[
+  {
+    "id": "sora-muchim",
+    "name": "소라무침",
+    "description": "신선한 소라를 양념에 버무린 한국 전통 무침 요리.",
+    "servings": 2,
+    "cookTime": "15분",
+    "difficulty": "쉬움",
+    "ingredients": [
+      {"name": "소라", "amount": "200g"},
+      {"name": "고춧가루", "amount": "1큰술"},
+      {"name": "다진 마늘", "amount": "1작은술"},
+      {"name": "참기름", "amount": "1작은술"},
+      {"name": "식초", "amount": "1큰술"},
+      {"name": "설탕", "amount": "1작은술"},
+      {"name": "소금", "amount": "약간"}
+    ],
+    "seasoning": [],
+    "steps": [
+      {"step": 1, "description": "소라를 깨끗이 씻어 끓는 물에 2분 정도 데쳐 식힌다."},
+      {"step": 2, "description": "데친 소라를 먹기 좋은 크기로 썬다."},
+      {"step": 3, "description": "볼에 고춧가루, 다진 마늘, 참기름, 식초, 설탕, 소금을 넣고 양념장을 만든다."},
+      {"step": 4, "description": "소라와 양념장을 버무려 10분 정도 숙성시킨다."}
+    ],
+    "tips": ["신선한 소라를 사용하면 더욱 맛있습니다."]
+  },
+  {
+    "id": "gul-jeongol",
+    "name": "굴전골",
+    "description": "굴과 다양한 해산물을 넣어 끓인 전골 요리.",
+    "servings": 4,
+    "cookTime": "30분",
+    "difficulty": "보통",
+    "ingredients": [
+      {"name": "굴", "amount": "300g"},
+      {"name": "새우", "amount": "200g"},
+      {"name": "오징어", "amount": "150g"},
+      {"name": "양파", "amount": "1개"},
+      {"name": "대파", "amount": "1대"},
+      {"name": "청양고추", "amount": "2개"},
+      {"name": "다진 마늘", "amount": "1큰술"},
+      {"name": "고춧가루", "amount": "1큰술"},
+      {"name": "국간장", "amount": "2큰술"},
+      {"name": "소금", "amount": "약간"},
+      {"name": "후추", "amount": "약간"},
+      {"name": "물", "amount": "1L"}
+    ],
+    "seasoning": [],
+    "steps": [
+      {"step": 1, "description": "굴은 깨끗이 씻어 물기를 제거한다."},
+      {"step": 2, "description": "새우와 오징어는 먹기 좋은 크기로 썬다."},
+      {"step": 3, "description": "냄비에 물을 붓고 다진 마늘, 고춧가루, 국간장을 넣어 끓인다."},
+      {"step": 4, "description": "재료들을 모두 넣고 15분 정도 끓인다."},
+      {"step": 5, "description": "소금과 후추로 간을 맞춘 뒤 불을 끈다."}
+    ],
+    "tips": ["굴은 너무 오래 끓이면 질겨질 수 있으니 마지막에 넣으세요."]
+  },
   {
     "id": "grape-jam",
     "name": "포도잼",
