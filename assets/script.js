@@ -424,6 +424,13 @@ function renderAllMonths() {
     const gridContainer = document.createElement('div');
     gridContainer.className = 'period-grid';
     
+    // 검색 결과 없음 표시용 요소 생성
+    const empty = document.createElement('div');
+    empty.className = 'empty';
+    empty.setAttribute('role', 'status');
+    empty.setAttribute('aria-live', 'polite');
+    empty.textContent = '검색 결과가 없습니다.';
+    
     monthSection.appendChild(gridContainer);
     trackEl.appendChild(monthSection);
     
