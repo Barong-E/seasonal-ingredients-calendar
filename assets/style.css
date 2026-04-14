@@ -23,8 +23,8 @@ body {
 
 /* 명절 페이지 전용 스냅 */
 body.page-holidays {
-  scroll-snap-type: y mandatory;
-  overflow-y: scroll;
+  scroll-snap-type: y proximity;
+  overflow-y: scroll !important;
 }
 
 /* main 스타일은 필요에 따라 추가 */
