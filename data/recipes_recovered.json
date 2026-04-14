@@ -1,0 +1,346 @@
+[
+  {
+    "id": "galchi-jorim",
+    "name": "갈치조림",
+    "category": "해산물",
+    "description": "갈치를 무와 함께 매콤하게 조린 한국의 대표적인 생선 요리입니다.",
+    "image": "recipe-galchi-jorim.jpg",
+    "servings": 4,
+    "cookTime": "40분",
+    "difficulty": "중급",
+    "ingredients": [
+      {"name": "갈치", "amount": "2마리 (토막 낸 것)"},
+      {"name": "무", "amount": "1/3개 (약 300g)"},
+      {"name": "대파", "amount": "1대"},
+      {"name": "청양고추", "amount": "2개"},
+      {"name": "홍고추", "amount": "1개"},
+      {"name": "마늘", "amount": "5쪽"},
+      {"name": "생강", "amount": "1톨"}
+    ],
+    "seasoning": [
+      {"name": "고추장", "amount": "3큰술"},
+      {"name": "고춧가루", "amount": "2큰술"},
+      {"name": "간장", "amount": "3큰술"},
+      {"name": "맛술", "amount": "2큰술"},
+      {"name": "설탕", "amount": "1큰술"},
+      {"name": "다진 마늘", "amount": "1큰술"},
+      {"name": "참기름", "amount": "1큰술"},
+      {"name": "물", "amount": "2컵"}
+    ],
+    "steps": [
+      {
+        "step": 1,
+        "description": "갈치는 내장을 제거하고 깨끗이 씻어 키친타월로 물기를 제거합니다."
+      },
+      {
+        "step": 2,
+        "description": "무는 1cm 두께로 나박썰기하고, 대파는 어슷썰기, 청양고추와 홍고추는 송송 썰어줍니다."
+      },
+      {
+        "step": 3,
+        "description": "볼에 고추장, 고춧가루, 간장, 맛술, 설탕, 다진 마늘, 참기름, 물을 넣고 잘 섞어 양념장을 만듭니다."
+      },
+      {
+        "step": 4,
+        "description": "냄비에 무를 깔고 그 위에 갈치를 올린 후 양념장을 고루 끼얹습니다."
+      },
+      {
+        "step": 5,
+        "description": "중불에서 끓이다가 끓어오르면 약불로 줄여 20분간 조립니다. 중간에 국물을 끼얹어가며 간이 배도록 합니다."
+      },
+      {
+        "step": 6,
+        "description": "대파와 고추를 넣고 5분 더 조린 후 불을 끄고 그릇에 담아냅니다."
+      }
+    ],
+    "tips": [
+      "갈치는 신선한 것을 사용하고, 너무 오래 조리하면 살이 부서지므로 주의하세요.",
+      "무를 먼저 깔면 눌어붙는 것을 방지하고 갈치에 무의 단맛이 배어 더 맛있습니다.",
+      "양념이 걸쭉해질 때까지 조리면 더욱 맛있습니다."
+    ],
+    "relatedIngredients": ["갈치", "무"],
+    "relatedHolidays": []
+  },
+  {
+    "id": "tteokguk",
+    "name": "떡국",
+    "category": "명절음식",
+    "description": "설날에 먹는 대표적인 명절 음식으로, 흰 가래떡을 얇게 썰어 맑은 국물에 끓인 떡국입니다.",
+    "image": "recipe-tteokguk.jpg",
+    "servings": 4,
+    "cookTime": "50분",
+    "difficulty": "초급",
+    "ingredients": [
+      {"name": "가래떡", "amount": "600g"},
+      {"name": "소고기 (양지 또는 사태)", "amount": "300g"},
+      {"name": "물", "amount": "10컵"},
+      {"name": "국간장", "amount": "3큰술"},
+      {"name": "다진 마늘", "amount": "1큰술"},
+      {"name": "달걀", "amount": "2개"},
+      {"name": "김", "amount": "1장"},
+      {"name": "대파", "amount": "1/2대"},
+      {"name": "소금", "amount": "약간"},
+      {"name": "참기름", "amount": "1큰술"}
+    ],
+    "seasoning": [],
+    "steps": [
+      {
+        "step": 1,
+        "description": "소고기는 찬물에 30분 정도 담가 핏물을 뺀 후 냄비에 넣고 물 10컵을 부어 센 불에 올립니다."
+      },
+      {
+        "step": 2,
+        "description": "끓어오르면 불을 중약불로 줄이고 40분간 푹 끓여 육수를 냅니다. 고기는 건져서 결대로 찢어둡니다."
+      },
+      {
+        "step": 3,
+        "description": "가래떡은 물에 담가 불려두고, 달걀은 황백 지단을 부쳐 채썰고, 김은 구워서 부숴둡니다."
+      },
+      {
+        "step": 4,
+        "description": "육수에 국간장과 소금으로 간을 맞추고, 가래떡을 넣어 중불에서 끓입니다."
+      },
+      {
+        "step": 5,
+        "description": "떡이 떠오르면 찢어둔 고기와 다진 마늘, 어슷 썬 대파를 넣고 2분 더 끓입니다."
+      },
+      {
+        "step": 6,
+        "description": "그릇에 담고 달걀 지단, 김, 참기름을 올려 마무리합니다."
+      }
+    ],
+    "tips": [
+      "육수는 천천히 끓여야 맑고 깊은 맛이 납니다.",
+      "가래떡이 딱딱하면 미리 물에 불려두세요.",
+      "국간장으로 간을 맞추면 국물이 맑게 유지됩니다."
+    ],
+    "relatedIngredients": [],
+    "relatedHolidays": ["seollal"]
+  },
+  {
+    "id": "songpyeon",
+    "name": "송편",
+    "category": "명절음식",
+    "description": "추석에 먹는 대표 떡으로, 반달 모양에 깨, 콩, 밤 등을 소로 넣어 솔잎에 찌는 떡입니다.",
+    "image": "recipe-songpyeon.jpg",
+    "servings": 30,
+    "cookTime": "90분",
+    "difficulty": "중급",
+    "ingredients": [
+      {"name": "멥쌀가루", "amount": "4컵"},
+      {"name": "뜨거운 물", "amount": "1/2컵"},
+      {"name": "소금", "amount": "1작은술"},
+      {"name": "솔잎", "amount": "적당량"},
+      {"name": "참기름", "amount": "2큰술"}
+    ],
+    "seasoning": [
+      {"name": "깨소", "amount": "검은깨 1컵, 설탕 3큰술, 소금 약간"},
+      {"name": "팥소", "amount": "팥 1컵, 설탕 4큰술, 소금 약간"},
+      {"name": "밤소", "amount": "밤 10개, 설탕 2큰술, 계핏가루 약간"}
+    ],
+    "steps": [
+      {
+        "step": 1,
+        "description": "멥쌀가루에 소금을 넣고 뜨거운 물을 조금씩 부으며 익반죽합니다. 귀 밑이 안 아플 정도의 말랑함이 적당합니다."
+      },
+      {
+        "step": 2,
+        "description": "반죽을 비닐에 싸서 30분간 숙성시킵니다."
+      },
+      {
+        "step": 3,
+        "description": "검은깨는 볶아 설탕, 소금과 섞어 깨소를 만듭니다. 팥은 삶아 으깬 후 설탕과 소금으로 간합니다."
+      },
+      {
+        "step": 4,
+        "description": "반죽을 한 입 크기로 떼어 동그랗게 빚은 후 가운데를 눌러 오목하게 만들고 소를 넣습니다."
+      },
+      {
+        "step": 5,
+        "description": "반으로 접어 반달 모양으로 예쁘게 빚어줍니다. 가장자리를 잘 눌러 소가 새지 않도록 합니다."
+      },
+      {
+        "step": 6,
+        "description": "찜통에 솔잎을 깔고 송편을 올린 후 센 불에서 15분간 찝니다."
+      },
+      {
+        "step": 7,
+        "description": "찐 송편을 찬물에 헹궈 참기름을 발라 윤기를 냅니다."
+      }
+    ],
+    "tips": [
+      "반죽이 너무 뜨거우면 손이 델 수 있으니 식혀가며 반죽하세요.",
+      "소는 너무 많이 넣으면 터질 수 있으니 적당량만 넣으세요.",
+      "솔잎은 깨끗이 씻어 물기를 제거한 후 사용합니다.",
+      "참기름을 바르면 송편끼리 붙지 않고 윤기가 납니다."
+    ],
+    "relatedIngredients": [],
+    "relatedHolidays": ["chuseok"]
+  },
+  {
+    "id": "patjuk",
+    "name": "팥죽",
+    "category": "명절음식",
+    "description": "동지에 먹는 전통 음식으로, 붉은 팥으로 쑤어 새알심을 띄운 죽입니다.",
+    "image": "recipe-patjuk.jpg",
+    "servings": 4,
+    "cookTime": "120분",
+    "difficulty": "중급",
+    "ingredients": [
+      {"name": "팥", "amount": "2컵"},
+      {"name": "물", "amount": "10컵"},
+      {"name": "찹쌀가루", "amount": "1컵"},
+      {"name": "소금", "amount": "1작은술"},
+      {"name": "설탕", "amount": "4큰술 (기호에 따라 조절)"}
+    ],
+    "seasoning": [],
+    "steps": [
+      {
+        "step": 1,
+        "description": "팥은 깨끗이 씻어 물에 2시간 정도 불립니다."
+      },
+      {
+        "step": 2,
+        "description": "냄비에 팥과 물 10컵을 넣고 센 불에 올려 끓입니다. 끓어오르면 중약불로 줄여 1시간 정도 푹 삶아 팥이 무르게 만듭니다."
+      },
+      {
+        "step": 3,
+        "description": "삶은 팥을 체에 내려 껍질을 제거하고 팥물과 분리합니다. 팥 앙금만 따로 모아둡니다."
+      },
+      {
+        "step": 4,
+        "description": "찹쌀가루에 뜨거운 물을 조금씩 넣으며 반죽해 새알심을 빚습니다. 동그랗게 빚은 후 가운데를 살짝 눌러줍니다."
+      },
+      {
+        "step": 5,
+        "description": "팥물을 냄비에 붓고 끓이다가 새알심을 넣어 익힙니다. 새알심이 떠오르면 익은 것입니다."
+      },
+      {
+        "step": 6,
+        "description": "팥 앙금을 넣고 소금과 설탕으로 간을 맞춰 완성합니다."
+      }
+    ],
+    "tips": [
+      "팥을 삶을 때 중간에 찬물을 부으면 팥이 더 빨리 무릅니다.",
+      "새알심은 너무 크게 만들면 속이 익지 않을 수 있으니 작게 빚으세요.",
+      "단맛은 기호에 따라 조절하세요. 전통적으로는 소금간만 하기도 합니다."
+    ],
+    "relatedIngredients": [],
+    "relatedHolidays": ["dongji"]
+  },
+  {
+    "id": "godeungeo-jorim",
+    "name": "고등어조림",
+    "category": "해산물",
+    "description": "고등어를 무와 함께 매콤달콤하게 조린 대표적인 밑반찬입니다.",
+    "image": "recipe-godeungeo-jorim.jpg",
+    "servings": 3,
+    "cookTime": "35분",
+    "difficulty": "초급",
+    "ingredients": [
+      {"name": "고등어", "amount": "1마리 (토막 낸 것)"},
+      {"name": "무", "amount": "1/4개 (약 200g)"},
+      {"name": "대파", "amount": "1대"},
+      {"name": "청양고추", "amount": "2개"},
+      {"name": "홍고추", "amount": "1개"},
+      {"name": "양파", "amount": "1/2개"}
+    ],
+    "seasoning": [
+      {"name": "고춧가루", "amount": "2큰술"},
+      {"name": "간장", "amount": "4큰술"},
+      {"name": "맛술", "amount": "2큰술"},
+      {"name": "설탕", "amount": "2큰술"},
+      {"name": "다진 마늘", "amount": "1큰술"},
+      {"name": "다진 생강", "amount": "1작은술"},
+      {"name": "물", "amount": "1.5컵"}
+    ],
+    "steps": [
+      {
+        "step": 1,
+        "description": "고등어는 내장과 핏물을 제거하고 깨끗이 씻어 물기를 제거합니다."
+      },
+      {
+        "step": 2,
+        "description": "무는 1cm 두께로 나박썰기, 대파는 어슷썰기, 양파는 채썰고, 고추는 송송 썰어줍니다."
+      },
+      {
+        "step": 3,
+        "description": "양념장 재료를 모두 섞어 양념장을 만듭니다."
+      },
+      {
+        "step": 4,
+        "description": "냄비에 무와 양파를 깔고 고등어를 올린 후 양념장을 고루 끼얹습니다."
+      },
+      {
+        "step": 5,
+        "description": "중불에서 끓이다가 끓어오르면 약불로 줄여 20분간 조립니다. 중간에 국물을 끼얹어가며 조려줍니다."
+      },
+      {
+        "step": 6,
+        "description": "대파와 고추를 넣고 5분 더 조린 후 불을 끕니다."
+      }
+    ],
+    "tips": [
+      "고등어는 신선한 것을 사용해야 비린내가 적습니다.",
+      "생강을 넣으면 비린내 제거에 도움이 됩니다.",
+      "조림 시 뚜껑을 열고 국물을 끼얹어가며 조리면 더 맛있습니다."
+    ],
+    "relatedIngredients": ["고등어", "무"],
+    "relatedHolidays": []
+  },
+  {
+    "id": "gul-jeon",
+    "name": "굴전",
+    "category": "해산물",
+    "description": "신선한 굴에 밀가루와 달걀 옷을 입혀 부친 전으로, 명절이나 특별한 날에 즐기는 요리입니다.",
+    "image": "recipe-gul-jeon.jpg",
+    "servings": 3,
+    "cookTime": "25분",
+    "difficulty": "초급",
+    "ingredients": [
+      {"name": "굴", "amount": "300g"},
+      {"name": "밀가루", "amount": "1컵"},
+      {"name": "달걀", "amount": "3개"},
+      {"name": "소금", "amount": "약간"},
+      {"name": "후추", "amount": "약간"},
+      {"name": "식용유", "amount": "적당량"}
+    ],
+    "seasoning": [
+      {"name": "초간장", "amount": "간장 2큰술, 식초 1큰술, 물 1큰술"}
+    ],
+    "steps": [
+      {
+        "step": 1,
+        "description": "굴은 소금물에 살살 흔들어 씻은 후 체에 밭쳐 물기를 뺍니다."
+      },
+      {
+        "step": 2,
+        "description": "굴에 소금과 후추로 밑간을 합니다."
+      },
+      {
+        "step": 3,
+        "description": "달걀은 풀어서 소금을 약간 넣고 섞어둡니다."
+      },
+      {
+        "step": 4,
+        "description": "굴에 밀가루를 골고루 묻힌 후 털어내고, 달걀물에 적십니다."
+      },
+      {
+        "step": 5,
+        "description": "달군 팬에 식용유를 두르고 중약불에서 굴을 올려 노릇하게 지집니다."
+      },
+      {
+        "step": 6,
+        "description": "양면이 노릇해지면 키친타월에 올려 기름기를 빼고 초간장과 함께 냅니다."
+      }
+    ],
+    "tips": [
+      "굴은 너무 세게 씻으면 터질 수 있으니 조심스럽게 씻으세요.",
+      "밀가루를 너무 많이 묻히지 말고 얇게 입혀주세요.",
+      "약한 불에서 천천히 익혀야 굴이 질겨지지 않습니다."
+    ],
+    "relatedIngredients": ["굴"],
+    "relatedHolidays": ["seollal", "chuseok"]
+  }
+]
+
