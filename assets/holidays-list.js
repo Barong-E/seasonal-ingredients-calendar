@@ -215,16 +215,21 @@ function scrollToClosestHoliday(holidays, today) {
   if (closestIndex !== -1) {
     const items = document.querySelectorAll('.holiday-item');
     if (items[closestIndex]) {
-      // 레이아웃 안착 후 실행 (스냅과의 충돌 방지)
-      setTimeout(() => {
-        // 기존 active 제거 (충돌 방지)
-        document.querySelectorAll('.holiday-item.active').forEach(el => el.classList.remove('active'));
-        
-        // instant로 먼저 이동 (스냅이 가로채지 못하게)
-        items[closestIndex].scrollIntoView({ behavior: 'instant', block: 'center' });
-        items[closestIndex].classList.add('active');
-      }, 500);
+      // 기존 active 제거 (충돌 방지)
+      document.querySelectorAll('.holiday-item.active').forEach(el => el.classList.remove('active'));
+      
+      // 즉시 이동 (깜빡임 없이)
+      items[closestIndex].scrollIntoView({ behavior: 'instant', block: 'center' });
+      items[closestIndex].classList.add('active');
     }
+  }
+
+  // 스크롤 위치 잡은 후 컨테이너를 페이드인으로 보여주기
+  const container = document.getElementById('holidayListContainer');
+  if (container) {
+    requestAnimationFrame(() => {
+      container.classList.add('visible');
+    });
   }
 }
 

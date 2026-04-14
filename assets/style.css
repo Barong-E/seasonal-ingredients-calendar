@@ -1155,6 +1155,11 @@ html, body { overflow-x: hidden !important; overflow-y: auto !important; }
 .holidays-container {
   padding-top: 50vh !important;
   padding-bottom: 50vh !important;
+  opacity: 0; /* 초기에 숨김 (스크롤 위치 잡은 후 보여줄 예정) */
+  transition: opacity 0.3s ease;
+}
+.holidays-container.visible {
+  opacity: 1;
 }
 
 /* --- 하단 탭바 (GNB) --- */
