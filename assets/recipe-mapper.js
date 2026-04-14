@@ -148,7 +148,9 @@ export function getRecipeIdFromDishName(dishName) {
     '배숙': 'baesuk',
     '블루베리 스무디': 'blueberry-smoothie',
     '팽이버섯전': 'enoki-mushroom-pancake',
-    '명이나물 장아찌': 'pickled-wild-garlic'
+    '팽이버섯볶음': 'enoki-mushroom-stir-fry',
+    '명이나물 장아찌': 'pickled-wild-garlic',
+    '명이나물 쌈': 'pickled-wild-garlic'
   };
   return mapping[dishName] || null;
 }

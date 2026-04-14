@@ -8324,5 +8324,29 @@
       { "step": 4, "description": "상온에서 하루 숙성 후 냉장 보관하며, 2-3일 뒤부터 드시면 좋습니다." }
     ],
     "relatedIngredients": ["명이나물"]
+  },
+  {
+    "id": "enoki-mushroom-stir-fry",
+    "name": "팽이버섯볶음",
+    "category": "채소",
+    "description": "들기름의 고소함과 팽이버섯의 쫄깃함이 어우러진 초간단 밑반찬입니다.",
+    "image": "enoki-pancake.png",
+    "servings": 2,
+    "cookTime": "10분",
+    "difficulty": "초급",
+    "ingredients": [
+      { "name": "팽이버섯", "amount": "1봉지" },
+      { "name": "다진 마늘", "amount": "1작은술" },
+      { "name": "대파", "amount": "1/4대" },
+      { "name": "진간장", "amount": "1큰술" },
+      { "name": "들기름", "amount": "1큰술" }
+    ],
+    "steps": [
+      { "step": 1, "description": "팽이버섯 밑동을 자르고 가닥가닥 찢어 준비합니다." },
+      { "step": 2, "description": "팬에 들기름을 두르고 다진 마늘과 대파를 넣어 향을 냅니다." },
+      { "step": 3, "description": "팽이버섯을 넣고 센 불에서 빠르게 볶습니다." },
+      { "step": 4, "description": "진간장을 넣어 간을 하고 가볍게 더 볶아 마무리합니다." }
+    ],
+    "relatedIngredients": ["팽이버섯"]
   }
 ]
