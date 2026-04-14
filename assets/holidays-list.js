@@ -129,41 +129,29 @@ async function renderHolidaysList(searchText = '') {
     const customNames = (holiday.customs || []).map(c => c.name);
 
     link.innerHTML = `
-      <img src="${imgSrc}" alt="${holiday.name}" class="holiday-thumb" loading="lazy">
-      <div class="holiday-info">
-        <h3 class="holiday-name">${holiday.name}</h3>
-        <span class="holiday-date">${dateStr}</span>
-        <p class="holiday-desc">${holiday.main_food}</p>
-        
-        <!-- 동적 포커스 시 나타나는 확장 정보 -->
-        <div class="holiday-expanded-info">
-          ${holiday.summary ? `
-            <div class="expanded-section">
-              <span class="expanded-label">이야기</span>
-              <p class="expanded-content">${holiday.summary}</p>
-            </div>
-          ` : ''}
-          
-          ${foodNames.length > 0 ? `
-            <div class="expanded-section">
-              <span class="expanded-label">대표 음식</span>
-              <div class="expanded-tags">
-                ${foodNames.map(name => `<span class="expanded-tag">${name}</span>`).join('')}
-              </div>
-            </div>
-          ` : ''}
-
-          ${customNames.length > 0 ? `
-            <div class="expanded-section">
-              <span class="expanded-label">대표 풍습</span>
-              <div class="expanded-tags">
-                ${customNames.map(name => `<span class="expanded-tag">${name}</span>`).join('')}
-              </div>
-            </div>
-          ` : ''}
-          <div style="margin-top: 12px; font-size: 0.8rem; color: var(--primary); font-weight: bold;">
-            자세히 보기 〉
+      <div class="holiday-item-top">
+        <img src="${imgSrc}" alt="${holiday.name}" class="holiday-thumb" loading="lazy">
+        <div class="holiday-info">
+          <h3 class="holiday-name">${holiday.name}</h3>
+          <span class="holiday-date">${dateStr}</span>
+          <div class="holiday-meta">
+            <span class="meta-label">대표 음식:</span> ${foodNames.join(', ')}
           </div>
+          <div class="holiday-meta">
+            <span class="meta-label">대표 풍습:</span> ${customNames.join(', ')}
+          </div>
+        </div>
+      </div>
+      
+      <!-- 동적 포커스 시 나타나는 확장 정보 -->
+      <div class="holiday-expanded-info">
+        ${holiday.summary ? `
+          <div class="holiday-summary-bottom">
+            <p class="summary-content">${holiday.summary}</p>
+          </div>
+        ` : ''}
+        <div class="detail-link-text">
+          자세히 보기 〉
         </div>
       </div>
     `;

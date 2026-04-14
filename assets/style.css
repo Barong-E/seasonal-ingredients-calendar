@@ -1192,7 +1192,7 @@ main {
 /* 명절 리스트 동적 포커스 스타일 */
 .holiday-item {
   display: flex;
-  gap: 16px;
+  flex-direction: column;
   padding: 16px;
   background: #fff;
   border-radius: var(--border-radius-lg, 24px);
@@ -1200,7 +1200,7 @@ main {
   color: inherit;
   box-shadow: var(--shadow-sm);
   transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-  margin-bottom: 16px;
+  margin-bottom: 20px;
   overflow: hidden;
   border: 1px solid rgba(0,0,0,0.05);
   position: relative;
@@ -1211,6 +1211,12 @@ main {
   transform: scale(1.02);
   border-color: var(--primary);
   background: linear-gradient(to bottom right, #ffffff, #f0fdf4);
+}
+
+.holiday-item-top {
+  display: flex;
+  gap: 16px;
+  align-items: flex-start;
 }
 
 .holiday-thumb {
@@ -1231,28 +1237,36 @@ main {
   flex: 1;
   display: flex;
   flex-direction: column;
-  justify-content: center;
 }
 
 .holiday-name {
   margin: 0;
   font-family: var(--serif-font);
-  font-size: 1.25rem;
+  font-size: 1.15rem;
   color: var(--primary);
   transition: all 0.3s ease;
+  line-height: 1.2;
 }
 
 .holiday-date {
-  font-size: 0.85rem;
+  font-size: 0.8rem;
   color: var(--text-muted);
-  margin-bottom: 4px;
+  margin-bottom: 8px;
+  display: block;
 }
 
-.holiday-desc {
-  margin: 0;
-  font-size: 0.9rem;
+.holiday-meta {
+  font-size: 0.85rem;
   color: #4b5563;
   line-height: 1.4;
+  margin-bottom: 4px;
+  word-break: keep-all;
+}
+
+.meta-label {
+  font-weight: 700;
+  color: var(--primary);
+  margin-right: 4px;
 }
 
 /* 확장 정보 스타일 (기본적으로 숨김) */
@@ -1260,51 +1274,35 @@ main {
   max-height: 0;
   opacity: 0;
   margin-top: 0;
-  transition: all 0.5s ease;
+  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
   overflow: hidden;
-  border-top: 1px dashed var(--muted);
+  border-top: 1px dashed rgba(0,0,0,0.05);
   padding-top: 0;
 }
 
 .holiday-item.active .holiday-expanded-info {
-  max-height: 500px;
+  max-height: 1000px;
   opacity: 1;
-  margin-top: 12px;
-  padding-top: 12px;
+  margin-top: 16px;
+  padding-top: 16px;
 }
 
-.expanded-section {
-  margin-bottom: 8px;
+.holiday-summary-bottom {
+  margin-bottom: 12px;
 }
 
-.expanded-label {
-  display: block;
-  font-weight: 700;
-  font-size: 0.8rem;
-  color: var(--primary);
-  margin-bottom: 4px;
-}
-
-.expanded-content {
+.summary-content {
   font-size: 0.9rem;
   color: #374151;
-  line-height: 1.5;
+  line-height: 1.6;
+  margin: 0;
   word-break: keep-all;
 }
 
-.expanded-tags {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 4px;
-  margin-top: 4px;
-}
-
-.expanded-tag {
-  background: var(--muted);
-  padding: 2px 8px;
-  border-radius: 8px;
-  font-size: 0.75rem;
-  color: #4b5563;
+.detail-link-text {
+  font-size: 0.8rem;
+  color: var(--primary);
+  font-weight: bold;
 }
 
 .gnb__label {
