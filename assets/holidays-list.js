@@ -135,10 +135,10 @@ async function renderHolidaysList(searchText = '') {
           <h3 class="holiday-name">${holiday.name}</h3>
           <span class="holiday-date">${dateStr}</span>
           <div class="holiday-meta">
-            <span class="meta-label">대표 음식:</span> ${foodNames.join(', ')}
+            <span class="meta-icon">🍲</span> ${foodNames.join(', ')}
           </div>
           <div class="holiday-meta">
-            <span class="meta-label">대표 풍습:</span> ${customNames.join(', ')}
+            <span class="meta-icon">🎎</span> ${customNames.join(', ')}
           </div>
         </div>
       </div>

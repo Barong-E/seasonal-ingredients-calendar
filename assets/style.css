@@ -1263,10 +1263,11 @@ main {
   word-break: keep-all;
 }
 
-.meta-label {
-  font-weight: 700;
-  color: var(--primary);
+.meta-icon {
   margin-right: 4px;
+  font-style: normal;
+  display: inline-block;
+  min-width: 20px;
 }
 
 /* 확장 정보 스타일 (기본적으로 숨김) */
