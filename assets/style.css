@@ -2,7 +2,14 @@
 * { box-sizing: border-box; }
 
 html, body {
-  overflow-x: hidden; /* Prevent horizontal scroll on the page */
+  overflow-x: hidden;
+  height: 100%; /* 스크롤 스냅을 위해 높이 고정 필요 시 */
+}
+
+/* 식재료 페이지 전용 스크롤 스냅 */
+body.page-ingredients {
+  scroll-snap-type: y mandatory;
+  overflow-y: scroll;
 }
 
 body {
@@ -284,14 +291,26 @@ body.has-banner .carousel {
   display: block; /* Change from flex to block for vertical layout */
 }
 
+/* Month Section (Shorts-like Snap) */
+.month-section {
+  scroll-snap-align: start;
+  scroll-snap-stop: always;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  padding-top: calc(var(--header-offset, 80px) + 20px);
+  padding-bottom: 100px; /* GNB 및 하단 여백 */
+  box-sizing: border-box;
+}
+
 /* Period header styles */
 .period-header {
   font-family: var(--serif-font);
   font-weight: 700;
   color: var(--primary);
-  font-size: 1.5rem;
+  font-size: 1.8rem; /* 쇼츠 느낌을 위해 조금 더 크게 */
   text-align: left;
-  margin: 48px 0 20px;
+  margin: 0 0 20px 0;
   padding: 0 0 12px;
   border-bottom: 3px double var(--muted);
   letter-spacing: -0.5px;
@@ -1169,6 +1188,123 @@ main {
 
 .gnb__icon {
   transition: transform 0.2s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+/* 명절 리스트 동적 포커스 스타일 */
+.holiday-item {
+  display: flex;
+  gap: 16px;
+  padding: 16px;
+  background: #fff;
+  border-radius: var(--border-radius-lg, 24px);
+  text-decoration: none;
+  color: inherit;
+  box-shadow: var(--shadow-sm);
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  margin-bottom: 16px;
+  overflow: hidden;
+  border: 1px solid rgba(0,0,0,0.05);
+  position: relative;
+}
+
+.holiday-item.active {
+  box-shadow: var(--shadow-lg);
+  transform: scale(1.02);
+  border-color: var(--primary);
+  background: linear-gradient(to bottom right, #ffffff, #f0fdf4);
+}
+
+.holiday-thumb {
+  width: 80px;
+  height: 80px;
+  border-radius: var(--border-radius-md, 16px);
+  object-fit: cover;
+  transition: all 0.4s ease;
+  flex-shrink: 0;
+}
+
+.holiday-item.active .holiday-thumb {
+  width: 100px;
+  height: 100px;
+}
+
+.holiday-info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.holiday-name {
+  margin: 0;
+  font-family: var(--serif-font);
+  font-size: 1.25rem;
+  color: var(--primary);
+  transition: all 0.3s ease;
+}
+
+.holiday-date {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  margin-bottom: 4px;
+}
+
+.holiday-desc {
+  margin: 0;
+  font-size: 0.9rem;
+  color: #4b5563;
+  line-height: 1.4;
+}
+
+/* 확장 정보 스타일 (기본적으로 숨김) */
+.holiday-expanded-info {
+  max-height: 0;
+  opacity: 0;
+  margin-top: 0;
+  transition: all 0.5s ease;
+  overflow: hidden;
+  border-top: 1px dashed var(--muted);
+  padding-top: 0;
+}
+
+.holiday-item.active .holiday-expanded-info {
+  max-height: 500px;
+  opacity: 1;
+  margin-top: 12px;
+  padding-top: 12px;
+}
+
+.expanded-section {
+  margin-bottom: 8px;
+}
+
+.expanded-label {
+  display: block;
+  font-weight: 700;
+  font-size: 0.8rem;
+  color: var(--primary);
+  margin-bottom: 4px;
+}
+
+.expanded-content {
+  font-size: 0.9rem;
+  color: #374151;
+  line-height: 1.5;
+  word-break: keep-all;
+}
+
+.expanded-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+  margin-top: 4px;
+}
+
+.expanded-tag {
+  background: var(--muted);
+  padding: 2px 8px;
+  border-radius: 8px;
+  font-size: 0.75rem;
+  color: #4b5563;
 }
 
 .gnb__label {

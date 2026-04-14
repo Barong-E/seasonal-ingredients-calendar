@@ -408,24 +408,24 @@ function renderAllMonths() {
   
   for (const item of months) {
     const month = item.month;
+    
+    // 월별 섹션 컨테이너 생성 (Shorts Snap Target)
+    const monthSection = document.createElement('div');
+    monthSection.className = 'month-section';
+    monthSection.setAttribute('data-month-index', month - 1);
+    
     // 월별 헤더 생성
     const monthHeader = document.createElement('div');
     monthHeader.className = 'period-header';
     monthHeader.textContent = formatMonthLabel(month);
-    monthHeader.setAttribute('data-month-index', month - 1);
-    trackEl.appendChild(monthHeader);
+    monthSection.appendChild(monthHeader);
     
     // 월별 식재료 그리드 생성
     const gridContainer = document.createElement('div');
     gridContainer.className = 'period-grid';
     
-    const empty = document.createElement('div');
-    empty.className = 'empty';
-    empty.setAttribute('role', 'status');
-    empty.setAttribute('aria-live', 'polite');
-    empty.textContent = '검색 결과가 없습니다.';
-    
-    trackEl.appendChild(gridContainer);
+    monthSection.appendChild(gridContainer);
+    trackEl.appendChild(monthSection);
     
     // 캐시 확인
     const searchSig = (searchText || '').trim().toLowerCase();
@@ -498,13 +498,14 @@ function renderAllMonths() {
 
 // 특정 월로 스크롤
 function scrollToMonth(monthIndex) {
-  const monthHeader = document.querySelector(`[data-month-index="${monthIndex}"]`);
-  if (!monthHeader) return;
-  const offset = getHeaderHeight() + 8;
-  const y = (window.pageYOffset || document.documentElement.scrollTop) + monthHeader.getBoundingClientRect().top - offset;
-  window.scrollTo({ top: y, behavior: 'smooth' });
+  const section = document.querySelector(`.month-section[data-month-index="${monthIndex}"]`);
+  if (!section) return;
+  
+  // 스크롤 스냅 대상이므로 상단으로 부드럽게 이동
+  section.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  
   AppState.currentMonthIndex = monthIndex;
-  applySeasonThemeByMonthIndex(monthIndex); // 기존 함수명 유지하되 monthIndex로 동작
+  applySeasonThemeByMonthIndex(monthIndex);
 }
 
 // 오늘 버튼 상태를 전역에서 동기화하는 헬퍼 (삭제됨)
@@ -709,6 +710,10 @@ async function init() {
     }
 
     renderAllMonths();
+    
+    // 쇼츠형 스냅을 위해 body 클래스 추가
+    document.body.classList.add('page-ingredients');
+    
     initSearch();
     initPush(); // Push 알림 초기화
     initHeaderControls();

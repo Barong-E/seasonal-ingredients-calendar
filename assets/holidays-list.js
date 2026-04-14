@@ -124,17 +124,113 @@ async function renderHolidaysList(searchText = '') {
     const dateStr = formatDateString(holiday.solarDate);
     const imgSrc = holiday.image ? `images/${holiday.image}` : `images/_fallback.png`;
 
+    // 대표 음식/풍습 이름만 추출
+    const foodNames = (holiday.foods || []).map(f => f.name);
+    const customNames = (holiday.customs || []).map(c => c.name);
+
     link.innerHTML = `
       <img src="${imgSrc}" alt="${holiday.name}" class="holiday-thumb" loading="lazy">
       <div class="holiday-info">
         <h3 class="holiday-name">${holiday.name}</h3>
         <span class="holiday-date">${dateStr}</span>
-        <p class="holiday-desc">${holiday.main_food} 등</p>
+        <p class="holiday-desc">${holiday.main_food}</p>
+        
+        <!-- 동적 포커스 시 나타나는 확장 정보 -->
+        <div class="holiday-expanded-info">
+          ${holiday.summary ? `
+            <div class="expanded-section">
+              <span class="expanded-label">이야기</span>
+              <p class="expanded-content">${holiday.summary}</p>
+            </div>
+          ` : ''}
+          
+          ${foodNames.length > 0 ? `
+            <div class="expanded-section">
+              <span class="expanded-label">대표 음식</span>
+              <div class="expanded-tags">
+                ${foodNames.map(name => `<span class="expanded-tag">${name}</span>`).join('')}
+              </div>
+            </div>
+          ` : ''}
+
+          ${customNames.length > 0 ? `
+            <div class="expanded-section">
+              <span class="expanded-label">대표 풍습</span>
+              <div class="expanded-tags">
+                ${customNames.map(name => `<span class="expanded-tag">${name}</span>`).join('')}
+              </div>
+            </div>
+          ` : ''}
+          <div style="margin-top: 12px; font-size: 0.8rem; color: var(--primary); font-weight: bold;">
+            자세히 보기 〉
+          </div>
+        </div>
       </div>
     `;
 
     container.appendChild(link);
   });
+
+  // 동적 포커스 감지 로직 (Intersection Observer)
+  initFocusObserver();
+  
+  // 가장 가까운 명절로 스크롤 및 포커스
+  scrollToClosestHoliday(parsedHolidays, today);
+}
+
+function initFocusObserver() {
+  const options = {
+    root: null,
+    rootMargin: '-40% 0% -40% 0%', // 화면 중앙 부근 감지
+    threshold: 0
+  };
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        // 기존 active 제거
+        document.querySelectorAll('.holiday-item.active').forEach(el => el.classList.remove('active'));
+        // 현재 아이템 active 추가
+        entry.target.classList.add('active');
+      }
+    });
+  }, options);
+
+  document.querySelectorAll('.holiday-item').forEach(item => {
+    observer.observe(item);
+  });
+}
+
+function scrollToClosestHoliday(holidays, today) {
+  let closestIndex = -1;
+  let minDiff = Infinity;
+
+  const now = today.getTime();
+  
+  holidays.forEach((h, index) => {
+    if (!h.solarDate) return;
+    const diff = h.solarDate.getTime() - now;
+    // 오늘 이후이면서 가장 가까운 것 우선
+    if (diff >= 0 && diff < minDiff) {
+      minDiff = diff;
+      closestIndex = index;
+    }
+  });
+
+  // 만약 오늘 이후 명절이 없다면 마지막 명절
+  if (closestIndex === -1 && holidays.length > 0) {
+    closestIndex = holidays.length - 1;
+  }
+
+  if (closestIndex !== -1) {
+    const items = document.querySelectorAll('.holiday-item');
+    if (items[closestIndex]) {
+      setTimeout(() => {
+        items[closestIndex].scrollIntoView({ behavior: 'smooth', block: 'center' });
+        items[closestIndex].classList.add('active');
+      }, 300);
+    }
+  }
 }
 
 function initSearch() {
