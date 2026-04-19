@@ -1,0 +1,8 @@
+User-agent: *
+Allow: /
+
+# 사이트맵 위치
+Sitemap: https://seasonalfood.net/sitemap.xml
+
+# 크롤링 허용
+Crawl-delay: 1
