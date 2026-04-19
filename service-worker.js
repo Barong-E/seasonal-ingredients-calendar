@@ -3,19 +3,16 @@
  * - 데이터(/data/*): network-first (오프라인 시 캐시 fallback)
  */
 
-const VERSION = 'v5';
+const VERSION = 'v6';
 const STATIC_CACHE = `static-${VERSION}`;
 const DATA_CACHE = `data-${VERSION}`;
 
-// 필수 정적 자원 (필요시 추가)
+// 필수 정적 자원 (앱 기본 골격만. JS/CSS 등 수시로 이름 바뀌는 파일 제외)
 const STATIC_ASSETS = [
   '/',
   '/index.html',
   '/recipe.html',
-  '/assets/style.css',
-  '/assets/script.js',
-  '/assets/recipe.css',
-  '/assets/recipe.js',
+  '/ingredient.html',
   '/images/_fallback.png',
   '/manifest.webmanifest'
 ];
