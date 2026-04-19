@@ -93,9 +93,10 @@ const mapping = {
 ## 5. 🔄 반영 및 배포 절차 (필수!)
 데이터를 수정한 후에는 다음 3단계를 **반드시 순서대로** 실행해야 합니다.
 
-1.  **캐시 버전 올리기**: `assets/script.js`, `assets/ingredient.js`, `assets/recipe.js` 내의 `v14` 같은 버전 숫자를 한 단계 높입니다 (예: `v15`). 그래야 사용자의 폰에서 새 데이터를 즉시 불러옵니다.
-2.  **안드로이드 동기화**: 터미널에서 `npm run build && npx cap sync`를 실행합니다.
-3.  **저장소 업데이트**: `git add . && git commit -m "...내용..." && git push`를 실행하여 서버에 올립니다.
+1.  **캐시 버전 올리기**: `assets/script.js`, `assets/ingredient.js`, `assets/recipe.js` 내의 `v14` 같은 버전 숫자를 한 단계 높입니다 (예: `v15`).
+2.  **서비스 워커(PWA 캐시) 갱신**: (매우 중요) `recipe-mapper.js` 등 앱의 주요 화면 로직이나 자바스크립트를 수정했다면, 반드시 최상단 폴더의 `service-worker.js`에서 `const VERSION = 'vX';`의 **버전을 한 단계 올려야 합니다.** 그래야 상용 앱에서 기존에 저장된 캐시(단어장 포함)가 초기화됩니다.
+3.  **안드로이드 동기화**: 터미널에서 `npm run build && npx cap sync`를 실행합니다.
+4.  **저장소 업데이트**: `git add . && git commit -m "...내용..." && git push`를 실행하여 서버에 올립니다.
 
 ---
 
