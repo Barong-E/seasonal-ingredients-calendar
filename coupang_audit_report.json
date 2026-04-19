@@ -1,0 +1,494 @@
+[
+  {
+    "name": "가지",
+    "url": "https://link.coupang.com/a/cTE8ro",
+    "status": "OK",
+    "dest_info": "https://www.coupang.com/np/search?q=%EA%B0%80%EC%A7%80&src=1139000&spec=10799999&addtag=200&ctag=%EA%B0%80%EC%A7%80&lptag=AF1941306&itime=20260419144014&pageType=SEARCH&pageValue=%EA%B0%80%EC%A7%80&wPcid=17765772146233066551693&wRef=&wTime=20260419144014&redirect=landing&traceid=V0-181-91886a7e80e4c7e3&mcid=b945f3529482411aade7dc62e21a9c58&placementid=&campaignid=&contentcategory=&imgsize=&pageid=&tsource=&deviceid=&contenttype=&token=&impressionid=&sig=&subid=&campaigntype=&requestid=&contentkeyword=&ctime=&subparam="
+  },
+  {
+    "name": "감",
+    "url": "https://link.coupang.com/a/cTFc49",
+    "status": "OK",
+    "dest_info": "https://www.coupang.com/np/search?q=%EA%B0%90&src=1139000&spec=10799999&addtag=200&ctag=%EA%B0%90&lptag=AF1941306&itime=20260419144015&pageType=SEARCH&pageValue=%EA%B0%90&wPcid=17765772151675599298895&wRef=&wTime=20260419144015&redirect=landing&traceid=V0-181-b6ec3789785df471&mcid=ba26a632b5484ab78356fcf2d0410a54&placementid=&campaignid=&contentcategory=&imgsize=&pageid=&tsource=&deviceid=&contenttype=&token=&impressionid=&sig=&subid=&campaigntype=&requestid=&contentkeyword=&ctime=&subparam="
+  },
+  {
+    "name": "감자",
+    "url": "https://link.coupang.com/a/cTE9oM",
+    "status": "OK",
+    "dest_info": "https://www.coupang.com/np/search?q=%EA%B0%90%EC%9E%90&src=1139000&spec=10799999&addtag=200&ctag=%EA%B0%90%EC%9E%90&lptag=AF1941306&itime=20260419144015&pageType=SEARCH&pageValue=%EA%B0%90%EC%9E%90&wPcid=17765772155370285837750&wRef=&wTime=20260419144015&redirect=landing&traceid=V0-181-6855bbca8f7b6198&mcid=dda6626dd39c4e69bc7bc023b0086021&placementid=&campaignid=&contentcategory=&imgsize=&pageid=&tsource=&deviceid=&contenttype=&token=&impressionid=&sig=&subid=&campaigntype=&requestid=&contentkeyword=&ctime=&subparam="
+  },
+  {
+    "name": "갈치",
+    "url": "https://link.coupang.com/a/cTFfng",
+    "status": "DUPLICATE",
+    "dest_info": "중복 사용됨 (함께 사용 중: 한치)"
+  },
+  {
+    "name": "가리비",
+    "url": "https://link.coupang.com/a/cTFfuh",
+    "status": "OK",
+    "dest_info": "https://www.coupang.com/np/search?q=%EA%B0%80%EB%A6%AC%EB%B9%84&src=1139000&spec=10799999&addtag=200&ctag=%EA%B0%80%EB%A6%AC%EB%B9%84&lptag=AF1941306&itime=20260419144016&pageType=SEARCH&pageValue=%EA%B0%80%EB%A6%AC%EB%B9%84&wPcid=17765772163248023448656&wRef=&wTime=20260419144016&redirect=landing&traceid=V0-181-35cdc225482e73a3&mcid=7f113f8f412b453bb6cb894f786854de&placementid=&campaignid=&contentcategory=&imgsize=&pageid=&tsource=&deviceid=&contenttype=&token=&impressionid=&sig=&subid=&campaigntype=&requestid=&contentkeyword=&ctime=&subparam="
+  },
+  {
+    "name": "광어",
+    "url": "https://link.coupang.com/a/cTFfAi",
+    "status": "OK",
+    "dest_info": "https://www.coupang.com/np/search?q=%EA%B4%91%EC%96%B4&src=1139000&spec=10799999&addtag=200&ctag=%EA%B4%91%EC%96%B4&lptag=AF1941306&itime=20260419144016&pageType=SEARCH&pageValue=%EA%B4%91%EC%96%B4&wPcid=17765772164946678084862&wRef=&wTime=20260419144016&redirect=landing&traceid=V0-181-e291990ee375305d&mcid=39fcdeb314194d4ea745a6b909062cf5&placementid=&campaignid=&contentcategory=&imgsize=&pageid=&tsource=&deviceid=&contenttype=&token=&impressionid=&sig=&subid=&campaigntype=&requestid=&contentkeyword=&ctime=&subparam="
+  },
+  {
+    "name": "과메기",
+    "url": "https://link.coupang.com/a/cTFfGQ",
+    "status": "OK",
+    "dest_info": "https://www.coupang.com/np/search?q=%EA%B3%BC%EB%A9%94%EA%B8%B0&src=1139000&spec=10799999&addtag=200&ctag=%EA%B3%BC%EB%A9%94%EA%B8%B0&lptag=AF1941306&itime=20260419144016&pageType=SEARCH&pageValue=%EA%B3%BC%EB%A9%94%EA%B8%B0&wPcid=17765772166801770468277&wRef=&wTime=20260419144016&redirect=landing&traceid=V0-181-8253894339fbeb40&mcid=48fed88a87eb4d199a64b73f3a0ea848&placementid=&campaignid=&contentcategory=&imgsize=&pageid=&tsource=&deviceid=&contenttype=&token=&impressionid=&sig=&subid=&campaigntype=&requestid=&contentkeyword=&ctime=&subparam="
+  },
+  {
+    "name": "고구마",
+    "url": "https://link.coupang.com/a/cTE9Ys",
+    "status": "OK",
+    "dest_info": "https://www.coupang.com/np/search?q=%EA%B3%A0%EA%B5%AC%EB%A7%88&src=1139000&spec=10799999&addtag=200&ctag=%EA%B3%A0%EA%B5%AC%EB%A7%88&lptag=AF1941306&itime=20260419144016&pageType=SEARCH&pageValue=%EA%B3%A0%EA%B5%AC%EB%A7%88&wPcid=17765772168388975440946&wRef=&wTime=20260419144016&redirect=landing&traceid=V0-181-ac6a26c07ec94659&mcid=eb5e2a13dd374b4087c8356f3cdab96b&placementid=&campaignid=&contentcategory=&imgsize=&pageid=&tsource=&deviceid=&contenttype=&token=&impressionid=&sig=&subid=&campaigntype=&requestid=&contentkeyword=&ctime=&subparam="
+  },
+  {
+    "name": "고등어",
+    "url": "https://link.coupang.com/a/cTFfL7",
+    "status": "OK",
+    "dest_info": "https://www.coupang.com/np/search?q=%EA%B3%A0%EB%93%B1%EC%96%B4&src=1139000&spec=10799999&addtag=200&ctag=%EA%B3%A0%EB%93%B1%EC%96%B4&lptag=AF1941306&itime=20260419144017&pageType=SEARCH&pageValue=%EA%B3%A0%EB%93%B1%EC%96%B4&wPcid=17765772170114282461643&wRef=&wTime=20260419144017&redirect=landing&traceid=V0-181-31144b13ff84dc68&mcid=aac48257ec134e8da7a7659b6544b199&placementid=&campaignid=&contentcategory=&imgsize=&pageid=&tsource=&deviceid=&contenttype=&token=&impressionid=&sig=&subid=&campaigntype=&requestid=&contentkeyword=&ctime=&subparam="
+  },
+  {
+    "name": "굴",
+    "url": "https://link.coupang.com/a/cTFfRG",
+    "status": "OK",
+    "dest_info": "https://www.coupang.com/np/search?q=%EA%B5%B4&src=1139000&spec=10799999&addtag=200&ctag=%EA%B5%B4&lptag=AF1941306&itime=20260419144017&pageType=SEARCH&pageValue=%EA%B5%B4&wPcid=17765772171676684736891&wRef=&wTime=20260419144017&redirect=landing&traceid=V0-181-69c541f2aaa0ec7b&mcid=1322777917164708b239c79667696e0a&placementid=&campaignid=&contentcategory=&imgsize=&pageid=&tsource=&deviceid=&contenttype=&token=&impressionid=&sig=&subid=&campaigntype=&requestid=&contentkeyword=&ctime=&subparam="
+  },
+  {
+    "name": "꽁치",
+    "url": "https://link.coupang.com/a/cTFfYM",
+    "status": "OK",
+    "dest_info": "https://www.coupang.com/np/search?q=%EA%BD%81%EC%B9%98&src=1139000&spec=10799999&addtag=200&ctag=%EA%BD%81%EC%B9%98&lptag=AF1941306&itime=20260419144017&pageType=SEARCH&pageValue=%EA%BD%81%EC%B9%98&wPcid=17765772173351902134179&wRef=&wTime=20260419144017&redirect=landing&traceid=V0-181-43510f2f8e7c7180&mcid=d39a382805ec4cfba225291b59051296&placementid=&campaignid=&contentcategory=&imgsize=&pageid=&tsource=&deviceid=&contenttype=&token=&impressionid=&sig=&subid=&campaigntype=&requestid=&contentkeyword=&ctime=&subparam="
+  },
+  {
+    "name": "꼬막",
+    "url": "https://link.coupang.com/a/cTFf7a",
+    "status": "OK",
+    "dest_info": "https://www.coupang.com/np/search?q=%EA%BC%AC%EB%A7%89&src=1139000&spec=10799999&addtag=200&ctag=%EA%BC%AC%EB%A7%89&lptag=AF1941306&itime=20260419144017&pageType=SEARCH&pageValue=%EA%BC%AC%EB%A7%89&wPcid=17765772174899239949244&wRef=&wTime=20260419144017&redirect=landing&traceid=V0-181-cb55847dd0113512&mcid=44bb9e7ba660406596695d6445d552a8&placementid=&campaignid=&contentcategory=&imgsize=&pageid=&tsource=&deviceid=&contenttype=&token=&impressionid=&sig=&subid=&campaigntype=&requestid=&contentkeyword=&ctime=&subparam="
+  },
+  {
+    "name": "꽃게",
+    "url": "https://link.coupang.com/a/cTFgd2",
+    "status": "OK",
+    "dest_info": "https://www.coupang.com/np/search?q=%EA%BD%83%EA%B2%8C&src=1139000&spec=10799999&addtag=200&ctag=%EA%BD%83%EA%B2%8C&lptag=AF1941306&itime=20260419144017&pageType=SEARCH&pageValue=%EA%BD%83%EA%B2%8C&wPcid=17765772176335558308242&wRef=&wTime=20260419144017&redirect=landing&traceid=V0-181-bb97aac00dd77aca&mcid=0020c884ddd84520a2c3c6fb8289da2d&placementid=&campaignid=&contentcategory=&imgsize=&pageid=&tsource=&deviceid=&contenttype=&token=&impressionid=&sig=&subid=&campaigntype=&requestid=&contentkeyword=&ctime=&subparam="
+  },
+  {
+    "name": "깻잎",
+    "url": "https://link.coupang.com/a/cTFaan",
+    "status": "OK",
+    "dest_info": "https://www.coupang.com/np/search?q=%EA%B9%BB%EC%9E%8E&src=1139000&spec=10799999&addtag=200&ctag=%EA%B9%BB%EC%9E%8E&lptag=AF1941306&itime=20260419144017&pageType=SEARCH&pageValue=%EA%B9%BB%EC%9E%8E&wPcid=17765772177975426954207&wRef=&wTime=20260419144017&redirect=landing&traceid=V0-181-b63f7a86fbf72d6b&mcid=f61e66f3377e4bd1946e8dff47b217ca&placementid=&campaignid=&contentcategory=&imgsize=&pageid=&tsource=&deviceid=&contenttype=&token=&impressionid=&sig=&subid=&campaigntype=&requestid=&contentkeyword=&ctime=&subparam="
+  },
+  {
+    "name": "냉이",
+    "url": "https://link.coupang.com/a/cTFaja",
+    "status": "OK",
+    "dest_info": "https://www.coupang.com/np/search?q=%EB%83%89%EC%9D%B4&src=1139000&spec=10799999&addtag=200&ctag=%EB%83%89%EC%9D%B4&lptag=AF1941306&itime=20260419144018&pageType=SEARCH&pageValue=%EB%83%89%EC%9D%B4&wPcid=17765772180293698185001&wRef=&wTime=20260419144018&redirect=landing&traceid=V0-181-775e73626d1d1279&mcid=e364ef32fa5e4693bbc190e49dcd2f82&placementid=&campaignid=&contentcategory=&imgsize=&pageid=&tsource=&deviceid=&contenttype=&token=&impressionid=&sig=&subid=&campaigntype=&requestid=&contentkeyword=&ctime=&subparam="
+  },
+  {
+    "name": "농어",
+    "url": "https://link.coupang.com/a/cTFgkT",
+    "status": "OK",
+    "dest_info": "https://www.coupang.com/np/search?q=%EB%86%8D%EC%96%B4&src=1139000&spec=10799999&addtag=200&ctag=%EB%86%8D%EC%96%B4&lptag=AF1941306&itime=20260419144018&pageType=SEARCH&pageValue=%EB%86%8D%EC%96%B4&wPcid=17765772181852380444346&wRef=&wTime=20260419144018&redirect=landing&traceid=V0-181-2379c64816aa0609&mcid=a403ada3366e4c61a20f0e9789fc7a6a&placementid=&campaignid=&contentcategory=&imgsize=&pageid=&tsource=&deviceid=&contenttype=&token=&impressionid=&sig=&subid=&campaigntype=&requestid=&contentkeyword=&ctime=&subparam="
+  },
+  {
+    "name": "늙은 호박",
+    "url": "https://link.coupang.com/a/cTFatG",
+    "status": "OK",
+    "dest_info": "https://www.coupang.com/np/search?q=%EB%8A%99%EC%9D%80%20%ED%98%B8%EB%B0%95&src=1139000&spec=10799999&addtag=200&ctag=%EB%8A%99%EC%9D%80%20%ED%98%B8%EB%B0%95&lptag=AF1941306&itime=20260419144018&pageType=SEARCH&pageValue=%EB%8A%99%EC%9D%80%20%ED%98%B8%EB%B0%95&wPcid=17765772183444923627478&wRef=&wTime=20260419144018&redirect=landing&traceid=V0-181-72209f6124124471&mcid=0d7e162e7715432fb099aa560f0a516c&placementid=&campaignid=&contentcategory=&imgsize=&pageid=&tsource=&deviceid=&contenttype=&token=&impressionid=&sig=&subid=&campaigntype=&requestid=&contentkeyword=&ctime=&subparam="
+  },
+  {
+    "name": "달래",
+    "url": "https://link.coupang.com/a/cTFaC7",
+    "status": "OK",
+    "dest_info": "https://www.coupang.com/np/search?q=%EB%8B%AC%EB%9E%98&src=1139000&spec=10799999&addtag=200&ctag=%EB%8B%AC%EB%9E%98&lptag=AF1941306&itime=20260419144018&pageType=SEARCH&pageValue=%EB%8B%AC%EB%9E%98&wPcid=17765772187189589281074&wRef=&wTime=20260419144018&redirect=landing&traceid=V0-181-c68629a7a182e867&mcid=e7f99d6306a941308d021d5a44852000&placementid=&campaignid=&contentcategory=&imgsize=&pageid=&tsource=&deviceid=&contenttype=&token=&impressionid=&sig=&subid=&campaigntype=&requestid=&contentkeyword=&ctime=&subparam="
+  },
+  {
+    "name": "대구",
+    "url": "https://link.coupang.com/a/cTFgAo",
+    "status": "DUPLICATE",
+    "dest_info": "중복 사용됨 (함께 사용 중: 방어)"
+  },
+  {
+    "name": "대하",
+    "url": "https://link.coupang.com/a/cTFgFR",
+    "status": "OK",
+    "dest_info": "https://www.coupang.com/np/search?q=%EB%8C%80%ED%95%98&src=1139000&spec=10799999&addtag=200&ctag=%EB%8C%80%ED%95%98&lptag=AF1941306&itime=20260419144019&pageType=SEARCH&pageValue=%EB%8C%80%ED%95%98&wPcid=17765772190411053979170&wRef=&wTime=20260419144019&redirect=landing&traceid=V0-181-0b25b71009bb9248&mcid=03127aac6a47455bb567e6dabb2a1786&placementid=&campaignid=&contentcategory=&imgsize=&pageid=&tsource=&deviceid=&contenttype=&token=&impressionid=&sig=&subid=&campaigntype=&requestid=&contentkeyword=&ctime=&subparam="
+  },
+  {
+    "name": "더덕",
+    "url": "https://link.coupang.com/a/cTFaKD",
+    "status": "OK",
+    "dest_info": "https://www.coupang.com/np/search?q=%EB%8D%94%EB%8D%95&src=1139000&spec=10799999&addtag=200&ctag=%EB%8D%94%EB%8D%95&lptag=AF1941306&itime=20260419144019&pageType=SEARCH&pageValue=%EB%8D%94%EB%8D%95&wPcid=17765772191988551303612&wRef=&wTime=20260419144019&redirect=landing&traceid=V0-181-13853e5f0d91942b&mcid=ef107ccea67149f282c4ca568f0235ef&placementid=&campaignid=&contentcategory=&imgsize=&pageid=&tsource=&deviceid=&contenttype=&token=&impressionid=&sig=&subid=&campaigntype=&requestid=&contentkeyword=&ctime=&subparam="
+  },
+  {
+    "name": "도다리",
+    "url": "https://link.coupang.com/a/cTFgsV",
+    "status": "OK",
+    "dest_info": "https://www.coupang.com/np/search?q=%EB%8F%84%EB%8B%A4%EB%A6%AC&src=1139000&spec=10799999&addtag=200&ctag=%EB%8F%84%EB%8B%A4%EB%A6%AC&lptag=AF1941306&itime=20260419144019&pageType=SEARCH&pageValue=%EB%8F%84%EB%8B%A4%EB%A6%AC&wPcid=17765772193548047687867&wRef=&wTime=20260419144019&redirect=landing&traceid=V0-181-49cc305eab49af4a&mcid=020171ded61244e6a1a03bf3bf1b411e&placementid=&campaignid=&contentcategory=&imgsize=&pageid=&tsource=&deviceid=&contenttype=&token=&impressionid=&sig=&subid=&campaigntype=&requestid=&contentkeyword=&ctime=&subparam="
+  },
+  {
+    "name": "두릅",
+    "url": "https://link.coupang.com/a/cTFaSS",
+    "status": "OK",
+    "dest_info": "https://www.coupang.com/np/search?q=%EB%91%90%EB%A6%85&src=1139000&spec=10799999&addtag=200&ctag=%EB%91%90%EB%A6%85&lptag=AF1941306&itime=20260419144019&pageType=SEARCH&pageValue=%EB%91%90%EB%A6%85&wPcid=17765772195492462330390&wRef=&wTime=20260419144019&redirect=landing&traceid=V0-181-258152639e791f19&mcid=d5d3066672a447198b68f9d96cdedf82&placementid=&campaignid=&contentcategory=&imgsize=&pageid=&tsource=&deviceid=&contenttype=&token=&impressionid=&sig=&subid=&campaigntype=&requestid=&contentkeyword=&ctime=&subparam="
+  },
+  {
+    "name": "딸기",
+    "url": "https://link.coupang.com/a/cTFdc2",
+    "status": "OK",
+    "dest_info": "https://www.coupang.com/np/search?q=%EB%94%B8%EA%B8%B0&src=1139000&spec=10799999&addtag=200&ctag=%EB%94%B8%EA%B8%B0&lptag=AF1941306&itime=20260419144019&pageType=SEARCH&pageValue=%EB%94%B8%EA%B8%B0&wPcid=17765772196969179469543&wRef=&wTime=20260419144019&redirect=landing&traceid=V0-181-9c1835f278f9a861&mcid=9ea8b809cff84afea2dcaa533a6007ca&placementid=&campaignid=&contentcategory=&imgsize=&pageid=&tsource=&deviceid=&contenttype=&token=&impressionid=&sig=&subid=&campaigntype=&requestid=&contentkeyword=&ctime=&subparam="
+  },
+  {
+    "name": "매생이",
+    "url": "https://link.coupang.com/a/cU37hx",
+    "status": "OK",
+    "dest_info": "https://www.coupang.com/np/search?q=%EB%A7%A4%EC%83%9D%EC%9D%B4&src=1139000&spec=10799999&addtag=200&ctag=%EB%A7%A4%EC%83%9D%EC%9D%B4&lptag=AF1941306&itime=20260419144019&pageType=SEARCH&pageValue=%EB%A7%A4%EC%83%9D%EC%9D%B4&wPcid=17765772199464766591431&wRef=&wTime=20260419144019&redirect=landing&traceid=V0-181-a61cb12e9cdb36cf&mcid=73927075fbb046ebae71bd984f33a818&placementid=&campaignid=&contentcategory=&imgsize=&pageid=&tsource=&deviceid=&contenttype=&token=&impressionid=&sig=&subid=&campaigntype=&requestid=&contentkeyword=&ctime=&subparam="
+  },
+  {
+    "name": "매실",
+    "url": "https://link.coupang.com/a/cTFdsw",
+    "status": "OK",
+    "dest_info": "https://www.coupang.com/np/search?q=%EB%A7%A4%EC%8B%A4&src=1139000&spec=10799999&addtag=200&ctag=%EB%A7%A4%EC%8B%A4&lptag=AF1941306&itime=20260419144020&pageType=SEARCH&pageValue=%EB%A7%A4%EC%8B%A4&wPcid=17765772201365425145506&wRef=&wTime=20260419144020&redirect=landing&traceid=V0-181-13dd916aa3d6c2ea&mcid=1ee807a79e2640e8978e1167b134853b&placementid=&campaignid=&contentcategory=&imgsize=&pageid=&tsource=&deviceid=&contenttype=&token=&impressionid=&sig=&subid=&campaigntype=&requestid=&contentkeyword=&ctime=&subparam="
+  },
+  {
+    "name": "멍게",
+    "url": "https://link.coupang.com/a/cTFgMq",
+    "status": "OK",
+    "dest_info": "https://www.coupang.com/np/search?q=%EB%A9%8D%EA%B2%8C&src=1139000&spec=10799999&addtag=200&ctag=%EB%A9%8D%EA%B2%8C&lptag=AF1941306&itime=20260419144020&pageType=SEARCH&pageValue=%EB%A9%8D%EA%B2%8C&wPcid=17765772203254558685207&wRef=&wTime=20260419144020&redirect=landing&traceid=V0-181-e8afb1d0e79919f0&mcid=7ffd113dc9e443829a2236ef6953bf47&placementid=&campaignid=&contentcategory=&imgsize=&pageid=&tsource=&deviceid=&contenttype=&token=&impressionid=&sig=&subid=&campaigntype=&requestid=&contentkeyword=&ctime=&subparam="
+  },
+  {
+    "name": "멸치",
+    "url": "https://link.coupang.com/a/cTFgTJ",
+    "status": "OK",
+    "dest_info": "https://www.coupang.com/np/search?q=%EB%A9%B8%EC%B9%98&src=1139000&spec=10799999&addtag=200&ctag=%EB%A9%B8%EC%B9%98&lptag=AF1941306&itime=20260419144020&pageType=SEARCH&pageValue=%EB%A9%B8%EC%B9%98&wPcid=17765772205237090078551&wRef=&wTime=20260419144020&redirect=landing&traceid=V0-181-8de4676860379511&mcid=2110d77becd24378a978ac3db5a2481d&placementid=&campaignid=&contentcategory=&imgsize=&pageid=&tsource=&deviceid=&contenttype=&token=&impressionid=&sig=&subid=&campaigntype=&requestid=&contentkeyword=&ctime=&subparam="
+  },
+  {
+    "name": "명태(동태)",
+    "url": "https://link.coupang.com/a/cTFg1y",
+    "status": "MISMATCH",
+    "dest_info": "연결된 검색어: '명태'"
+  },
+  {
+    "name": "무",
+    "url": "https://link.coupang.com/a/cTFcwl",
+    "status": "OK",
+    "dest_info": "https://www.coupang.com/np/search?q=%EB%AC%B4&src=1139000&spec=10799999&addtag=200&ctag=%EB%AC%B4&lptag=AF1941306&itime=20260419144020&pageType=SEARCH&pageValue=%EB%AC%B4&wPcid=17765772208329499199367&wRef=&wTime=20260419144020&redirect=landing&traceid=V0-181-a2cc871263103e9f&mcid=0aa31c4c51334ef7bef60fa1c10fb66d&placementid=&campaignid=&contentcategory=&imgsize=&pageid=&tsource=&deviceid=&contenttype=&token=&impressionid=&sig=&subid=&campaigntype=&requestid=&contentkeyword=&ctime=&subparam="
+  },
+  {
+    "name": "무화과",
+    "url": "https://link.coupang.com/a/cTFdkO",
+    "status": "OK",
+    "dest_info": "https://www.coupang.com/np/search?q=%EB%AC%B4%ED%99%94%EA%B3%BC&src=1139000&spec=10799999&addtag=200&ctag=%EB%AC%B4%ED%99%94%EA%B3%BC&lptag=AF1941306&itime=20260419144021&pageType=SEARCH&pageValue=%EB%AC%B4%ED%99%94%EA%B3%BC&wPcid=17765772210651611812685&wRef=&wTime=20260419144021&redirect=landing&traceid=V0-181-89ddf8d2f856eacc&mcid=e422977b23274534a88f0a09181cdd7d&placementid=&campaignid=&contentcategory=&imgsize=&pageid=&tsource=&deviceid=&contenttype=&token=&impressionid=&sig=&subid=&campaigntype=&requestid=&contentkeyword=&ctime=&subparam="
+  },
+  {
+    "name": "미꾸라지",
+    "url": "https://link.coupang.com/a/cU37LM",
+    "status": "OK",
+    "dest_info": "https://www.coupang.com/np/search?q=%EB%AF%B8%EA%BE%B8%EB%9D%BC%EC%A7%80&src=1139000&spec=10799999&addtag=200&ctag=%EB%AF%B8%EA%BE%B8%EB%9D%BC%EC%A7%80&lptag=AF1941306&itime=20260419144021&pageType=SEARCH&pageValue=%EB%AF%B8%EA%BE%B8%EB%9D%BC%EC%A7%80&wPcid=17765772212375969106817&wRef=&wTime=20260419144021&redirect=landing&traceid=V0-181-3518e274bbf54e21&mcid=d078090de7c249d2a75623f40e08a810&placementid=&campaignid=&contentcategory=&imgsize=&pageid=&tsource=&deviceid=&contenttype=&token=&impressionid=&sig=&subid=&campaigntype=&requestid=&contentkeyword=&ctime=&subparam="
+  },
+  {
+    "name": "미나리",
+    "url": "https://link.coupang.com/a/cU37U5",
+    "status": "OK",
+    "dest_info": "https://www.coupang.com/np/search?q=%EB%AF%B8%EB%82%98%EB%A6%AC&src=1139000&spec=10799999&addtag=200&ctag=%EB%AF%B8%EB%82%98%EB%A6%AC&lptag=AF1941306&itime=20260419144021&pageType=SEARCH&pageValue=%EB%AF%B8%EB%82%98%EB%A6%AC&wPcid=17765772213816205104495&wRef=&wTime=20260419144021&redirect=landing&traceid=V0-181-6e40cb60670e5f09&mcid=6c2af19cb09f414c8b066697364cf052&placementid=&campaignid=&contentcategory=&imgsize=&pageid=&tsource=&deviceid=&contenttype=&token=&impressionid=&sig=&subid=&campaigntype=&requestid=&contentkeyword=&ctime=&subparam="
+  },
+  {
+    "name": "민어",
+    "url": "https://link.coupang.com/a/cTFhdM",
+    "status": "DUPLICATE",
+    "dest_info": "중복 사용됨 (함께 사용 중: 낙지)"
+  },
+  {
+    "name": "바지락",
+    "url": "https://link.coupang.com/a/cTFhEY",
+    "status": "OK",
+    "dest_info": "https://www.coupang.com/np/search?q=%EB%B0%94%EC%A7%80%EB%9D%BD&src=1139000&spec=10799999&addtag=200&ctag=%EB%B0%94%EC%A7%80%EB%9D%BD&lptag=AF1941306&itime=20260419144021&pageType=SEARCH&pageValue=%EB%B0%94%EC%A7%80%EB%9D%BD&wPcid=17765772217331737766527&wRef=&wTime=20260419144021&redirect=landing&traceid=V0-181-e3d2dc16f0f014ba&mcid=b2acf1d34e4942c4aaf57e9841de2c3e&placementid=&campaignid=&contentcategory=&imgsize=&pageid=&tsource=&deviceid=&contenttype=&token=&impressionid=&sig=&subid=&campaigntype=&requestid=&contentkeyword=&ctime=&subparam="
+  },
+  {
+    "name": "배",
+    "url": "https://link.coupang.com/a/cTFe71",
+    "status": "OK",
+    "dest_info": "https://www.coupang.com/np/search?q=%EB%B0%B0&src=1139000&spec=10799999&addtag=200&ctag=%EB%B0%B0&lptag=AF1941306&itime=20260419144021&pageType=SEARCH&pageValue=%EB%B0%B0&wPcid=17765772219002843615554&wRef=&wTime=20260419144021&redirect=landing&traceid=V0-181-e12246d1cc4fb8c4&mcid=69e33de390bb4b48839595a40cfba212&placementid=&campaignid=&contentcategory=&imgsize=&pageid=&tsource=&deviceid=&contenttype=&token=&impressionid=&sig=&subid=&campaigntype=&requestid=&contentkeyword=&ctime=&subparam="
+  },
+  {
+    "name": "배추",
+    "url": "https://link.coupang.com/a/cTFcC7",
+    "status": "OK",
+    "dest_info": "https://www.coupang.com/np/search?q=%EB%B0%B0%EC%B6%94&src=1139000&spec=10799999&addtag=200&ctag=%EB%B0%B0%EC%B6%94&lptag=AF1941306&itime=20260419144022&pageType=SEARCH&pageValue=%EB%B0%B0%EC%B6%94&wPcid=17765772220798028602472&wRef=&wTime=20260419144022&redirect=landing&traceid=V0-181-a3a7aa76059ecc16&mcid=55c358fe8e0140648f13e276a5301f32&placementid=&campaignid=&contentcategory=&imgsize=&pageid=&tsource=&deviceid=&contenttype=&token=&impressionid=&sig=&subid=&campaigntype=&requestid=&contentkeyword=&ctime=&subparam="
+  },
+  {
+    "name": "복분자",
+    "url": "https://link.coupang.com/a/cU39MC",
+    "status": "OK",
+    "dest_info": "https://www.coupang.com/np/search?q=%EB%B3%B5%EB%B6%84%EC%9E%90&src=1139000&spec=10799999&addtag=200&ctag=%EB%B3%B5%EB%B6%84%EC%9E%90&lptag=AF1941306&itime=20260419144022&pageType=SEARCH&pageValue=%EB%B3%B5%EB%B6%84%EC%9E%90&wPcid=17765772222645981757163&wRef=&wTime=20260419144022&redirect=landing&traceid=V0-181-7d4ca408a194e922&mcid=55f7c82c96954db1b483429dc6bd3353&placementid=&campaignid=&contentcategory=&imgsize=&pageid=&tsource=&deviceid=&contenttype=&token=&impressionid=&sig=&subid=&campaigntype=&requestid=&contentkeyword=&ctime=&subparam="
+  },
+  {
+    "name": "복숭아",
+    "url": "https://link.coupang.com/a/cTFdQ3",
+    "status": "OK",
+    "dest_info": "https://www.coupang.com/np/search?q=%EB%B3%B5%EC%88%AD%EC%95%84&src=1139000&spec=10799999&addtag=200&ctag=%EB%B3%B5%EC%88%AD%EC%95%84&lptag=AF1941306&itime=20260419144022&pageType=SEARCH&pageValue=%EB%B3%B5%EC%88%AD%EC%95%84&wPcid=17765772224781279929006&wRef=&wTime=20260419144022&redirect=landing&traceid=V0-181-ff2050151af81116&mcid=3225f8fe6ae945269907d0a191ee8fc1&placementid=&campaignid=&contentcategory=&imgsize=&pageid=&tsource=&deviceid=&contenttype=&token=&impressionid=&sig=&subid=&campaigntype=&requestid=&contentkeyword=&ctime=&subparam="
+  },
+  {
+    "name": "봄동",
+    "url": "https://link.coupang.com/a/cTFa0L",
+    "status": "OK",
+    "dest_info": "https://www.coupang.com/np/search?q=%EB%B4%84%EB%8F%99&src=1139000&spec=10799999&addtag=200&ctag=%EB%B4%84%EB%8F%99&lptag=AF1941306&itime=20260419144022&pageType=SEARCH&pageValue=%EB%B4%84%EB%8F%99&wPcid=17765772226490148259953&wRef=&wTime=20260419144022&redirect=landing&traceid=V0-181-9a96b549d4d576af&mcid=0c8d81370a7643f78157ea8ef342df5e&placementid=&campaignid=&contentcategory=&imgsize=&pageid=&tsource=&deviceid=&contenttype=&token=&impressionid=&sig=&subid=&campaigntype=&requestid=&contentkeyword=&ctime=&subparam="
+  },
+  {
+    "name": "블루베리",
+    "url": "https://link.coupang.com/a/cTFeiV",
+    "status": "OK",
+    "dest_info": "https://www.coupang.com/np/search?q=%EB%B8%94%EB%A3%A8%EB%B2%A0%EB%A6%AC&src=1139000&spec=10799999&addtag=200&ctag=%EB%B8%94%EB%A3%A8%EB%B2%A0%EB%A6%AC&lptag=AF1941306&itime=20260419144022&pageType=SEARCH&pageValue=%EB%B8%94%EB%A3%A8%EB%B2%A0%EB%A6%AC&wPcid=17765772229960825931353&wRef=&wTime=20260419144022&redirect=landing&traceid=V0-181-6504bdcc5efc94d3&mcid=d338f391355742d492e9909b4ec989a8&placementid=&campaignid=&contentcategory=&imgsize=&pageid=&tsource=&deviceid=&contenttype=&token=&impressionid=&sig=&subid=&campaigntype=&requestid=&contentkeyword=&ctime=&subparam="
+  },
+  {
+    "name": "사과",
+    "url": "https://link.coupang.com/a/cTFetT",
+    "status": "OK",
+    "dest_info": "https://www.coupang.com/np/search?q=%EC%82%AC%EA%B3%BC&src=1139000&spec=10799999&addtag=200&ctag=%EC%82%AC%EA%B3%BC&lptag=AF1941306&itime=20260419144023&pageType=SEARCH&pageValue=%EC%82%AC%EA%B3%BC&wPcid=17765772235952034570621&wRef=&wTime=20260419144023&redirect=landing&traceid=V0-181-14f74679c9c31012&mcid=1106d7c1d9374ecba88e0d0a19d79155&placementid=&campaignid=&contentcategory=&imgsize=&pageid=&tsource=&deviceid=&contenttype=&token=&impressionid=&sig=&subid=&campaigntype=&requestid=&contentkeyword=&ctime=&subparam="
+  },
+  {
+    "name": "삼치",
+    "url": "https://link.coupang.com/a/cTFhTc",
+    "status": "OK",
+    "dest_info": "https://www.coupang.com/np/search?q=%EC%82%BC%EC%B9%98&src=1139000&spec=10799999&addtag=200&ctag=%EC%82%BC%EC%B9%98&lptag=AF1941306&itime=20260419144024&pageType=SEARCH&pageValue=%EC%82%BC%EC%B9%98&wPcid=17765772241444246724538&wRef=&wTime=20260419144024&redirect=landing&traceid=V0-181-164e597a2f1747f4&mcid=50f47fad0e4a4c1bafc0befedb27c301&placementid=&campaignid=&contentcategory=&imgsize=&pageid=&tsource=&deviceid=&contenttype=&token=&impressionid=&sig=&subid=&campaigntype=&requestid=&contentkeyword=&ctime=&subparam="
+  },
+  {
+    "name": "석류",
+    "url": "https://link.coupang.com/a/cU4arn",
+    "status": "OK",
+    "dest_info": "https://www.coupang.com/np/search?q=%EC%84%9D%EB%A5%98&src=1139000&spec=10799999&addtag=200&ctag=%EC%84%9D%EB%A5%98&lptag=AF1941306&itime=20260419144025&pageType=SEARCH&pageValue=%EC%84%9D%EB%A5%98&wPcid=17765772252097875673695&wRef=&wTime=20260419144025&redirect=landing&traceid=V0-181-9e84649d60365c9b&mcid=0dad16a35c034a80a09ab55c8931cdee&placementid=&campaignid=&contentcategory=&imgsize=&pageid=&tsource=&deviceid=&contenttype=&token=&impressionid=&sig=&subid=&campaigntype=&requestid=&contentkeyword=&ctime=&subparam="
+  },
+  {
+    "name": "소라",
+    "url": "https://link.coupang.com/a/cTFh2c",
+    "status": "OK",
+    "dest_info": "https://www.coupang.com/np/search?q=%EC%86%8C%EB%9D%BC&src=1139000&spec=10799999&addtag=200&ctag=%EC%86%8C%EB%9D%BC&lptag=AF1941306&itime=20260419144025&pageType=SEARCH&pageValue=%EC%86%8C%EB%9D%BC&wPcid=17765772257263637599512&wRef=&wTime=20260419144025&redirect=landing&traceid=V0-181-c43618bc9195fbb5&mcid=78aec4236dd8439eb93939f1999a35e1&placementid=&campaignid=&contentcategory=&imgsize=&pageid=&tsource=&deviceid=&contenttype=&token=&impressionid=&sig=&subid=&campaigntype=&requestid=&contentkeyword=&ctime=&subparam="
+  },
+  {
+    "name": "수박",
+    "url": "https://link.coupang.com/a/cTFeIx",
+    "status": "DUPLICATE",
+    "dest_info": "중복 사용됨 (함께 사용 중: 포도, 살구, 앵두)"
+  },
+  {
+    "name": "쑥",
+    "url": "https://link.coupang.com/a/cTFbgL",
+    "status": "OK",
+    "dest_info": "https://www.coupang.com/np/search?q=%EC%91%A5&src=1139000&spec=10799999&addtag=200&ctag=%EC%91%A5&lptag=AF1941306&itime=20260419144026&pageType=SEARCH&pageValue=%EC%91%A5&wPcid=17765772261847833051406&wRef=&wTime=20260419144026&redirect=landing&traceid=V0-181-9e52f5996efd2d47&mcid=1300e282c40e4935878200148e796415&placementid=&campaignid=&contentcategory=&imgsize=&pageid=&tsource=&deviceid=&contenttype=&token=&impressionid=&sig=&subid=&campaigntype=&requestid=&contentkeyword=&ctime=&subparam="
+  },
+  {
+    "name": "씀바귀",
+    "url": "https://link.coupang.com/a/cTFbrI",
+    "status": "OK",
+    "dest_info": "https://www.coupang.com/np/search?q=%EC%94%80%EB%B0%94%EA%B7%80&src=1139000&spec=10799999&addtag=200&ctag=%EC%94%80%EB%B0%94%EA%B7%80&lptag=AF1941306&itime=20260419144026&pageType=SEARCH&pageValue=%EC%94%80%EB%B0%94%EA%B7%80&wPcid=17765772263452403444527&wRef=&wTime=20260419144026&redirect=landing&traceid=V0-181-8f77246beed6a751&mcid=ac858e1ece084222bd69fa3ef1154c51&placementid=&campaignid=&contentcategory=&imgsize=&pageid=&tsource=&deviceid=&contenttype=&token=&impressionid=&sig=&subid=&campaigntype=&requestid=&contentkeyword=&ctime=&subparam="
+  },
+  {
+    "name": "시금치",
+    "url": "https://link.coupang.com/a/cTFbCi",
+    "status": "OK",
+    "dest_info": "https://www.coupang.com/np/search?q=%EC%8B%9C%EA%B8%88%EC%B9%98&src=1139000&spec=10799999&addtag=200&ctag=%EC%8B%9C%EA%B8%88%EC%B9%98&lptag=AF1941306&itime=20260419144026&pageType=SEARCH&pageValue=%EC%8B%9C%EA%B8%88%EC%B9%98&wPcid=17765772265623371359272&wRef=&wTime=20260419144026&redirect=landing&traceid=V0-181-f8ed4bc415acbfb8&mcid=41096c1d34b74e9980452b7d5bd602c1&placementid=&campaignid=&contentcategory=&imgsize=&pageid=&tsource=&deviceid=&contenttype=&token=&impressionid=&sig=&subid=&campaigntype=&requestid=&contentkeyword=&ctime=&subparam="
+  },
+  {
+    "name": "아귀",
+    "url": "https://link.coupang.com/a/cTFh7P",
+    "status": "OK",
+    "dest_info": "https://www.coupang.com/np/search?q=%EC%95%84%EA%B7%80&src=1139000&spec=10799999&addtag=200&ctag=%EC%95%84%EA%B7%80&lptag=AF1941306&itime=20260419144026&pageType=SEARCH&pageValue=%EC%95%84%EA%B7%80&wPcid=17765772267236737563377&wRef=&wTime=20260419144026&redirect=landing&traceid=V0-181-78b35bb1a7f719fb&mcid=04cd1aa019bc48f4bb90b87343af3a82&placementid=&campaignid=&contentcategory=&imgsize=&pageid=&tsource=&deviceid=&contenttype=&token=&impressionid=&sig=&subid=&campaigntype=&requestid=&contentkeyword=&ctime=&subparam="
+  },
+  {
+    "name": "애호박",
+    "url": "https://link.coupang.com/a/cTFbKt",
+    "status": "OK",
+    "dest_info": "https://www.coupang.com/np/search?q=%EC%95%A0%ED%98%B8%EB%B0%95&src=1139000&spec=10799999&addtag=200&ctag=%EC%95%A0%ED%98%B8%EB%B0%95&lptag=AF1941306&itime=20260419144026&pageType=SEARCH&pageValue=%EC%95%A0%ED%98%B8%EB%B0%95&wPcid=17765772268848187840480&wRef=&wTime=20260419144026&redirect=landing&traceid=V0-181-a0bcc15fc38e990a&mcid=0bcef4c5362c4654a58a144fab4b5bdd&placementid=&campaignid=&contentcategory=&imgsize=&pageid=&tsource=&deviceid=&contenttype=&token=&impressionid=&sig=&subid=&campaigntype=&requestid=&contentkeyword=&ctime=&subparam="
+  },
+  {
+    "name": "연근",
+    "url": "https://link.coupang.com/a/cTFbRj",
+    "status": "OK",
+    "dest_info": "https://www.coupang.com/np/search?q=%EC%97%B0%EA%B7%BC&src=1139000&spec=10799999&addtag=200&ctag=%EC%97%B0%EA%B7%BC&lptag=AF1941306&itime=20260419144027&pageType=SEARCH&pageValue=%EC%97%B0%EA%B7%BC&wPcid=17765772270823730990278&wRef=&wTime=20260419144027&redirect=landing&traceid=V0-181-e16b22b368dcfd42&mcid=b3b2e10b4c1d485792fbd003468bc846&placementid=&campaignid=&contentcategory=&imgsize=&pageid=&tsource=&deviceid=&contenttype=&token=&impressionid=&sig=&subid=&campaigntype=&requestid=&contentkeyword=&ctime=&subparam="
+  },
+  {
+    "name": "열무",
+    "url": "https://link.coupang.com/a/cTFb1K",
+    "status": "OK",
+    "dest_info": "https://www.coupang.com/np/search?q=%EC%97%B4%EB%AC%B4&src=1139000&spec=10799999&addtag=200&ctag=%EC%97%B4%EB%AC%B4&lptag=AF1941306&itime=20260419144027&pageType=SEARCH&pageValue=%EC%97%B4%EB%AC%B4&wPcid=17765772272336431439421&wRef=&wTime=20260419144027&redirect=landing&traceid=V0-181-ec49091c73d4bc69&mcid=0cc2c1912fc04897b1eff46034b4c380&placementid=&campaignid=&contentcategory=&imgsize=&pageid=&tsource=&deviceid=&contenttype=&token=&impressionid=&sig=&subid=&campaigntype=&requestid=&contentkeyword=&ctime=&subparam="
+  },
+  {
+    "name": "오이",
+    "url": "https://link.coupang.com/a/cTFb9m",
+    "status": "OK",
+    "dest_info": "https://www.coupang.com/np/search?q=%EC%98%A4%EC%9D%B4&src=1139000&spec=10799999&addtag=200&ctag=%EC%98%A4%EC%9D%B4&lptag=AF1941306&itime=20260419144027&pageType=SEARCH&pageValue=%EC%98%A4%EC%9D%B4&wPcid=17765772274045626785902&wRef=&wTime=20260419144027&redirect=landing&traceid=V0-181-81d547943a66fcb0&mcid=67e84f685322494ab17480d111f7fb6e&placementid=&campaignid=&contentcategory=&imgsize=&pageid=&tsource=&deviceid=&contenttype=&token=&impressionid=&sig=&subid=&campaigntype=&requestid=&contentkeyword=&ctime=&subparam="
+  },
+  {
+    "name": "오징어",
+    "url": "https://link.coupang.com/a/cU4a7W",
+    "status": "OK",
+    "dest_info": "https://www.coupang.com/np/search?q=%EC%98%A4%EC%A7%95%EC%96%B4&src=1139000&spec=10799999&addtag=200&ctag=%EC%98%A4%EC%A7%95%EC%96%B4&lptag=AF1941306&itime=20260419144027&pageType=SEARCH&pageValue=%EC%98%A4%EC%A7%95%EC%96%B4&wPcid=17765772275568045728072&wRef=&wTime=20260419144027&redirect=landing&traceid=V0-181-1683391e0ac1f275&mcid=41ba6beff7234956a1ca6894f59383a7&placementid=&campaignid=&contentcategory=&imgsize=&pageid=&tsource=&deviceid=&contenttype=&token=&impressionid=&sig=&subid=&campaigntype=&requestid=&contentkeyword=&ctime=&subparam="
+  },
+  {
+    "name": "옥수수",
+    "url": "https://link.coupang.com/a/cTFchg",
+    "status": "OK",
+    "dest_info": "https://www.coupang.com/np/search?q=%EC%98%A5%EC%88%98%EC%88%98&src=1139000&spec=10799999&addtag=200&ctag=%EC%98%A5%EC%88%98%EC%88%98&lptag=AF1941306&itime=20260419144027&pageType=SEARCH&pageValue=%EC%98%A5%EC%88%98%EC%88%98&wPcid=17765772277605780345764&wRef=&wTime=20260419144027&redirect=landing&traceid=V0-181-ef6bc2799683e17c&mcid=679bf0f5e3c64c6dab07953a564fa0e3&placementid=&campaignid=&contentcategory=&imgsize=&pageid=&tsource=&deviceid=&contenttype=&token=&impressionid=&sig=&subid=&campaigntype=&requestid=&contentkeyword=&ctime=&subparam="
+  },
+  {
+    "name": "우엉",
+    "url": "https://link.coupang.com/a/cTFco1",
+    "status": "OK",
+    "dest_info": "https://www.coupang.com/np/search?q=%EC%9A%B0%EC%97%89&src=1139000&spec=10799999&addtag=200&ctag=%EC%9A%B0%EC%97%89&lptag=AF1941306&itime=20260419144027&pageType=SEARCH&pageValue=%EC%9A%B0%EC%97%89&wPcid=17765772279194857561049&wRef=&wTime=20260419144027&redirect=landing&traceid=V0-181-c168286fa3c4542d&mcid=e5a40430bc5f464abab82162c34e8f09&placementid=&campaignid=&contentcategory=&imgsize=&pageid=&tsource=&deviceid=&contenttype=&token=&impressionid=&sig=&subid=&campaigntype=&requestid=&contentkeyword=&ctime=&subparam="
+  },
+  {
+    "name": "유자",
+    "url": "https://link.coupang.com/a/cTFfd1",
+    "status": "OK",
+    "dest_info": "https://www.coupang.com/np/search?q=%EC%9C%A0%EC%9E%90&src=1139000&spec=10799999&addtag=200&ctag=%EC%9C%A0%EC%9E%90&lptag=AF1941306&itime=20260419144028&pageType=SEARCH&pageValue=%EC%9C%A0%EC%9E%90&wPcid=17765772280685264311226&wRef=&wTime=20260419144028&redirect=landing&traceid=V0-181-bf3f447285d4e7fc&mcid=1216dfb92dd24f5f80ddcbbca5cf2d26&placementid=&campaignid=&contentcategory=&imgsize=&pageid=&tsource=&deviceid=&contenttype=&token=&impressionid=&sig=&subid=&campaigntype=&requestid=&contentkeyword=&ctime=&subparam="
+  },
+  {
+    "name": "자두",
+    "url": "https://link.coupang.com/a/cTFeOK",
+    "status": "OK",
+    "dest_info": "https://www.coupang.com/np/search?q=%EC%9E%90%EB%91%90&src=1139000&spec=10799999&addtag=200&ctag=%EC%9E%90%EB%91%90&lptag=AF1941306&itime=20260419144028&pageType=SEARCH&pageValue=%EC%9E%90%EB%91%90&wPcid=17765772282531772849853&wRef=&wTime=20260419144028&redirect=landing&traceid=V0-181-2eaa3e585d8cce6c&mcid=3c40b0cbebb94a459435e103a8bae826&placementid=&campaignid=&contentcategory=&imgsize=&pageid=&tsource=&deviceid=&contenttype=&token=&impressionid=&sig=&subid=&campaigntype=&requestid=&contentkeyword=&ctime=&subparam="
+  },
+  {
+    "name": "장어",
+    "url": "https://link.coupang.com/a/cTFiVo",
+    "status": "OK",
+    "dest_info": "https://www.coupang.com/np/search?q=%EC%9E%A5%EC%96%B4&src=1139000&spec=10799999&addtag=200&ctag=%EC%9E%A5%EC%96%B4&lptag=AF1941306&itime=20260419144028&pageType=SEARCH&pageValue=%EC%9E%A5%EC%96%B4&wPcid=17765772284430236192880&wRef=&wTime=20260419144028&redirect=landing&traceid=V0-181-c6798b389b7bebde&mcid=57e1eb1b321c4dfb91f984f2fc236e0d&placementid=&campaignid=&contentcategory=&imgsize=&pageid=&tsource=&deviceid=&contenttype=&token=&impressionid=&sig=&subid=&campaigntype=&requestid=&contentkeyword=&ctime=&subparam="
+  },
+  {
+    "name": "전복",
+    "url": "https://link.coupang.com/a/cTFi20",
+    "status": "OK",
+    "dest_info": "https://www.coupang.com/np/search?q=%EC%A0%84%EB%B3%B5&src=1139000&spec=10799999&addtag=200&ctag=%EC%A0%84%EB%B3%B5&lptag=AF1941306&itime=20260419144028&pageType=SEARCH&pageValue=%EC%A0%84%EB%B3%B5&wPcid=17765772286090323995798&wRef=&wTime=20260419144028&redirect=landing&traceid=V0-181-f92f73d6b1ab439f&mcid=03aab28c805a4dd9accb38dca0fbf510&placementid=&campaignid=&contentcategory=&imgsize=&pageid=&tsource=&deviceid=&contenttype=&token=&impressionid=&sig=&subid=&campaigntype=&requestid=&contentkeyword=&ctime=&subparam="
+  },
+  {
+    "name": "전어",
+    "url": "https://link.coupang.com/a/cTFi9f",
+    "status": "OK",
+    "dest_info": "https://www.coupang.com/np/search?q=%EC%A0%84%EC%96%B4&src=1139000&spec=10799999&addtag=200&ctag=%EC%A0%84%EC%96%B4&lptag=AF1941306&itime=20260419144028&pageType=SEARCH&pageValue=%EC%A0%84%EC%96%B4&wPcid=17765772287585256529362&wRef=&wTime=20260419144028&redirect=landing&traceid=V0-181-4bfa97db381b7344&mcid=8586c85642924f8ca33d8c3acfd5d7c7&placementid=&campaignid=&contentcategory=&imgsize=&pageid=&tsource=&deviceid=&contenttype=&token=&impressionid=&sig=&subid=&campaigntype=&requestid=&contentkeyword=&ctime=&subparam="
+  },
+  {
+    "name": "주꾸미",
+    "url": "https://link.coupang.com/a/cTFjfG",
+    "status": "OK",
+    "dest_info": "https://www.coupang.com/np/search?q=%EC%A3%BC%EA%BE%B8%EB%AF%B8&src=1139000&spec=10799999&addtag=200&ctag=%EC%A3%BC%EA%BE%B8%EB%AF%B8&lptag=AF1941306&itime=20260419144028&pageType=SEARCH&pageValue=%EC%A3%BC%EA%BE%B8%EB%AF%B8&wPcid=17765772289653641850054&wRef=&wTime=20260419144028&redirect=landing&traceid=V0-181-c27bfb4d5fa68f03&mcid=186cd84b1c8f42ae8240448b455d6388&placementid=&campaignid=&contentcategory=&imgsize=&pageid=&tsource=&deviceid=&contenttype=&token=&impressionid=&sig=&subid=&campaigntype=&requestid=&contentkeyword=&ctime=&subparam="
+  },
+  {
+    "name": "참외",
+    "url": "https://link.coupang.com/a/cU4bzq",
+    "status": "OK",
+    "dest_info": "https://www.coupang.com/np/search?q=%EC%B0%B8%EC%99%B8&src=1139000&spec=10799999&addtag=200&ctag=%EC%B0%B8%EC%99%B8&lptag=AF1941306&itime=20260419144029&pageType=SEARCH&pageValue=%EC%B0%B8%EC%99%B8&wPcid=17765772291347377339137&wRef=&wTime=20260419144029&redirect=landing&traceid=V0-181-4b0f35a36e3f1530&mcid=a186d5bce5224934afd787da86c39d9a&placementid=&campaignid=&contentcategory=&imgsize=&pageid=&tsource=&deviceid=&contenttype=&token=&impressionid=&sig=&subid=&campaigntype=&requestid=&contentkeyword=&ctime=&subparam="
+  },
+  {
+    "name": "취나물",
+    "url": "https://link.coupang.com/a/cTFcKT",
+    "status": "OK",
+    "dest_info": "https://www.coupang.com/np/search?q=%EC%B7%A8%EB%82%98%EB%AC%BC&src=1139000&spec=10799999&addtag=200&ctag=%EC%B7%A8%EB%82%98%EB%AC%BC&lptag=AF1941306&itime=20260419144029&pageType=SEARCH&pageValue=%EC%B7%A8%EB%82%98%EB%AC%BC&wPcid=17765772293464155350674&wRef=&wTime=20260419144029&redirect=landing&traceid=V0-181-cbdb6f4742c1777c&mcid=274b392a09a24e438f26c882ed5617b9&placementid=&campaignid=&contentcategory=&imgsize=&pageid=&tsource=&deviceid=&contenttype=&token=&impressionid=&sig=&subid=&campaigntype=&requestid=&contentkeyword=&ctime=&subparam="
+  },
+  {
+    "name": "키조개",
+    "url": "https://link.coupang.com/a/cTFjrQ",
+    "status": "OK",
+    "dest_info": "https://www.coupang.com/np/search?q=%ED%82%A4%EC%A1%B0%EA%B0%9C&src=1139000&spec=10799999&addtag=200&ctag=%ED%82%A4%EC%A1%B0%EA%B0%9C&lptag=AF1941306&itime=20260419144029&pageType=SEARCH&pageValue=%ED%82%A4%EC%A1%B0%EA%B0%9C&wPcid=17765772296528642475520&wRef=&wTime=20260419144029&redirect=landing&traceid=V0-181-9f8b7d088a8f981a&mcid=ce572c7568464854b72c5325420617b4&placementid=&campaignid=&contentcategory=&imgsize=&pageid=&tsource=&deviceid=&contenttype=&token=&impressionid=&sig=&subid=&campaigntype=&requestid=&contentkeyword=&ctime=&subparam="
+  },
+  {
+    "name": "밤",
+    "url": "https://link.coupang.com/a/cU4bVS",
+    "status": "OK",
+    "dest_info": "https://www.coupang.com/np/search?q=%EB%B0%A4&src=1139000&spec=10799999&addtag=200&ctag=%EB%B0%A4&lptag=AF1941306&itime=20260419144029&pageType=SEARCH&pageValue=%EB%B0%A4&wPcid=17765772298412257140097&wRef=&wTime=20260419144029&redirect=landing&traceid=V0-181-05b081e32fa6dd5f&mcid=ff258d8ad2594b0f82c20fe42dab4823&placementid=&campaignid=&contentcategory=&imgsize=&pageid=&tsource=&deviceid=&contenttype=&token=&impressionid=&sig=&subid=&campaigntype=&requestid=&contentkeyword=&ctime=&subparam="
+  },
+  {
+    "name": "토란",
+    "url": "https://link.coupang.com/a/cTFcSB",
+    "status": "OK",
+    "dest_info": "https://www.coupang.com/np/search?q=%ED%86%A0%EB%9E%80&src=1139000&spec=10799999&addtag=200&ctag=%ED%86%A0%EB%9E%80&lptag=AF1941306&itime=20260419144029&pageType=SEARCH&pageValue=%ED%86%A0%EB%9E%80&wPcid=17765772299963843071396&wRef=&wTime=20260419144029&redirect=landing&traceid=V0-181-53add29554bba4ac&mcid=fbde16a654c54a89b3eeb9a292f571f7&placementid=&campaignid=&contentcategory=&imgsize=&pageid=&tsource=&deviceid=&contenttype=&token=&impressionid=&sig=&subid=&campaigntype=&requestid=&contentkeyword=&ctime=&subparam="
+  },
+  {
+    "name": "파래",
+    "url": "https://link.coupang.com/a/cTFjyK",
+    "status": "OK",
+    "dest_info": "https://www.coupang.com/np/search?q=%ED%8C%8C%EB%9E%98&src=1139000&spec=10799999&addtag=200&ctag=%ED%8C%8C%EB%9E%98&lptag=AF1941306&itime=20260419144030&pageType=SEARCH&pageValue=%ED%8C%8C%EB%9E%98&wPcid=17765772304767620959081&wRef=&wTime=20260419144030&redirect=landing&traceid=V0-181-2c888838cc228abe&mcid=a2063314006a4454bbc5aa1db5909cd1&placementid=&campaignid=&contentcategory=&imgsize=&pageid=&tsource=&deviceid=&contenttype=&token=&impressionid=&sig=&subid=&campaigntype=&requestid=&contentkeyword=&ctime=&subparam="
+  },
+  {
+    "name": "홍합",
+    "url": "https://link.coupang.com/a/cU4ciX",
+    "status": "OK",
+    "dest_info": "https://www.coupang.com/np/search?q=%ED%99%8D%ED%95%A9&src=1139000&spec=10799999&addtag=200&ctag=%ED%99%8D%ED%95%A9&lptag=AF1941306&itime=20260419144030&pageType=SEARCH&pageValue=%ED%99%8D%ED%95%A9&wPcid=17765772306431021311793&wRef=&wTime=20260419144030&redirect=landing&traceid=V0-181-1c8c5d66ff085b4f&mcid=5ed3981e89dc49f6baad49a9cae353a1&placementid=&campaignid=&contentcategory=&imgsize=&pageid=&tsource=&deviceid=&contenttype=&token=&impressionid=&sig=&subid=&campaigntype=&requestid=&contentkeyword=&ctime=&subparam="
+  },
+  {
+    "name": "송이버섯",
+    "url": "https://link.coupang.com/a/cTFjU3",
+    "status": "OK",
+    "dest_info": "https://www.coupang.com/np/search?q=%EC%86%A1%EC%9D%B4%EB%B2%84%EC%84%AF&src=1139000&spec=10799999&addtag=200&ctag=%EC%86%A1%EC%9D%B4%EB%B2%84%EC%84%AF&lptag=AF1941306&itime=20260419144030&pageType=SEARCH&pageValue=%EC%86%A1%EC%9D%B4%EB%B2%84%EC%84%AF&wPcid=17765772307976013044032&wRef=&wTime=20260419144030&redirect=landing&traceid=V0-181-eb1f2f28d0195a17&mcid=3a5adf6c085b4c65b37a92c9ba5f637a&placementid=&campaignid=&contentcategory=&imgsize=&pageid=&tsource=&deviceid=&contenttype=&token=&impressionid=&sig=&subid=&campaigntype=&requestid=&contentkeyword=&ctime=&subparam="
+  },
+  {
+    "name": "은행",
+    "url": "https://link.coupang.com/a/cU4cuO",
+    "status": "OK",
+    "dest_info": "https://www.coupang.com/np/search?q=%EC%9D%80%ED%96%89&src=1139000&spec=10799999&addtag=200&ctag=%EC%9D%80%ED%96%89&lptag=AF1941306&itime=20260419144030&pageType=SEARCH&pageValue=%EC%9D%80%ED%96%89&wPcid=17765772309827590676418&wRef=&wTime=20260419144030&redirect=landing&traceid=V0-181-d3480a1c061adca6&mcid=8bbed3d6353c4e948c9bbd214e4496ee&placementid=&campaignid=&contentcategory=&imgsize=&pageid=&tsource=&deviceid=&contenttype=&token=&impressionid=&sig=&subid=&campaigntype=&requestid=&contentkeyword=&ctime=&subparam="
+  },
+  {
+    "name": "표고버섯",
+    "url": "https://link.coupang.com/a/cU4cMJ",
+    "status": "OK",
+    "dest_info": "https://www.coupang.com/np/search?q=%ED%91%9C%EA%B3%A0%EB%B2%84%EC%84%AF&src=1139000&spec=10799999&addtag=200&ctag=%ED%91%9C%EA%B3%A0%EB%B2%84%EC%84%AF&lptag=AF1941306&itime=20260419144031&pageType=SEARCH&pageValue=%ED%91%9C%EA%B3%A0%EB%B2%84%EC%84%AF&wPcid=17765772311461334006189&wRef=&wTime=20260419144031&redirect=landing&traceid=V0-181-86896820b1c2d4c3&mcid=6074b606b42945f99f6a5507b311155d&placementid=&campaignid=&contentcategory=&imgsize=&pageid=&tsource=&deviceid=&contenttype=&token=&impressionid=&sig=&subid=&campaigntype=&requestid=&contentkeyword=&ctime=&subparam="
+  },
+  {
+    "name": "한치",
+    "url": "https://link.coupang.com/a/cTFfng",
+    "status": "DUPLICATE",
+    "dest_info": "중복 사용됨 (함께 사용 중: 갈치)"
+  },
+  {
+    "name": "낙지",
+    "url": "https://link.coupang.com/a/cTFhdM",
+    "status": "DUPLICATE",
+    "dest_info": "중복 사용됨 (함께 사용 중: 민어)"
+  },
+  {
+    "name": "방어",
+    "url": "https://link.coupang.com/a/cTFgAo",
+    "status": "DUPLICATE",
+    "dest_info": "중복 사용됨 (함께 사용 중: 대구)"
+  },
+  {
+    "name": "포도",
+    "url": "https://link.coupang.com/a/cTFeIx",
+    "status": "DUPLICATE",
+    "dest_info": "중복 사용됨 (함께 사용 중: 수박, 살구, 앵두)"
+  },
+  {
+    "name": "살구",
+    "url": "https://link.coupang.com/a/cTFeIx",
+    "status": "DUPLICATE",
+    "dest_info": "중복 사용됨 (함께 사용 중: 수박, 포도, 앵두)"
+  },
+  {
+    "name": "앵두",
+    "url": "https://link.coupang.com/a/cTFeIx",
+    "status": "DUPLICATE",
+    "dest_info": "중복 사용됨 (함께 사용 중: 수박, 포도, 살구)"
+  },
+  {
+    "name": "한라봉",
+    "url": "https://link.coupang.com/a/cTFfTx",
+    "status": "UNVERIFIED",
+    "dest_info": "검색어 확인 불가 (직접 클릭 확인 필요)"
+  },
+  {
+    "name": "팽이버섯",
+    "url": "",
+    "status": "MISSING",
+    "dest_info": ""
+  },
+  {
+    "name": "명이나물",
+    "url": "",
+    "status": "MISSING",
+    "dest_info": ""
+  }
+]

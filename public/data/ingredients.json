@@ -1606,7 +1606,7 @@
     "storage_room_temp": "",
     "storage_refrigerator": "손질 후 밀폐 보관, 가급적 당일 소비.",
     "storage_freezer": "손질 후 진공 포장하여 냉동 보관.",
-    "external_url": "https://link.coupang.com/a/cTFfng",
+    "external_url": "https://link.coupang.com/a/er9QLv",
     "calories_per_100g": 80,
     "calories_per_serving": "100g당 약 80kcal",
     "name_en": "",
@@ -1629,7 +1629,7 @@
     "storage_room_temp": "",
     "storage_refrigerator": "내장을 제거하고 깨끗이 씻어 냉장 보관하며 하루를 넘기지 않습니다.",
     "storage_freezer": "손질한 뒤 소분하여 급속 냉동 보관.",
-    "external_url": "https://link.coupang.com/a/cTFhdM",
+    "external_url": "https://link.coupang.com/a/er9RHd",
     "calories_per_100g": 53,
     "calories_per_serving": "1마리(약 100g) 약 53kcal",
     "name_en": "",
@@ -1652,7 +1652,7 @@
     "storage_room_temp": "",
     "storage_refrigerator": "포를 뜬 상태로 공기를 차단해 냉장 숙성(1~2일 내 섭취).",
     "storage_freezer": "밀봉하여 단기 냉동 구이/조림용으로 활용 가능.",
-    "external_url": "https://link.coupang.com/a/cTFgAo",
+    "external_url": "https://link.coupang.com/a/er9Sha",
     "calories_per_100g": 146,
     "calories_per_serving": "100g당 약 146kcal",
     "name_en": "",
@@ -1680,7 +1680,7 @@
     "name_ja": "",
     "description_en": "",
     "description_ja": "",
-    "external_url": "https://link.coupang.com/a/cTFeIx",
+    "external_url": "https://link.coupang.com/a/er9SOk",
     "calories_per_100g": 60,
     "calories_per_serving": "100g당 약 60kcal",
     "popular_dish": "포도주스, 포도잼",
@@ -1702,7 +1702,7 @@
     "name_ja": "",
     "description_en": "",
     "description_ja": "",
-    "external_url": "https://link.coupang.com/a/cTFeIx",
+    "external_url": "https://link.coupang.com/a/er9TKD",
     "calories_per_100g": 28,
     "calories_per_serving": "100g당 약 28kcal",
     "popular_dish": "살구잼, 살구청",
@@ -1724,7 +1724,7 @@
     "name_ja": "",
     "description_en": "",
     "description_ja": "",
-    "external_url": "https://link.coupang.com/a/cTFeIx",
+    "external_url": "https://link.coupang.com/a/er9UuH",
     "calories_per_100g": 36,
     "calories_per_serving": "100g당 약 36kcal",
     "popular_dish": "앵두편, 앵두화채",
@@ -1745,7 +1745,7 @@
     "name_ja": "",
     "description_en": "",
     "description_ja": "",
-    "external_url": "https://link.coupang.com/a/cTFfTx",
+    "external_url": "https://link.coupang.com/a/er9UVm",
     "calories_per_100g": 48,
     "calories_per_serving": "100g당 약 48kcal",
     "popular_dish": "한라봉청, 한라봉에이드",
@@ -1766,7 +1766,21 @@
     "calories_per_100g": 36,
     "calories_per_serving": "1봉지(150g)당 약 54kcal",
     "popular_dish": "팽이버섯전, 팽이버섯볶음, 말린 팽이버섯 차",
-    "months": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]
+    "months": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12
+    ],
+    "external_url": "https://link.coupang.com/a/er9NYa"
   },
   {
     "name_ko": "명이나물",
@@ -1778,6 +1792,10 @@
     "calories_per_100g": 23,
     "calories_per_serving": "10장(약 30g)당 약 7kcal",
     "popular_dish": "명이나물 장아찌, 명이나물 쌈",
-    "months": [4, 5]
+    "months": [
+      4,
+      5
+    ],
+    "external_url": "https://link.coupang.com/a/er9OG3"
   }
 ]
