@@ -16,8 +16,17 @@ android {
             ignoreAssetsPattern '!.svn:!.git:!.ds_store:!*.scc:.*:!CVS:!thumbs.db:!picasa.ini:!*~'
         }
     }
+    signingConfigs {
+        release {
+            storeFile file("../../upload-keystore.jks")
+            storePassword "여기에_비밀번호_입력"
+            keyAlias "upload"
+            keyPassword "여기에_비밀번호_입력"
+        }
+    }
     buildTypes {
         release {
+            signingConfig signingConfigs.release
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
