@@ -8373,5 +8373,91 @@
       "우려내고 남은 버섯 건더기에는 식이섬유가 풍부하므로 함께 드시는 것이 좋습니다."
     ],
     "relatedIngredients": ["팽이버섯"]
+  },
+  {
+    "id": "chwinamul-muchim",
+    "name": "취나물무침",
+    "category": "채소",
+    "description": "향긋한 취나물의 풍미를 그대로 살린 고소하고 담백한 밑반찬입니다.",
+    "servings": 2,
+    "cookTime": "15분",
+    "difficulty": "하",
+    "ingredients": [
+      { "name": "취나물", "amount": "200g" },
+      { "name": "국간장", "amount": "1큰술" },
+      { "name": "다진 마늘", "amount": "0.5큰술" },
+      { "name": "참기름", "amount": "1큰술" },
+      { "name": "통깨", "amount": "약간" }
+    ],
+    "steps": [
+      { "step": 1, "description": "취나물은 억센 줄기를 다듬고 깨끗이 씻어 준비합니다." },
+      { "step": 2, "description": "끓는 물에 소금을 약간 넣고 취나물을 1~2분간 살짝 데칩니다." },
+      { "step": 3, "description": "데친 취나물을 찬물에 헹궈 물기를 꼭 짭니다." },
+      { "step": 4, "description": "볼에 취나물과 간장, 마늘, 참기름, 통깨를 넣고 조물조물 무칩니다." }
+    ]
+  },
+  {
+    "id": "chwinamul-bap",
+    "name": "취나물밥",
+    "category": "채소",
+    "description": "밥을 지을 때 취나물을 넣어 향긋한 냄새가 일품인 건강식입니다.",
+    "servings": 2,
+    "cookTime": "40분",
+    "difficulty": "중",
+    "ingredients": [
+      { "name": "쌀", "amount": "2컵" },
+      { "name": "취나물", "amount": "150g" },
+      { "name": "들기름", "amount": "1큰술" },
+      { "name": "양념장(간장, 고춧가루, 달래 등)", "amount": "적당량" }
+    ],
+    "steps": [
+      { "step": 1, "description": "쌀은 씻어 30분 정도 불려둡니다." },
+      { "step": 2, "description": "취나물은 데쳐서 물기를 짠 뒤 들기름에 살짝 버무려둡니다." },
+      { "step": 3, "description": "솥에 쌀과 물(평소보다 약간 적게)을 넣고 그 위에 취나물을 얹습니다." },
+      { "step": 4, "description": "밥이 다 되면 잘 섞어 양념장과 곁들여 먹습니다." }
+    ]
+  },
+  {
+    "id": "daseulgi-guk",
+    "name": "다슬기국",
+    "category": "해산물",
+    "description": "시원하고 쌉싸름한 국물 맛이 일품인 대표적인 해장국입니다.",
+    "servings": 3,
+    "cookTime": "50분",
+    "difficulty": "중",
+    "ingredients": [
+      { "name": "다슬기(손질된 것)", "amount": "200g" },
+      { "name": "부추", "amount": "한 줌" },
+      { "name": "아욱 또는 얼갈이배추", "amount": "150g" },
+      { "name": "된장", "amount": "2큰술" },
+      { "name": "다진 마늘", "amount": "1큰술" }
+    ],
+    "steps": [
+      { "step": 1, "description": "냄비에 물을 붓고 된장을 풀어 끓입니다." },
+      { "step": 2, "description": "국물이 끓으면 아욱이나 얼갈이배추를 넣어 한소끔 끓입니다." },
+      { "step": 3, "description": "다슬기 살과 다진 마늘을 넣고 맛이 우러나도록 끓입니다." },
+      { "step": 4, "description": "마지막에 부추를 넣고 소금으로 간을 맞춘 뒤 불을 끕니다." }
+    ]
+  },
+  {
+    "id": "byeongeo-jorim",
+    "name": "병어조림",
+    "category": "해산물",
+    "description": "담백한 병어 살에 매콤달콤한 양념이 쏙 밴 밥도둑 조림입니다.",
+    "servings": 2,
+    "cookTime": "30분",
+    "difficulty": "중",
+    "ingredients": [
+      { "name": "병어", "amount": "2마리" },
+      { "name": "무", "amount": "200g" },
+      { "name": "대파", "amount": "0.5대" },
+      { "name": "양념장(간장 3, 고춧가루 2, 설탕 1, 다진 마늘 1)", "amount": "적당량" }
+    ],
+    "steps": [
+      { "step": 1, "description": "무는 도톰하게 썰어 냄비 바닥에 깝니다." },
+      { "step": 2, "description": "손질한 병어를 무 위에 올리고 양념장을 골고루 끼얹습니다." },
+      { "step": 3, "description": "물을 자작하게 붓고 센 불에서 끓이다가 끓어오르면 중불로 줄입니다." },
+      { "step": 4, "description": "국물이 졸아들면 대파를 넣고 한소끔 더 끓여 완성합니다." }
+    ]
   }
 ]
