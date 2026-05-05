@@ -1407,21 +1407,22 @@
     "name_ko": "취나물",
     "category": "채소",
     "image": "chrysanthemum-greens.png",
-    "description_ko": "독특한 향이 입맛을 돋우는 대표적인 산나물. 칼륨 함량이 높아 체내 나트륨 배출에 도움을 줍니다. 주로 볶거나 무쳐서 먹습니다.",
-    "preparation_ko": "질긴 줄기와 시든 잎 골라내고, 가볍게 헹궈 물기를 빼 사용합니다.",
+    "description_ko": "산나물의 왕이라 불릴 만큼 향이 뛰어나고 맛이 좋습니다. 칼륨이 풍부하여 체내 나트륨 배출을 돕고, 비타민 A와 무기질이 풍부하여 봄철 피로 해소에 좋습니다.",
+    "preparation_ko": "억센 줄기는 다듬고 흐르는 물에 깨끗이 씻어 흙을 제거한 뒤, 끓는 물에 소금을 넣고 살짝 데쳐서 사용합니다.",
     "storage_room_temp": "",
-    "storage_refrigerator": "젖은 타월로 감싸 지퍼팩에 넣어 2~3일, 가능한 빨리 조리합니다.",
-    "storage_freezer": "데쳐 찬물에 식혀 물기 제거, 먹을 만큼 소분해 냉동 보관.",
+    "storage_refrigerator": "종이 타월에 싸서 비닐 팩에 넣어 채소칸에 보관하며 2~3일 내 사용합니다.",
+    "storage_freezer": "데친 뒤 물기를 짜고 소분하여 냉동 보관하면 한 달 정도 맛을 유지할 수 있습니다.",
     "name_en": "",
     "name_ja": "",
     "description_en": "",
     "description_ja": "",
     "external_url": "https://link.coupang.com/a/cTFcKT",
     "calories_per_100g": 31,
-    "calories_per_serving": "한 줌(50g) 약 16kcal",
-    "popular_dish": "취나물무침",
+    "calories_per_serving": "한 줌(약 70g)당 약 22kcal",
+    "popular_dish": "취나물무침, 취나물밥",
     "months": [
-      4
+      4,
+      5
     ]
   },
   {
@@ -1797,22 +1798,6 @@
       5
     ],
     "external_url": "https://link.coupang.com/a/er9OG3"
-  },
-  {
-    "name_ko": "취나물",
-    "category": "채소",
-    "image": "chwinamul.png",
-    "description_ko": "산나물의 왕이라 불릴 만큼 향이 뛰어나고 맛이 좋습니다. 칼륨이 풍부하여 체내 나트륨 배출을 돕고, 비타민 A와 무기질이 풍부하여 봄철 피로 해소에 좋습니다.",
-    "preparation_ko": "억센 줄기는 다듬고 흐르는 물에 깨끗이 씻어 흙을 제거한 뒤, 끓는 물에 소금을 넣고 살짝 데쳐서 사용합니다.",
-    "storage_room_temp": "",
-    "storage_refrigerator": "종이 타월에 싸서 비닐 팩에 넣어 채소칸에 보관하며 2~3일 내 사용합니다.",
-    "storage_freezer": "데친 뒤 물기를 짜고 소분하여 냉동 보관하면 한 달 정도 맛을 유지할 수 있습니다.",
-    "calories_per_100g": 31,
-    "calories_per_serving": "한 줌(약 70g)당 약 22kcal",
-    "popular_dish": "취나물무침, 취나물밥",
-    "months": [
-      5
-    ]
   },
   {
     "name_ko": "다슬기",
