@@ -1834,5 +1834,62 @@
       6
     ],
     "external_url": "https://link.coupang.com/a/eCF0J7"
+  },
+  {
+    "name_ko": "귤",
+    "category": "과일",
+    "image": "mandarin.png",
+    "description_ko": "겨울철 비타민 C의 보고로 불리며, 감기 예방과 피로 해소에 탁월합니다. 껍질을 까서 생으로 먹거나 청, 잼, 주스로 다양하게 활용할 수 있는 국민 과일입니다.",
+    "preparation_ko": "옅은 소금물에 씻어 껍질의 농약을 제거하고 물기를 닦아 사용합니다.",
+    "storage_room_temp": "통풍이 잘되는 서늘한 곳에 보관하며, 서로 겹치지 않게 두는 것이 좋습니다.",
+    "storage_refrigerator": "신문지에 싸서 냉장 보관하면 1~2주 정도 신선함이 유지됩니다.",
+    "storage_freezer": "껍질을 까서 알맹이만 냉동 보관하여 스무디나 셔벗용으로 사용합니다.",
+    "calories_per_100g": 39,
+    "calories_per_serving": "중간 크기 1개(80g) 약 31kcal",
+    "popular_dish": "귤청, 귤잼",
+    "months": [
+      11,
+      12,
+      1,
+      2
+    ]
+  },
+  {
+    "name_ko": "토마토",
+    "category": "채소",
+    "image": "tomato.png",
+    "description_ko": "라이코펜이 풍부하여 항산화 작용과 노화 방지에 도움을 주는 슈퍼푸드입니다. 칼로리가 낮고 포만감이 높아 다이어트 식단에 필수적이며, 가열해 먹으면 영양 흡수율이 높아집니다.",
+    "preparation_ko": "흐르는 물에 깨끗이 씻고 꼭지를 떼어내어 사용합니다. 껍질을 벗길 때는 끓는 물에 살짝 데칩니다.",
+    "storage_room_temp": "햇볕이 들지 않는 서늘하고 통풍이 잘되는 곳에 보관합니다.",
+    "storage_refrigerator": "꼭지가 아래로 향하게 하여 채소칸에 보관하며 1주일 내 사용을 권장합니다.",
+    "storage_freezer": "데쳐서 껍질을 벗긴 뒤 으깨거나 통째로 냉동하여 소스용으로 사용합니다.",
+    "calories_per_100g": 18,
+    "calories_per_serving": "중간 크기 1개(200g) 약 36kcal",
+    "popular_dish": "토마토 마리네이드, 토마토 스파게티",
+    "months": [
+      5,
+      6,
+      7,
+      8,
+      9
+    ]
+  },
+  {
+    "name_ko": "아스파라거스",
+    "category": "채소",
+    "image": "asparagus.png",
+    "description_ko": "아스파라긴산이 풍부하여 숙취 해소와 피로 해소에 뛰어난 효능이 있습니다. 아삭한 식감과 고급스러운 풍미로 고기 요리와 환상적인 궁합을 자랑합니다.",
+    "preparation_ko": "밑동의 질긴 부분을 잘라내고, 아래쪽 껍질을 필러로 살짝 벗겨내어 사용합니다.",
+    "storage_room_temp": "",
+    "storage_refrigerator": "젖은 키친타월로 밑동을 감싸 세운 상태로 냉장 보관하면 더 오래 신선합니다.",
+    "storage_freezer": "살짝 데쳐서 찬물에 식힌 뒤 물기를 제거하고 냉동 보관합니다.",
+    "calories_per_100g": 20,
+    "calories_per_serving": "5대(약 100g) 약 20kcal",
+    "popular_dish": "아스파라거스 베이컨 말이, 아스파라거스 구이",
+    "months": [
+      4,
+      5,
+      6
+    ]
   }
 ]
