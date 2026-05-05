@@ -7,15 +7,19 @@ import { getRecipeIdFromDishName } from './recipe-mapper.js';
 // 띵동 제철음식 메인 스크립트
 // 규칙: ES 모듈 없이 단일 페이지 스크립트
 
-const CACHE_KEY = 'seasons:ingredients:v27';
+const CACHE_KEY = 'seasons:ingredients:v28';
 const CACHE_TTL_MS = 24 * 60 * 60 * 1000; // 24h
 
 // 구버전 캐시 강제 삭제 (버전 충돌 방지)
 try {
+  localStorage.removeItem('seasons:ingredients:v26');
+  localStorage.removeItem('seasons:ingredients:v25');
+  localStorage.removeItem('seasons:ingredients:v24');
+  localStorage.removeItem('seasons:ingredients:v23');
+  localStorage.removeItem('seasons:ingredients:v22');
+  localStorage.removeItem('seasons:ingredients:v21');
   localStorage.removeItem('seasons:ingredients:v20');
-  localStorage.removeItem('seasons:ingredients:v19');
-  localStorage.removeItem('seasons:ingredients:v18');
-  console.log('구버전 캐시 초기화 완료 (v21)');
+  console.log('구버전 캐시 초기화 완료 (v28)');
 } catch (e) {
   // ignore
 }
@@ -268,7 +272,7 @@ async function loadIngredients() {
     }
   } catch {}
 
-  const res = await fetch('data/ingredients.json?v=v27', { cache: 'no-cache' });
+  const res = await fetch('data/ingredients.json?v=v28', { cache: 'no-cache' });
   if (!res.ok) throw new Error('데이터 로드 실패');
   const data = await res.json();
   try {
@@ -291,11 +295,12 @@ function queryItems(allItems, searchText, month) {
   const normalized = (searchText || '').trim().toLowerCase();
   
   const items = allItems.filter((it) => {
-    // 시기(월) 포함 여부 확인
-    const includesMonth = it.months?.includes(month);
-    if (!includesMonth) return false;
+    // 검색어가 있을 때는 월 필터를 무시하고 전체 검색, 없을 때는 선택된 월만 필터링
+    if (!normalized) {
+      return it.months?.includes(month);
+    }
     
-    // 검색 AND
+    // 검색 AND (이름 또는 설명에 포함)
     if (!normalized) return true;
     const hay = `${it.name_ko || ''}\n${it.description_ko || ''}`.toLowerCase();
     return hay.includes(normalized);
