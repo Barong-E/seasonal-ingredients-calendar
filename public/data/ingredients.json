@@ -1814,7 +1814,8 @@
     "months": [
       5,
       6
-    ]
+    ],
+    "external_url": "https://link.coupang.com/a/eCFXRC"
   },
   {
     "name_ko": "병어",
@@ -1831,59 +1832,7 @@
     "months": [
       5,
       6
-    ]
-  },
-  {
-    "name_ko": "초당옥수수",
-    "category": "채소",
-    "image": "chodang-corn.png",
-    "description_ko": "일반 옥수수보다 당도가 훨씬 높고 수분이 풍부하여 과일처럼 생으로도 먹을 수 있는 프리미엄 옥수수입니다. 칼로리가 낮아 다이어트 간식으로도 인기가 높습니다.",
-    "preparation_ko": "껍질을 벗기고 흐르는 물에 가볍게 씻어줍니다. 생으로 먹거나 찜기에 10~15분 정도 살짝 쪄서 아삭한 식감을 살려 먹는 것이 좋습니다.",
-    "storage_room_temp": "",
-    "storage_refrigerator": "껍질째 랩으로 싸서 냉장 보관하며 3일 이내에 먹는 것이 좋습니다.",
-    "storage_freezer": "조금 더 오래 보관하려면 살짝 쪄서 식힌 뒤 냉동 보관합니다.",
-    "calories_per_100g": 96,
-    "calories_per_serving": "한 개(약 150g)당 약 144kcal",
-    "popular_dish": "초당옥수수 솥밥, 콘치즈",
-    "months": [
-      6,
-      7
-    ]
-  },
-  {
-    "name_ko": "납작복숭아",
-    "category": "과일",
-    "image": "saturn-peach.png",
-    "description_ko": "도넛처럼 납작한 모양이 특징인 복숭아로, 일반 복숭아보다 향이 더 진하고 당도가 매우 높습니다. 껍질이 얇고 과육이 부드러워 여름철 최고의 별미로 꼽힙니다.",
-    "preparation_ko": "흐르는 물에 겉면의 솜털을 깨끗이 씻어낸 뒤 껍질째 먹거나 껍질을 벗겨 먹습니다.",
-    "storage_room_temp": "직사광선을 피한 서늘한 곳에 1~2일 정도 후숙하면 더 달콤해집니다.",
-    "storage_refrigerator": "키친타월로 감싸 지퍼백에 넣어 보관합니다.",
-    "storage_freezer": "과육만 잘라 밀폐 용기에 담아 냉동하면 스무디용으로 좋습니다.",
-    "calories_per_100g": 39,
-    "calories_per_serving": "한 개(약 120g)당 약 47kcal",
-    "popular_dish": "납작복숭아 에이드, 납작복숭아 샐러드",
-    "months": [
-      7,
-      8
-    ]
-  },
-  {
-    "name_ko": "방어",
-    "category": "해산물",
-    "image": "yellowtail.png",
-    "description_ko": "추운 겨울철에 지방이 가득 올라 고소한 맛이 일품인 대형 어종입니다. 비타민 D와 E가 풍부하여 뼈 건강과 노화 방지에 좋으며, DHA 함량이 높아 두뇌 회복에도 도움을 줍니다.",
-    "preparation_ko": "비늘을 치고 내장을 제거한 뒤 깨끗이 씻어 물기를 닦아냅니다. 주로 회로 즐기거나 머리는 구이로 요리합니다.",
-    "storage_room_temp": "",
-    "storage_refrigerator": "손질 후 랩으로 싸서 김치냉장고 등 신선도가 유지되는 곳에 보관하며 1~2일 내에 먹습니다.",
-    "storage_freezer": "손질하여 밀봉 후 냉동 보관하면 한 달 정도 보관이 가능합니다.",
-    "calories_per_100g": 156,
-    "calories_per_serving": "회 한 접시(약 150g)당 약 234kcal",
-    "popular_dish": "방어회, 방어 머리 구이",
-    "months": [
-      11,
-      12,
-      1,
-      2
-    ]
+    ],
+    "external_url": "https://link.coupang.com/a/eCF0J7"
   }
 ]

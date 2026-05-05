@@ -154,13 +154,7 @@ export function getRecipeIdFromDishName(dishName) {
     '팽이버섯볶음': 'enoki-mushroom-stir-fry',
     '말린 팽이버섯 차': 'dried-enoki-tea',
     '명이나물 장아찌': 'pickled-wild-garlic',
-    '명이나물 쌈': 'pickled-wild-garlic',
-    '초당옥수수 솥밥': 'chodang-corn-bap',
-    '콘치즈': 'corn-cheese',
-    '납작복숭아 에이드': 'saturn-peach-ade',
-    '납작복숭아 샐러드': 'saturn-peach-salad',
-    '방어회': 'bangeo-hoe',
-    '방어 머리 구이': 'bangeo-head-gui'
+    '명이나물 쌈': 'pickled-wild-garlic'
   };
   return mapping[dishName] || null;
 }
