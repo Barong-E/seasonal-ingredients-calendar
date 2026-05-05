@@ -148,7 +148,7 @@
     "name_ja": "",
     "description_en": "",
     "description_ja": "",
-    "popular_dish": "과메기 무채 곁들임",
+    "popular_dish": "과메기",
     "months": [
       1,
       11,
@@ -216,7 +216,7 @@
     "description_ja": "",
     "calories_per_100g": 97,
     "calories_per_serving": "생굴 5개(100g) 약 97kcal",
-    "popular_dish": "굴전, 굴국밥",
+    "popular_dish": "굴전, 굴국밥, 굴전골",
     "months": [
       1,
       2,
@@ -373,7 +373,7 @@
     "external_url": "https://link.coupang.com/a/cTFatG",
     "calories_per_100g": 27,
     "calories_per_serving": "죽 1그릇분(200g) 약 54kcal",
-    "popular_dish": "호박죽, 호박전",
+    "popular_dish": "호박죽",
     "months": [
       11,
       12
@@ -504,7 +504,7 @@
     "external_url": "https://link.coupang.com/a/cTFaSS",
     "calories_per_100g": 38,
     "calories_per_serving": "10순(50g) 약 19kcal",
-    "popular_dish": "두릅무침",
+    "popular_dish": "참두릅 숙회, 참두릅 소고기말이, 두릅무침",
     "months": [
       4
     ]
@@ -806,7 +806,7 @@
     "external_url": "https://link.coupang.com/a/cTFcC7",
     "calories_per_100g": 14,
     "calories_per_serving": "중간 크기 1포기(2kg) 약 280kcal",
-    "popular_dish": "김치, 배추국",
+    "popular_dish": "배추김치, 배추국",
     "months": [
       11
     ]
@@ -1792,7 +1792,7 @@
     "storage_refrigerator": "세척하지 않은 상태로 종이 타월로 감싸 비닐 팩에 넣어 보관합니다.",
     "calories_per_100g": 23,
     "calories_per_serving": "10장(약 30g)당 약 7kcal",
-    "popular_dish": "명이나물 장아찌, 명이나물 쌈",
+    "popular_dish": "명이나물 장아찌",
     "months": [
       4,
       5
@@ -1846,7 +1846,7 @@
     "storage_freezer": "껍질을 까서 알맹이만 냉동 보관하여 스무디나 셔벗용으로 사용합니다.",
     "calories_per_100g": 39,
     "calories_per_serving": "중간 크기 1개(80g) 약 31kcal",
-    "popular_dish": "귤청, 귤잼",
+    "popular_dish": "귤청",
     "months": [
       11,
       12,
@@ -1866,7 +1866,7 @@
     "storage_freezer": "데쳐서 껍질을 벗긴 뒤 으깨거나 통째로 냉동하여 소스용으로 사용합니다.",
     "calories_per_100g": 18,
     "calories_per_serving": "중간 크기 1개(200g) 약 36kcal",
-    "popular_dish": "토마토 마리네이드, 토마토 스파게티",
+    "popular_dish": "토마토 마리네이드",
     "months": [
       5,
       6,
@@ -1887,7 +1887,7 @@
     "storage_freezer": "살짝 데쳐서 찬물에 식힌 뒤 물기를 제거하고 냉동 보관합니다.",
     "calories_per_100g": 20,
     "calories_per_serving": "5대(약 100g) 약 20kcal",
-    "popular_dish": "아스파라거스 베이컨 말이, 아스파라거스 구이",
+    "popular_dish": "아스파라거스 베이컨 말이",
     "months": [
       4,
       5,
@@ -1906,7 +1906,7 @@
     "storage_freezer": "알맹이만 떼어 냉동 보관하면 시원한 샤인머스캣 샤베트처럼 즐길 수 있습니다.",
     "calories_per_100g": 69,
     "calories_per_serving": "한 송이(약 500g) 약 345kcal",
-    "popular_dish": "샤인머스캣 샐러드, 샤인머스캣 타르트",
+    "popular_dish": "샤인머스캣 요거트 샐러드",
     "months": [
       8,
       9,
@@ -1925,7 +1925,7 @@
     "storage_freezer": "살짝 데친 뒤 한입 크기로 썰어 냉동 보관하여 스무디나 수프용으로 사용합니다.",
     "calories_per_100g": 43,
     "calories_per_serving": "중간 크기 1개(150g) 약 65kcal",
-    "popular_dish": "비트 사과 주스, 비트 샐러드",
+    "popular_dish": "비트 사과 주스",
     "months": [
       11,
       12,
@@ -1946,7 +1946,7 @@
     "storage_freezer": "",
     "calories_per_100g": 31,
     "calories_per_serving": "중간 크기 1개(300g) 약 93kcal",
-    "popular_dish": "참외 무침, 참외 샐러드",
+    "popular_dish": "참외 무침",
     "months": [
       6,
       7,
