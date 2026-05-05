@@ -8459,5 +8459,131 @@
       { "step": 3, "description": "물을 자작하게 붓고 센 불에서 끓이다가 끓어오르면 중불로 줄입니다." },
       { "step": 4, "description": "국물이 졸아들면 대파를 넣고 한소끔 더 끓여 완성합니다." }
     ]
+  },
+  {
+    "id": "chodang-corn-bap",
+    "name": "초당옥수수 솥밥",
+    "category": "채소",
+    "description": "톡톡 터지는 달콤한 초당옥수수의 맛과 향이 가득 밴 담백한 솥밥입니다.",
+    "servings": 2,
+    "cookTime": "40분",
+    "difficulty": "중",
+    "ingredients": [
+      { "name": "불린 쌀", "amount": "2컵" },
+      { "name": "초당옥수수", "amount": "1개" },
+      { "name": "다시마 물", "amount": "2컵" },
+      { "name": "소금", "amount": "0.5작은술" }
+    ],
+    "steps": [
+      { "step": 1, "description": "초당옥수수는 칼로 알맹이만 발라냅니다." },
+      { "step": 2, "description": "솥에 불린 쌀과 다시마 물, 소금을 넣고 옥수수 대와 알맹이를 올립니다." },
+      { "step": 3, "description": "센 불에서 끓이다가 끓어오르면 약불로 줄여 15분간 밥을 짓습니다." },
+      { "step": 4, "description": "불을 끄고 10분간 뜸을 들인 뒤 옥수수 대는 건져내고 잘 섞어 완성합니다." }
+    ]
+  },
+  {
+    "id": "corn-cheese",
+    "name": "콘치즈",
+    "category": "채소",
+    "description": "고소한 마요네즈와 쭉 늘어나는 치즈가 초당옥수수의 달콤함과 만난 최고의 간식입니다.",
+    "servings": 2,
+    "cookTime": "15분",
+    "difficulty": "하",
+    "ingredients": [
+      { "name": "초당옥수수", "amount": "1개" },
+      { "name": "모차렐라 치즈", "amount": "1컵" },
+      { "name": "마요네즈", "amount": "3큰술" },
+      { "name": "설탕", "amount": "1큰술" }
+    ],
+    "steps": [
+      { "step": 1, "description": "초당옥수수 알맹이를 발라 마요네즈, 설탕과 함께 버무립니다." },
+      { "step": 2, "description": "팬에 버터를 두르고 버무린 옥수수를 넓게 폅니다." },
+      { "step": 3, "description": "그 위에 모차렐라 치즈를 듬뿍 올리고 뚜껑을 덮어 치즈를 녹입니다." },
+      { "step": 4, "description": "치즈가 노릇하게 녹으면 파슬리 가루를 뿌려 완성합니다." }
+    ]
+  },
+  {
+    "id": "saturn-peach-ade",
+    "name": "납작복숭아 에이드",
+    "category": "과일",
+    "description": "진한 향의 납작복숭아를 그대로 담아 상큼하고 청량하게 즐기는 음료입니다.",
+    "servings": 1,
+    "cookTime": "10분",
+    "difficulty": "하",
+    "ingredients": [
+      { "name": "납작복숭아", "amount": "2개" },
+      { "name": "탄산수", "amount": "200ml" },
+      { "name": "레몬즙", "amount": "1큰술" },
+      { "name": "얼음", "amount": "적당량" }
+    ],
+    "steps": [
+      { "step": 1, "description": "납작복숭아 1개는 잘게 다져 설탕에 재워 청을 만듭니다." },
+      { "step": 2, "description": "남은 1개는 예쁘게 슬라이스하여 준비합니다." },
+      { "step": 3, "description": "컵에 복숭아 청과 얼음을 담고 탄산수와 레몬즙을 붓습니다." },
+      { "step": 4, "description": "슬라이스한 복숭아를 올려 장식하여 완성합니다." }
+    ]
+  },
+  {
+    "id": "saturn-peach-salad",
+    "name": "납작복숭아 샐러드",
+    "category": "과일",
+    "description": "달콤한 복숭아와 고소한 리코타 치즈가 어우러진 신선한 여름 샐러드입니다.",
+    "servings": 2,
+    "cookTime": "15분",
+    "difficulty": "하",
+    "ingredients": [
+      { "name": "납작복숭아", "amount": "2개" },
+      { "name": "어린잎 채소", "amount": "한 줌" },
+      { "name": "리코타 치즈", "amount": "3큰술" },
+      { "name": "발사믹 글레이즈", "amount": "적당량" }
+    ],
+    "steps": [
+      { "step": 1, "description": "어린잎 채소는 씻어 물기를 빼고 접시에 담습니다." },
+      { "step": 2, "description": "납작복숭아는 먹기 좋은 크기로 조각내어 채소 위에 올립니다." },
+      { "step": 3, "description": "리코타 치즈를 군데군데 한 스푼씩 떠서 올립니다." },
+      { "step": 4, "description": "발사믹 글레이즈나 드레싱을 취향껏 뿌려 완성합니다." }
+    ]
+  },
+  {
+    "id": "bangeo-hoe",
+    "name": "방어회",
+    "category": "해산물",
+    "description": "겨울철 방어의 고소한 기름기와 쫄깃한 식감을 온전히 느낄 수 있는 대표 메뉴입니다.",
+    "servings": 2,
+    "cookTime": "20분",
+    "difficulty": "상",
+    "ingredients": [
+      { "name": "방어(필렛)", "amount": "300g" },
+      { "name": "무순", "amount": "적당량" },
+      { "name": "생와사비", "amount": "적당량" },
+      { "name": "김", "amount": "적당량" }
+    ],
+    "steps": [
+      { "step": 1, "description": "방어 필렛의 물기를 닦고 결 반대 방향으로 도톰하게 썹니다." },
+      { "step": 2, "description": "부위별(가마살, 뱃살, 등살)로 예쁘게 접시에 담습니다." },
+      { "step": 3, "description": "무순과 와사비를 곁들여 차려냅니다." },
+      { "step": 4, "description": "기름소금장이나 초간장에 찍어 김에 싸서 즐깁니다." }
+    ]
+  },
+  {
+    "id": "bangeo-head-gui",
+    "name": "방어 머리 구이",
+    "category": "해산물",
+    "description": "방어의 별미 부위인 머리를 노릇하게 구워 고소함과 쫄깃함을 동시에 맛보는 요리입니다.",
+    "servings": 2,
+    "cookTime": "30분",
+    "difficulty": "중",
+    "ingredients": [
+      { "name": "방어 머리", "amount": "1개" },
+      { "name": "굵은 소금", "amount": "적당량" },
+      { "name": "레몬", "amount": "0.5개" },
+      { "name": "로즈마리", "amount": "약간" }
+    ],
+    "steps": [
+      { "step": 1, "description": "방어 머리를 반으로 가르고 깨끗이 씻어 핏물을 제거합니다." },
+      { "step": 2, "description": "물기를 닦고 소금과 후추, 로즈마리로 밑간을 합니다." },
+      { "step": 3, "description": "200도로 예열된 에어프라이어나 오븐에서 20~25분간 노릇하게 굽습니다." },
+      { "step": 4, "description": "접시에 담고 레몬즙을 살짝 뿌려 완성합니다." }
+    ]
   }
 ]
