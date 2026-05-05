@@ -160,7 +160,13 @@ export function getRecipeIdFromDishName(dishName) {
     '토마토 마리네이드': 'tomato-marinade',
     '토마토 스파게티': 'tomato-marinade',
     '아스파라거스 베이컨 말이': 'asparagus-bacon-roll',
-    '아스파라거스 구이': 'asparagus-bacon-roll'
+    '아스파라거스 구이': 'asparagus-bacon-roll',
+    '샤인머스캣 샐러드': 'shinemuscat-yogurt-salad',
+    '샤인머스캣 타르트': 'shinemuscat-yogurt-salad',
+    '비트 사과 주스': 'beet-apple-juice',
+    '비트 샐러드': 'beet-apple-juice',
+    '참외 무침': 'oriental-melon-muchim',
+    '참외 샐러드': 'oriental-melon-muchim'
   };
   return mapping[dishName] || null;
 }

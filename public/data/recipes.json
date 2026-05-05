@@ -8534,5 +8534,76 @@
       { "step": 3, "description": "아스파라거스에 베이컨을 돌돌 말아 끝부분이 아래로 가게 팬에 올립니다." },
       { "step": 4, "description": "소금과 후추를 살짝 뿌려 베이컨이 노릇해질 때까지 굴려가며 굽습니다." }
     ]
+  },
+  {
+    "id": "shinemuscat-yogurt-salad",
+    "name": "샤인머스캣 요거트 샐러드",
+    "category": "과일",
+    "description": "달콤한 샤인머스캣과 상큼한 요거트 드레싱이 만난 산뜻한 샐러드입니다.",
+    "servings": 1,
+    "cookTime": "10분",
+    "difficulty": "하",
+    "ingredients": [
+      { "name": "샤인머스캣", "amount": "15알" },
+      { "name": "그릭요거트", "amount": "100g" },
+      { "name": "견과류", "amount": "1큰술" }
+    ],
+    "seasoning": [
+      { "name": "꿀", "amount": "1작은술" },
+      { "name": "레몬즙", "amount": "0.5큰술" }
+    ],
+    "steps": [
+      { "step": 1, "description": "샤인머스캣은 깨끗이 씻어 반으로 자릅니다." },
+      { "step": 2, "description": "요거트에 꿀과 레몬즙을 섞어 드레싱을 만듭니다." },
+      { "step": 3, "description": "그릇에 샤인머스캣과 요거트 드레싱을 올리고 견과류를 뿌려 완성합니다." }
+    ]
+  },
+  {
+    "id": "beet-apple-juice",
+    "name": "비트 사과 주스",
+    "category": "채소",
+    "description": "혈관 건강에 좋은 비트와 사과를 함께 갈아 만든 영양 만점 건강 주스입니다.",
+    "servings": 2,
+    "cookTime": "10분",
+    "difficulty": "하",
+    "ingredients": [
+      { "name": "비트", "amount": "1/4개" },
+      { "name": "사과", "amount": "1개" },
+      { "name": "물", "amount": "200ml" }
+    ],
+    "seasoning": [
+      { "name": "꿀", "amount": "1큰술(선택)" }
+    ],
+    "steps": [
+      { "step": 1, "description": "비트는 껍질을 벗겨 찜기에 10분 정도 찌거나 끓는 물에 데쳐 준비합니다. (생비트보다 소화가 잘 됩니다)" },
+      { "step": 2, "description": "사과는 씨를 제거하고 적당한 크기로 썹니다." },
+      { "step": 3, "description": "믹서기에 비트, 사과, 물을 넣고 곱게 갑니다. 취향에 따라 꿀을 추가합니다." }
+    ]
+  },
+  {
+    "id": "oriental-melon-muchim",
+    "name": "참외 무침",
+    "category": "과일",
+    "description": "참외의 달콤함과 고추장 양념의 매콤함이 어우러진 여름철 별미 반찬입니다.",
+    "servings": 2,
+    "cookTime": "15분",
+    "difficulty": "중",
+    "ingredients": [
+      { "name": "참외", "amount": "1개" },
+      { "name": "부추", "amount": "약간" }
+    ],
+    "seasoning": [
+      { "name": "고추장", "amount": "1큰술" },
+      { "name": "고춧가루", "amount": "0.5큰술" },
+      { "name": "식초", "amount": "1큰술" },
+      { "name": "설탕", "amount": "0.5큰술" },
+      { "name": "다진 마늘", "amount": "0.5작은술" },
+      { "name": "참기름, 깨", "amount": "약간" }
+    ],
+    "steps": [
+      { "step": 1, "description": "참외는 껍질을 깎아 씨를 제거하고 한입 크기로 얇게 썹니다." },
+      { "step": 2, "description": "양념 재료를 모두 섞어 양념장을 만듭니다." },
+      { "step": 3, "description": "참외와 양념장을 넣고 살살 버무린 뒤 마지막에 참기름과 깨를 뿌려 마무리합니다." }
+    ]
   }
 ]
