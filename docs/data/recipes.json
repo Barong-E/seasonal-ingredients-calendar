@@ -8451,7 +8451,11 @@
       { "name": "병어", "amount": "2마리" },
       { "name": "무", "amount": "200g" },
       { "name": "대파", "amount": "0.5대" },
-      { "name": "양념장(간장 3, 고춧가루 2, 설탕 1, 다진 마늘 1)", "amount": "적당량" }
+      { "name": "진간장", "amount": "3큰술" },
+      { "name": "고춧가루", "amount": "2큰술" },
+      { "name": "설탕", "amount": "1큰술" },
+      { "name": "다진 마늘", "amount": "1큰술" },
+      { "name": "물", "amount": "200ml(자작하게)" }
     ],
     "steps": [
       { "step": 1, "description": "무는 도톰하게 썰어 냄비 바닥에 깝니다." },
