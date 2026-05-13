@@ -27,7 +27,7 @@ self.addEventListener('install', (event) => {
 self.addEventListener('activate', (event) => {
   event.waitUntil(
     (async () => {
-      const CACHE_NAME = 'seasonalfood-cache-v11';
+      const CACHE_NAME = 'seasonalfood-cache-v12';
       const keys = await caches.keys();
       await Promise.all(
         keys
