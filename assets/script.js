@@ -268,7 +268,7 @@ async function loadIngredients() {
     }
   } catch {}
 
-  const res = await fetch('data/ingredients.json?v=v36', { cache: 'no-cache' });
+  const res = await fetch('data/ingredients.json?v=v37', { cache: 'no-cache' });
   if (!res.ok) throw new Error('데이터 로드 실패');
   const data = await res.json();
   try {
@@ -529,24 +529,26 @@ function getCurrentVisibleMonthIndex() {
     if (top >= 0) { firstBelow = i; break; }
   }
 
+  const getMonthIndex = (el) => parseInt(el.parentElement.getAttribute('data-month-index'));
+
   if (firstBelow === -1) {
-    return parseInt(monthHeaders[monthHeaders.length - 1].getAttribute('data-month-index'));
+    return getMonthIndex(monthHeaders[monthHeaders.length - 1]);
   }
   if (firstBelow === 0) {
-    return parseInt(monthHeaders[0].getAttribute('data-month-index'));
+    return getMonthIndex(monthHeaders[0]);
   }
   const topFromOffset = monthHeaders[firstBelow].getBoundingClientRect().top - headerOffset;
   if (Math.abs(topFromOffset) <= 8) {
-    return parseInt(monthHeaders[firstBelow].getAttribute('data-month-index'));
+    return getMonthIndex(monthHeaders[firstBelow]);
   }
-  return parseInt(monthHeaders[firstBelow - 1].getAttribute('data-month-index'));
+  return getMonthIndex(monthHeaders[firstBelow - 1]);
 }
 
 // 검색 결과가 있는 첫 번째 월로 스크롤
 function scrollToFirstSearchResult() {
-  const monthHeaders = document.querySelectorAll('.period-header');
-  for (const header of monthHeaders) {
-    const monthIndex = parseInt(header.getAttribute('data-month-index'));
+  const monthSections = document.querySelectorAll('.month-section');
+  for (const section of monthSections) {
+    const monthIndex = parseInt(section.getAttribute('data-month-index'));
     const month = monthIndex + 1;
     const items = queryItems(AppState.allIngredients, AppState.searchText, month);
     

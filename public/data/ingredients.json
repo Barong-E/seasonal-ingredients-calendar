@@ -1953,5 +1953,57 @@
       8
     ],
     "external_url": "https://link.coupang.com/a/eCRo52"
+  },
+  {
+    "name_ko": "갑오징어",
+    "category": "해산물",
+    "image": "cuttlefish.png",
+    "description_ko": "두툼하고 쫄깃한 식감이 일품인 갑오징어는 타우린이 풍부해 피로 회복에 좋고, 단백질이 많아 건강식으로 최고입니다.",
+    "preparation_ko": "등쪽의 뼈를 제거하고, 내장과 먹물을 조심스럽게 분리한 후 껍질을 벗겨냅니다. 밀가루나 굵은 소금으로 주물러 씻어 이물질을 제거합니다.",
+    "storage_room_temp": "불가",
+    "storage_refrigerator": "내장을 제거하고 깨끗이 씻어 밀폐 용기에 담아 1~2일 보관",
+    "storage_freezer": "손질 후 물기를 제거하고 한 번 먹을 양만큼 지퍼백에 밀봉하여 최대 1개월 보관",
+    "calories_per_100g": 79,
+    "calories_per_serving": 158,
+    "months": [
+      4,
+      5,
+      6
+    ],
+    "popular_dish": "갑오징어 볶음, 갑오징어 숙회"
+  },
+  {
+    "name_ko": "마늘종",
+    "category": "채소",
+    "image": "garlic_scapes.png",
+    "description_ko": "마늘이 굵어지기 전 나오는 꽃대인 마늘종은 알리신이 풍부해 항균 작용과 면역력 강화에 도움을 주며 아삭한 식감이 특징입니다.",
+    "preparation_ko": "꽃봉오리(마디) 윗부분은 질기므로 잘라내고, 억센 끝부분을 조금 잘라낸 뒤 먹기 좋은 길이(약 4~5cm)로 썰어 흐르는 물에 씻습니다.",
+    "storage_room_temp": "직사광선을 피해 서늘한 곳에 단기 보관 가능하나 금방 시들 수 있음",
+    "storage_refrigerator": "씻지 않은 상태로 키친타월에 싸서 지퍼백이나 밀폐 용기에 담아 채소칸에 1주일 보관",
+    "storage_freezer": "끓는 물에 소금을 약간 넣고 살짝(30초) 데친 후 찬물에 헹궈 물기를 빼고 소분하여 냉동 보관",
+    "calories_per_100g": 30,
+    "calories_per_serving": 45,
+    "months": [
+      5,
+      6
+    ],
+    "popular_dish": "마늘종 건새우 볶음, 마늘종 장아찌"
+  },
+  {
+    "name_ko": "오디",
+    "category": "과일",
+    "image": "mulberry.png",
+    "description_ko": "초여름을 알리는 달콤한 오디는 안토시아닌이 매우 풍부해 노화 방지와 시력 보호에 탁월한 블랙푸드입니다.",
+    "preparation_ko": "쉽게 무르므로 꼭지를 따고 흐르는 물에 가볍게 재빨리 헹구어 낸 뒤 체에 밭쳐 물기를 제거합니다.",
+    "storage_room_temp": "쉽게 무르고 상하므로 실온 보관 불가",
+    "storage_refrigerator": "물기가 없는 상태로 밀폐 용기에 담아 2~3일 이내에 빠른 섭취",
+    "storage_freezer": "씻어서 물기를 완전히 제거한 후 겹치지 않게 소분하여 지퍼백에 담아 6개월 이상 장기 보관 가능",
+    "calories_per_100g": 50,
+    "calories_per_serving": 75,
+    "months": [
+      5,
+      6
+    ],
+    "popular_dish": "오디 잼, 오디 스무디"
   }
 ]
