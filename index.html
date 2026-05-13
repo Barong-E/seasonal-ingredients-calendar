@@ -157,15 +157,15 @@
             tooltip.classList.add('show');
             settingBtn.classList.add('glow');
 
-            // 말풍선은 3초 후 사라짐
+            // 말풍선은 5초 후 사라짐
             setTimeout(() => {
               tooltip.classList.remove('show');
-            }, 3000);
+            }, 5000);
 
-            // 알람 종 빛나는 애니메이션은 4초 후 사라짐
+            // 알람 종 빛나는 애니메이션은 7초 후 사라짐
             setTimeout(() => {
               settingBtn.classList.remove('glow');
-            }, 4000);
+            }, 7000);
 
             sessionStorage.setItem('notiTutorialShown', 'true');
           }, 500);
