@@ -353,7 +353,7 @@ input:checked + .slider:before {
 }
 
 .setting-button.glow {
-  animation: glow-pulse 1s infinite;
+  animation: glow-pulse 2s infinite;
   border-radius: 50%;
   background-color: rgba(10, 123, 52, 0.1);
 }
