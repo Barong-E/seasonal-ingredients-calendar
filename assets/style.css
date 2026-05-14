@@ -16,7 +16,7 @@ body {
   margin: 0;
   background: var(--bg-gradient);
   color: var(--text);
-  font-family: 'Noto Sans KR', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
 }
@@ -50,7 +50,7 @@ body.page-holidays {
   --border-radius: 16px;
   --border-radius-sm: 12px;
   --header-offset: 0px;
-  --serif-font: "Playfair Display", "Apple SD Gothic Neo", serif;
+  --serif-font: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
 }
 
 /* Seasonal Themes - 변수만 바꿔 전체 톤을 전환 */
