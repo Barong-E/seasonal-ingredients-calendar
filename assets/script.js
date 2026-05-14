@@ -397,235 +397,176 @@ function createCard(item) {
 
 // 식재료 모달 관련 코드 제거 (상세 페이지로 이동)
 
-// 모든 월 렌더링 (세로 배치)
-function renderAllMonths() {
-  const { months, allIngredients, searchText, renderCache } = AppState;
-  
+
+// 현재 표시 중인 월 (1~12)
+function getActiveMonth() {
+  const hash = window.location.hash; // e.g. "#month-5"
+  const match = hash.match(/^#month-(\d{1,2})$/);
+  if (match) {
+    const m = parseInt(match[1], 10);
+    if (m >= 1 && m <= 12) return m;
+  }
+  return new Date().getMonth() + 1; // 기본값: 오늘 월
+}
+
+function setActiveMonth(month, direction = 'right') {
+  const m = Math.max(1, Math.min(12, month));
+  history.pushState({ month: m }, '', `#month-${m}`);
+  renderSingleMonth(m, direction);
+  applySeasonThemeByMonthIndex(m - 1);
+  updateMonthLabel(m);
+}
+
+function updateMonthLabel(month) {
+  const el = document.getElementById('monthLabelText');
+  if (el) el.textContent = `${month}월`;
+}
+
+// 단일 월 렌더링
+function renderSingleMonth(month, direction = 'right') {
+  const { allIngredients, searchText } = AppState;
+
   trackEl.innerHTML = '';
-  
-  for (const item of months) {
-    const month = item.month;
-    
-    // 월별 섹션 컨테이너 생성 (Shorts Snap Target)
-    const monthSection = document.createElement('div');
-    monthSection.className = 'month-section';
-    monthSection.setAttribute('data-month-index', month - 1);
-    
-    // 월별 헤더 생성
-    const monthHeader = document.createElement('div');
-    monthHeader.className = 'period-header';
-    monthHeader.textContent = formatMonthLabel(month);
-    monthSection.appendChild(monthHeader);
-    
-    // 월별 식재료 그리드 생성
-    const gridContainer = document.createElement('div');
-    gridContainer.className = 'period-grid';
-    
-    // 검색 결과 없음 표시용 요소 생성
-    const empty = document.createElement('div');
-    empty.className = 'empty';
-    empty.setAttribute('role', 'status');
-    empty.setAttribute('aria-live', 'polite');
-    empty.textContent = '검색 결과가 없습니다.';
-    
-    monthSection.appendChild(gridContainer);
-    trackEl.appendChild(monthSection);
-    
-    // 캐시 확인
-    const searchSig = (searchText || '').trim().toLowerCase();
-    const signature = `${month}__${searchSig}`;
-    
-    gridContainer.innerHTML = '';
-    
-    // 식재료 렌더링 (월 단위)
-    const filteredItems = queryItems(allIngredients, searchText, month);
-    if (filteredItems.length === 0) {
-      gridContainer.appendChild(empty);
-      empty.style.display = 'block';
-    } else {
-      empty.style.display = 'none';
-      
-      const prevMonth = month === 1 ? 12 : month - 1;
-      const newItems = [];
-      const existingItems = [];
-      
-      filteredItems.forEach(item => {
-        const isNew = item.months && item.months.includes(month) && !item.months.includes(prevMonth);
-        if (isNew) {
-          newItems.push(item);
-        } else {
-          existingItems.push(item);
-        }
-      });
-      
-      if (newItems.length > 0) {
-        const newSection = document.createElement('div');
-        newSection.className = 'new-ingredients-section';
-        
-        const newHeader = document.createElement('div');
-        newHeader.className = 'new-ingredients-header';
-        newHeader.innerHTML = '<span class="new-icon">✦</span> 이달의 새로운 맛';
-        newSection.appendChild(newHeader);
-        
-        const newGrid = document.createElement('div');
-        newGrid.className = 'grid';
-        newGrid.setAttribute('role', 'list');
-        newItems.forEach(item => newGrid.appendChild(createCard(item)));
-        newSection.appendChild(newGrid);
-        
-        gridContainer.appendChild(newSection);
-      }
-      
-      if (existingItems.length > 0) {
-        const existSection = document.createElement('div');
-        existSection.className = 'existing-ingredients-section';
-        
-        const existHeader = document.createElement('div');
-        existHeader.className = 'existing-ingredients-header';
-        existHeader.textContent = '계속해서 제철인 맛';
-        existSection.appendChild(existHeader);
-        
-        const existGrid = document.createElement('div');
-        existGrid.className = 'grid';
-        existGrid.setAttribute('role', 'list');
-        existingItems.forEach(item => existGrid.appendChild(createCard(item)));
-        existSection.appendChild(existGrid);
-        
-        gridContainer.appendChild(existSection);
-      }
-      
-      gridContainer.appendChild(empty);
+
+  const monthSection = document.createElement('div');
+  monthSection.className = direction === 'left'
+    ? 'month-section slide-left'
+    : 'month-section';
+  monthSection.setAttribute('data-month-index', month - 1);
+
+  const gridContainer = document.createElement('div');
+  gridContainer.className = 'period-grid';
+
+  const empty = document.createElement('div');
+  empty.className = 'empty';
+  empty.setAttribute('role', 'status');
+  empty.textContent = '이 달에는 제철 식재료 정보가 없습니다.';
+
+  const filteredItems = queryItems(allIngredients, searchText, month);
+
+  if (filteredItems.length === 0) {
+    gridContainer.appendChild(empty);
+    empty.style.display = 'block';
+  } else {
+    const prevMonth = month === 1 ? 12 : month - 1;
+    const newItems = filteredItems.filter(item =>
+      item.months?.includes(month) && !item.months.includes(prevMonth)
+    );
+    const existingItems = filteredItems.filter(item =>
+      !(item.months?.includes(month) && !item.months.includes(prevMonth))
+    );
+
+    if (newItems.length > 0) {
+      const sec = document.createElement('div');
+      sec.className = 'new-ingredients-section';
+      const hdr = document.createElement('div');
+      hdr.className = 'new-ingredients-header';
+      hdr.innerHTML = '<span class="new-icon">✦</span> 이달의 새로운 맛';
+      sec.appendChild(hdr);
+      const grid = document.createElement('div');
+      grid.className = 'grid';
+      grid.setAttribute('role', 'list');
+      newItems.forEach(item => grid.appendChild(createCard(item)));
+      sec.appendChild(grid);
+      gridContainer.appendChild(sec);
     }
-    renderCache.set(month, signature);
-  }
-}
 
-// 특정 월로 스크롤
-function scrollToMonth(monthIndex) {
-  const section = document.querySelector(`.month-section[data-month-index="${monthIndex}"]`);
-  if (!section) return;
-  
-  // 스크롤 스냅 대상이므로 상단으로 부드럽게 이동
-  section.scrollIntoView({ behavior: 'smooth', block: 'start' });
-  
-  AppState.currentMonthIndex = monthIndex;
-  applySeasonThemeByMonthIndex(monthIndex);
-}
-
-// 오늘 버튼 상태를 전역에서 동기화하는 헬퍼 (삭제됨)
-function syncTodayButtonState() {
-  // 더 이상 사용하지 않음
-}
-
-// 현재 화면에 보이는 월 인덱스 감지
-function getCurrentVisibleMonthIndex() {
-  const monthHeaders = document.querySelectorAll('.period-header');
-  if (!monthHeaders.length) return -1;
-
-  const headerOffset = getHeaderHeight() + 8;
-
-  let firstBelow = -1;
-  for (let i = 0; i < monthHeaders.length; i++) {
-    const top = monthHeaders[i].getBoundingClientRect().top - headerOffset;
-    if (top >= 0) { firstBelow = i; break; }
-  }
-
-  const getMonthIndex = (el) => parseInt(el.parentElement.getAttribute('data-month-index'));
-
-  if (firstBelow === -1) {
-    return getMonthIndex(monthHeaders[monthHeaders.length - 1]);
-  }
-  if (firstBelow === 0) {
-    return getMonthIndex(monthHeaders[0]);
-  }
-  const topFromOffset = monthHeaders[firstBelow].getBoundingClientRect().top - headerOffset;
-  if (Math.abs(topFromOffset) <= 8) {
-    return getMonthIndex(monthHeaders[firstBelow]);
-  }
-  return getMonthIndex(monthHeaders[firstBelow - 1]);
-}
-
-// 검색 결과가 있는 첫 번째 월로 스크롤
-function scrollToFirstSearchResult() {
-  const monthSections = document.querySelectorAll('.month-section');
-  for (const section of monthSections) {
-    const monthIndex = parseInt(section.getAttribute('data-month-index'));
-    const month = monthIndex + 1;
-    const items = queryItems(AppState.allIngredients, AppState.searchText, month);
-    
-    if (items.length > 0) {
-      scrollToMonth(monthIndex);
-      break;
+    if (existingItems.length > 0) {
+      const sec = document.createElement('div');
+      sec.className = 'existing-ingredients-section';
+      const hdr = document.createElement('div');
+      hdr.className = 'existing-ingredients-header';
+      hdr.textContent = '계속해서 제철인 맛';
+      sec.appendChild(hdr);
+      const grid = document.createElement('div');
+      grid.className = 'grid';
+      grid.setAttribute('role', 'list');
+      existingItems.forEach(item => grid.appendChild(createCard(item)));
+      sec.appendChild(grid);
+      gridContainer.appendChild(sec);
     }
+
+    gridContainer.appendChild(empty);
   }
+
+  monthSection.appendChild(gridContainer);
+  trackEl.appendChild(monthSection);
+  window.scrollTo(0, 0);
+
+  AppState.currentMonthIndex = month - 1;
 }
 
-// 현재 스크롤 위치 저장
-function saveScrollPosition() {
-  AppState.lastScrollPosition = window.pageYOffset || document.documentElement.scrollTop;
-}
+// 월 네비게이터 초기화
+function initMonthNav() {
+  const prevBtn = document.getElementById('prevMonthBtn');
+  const nextBtn = document.getElementById('nextMonthBtn');
+  const labelBtn = document.getElementById('monthLabel');
 
-// 저장된 스크롤 위치로 복원
-function restoreScrollPosition() {
-  window.scrollTo({
-    top: AppState.lastScrollPosition,
-    behavior: 'smooth'
+  prevBtn?.addEventListener('click', () => {
+    const cur = getActiveMonth();
+    setActiveMonth(cur === 1 ? 12 : cur - 1, 'left');
   });
+
+  nextBtn?.addEventListener('click', () => {
+    const cur = getActiveMonth();
+    setActiveMonth(cur === 12 ? 1 : cur + 1, 'right');
+  });
+
+  // 가운데 월 버튼 클릭 → 오늘 월로 이동
+  labelBtn?.addEventListener('click', () => {
+    const today = new Date().getMonth() + 1;
+    const cur = getActiveMonth();
+    setActiveMonth(today, today >= cur ? 'right' : 'left');
+  });
+
+  // 뒤로가기 처리
+  window.addEventListener('popstate', (e) => {
+    const m = e.state?.month || getActiveMonth();
+    renderSingleMonth(m, 'left');
+    applySeasonThemeByMonthIndex(m - 1);
+    updateMonthLabel(m);
+  });
+
+  // 좌우 스와이프 지원
+  let touchStartX = 0;
+  document.addEventListener('touchstart', e => {
+    touchStartX = e.touches[0].clientX;
+  }, { passive: true });
+  document.addEventListener('touchend', e => {
+    const dx = e.changedTouches[0].clientX - touchStartX;
+    if (Math.abs(dx) < 60) return; // 짧은 터치 무시
+    const cur = getActiveMonth();
+    if (dx < 0) {
+      // 왼쪽 스와이프 → 다음 달
+      setActiveMonth(cur === 12 ? 1 : cur + 1, 'right');
+    } else {
+      // 오른쪽 스와이프 → 이전 달
+      setActiveMonth(cur === 1 ? 12 : cur - 1, 'left');
+    }
+  }, { passive: true });
 }
 
 // 검색 이벤트
 function initSearch() {
   searchInputEl.addEventListener('input', (e) => {
-    const searchValue = e.target.value.trim();
-    const previousSearchText = AppState.searchText.trim();
-    
-    // 검색 시작 시 현재 위치 저장
-    if (!AppState.isSearching && searchValue && !previousSearchText) {
-      saveScrollPosition();
-      AppState.isSearching = true;
-    }
-    
     AppState.searchText = e.target.value;
-    renderAllMonths();
-    
-    if (searchValue) {
-      setTimeout(() => scrollToFirstSearchResult(), 100);
-    } else if (AppState.isSearching && !searchValue && previousSearchText) {
-      AppState.isSearching = false;
-      setTimeout(() => restoreScrollPosition(), 100);
-    }
+    renderSingleMonth(getActiveMonth());
   });
 }
-
-
 
 // 메인 초기화
 function initHeaderControls() {
   const brandEl = document.querySelector('.brand');
   const settingButton = document.getElementById('settingButton');
 
-  // 브랜드 클릭 시 오늘 날짜로 이동
   if (brandEl) {
     brandEl.addEventListener('click', () => {
-      const currentMonthIndex = getCurrentMonthIndex();
-      AppState.isProgrammaticScroll = true;
-      
-      const banner = document.getElementById('holidayBanner');
-      if (banner) {
-        banner.classList.remove('hidden');
-        document.body.classList.add('has-banner');
-      }
-
-      scrollToMonth(currentMonthIndex);
-      
-      setTimeout(() => {
-        AppState.isProgrammaticScroll = false;
-        applySeasonThemeByMonthIndex(currentMonthIndex);
-      }, 2000);
+      const today = new Date().getMonth() + 1;
+      const cur = getActiveMonth();
+      setActiveMonth(today, today >= cur ? 'right' : 'left');
     });
   }
 
-  // 설정 버튼 클릭 (웹에서는 알림 안내 모달만 표시, 앱에서는 설정 페이지로 이동)
   if (settingButton) {
     settingButton.addEventListener('click', () => {
       if (!Capacitor.isNativePlatform()) {
@@ -635,21 +576,6 @@ function initHeaderControls() {
       window.location.href = 'setting.html';
     });
   }
-
-  // 스크롤 이벤트로 실시간 테마/상태 업데이트
-  let scrollTimeout;
-  window.addEventListener('scroll', () => {
-    clearTimeout(scrollTimeout);
-    scrollTimeout = setTimeout(() => {
-      if (!AppState.isProgrammaticScroll) {
-        const currentMonthIndex = getCurrentVisibleMonthIndex();
-        if (currentMonthIndex !== -1) {
-          AppState.currentMonthIndex = currentMonthIndex;
-        }
-        applySeasonThemeByMonthIndex(AppState.currentMonthIndex);
-      }
-    }, 100);
-  });
 }
 
 function showWebNotificationInfoModal() {
@@ -684,29 +610,23 @@ function showWebNotificationInfoModal() {
 
 async function init() {
   try {
-    // 초기 로딩 표시 (느린 네트워크 대응)
     if (trackEl) {
       trackEl.innerHTML = '<div class="loading"><span class="loading__spinner" aria-hidden="true"></span><span class="loading__text">데이터를 불러오는 중입니다...</span></div>';
     }
 
     AppState.allIngredients = await loadIngredients();
-    
-    // 명절/절기 배너 로드 및 표시
+
     const holidayResult = await loadHolidays();
     const holidays = holidayResult.holidays;
-    // 전역 상태에 저장 (알림 예약을 위해)
     AppState.holidays = holidays;
-    
-    // solarDate 미리 계산해서 넣어두기
+
     const today = new Date();
     today.setHours(0, 0, 0, 0);
     AppState.holidays.forEach(h => {
-        h.solarDate = getHolidaySolarDate(h, today);
+      h.solarDate = getHolidaySolarDate(h, today);
     });
-    
-    // AppState를 전역으로 노출 (setting.js에서 접근 가능하도록)
+
     window.AppState = AppState;
-    console.log('✅ AppState 전역 노출 완료, allIngredients 수:', AppState.allIngredients.length);
 
     if (holidayResult.error) {
       displayHolidayError();
@@ -715,46 +635,35 @@ async function init() {
       displayHolidayBanner(upcomingHoliday);
     }
 
-    renderAllMonths();
-    
-    // 쇼츠형 스냅을 위해 body 클래스 추가
-    document.body.classList.add('page-ingredients');
-    
+    // 현재 월 결정 (URL 해시 우선, 없으면 오늘)
+    const activeMonth = getActiveMonth();
+
+    // 초기 상태를 history에 기록
+    if (!window.location.hash) {
+      history.replaceState({ month: activeMonth }, '', `#month-${activeMonth}`);
+    }
+
+    renderSingleMonth(activeMonth);
+    applySeasonThemeByMonthIndex(activeMonth - 1);
+    updateMonthLabel(activeMonth);
+
     initSearch();
-    initPush(); // Push 알림 초기화
+    initPush();
     initHeaderControls();
-    
+    initMonthNav();
     initOfflineNotice();
-    initBannerScroll(); // 배너 스크롤 기능 초기화
+    initBannerScroll();
     syncHeaderOffset();
+
     window.addEventListener('resize', () => { requestAnimationFrame(syncHeaderOffset); });
     window.addEventListener('orientationchange', () => { setTimeout(syncHeaderOffset, 250); });
-    
-    // 초기 로드 시 현재 월로 스크롤
-    setTimeout(() => {
-      const currentMonthIndex = getCurrentMonthIndex();
-      AppState.isProgrammaticScroll = true;
-      
-      const banner = document.getElementById('holidayBanner');
-      if (banner) {
-        banner.classList.remove('hidden');
-        document.body.classList.add('has-banner');
-      }
 
-      scrollToMonth(currentMonthIndex);
-      
-      setTimeout(() => {
-        AppState.isProgrammaticScroll = false;
-        applySeasonThemeByMonthIndex(AppState.currentMonthIndex);
-      }, 2000);
-    }, 300);
   } catch (err) {
     console.error('초기화 실패:', err);
     trackEl.innerHTML = '<div class="error">데이터를 불러올 수 없습니다.</div>';
   }
 }
 
-// DOM 로드 완료 시 초기화
 if (document.readyState === 'loading') {
   document.addEventListener('DOMContentLoaded', init);
 } else {

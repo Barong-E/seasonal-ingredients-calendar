@@ -6,11 +6,8 @@ html, body {
   height: 100%; /* 스크롤 스냅을 위해 높이 고정 필요 시 */
 }
 
-/* 식재료 페이지 전용 스크롤 스냅 */
-body.page-ingredients {
-  scroll-snap-type: y mandatory;
-  overflow-y: scroll;
-}
+
+
 
 body {
   margin: 0;
@@ -156,6 +153,73 @@ body.theme-winter {
   right: 0;
   z-index: 100;
   transition: background 0.4s ease, box-shadow 0.4s ease;
+}
+
+/* ── 월 네비게이터 ── */
+.month-nav {
+  position: fixed;
+  top: var(--header-offset, 60px);
+  left: 0;
+  right: 0;
+  z-index: 99;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0;
+  padding: 6px 20px;
+  height: 48px;
+  background: var(--glass-bg);
+  -webkit-backdrop-filter: blur(var(--glass-blur));
+  backdrop-filter: blur(var(--glass-blur));
+  border-bottom: 1px solid var(--glass-border);
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
+  transition: background 0.4s ease;
+}
+
+.month-nav__btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 36px;
+  border: none;
+  border-radius: 10px;
+  background: transparent;
+  color: var(--primary);
+  cursor: pointer;
+  transition: background 0.2s, transform 0.15s;
+  flex-shrink: 0;
+}
+
+.month-nav__btn:hover {
+  background: rgba(0, 0, 0, 0.06);
+}
+
+.month-nav__btn:active {
+  transform: scale(0.9);
+}
+
+.month-nav__label {
+  flex: 1;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  text-align: center;
+  font-weight: 800;
+  font-size: 1.05rem;
+  color: var(--primary);
+  letter-spacing: -0.3px;
+  padding: 6px 8px;
+  border-radius: 10px;
+  transition: background 0.2s, color 0.3s;
+  background: var(--primary-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.month-nav__label:active {
+  opacity: 0.7;
 }
 
 .holiday-banner {
@@ -333,48 +397,40 @@ body.theme-winter {
 }
 
 /* Vertical layout styles */
+/* 월 네비게이터 높이(48px) + 헤더 + 여유 */
 .carousel {
-  padding: calc(var(--header-offset, 0px) + 12px) 20px 20px;
+  padding: calc(var(--header-offset, 0px) + 48px + 16px) 20px 100px;
 }
 
-/* 배너가 있을 때 메인 콘텐츠 패딩 조정 */
+/* 월 네비게이터 있을 때 실제 툔 오프셋은 CSS변수로 보정 */
 body.has-banner .carousel {
-  padding-top: calc(var(--header-offset, 0px) + 80px + 12px); /* 헤더 + 배너 높이 + 여유 */
+  padding-top: calc(var(--header-offset, 0px) + 48px + 80px + 16px);
 }
-
-/* carousel__container 스타일은 필요에 따라 추가 */
 
 .carousel__track {
-  display: block; /* Change from flex to block for vertical layout */
+  display: block;
 }
 
-/* Month Section (Shorts-like Snap) */
+/* Month Section — SPA 라우팅: 단일 월 표시용 */
 .month-section {
-  scroll-snap-align: start;
-  scroll-snap-stop: always;
-  min-height: 100vh;
   display: flex;
   flex-direction: column;
-  padding-top: calc(var(--header-offset, 80px) + 20px);
-  padding-bottom: 100px; /* GNB 및 하단 여백 */
   box-sizing: border-box;
+  animation: fadeSlideIn 0.28s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-/* Period header styles */
-.period-header {
-  font-family: var(--serif-font);
-  font-weight: 700;
-  color: var(--primary);
-  font-size: 1.8rem; /* 쇼츠 느낌을 위해 조금 더 크게 */
-  text-align: left;
-  margin: 0 0 20px 0;
-  padding: 0 0 12px;
-  border-bottom: 3px double var(--muted);
-  letter-spacing: -0.5px;
+@keyframes fadeSlideIn {
+  from { opacity: 0; transform: translateX(30px); }
+  to   { opacity: 1; transform: translateX(0); }
 }
 
-.period-header:first-child {
-  margin-top: 24px;
+.month-section.slide-left {
+  animation-name: fadeSlideLeft;
+}
+
+@keyframes fadeSlideLeft {
+  from { opacity: 0; transform: translateX(-30px); }
+  to   { opacity: 1; transform: translateX(0); }
 }
 
 /* Period grid container */

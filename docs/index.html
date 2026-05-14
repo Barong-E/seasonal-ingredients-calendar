@@ -87,8 +87,21 @@
     </div>
   </div>
 
+  <!-- 월 네비게이터 -->
+  <nav id="monthNav" class="month-nav" aria-label="월 선택">
+    <button id="prevMonthBtn" class="month-nav__btn" type="button" aria-label="이전 달">
+      <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M15.41 16.59L10.83 12l4.58-4.59L14 6l-6 6 6 6z"/></svg>
+    </button>
+    <button id="monthLabel" class="month-nav__label" type="button" aria-label="오늘 달로 이동">
+      <span id="monthLabelText">1월</span>
+    </button>
+    <button id="nextMonthBtn" class="month-nav__btn" type="button" aria-label="다음 달">
+      <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6z"/></svg>
+    </button>
+  </nav>
+
   <main>
-    <section class="carousel" aria-label="시기 선택">
+    <section class="carousel" aria-label="이달의 제철 식재료">
       <div id="carouselContainer" class="carousel__container">
         <div id="periodTrack" class="carousel__track" aria-live="polite"></div>
       </div>
@@ -112,12 +125,6 @@
     </a>
   </nav>
 
-  <template id="panelTemplate">
-    <div class="panel" role="group" aria-roledescription="시기 패널">
-      <div class="grid" role="list"></div>
-      <div class="empty" role="status" aria-live="polite">검색 결과가 없습니다.</div>
-    </div>
-  </template>
 
   <template id="cardTemplate">
     <div class="card" role="listitem">
