@@ -120,8 +120,8 @@
         position: fixed;
         bottom: 0; left: 0; right: 0;
         padding: 16px 20px;
-        background: var(--glass-bg);
-        backdrop-filter: blur(20px);
+        padding-bottom: calc(16px + env(safe-area-inset-bottom, 0px));
+        background: #ffffff;
         border-top: 1px solid var(--glass-border);
         box-shadow: 0 -4px 20px rgba(0,0,0,0.08);
         display: flex;
