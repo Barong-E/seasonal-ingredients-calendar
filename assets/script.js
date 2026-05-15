@@ -372,7 +372,18 @@ function createCard(item) {
   // 대표 요리 정보 표시 (첫 번째 요리만)
   if (item.popular_dish) {
     const dishes = item.popular_dish.split(',').map(d => d.trim());
-    popularDishValue.textContent = dishes[0];
+    let dishName = dishes[0];
+    const ingredientName = item.name_ko || '';
+
+    // [똑똑한 요리명 줄이기 규칙]
+    // 1. 요리명이 5글자를 초과하고 (6자 이상)
+    // 2. 요리명에 식재료 이름이 포함되어 있다면
+    // → 식재료 이름을 지워서 중복을 피함 (예: 아스파라거스 베이컨 말이 -> 베이컨 말이)
+    if (dishName.length > 5 && ingredientName && dishName.includes(ingredientName)) {
+      dishName = dishName.replace(ingredientName, '').trim();
+    }
+
+    popularDishValue.textContent = dishName;
   } else {
     popularDishValue.textContent = '-';
   }
