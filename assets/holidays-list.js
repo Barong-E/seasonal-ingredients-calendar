@@ -1,3 +1,4 @@
+import { Capacitor } from '@capacitor/core';
 import KoreanLunarCalendar from 'korean-lunar-calendar';
 
 async function loadHolidays() {
@@ -257,8 +258,59 @@ function handleRedirect() {
   }
 }
 
+function initHeaderControls() {
+  const settingButton = document.getElementById('settingButton');
+  const brandEl = document.querySelector('.brand');
+
+  if (brandEl) {
+    brandEl.addEventListener('click', () => {
+      window.location.href = 'index.html';
+    });
+  }
+
+  if (settingButton) {
+    settingButton.addEventListener('click', () => {
+      if (!Capacitor.isNativePlatform()) {
+        showWebNotificationInfoModal();
+        return;
+      }
+      window.location.href = 'setting.html';
+    });
+  }
+}
+
+function showWebNotificationInfoModal() {
+  const existing = document.getElementById('webNotificationInfoModal');
+  if (existing) existing.remove();
+
+  const modal = document.createElement('div');
+  modal.id = 'webNotificationInfoModal';
+  modal.className = 'info-modal';
+  modal.setAttribute('role', 'dialog');
+  modal.setAttribute('aria-modal', 'true');
+  modal.innerHTML = `
+    <div class="info-modal__backdrop"></div>
+    <div class="info-modal__content">
+      <p class="info-modal__message">알림은 앱에서만 받을 수 있습니다. 스토어에서 설치해주세요.</p>
+      <button type="button" class="info-modal__close">닫기</button>
+    </div>
+  `;
+
+  function close() {
+    modal.remove();
+    document.body.style.overflow = '';
+  }
+
+  modal.querySelector('.info-modal__backdrop').addEventListener('click', close);
+  modal.querySelector('.info-modal__close').addEventListener('click', close);
+
+  document.body.appendChild(modal);
+  document.body.style.overflow = 'hidden';
+}
+
 document.addEventListener('DOMContentLoaded', () => {
-  handleRedirect(); // 리다이렉트 체크 우선 실행
+  handleRedirect();
   renderHolidaysList();
   initSearch();
+  initHeaderControls();
 });
