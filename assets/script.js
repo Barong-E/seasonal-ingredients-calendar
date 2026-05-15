@@ -358,7 +358,7 @@ function createCard(item) {
   const title = node.querySelector('.title');
   const thumb = node.querySelector('.thumb');
   const img = node.querySelector('.photo');
-  const caloriesValue = node.querySelector('.calories-value');
+  const popularDishValue = node.querySelector('.popular-dish-value');
 
   title.textContent = item.name_ko || '';
   const imgPath = `images/${item.image || '_fallback.png'}?v=v12`;
@@ -369,21 +369,12 @@ function createCard(item) {
   };
   img.src = imgPath;
 
-  // 카테고리 라벨 제거 요청에 따라 주석 처리
-  /*
-  if (item.category) {
-    const catLabel = document.createElement('div');
-    catLabel.className = 'card-category-label';
-    catLabel.textContent = item.category;
-    thumb.appendChild(catLabel);
-  }
-  */
-
-  // 칼로리 정보 표시
-  if (item.calories_per_100g) {
-    caloriesValue.textContent = `${item.calories_per_100g}kcal`;
+  // 대표 요리 정보 표시 (첫 번째 요리만)
+  if (item.popular_dish) {
+    const dishes = item.popular_dish.split(',').map(d => d.trim());
+    popularDishValue.textContent = dishes[0];
   } else {
-    caloriesValue.textContent = '-';
+    popularDishValue.textContent = '-';
   }
 
   // 클릭으로 상세 페이지 열기
