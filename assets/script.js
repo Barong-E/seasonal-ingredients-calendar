@@ -7,18 +7,19 @@ import { getRecipeIdFromDishName } from './recipe-mapper.js';
 // 띵동 제철음식 메인 스크립트
 // 규칙: ES 모듈 없이 단일 페이지 스크립트
 
-const CACHE_KEY = 'seasons:ingredients:v40';
+const CACHE_KEY = 'seasons:ingredients:v41';
 const CACHE_TTL_MS = 24 * 60 * 60 * 1000; // 24h
 
 // 구버전 캐시 강제 삭제 (버전 충돌 방지)
 try {
+  localStorage.removeItem('seasons:ingredients:v40');
   localStorage.removeItem('seasons:ingredients:v39');
   localStorage.removeItem('seasons:ingredients:v38');
   localStorage.removeItem('seasons:ingredients:v37');
   localStorage.removeItem('seasons:ingredients:v36');
   localStorage.removeItem('seasons:ingredients:v20');
   localStorage.removeItem('seasons:ingredients:v19');
-  console.log('구버전 캐시 초기화 완료 (v40)');
+  console.log('구버전 캐시 초기화 완료 (v41)');
 } catch (e) {
   // ignore
 }
@@ -179,32 +180,41 @@ function displayHolidayError() {
   document.body.classList.add('has-banner');
 }
 
-// 배너 스크롤 동작 - 헤더와 함께 움직이도록 수정
-function initBannerScroll() {
+// 헤더 및 배너 스크롤 동작 통합 관리
+function initHeaderAndBannerScroll() {
   const banner = document.getElementById('holidayBanner');
-  if (!banner) return;
+  const header = document.querySelector('.app-header');
+  const monthNav = document.getElementById('monthNav');
 
   let lastScrollY = window.scrollY;
   let ticking = false;
 
-  const updateBanner = () => {
+  const updateScrollState = () => {
     const currentScrollY = window.scrollY;
     const headerHeight = getHeaderHeight();
     
-    // 배너 위치를 헤더 아래로 동적으로 조정
-    banner.style.top = `${headerHeight}px`;
+    if (banner) {
+      banner.style.top = `${headerHeight}px`;
+    }
     
-    // 스크롤 방향이 실제로 변경되었을 때만 배너 상태 변경
     if (currentScrollY !== lastScrollY) {
-      // 스크롤을 올리거나 최상단 근처일 때 배너 보임
       if (currentScrollY < lastScrollY || currentScrollY <= 50) {
-        banner.classList.remove('hidden');
-        document.body.classList.add('has-banner');
+        // 스크롤 올리거나 최상단: 헤더, 월 네비게이터, 배너 표시
+        if (header) header.classList.remove('header--hidden');
+        if (monthNav) monthNav.classList.remove('header--hidden');
+        if (banner) {
+          banner.classList.remove('hidden');
+          document.body.classList.add('has-banner');
+        }
       } else {
-        // 아래로 스크롤할 때 배너 숨김 (단, 프로그램적 스크롤 중이 아닐 때만)
-        if (!AppState.isProgrammaticScroll) {
-          banner.classList.add('hidden');
-          document.body.classList.remove('has-banner');
+        // 스크롤 내릴 때 (프로그램적 스크롤 아닐 때만): 헤더 숨김, 월 네비게이터 위로 이동
+        if (!AppState.isProgrammaticScroll && currentScrollY > 50) {
+          if (header) header.classList.add('header--hidden');
+          if (monthNav) monthNav.classList.add('header--hidden');
+          if (banner) {
+            banner.classList.add('hidden');
+            document.body.classList.remove('has-banner');
+          }
         }
       }
     }
@@ -213,19 +223,17 @@ function initBannerScroll() {
     ticking = false;
   };
 
-  // 초기 배너 위치 설정
-  updateBanner();
+  updateScrollState();
 
   window.addEventListener('scroll', () => {
     if (!ticking) {
-      window.requestAnimationFrame(updateBanner);
+      window.requestAnimationFrame(updateScrollState);
       ticking = true;
     }
   });
 
-  // 윈도우 리사이즈 시에도 배너 위치 업데이트
   window.addEventListener('resize', () => {
-    requestAnimationFrame(updateBanner);
+    requestAnimationFrame(updateScrollState);
   });
 }
 
@@ -656,7 +664,7 @@ async function init() {
     initHeaderControls();
     initMonthNav();
     initOfflineNotice();
-    initBannerScroll();
+    initHeaderAndBannerScroll();
     syncHeaderOffset();
 
     window.addEventListener('resize', () => { requestAnimationFrame(syncHeaderOffset); });

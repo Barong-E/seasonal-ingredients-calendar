@@ -308,9 +308,42 @@ function showWebNotificationInfoModal() {
   document.body.style.overflow = 'hidden';
 }
 
+function initHeaderScroll() {
+  const header = document.querySelector('.app-header');
+  if (!header) return;
+
+  let lastScrollY = window.scrollY;
+  let ticking = false;
+
+  const updateScrollState = () => {
+    const currentScrollY = window.scrollY;
+    
+    if (currentScrollY !== lastScrollY) {
+      if (currentScrollY < lastScrollY || currentScrollY <= 50) {
+        header.classList.remove('header--hidden');
+      } else {
+        if (currentScrollY > 50) {
+          header.classList.add('header--hidden');
+        }
+      }
+    }
+    
+    lastScrollY = currentScrollY <= 0 ? 0 : currentScrollY;
+    ticking = false;
+  };
+
+  window.addEventListener('scroll', () => {
+    if (!ticking) {
+      window.requestAnimationFrame(updateScrollState);
+      ticking = true;
+    }
+  });
+}
+
 document.addEventListener('DOMContentLoaded', () => {
   handleRedirect();
   renderHolidaysList();
   initSearch();
   initHeaderControls();
+  initHeaderScroll();
 });
