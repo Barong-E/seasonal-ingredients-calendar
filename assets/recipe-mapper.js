@@ -161,6 +161,9 @@ export function getRecipeIdFromDishName(dishName) {
   '마늘종 장아찌': 'garlic-scapes-pickle',
   '오디 잼': 'mulberry-jam',
   '오디 스무디': 'mulberry-smoothie',
+  '완두콩스프': 'green-pea-soup',
+  '부추전': 'chives-pancake',
+  '죽순볶음': 'bamboo-shoot-stir-fry',
 
 };
   return mapping[dishName] || null;

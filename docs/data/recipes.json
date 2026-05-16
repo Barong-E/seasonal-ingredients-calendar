@@ -9401,5 +9401,198 @@
         "description": "예쁜 컵에 담아 시원하게 즐깁니다. (생과일 오디 몇 알을 토핑으로 올리면 더욱 좋습니다)"
       }
     ]
+  },
+  {
+    "id": "green-pea-soup",
+    "name": "완두콩스프",
+    "category": "채소",
+    "description": "완두콩의 고소함과 부드러운 우유가 만나 입안 가득 퍼지는 따뜻하고 든든한 스프입니다.",
+    "servings": 2,
+    "cookTime": "20분",
+    "difficulty": "하",
+    "ingredients": [
+      {
+        "name": "완두콩",
+        "amount": "200g"
+      },
+      {
+        "name": "양파",
+        "amount": "1/2개"
+      },
+      {
+        "name": "우유",
+        "amount": "200ml"
+      },
+      {
+        "name": "물",
+        "amount": "100ml"
+      },
+      {
+        "name": "버터",
+        "amount": "15g"
+      }
+    ],
+    "seasoning": [
+      {
+        "name": "소금",
+        "amount": "약간"
+      },
+      {
+        "name": "후추",
+        "amount": "약간"
+      }
+    ],
+    "steps": [
+      {
+        "step": 1,
+        "description": "완두콩은 끓는 물에 소금을 약간 넣고 3~4분간 데친 후 찬물에 헹궈 준비합니다."
+      },
+      {
+        "step": 2,
+        "description": "양파는 얇게 채 썰어 줍니다."
+      },
+      {
+        "step": 3,
+        "description": "냄비에 버터를 두르고 양파가 투명해질 때까지 약불에서 볶아줍니다."
+      },
+      {
+        "step": 4,
+        "description": "볶은 양파와 데친 완두콩, 물 100ml를 믹서기에 넣고 곱게 갈아줍니다."
+      },
+      {
+        "step": 5,
+        "description": "갈아낸 재료를 다시 냄비에 붓고 우유를 저어가며 끓인 뒤, 소금과 후추로 간을 맞춥니다."
+      }
+    ]
+  },
+  {
+    "id": "chives-pancake",
+    "name": "부추전",
+    "category": "채소",
+    "description": "향긋한 부추를 듬뿍 넣어 겉은 바삭하고 속은 촉촉하게 구워낸 비 오는 날 최고의 별미입니다.",
+    "servings": 2,
+    "cookTime": "15분",
+    "difficulty": "하",
+    "ingredients": [
+      {
+        "name": "부추",
+        "amount": "150g"
+      },
+      {
+        "name": "청양고추",
+        "amount": "1개"
+      },
+      {
+        "name": "부침가루",
+        "amount": "1컵 (200ml 기준)"
+      },
+      {
+        "name": "차가운 물",
+        "amount": "1컵"
+      },
+      {
+        "name": "식용유",
+        "amount": "넉넉히"
+      }
+    ],
+    "seasoning": [
+      {
+        "name": "국간장",
+        "amount": "1작은술"
+      }
+    ],
+    "steps": [
+      {
+        "step": 1,
+        "description": "부추는 깨끗이 씻어 물기를 턴 뒤 4~5cm 길이로 썰고, 청양고추는 얇게 송송 썰어줍니다."
+      },
+      {
+        "step": 2,
+        "description": "볼에 부침가루와 차가운 물, 국간장을 넣고 멍울이 없도록 가볍게 섞어 반죽물을 만듭니다."
+      },
+      {
+        "step": 3,
+        "description": "반죽물에 썰어둔 부추와 청양고추를 넣고 풋내가 나지 않도록 살살 버무려줍니다."
+      },
+      {
+        "step": 4,
+        "description": "달군 팬에 식용유를 넉넉히 두르고 반죽을 얇고 넓게 펼쳐 올립니다."
+      },
+      {
+        "step": 5,
+        "description": "앞뒤로 노릇노릇하고 바삭해질 때까지 구워내면 완성입니다."
+      }
+    ]
+  },
+  {
+    "id": "bamboo-shoot-stir-fry",
+    "name": "죽순볶음",
+    "category": "채소",
+    "description": "아삭아삭한 죽순과 감칠맛 나는 굴소스가 만나 식감과 맛을 모두 잡은 고급스러운 볶음 요리입니다.",
+    "servings": 2,
+    "cookTime": "15분",
+    "difficulty": "하",
+    "ingredients": [
+      {
+        "name": "삶은 죽순",
+        "amount": "200g"
+      },
+      {
+        "name": "피망",
+        "amount": "1/2개"
+      },
+      {
+        "name": "표고버섯",
+        "amount": "2개"
+      },
+      {
+        "name": "식용유",
+        "amount": "1큰술"
+      }
+    ],
+    "seasoning": [
+      {
+        "name": "굴소스",
+        "amount": "1큰술"
+      },
+      {
+        "name": "다진 마늘",
+        "amount": "1작은술"
+      },
+      {
+        "name": "간장",
+        "amount": "1작은술"
+      },
+      {
+        "name": "참기름",
+        "amount": "1작은술"
+      },
+      {
+        "name": "통깨",
+        "amount": "약간"
+      }
+    ],
+    "steps": [
+      {
+        "step": 1,
+        "description": "삶은 죽순은 빗살 무늬를 살려 먹기 좋은 크기로 썰고, 끓는 물에 살짝 데쳐 물기를 뺍니다."
+      },
+      {
+        "step": 2,
+        "description": "표고버섯과 피망은 죽순과 비슷한 굵기로 채 썰어 준비합니다."
+      },
+      {
+        "step": 3,
+        "description": "팬에 식용유를 두르고 다진 마늘을 볶아 향을 낸 뒤, 표고버섯과 죽순을 넣고 중불에서 볶아줍니다."
+      },
+      {
+        "step": 4,
+        "description": "재료가 어느 정도 익으면 피망을 넣고 굴소스와 간장으로 간을 하여 빠르게 볶아냅니다."
+      },
+      {
+        "step": 5,
+        "description": "불을 끄고 참기름과 통깨를 둘러 가볍게 섞어 마무리합니다."
+      }
+    ]
   }
 ]
