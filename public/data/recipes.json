@@ -153,7 +153,7 @@
       },
       {
         "name": "소금",
-        "amount": "약간"
+        "amount": "1꼬집"
       },
       {
         "name": "참기름",
@@ -221,7 +221,7 @@
       },
       {
         "name": "솔잎",
-        "amount": "적당량"
+        "amount": "적당량 (찜통 깔기용, 생략 가능)"
       },
       {
         "name": "참기름",
@@ -230,16 +230,40 @@
     ],
     "seasoning": [
       {
-        "name": "깨소",
-        "amount": "검은깨 1컵, 설탕 3큰술, 소금 약간"
+        "name": "검은깨",
+        "amount": "1컵"
       },
       {
-        "name": "팥소",
-        "amount": "팥 1컵, 설탕 4큰술, 소금 약간"
+        "name": "설탕",
+        "amount": "3큰술"
       },
       {
-        "name": "밤소",
-        "amount": "밤 10개, 설탕 2큰술, 계핏가루 약간"
+        "name": "소금",
+        "amount": "1꼬집"
+      },
+      {
+        "name": "팥",
+        "amount": "1컵"
+      },
+      {
+        "name": "설탕(팥소)",
+        "amount": "4큰술"
+      },
+      {
+        "name": "소금(팥소)",
+        "amount": "1꼬집"
+      },
+      {
+        "name": "밤",
+        "amount": "10개"
+      },
+      {
+        "name": "설탕(밤소)",
+        "amount": "2큰술"
+      },
+      {
+        "name": "계핏가루",
+        "amount": "1꼬집"
       }
     ],
     "steps": [
@@ -477,21 +501,29 @@
       },
       {
         "name": "소금",
-        "amount": "약간"
+        "amount": "1꼬집"
       },
       {
         "name": "후추",
-        "amount": "약간"
+        "amount": "1꼬집"
       },
       {
         "name": "식용유",
-        "amount": "적당량"
+        "amount": "1큰술"
       }
     ],
     "seasoning": [
       {
-        "name": "초간장",
-        "amount": "간장 2큰술, 식초 1큰술, 물 1큰술"
+        "name": "간장",
+        "amount": "2큰술"
+      },
+      {
+        "name": "식초",
+        "amount": "1큰술"
+      },
+      {
+        "name": "물",
+        "amount": "1큰술"
       }
     ],
     "steps": [
@@ -549,11 +581,11 @@
       },
       {
         "name": "굵은소금",
-        "amount": "약간"
+        "amount": "1꼬집"
       },
       {
         "name": "식용유",
-        "amount": "약간"
+        "amount": "1큰술"
       }
     ],
     "seasoning": [],
@@ -625,8 +657,12 @@
         "amount": "1작은술"
       },
       {
-        "name": "소금·후추",
-        "amount": "약간"
+        "name": "소금",
+        "amount": "1꼬집"
+      },
+      {
+        "name": "후추",
+        "amount": "1꼬집"
       }
     ],
     "steps": [
@@ -686,7 +722,7 @@
       },
       {
         "name": "소금",
-        "amount": "약간"
+        "amount": "1꼬집"
       },
       {
         "name": "다진 마늘",
@@ -758,7 +794,7 @@
       },
       {
         "name": "소금",
-        "amount": "약간"
+        "amount": "1꼬집"
       }
     ],
     "steps": [
@@ -952,7 +988,7 @@
     "seasoning": [
       {
         "name": "소금",
-        "amount": "약간"
+        "amount": "1꼬집"
       }
     ],
     "steps": [
@@ -993,7 +1029,7 @@
       },
       {
         "name": "굵은소금",
-        "amount": "약간"
+        "amount": "1꼬집"
       }
     ],
     "seasoning": [],
@@ -1053,7 +1089,7 @@
     "seasoning": [
       {
         "name": "소금",
-        "amount": "약간"
+        "amount": "1꼬집"
       }
     ],
     "steps": [
@@ -1090,7 +1126,7 @@
     "ingredients": [
       {
         "name": "시래기/호박오가리/고사리 등 마른나물",
-        "amount": "각 한 줌"
+        "amount": "각 1종이컵"
       },
       {
         "name": "마늘",
@@ -1104,7 +1140,7 @@
     "seasoning": [
       {
         "name": "국간장 또는 소금",
-        "amount": "적당량"
+        "amount": "1/2t스푼"
       }
     ],
     "steps": [
@@ -1145,15 +1181,15 @@
       },
       {
         "name": "소금",
-        "amount": "약간"
+        "amount": "1꼬집"
       },
       {
         "name": "식용유",
-        "amount": "약간"
+        "amount": "1큰술"
       },
       {
         "name": "나물/고기/김치",
-        "amount": "기호껏"
+        "amount": "취향껏"
       }
     ],
     "seasoning": [],
@@ -1316,7 +1352,7 @@
       },
       {
         "name": "식용유",
-        "amount": "적당량"
+        "amount": "1큰술"
       }
     ],
     "seasoning": [
@@ -1337,8 +1373,12 @@
         "amount": "1큰술"
       },
       {
-        "name": "소금·후추",
-        "amount": "약간"
+        "name": "소금",
+        "amount": "1꼬집"
+      },
+      {
+        "name": "후추",
+        "amount": "1꼬집"
       }
     ],
     "steps": [
@@ -1401,7 +1441,7 @@
       },
       {
         "name": "식용유",
-        "amount": "적당량"
+        "amount": "1큰술"
       }
     ],
     "seasoning": [
@@ -1611,13 +1651,13 @@
       },
       {
         "name": "식용유",
-        "amount": "적당량"
+        "amount": "1큰술"
       }
     ],
     "seasoning": [
       {
         "name": "꿀",
-        "amount": "적당량"
+        "amount": "1큰술"
       }
     ],
     "steps": [
@@ -1717,7 +1757,7 @@
       },
       {
         "name": "후추",
-        "amount": "약간"
+        "amount": "1꼬집"
       },
       {
         "name": "물",
@@ -1895,13 +1935,13 @@
       },
       {
         "name": "통깨",
-        "amount": "약간"
+        "amount": "1/4t스푼"
       }
     ],
     "seasoning": [
       {
         "name": "국간장 또는 소금",
-        "amount": "약간"
+        "amount": "1꼬집"
       }
     ],
     "steps": [
@@ -2057,7 +2097,7 @@
       },
       {
         "name": "소금",
-        "amount": "약간"
+        "amount": "1꼬집"
       }
     ],
     "steps": [
@@ -2417,7 +2457,7 @@
       },
       {
         "name": "소금",
-        "amount": "약간"
+        "amount": "1꼬집"
       }
     ],
     "steps": [
@@ -2645,7 +2685,7 @@
       },
       {
         "name": "소금",
-        "amount": "약간"
+        "amount": "1꼬집"
       }
     ],
     "steps": [
@@ -2971,11 +3011,11 @@
       },
       {
         "name": "소금",
-        "amount": "약간"
+        "amount": "1꼬집"
       },
       {
         "name": "후추",
-        "amount": "약간"
+        "amount": "1꼬집"
       }
     ],
     "steps": [
@@ -3056,7 +3096,7 @@
       },
       {
         "name": "소금",
-        "amount": "약간"
+        "amount": "1꼬집"
       }
     ],
     "steps": [
@@ -3133,7 +3173,7 @@
       },
       {
         "name": "소금",
-        "amount": "약간"
+        "amount": "1꼬집"
       }
     ],
     "steps": [
@@ -3218,7 +3258,7 @@
       },
       {
         "name": "소금",
-        "amount": "약간"
+        "amount": "1꼬집"
       }
     ],
     "steps": [
@@ -3291,7 +3331,7 @@
       },
       {
         "name": "소금",
-        "amount": "약간"
+        "amount": "1꼬집"
       }
     ],
     "steps": [
@@ -3341,7 +3381,11 @@
         "amount": "2큰술"
       },
       {
-        "name": "견과류(아몬드, 땅콩)",
+        "name": "견과류(아몬드",
+        "amount": "1/4컵"
+      },
+      {
+        "name": "땅콩)",
         "amount": "1/4컵"
       }
     ],
@@ -3423,13 +3467,25 @@
       },
       {
         "name": "무채",
-        "amount": "적당량"
+        "amount": "50g"
       }
     ],
     "seasoning": [
       {
-        "name": "초고추장",
-        "amount": "고추장 3큰술, 식초 2큰술, 설탕 1큰술, 다진 마늘 약간"
+        "name": "고추장",
+        "amount": "3큰술"
+      },
+      {
+        "name": "식초",
+        "amount": "2큰술"
+      },
+      {
+        "name": "설탕",
+        "amount": "1큰술"
+      },
+      {
+        "name": "다진 마늘",
+        "amount": "1/2t스푼"
       }
     ],
     "steps": [
@@ -3502,7 +3558,7 @@
       },
       {
         "name": "소금",
-        "amount": "약간"
+        "amount": "1꼬집"
       }
     ],
     "steps": [
@@ -3545,7 +3601,7 @@
       },
       {
         "name": "굵은소금",
-        "amount": "약간"
+        "amount": "1꼬집"
       }
     ],
     "seasoning": [],
@@ -3583,7 +3639,7 @@
       },
       {
         "name": "굵은소금",
-        "amount": "약간"
+        "amount": "1꼬집"
       }
     ],
     "seasoning": [],
@@ -3656,7 +3712,7 @@
       },
       {
         "name": "후추",
-        "amount": "약간"
+        "amount": "1꼬집"
       }
     ],
     "steps": [
@@ -3702,7 +3758,7 @@
       },
       {
         "name": "굵은소금",
-        "amount": "약간"
+        "amount": "1꼬집"
       }
     ],
     "seasoning": [],
@@ -3744,7 +3800,7 @@
       },
       {
         "name": "굵은소금",
-        "amount": "약간"
+        "amount": "1꼬집"
       },
       {
         "name": "레몬",
@@ -3798,17 +3854,17 @@
       },
       {
         "name": "파슬리가루",
-        "amount": "약간"
+        "amount": "1꼬집"
       }
     ],
     "seasoning": [
       {
         "name": "소금",
-        "amount": "약간"
+        "amount": "1꼬집"
       },
       {
         "name": "후추",
-        "amount": "약간"
+        "amount": "1꼬집"
       }
     ],
     "steps": [
@@ -3860,11 +3916,11 @@
     "seasoning": [
       {
         "name": "소금",
-        "amount": "약간"
+        "amount": "1꼬집"
       },
       {
         "name": "후추",
-        "amount": "약간"
+        "amount": "1꼬집"
       }
     ],
     "steps": [
@@ -3915,11 +3971,11 @@
     "seasoning": [
       {
         "name": "소금",
-        "amount": "약간"
+        "amount": "1꼬집"
       },
       {
         "name": "레몬즙",
-        "amount": "약간"
+        "amount": "1/2t스푼"
       }
     ],
     "steps": [
@@ -4130,7 +4186,7 @@
       },
       {
         "name": "소금",
-        "amount": "약간"
+        "amount": "1꼬집"
       }
     ],
     "seasoning": [],
@@ -4244,7 +4300,7 @@
       },
       {
         "name": "식용유",
-        "amount": "적당량"
+        "amount": "1큰술"
       }
     ],
     "seasoning": [
@@ -4308,13 +4364,13 @@
       },
       {
         "name": "쌈채소",
-        "amount": "적당량"
+        "amount": "한 접시"
       }
     ],
     "seasoning": [
       {
         "name": "초고추장",
-        "amount": "적당량"
+        "amount": "3큰술"
       },
       {
         "name": "참기름",
@@ -4447,7 +4503,7 @@
       },
       {
         "name": "통깨",
-        "amount": "약간"
+        "amount": "1/4t스푼"
       }
     ],
     "steps": [
@@ -4562,7 +4618,7 @@
       },
       {
         "name": "통깨",
-        "amount": "약간"
+        "amount": "1/4t스푼"
       }
     ],
     "steps": [
@@ -4685,7 +4741,7 @@
       },
       {
         "name": "통깨",
-        "amount": "약간"
+        "amount": "1/4t스푼"
       }
     ],
     "steps": [
@@ -4740,7 +4796,7 @@
       },
       {
         "name": "통깨",
-        "amount": "약간"
+        "amount": "1/4t스푼"
       }
     ],
     "steps": [
@@ -4849,7 +4905,7 @@
       },
       {
         "name": "소금",
-        "amount": "약간"
+        "amount": "1꼬집"
       }
     ],
     "seasoning": [],
@@ -5037,7 +5093,7 @@
       },
       {
         "name": "소금",
-        "amount": "약간"
+        "amount": "1꼬집"
       }
     ],
     "steps": [
@@ -5104,7 +5160,7 @@
       },
       {
         "name": "통깨",
-        "amount": "약간"
+        "amount": "1/4t스푼"
       }
     ],
     "steps": [
@@ -5202,11 +5258,11 @@
       },
       {
         "name": "소금",
-        "amount": "약간"
+        "amount": "1꼬집"
       },
       {
         "name": "참기름",
-        "amount": "약간"
+        "amount": "1/4t스푼"
       }
     ],
     "seasoning": [],
@@ -5253,7 +5309,7 @@
       },
       {
         "name": "소금",
-        "amount": "약간"
+        "amount": "1꼬집"
       }
     ],
     "seasoning": [],
@@ -5313,7 +5369,7 @@
       },
       {
         "name": "통깨",
-        "amount": "약간"
+        "amount": "1/4t스푼"
       }
     ],
     "steps": [
@@ -5426,7 +5482,7 @@
       },
       {
         "name": "통후추/건고추(선택)",
-        "amount": "약간"
+        "amount": "5알"
       }
     ],
     "seasoning": [],
@@ -5499,7 +5555,7 @@
       },
       {
         "name": "소금",
-        "amount": "약간"
+        "amount": "1꼬집"
       }
     ],
     "steps": [
@@ -5635,11 +5691,11 @@
       },
       {
         "name": "꿀 또는 설탕(선택)",
-        "amount": "약간"
+        "amount": "1t스푼"
       },
       {
         "name": "물 또는 탄산수(선택)",
-        "amount": "적당량"
+        "amount": "50ml"
       }
     ],
     "seasoning": [],
@@ -5904,7 +5960,7 @@
       },
       {
         "name": "얼음",
-        "amount": "적당량"
+        "amount": "1/2컵"
       },
       {
         "name": "잣(선택)",
@@ -5961,11 +6017,11 @@
       },
       {
         "name": "소금",
-        "amount": "약간"
+        "amount": "1꼬집"
       },
       {
         "name": "식용유",
-        "amount": "적당량"
+        "amount": "1큰술"
       }
     ],
     "seasoning": [],
@@ -6007,7 +6063,7 @@
       },
       {
         "name": "소금(선택)",
-        "amount": "약간"
+        "amount": "1꼬집"
       }
     ],
     "seasoning": [],
@@ -6118,7 +6174,7 @@
       },
       {
         "name": "소금",
-        "amount": "약간"
+        "amount": "1꼬집"
       }
     ],
     "seasoning": [],
@@ -6321,11 +6377,11 @@
       },
       {
         "name": "소금",
-        "amount": "약간"
+        "amount": "1꼬집"
       },
       {
         "name": "식용유",
-        "amount": "적당량"
+        "amount": "1큰술"
       }
     ],
     "seasoning": [],
@@ -6393,13 +6449,21 @@
       },
       {
         "name": "상추/깻잎",
-        "amount": "적당량"
+        "amount": "각 5장"
       }
     ],
     "seasoning": [
       {
-        "name": "초고추장",
-        "amount": "고추장 3, 식초 2, 설탕 1 (큰술)"
+        "name": "고추장",
+        "amount": "3큰술"
+      },
+      {
+        "name": "식초",
+        "amount": "2큰술"
+      },
+      {
+        "name": "설탕",
+        "amount": "1큰술"
       }
     ],
     "steps": [
@@ -6454,7 +6518,7 @@
       },
       {
         "name": "소금",
-        "amount": "약간"
+        "amount": "1꼬집"
       }
     ],
     "steps": [
@@ -6494,7 +6558,7 @@
     "seasoning": [
       {
         "name": "초고추장",
-        "amount": "적당량"
+        "amount": "3큰술"
       }
     ],
     "steps": [
@@ -6661,7 +6725,7 @@
       },
       {
         "name": "마늘/생강/고추",
-        "amount": "적당량"
+        "amount": "마늘 2쪽, 생강 1조각, 고추 1개"
       }
     ],
     "seasoning": [],
@@ -6703,13 +6767,13 @@
       },
       {
         "name": "오이/김/참기름",
-        "amount": "적당량"
+        "amount": "오이 1/4개, 김 1장, 참기름 1/2t스푼"
       }
     ],
     "seasoning": [
       {
         "name": "초고추장",
-        "amount": "적당량"
+        "amount": "3큰술"
       }
     ],
     "steps": [
@@ -6790,7 +6854,7 @@
     "seasoning": [
       {
         "name": "초고추장",
-        "amount": "적당량"
+        "amount": "3큰술"
       }
     ],
     "steps": [
@@ -6935,7 +6999,7 @@
       },
       {
         "name": "소금",
-        "amount": "약간"
+        "amount": "1꼬집"
       }
     ],
     "steps": [
@@ -7066,7 +7130,7 @@
       },
       {
         "name": "소금",
-        "amount": "약간"
+        "amount": "1꼬집"
       }
     ],
     "steps": [
@@ -7107,7 +7171,7 @@
       },
       {
         "name": "소금",
-        "amount": "약간"
+        "amount": "1꼬집"
       }
     ],
     "seasoning": [
@@ -7147,16 +7211,16 @@
     "servings": 2,
     "ingredients": [
       {
-        "amount": "200g",
-        "name": "참두릅"
+        "name": "참두릅",
+        "amount": "200g"
       },
       {
-        "amount": "1큰술",
-        "name": "굵은 소금"
+        "name": "굵은 소금",
+        "amount": "1큰술"
       },
       {
-        "amount": "적당량",
-        "name": "초고추장"
+        "name": "초고추장",
+        "amount": "3큰술"
       }
     ],
     "steps": [
@@ -7191,24 +7255,24 @@
     "servings": 2,
     "ingredients": [
       {
-        "amount": "150g",
-        "name": "참두릅"
+        "name": "참두릅",
+        "amount": "150g"
       },
       {
-        "amount": "200g",
-        "name": "얇게 썬 소고기(불고기용)"
+        "name": "얇게 썬 소고기(불고기용)",
+        "amount": "200g"
       },
       {
-        "amount": "2큰술",
-        "name": "간장"
+        "name": "간장",
+        "amount": "2큰술"
       },
       {
-        "amount": "1큰술",
-        "name": "올리고당"
+        "name": "올리고당",
+        "amount": "1큰술"
       },
       {
-        "amount": "1작은술",
-        "name": "참기름"
+        "name": "참기름",
+        "amount": "1작은술"
       }
     ],
     "steps": [
@@ -7244,24 +7308,32 @@
     "servings": 2,
     "ingredients": [
       {
-        "amount": "2마리",
-        "name": "횟감용 한치"
+        "name": "횟감용 한치",
+        "amount": "2마리"
       },
       {
-        "amount": "적당량",
-        "name": "상추, 깻잎, 오이"
+        "name": "상추",
+        "amount": "5장"
       },
       {
-        "amount": "1팩",
-        "name": "시판 냉면육수"
+        "name": "깻잎",
+        "amount": "3장"
       },
       {
-        "amount": "3큰술",
-        "name": "초고추장"
+        "name": "오이",
+        "amount": "1/4개"
       },
       {
-        "amount": "약간",
-        "name": "통깨"
+        "name": "시판 냉면육수",
+        "amount": "1팩"
+      },
+      {
+        "name": "초고추장",
+        "amount": "3큰술"
+      },
+      {
+        "name": "통깨",
+        "amount": "1/4t스푼"
       }
     ],
     "steps": [
@@ -7296,20 +7368,24 @@
     "servings": 2,
     "ingredients": [
       {
-        "amount": "2마리",
-        "name": "한치"
+        "name": "한치",
+        "amount": "2마리"
       },
       {
-        "amount": "2큰술",
-        "name": "버터"
+        "name": "버터",
+        "amount": "2큰술"
       },
       {
-        "amount": "1큰술",
-        "name": "다진마늘"
+        "name": "다진마늘",
+        "amount": "1큰술"
       },
       {
-        "amount": "약간",
-        "name": "소금, 후추"
+        "name": "소금",
+        "amount": "1꼬집"
+      },
+      {
+        "name": "후추",
+        "amount": "1꼬집"
       }
     ],
     "steps": [
@@ -7345,28 +7421,40 @@
     "servings": 2,
     "ingredients": [
       {
-        "amount": "2마리",
-        "name": "낙지"
+        "name": "낙지",
+        "amount": "2마리"
       },
       {
-        "amount": "적당량",
-        "name": "양파, 대파, 양배추"
+        "name": "양파",
+        "amount": "1/2개"
       },
       {
-        "amount": "2큰술",
-        "name": "고추장"
+        "name": "대파",
+        "amount": "1/2대"
       },
       {
-        "amount": "2큰술",
-        "name": "고춧가루"
+        "name": "양배추",
+        "amount": "50g"
       },
       {
-        "amount": "1큰술",
-        "name": "다진마늘"
+        "name": "고추장",
+        "amount": "2큰술"
       },
       {
-        "amount": "각 1큰술",
-        "name": "간장, 참기름"
+        "name": "고춧가루",
+        "amount": "2큰술"
+      },
+      {
+        "name": "다진마늘",
+        "amount": "1큰술"
+      },
+      {
+        "name": "간장",
+        "amount": "각 1큰술"
+      },
+      {
+        "name": "참기름",
+        "amount": "각 1큰술"
       }
     ],
     "steps": [
@@ -7402,28 +7490,36 @@
     "servings": 2,
     "ingredients": [
       {
-        "amount": "2마리",
-        "name": "낙지"
+        "name": "낙지",
+        "amount": "2마리"
       },
       {
-        "amount": "1토막",
-        "name": "무"
+        "name": "무",
+        "amount": "1토막"
       },
       {
-        "amount": "원하는 만큼",
-        "name": "대파, 청양고추"
+        "name": "대파",
+        "amount": "취향껏"
       },
       {
-        "amount": "4컵",
-        "name": "다시마 육수"
+        "name": "청양고추",
+        "amount": "취향껏"
       },
       {
-        "amount": "1작은술",
-        "name": "다진마늘"
+        "name": "다시마 육수",
+        "amount": "4컵"
       },
       {
-        "amount": "알맞게 조절",
-        "name": "국간장, 소금"
+        "name": "다진마늘",
+        "amount": "1작은술"
+      },
+      {
+        "name": "국간장",
+        "amount": "취향껏"
+      },
+      {
+        "name": "소금",
+        "amount": "취향껏"
       }
     ],
     "steps": [
@@ -7458,24 +7554,32 @@
     "servings": 2,
     "ingredients": [
       {
-        "amount": "150g",
-        "name": "방어회"
+        "name": "방어회",
+        "amount": "150g"
       },
       {
-        "amount": "약간",
-        "name": "미나리, 쪽파"
+        "name": "미나리",
+        "amount": "30g"
       },
       {
-        "amount": "3큰술",
-        "name": "초고추장"
+        "name": "쪽파",
+        "amount": "2~3대"
       },
       {
-        "amount": "1작은술",
-        "name": "고춧가루"
+        "name": "초고추장",
+        "amount": "3큰술"
       },
       {
-        "amount": "적당량",
-        "name": "참기름, 깨소금"
+        "name": "고춧가루",
+        "amount": "1작은술"
+      },
+      {
+        "name": "참기름",
+        "amount": "1큰술"
+      },
+      {
+        "name": "깨소금",
+        "amount": "1/2t스푼"
       }
     ],
     "steps": [
@@ -7510,24 +7614,32 @@
     "servings": 2,
     "ingredients": [
       {
-        "amount": "1토막",
-        "name": "방어 대가리 혹은 뼈달린 살"
+        "name": "방어 대가리 혹은 뼈달린 살",
+        "amount": "1토막"
       },
       {
-        "amount": "1/4개",
-        "name": "무"
+        "name": "무",
+        "amount": "1/4개"
       },
       {
-        "amount": "4큰술",
-        "name": "간장"
+        "name": "간장",
+        "amount": "4큰술"
       },
       {
-        "amount": "1.5큰술",
-        "name": "설탕"
+        "name": "설탕",
+        "amount": "1.5큰술"
       },
       {
-        "amount": "적당량",
-        "name": "생강즙, 다진마늘, 맛술"
+        "name": "생강즙",
+        "amount": "1t스푼"
+      },
+      {
+        "name": "다진마늘",
+        "amount": "1큰술"
+      },
+      {
+        "name": "맛술",
+        "amount": "1큰술"
       }
     ],
     "steps": [
@@ -7598,11 +7710,11 @@
       },
       {
         "name": "소금",
-        "amount": "약간"
+        "amount": "1꼬집"
       },
       {
         "name": "후추",
-        "amount": "약간"
+        "amount": "1꼬집"
       },
       {
         "name": "물",
@@ -7702,7 +7814,7 @@
       },
       {
         "name": "꿀(선택)",
-        "amount": "약간"
+        "amount": "1t스푼"
       }
     ],
     "steps": [
@@ -7928,7 +8040,7 @@
       },
       {
         "name": "얼음",
-        "amount": "적당량"
+        "amount": "1/2컵"
       }
     ],
     "steps": [
@@ -8054,7 +8166,7 @@
       },
       {
         "name": "계핏가루",
-        "amount": "약간"
+        "amount": "1꼬집"
       }
     ],
     "steps": [
@@ -8306,7 +8418,7 @@
       },
       {
         "name": "통후추",
-        "amount": "약간"
+        "amount": "5알"
       },
       {
         "name": "꿀/설탕",
@@ -8406,7 +8518,7 @@
       },
       {
         "name": "소금",
-        "amount": "약간"
+        "amount": "1꼬집"
       }
     ],
     "steps": [
@@ -8604,7 +8716,31 @@
         "amount": "1큰술"
       },
       {
-        "name": "양념장(간장, 고춧가루, 달래 등)",
+        "name": "간장",
+        "amount": "2큰술"
+      },
+      {
+        "name": "고춧가루",
+        "amount": "1t스푼"
+      },
+      {
+        "name": "달래",
+        "amount": "20g"
+      },
+      {
+        "name": "참기름",
+        "amount": "1/2t스푼"
+      },
+      {
+        "name": "통깨",
+        "amount": "1/4t스푼"
+      },
+      {
+        "name": "고춧가루",
+        "amount": "적당량"
+      },
+      {
+        "name": "달래 등)",
         "amount": "적당량"
       }
     ],
@@ -8796,7 +8932,7 @@
       },
       {
         "name": "바질잎",
-        "amount": "약간"
+        "amount": "2~3장"
       }
     ],
     "seasoning": [
@@ -8817,8 +8953,12 @@
         "amount": "1큰술"
       },
       {
-        "name": "소금, 후추",
-        "amount": "약간"
+        "name": "소금",
+        "amount": "1꼬집"
+      },
+      {
+        "name": "후추",
+        "amount": "1꼬집"
       }
     ],
     "steps": [
@@ -8860,8 +9000,12 @@
     ],
     "seasoning": [
       {
-        "name": "소금, 후추",
-        "amount": "약간"
+        "name": "소금",
+        "amount": "1꼬집"
+      },
+      {
+        "name": "후추",
+        "amount": "1꼬집"
       }
     ],
     "steps": [
@@ -8988,7 +9132,7 @@
       },
       {
         "name": "부추",
-        "amount": "약간"
+        "amount": "20g"
       }
     ],
     "seasoning": [
@@ -9013,8 +9157,12 @@
         "amount": "0.5작은술"
       },
       {
-        "name": "참기름, 깨",
-        "amount": "약간"
+        "name": "참기름",
+        "amount": "1/4t스푼"
+      },
+      {
+        "name": "깨",
+        "amount": "1/4t스푼"
       }
     ],
     "steps": [
@@ -9093,7 +9241,7 @@
       },
       {
         "name": "통깨",
-        "amount": "약간"
+        "amount": "1/4t스푼"
       }
     ],
     "steps": [
@@ -9138,7 +9286,7 @@
       },
       {
         "name": "물",
-        "amount": "적당량"
+        "amount": "100ml"
       },
       {
         "name": "소주 또는 청주",
@@ -9148,7 +9296,7 @@
     "seasoning": [
       {
         "name": "초고추장",
-        "amount": "적당량"
+        "amount": "3큰술"
       }
     ],
     "steps": [
@@ -9435,11 +9583,11 @@
     "seasoning": [
       {
         "name": "소금",
-        "amount": "약간"
+        "amount": "1꼬집"
       },
       {
         "name": "후추",
-        "amount": "약간"
+        "amount": "1꼬집"
       }
     ],
     "steps": [
@@ -9492,7 +9640,7 @@
       },
       {
         "name": "식용유",
-        "amount": "넉넉히"
+        "amount": "2큰술"
       }
     ],
     "seasoning": [
@@ -9569,7 +9717,7 @@
       },
       {
         "name": "통깨",
-        "amount": "약간"
+        "amount": "1/4t스푼"
       }
     ],
     "steps": [
