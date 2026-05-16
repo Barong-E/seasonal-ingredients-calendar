@@ -58,6 +58,9 @@
           <div class="recipe-title-section">
             <h2 id="recipeName" class="recipe-name"></h2>
             <p id="recipeDescription" class="recipe-description"></p>
+            <div id="wakeLockBadge" class="wakelock-badge" role="status" aria-live="polite">
+              <span class="badge-icon">💡</span>화면 켜짐 유지 중
+            </div>
           </div>
         </section>
 
@@ -124,7 +127,7 @@
       </div>
     </main>
 
-    <script type="module" src="assets/recipe.js?v=4"></script>
+    <script type="module" src="assets/recipe.js?v=5"></script>
     <script>
       if ('serviceWorker' in navigator) {
         window.addEventListener('load', function() {

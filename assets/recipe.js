@@ -3,6 +3,41 @@
 let currentRecipe = null;
 let baseServings = 2;
 let currentServings = 2;
+let wakeLock = null;
+
+// 🕯️ 잠들지 않는 마법의 촛불 (Wake Lock API)
+async function requestWakeLock() {
+  if ('wakeLock' in navigator) {
+    try {
+      wakeLock = await navigator.wakeLock.request('screen');
+      console.log('Wake Lock 활성화 (화면 켜짐 유지)');
+      updateWakeLockUI(true);
+      wakeLock.addEventListener('release', () => {
+        console.log('Wake Lock 해제됨');
+        updateWakeLockUI(false);
+      });
+    } catch (err) {
+      console.error('Wake Lock 요청 실패:', err);
+      updateWakeLockUI(false);
+    }
+  } else {
+    updateWakeLockUI(false);
+  }
+}
+
+function updateWakeLockUI(isActive) {
+  const badge = document.getElementById('wakeLockBadge');
+  if (!badge) return;
+  if (isActive) {
+    badge.classList.add('active');
+    badge.innerHTML = '<span class="badge-icon">💡</span>화면 켜짐 유지 중';
+    badge.title = '요리 중 화면이 꺼지지 않도록 보호하고 있습니다.';
+  } else {
+    badge.classList.remove('active');
+    badge.innerHTML = '<span class="badge-icon">🌙</span>화면 자동 꺼짐 (절전)';
+    badge.title = '배터리 절전 모드이거나 브라우저에서 지원하지 않습니다.';
+  }
+}
 
 // URL에서 레시피 ID 추출 (query, hash, path 모두 지원)
 function getRecipeIdFromUrl() {
@@ -378,6 +413,14 @@ async function init() {
       }
     });
   }
+
+  // 화면 켜짐 유지 요청 및 가시성 변경 감지
+  await requestWakeLock();
+  document.addEventListener('visibilitychange', () => {
+    if (document.visibilityState === 'visible') {
+      requestWakeLock();
+    }
+  });
 }
 
 // DOM 로드 완료 시 초기화
