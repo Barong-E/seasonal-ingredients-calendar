@@ -75,8 +75,17 @@ function renderIngredients(ingredients) {
   ingredients.forEach(ingredient => {
     const item = document.createElement('div');
     item.className = 'ingredient-item';
+    
+    // 제철 식재료 목록과 매칭 검사 (정확히 일치하거나 포함되는 식재료 찾기)
+    const matched = seasonalIngredientsList.find(s => s.name_ko === ingredient.name || ingredient.name.includes(s.name_ko));
+
+    let nameHtml = `<span class="ingredient-name">${ingredient.name}</span>`;
+    if (matched) {
+      nameHtml = `<a href="ingredient.html?id=${encodeURIComponent(matched.name_ko)}" class="ingredient-name recipe-link-item" title="${matched.name_ko} 제철 정보 보기">${ingredient.name}</a>`;
+    }
+
     item.innerHTML = `
-      <span class="ingredient-name">${ingredient.name}</span>
+      ${nameHtml}
       <span class="ingredient-amount">${ingredient.amount}</span>
     `;
     container.appendChild(item);
@@ -179,6 +188,20 @@ function goBack() {
   }
 }
 
+// 제철 식재료 목록 로드 (단어장 매칭용)
+let seasonalIngredientsList = [];
+
+async function loadSeasonalIngredients() {
+  try {
+    const res = await fetch('data/ingredients.json?v=v39');
+    if (res.ok) {
+      seasonalIngredientsList = await res.json();
+    }
+  } catch (err) {
+    console.error('제철 식재료 목록 로드 실패', err);
+  }
+}
+
 // 초기화
 async function init() {
   const recipeId = getRecipeIdFromUrl();
@@ -196,6 +219,9 @@ async function init() {
   }
 
   showLoading();
+  
+  // 제철 식재료 목록 로드
+  await loadSeasonalIngredients();
   
   const recipe = await loadRecipe(recipeId);
   renderRecipe(recipe);

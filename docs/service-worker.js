@@ -3,7 +3,7 @@
  * - 데이터(/data/*): network-first (오프라인 시 캐시 fallback)
  */
 
-const VERSION = 'v28';
+const VERSION = 'v29';
 const STATIC_CACHE = `static-${VERSION}`;
 const DATA_CACHE = `data-${VERSION}`;
 

@@ -151,6 +151,21 @@
   font-weight: 500;
 }
 
+.ingredient-name.recipe-link-item {
+  color: var(--primary);
+  font-weight: 800;
+  text-decoration: underline;
+  text-decoration-color: rgba(10, 123, 52, 0.4);
+  text-underline-offset: 4px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.ingredient-name.recipe-link-item:hover {
+  text-decoration-color: var(--primary);
+  opacity: 0.8;
+}
+
 .ingredient-amount {
   color: #868e96;
   font-size: 0.85rem;
