@@ -1,5 +1,9 @@
 // 레시피 페이지 스크립트
 
+let currentRecipe = null;
+let baseServings = 2;
+let currentServings = 2;
+
 // URL에서 레시피 ID 추출 (query, hash, path 모두 지원)
 function getRecipeIdFromUrl() {
   const url = new URL(window.location.href);
@@ -28,6 +32,56 @@ async function loadRecipe(recipeId) {
   }
 }
 
+// 스마트 파싱 및 계산 엔진 (마법의 저울 + 물양 80% 감쇠 공식)
+function parseAndCalculateAmount(name, amountStr, baseS, currS) {
+  if (!amountStr) return '';
+  if (baseS === currS) return amountStr;
+
+  const str = amountStr.trim();
+  // 숫자가 없는 감성 표현은 그대로 유지
+  const emotionalWords = ['약간', '적당량', '취향껏', '한 꼬집', '톡톡', '조금', '약간씩', '적당히', '1줌', '한줌', '반줌'];
+  if (emotionalWords.includes(str)) return str;
+
+  // 숫자(또는 분수)와 단위 분리 정규식
+  const match = str.match(/^([\d/.]+)\s*(.*)$/);
+  if (!match) return str;
+
+  let numStr = match[1];
+  const unit = match[2];
+
+  // 분수 처리 (예: "1/2" -> 0.5)
+  let numVal = 0;
+  if (numStr.includes('/')) {
+    const parts = numStr.split('/');
+    if (parts.length === 2 && parseFloat(parts[1]) !== 0) {
+      numVal = parseFloat(parts[0]) / parseFloat(parts[1]);
+    } else {
+      return str;
+    }
+  } else {
+    numVal = parseFloat(numStr);
+  }
+
+  if (isNaN(numVal)) return str;
+
+  let calculated = 0;
+  // 물/육수 계열 80% 황금 감쇠 공식 적용
+  const waterKeywords = ['물', '육수', '쌀뜨물', '다시마물', '멸치육수', '채수', '사골육수'];
+  const isWater = waterKeywords.some(kw => name.includes(kw));
+
+  if (isWater) {
+    const oneServing = numVal / baseS;
+    // 1인분일 때는 1인분양 그대로, 2인분 이상일 때 80%씩 추가
+    calculated = oneServing * (1 + (currS - 1) * 0.8);
+  } else {
+    calculated = (numVal / baseS) * currS;
+  }
+
+  // 소수점 1자리까지 깔끔하게 반올림
+  const rounded = Math.round(calculated * 10) / 10;
+  return `${rounded}${unit}`;
+}
+
 // 레시피 렌더링
 function renderRecipe(recipe) {
   hideLoading();
@@ -39,11 +93,9 @@ function renderRecipe(recipe) {
   // 기본 정보
   document.getElementById('recipeName').textContent = recipe.name;
   document.getElementById('recipeDescription').textContent = recipe.description;
-  document.getElementById('recipeServings').textContent = `${recipe.servings}인분`;
+  document.getElementById('recipeServings').textContent = `${currentServings}인분`;
   document.getElementById('recipeCookTime').textContent = recipe.cookTime;
   document.getElementById('recipeDifficulty').textContent = recipe.difficulty;
-
-  // 이미지 섹션 제거됨
 
   // 재료
   renderIngredients(recipe.ingredients);
@@ -61,9 +113,6 @@ function renderRecipe(recipe) {
     renderTips(recipe.tips);
   }
 
-  // 관련 정보 섹션은 사용하지 않음 (삭제)
-
-  // 페이지 타이틀 업데이트
   document.title = `${recipe.name} 레시피 - 띵동 제철음식`;
 }
 
@@ -76,7 +125,7 @@ function renderIngredients(ingredients) {
     const item = document.createElement('div');
     item.className = 'ingredient-item';
     
-    // 제철 식재료 목록과 매칭 검사 (정확히 일치하거나 포함되는 식재료 찾기)
+    // 제철 식재료 목록과 매칭 검사
     const matched = seasonalIngredientsList.find(s => s.name_ko === ingredient.name || ingredient.name.includes(s.name_ko));
 
     let nameHtml = `<span class="ingredient-name">${ingredient.name}</span>`;
@@ -84,9 +133,11 @@ function renderIngredients(ingredients) {
       nameHtml = `<a href="ingredient.html?id=${encodeURIComponent(matched.name_ko)}" class="ingredient-name recipe-link-item" title="${matched.name_ko} 제철 정보 보기">${ingredient.name}</a>`;
     }
 
+    const calcAmount = parseAndCalculateAmount(ingredient.name, ingredient.amount, baseServings, currentServings);
+
     item.innerHTML = `
       ${nameHtml}
-      <span class="ingredient-amount">${ingredient.amount}</span>
+      <span class="ingredient-amount">${calcAmount}</span>
     `;
     container.appendChild(item);
   });
@@ -102,9 +153,10 @@ function renderSeasoning(seasoning) {
   seasoning.forEach(item => {
     const seasoningItem = document.createElement('div');
     seasoningItem.className = 'ingredient-item';
+    const calcAmount = parseAndCalculateAmount(item.name, item.amount, baseServings, currentServings);
     seasoningItem.innerHTML = `
       <span class="ingredient-name">${item.name}</span>
-      <span class="ingredient-amount">${item.amount}</span>
+      <span class="ingredient-amount">${calcAmount}</span>
     `;
     container.appendChild(seasoningItem);
   });
@@ -143,9 +195,6 @@ function renderTips(tips) {
   });
 }
 
-// 관련 정보 렌더링
-// (관련 정보 렌더링 로직 제거)
-
 // 에러 표시
 function showError() {
   hideLoading();
@@ -165,7 +214,6 @@ function showError() {
 function showLoading() {
   const container = document.querySelector('.recipe-container');
   if (!container) return;
-  // 이미 있으면 중복 추가 방지
   if (document.getElementById('recipeLoading')) return;
   const loading = document.createElement('div');
   loading.id = 'recipeLoading';
@@ -211,7 +259,6 @@ async function init() {
     return;
   }
 
-  // 헤더 높이만큼 상단 오프셋 적용
   const header = document.querySelector('.app-header');
   if (header) {
     const headerH = Math.ceil(header.getBoundingClientRect().height);
@@ -220,16 +267,53 @@ async function init() {
 
   showLoading();
   
-  // 제철 식재료 목록 로드
   await loadSeasonalIngredients();
   
-  const recipe = await loadRecipe(recipeId);
-  renderRecipe(recipe);
+  currentRecipe = await loadRecipe(recipeId);
+  if (!currentRecipe) {
+    showError();
+    return;
+  }
+
+  baseServings = currentRecipe.servings || 2;
+  const savedServings = localStorage.getItem('user_preferred_servings');
+  currentServings = savedServings ? parseInt(savedServings, 10) : baseServings;
+  if (isNaN(currentServings) || currentServings < 1) currentServings = 1;
+
+  renderRecipe(currentRecipe);
 
   // 뒤로 가기 버튼
   const backButton = document.getElementById('backButton');
   if (backButton) {
     backButton.addEventListener('click', goBack);
+  }
+
+  // 인분 조절 버튼 이벤트 리스너
+  const btnMinus = document.getElementById('btnMinusServings');
+  const btnPlus = document.getElementById('btnPlusServings');
+
+  if (btnMinus) {
+    btnMinus.addEventListener('click', () => {
+      if (currentServings > 1) {
+        currentServings--;
+        localStorage.setItem('user_preferred_servings', currentServings);
+        document.getElementById('recipeServings').textContent = `${currentServings}인분`;
+        renderIngredients(currentRecipe.ingredients);
+        if (currentRecipe.seasoning && currentRecipe.seasoning.length > 0) renderSeasoning(currentRecipe.seasoning);
+      }
+    });
+  }
+
+  if (btnPlus) {
+    btnPlus.addEventListener('click', () => {
+      if (currentServings < 20) {
+        currentServings++;
+        localStorage.setItem('user_preferred_servings', currentServings);
+        document.getElementById('recipeServings').textContent = `${currentServings}인분`;
+        renderIngredients(currentRecipe.ingredients);
+        if (currentRecipe.seasoning && currentRecipe.seasoning.length > 0) renderSeasoning(currentRecipe.seasoning);
+      }
+    });
   }
 }
 

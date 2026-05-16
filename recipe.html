@@ -63,10 +63,14 @@
 
         <!-- 레시피 정보 -->
         <section class="recipe-info">
-          <div class="info-item">
+          <div class="info-item servings-control-item">
             <span class="info-icon">👥</span>
             <span class="info-label">분량</span>
-            <span id="recipeServings" class="info-value"></span>
+            <div class="servings-control">
+              <button id="btnMinusServings" class="btn-servings" type="button" aria-label="인분 감소" title="인분 감소">−</button>
+              <span id="recipeServings" class="info-value"></span>
+              <button id="btnPlusServings" class="btn-servings" type="button" aria-label="인분 증가" title="인분 증가">+</button>
+            </div>
           </div>
           <div class="info-item">
             <span class="info-icon">⏱️</span>
@@ -120,7 +124,7 @@
       </div>
     </main>
 
-    <script type="module" src="assets/recipe.js?v=2"></script>
+    <script type="module" src="assets/recipe.js?v=3"></script>
     <script>
       if ('serviceWorker' in navigator) {
         window.addEventListener('load', function() {

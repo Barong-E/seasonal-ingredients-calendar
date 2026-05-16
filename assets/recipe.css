@@ -105,6 +105,41 @@
   font-weight: 600;
 }
 
+.servings-control {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 2px;
+}
+
+.btn-servings {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  border: 1px solid #ced4da;
+  background: white;
+  color: var(--text-primary);
+  font-size: 1rem;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.2s;
+  padding: 0;
+  line-height: 1;
+}
+
+.btn-servings:hover {
+  background: var(--primary);
+  color: white;
+  border-color: var(--primary);
+}
+
+.btn-servings:active {
+  transform: scale(0.95);
+}
+
 /* 레시피 섹션 */
 .recipe-section {
   padding: 24px 20px;
