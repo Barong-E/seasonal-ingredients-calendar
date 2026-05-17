@@ -185,10 +185,10 @@ function parseAndCalculateAmount(name, amountStr, baseS, currS) {
     const roundHalf = val => Math.round(val * 2) / 2;
 
     if (name.includes('가루') || name.includes('밀가루') || name.includes('설탕') || name.includes('소금') || name.includes('된장') || name.includes('고추장') || name.includes('버터')) {
-      if (rounded >= 100) {
-        // 100g ≈ 1종이컵
+      if (rounded >= 50) {
+        // 100g ≈ 1종이컵 (50g 이상일 때 0.5컵 단위 표기)
         const cups = roundHalf(rounded / 100);
-        appendStr = ` (약 ${cups < 0.5 ? 0.5 : cups}종이컵)`;
+        appendStr = ` (약 ${cups}종이컵)`;
       } else {
         // 1큰술 = 15g, 1작은술 = 5g (큰술의 1/3)
         let tbs = Math.floor(rounded / 15);
@@ -213,17 +213,28 @@ function parseAndCalculateAmount(name, amountStr, baseS, currS) {
       const cnt = roundHalf(rounded / 200);
       appendStr = ` (약 ${cnt < 0.5 ? 0.5 : cnt}개)`;
     } else if (name.includes('무') || name.includes('배추') || name.includes('단호박')) {
-      // 180g ≈ 1종이컵 부피
-      const cups = roundHalf(rounded / 180);
-      appendStr = ` (약 ${cups < 0.5 ? 0.5 : cups}종이컵 부피)`;
+      if (rounded >= 90) {
+        // 180g ≈ 1종이컵 부피 (90g 이상일 때 0.5컵 단위 표기)
+        const cups = roundHalf(rounded / 180);
+        appendStr = ` (약 ${cups}종이컵 부피)`;
+      } else {
+        const tbs = Math.round(rounded / 15);
+        appendStr = ` (약 ${tbs < 1 ? 1 : tbs}큰술)`;
+      }
     } else if (['쑥', '냉이', '달래', '부추', '미나리', '깻잎', '상추', '시금치', '콩나물', '숙주', '고사리', '버섯', '파', '갓', '쪽파'].some(kw => name.includes(kw))) {
       // 50g ≈ 1줌
       const jum = roundHalf(rounded / 50);
       appendStr = ` (약 ${jum < 0.5 ? 0.5 : jum}줌)`;
     } else {
       // 육류 / 해산물 / 기타: 180g ≈ 1종이컵
-      const cups = roundHalf(rounded / 180);
-      appendStr = ` (약 ${cups < 0.5 ? 0.5 : cups}종이컵)`;
+      if (rounded >= 90) {
+        // 90g 이상일 때 0.5컵 단위 표기
+        const cups = roundHalf(rounded / 180);
+        appendStr = ` (약 ${cups}종이컵)`;
+      } else {
+        const tbs = Math.round(rounded / 15);
+        appendStr = ` (약 ${tbs < 1 ? 1 : tbs}큰술)`;
+      }
     }
   }
 
