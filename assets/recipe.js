@@ -190,9 +190,23 @@ function parseAndCalculateAmount(name, amountStr, baseS, currS) {
         const cups = roundHalf(rounded / 100);
         appendStr = ` (약 ${cups < 0.5 ? 0.5 : cups}종이컵)`;
       } else {
-        // 15g ≈ 1큰술
-        const tbs = roundHalf(rounded / 15);
-        appendStr = ` (약 ${tbs < 0.5 ? 0.5 : tbs}큰술)`;
+        // 1큰술 = 15g, 1작은술 = 5g (큰술의 1/3)
+        let tbs = Math.floor(rounded / 15);
+        let rem = rounded % 15;
+        let tsp = Math.round(rem / 5); // 작은술 소수점 없이 반올림
+
+        // 작은술이 3이 되면 1큰술로 승급!
+        if (tsp >= 3) {
+          tbs += 1;
+          tsp = 0;
+        }
+
+        let parts = [];
+        if (tbs > 0) parts.push(`${tbs}큰술`);
+        if (tsp > 0) parts.push(`${tsp}작은술`);
+        if (parts.length === 0) parts.push('1작은술');
+
+        appendStr = ` (약 ${parts.join(' ')})`;
       }
     } else if (['감자', '양파', '고구마', '당근', '애호박', '오이', '사과', '배', '토마토', '피망', '파프리카'].some(kw => name.includes(kw))) {
       // 200g ≈ 1개
