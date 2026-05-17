@@ -238,6 +238,23 @@ function parseAndCalculateAmount(name, amountStr, baseS, currS) {
     }
   }
 
+
+  // ─── 🥤 단계 8: 컵/종이컵 단위 결과가 0.5 미만이면 큰술로 자동 변환 ────────
+  // 예: 0.2컵 → 약 3큰술, 0.1종이컵 → 약 1큰술
+  // 1컵 ≈ 240ml ≈ 16큰술 기준
+  const cupUnit = unit.trim();
+  if ((cupUnit === '컵' || cupUnit === '종이컵') && rounded < 0.5) {
+    const tbs = Math.round(rounded * 16); // 1컵 = 16큰술 기준
+    const tbsVal = tbs < 1 ? 1 : tbs;
+    return `약 ${tbsVal}큰술`;
+  }
+
+  // 0.5 단위로 반올림하는 헬퍼 (컵 단위일 때 적용)
+  if ((cupUnit === '컵' || cupUnit === '종이컵') && rounded >= 0.5) {
+    const roundedHalf = Math.round(rounded * 2) / 2;
+    return `${roundedHalf}${cupUnit}${appendStr}`;
+  }
+
   return `${rounded}${unit}${appendStr}`;
 }
 
