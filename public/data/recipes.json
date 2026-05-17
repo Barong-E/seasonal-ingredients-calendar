@@ -713,6 +713,10 @@
       {
         "name": "대파",
         "amount": "1/2대"
+      },
+      {
+        "name": "물",
+        "amount": "5컵"
       }
     ],
     "seasoning": [
@@ -781,6 +785,10 @@
       {
         "name": "대파",
         "amount": "1/2대"
+      },
+      {
+        "name": "물",
+        "amount": "6컵"
       }
     ],
     "seasoning": [
@@ -8791,6 +8799,10 @@
       {
         "name": "다진 마늘",
         "amount": "1큰술"
+      },
+      {
+        "name": "물",
+        "amount": "5컵"
       }
     ],
     "steps": [
