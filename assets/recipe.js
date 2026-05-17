@@ -177,7 +177,43 @@ function parseAndCalculateAmount(name, amountStr, baseS, currS) {
 
   // ─── 🥄 단계 6: 꼬집으로 시작했는데 계산 후 t스푼 변환 필요한 경우 ──────
   // (이미 꼬집 케이스는 위에서 처리했으므로 여기선 일반 단위 반환)
-  return `${rounded}${unit}`;
+
+  // ─── ⚖️ 단계 7: 무게(g) 단위일 때 저울 없는 사람을 위한 스마트 괄호 일상 단위 추가 ───
+  let appendStr = '';
+  if (unit.trim().startsWith('g')) {
+    // 0.5 단위로 반올림하는 헬퍼 함수 (예: 1.2 -> 1, 1.4 -> 1.5, 1.8 -> 2)
+    const roundHalf = val => Math.round(val * 2) / 2;
+
+    if (name.includes('가루') || name.includes('밀가루') || name.includes('설탕') || name.includes('소금') || name.includes('된장') || name.includes('고추장') || name.includes('버터')) {
+      if (rounded >= 100) {
+        // 100g ≈ 1종이컵
+        const cups = roundHalf(rounded / 100);
+        appendStr = ` (약 ${cups < 0.5 ? 0.5 : cups}종이컵)`;
+      } else {
+        // 15g ≈ 1큰술
+        const tbs = roundHalf(rounded / 15);
+        appendStr = ` (약 ${tbs < 0.5 ? 0.5 : tbs}큰술)`;
+      }
+    } else if (['감자', '양파', '고구마', '당근', '애호박', '오이', '사과', '배', '토마토', '피망', '파프리카'].some(kw => name.includes(kw))) {
+      // 200g ≈ 1개
+      const cnt = roundHalf(rounded / 200);
+      appendStr = ` (약 ${cnt < 0.5 ? 0.5 : cnt}개)`;
+    } else if (name.includes('무') || name.includes('배추') || name.includes('단호박')) {
+      // 180g ≈ 1종이컵 부피
+      const cups = roundHalf(rounded / 180);
+      appendStr = ` (약 ${cups < 0.5 ? 0.5 : cups}종이컵 부피)`;
+    } else if (['쑥', '냉이', '달래', '부추', '미나리', '깻잎', '상추', '시금치', '콩나물', '숙주', '고사리', '버섯', '파', '갓', '쪽파'].some(kw => name.includes(kw))) {
+      // 50g ≈ 1줌
+      const jum = roundHalf(rounded / 50);
+      appendStr = ` (약 ${jum < 0.5 ? 0.5 : jum}줌)`;
+    } else {
+      // 육류 / 해산물 / 기타: 180g ≈ 1종이컵
+      const cups = roundHalf(rounded / 180);
+      appendStr = ` (약 ${cups < 0.5 ? 0.5 : cups}종이컵)`;
+    }
+  }
+
+  return `${rounded}${unit}${appendStr}`;
 }
 
 // 레시피 렌더링
