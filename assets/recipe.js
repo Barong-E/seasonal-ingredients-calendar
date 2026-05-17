@@ -274,11 +274,7 @@ function parseAndCalculateAmount(name, amountStr, baseS, currS) {
     return `${tsp < 1 ? 1 : tsp}작은술`;
   }
 
-  // ── t스푼 / T스푼 ─────────────────────────────────────────────────────────
-  if (cu === 't스푼' || cu === 'T스푼') {
-    const val = Math.round(rounded * 2) / 2; // 0.5 단위
-    return `${val < 0.5 ? 0.5 : val}${cu}`;
-  }
+
 
   // ── kg → g 변환 ───────────────────────────────────────────────────────────
   // 0.5kg 미만이면 g 단위로 표현 (예: 0.1kg → 100g)
