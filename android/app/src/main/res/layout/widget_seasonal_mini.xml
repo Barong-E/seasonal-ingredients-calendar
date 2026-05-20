@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 제철음식 미니 (2×1): 이번달 라벨 + 제철음식 1개 -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="10dp"
+    android:gravity="center"
+    android:background="@drawable/widget_bg_seasonal">
+
+    <!-- "5월 제철" 라벨 -->
+    <TextView
+        android:id="@+id/tv_month_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="5월 제철"
+        android:textColor="@color/widget_text_secondary"
+        android:textSize="10sp"
+        android:letterSpacing="0.05" />
+
+    <!-- 이모지 + 이름 한 줄 -->
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical">
+
+        <TextView
+            android:id="@+id/tv_emoji"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="🥬"
+            android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/tv_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="4dp"
+            android:text="완두콩"
+            android:textColor="@color/widget_text_primary"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:maxLines="1"
+            android:ellipsize="end" />
+    </LinearLayout>
+
+</LinearLayout>

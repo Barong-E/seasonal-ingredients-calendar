@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- 앱 기본 색상 -->
+    <color name="colorPrimary">#2E7D32</color>
+    <color name="colorPrimaryDark">#1B5E20</color>
+    <color name="colorAccent">#4CAF50</color>
+
+    <!-- 위젯 전용 색상 -->
+    <color name="widget_bg">#DD1B5E20</color>
+    <color name="widget_text_primary">#FFFFFF</color>
+    <color name="widget_text_secondary">#B2DFDB</color>
+    <color name="widget_accent">#80CBC4</color>
+    <color name="widget_holiday_bg">#DD4A148C</color>
+    <color name="widget_holiday_accent">#CE93D8</color>
+    <color name="widget_hybrid_bg">#DD1A237E</color>
+    <color name="widget_hybrid_accent">#90CAF9</color>
+    <color name="widget_divider">#4DFFFFFF</color>
+</resources>

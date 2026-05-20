@@ -33,11 +33,146 @@
                 android:name="android.support.FILE_PROVIDER_PATHS"
                 android:resource="@xml/file_paths"></meta-data>
         </provider>
+
+        <!-- ======================================================= -->
+        <!--  위젯 등록 (10종)                                         -->
+        <!-- ======================================================= -->
+
+        <!-- ① 제철음식 미니 (2×1) -->
+        <receiver
+            android:name=".widget.SeasonalMiniWidget"
+            android:exported="true"
+            android:label="제철음식 미니">
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
+            </intent-filter>
+            <meta-data
+                android:name="android.appwidget.provider"
+                android:resource="@xml/seasonal_mini_info" />
+        </receiver>
+
+        <!-- ② 제철음식 배너 (4×1) -->
+        <receiver
+            android:name=".widget.SeasonalBannerWidget"
+            android:exported="true"
+            android:label="제철음식 배너">
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
+            </intent-filter>
+            <meta-data
+                android:name="android.appwidget.provider"
+                android:resource="@xml/seasonal_banner_info" />
+        </receiver>
+
+        <!-- ③ 제철음식 중형 (4×2) -->
+        <receiver
+            android:name=".widget.SeasonalMediumWidget"
+            android:exported="true"
+            android:label="제철음식 중형">
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
+            </intent-filter>
+            <meta-data
+                android:name="android.appwidget.provider"
+                android:resource="@xml/seasonal_medium_info" />
+        </receiver>
+
+        <!-- ④ 제철음식 대형 (4×3) -->
+        <receiver
+            android:name=".widget.SeasonalLargeWidget"
+            android:exported="true"
+            android:label="제철음식 대형">
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
+            </intent-filter>
+            <meta-data
+                android:name="android.appwidget.provider"
+                android:resource="@xml/seasonal_large_info" />
+        </receiver>
+
+        <!-- ⑤ 명절 미니 (2×1) -->
+        <receiver
+            android:name=".widget.HolidayMiniWidget"
+            android:exported="true"
+            android:label="명절 미니">
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
+            </intent-filter>
+            <meta-data
+                android:name="android.appwidget.provider"
+                android:resource="@xml/holiday_mini_info" />
+        </receiver>
+
+        <!-- ⑥ 명절 카운트다운 (2×2) -->
+        <receiver
+            android:name=".widget.HolidayCountdownWidget"
+            android:exported="true"
+            android:label="명절 카운트다운">
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
+            </intent-filter>
+            <meta-data
+                android:name="android.appwidget.provider"
+                android:resource="@xml/holiday_countdown_info" />
+        </receiver>
+
+        <!-- ⑦ 명절 중형 (4×2) -->
+        <receiver
+            android:name=".widget.HolidayMediumWidget"
+            android:exported="true"
+            android:label="명절 중형">
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
+            </intent-filter>
+            <meta-data
+                android:name="android.appwidget.provider"
+                android:resource="@xml/holiday_medium_info" />
+        </receiver>
+
+        <!-- ⑧ 하이브리드 배너 (4×1) -->
+        <receiver
+            android:name=".widget.HybridBannerWidget"
+            android:exported="true"
+            android:label="하이브리드 배너">
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
+            </intent-filter>
+            <meta-data
+                android:name="android.appwidget.provider"
+                android:resource="@xml/hybrid_banner_info" />
+        </receiver>
+
+        <!-- ⑨ 하이브리드 중형 (4×2) -->
+        <receiver
+            android:name=".widget.HybridMediumWidget"
+            android:exported="true"
+            android:label="하이브리드 중형">
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
+            </intent-filter>
+            <meta-data
+                android:name="android.appwidget.provider"
+                android:resource="@xml/hybrid_medium_info" />
+        </receiver>
+
+        <!-- ⑩ 하이브리드 대형 (4×4) -->
+        <receiver
+            android:name=".widget.HybridLargeWidget"
+            android:exported="true"
+            android:label="하이브리드 대형">
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
+            </intent-filter>
+            <meta-data
+                android:name="android.appwidget.provider"
+                android:resource="@xml/hybrid_large_info" />
+        </receiver>
+
     </application>
 
     <!-- Permissions -->
-
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.SCHEDULE_EXACT_ALARM" />
     <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
 </manifest>
+

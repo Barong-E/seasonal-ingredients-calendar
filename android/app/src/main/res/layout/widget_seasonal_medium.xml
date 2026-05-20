@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 제철음식 중형 (4×2): 제철음식 3개 순환 -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="14dp"
+    android:background="@drawable/widget_bg_seasonal">
+
+    <!-- 헤더: 이번달 라벨 -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="🌿"
+            android:textSize="14sp" />
+
+        <TextView
+            android:id="@+id/tv_month_label"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_marginStart="6dp"
+            android:text="5월 제철음식"
+            android:textColor="@color/widget_text_secondary"
+            android:textSize="12sp" />
+
+        <TextView
+            android:id="@+id/tv_count"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="3개"
+            android:textColor="@color/widget_accent"
+            android:textSize="11sp" />
+    </LinearLayout>
+
+    <!-- 구분선 -->
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="8dp"
+        android:background="@color/widget_divider" />
+
+    <!-- 제철음식 행 1 -->
+    <LinearLayout
+        android:id="@+id/row1"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:orientation="horizontal"
+        android:gravity="center_vertical">
+
+        <TextView android:id="@+id/tv_emoji1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="🥬" android:textSize="16sp" />
+
+        <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content"
+            android:layout_weight="1" android:layout_marginStart="6dp"
+            android:orientation="vertical">
+            <TextView android:id="@+id/tv_name1"
+                android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:text="완두콩" android:textColor="@color/widget_text_primary"
+                android:textSize="14sp" android:textStyle="bold" android:maxLines="1" android:ellipsize="end"/>
+            <TextView android:id="@+id/tv_category1"
+                android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:text="채소" android:textColor="@color/widget_accent" android:textSize="10sp"/>
+        </LinearLayout>
+    </LinearLayout>
+
+    <!-- 제철음식 행 2 -->
+    <LinearLayout
+        android:id="@+id/row2"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:orientation="horizontal"
+        android:gravity="center_vertical">
+
+        <TextView android:id="@+id/tv_emoji2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="🥬" android:textSize="16sp" />
+
+        <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content"
+            android:layout_weight="1" android:layout_marginStart="6dp"
+            android:orientation="vertical">
+            <TextView android:id="@+id/tv_name2"
+                android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:text="부추" android:textColor="@color/widget_text_primary"
+                android:textSize="14sp" android:textStyle="bold" android:maxLines="1" android:ellipsize="end"/>
+            <TextView android:id="@+id/tv_category2"
+                android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:text="채소" android:textColor="@color/widget_accent" android:textSize="10sp"/>
+        </LinearLayout>
+    </LinearLayout>
+
+    <!-- 제철음식 행 3 -->
+    <LinearLayout
+        android:id="@+id/row3"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:orientation="horizontal"
+        android:gravity="center_vertical">
+
+        <TextView android:id="@+id/tv_emoji3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="🥬" android:textSize="16sp" />
+
+        <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content"
+            android:layout_weight="1" android:layout_marginStart="6dp"
+            android:orientation="vertical">
+            <TextView android:id="@+id/tv_name3"
+                android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:text="죽순" android:textColor="@color/widget_text_primary"
+                android:textSize="14sp" android:textStyle="bold" android:maxLines="1" android:ellipsize="end"/>
+            <TextView android:id="@+id/tv_category3"
+                android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:text="채소" android:textColor="@color/widget_accent" android:textSize="10sp"/>
+        </LinearLayout>
+    </LinearLayout>
+
+</LinearLayout>

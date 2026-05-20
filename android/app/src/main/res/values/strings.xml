@@ -4,4 +4,19 @@
     <string name="title_activity_main">띵동 제철음식</string>
     <string name="package_name">net.seasonalfood.app</string>
     <string name="custom_url_scheme">net.seasonalfood.app</string>
+
+    <!-- 위젯 이름 및 설명 -->
+    <!-- 제철음식 계열 -->
+    <string name="widget_seasonal_mini_desc">제철음식 미니 — 오늘의 제철음식 1가지를 매일 바뀌어 보여줍니다 (2×1)</string>
+    <string name="widget_seasonal_banner_desc">제철음식 배너 — 가로 배너 형태로 오늘의 제철음식을 보여줍니다 (4×1)</string>
+    <string name="widget_seasonal_medium_desc">제철음식 중형 — 이번 달 제철음식 3가지를 매일 순환하여 보여줍니다 (4×2)</string>
+    <string name="widget_seasonal_large_desc">제철음식 대형 — 이번 달 제철음식 5가지를 매일 순환하여 보여줍니다 (4×3)</string>
+    <!-- 명절/절기 계열 -->
+    <string name="widget_holiday_mini_desc">명절 미니 — 다가오는 명절 이름과 D-Day를 보여줍니다 (2×1)</string>
+    <string name="widget_holiday_countdown_desc">명절 카운트다운 — 다가오는 명절 D-Day를 큰 숫자로 강조합니다 (2×2)</string>
+    <string name="widget_holiday_medium_desc">명절 중형 — 다가오는 명절 이름, D-Day, 대표음식을 보여줍니다 (4×2)</string>
+    <!-- 하이브리드 계열 -->
+    <string name="widget_hybrid_banner_desc">하이브리드 배너 — 제철음식과 명절 D-Day를 한줄로 보여줍니다 (4×1)</string>
+    <string name="widget_hybrid_medium_desc">하이브리드 중형 — 제철음식 2가지와 명절 정보를 함께 보여줍니다 (4×2)</string>
+    <string name="widget_hybrid_large_desc">하이브리드 대형 — 제철음식 5가지와 명절 정보를 모두 보여줍니다 (4×4)</string>
 </resources>
