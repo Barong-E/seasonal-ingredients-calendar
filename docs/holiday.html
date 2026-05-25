@@ -200,12 +200,19 @@
     </main>
 
     <script>
-      window.addEventListener('load', () => {
+      function syncHeaderOffset() {
         const header = document.querySelector('.app-header');
         if (header) {
-          document.documentElement.style.setProperty('--header-offset', `${header.offsetHeight}px`);
+          document.documentElement.style.setProperty('--header-offset', header.offsetHeight + 'px');
         }
-      });
+      }
+      if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', syncHeaderOffset);
+      } else {
+        syncHeaderOffset();
+      }
+      window.addEventListener('load', syncHeaderOffset);
+      window.addEventListener('resize', syncHeaderOffset);
     </script>
   </body>
 </html>
