@@ -1463,3 +1463,45 @@ main {
   font-weight: 700;
 }
 
+/* 웹 전용 모달 버튼 및 레이아웃 추가 */
+.info-modal__buttons {
+  display: flex;
+  gap: 12px;
+  margin: 20px 0 10px 0;
+  justify-content: center;
+  width: 100%;
+}
+
+.info-modal__btn {
+  flex: 1;
+  padding: 12px 8px;
+  border-radius: 12px;
+  font-size: 0.9rem;
+  font-weight: 700;
+  text-decoration: none;
+  text-align: center;
+  border: none;
+  display: inline-block;
+  box-sizing: border-box;
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  line-height: 1.4;
+}
+
+.info-modal__btn--ios {
+  background: #e5e7eb;
+  color: #9ca3af;
+  cursor: not-allowed;
+}
+
+.info-modal__btn--android {
+  background: var(--primary-gradient);
+  color: #ffffff;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  cursor: pointer;
+}
+
+.info-modal__btn--android:active {
+  transform: scale(0.98);
+  opacity: 0.95;
+}
+
