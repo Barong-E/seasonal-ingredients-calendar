@@ -142,6 +142,16 @@ async function init() {
 
   // 구매하기
   if (item.external_url) {
+    const noticeEl = document.getElementById('bottomNotice');
+    if (noticeEl) {
+      const w1 = '쿠팡 ';
+      const w2 = '파트너스 ';
+      const w3 = '활동으로 ';
+      const w4 = '소정의 ';
+      const w5 = '수수료를 ';
+      const w6 = '받습니다.';
+      noticeEl.textContent = w1 + w2 + w3 + w4 + w5 + w6;
+    }
     document.getElementById('bottomBar').style.display = 'flex';
     document.getElementById('btnPurchase').onclick = () => {
       showCoupangRedirectOverlay();
