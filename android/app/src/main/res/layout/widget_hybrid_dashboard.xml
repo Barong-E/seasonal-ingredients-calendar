@@ -20,7 +20,7 @@
             android:layout_height="wrap_content"
             android:text="다가오는 명절"
             android:textColor="@color/widget_text_secondary"
-            android:textSize="11sp" />
+            android:textSize="12sp" />
 
         <TextView
             android:id="@+id/tv_holiday_name"
@@ -29,7 +29,7 @@
             android:layout_marginTop="4dp"
             android:text="단오 🎋"
             android:textColor="@color/widget_text_primary"
-            android:textSize="14sp"
+            android:textSize="17sp"
             android:textStyle="bold"
             android:maxLines="1"
             android:ellipsize="end" />
@@ -41,7 +41,7 @@
             android:layout_marginTop="4dp"
             android:text="D-19"
             android:textColor="@color/widget_hybrid_accent"
-            android:textSize="28sp"
+            android:textSize="36sp"
             android:textStyle="bold" />
     </LinearLayout>
 
@@ -66,8 +66,8 @@
             android:layout_height="wrap_content"
             android:text="5월 추천 제철"
             android:textColor="@color/widget_text_secondary"
-            android:textSize="12sp"
-            android:layout_marginBottom="6dp" />
+            android:textSize="13sp"
+            android:layout_marginBottom="8dp" />
 
         <!-- 항목 1 -->
         <LinearLayout
@@ -75,23 +75,24 @@
             android:layout_height="wrap_content"
             android:orientation="horizontal"
             android:gravity="center_vertical"
-            android:layout_marginBottom="4dp">
+            android:layout_marginBottom="8dp">
 
             <TextView
                 android:id="@+id/tv_item1_emoji"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="🥬"
-                android:textSize="14sp" />
+                android:textSize="16sp" />
 
             <TextView
                 android:id="@+id/tv_item1_name"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="6dp"
+                android:layout_marginStart="10dp"
                 android:text="완두콩"
                 android:textColor="@color/widget_text_primary"
-                android:textSize="12sp"
+                android:textSize="15sp"
+                android:textStyle="bold"
                 android:maxLines="1"
                 android:ellipsize="end" />
         </LinearLayout>
@@ -102,23 +103,24 @@
             android:layout_height="wrap_content"
             android:orientation="horizontal"
             android:gravity="center_vertical"
-            android:layout_marginBottom="4dp">
+            android:layout_marginBottom="8dp">
 
             <TextView
                 android:id="@+id/tv_item2_emoji"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="🐟"
-                android:textSize="14sp" />
+                android:textSize="16sp" />
 
             <TextView
                 android:id="@+id/tv_item2_name"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="6dp"
+                android:layout_marginStart="10dp"
                 android:text="병어"
                 android:textColor="@color/widget_text_primary"
-                android:textSize="12sp"
+                android:textSize="15sp"
+                android:textStyle="bold"
                 android:maxLines="1"
                 android:ellipsize="end" />
         </LinearLayout>
@@ -135,16 +137,17 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="🍄"
-                android:textSize="14sp" />
+                android:textSize="16sp" />
 
             <TextView
                 android:id="@+id/tv_item3_name"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="6dp"
+                android:layout_marginStart="10dp"
                 android:text="느타리버섯"
                 android:textColor="@color/widget_text_primary"
-                android:textSize="12sp"
+                android:textSize="15sp"
+                android:textStyle="bold"
                 android:maxLines="1"
                 android:ellipsize="end" />
         </LinearLayout>

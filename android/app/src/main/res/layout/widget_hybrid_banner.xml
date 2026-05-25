@@ -22,12 +22,12 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="🥬"
-            android:textSize="24sp" />
+            android:textSize="32sp" />
 
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="6dp"
+            android:layout_marginStart="10dp"
             android:orientation="vertical">
 
             <TextView
@@ -35,7 +35,7 @@
                 android:layout_height="wrap_content"
                 android:text="오늘의 제철"
                 android:textColor="@color/widget_text_secondary"
-                android:textSize="10sp" />
+                android:textSize="12sp" />
 
             <TextView
                 android:id="@+id/tv_seasonal_name"
@@ -43,7 +43,7 @@
                 android:layout_height="wrap_content"
                 android:text="완두콩"
                 android:textColor="@color/widget_text_primary"
-                android:textSize="14sp"
+                android:textSize="18sp"
                 android:textStyle="bold"
                 android:maxLines="1"
                 android:ellipsize="end" />
@@ -53,7 +53,7 @@
     <!-- 세로 구분선 (View 대신 FrameLayout 사용) -->
     <FrameLayout
         android:layout_width="1dp"
-        android:layout_height="24dp"
+        android:layout_height="32dp"
         android:layout_marginStart="8dp"
         android:layout_marginEnd="8dp"
         android:background="@color/widget_divider" />
@@ -71,12 +71,12 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="🎋"
-            android:textSize="24sp" />
+            android:textSize="32sp" />
 
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="6dp"
+            android:layout_marginStart="10dp"
             android:orientation="vertical">
 
             <TextView
@@ -85,7 +85,7 @@
                 android:layout_height="wrap_content"
                 android:text="단오"
                 android:textColor="@color/widget_text_secondary"
-                android:textSize="10sp"
+                android:textSize="12sp"
                 android:maxLines="1"
                 android:ellipsize="end" />
 
@@ -95,7 +95,7 @@
                 android:layout_height="wrap_content"
                 android:text="D-19"
                 android:textColor="@color/widget_hybrid_accent"
-                android:textSize="14sp"
+                android:textSize="18sp"
                 android:textStyle="bold" />
         </LinearLayout>
     </LinearLayout>

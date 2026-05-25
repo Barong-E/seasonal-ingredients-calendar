@@ -13,8 +13,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="🥬"
-        android:textSize="26sp"
-        android:layout_marginEnd="8dp" />
+        android:textSize="32sp"
+        android:layout_marginEnd="12dp" />
 
     <LinearLayout
         android:layout_width="0dp"
@@ -28,7 +28,7 @@
             android:layout_height="wrap_content"
             android:text="5월 제철"
             android:textColor="@color/widget_text_secondary"
-            android:textSize="10sp"
+            android:textSize="11sp"
             android:letterSpacing="0.05" />
 
         <TextView
@@ -38,7 +38,7 @@
             android:layout_marginTop="2dp"
             android:text="완두콩"
             android:textColor="@color/widget_text_primary"
-            android:textSize="14sp"
+            android:textSize="18sp"
             android:textStyle="bold"
             android:maxLines="1"
             android:ellipsize="end" />

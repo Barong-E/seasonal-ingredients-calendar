@@ -15,7 +15,7 @@
         android:layout_weight="1"
         android:text="🎋 단오"
         android:textColor="@color/widget_text_primary"
-        android:textSize="14sp"
+        android:textSize="17sp"
         android:textStyle="bold"
         android:maxLines="1"
         android:ellipsize="end" />
@@ -27,7 +27,7 @@
         android:layout_marginStart="8dp"
         android:text="D-19"
         android:textColor="@color/widget_holiday_accent"
-        android:textSize="18sp"
+        android:textSize="22sp"
         android:textStyle="bold"
         android:maxLines="1" />
 

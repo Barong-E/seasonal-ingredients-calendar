@@ -31,9 +31,11 @@ public class HolidayMicroWidget extends AppWidgetProvider {
 
         if (holiday != null) {
             views.setTextViewText(R.id.tv_emoji, holiday.emoji);
+            views.setTextViewText(R.id.tv_name, holiday.name);
             views.setTextViewText(R.id.tv_dday, holiday.dDayText);
         } else {
             views.setTextViewText(R.id.tv_emoji, "🎋");
+            views.setTextViewText(R.id.tv_name, "명절");
             views.setTextViewText(R.id.tv_dday, "D-Day");
         }
 

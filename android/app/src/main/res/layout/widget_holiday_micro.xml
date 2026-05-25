@@ -13,13 +13,26 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="🎋"
-        android:textSize="36sp" />
+        android:textSize="28sp" />
+
+    <TextView
+        android:id="@+id/tv_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="2dp"
+        android:text="단오"
+        android:textColor="@color/widget_text_primary"
+        android:textSize="10sp"
+        android:textStyle="bold"
+        android:maxLines="1"
+        android:ellipsize="end"
+        android:gravity="center" />
 
     <TextView
         android:id="@+id/tv_dday"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="2dp"
+        android:layout_marginTop="1dp"
         android:text="D-19"
         android:textColor="@color/widget_holiday_accent"
         android:textSize="11sp"
