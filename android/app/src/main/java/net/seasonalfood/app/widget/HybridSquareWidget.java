@@ -34,7 +34,11 @@ public class HybridSquareWidget extends AppWidgetProvider {
         if (!seasonalItems.isEmpty()) {
             WidgetDataHelper.SeasonalItem item = seasonalItems.get(0);
             views.setTextViewText(R.id.tv_seasonal_emoji, item.emoji);
-            views.setTextViewText(R.id.tv_seasonal_name, item.name);
+            String name = item.name;
+            if (name != null && name.length() > 5) {
+                name = name.substring(0, 5);
+            }
+            views.setTextViewText(R.id.tv_seasonal_name, name);
         } else {
             views.setTextViewText(R.id.tv_seasonal_emoji, "🌿");
             views.setTextViewText(R.id.tv_seasonal_name, "제철음식");

@@ -8,34 +8,17 @@
     android:gravity="center_vertical"
     android:background="@drawable/widget_bg_holiday">
 
-    <LinearLayout
+    <TextView
+        android:id="@+id/tv_holiday_name"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_weight="1"
-        android:orientation="vertical">
-
-        <TextView
-            android:id="@+id/tv_holiday_name"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="🎋 단오"
-            android:textColor="@color/widget_text_primary"
-            android:textSize="14sp"
-            android:textStyle="bold"
-            android:maxLines="1"
-            android:ellipsize="end" />
-
-        <TextView
-            android:id="@+id/tv_main_food"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="2dp"
-            android:text="대표: 수리취떡"
-            android:textColor="@color/widget_text_secondary"
-            android:textSize="9sp"
-            android:maxLines="1"
-            android:ellipsize="end" />
-    </LinearLayout>
+        android:text="🎋 단오"
+        android:textColor="@color/widget_text_primary"
+        android:textSize="14sp"
+        android:textStyle="bold"
+        android:maxLines="1"
+        android:ellipsize="end" />
 
     <TextView
         android:id="@+id/tv_dday"
@@ -44,7 +27,7 @@
         android:layout_marginStart="8dp"
         android:text="D-19"
         android:textColor="@color/widget_holiday_accent"
-        android:textSize="16sp"
+        android:textSize="18sp"
         android:textStyle="bold"
         android:maxLines="1" />
 

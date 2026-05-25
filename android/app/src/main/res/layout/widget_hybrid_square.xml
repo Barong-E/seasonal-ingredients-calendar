@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:padding="12dp"
+    android:padding="16dp"
     android:background="@drawable/widget_bg_hybrid">
 
     <!-- 상단: 제철음식 1개 -->
@@ -20,8 +20,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="🥬"
-            android:textSize="24sp"
-            android:layout_marginEnd="6dp" />
+            android:textSize="28sp"
+            android:layout_marginEnd="8dp" />
 
         <LinearLayout
             android:layout_width="wrap_content"
@@ -33,7 +33,7 @@
                 android:layout_height="wrap_content"
                 android:text="오늘의 추천"
                 android:textColor="@color/widget_text_secondary"
-                android:textSize="9sp" />
+                android:textSize="10sp" />
 
             <TextView
                 android:id="@+id/tv_seasonal_name"
@@ -41,7 +41,7 @@
                 android:layout_height="wrap_content"
                 android:text="완두콩"
                 android:textColor="@color/widget_text_primary"
-                android:textSize="13sp"
+                android:textSize="14sp"
                 android:textStyle="bold"
                 android:maxLines="1"
                 android:ellipsize="end" />
@@ -52,7 +52,7 @@
     <FrameLayout
         android:layout_width="match_parent"
         android:layout_height="1dp"
-        android:layout_marginVertical="6dp"
+        android:layout_marginVertical="8dp"
         android:background="@color/widget_divider" />
 
     <!-- 하단: 명절 D-day -->
@@ -69,7 +69,7 @@
             android:layout_height="wrap_content"
             android:text="단오 🎋"
             android:textColor="@color/widget_text_secondary"
-            android:textSize="11sp"
+            android:textSize="12sp"
             android:maxLines="1"
             android:ellipsize="end" />
 
@@ -80,7 +80,7 @@
             android:layout_marginTop="2dp"
             android:text="D-19"
             android:textColor="@color/widget_hybrid_accent"
-            android:textSize="16sp"
+            android:textSize="18sp"
             android:textStyle="bold"
             android:maxLines="1"
             android:ellipsize="end" />

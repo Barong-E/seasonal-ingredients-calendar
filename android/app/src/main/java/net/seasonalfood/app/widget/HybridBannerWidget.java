@@ -32,7 +32,11 @@ public class HybridBannerWidget extends AppWidgetProvider {
         List<WidgetDataHelper.SeasonalItem> items = WidgetDataHelper.getRotatedIngredients(context, 1);
         if (!items.isEmpty()) {
             views.setTextViewText(R.id.tv_seasonal_emoji, items.get(0).emoji);
-            views.setTextViewText(R.id.tv_seasonal_name, items.get(0).name);
+            String name = items.get(0).name;
+            if (name != null && name.length() > 5) {
+                name = name.substring(0, 5);
+            }
+            views.setTextViewText(R.id.tv_seasonal_name, name);
         } else {
             views.setTextViewText(R.id.tv_seasonal_emoji, "🌿");
             views.setTextViewText(R.id.tv_seasonal_name, "제철음식");

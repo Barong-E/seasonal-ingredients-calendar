@@ -13,16 +13,16 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="🎋"
-        android:textSize="32sp" />
+        android:textSize="36sp" />
 
     <TextView
         android:id="@+id/tv_dday"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="4dp"
+        android:layout_marginTop="2dp"
         android:text="D-19"
         android:textColor="@color/widget_holiday_accent"
-        android:textSize="12sp"
+        android:textSize="11sp"
         android:textStyle="bold"
         android:maxLines="1"
         android:ellipsize="end"

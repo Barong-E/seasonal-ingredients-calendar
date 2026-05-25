@@ -34,7 +34,11 @@ public class SeasonalMicroWidget extends AppWidgetProvider {
         if (!items.isEmpty()) {
             WidgetDataHelper.SeasonalItem item = items.get(0);
             views.setTextViewText(R.id.tv_emoji, item.emoji);
-            views.setTextViewText(R.id.tv_name, item.name);
+            String name = item.name;
+            if (name != null && name.length() > 5) {
+                name = name.substring(0, 5);
+            }
+            views.setTextViewText(R.id.tv_name, name);
         } else {
             views.setTextViewText(R.id.tv_emoji, "🌿");
             views.setTextViewText(R.id.tv_name, "제철");

@@ -45,7 +45,9 @@ public class HybridDashboardWidget extends AppWidgetProvider {
 
         if (items.size() >= 1) {
             views.setTextViewText(R.id.tv_item1_emoji, items.get(0).emoji);
-            views.setTextViewText(R.id.tv_item1_name, items.get(0).name);
+            String name = items.get(0).name;
+            if (name != null && name.length() > 5) name = name.substring(0, 5);
+            views.setTextViewText(R.id.tv_item1_name, name);
         } else {
             views.setTextViewText(R.id.tv_item1_emoji, "🌿");
             views.setTextViewText(R.id.tv_item1_name, "제철음식 1");
@@ -53,7 +55,9 @@ public class HybridDashboardWidget extends AppWidgetProvider {
 
         if (items.size() >= 2) {
             views.setTextViewText(R.id.tv_item2_emoji, items.get(1).emoji);
-            views.setTextViewText(R.id.tv_item2_name, items.get(1).name);
+            String name = items.get(1).name;
+            if (name != null && name.length() > 5) name = name.substring(0, 5);
+            views.setTextViewText(R.id.tv_item2_name, name);
         } else {
             views.setTextViewText(R.id.tv_item2_emoji, "🌿");
             views.setTextViewText(R.id.tv_item2_name, "제철음식 2");
@@ -61,7 +65,9 @@ public class HybridDashboardWidget extends AppWidgetProvider {
 
         if (items.size() >= 3) {
             views.setTextViewText(R.id.tv_item3_emoji, items.get(2).emoji);
-            views.setTextViewText(R.id.tv_item3_name, items.get(2).name);
+            String name = items.get(2).name;
+            if (name != null && name.length() > 5) name = name.substring(0, 5);
+            views.setTextViewText(R.id.tv_item3_name, name);
         } else {
             views.setTextViewText(R.id.tv_item3_emoji, "🌿");
             views.setTextViewText(R.id.tv_item3_name, "제철음식 3");
