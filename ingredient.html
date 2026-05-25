@@ -137,16 +137,27 @@
       .bottom-bar {
         position: fixed;
         bottom: 0; left: 0; right: 0;
-        padding: 16px 20px;
-        padding-bottom: calc(16px + env(safe-area-inset-bottom, 0px));
+        padding: 12px 20px;
+        padding-bottom: calc(12px + env(safe-area-inset-bottom, 0px));
         background: var(--glass-bg-heavy);
         -webkit-backdrop-filter: blur(var(--glass-blur-heavy));
         backdrop-filter: blur(var(--glass-blur-heavy));
         border-top: 1px solid var(--glass-border);
         box-shadow: var(--glass-shadow);
         display: flex;
-        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+        gap: 8px;
         z-index: 100;
+      }
+      
+      .coupang-notice {
+        font-size: 0.75rem;
+        color: #666;
+        text-align: center;
+        line-height: 1.3;
+        margin: 0;
+        word-break: keep-all;
       }
       
       .btn-purchase {
@@ -260,6 +271,7 @@
     </main>
 
     <div id="bottomBar" class="bottom-bar" style="display:none;">
+      <p class="coupang-notice">이 포스팅은 쿠팡 파트너스 활동의 일환으로, 이에 따른 일정액의 수수료를 제공받습니다.</p>
       <button id="btnPurchase" class="btn-purchase" type="button">로켓배송으로 구매하기</button>
     </div>
 
