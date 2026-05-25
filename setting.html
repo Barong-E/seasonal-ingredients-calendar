@@ -36,7 +36,7 @@
       .back-button:hover { background: rgba(0, 0, 0, 0.05); }
       
       .setting-container {
-        padding: calc(var(--header-offset, 80px) + 20px) 20px 80px;
+        padding: calc(var(--header-offset, 80px) + 20px) 20px 120px;
         max-width: 500px; margin: 0 auto;
       }
       .setting-card {
@@ -55,6 +55,26 @@
         opacity: 0; pointer-events: none; transition: opacity 0.3s;
       }
       .saving-overlay.show { opacity: 1; pointer-events: all; }
+
+      .bottom-bar {
+        position: fixed;
+        bottom: 0; left: 0; right: 0;
+        padding: 16px 20px;
+        padding-bottom: calc(16px + env(safe-area-inset-bottom, 0px));
+        background: var(--glass-bg-heavy);
+        -webkit-backdrop-filter: blur(var(--glass-blur-heavy));
+        backdrop-filter: blur(var(--glass-blur-heavy));
+        border-top: 1px solid var(--glass-border);
+        box-shadow: var(--glass-shadow);
+        display: flex;
+        justify-content: center;
+        z-index: 100;
+      }
+      .bottom-bar button {
+        width: 100%;
+        max-width: 400px;
+        margin: 0;
+      }
     </style>
   </head>
   <body>
@@ -143,14 +163,16 @@
           </div>
           
           <div class="setting-divider"></div>
-          
-          <button id="saveSettingButton" class="modal__purchase-btn full-width" type="button" style="margin-top: 16px;">저장하기</button>
           <div style="text-align: right; margin-top: 16px;">
             <a href="privacy.html" class="privacy-link" style="color: #666; font-size: 0.85rem; text-decoration: underline;">개인정보처리방침</a>
           </div>
         </div>
       </article>
     </main>
+
+    <div class="bottom-bar">
+      <button id="saveSettingButton" class="modal__purchase-btn full-width" type="button">저장하기</button>
+    </div>
 
     <div id="savingOverlay" class="saving-overlay">저장되었습니다</div>
 
