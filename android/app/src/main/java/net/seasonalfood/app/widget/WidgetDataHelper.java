@@ -56,12 +56,30 @@ public class WidgetDataHelper {
         public String mainFood;   // 대표음식 (예: "수리취떡")
         public int dDay;          // D-Day (예: 19)
         public String dDayText;   // 표시용 텍스트 (예: "D-19" 또는 "D-Day!")
+        public String emoji;      // 명절 이모지 (예: "🎋")
 
         public HolidayItem(String name, String mainFood, int dDay) {
             this.name = name;
             this.mainFood = mainFood;
             this.dDay = dDay;
             this.dDayText = (dDay == 0) ? "D-Day!" : "D-" + dDay;
+            this.emoji = getHolidayEmoji(name);
+        }
+
+        private String getHolidayEmoji(String name) {
+            if (name == null) return "🎋";
+            if (name.contains("설날")) return "🧧";
+            if (name.contains("대보름")) return "🌕";
+            if (name.contains("한식")) return "🌿";
+            if (name.contains("삼짇날")) return "🌸";
+            if (name.contains("단오")) return "🎋";
+            if (name.contains("유두")) return "🌊";
+            if (name.contains("칠석")) return "🌌";
+            if (name.contains("백중")) return "🌾";
+            if (name.contains("추석") || name.contains("한가위")) return "🎑";
+            if (name.contains("중양절")) return "🌼";
+            if (name.contains("동지")) return "🥣";
+            return "🎋";
         }
     }
 

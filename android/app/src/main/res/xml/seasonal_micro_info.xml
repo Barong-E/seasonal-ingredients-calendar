@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <appwidget-provider xmlns:android="http://schemas.android.com/apk/res/android"
-    android:minWidth="250dp"
+    android:minWidth="40dp"
     android:minHeight="40dp"
-    android:targetCellWidth="4"
+    android:targetCellWidth="1"
     android:targetCellHeight="1"
     android:updatePeriodMillis="86400000"
-    android:initialLayout="@layout/widget_seasonal_banner"
-    android:description="@string/widget_seasonal_banner_desc"
+    android:initialLayout="@layout/widget_seasonal_micro"
+    android:previewLayout="@layout/widget_seasonal_micro"
+    android:description="@string/widget_seasonal_micro_desc"
     android:widgetCategory="home_screen"
     android:resizeMode="none" />

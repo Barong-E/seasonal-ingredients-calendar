@@ -6,6 +6,7 @@
     android:targetCellHeight="1"
     android:updatePeriodMillis="86400000"
     android:initialLayout="@layout/widget_seasonal_mini"
+    android:previewLayout="@layout/widget_seasonal_mini"
     android:description="@string/widget_seasonal_mini_desc"
     android:widgetCategory="home_screen"
     android:resizeMode="none" />

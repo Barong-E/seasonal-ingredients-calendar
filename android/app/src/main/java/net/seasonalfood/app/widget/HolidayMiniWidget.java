@@ -29,11 +29,13 @@ public class HolidayMiniWidget extends AppWidgetProvider {
         WidgetDataHelper.HolidayItem holiday = WidgetDataHelper.getNextHoliday(context);
 
         if (holiday != null) {
-            views.setTextViewText(R.id.tv_holiday_name, "🎋 " + holiday.name);
+            views.setTextViewText(R.id.tv_holiday_name, holiday.emoji + " " + holiday.name);
+            views.setTextViewText(R.id.tv_main_food, "대표: " + holiday.mainFood);
             views.setTextViewText(R.id.tv_dday, holiday.dDayText);
         } else {
             views.setTextViewText(R.id.tv_holiday_name, "🎋 명절 정보");
-            views.setTextViewText(R.id.tv_dday, "앱 열기");
+            views.setTextViewText(R.id.tv_main_food, "앱을 열어 확인하세요");
+            views.setTextViewText(R.id.tv_dday, "D-Day");
         }
 
         views.setOnClickPendingIntent(android.R.id.content, getLaunchIntent(context));

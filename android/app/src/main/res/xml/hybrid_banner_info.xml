@@ -6,6 +6,7 @@
     android:targetCellHeight="1"
     android:updatePeriodMillis="86400000"
     android:initialLayout="@layout/widget_hybrid_banner"
+    android:previewLayout="@layout/widget_hybrid_banner"
     android:description="@string/widget_hybrid_banner_desc"
     android:widgetCategory="home_screen"
     android:resizeMode="none" />
