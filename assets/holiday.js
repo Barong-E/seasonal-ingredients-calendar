@@ -105,6 +105,15 @@ async function init() {
       customContent.appendChild(div);
     });
   }
+
+  // 스크롤 복원
+  const savedScroll = sessionStorage.getItem('scrollPos_' + window.location.href);
+  if (savedScroll) {
+    setTimeout(() => {
+      window.scrollTo(0, parseInt(savedScroll, 10));
+      sessionStorage.removeItem('scrollPos_' + window.location.href);
+    }, 100);
+  }
 }
 
 window.handleSmartBack = function(defaultUrl) {
@@ -118,5 +127,9 @@ window.handleSmartBack = function(defaultUrl) {
     window.history.back();
   }
 };
+
+window.addEventListener('pagehide', () => {
+  sessionStorage.setItem('scrollPos_' + window.location.href, window.scrollY);
+});
 
 document.addEventListener('DOMContentLoaded', init);

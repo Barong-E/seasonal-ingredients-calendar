@@ -435,7 +435,7 @@ function updateMonthLabel(month) {
 }
 
 // 단일 월 렌더링
-function renderSingleMonth(month, direction = 'right') {
+function renderSingleMonth(month, direction = 'right', isInitialLoad = false) {
   const { allIngredients, searchText } = AppState;
 
   trackEl.innerHTML = '';
@@ -503,7 +503,9 @@ function renderSingleMonth(month, direction = 'right') {
 
   monthSection.appendChild(gridContainer);
   trackEl.appendChild(monthSection);
-  window.scrollTo(0, 0);
+  if (!isInitialLoad) {
+    window.scrollTo(0, 0);
+  }
 
   AppState.currentMonthIndex = month - 1;
 }
@@ -655,7 +657,7 @@ async function init() {
       history.replaceState({ month: activeMonth }, '', `#month-${activeMonth}`);
     }
 
-    renderSingleMonth(activeMonth);
+    renderSingleMonth(activeMonth, 'right', true);
     applySeasonThemeByMonthIndex(activeMonth - 1);
     updateMonthLabel(activeMonth);
 
@@ -670,11 +672,24 @@ async function init() {
     window.addEventListener('resize', () => { requestAnimationFrame(syncHeaderOffset); });
     window.addEventListener('orientationchange', () => { setTimeout(syncHeaderOffset, 250); });
 
+    // 스크롤 복원
+    const savedScroll = sessionStorage.getItem('scrollPos_' + window.location.href);
+    if (savedScroll) {
+      setTimeout(() => {
+        window.scrollTo(0, parseInt(savedScroll, 10));
+        sessionStorage.removeItem('scrollPos_' + window.location.href);
+      }, 100);
+    }
+
   } catch (err) {
     console.error('초기화 실패:', err);
     trackEl.innerHTML = '<div class="error">데이터를 불러올 수 없습니다.</div>';
   }
 }
+
+window.addEventListener('pagehide', () => {
+  sessionStorage.setItem('scrollPos_' + window.location.href, window.scrollY);
+});
 
 if (document.readyState === 'loading') {
   document.addEventListener('DOMContentLoaded', init);
