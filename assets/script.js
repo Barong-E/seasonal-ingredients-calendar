@@ -67,6 +67,52 @@ function getDongjiDateForYear(year) {
   return new Date(year, 11, 22);
 }
 
+function isGyeongDay(date) {
+  const baseDate = new Date(2025, 6, 20); // 2025년 7월 20일 (경자일 - 경일)
+  const d1 = new Date(date.getFullYear(), date.getMonth(), date.getDate());
+  const d2 = new Date(baseDate.getFullYear(), baseDate.getMonth(), baseDate.getDate());
+  const diffTime = d1.getTime() - d2.getTime();
+  const diffDays = Math.round(diffTime / (1000 * 60 * 60 * 24));
+  return (diffDays % 10 + 10) % 10 === 0;
+}
+
+function getIpchunDateForYear(year) {
+  const dY = year - 2000;
+  const base = 4.861;
+  const leapCount = Math.floor((dY + 3) / 4);
+  const dayVal = Math.floor(base + 0.242194 * dY - leapCount);
+  return new Date(year, 1, dayVal); // 2월은 index 1
+}
+
+function getHajiDateForYear(year) {
+  const dY = year - 2000;
+  const base = 21.533;
+  const leapCount = Math.floor(dY / 4);
+  const dayVal = Math.floor(base + 0.242194 * dY - leapCount);
+  return new Date(year, 5, dayVal); // 6월은 index 5
+}
+
+function getIpchuDateForYear(year) {
+  const dY = year - 2000;
+  const base = 7.65;
+  const leapCount = Math.floor(dY / 4);
+  const dayVal = Math.floor(base + 0.242194 * dY - leapCount);
+  return new Date(year, 7, dayVal); // 8월은 index 7
+}
+
+function getSambokDateForYear(year) {
+  const hajiDate = getHajiDateForYear(year);
+  let currentDate = new Date(hajiDate);
+  let gyeongCount = 0;
+  while (gyeongCount < 3) {
+    currentDate.setDate(currentDate.getDate() + 1);
+    if (isGyeongDay(currentDate)) {
+      gyeongCount++;
+    }
+  }
+  return currentDate;
+}
+
 function getHolidaySolarDateForYear(holiday, year) {
   const { type, month, day } = holiday.date;
 
@@ -92,6 +138,16 @@ function getHolidaySolarDateForYear(holiday, year) {
     const solar = calendar.getSolarCalendar();
     if (!solar || !solar.year || !solar.month || !solar.day) return null;
     return new Date(solar.year, solar.month - 1, solar.day);
+  }
+
+  // 입춘: 절기 공식으로 자동 계산
+  if (holiday.id === 'ipchun') {
+    return getIpchunDateForYear(year);
+  }
+
+  // 삼복: 하지 후 3번째 경일로 자동 계산
+  if (holiday.id === 'sambok') {
+    return getSambokDateForYear(year);
   }
 
   // 2) 타입별 계산

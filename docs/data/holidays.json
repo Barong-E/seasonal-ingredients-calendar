@@ -403,10 +403,6 @@
     "id": "sambok",
     "name": "삼복 (초복·중복·말복)",
     "date": { "type": "dynamic", "name": "삼복" },
-    "solar_overrides": {
-      "2025": "7-20",
-      "2026": "7-15"
-    },
     "image": "holiday_sambok.png",
     "main_food": "삼계탕",
     "summary": "일 년 중 가장 무더운 시기로, 보양식을 먹으며 기력을 보충하는 '복달임' 풍습이 전해집니다. 날짜는 초복 기준입니다.",
@@ -445,10 +441,6 @@
     "id": "ipchun",
     "name": "입춘",
     "date": { "type": "dynamic", "name": "입춘" },
-    "solar_overrides": {
-      "2025": "2-3",
-      "2026": "2-4"
-    },
     "image": "holiday_ipchun.png",
     "main_food": "오신채",
     "summary": "24절기의 첫 번째 절기로, 봄이 시작되는 날입니다. 대문에 좋은 글귀를 붙이고 봄나물을 먹으며 새 계절을 맞이합니다.",
