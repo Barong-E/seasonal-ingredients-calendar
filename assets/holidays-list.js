@@ -72,7 +72,7 @@ function getIpchuDateForYear(year) {
   return new Date(year, 7, dayVal); // 8월은 index 7
 }
 
-function getSambokDateForYear(year) {
+function getChobokDateForYear(year) {
   const hajiDate = getHajiDateForYear(year);
   let currentDate = new Date(hajiDate);
   let gyeongCount = 0;
@@ -83,6 +83,33 @@ function getSambokDateForYear(year) {
     }
   }
   return currentDate;
+}
+
+function getJungbokDateForYear(year) {
+  const hajiDate = getHajiDateForYear(year);
+  let currentDate = new Date(hajiDate);
+  let gyeongCount = 0;
+  while (gyeongCount < 4) {
+    currentDate.setDate(currentDate.getDate() + 1);
+    if (isGyeongDay(currentDate)) {
+      gyeongCount++;
+    }
+  }
+  return currentDate;
+}
+
+function getMalbokDateForYear(year) {
+  const ipchuDate = getIpchuDateForYear(year);
+  let currentDate = new Date(ipchuDate);
+  if (isGyeongDay(currentDate)) {
+    return currentDate;
+  }
+  while (true) {
+    currentDate.setDate(currentDate.getDate() + 1);
+    if (isGyeongDay(currentDate)) {
+      return currentDate;
+    }
+  }
 }
 
 function getHolidaySolarDateForYear(holiday, year) {
@@ -114,9 +141,19 @@ function getHolidaySolarDateForYear(holiday, year) {
     return getIpchunDateForYear(year);
   }
 
-  // 삼복: 하지 후 3번째 경일로 자동 계산
-  if (holiday.id === 'sambok') {
-    return getSambokDateForYear(year);
+  // 초복: 하지 후 3번째 경일로 자동 계산
+  if (holiday.id === 'chobok') {
+    return getChobokDateForYear(year);
+  }
+
+  // 중복: 하지 후 4번째 경일로 자동 계산
+  if (holiday.id === 'jungbok') {
+    return getJungbokDateForYear(year);
+  }
+
+  // 말복: 입추 후 1번째 경일로 자동 계산
+  if (holiday.id === 'malbok') {
+    return getMalbokDateForYear(year);
   }
 
   if (type === 'lunar') {
