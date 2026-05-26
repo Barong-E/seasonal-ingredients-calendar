@@ -607,7 +607,7 @@ function showWebNotificationInfoModal() {
       <p class="info-modal__message">알림은 앱에서만 가능하니까 하단 버튼을 눌러 설치해주세요.</p>
       <div class="info-modal__buttons">
         <button type="button" class="info-modal__btn info-modal__btn--ios" disabled>iOS (준비중)</button>
-        <a href="https://play.google.com/store/apps/details?id=net.seasonalfood.app" target="_blank" rel="noopener noreferrer" class="info-modal__btn info-modal__btn--android">Android 설치</a>
+        <a href="https://play.google.com/store/apps/details?id=net.seasonalfood.app&referrer=utm_source%3Dseasonalfood_web%26utm_medium%3Dinternal%26utm_campaign%3Dnoti_bell_popup" target="_blank" rel="noopener noreferrer" class="info-modal__btn info-modal__btn--android">Android 설치</a>
       </div>
       <button type="button" class="info-modal__close">닫기</button>
     </div>
