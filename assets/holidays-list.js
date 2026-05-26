@@ -34,12 +34,9 @@ function getSolarOverrideDate(holiday, year) {
 }
 
 function getDongjiDateForYear(year) {
-  // 동지: 태양 황경 270° 도달일 (연도별 정확한 날짜)
-  const dongjiDates = {
-    2025: 21, 2026: 21, 2027: 22, 2028: 21, 2029: 21, 2030: 22
-  };
-  const day = dongjiDates[year] || 21;
-  return new Date(year, 11, day);
+  if (year === 2025) return new Date(2025, 11, 22);
+  if (year === 2026) return new Date(2026, 11, 22);
+  return new Date(year, 11, 22);
 }
 
 function getHolidaySolarDateForYear(holiday, year) {
