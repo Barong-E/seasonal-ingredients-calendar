@@ -19,9 +19,7 @@ body {
 }
 
 /* 명절 페이지 전용 스냅 */
-body.page-holidays {
-  /* 뷰포트 스크롤과 헤더 숨김 로직이 정상 동작하도록 overflow-y: scroll 제거 */
-}
+/* body.page-holidays 뷰포트 스크롤과 헤더 숨김 로직이 정상 동작하도록 overflow-y: scroll 제거 */
 
 /* main 스타일은 필요에 따라 추가 */
 
