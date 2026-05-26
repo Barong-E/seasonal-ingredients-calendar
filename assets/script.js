@@ -83,6 +83,17 @@ function getHolidaySolarDateForYear(holiday, year) {
     return hansikDate;
   }
 
+  // 섣달그믐: 음력 12월 마지막 날
+  if (holiday.id === 'seotdal') {
+    const calendar = new KoreanLunarCalendar();
+    let ok = calendar.setLunarDate(year, 12, 30, false);
+    if (!ok) ok = calendar.setLunarDate(year, 12, 29, false);
+    if (!ok) return null;
+    const solar = calendar.getSolarCalendar();
+    if (!solar || !solar.year || !solar.month || !solar.day) return null;
+    return new Date(solar.year, solar.month - 1, solar.day);
+  }
+
   // 2) 타입별 계산
   if (type === 'lunar') {
     const calendar = new KoreanLunarCalendar();
@@ -96,8 +107,9 @@ function getHolidaySolarDateForYear(holiday, year) {
   if (type === 'solar') {
     return new Date(year, month - 1, day);
   }
-  // 'dynamic' for 동지
-  return getDongjiDateForYear(year);
+  // 'dynamic' — 동지 또는 solar_overrides 전용 (삼복, 입춘 등)
+  if (holiday.date.name === '동지') return getDongjiDateForYear(year);
+  return null;
 }
 
 function getHolidaySolarDate(holiday, today) {
