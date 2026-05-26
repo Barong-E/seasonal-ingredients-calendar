@@ -628,6 +628,27 @@ function showWebNotificationInfoModal() {
 
 async function init() {
   try {
+    // --- 방문 횟수 체크 및 인앱 리뷰 요청 로직 ---
+    let visits = parseInt(localStorage.getItem('app_visits') || '0', 10);
+    let hasPromptedReview = localStorage.getItem('review_prompted');
+    visits++;
+    localStorage.setItem('app_visits', visits.toString());
+
+    if (visits === 3 && !hasPromptedReview) {
+      if (typeof Capacitor !== 'undefined' && Capacitor.isNativePlatform()) {
+        try {
+          // 플러그인이 로드되어 있는지 확인 후 실행
+          if (Capacitor.Plugins.InAppReview) {
+            await Capacitor.Plugins.InAppReview.requestReview();
+            localStorage.setItem('review_prompted', 'true');
+          }
+        } catch (e) {
+          console.log('리뷰 요청 실패', e);
+        }
+      }
+    }
+    // ------------------------------------------
+
     if (trackEl) {
       trackEl.innerHTML = '<div class="loading"><span class="loading__spinner" aria-hidden="true"></span><span class="loading__text">데이터를 불러오는 중입니다...</span></div>';
     }
