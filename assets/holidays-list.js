@@ -291,7 +291,7 @@ function showWebNotificationInfoModal() {
   modal.innerHTML = `
     <div class="info-modal__backdrop"></div>
     <div class="info-modal__content">
-      <p class="info-modal__message">알림은 앱에서만 받을 수 있습니다. 스토어에서 설치해주세요.</p>
+      <p class="info-modal__message">알림 기능은 앱에서 이용하실 수 있어요. 앱을 설치하고 제철 식재료 소식을 받아보세요! 🌱</p>
       <button type="button" class="info-modal__close">닫기</button>
     </div>
   `;
