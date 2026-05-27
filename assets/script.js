@@ -384,7 +384,7 @@ async function loadIngredients() {
     }
   } catch {}
 
-  const res = await fetch('data/ingredients.json?v=v39', { cache: 'no-cache' });
+  const res = await fetch('data/ingredients.json?v=v40', { cache: 'no-cache' });
   if (!res.ok) throw new Error('데이터 로드 실패');
   const data = await res.json();
   try {

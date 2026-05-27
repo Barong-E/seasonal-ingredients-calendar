@@ -57,7 +57,7 @@ function getRecipeIdFromUrl() {
 // 레시피 데이터 로드
 async function loadRecipe(recipeId) {
   try {
-    const res = await fetch('data/recipes.json?v=v39');
+    const res = await fetch('data/recipes.json?v=v40');
     if (!res.ok) throw new Error('레시피 데이터 로드 실패');
     const recipes = await res.json();
     return recipes.find(recipe => recipe.id === recipeId);
@@ -431,7 +431,7 @@ let seasonalIngredientsList = [];
 
 async function loadSeasonalIngredients() {
   try {
-    const res = await fetch('data/ingredients.json?v=v39');
+    const res = await fetch('data/ingredients.json?v=v40');
     if (res.ok) {
       seasonalIngredientsList = await res.json();
     }

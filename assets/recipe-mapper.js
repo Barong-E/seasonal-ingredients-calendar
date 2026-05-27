@@ -154,7 +154,7 @@ export function getRecipeIdFromDishName(dishName) {
     "아스파라거스 베이컨 말이": "asparagus-bacon-roll",
     "샤인머스캣 요거트 샐러드": "shinemuscat-yogurt-salad",
     "비트 사과 주스": "beet-apple-juice",
-    "참외 무침": "oriental-melon-muchim",
+    "참외 무침": "chamoe-muchim",
   '갑오징어 볶음': 'cuttlefish-stir-fry',
   '갑오징어 숙회': 'cuttlefish-blanched',
   '마늘종 건새우 볶음': 'garlic-scapes-shrimp-stir-fry',
