@@ -576,16 +576,8 @@
     "difficulty": "초급",
     "ingredients": [
       {
-        "name": "고등어",
-        "amount": "1마리(손질, 2등분)"
-      },
-      {
-        "name": "굵은소금",
-        "amount": "1꼬집"
-      },
-      {
-        "name": "식용유",
-        "amount": "1큰술"
+        "name": "고등어 (손질, 2등분)",
+        "amount": "1마리"
       }
     ],
     "seasoning": [],
@@ -699,24 +691,40 @@
     "difficulty": "초급",
     "ingredients": [
       {
-        "name": "도다리",
-        "amount": "1마리(손질, 토막)"
+        "name": "도다리 (손질, 토막)",
+        "amount": "1마리"
       },
       {
         "name": "쑥",
-        "amount": "한 줌"
+        "amount": "100g"
       },
       {
         "name": "무",
-        "amount": "150g"
+        "amount": "100g"
       },
       {
         "name": "대파",
         "amount": "1/2대"
       },
       {
+        "name": "청양고추",
+        "amount": "1개"
+      },
+      {
+        "name": "된장",
+        "amount": "1.5큰술"
+      },
+      {
+        "name": "국간장",
+        "amount": "1큰술"
+      },
+      {
+        "name": "다진 마늘",
+        "amount": "1큰술"
+      },
+      {
         "name": "물",
-        "amount": "5컵"
+        "amount": "4컵"
       }
     ],
     "seasoning": [
@@ -906,8 +914,8 @@
     "difficulty": "초급",
     "ingredients": [
       {
-        "name": "오징어",
-        "amount": "2마리(손질, 링 또는 칼집)"
+        "name": "오징어 (손질, 링 또는 칼집)",
+        "amount": "2마리"
       },
       {
         "name": "양파",
@@ -919,7 +927,11 @@
       },
       {
         "name": "대파",
-        "amount": "1대"
+        "amount": "1/2대"
+      },
+      {
+        "name": "풋고추",
+        "amount": "1개"
       }
     ],
     "seasoning": [
@@ -1133,16 +1145,28 @@
     "difficulty": "초급",
     "ingredients": [
       {
-        "name": "시래기/호박오가리/고사리 등 마른나물",
-        "amount": "각 1종이컵"
+        "name": "마른나물 (시래기/호박오가리/고사리 등)",
+        "amount": "1종이컵"
       },
       {
-        "name": "마늘",
-        "amount": "2쪽"
+        "name": "들기름",
+        "amount": "1큰술"
       },
       {
-        "name": "참기름",
-        "amount": "2큰술"
+        "name": "국간장",
+        "amount": "1큰술"
+      },
+      {
+        "name": "다진 마늘",
+        "amount": "1작은술"
+      },
+      {
+        "name": "다진 파",
+        "amount": "1큰술"
+      },
+      {
+        "name": "통깨",
+        "amount": "1작은술"
       }
     ],
     "seasoning": [
@@ -1335,32 +1359,36 @@
     "difficulty": "중급",
     "ingredients": [
       {
-        "name": "소고기 다짐육",
-        "amount": "300g (동그랑땡용)"
+        "name": "동태포",
+        "amount": "150g"
       },
       {
-        "name": "두부",
-        "amount": "1/4모"
-      },
-      {
-        "name": "애호박",
-        "amount": "1개 (애호박전)"
-      },
-      {
-        "name": "버섯(표고/새송이)",
+        "name": "버섯 (표고 또는 새송이)",
         "amount": "6개"
       },
       {
+        "name": "호박",
+        "amount": "1/2개"
+      },
+      {
         "name": "밀가루",
-        "amount": "2컵"
+        "amount": "1/2컵"
       },
       {
         "name": "달걀",
-        "amount": "5개"
+        "amount": "2개"
+      },
+      {
+        "name": "소금",
+        "amount": "1꼬집"
+      },
+      {
+        "name": "후추",
+        "amount": "1꼬집"
       },
       {
         "name": "식용유",
-        "amount": "1큰술"
+        "amount": "2큰술"
       }
     ],
     "seasoning": [
@@ -1427,25 +1455,25 @@
     "category": "명절음식",
     "description": "찹쌀 반죽에 진달래꽃을 올려 지진 삼짇날의 대표 음식입니다.",
     "image": "recipe-hwajeon.jpg",
-    "servings": 15,
+    "servings": 3,
     "cookTime": "40분",
     "difficulty": "중급",
     "ingredients": [
       {
         "name": "찹쌀가루",
-        "amount": "2컵"
+        "amount": "100g"
       },
       {
         "name": "뜨거운 물",
-        "amount": "2/3컵"
+        "amount": "4큰술"
       },
       {
         "name": "소금",
-        "amount": "1/4작은술"
+        "amount": "1꼬집"
       },
       {
         "name": "진달래",
-        "amount": "20송이"
+        "amount": "5송이"
       },
       {
         "name": "식용유",
@@ -1455,7 +1483,7 @@
     "seasoning": [
       {
         "name": "꿀",
-        "amount": "적당량 (곁들임용)"
+        "amount": "1큰술"
       }
     ],
     "steps": [
@@ -1500,29 +1528,29 @@
     "category": "명절음식",
     "description": "수리취 잎을 넣어 만든 단오의 대표 떡입니다.",
     "image": "recipe-surichwitteok.jpg",
-    "servings": 20,
+    "servings": 4,
     "cookTime": "60분",
     "difficulty": "중급",
     "ingredients": [
       {
         "name": "멥쌀가루",
-        "amount": "4컵"
+        "amount": "200g"
       },
       {
         "name": "수리취 가루(또는 데친 수리취)",
-        "amount": "3큰술"
+        "amount": "1큰술"
       },
       {
         "name": "뜨거운 물",
-        "amount": "1/2컵"
+        "amount": "4큰술"
       },
       {
         "name": "소금",
-        "amount": "1작은술"
+        "amount": "1꼬집"
       },
       {
         "name": "팥소",
-        "amount": "2컵"
+        "amount": "0.5컵"
       }
     ],
     "seasoning": [],
@@ -1637,25 +1665,25 @@
     "category": "명절음식",
     "description": "국화꽃을 올려 지진 중양절의 대표 음식입니다.",
     "image": "recipe-gukwha-jeon.jpg",
-    "servings": 15,
+    "servings": 3,
     "cookTime": "35분",
     "difficulty": "중급",
     "ingredients": [
       {
         "name": "찹쌀가루",
-        "amount": "2컵"
+        "amount": "100g"
       },
       {
         "name": "뜨거운 물",
-        "amount": "2/3컵"
+        "amount": "4큰술"
       },
       {
         "name": "소금",
-        "amount": "1/4작은술"
+        "amount": "1꼬집"
       },
       {
         "name": "국화",
-        "amount": "20송이"
+        "amount": "5송이"
       },
       {
         "name": "식용유",
@@ -1819,63 +1847,63 @@
     "category": "채소",
     "description": "한국의 대표 발효 음식으로, 배추에 고춧가루, 젓갈, 마늘 등으로 만든 양념을 버무려 숙성시킨 김치입니다.",
     "image": "recipe-baechu-kimchi.jpg",
-    "servings": 20,
+    "servings": 4,
     "cookTime": "180분",
     "difficulty": "상급",
     "ingredients": [
       {
-        "name": "배추",
-        "amount": "3포기 (약 6kg)"
+        "name": "절임배추",
+        "amount": "2kg"
       },
       {
         "name": "굵은소금",
-        "amount": "1.5컵"
+        "amount": "0.5컵"
       },
       {
         "name": "무",
-        "amount": "1개"
+        "amount": "300g"
       },
       {
         "name": "쪽파",
-        "amount": "200g"
+        "amount": "50g"
       },
       {
         "name": "갓",
-        "amount": "100g"
+        "amount": "25g"
       },
       {
         "name": "미나리",
-        "amount": "100g"
+        "amount": "25g"
       }
     ],
     "seasoning": [
       {
         "name": "고춧가루",
-        "amount": "2컵"
+        "amount": "0.5컵"
       },
       {
         "name": "멸치액젓",
-        "amount": "1컵"
+        "amount": "4큰술"
       },
       {
         "name": "새우젓",
-        "amount": "1/2컵"
-      },
-      {
-        "name": "다진 마늘",
-        "amount": "1/2컵"
-      },
-      {
-        "name": "다진 생강",
         "amount": "2큰술"
       },
       {
+        "name": "다진 마늘",
+        "amount": "2큰술"
+      },
+      {
+        "name": "다진 생강",
+        "amount": "1작은술"
+      },
+      {
         "name": "설탕",
-        "amount": "3큰술"
+        "amount": "1작은술"
       },
       {
         "name": "찹쌀풀",
-        "amount": "1컵"
+        "amount": "4큰술"
       }
     ],
     "steps": [
@@ -1989,51 +2017,51 @@
     "category": "채소",
     "description": "무를 깍둑썰기해 양념에 버무린 아삭한 김치입니다.",
     "image": "recipe-kkakdugi.jpg",
-    "servings": 10,
+    "servings": 2,
     "cookTime": "60분",
     "difficulty": "중급",
     "ingredients": [
       {
         "name": "무",
-        "amount": "2kg"
+        "amount": "400g"
       },
       {
         "name": "굵은소금",
-        "amount": "3큰술"
+        "amount": "1작은술"
       },
       {
         "name": "쪽파",
-        "amount": "100g"
+        "amount": "20g"
       }
     ],
     "seasoning": [
       {
         "name": "고춧가루",
-        "amount": "1컵"
+        "amount": "3큰술"
       },
       {
         "name": "멸치액젓",
-        "amount": "1/2컵"
+        "amount": "1.5큰술"
       },
       {
         "name": "새우젓",
-        "amount": "3큰술"
-      },
-      {
-        "name": "다진 마늘",
-        "amount": "3큰술"
-      },
-      {
-        "name": "다진 생강",
         "amount": "1작은술"
       },
       {
+        "name": "다진 마늘",
+        "amount": "1작은술"
+      },
+      {
+        "name": "다진 생강",
+        "amount": "0.5작은술"
+      },
+      {
         "name": "설탕",
-        "amount": "2큰술"
+        "amount": "1작은술"
       },
       {
         "name": "찹쌀풀",
-        "amount": "1/2컵"
+        "amount": "1큰술"
       }
     ],
     "steps": [
@@ -2505,35 +2533,35 @@
     "category": "채소",
     "description": "어린 무인 열무로 담근 시원하고 아삭한 여름 김치입니다.",
     "image": "recipe-yeolmu-kimchi.jpg",
-    "servings": 10,
+    "servings": 2,
     "cookTime": "60분",
     "difficulty": "중급",
     "ingredients": [
       {
         "name": "열무",
-        "amount": "1kg"
+        "amount": "200g"
       },
       {
         "name": "굵은소금",
-        "amount": "3큰술"
+        "amount": "1큰술"
       },
       {
         "name": "쪽파",
-        "amount": "100g"
+        "amount": "20g"
       }
     ],
     "seasoning": [
       {
         "name": "고춧가루",
-        "amount": "1/2컵"
+        "amount": "2큰술"
       },
       {
         "name": "멸치액젓",
-        "amount": "1/2컵"
+        "amount": "2큰술"
       },
       {
         "name": "다진 마늘",
-        "amount": "3큰술"
+        "amount": "1큰술"
       },
       {
         "name": "다진 생강",
@@ -2541,11 +2569,11 @@
       },
       {
         "name": "설탕",
-        "amount": "2큰술"
+        "amount": "1작은술"
       },
       {
         "name": "물",
-        "amount": "2컵"
+        "amount": "0.5컵"
       }
     ],
     "steps": [
@@ -5010,21 +5038,21 @@
     "category": "기타",
     "description": "유자를 설탕에 재워 만든 전통 차입니다.",
     "image": "recipe-yuja-cha.jpg",
-    "servings": 20,
+    "servings": 4,
     "cookTime": "60분",
     "difficulty": "초급",
     "ingredients": [
       {
         "name": "유자",
-        "amount": "10개"
+        "amount": "2개"
       },
       {
         "name": "설탕",
-        "amount": "유자 무게와 동일"
+        "amount": "200g"
       },
       {
         "name": "꿀",
-        "amount": "1/2컵 (선택)"
+        "amount": "2큰술"
       }
     ],
     "seasoning": [],
@@ -5413,21 +5441,21 @@
     "category": "기타",
     "description": "싱싱한 매실을 설탕에 재워 숙성시킨 다용도 과일청입니다. 물, 탄산수, 요리 등에 활용합니다.",
     "image": "recipe-maesil-cheong.jpg",
-    "servings": 30,
+    "servings": 10,
     "cookTime": "20분 + 숙성 3~4주",
     "difficulty": "초급",
     "ingredients": [
       {
         "name": "매실",
-        "amount": "2kg"
+        "amount": "600g"
       },
       {
         "name": "설탕",
-        "amount": "2kg"
+        "amount": "600g"
       },
       {
         "name": "살균한 유리병",
-        "amount": "2.5L 1개"
+        "amount": "1L 1개"
       }
     ],
     "seasoning": [],
@@ -5464,33 +5492,33 @@
     "category": "기타",
     "description": "아삭한 매실을 간장 양념에 절여 만든 새콤달콤 알싸한 장아찌입니다.",
     "image": "recipe-maesil-jangajji.jpg",
-    "servings": 20,
+    "servings": 4,
     "cookTime": "30분 + 숙성 1주",
     "difficulty": "초급",
     "ingredients": [
       {
         "name": "매실",
-        "amount": "1kg"
+        "amount": "200g"
       },
       {
         "name": "간장",
-        "amount": "2컵"
+        "amount": "6큰술"
       },
       {
         "name": "식초",
-        "amount": "1컵"
+        "amount": "3큰술"
       },
       {
         "name": "설탕",
-        "amount": "1.5컵"
+        "amount": "5큰술"
       },
       {
         "name": "물",
-        "amount": "1컵"
+        "amount": "3큰술"
       },
       {
-        "name": "통후추/건고추(선택)",
-        "amount": "5알"
+        "name": "통후추 또는 건고추 (선택)",
+        "amount": "1알"
       }
     ],
     "seasoning": [],
@@ -5595,21 +5623,21 @@
     "category": "기타",
     "description": "복분자를 설탕에 재워 만든 짙은 풍미의 과일청. 음료와 디저트에 활용합니다.",
     "image": "recipe-bokbunja-cheong.jpg",
-    "servings": 30,
+    "servings": 10,
     "cookTime": "20분 + 숙성 2~3주",
     "difficulty": "초급",
     "ingredients": [
       {
         "name": "복분자",
-        "amount": "2kg"
+        "amount": "600g"
       },
       {
         "name": "설탕",
-        "amount": "2kg"
+        "amount": "600g"
       },
       {
         "name": "레몬(선택)",
-        "amount": "1개"
+        "amount": "0.5개"
       }
     ],
     "seasoning": [],
@@ -5642,21 +5670,21 @@
     "category": "기타",
     "description": "복분자를 담가 만든 전통 과실주로, 달콤한 향과 색이 특징입니다.",
     "image": "recipe-bokbunja-ju.jpg",
-    "servings": 20,
+    "servings": 4,
     "cookTime": "30분 + 숙성 30일~90일",
     "difficulty": "중급",
     "ingredients": [
       {
         "name": "복분자",
-        "amount": "2kg"
+        "amount": "400g"
       },
       {
         "name": "소주(30% 내외)",
-        "amount": "3L"
+        "amount": "600ml"
       },
       {
         "name": "설탕(선택)",
-        "amount": "1kg"
+        "amount": "200g"
       }
     ],
     "seasoning": [],
@@ -5794,21 +5822,21 @@
     "category": "명절음식",
     "description": "단오에 창포 뿌리를 담가 마시던 전통 약주로, 향긋하고 청량한 맛이 특징입니다.",
     "image": "recipe-changpo-ju.jpg",
-    "servings": 10,
+    "servings": 2,
     "cookTime": "15분 + 침출 7일",
     "difficulty": "중급",
     "ingredients": [
       {
-        "name": "창포",
-        "amount": "50g(잘 씻어 편썰기)"
+        "name": "창포 (잘 씻어 편썰기)",
+        "amount": "10g"
       },
       {
         "name": "소주(30% 내외)",
-        "amount": "1.8L"
+        "amount": "360ml"
       },
       {
         "name": "꿀 또는 설탕(선택)",
-        "amount": "2큰술"
+        "amount": "1작은술"
       }
     ],
     "seasoning": [],
@@ -5843,21 +5871,21 @@
     "category": "명절음식",
     "description": "국화꽃을 술에 담가 향을 입힌 전통주로, 중양절에 즐겼습니다.",
     "image": "recipe-gukwha-ju.jpg",
-    "servings": 10,
+    "servings": 2,
     "cookTime": "20분 + 침출 10일",
     "difficulty": "중급",
     "ingredients": [
       {
         "name": "국화",
-        "amount": "30송이"
+        "amount": "6송이"
       },
       {
         "name": "소주(25~30%)",
-        "amount": "1.8L"
+        "amount": "360ml"
       },
       {
         "name": "꿀(선택)",
-        "amount": "2큰술"
+        "amount": "1작은술"
       }
     ],
     "seasoning": [],
@@ -6452,12 +6480,24 @@
     "difficulty": "상급",
     "ingredients": [
       {
-        "name": "농어(횟감)",
-        "amount": "500g"
+        "name": "농어회",
+        "amount": "300g"
       },
       {
-        "name": "상추/깻잎",
-        "amount": "각 5장"
+        "name": "상추",
+        "amount": "5장"
+      },
+      {
+        "name": "깻잎",
+        "amount": "5장"
+      },
+      {
+        "name": "마늘",
+        "amount": "3쪽"
+      },
+      {
+        "name": "고추",
+        "amount": "1개"
       }
     ],
     "seasoning": [
@@ -6713,27 +6753,19 @@
     "ingredients": [
       {
         "name": "꽃게",
-        "amount": "2kg"
+        "amount": "2마리"
       },
       {
-        "name": "간장",
-        "amount": "2컵"
+        "name": "마늘",
+        "amount": "2쪽"
       },
       {
-        "name": "물",
-        "amount": "2컵"
+        "name": "생강",
+        "amount": "1조각"
       },
       {
-        "name": "설탕",
-        "amount": "1/2컵"
-      },
-      {
-        "name": "맛술",
-        "amount": "1/2컵"
-      },
-      {
-        "name": "마늘/생강/고추",
-        "amount": "마늘 2쪽, 생강 1조각, 고추 1개"
+        "name": "고추",
+        "amount": "1개"
       }
     ],
     "seasoning": [],
@@ -6767,15 +6799,23 @@
     "ingredients": [
       {
         "name": "멍게",
-        "amount": "300g"
+        "amount": "150g"
       },
       {
         "name": "밥",
         "amount": "2공기"
       },
       {
-        "name": "오이/김/참기름",
-        "amount": "오이 1/4개, 김 1장, 참기름 1/2작은술"
+        "name": "오이",
+        "amount": "1/4개"
+      },
+      {
+        "name": "김",
+        "amount": "1장"
+      },
+      {
+        "name": "참기름",
+        "amount": "1/2작은술"
       }
     ],
     "seasoning": [
@@ -7165,17 +7205,17 @@
     "category": "기타",
     "description": "쑥을 넣은 반죽으로 빚어 찐 떡입니다.",
     "image": "recipe-ssuk-tteok.jpg",
-    "servings": 12,
+    "servings": 3,
     "cookTime": "40분",
     "difficulty": "초급",
     "ingredients": [
       {
         "name": "찹쌀가루",
-        "amount": "2컵"
+        "amount": "50g"
       },
       {
         "name": "데친 쑥",
-        "amount": "1컵"
+        "amount": "25g"
       },
       {
         "name": "소금",
@@ -7442,27 +7482,7 @@
       },
       {
         "name": "양배추",
-        "amount": "50g"
-      },
-      {
-        "name": "고추장",
-        "amount": "2큰술"
-      },
-      {
-        "name": "고춧가루",
-        "amount": "2큰술"
-      },
-      {
-        "name": "다진마늘",
-        "amount": "1큰술"
-      },
-      {
-        "name": "간장",
-        "amount": "각 1큰술"
-      },
-      {
-        "name": "참기름",
-        "amount": "각 1큰술"
+        "amount": "1장"
       }
     ],
     "steps": [
@@ -7485,7 +7505,33 @@
     ],
     "name": "낙지볶음",
     "cookTime": "20분",
-    "description": "낙지볶음 레시피입니다."
+    "description": "낙지볶음 레시피입니다.",
+    "seasoning": [
+      {
+        "name": "고춧가루",
+        "amount": "2큰술"
+      },
+      {
+        "name": "간장",
+        "amount": "1큰술"
+      },
+      {
+        "name": "설탕",
+        "amount": "1큰술"
+      },
+      {
+        "name": "다진 마늘",
+        "amount": "1큰술"
+      },
+      {
+        "name": "참기름",
+        "amount": "1큰술"
+      },
+      {
+        "name": "통깨",
+        "amount": "1작은술"
+      }
+    ]
   },
   {
     "id": "nakji-yeonpotang",
@@ -7762,21 +7808,21 @@
     "category": "디저트",
     "description": "포도의 진한 맛과 향이 살아있는 달콤한 잼입니다.",
     "image": "recipe-grape-jam.jpg",
-    "servings": 5,
+    "servings": 2,
     "cookTime": "60분",
     "difficulty": "초급",
     "ingredients": [
       {
         "name": "포도",
-        "amount": "1kg"
-      },
-      {
-        "name": "설탕",
         "amount": "400g"
       },
       {
+        "name": "설탕",
+        "amount": "160g"
+      },
+      {
         "name": "레몬즙",
-        "amount": "1큰술"
+        "amount": "1작은술"
       }
     ],
     "steps": [
@@ -7804,7 +7850,8 @@
     "relatedIngredients": [
       "포도"
     ],
-    "relatedHolidays": []
+    "relatedHolidays": [],
+    "seasoning": []
   },
   {
     "id": "grape-juice",
@@ -7854,21 +7901,21 @@
     "category": "디저트",
     "description": "새콤달콤한 살구의 풍미가 가득한 잼입니다.",
     "image": "recipe-apricot-jam.jpg",
-    "servings": 5,
+    "servings": 2,
     "cookTime": "40분",
     "difficulty": "초급",
     "ingredients": [
       {
         "name": "살구",
-        "amount": "1kg"
+        "amount": "400g"
       },
       {
         "name": "설탕",
-        "amount": "500g"
+        "amount": "200g"
       },
       {
         "name": "레몬즙",
-        "amount": "2큰술"
+        "amount": "1큰술"
       }
     ],
     "steps": [
@@ -7892,7 +7939,8 @@
     "relatedIngredients": [
       "살구"
     ],
-    "relatedHolidays": []
+    "relatedHolidays": [],
+    "seasoning": []
   },
   {
     "id": "apricot-cheong",
@@ -7900,17 +7948,17 @@
     "category": "디저트",
     "description": "에이드나 차로 즐기기 좋은 살구 수제청입니다.",
     "image": "recipe-apricot-cheong.jpg",
-    "servings": 10,
+    "servings": 2,
     "cookTime": "20분",
     "difficulty": "초급",
     "ingredients": [
       {
         "name": "살구",
-        "amount": "1kg"
+        "amount": "200g"
       },
       {
         "name": "설탕",
-        "amount": "1kg"
+        "amount": "200g"
       }
     ],
     "steps": [
@@ -7934,7 +7982,8 @@
     "relatedIngredients": [
       "살구"
     ],
-    "relatedHolidays": []
+    "relatedHolidays": [],
+    "seasoning": []
   },
   {
     "id": "aengdu-pyeon",
@@ -7992,17 +8041,17 @@
     "category": "디저트",
     "description": "제주산 한라봉의 향긋함을 그대로 담은 수제청입니다.",
     "image": "recipe-hallabong-cheong.jpg",
-    "servings": 15,
+    "servings": 3,
     "cookTime": "30분",
     "difficulty": "초급",
     "ingredients": [
       {
         "name": "한라봉",
-        "amount": "3개"
+        "amount": "1개"
       },
       {
         "name": "설탕",
-        "amount": "약 1kg (과육과 1:1)"
+        "amount": "200g"
       }
     ],
     "steps": [
@@ -8026,7 +8075,8 @@
     "relatedIngredients": [
       "한라봉"
     ],
-    "relatedHolidays": []
+    "relatedHolidays": [],
+    "seasoning": []
   },
   {
     "id": "hallabong-ade",
@@ -8076,21 +8126,21 @@
     "category": "디저트",
     "description": "무화과 특유의 톡톡 씹히는 씨가 일품인 고급스러운 잼입니다.",
     "image": "recipe-fig-jam.jpg",
-    "servings": 5,
+    "servings": 2,
     "cookTime": "40분",
     "difficulty": "초급",
     "ingredients": [
       {
         "name": "무화과",
-        "amount": "1kg"
-      },
-      {
-        "name": "설탕",
         "amount": "400g"
       },
       {
+        "name": "설탕",
+        "amount": "160g"
+      },
+      {
         "name": "레몬즙",
-        "amount": "1큰술"
+        "amount": "1작은술"
       }
     ],
     "steps": [
@@ -8110,7 +8160,8 @@
     "relatedIngredients": [
       "무화과"
     ],
-    "relatedHolidays": []
+    "relatedHolidays": [],
+    "seasoning": []
   },
   {
     "id": "peach-jam",
@@ -8118,21 +8169,21 @@
     "category": "디저트",
     "description": "복숭아의 향긋함이 그대로 남아있는 달콤한 잼입니다.",
     "image": "recipe-peach-jam.jpg",
-    "servings": 5,
+    "servings": 2,
     "cookTime": "50분",
     "difficulty": "초급",
     "ingredients": [
       {
         "name": "복숭아",
-        "amount": "1kg"
-      },
-      {
-        "name": "설탕",
         "amount": "400g"
       },
       {
+        "name": "설탕",
+        "amount": "160g"
+      },
+      {
         "name": "레몬즙",
-        "amount": "1큰술"
+        "amount": "1작은술"
       }
     ],
     "steps": [
@@ -8152,7 +8203,8 @@
     "relatedIngredients": [
       "복숭아"
     ],
-    "relatedHolidays": []
+    "relatedHolidays": [],
+    "seasoning": []
   },
   {
     "id": "apple-jam",
@@ -8160,17 +8212,17 @@
     "category": "디저트",
     "description": "빵과 찰떡궁합인 아삭한 사과의 식감이 느껴지는 잼입니다.",
     "image": "recipe-apple-jam.jpg",
-    "servings": 5,
+    "servings": 2,
     "cookTime": "50분",
     "difficulty": "초급",
     "ingredients": [
       {
         "name": "사과",
-        "amount": "1kg"
+        "amount": "400g"
       },
       {
         "name": "설탕",
-        "amount": "500g"
+        "amount": "200g"
       },
       {
         "name": "계핏가루",
@@ -8194,7 +8246,8 @@
     "relatedIngredients": [
       "사과"
     ],
-    "relatedHolidays": []
+    "relatedHolidays": [],
+    "seasoning": []
   },
   {
     "id": "watermelon-hwachae",
@@ -8248,17 +8301,17 @@
     "category": "디저트",
     "description": "붉은 빛깔이 매혹적인 상큼한 자두청입니다.",
     "image": "recipe-plum-cheong.jpg",
-    "servings": 10,
+    "servings": 2,
     "cookTime": "20분",
     "difficulty": "초급",
     "ingredients": [
       {
         "name": "자두",
-        "amount": "1kg"
+        "amount": "200g"
       },
       {
         "name": "설탕",
-        "amount": "1kg"
+        "amount": "200g"
       }
     ],
     "steps": [
@@ -8278,7 +8331,8 @@
     "relatedIngredients": [
       "자두"
     ],
-    "relatedHolidays": []
+    "relatedHolidays": [],
+    "seasoning": []
   },
   {
     "id": "chamoe-muchim",
@@ -8336,13 +8390,13 @@
     "category": "디저트",
     "description": "겨울철 정성이 가득 담긴 한국 전통 건조 과일입니다.",
     "image": "recipe-gotgam.jpg",
-    "servings": 10,
+    "servings": 2,
     "cookTime": "가변적",
     "difficulty": "중급",
     "ingredients": [
       {
         "name": "떫은 감",
-        "amount": "원하는 양"
+        "amount": "4개"
       }
     ],
     "steps": [
@@ -8362,7 +8416,8 @@
     "relatedIngredients": [
       "감"
     ],
-    "relatedHolidays": []
+    "relatedHolidays": [],
+    "seasoning": []
   },
   {
     "id": "strawberry-jam",
@@ -8370,17 +8425,17 @@
     "category": "디저트",
     "description": "가장 대중적이고 사랑받는 홈메이드 딸기잼입니다.",
     "image": "recipe-strawberry-jam.jpg",
-    "servings": 5,
+    "servings": 2,
     "cookTime": "60분",
     "difficulty": "초급",
     "ingredients": [
       {
         "name": "딸기",
-        "amount": "1kg"
+        "amount": "400g"
       },
       {
         "name": "설탕",
-        "amount": "500g"
+        "amount": "200g"
       },
       {
         "name": "레몬즙",
@@ -8404,7 +8459,8 @@
     "relatedIngredients": [
       "딸기"
     ],
-    "relatedHolidays": []
+    "relatedHolidays": [],
+    "seasoning": []
   },
   {
     "id": "baesuk",
@@ -8421,20 +8477,20 @@
         "amount": "1개"
       },
       {
-        "name": "생강",
-        "amount": "20g"
-      },
-      {
         "name": "통후추",
-        "amount": "5알"
+        "amount": "20알"
       },
       {
-        "name": "꿀/설탕",
-        "amount": "3큰술"
+        "name": "생강",
+        "amount": "1조각"
       },
       {
         "name": "물",
         "amount": "4컵"
+      },
+      {
+        "name": "꿀 또는 설탕",
+        "amount": "3큰술"
       }
     ],
     "steps": [
@@ -8467,19 +8523,19 @@
     "difficulty": "초급",
     "ingredients": [
       {
-        "name": "냉동 블루베리",
+        "name": "블루베리",
         "amount": "1컵"
       },
       {
-        "name": "요거트",
-        "amount": "100ml"
-      },
-      {
         "name": "우유",
-        "amount": "50ml"
+        "amount": "1/2컵"
       },
       {
-        "name": "꿀/시럽",
+        "name": "요거트",
+        "amount": "1/2컵"
+      },
+      {
+        "name": "꿀 또는 시럽",
         "amount": "1큰술"
       }
     ],
@@ -8892,17 +8948,17 @@
     "name": "귤청",
     "category": "과일",
     "description": "겨울철 비타민 보충에 최고인 상큼하고 달콤한 수제 귤청입니다.",
-    "servings": 10,
+    "servings": 2,
     "cookTime": "30분",
     "difficulty": "하",
     "ingredients": [
       {
         "name": "귤",
-        "amount": "1kg"
+        "amount": "200g"
       },
       {
         "name": "설탕",
-        "amount": "1kg"
+        "amount": "200g"
       }
     ],
     "seasoning": [],
@@ -9414,31 +9470,31 @@
     "name": "마늘종 장아찌",
     "category": "채소",
     "description": "새콤달콤 아삭해서 입맛 돋우는 1년 내내 든든한 밑반찬",
-    "servings": 10,
+    "servings": 2,
     "cookTime": "20분",
     "difficulty": "하",
     "ingredients": [
       {
         "name": "마늘종",
-        "amount": "500g"
+        "amount": "100g"
       }
     ],
     "seasoning": [
       {
         "name": "물",
-        "amount": "2컵"
+        "amount": "6큰술"
       },
       {
         "name": "간장",
-        "amount": "2컵"
+        "amount": "6큰술"
       },
       {
         "name": "설탕",
-        "amount": "1컵"
+        "amount": "3큰술"
       },
       {
         "name": "식초",
-        "amount": "1컵"
+        "amount": "3큰술"
       }
     ],
     "steps": [
@@ -9473,23 +9529,23 @@
     "name": "오디 잼",
     "category": "과일",
     "description": "새콤함이 덜하고 단맛이 강한 오디로 만든 진하고 건강한 수제 잼",
-    "servings": 10,
+    "servings": 2,
     "cookTime": "40분",
     "difficulty": "하",
     "ingredients": [
       {
         "name": "오디",
-        "amount": "500g"
+        "amount": "100g"
       }
     ],
     "seasoning": [
       {
         "name": "설탕",
-        "amount": "250g (오디의 50% 분량)"
+        "amount": "50g"
       },
       {
         "name": "레몬즙",
-        "amount": "1큰술"
+        "amount": "1작은술"
       }
     ],
     "steps": [
