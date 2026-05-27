@@ -103,31 +103,7 @@ function parseAndCalculateAmount(name, amountStr, baseS, currS) {
   else if (str === '각 한 줌' || str === '각 1줌') normalizedStr = '각 1종이컵';
   // 이 아래 계산에서 normalizedStr을 사용
 
-  // ─── 🤏 단계 3: "꼬집" 단위 처리 ─────────────────────────────────────────
-  // 꼬집은 손가락으로 집는 아주 작은 양이에요.
-  // 3꼬집 이상이 되면 계량스푼(T스푼)으로 자동 변환!
-  // 1꼬집 ≈ 0.5g ≈ 1/4 t스푼 기준으로 계산해요.
-  const kkojiMatch = normalizedStr.match(/^([\d.]+)꼬집$/);
-  if (kkojiMatch) {
-    const baseNum = parseFloat(kkojiMatch[1]);
-    // 1인분 기준 꼬집 수 계산
-    const oneServingKkojip = baseNum / baseS;
-    const newKkojip = Math.round(oneServingKkojip * currS * 10) / 10;
 
-    // 3꼬집 미만이면 "N꼬집" 그대로
-    if (newKkojip < 3) {
-      const rounded = Math.round(newKkojip);
-      return `${rounded > 0 ? rounded : 1}꼬집`;
-    }
-    // 3꼬집 이상이면 t스푼으로 변환 (1꼬집 ≈ 1/4 t스푼)
-    // 4꼬집 = 1t스푼, 12꼬집 = 1T스푼(큰술)
-    const tspoon = Math.round((newKkojip / 4) * 10) / 10;
-    if (tspoon >= 3) {
-      const Tspoon = Math.round((tspoon / 3) * 10) / 10;
-      return `${Tspoon}T스푼`;
-    }
-    return `${tspoon}t스푼`;
-  }
 
   // ─── 🧮 단계 4: 일반 숫자·분수 파싱 및 곱하기 ───────────────────────────
   // "200g", "1/2개", "1.5컵" 처럼 숫자가 있는 경우
@@ -247,16 +223,16 @@ function parseAndCalculateAmount(name, amountStr, baseS, currS) {
   // ── 큰술 ──────────────────────────────────────────────────────────────────
   if (cu === '큰술') {
     if (calculated < 0.5) {
-      const tsp = Math.round(calculated * 3);
-      return `${tsp < 1 ? 1 : tsp}작은술`;
+      const tsp = Math.round(calculated * 3 * 2) / 2; // 작은술로 변환하되 0.5단위 반올림
+      return `${tsp < 0.5 ? 0.5 : tsp}작은술`;
     }
     return `${Math.round(calculated)}큰술`;
   }
 
   // ── 작은술 ────────────────────────────────────────────────────────────────
   if (cu === '작은술') {
-    const tsp = Math.round(calculated);
-    return `${tsp < 1 ? 1 : tsp}작은술`;
+    const tsp = Math.round(calculated * 2) / 2; // 0.5 단위 반올림
+    return `${tsp < 0.5 ? 0.5 : tsp}작은술`;
   }
 
   // ── kg → g 변환 ───────────────────────────────────────────────────────────
