@@ -115,76 +115,61 @@
     "category": "명절음식",
     "description": "설날에 먹는 대표적인 명절 음식으로, 흰 가래떡을 얇게 썰어 맑은 국물에 끓인 떡국입니다.",
     "image": "recipe-tteokguk.jpg",
-    "servings": 4,
-    "cookTime": "50분",
+    "servings": 2,
+    "cookTime": "30분",
     "difficulty": "초급",
     "ingredients": [
       {
-        "name": "가래떡",
-        "amount": "600g"
-      },
-      {
-        "name": "소고기 (양지 또는 사태)",
-        "amount": "300g"
-      },
-      {
         "name": "물",
-        "amount": "10컵"
+        "amount": "800ml"
       },
       {
-        "name": "국간장",
-        "amount": "3큰술"
+        "name": "떡국떡",
+        "amount": "400g"
       },
       {
-        "name": "다진 마늘",
-        "amount": "1큰술"
-      },
-      {
-        "name": "달걀",
-        "amount": "2개"
-      },
-      {
-        "name": "김",
-        "amount": "1장"
+        "name": "소고기",
+        "amount": "100g"
       },
       {
         "name": "대파",
-        "amount": "1/2대"
-      },
+        "amount": "0.5대"
+      }
+    ],
+    "seasoning": [
       {
-        "name": "소금",
-        "amount": "0.5작은술"
+        "name": "국간장",
+        "amount": "1큰술"
       },
       {
         "name": "참기름",
         "amount": "1큰술"
+      },
+      {
+        "name": "다진마늘",
+        "amount": "0.5작은술"
+      },
+      {
+        "name": "소금",
+        "amount": "0.5작은술"
       }
     ],
-    "seasoning": [],
     "steps": [
       {
         "step": 1,
-        "description": "소고기는 찬물에 30분 정도 담가 핏물을 뺀 후 냄비에 넣고 물 10컵을 부어 센 불에 올립니다."
+        "description": "소고기는 핏물을 빼고, 떡국떡은 물에 30분간 불려 준비한다."
       },
       {
         "step": 2,
-        "description": "끓어오르면 불을 중약불로 줄이고 40분간 푹 끓여 육수를 냅니다. 고기는 건져서 결대로 찢어둡니다."
+        "description": "냄비에 참기름을 두르고 소고기를 볶다가, 고기가 익으면 물을 붓고 끓인다."
       },
       {
         "step": 3,
-        "description": "가래떡은 물에 담가 불려두고, 달걀은 황백 지단을 부쳐 채썰고, 김은 구워서 부숴둡니다."
+        "description": "국물이 끓어오르면 불린 떡국떡과 다진마늘, 국간장을 넣고 끓인다."
       },
       {
         "step": 4,
-        "description": "육수에 국간장과 소금으로 간을 맞추고, 가래떡을 넣어 중불에서 끓입니다."
-      },
-      {
-        "step": 5,
-        "description": "떡이 떠오르면 찢어둔 고기와 다진 마늘, 어슷 썬 대파를 넣고 2분 더 끓입니다."
-      },
-      {
-        "step": 6,
-        "description": "그릇에 담고 달걀 지단, 김, 참기름을 올려 마무리합니다."
+        "description": "떡이 위로 떠오르면 대파를 넣고, 소금으로 간을 맞춘 뒤 1분 더 끓여 완성한다."
       }
     ],
     "tips": [
@@ -195,7 +180,8 @@
     "relatedIngredients": [],
     "relatedHolidays": [
       "seollal"
-    ]
+    ],
+    "servingsUnit": "인분"
   },
   {
     "id": "songpyeon",
@@ -204,96 +190,52 @@
     "description": "추석에 먹는 대표 떡으로, 반달 모양에 깨, 콩, 밤 등을 소로 넣어 솔잎에 찌는 떡입니다.",
     "image": "recipe-songpyeon.jpg",
     "servings": 5,
-    "cookTime": "90분",
+    "cookTime": "50분",
     "difficulty": "중급",
     "ingredients": [
       {
         "name": "멥쌀가루",
-        "amount": "1.5컵"
+        "amount": "200g"
       },
       {
         "name": "뜨거운 물",
+        "amount": "4큰술"
+      },
+      {
+        "name": "깨",
         "amount": "3큰술"
-      },
-      {
-        "name": "소금",
-        "amount": "0.5작은술"
-      },
-      {
-        "name": "솔잎",
-        "amount": "적당량 (찜통 깔기용, 생략 가능)"
-      },
-      {
-        "name": "참기름",
-        "amount": "1작은술"
       }
     ],
     "seasoning": [
       {
-        "name": "검은깨",
-        "amount": "3큰술"
+        "name": "설탕",
+        "amount": "2큰술"
       },
       {
-        "name": "설탕",
-        "amount": "1.5작은술"
+        "name": "꿀",
+        "amount": "1큰술"
       },
       {
         "name": "소금",
-        "amount": "0.5작은술"
-      },
-      {
-        "name": "팥",
-        "amount": "3큰술"
-      },
-      {
-        "name": "설탕(팥소)",
-        "amount": "2작은술"
-      },
-      {
-        "name": "소금(팥소)",
-        "amount": "0.5작은술"
-      },
-      {
-        "name": "밤",
-        "amount": "2개"
-      },
-      {
-        "name": "설탕(밤소)",
-        "amount": "1작은술"
-      },
-      {
-        "name": "계핏가루",
         "amount": "0.5작은술"
       }
     ],
     "steps": [
       {
         "step": 1,
-        "description": "멥쌀가루에 소금을 넣고 뜨거운 물을 조금씩 부으며 익반죽합니다. 귀 밑이 안 아플 정도의 말랑함이 적당합니다."
+        "description": "멥쌀가루에 소금과 뜨거운 물을 넣고 익반죽하여 표면이 매끄러워지도록 여러 번 치댄다."
       },
       {
         "step": 2,
-        "description": "반죽을 비닐에 싸서 30분간 숙성시킵니다."
+        "description": "설탕, 꿀, 깨를 섞어 송편 소를 만든다."
       },
       {
         "step": 3,
-        "description": "검은깨는 볶아 설탕, 소금과 섞어 깨소를 만듭니다. 팥은 삶아 으깬 후 설탕과 소금으로 간합니다."
+        "description": "반죽을 조금씩 떼어 둥글게 빚은 후, 가운데 홈을 파고 소를 넣어 반달 모양으로 빚는다."
       },
       {
         "step": 4,
-        "description": "반죽을 한 입 크기로 떼어 동그랗게 빚은 후 가운데를 눌러 오목하게 만들고 소를 넣습니다."
-      },
-      {
-        "step": 5,
-        "description": "반으로 접어 반달 모양으로 예쁘게 빚어줍니다. 가장자리를 잘 눌러 소가 새지 않도록 합니다."
-      },
-      {
-        "step": 6,
-        "description": "찜통에 솔잎을 깔고 송편을 올린 후 센 불에서 15분간 찝니다."
-      },
-      {
-        "step": 7,
-        "description": "찐 송편을 찬물에 헹궈 참기름을 발라 윤기를 냅니다."
+        "description": "찜기에 젖은 면포를 깔고 송편을 올려 20분간 찌고 꺼내어 식힌다."
       }
     ],
     "tips": [
@@ -484,73 +426,53 @@
     "category": "해산물",
     "description": "신선한 굴에 밀가루와 달걀 옷을 입혀 부친 전으로, 명절이나 특별한 날에 즐기는 요리입니다.",
     "image": "recipe-gul-jeon.jpg",
-    "servings": 3,
-    "cookTime": "25분",
+    "servings": 5,
+    "cookTime": "20분",
     "difficulty": "초급",
     "ingredients": [
       {
         "name": "굴",
-        "amount": "300g"
-      },
-      {
-        "name": "밀가루",
-        "amount": "1컵"
+        "amount": "150g"
       },
       {
         "name": "달걀",
-        "amount": "3개"
+        "amount": "2개"
       },
+      {
+        "name": "부침가루",
+        "amount": "3큰술"
+      },
+      {
+        "name": "식용유",
+        "amount": "3큰술"
+      }
+    ],
+    "seasoning": [
       {
         "name": "소금",
         "amount": "0.5작은술"
       },
       {
-        "name": "후추",
+        "name": "후춧가루",
         "amount": "0.5작은술"
-      },
-      {
-        "name": "식용유",
-        "amount": "1큰술"
-      }
-    ],
-    "seasoning": [
-      {
-        "name": "간장",
-        "amount": "2큰술"
-      },
-      {
-        "name": "식초",
-        "amount": "1큰술"
-      },
-      {
-        "name": "물",
-        "amount": "1큰술"
       }
     ],
     "steps": [
       {
         "step": 1,
-        "description": "굴은 소금물에 살살 흔들어 씻은 후 체에 밭쳐 물기를 뺍니다."
+        "description": "굴은 소금물(분량 외)에 가볍게 씻은 후 체에 밭쳐 물기를 완전히 뺀다."
       },
       {
         "step": 2,
-        "description": "굴에 소금과 후추로 밑간을 합니다."
+        "description": "달걀을 풀고 소금과 후춧가루를 넣어 섞는다."
       },
       {
         "step": 3,
-        "description": "달걀은 풀어서 소금을 약간 넣고 섞어둡니다."
+        "description": "굴에 부침가루를 고루 묻힌 후, 달걀물에 담가 얇게 옷을 입힌다."
       },
       {
         "step": 4,
-        "description": "굴에 밀가루를 골고루 묻힌 후 털어내고, 달걀물에 적십니다."
-      },
-      {
-        "step": 5,
-        "description": "달군 팬에 식용유를 두르고 중약불에서 굴을 올려 노릇하게 지집니다."
-      },
-      {
-        "step": 6,
-        "description": "양면이 노릇해지면 키친타월에 올려 기름기를 빼고 초간장과 함께 냅니다."
+        "description": "달군 팬에 식용유를 두르고 굴을 올려 앞뒤로 노릇하게 굽는다."
       }
     ],
     "tips": [
@@ -564,7 +486,8 @@
     "relatedHolidays": [
       "seollal",
       "chuseok"
-    ]
+    ],
+    "servingsUnit": "개"
   },
   {
     "id": "godeungeo-gui",
@@ -612,64 +535,60 @@
     "description": "시원한 멸치다시 육수에 굴과 밥을 넣어 끓인 겨울철 별미 국밥입니다.",
     "image": "recipe-gul-gukbap.jpg",
     "servings": 2,
-    "cookTime": "20분",
+    "cookTime": "25분",
     "difficulty": "초급",
     "ingredients": [
+      {
+        "name": "물",
+        "amount": "1000ml"
+      },
       {
         "name": "굴",
         "amount": "200g"
       },
       {
         "name": "밥",
-        "amount": "2공기"
+        "amount": "400g"
       },
       {
-        "name": "멸치다시 육수",
-        "amount": "4컵"
+        "name": "무",
+        "amount": "100g"
       },
       {
-        "name": "대파",
-        "amount": "1/2대"
-      },
-      {
-        "name": "두부",
-        "amount": "1/4모"
-      },
-      {
-        "name": "달걀",
-        "amount": "1개"
+        "name": "부추",
+        "amount": "50g"
       }
     ],
     "seasoning": [
       {
         "name": "국간장",
-        "amount": "1.5큰술"
+        "amount": "1큰술"
       },
       {
-        "name": "액젓(선택)",
-        "amount": "1작은술"
+        "name": "새우젓",
+        "amount": "1큰술"
       },
       {
-        "name": "소금",
-        "amount": "0.5작은술"
-      },
-      {
-        "name": "후추",
-        "amount": "0.5작은술"
+        "name": "다진마늘",
+        "amount": "1큰술"
       }
     ],
     "steps": [
       {
         "step": 1,
-        "description": "굴은 소금물에 살살 흔들어 씻어 체에 밭쳐 물기를 뺍니다."
+        "description": "굴은 가볍게 씻어 물기를 빼고, 무는 얇게 나박 썰고, 부추는 4cm 길이로 썬다."
       },
       {
         "step": 2,
-        "description": "냄비에 육수를 끓이고 국간장으로 간을 맞춘 뒤 두부, 대파를 넣습니다."
+        "description": "냄비에 물과 무를 넣고 먼저 끓여 시원한 무 육수를 낸다."
       },
       {
         "step": 3,
-        "description": "밥과 굴을 넣고 한소끔 끓입니다. 달걀을 풀어 넣고 소금·후추로 마무리합니다."
+        "description": "무가 투명해지면 밥과 굴, 다진마늘, 국간장, 새우젓을 넣고 3분간 끓인다."
+      },
+      {
+        "step": 4,
+        "description": "굴이 통통하게 익으면 부추를 얹고 바로 불을 끈다."
       }
     ],
     "tips": [
@@ -679,7 +598,8 @@
     "relatedIngredients": [
       "굴"
     ],
-    "relatedHolidays": []
+    "relatedHolidays": [],
+    "servingsUnit": "인분"
   },
   {
     "id": "dodari-ssukguk",
@@ -687,13 +607,17 @@
     "category": "해산물",
     "description": "봄 내음 가득한 쑥과 담백한 도다리를 넣어 끓이는 맑은 국입니다.",
     "image": "recipe-dodari-ssukguk.jpg",
-    "servings": 3,
-    "cookTime": "25분",
+    "servings": 2,
+    "cookTime": "35분",
     "difficulty": "초급",
     "ingredients": [
       {
-        "name": "도다리 (손질, 토막)",
-        "amount": "1마리"
+        "name": "물",
+        "amount": "1000ml"
+      },
+      {
+        "name": "도다리",
+        "amount": "400g"
       },
       {
         "name": "쑥",
@@ -705,55 +629,39 @@
       },
       {
         "name": "대파",
-        "amount": "1/2대"
-      },
-      {
-        "name": "청양고추",
-        "amount": "1개"
-      },
-      {
-        "name": "된장",
-        "amount": "1.5큰술"
-      },
-      {
-        "name": "국간장",
-        "amount": "1큰술"
-      },
-      {
-        "name": "다진 마늘",
-        "amount": "1큰술"
-      },
-      {
-        "name": "물",
-        "amount": "4컵"
+        "amount": "0.5대"
       }
     ],
     "seasoning": [
       {
+        "name": "된장",
+        "amount": "2큰술"
+      },
+      {
         "name": "국간장",
         "amount": "1큰술"
       },
       {
-        "name": "소금",
-        "amount": "0.5작은술"
-      },
-      {
-        "name": "다진 마늘",
-        "amount": "1작은술"
+        "name": "다진마늘",
+        "amount": "1큰술"
       }
     ],
     "steps": [
       {
         "step": 1,
-        "description": "물에 무를 넣고 끓이다가 도다리를 넣어 8~10분 끓입니다."
+        "description": "도다리는 내장과 비늘을 제거하고 흐르는 물에 씻어 2토막으로 자른다."
       },
       {
         "step": 2,
-        "description": "국간장과 소금으로 간을 맞추고 다진 마늘, 대파를 넣습니다."
+        "description": "쑥은 질긴 줄기를 떼어내고 씻어 물기를 빼며, 무는 나박 썰고, 대파는 어슷하게 썬다."
       },
       {
         "step": 3,
-        "description": "불을 끄기 직전에 깨끗이 씻은 쑥을 넣어 향을 살립니다."
+        "description": "냄비에 물과 무를 넣고 끓인 뒤, 무가 익으면 된장을 체에 밭쳐 곱게 푼다."
+      },
+      {
+        "step": 4,
+        "description": "국물이 끓으면 도다리와 다진마늘, 국간장을 넣고 생선이 완전히 익을 때까지 끓인 후, 마지막에 쑥과 대파를 넣고 1분간 더 끓인다."
       }
     ],
     "tips": [
@@ -763,7 +671,8 @@
       "도다리",
       "쑥"
     ],
-    "relatedHolidays": []
+    "relatedHolidays": [],
+    "servingsUnit": "인분"
   },
   {
     "id": "bajirak-kalguksu",
@@ -772,32 +681,24 @@
     "description": "바지락으로 낸 시원한 국물의 대표 칼국수입니다.",
     "image": "recipe-bajirak-kalguksu.jpg",
     "servings": 2,
-    "cookTime": "25분",
+    "cookTime": "30분",
     "difficulty": "초급",
     "ingredients": [
       {
-        "name": "바지락",
-        "amount": "400g(해감)"
+        "name": "물",
+        "amount": "1200ml"
       },
       {
-        "name": "칼국수 면",
-        "amount": "2인분"
+        "name": "바지락",
+        "amount": "400g"
+      },
+      {
+        "name": "칼국수면",
+        "amount": "300g"
       },
       {
         "name": "애호박",
-        "amount": "1/3개"
-      },
-      {
-        "name": "양파",
-        "amount": "1/2개"
-      },
-      {
-        "name": "대파",
-        "amount": "1/2대"
-      },
-      {
-        "name": "물",
-        "amount": "6컵"
+        "amount": "0.5개"
       }
     ],
     "seasoning": [
@@ -806,8 +707,8 @@
         "amount": "1큰술"
       },
       {
-        "name": "다진 마늘",
-        "amount": "1작은술"
+        "name": "다진마늘",
+        "amount": "1큰술"
       },
       {
         "name": "소금",
@@ -817,15 +718,19 @@
     "steps": [
       {
         "step": 1,
-        "description": "냄비에 물을 끓여 바지락을 넣고 입이 벌어지면 건져내 모래를 제거합니다."
+        "description": "바지락은 소금물에 1시간 이상 담가 해감하고, 애호박은 일정한 굵기로 채 썬다."
       },
       {
         "step": 2,
-        "description": "육수에 양파, 애호박을 넣고 끓인 뒤 면을 넣어 삶습니다."
+        "description": "냄비에 물을 붓고 끓으면 바지락을 넣어 입을 벌릴 때까지 끓인 후, 바지락만 따로 건져낸다."
       },
       {
         "step": 3,
-        "description": "바지락을 다시 넣고 국간장, 다진 마늘로 간을 맞추고 대파를 넣어 마무리합니다."
+        "description": "조개 육수에 다진마늘, 국간장을 넣고 끓어오르면 덧가루를 턴 칼국수면을 넣어 끓인다."
+      },
+      {
+        "step": 4,
+        "description": "면이 투명해지며 거의 익으면 애호박과 건져둔 바지락을 다시 넣고, 소금으로 간을 맞춰 완성한다."
       }
     ],
     "tips": [
@@ -835,7 +740,8 @@
       "바지락",
       "애호박"
     ],
-    "relatedHolidays": []
+    "relatedHolidays": [],
+    "servingsUnit": "인분"
   },
   {
     "id": "jukumi-bokkeum",
@@ -986,27 +892,31 @@
     "description": "전복과 내장을 함께 곱게 다져 쌀과 끓여낸 영양 죽입니다.",
     "image": "recipe-jeonbok-juk.jpg",
     "servings": 2,
-    "cookTime": "40분",
+    "cookTime": "45분",
     "difficulty": "초급",
     "ingredients": [
       {
-        "name": "전복",
-        "amount": "3개"
-      },
-      {
-        "name": "쌀",
-        "amount": "1컵(불림)"
-      },
-      {
-        "name": "참기름",
-        "amount": "1큰술"
-      },
-      {
         "name": "물",
-        "amount": "5컵"
+        "amount": "800ml"
+      },
+      {
+        "name": "불린 쌀",
+        "amount": "200g"
+      },
+      {
+        "name": "전복",
+        "amount": "150g"
       }
     ],
     "seasoning": [
+      {
+        "name": "참기름",
+        "amount": "2큰술"
+      },
+      {
+        "name": "국간장",
+        "amount": "1큰술"
+      },
       {
         "name": "소금",
         "amount": "0.5작은술"
@@ -1015,15 +925,19 @@
     "steps": [
       {
         "step": 1,
-        "description": "전복은 솔질해 내장을 분리하고 살은 잘게 썹니다. 내장은 곱게 다집니다."
+        "description": "전복은 솔로 문질러 씻은 뒤 살과 내장을 분리하고, 전복 살은 얇게 썰며 내장은 잘게 다진다."
       },
       {
         "step": 2,
-        "description": "냄비에 참기름을 두르고 전복살과 내장을 볶다가 불린 쌀을 넣어 볶습니다."
+        "description": "냄비에 참기름을 두르고 전복 살과 내장을 볶다가, 불린 쌀을 넣고 쌀알이 반투명해질 때까지 볶는다."
       },
       {
         "step": 3,
-        "description": "물을 붓고 중약불에서 저어가며 끓여 농도를 맞추고 소금으로 간합니다."
+        "description": "물을 붓고 강한 불에서 끓어오르면 약한 불로 줄이고 바닥이 눋지 않게 저어가며 쌀이 완전히 퍼질 때까지 끓인다."
+      },
+      {
+        "step": 4,
+        "description": "국간장과 소금으로 최종 간을 맞추어 완성한다."
       }
     ],
     "tips": [
@@ -1032,7 +946,8 @@
     "relatedIngredients": [
       "전복"
     ],
-    "relatedHolidays": []
+    "relatedHolidays": [],
+    "servingsUnit": "인분"
   },
   {
     "id": "samchi-gui",
@@ -1041,27 +956,44 @@
     "description": "지방이 적당히 올라 고소한 삼치를 노릇하게 구워낸 구이입니다.",
     "image": "recipe-samchi-gui.jpg",
     "servings": 2,
-    "cookTime": "12분",
+    "cookTime": "20분",
     "difficulty": "초급",
     "ingredients": [
       {
         "name": "삼치",
-        "amount": "2토막"
+        "amount": "300g"
       },
       {
-        "name": "굵은소금",
-        "amount": "0.5작은술"
+        "name": "식용유",
+        "amount": "2큰술"
       }
     ],
-    "seasoning": [],
+    "seasoning": [
+      {
+        "name": "청주",
+        "amount": "1큰술"
+      },
+      {
+        "name": "소금",
+        "amount": "1.5작은술"
+      }
+    ],
     "steps": [
       {
         "step": 1,
-        "description": "삼치에 소금을 살짝 뿌려 10분 두고 수분을 닦아냅니다."
+        "description": "삼치는 흐르는 물에 가볍게 씻은 후 물기를 제거하고, 양면에 청주와 소금을 뿌려 10분간 둔다."
       },
       {
         "step": 2,
-        "description": "예열한 팬 또는 에어프라이어에서 노릇하게 굽습니다."
+        "description": "삼치 표면으로 배어 나온 수분을 키친타월로 꼼꼼하게 닦아낸다."
+      },
+      {
+        "step": 3,
+        "description": "달군 팬에 식용유를 두르고 삼치를 껍질 부분부터 올려 중간 불에서 굽는다."
+      },
+      {
+        "step": 4,
+        "description": "밑면이 바삭하고 노릇해지면 조심스럽게 뒤집어 반대쪽도 속까지 완전히 익도록 굽는다."
       }
     ],
     "tips": [
@@ -1070,7 +1002,8 @@
     "relatedIngredients": [
       "삼치"
     ],
-    "relatedHolidays": []
+    "relatedHolidays": [],
+    "servingsUnit": "인분"
   },
   {
     "id": "ogokbap",
@@ -1083,48 +1016,52 @@
     "difficulty": "초급",
     "ingredients": [
       {
-        "name": "쌀",
-        "amount": "2컵"
+        "name": "물",
+        "amount": "500ml"
       },
       {
         "name": "찹쌀",
-        "amount": "1/2컵"
+        "amount": "200g"
       },
       {
-        "name": "차조",
-        "amount": "1/3컵"
+        "name": "멥쌀",
+        "amount": "100g"
       },
       {
-        "name": "수수",
-        "amount": "1/3컵"
+        "name": "찰수수",
+        "amount": "50g"
       },
       {
-        "name": "콩(서리태 등)",
-        "amount": "1/3컵"
+        "name": "검은콩",
+        "amount": "50g"
       },
       {
         "name": "팥",
-        "amount": "1/2컵"
+        "amount": "50g"
       }
     ],
     "seasoning": [
       {
         "name": "소금",
-        "amount": "0.5작은술"
+        "amount": "1.5작은술"
       }
     ],
     "steps": [
       {
         "step": 1,
-        "description": "팥은 따로 삶아 반쯤 익혀 물은 버리고 콩은 불려둡니다."
+        "description": "찹쌀, 멥쌀, 찰수수는 씻어서 1시간 동안 불리고, 검은콩은 3시간 동안 물에 불려둔다."
       },
       {
         "step": 2,
-        "description": "모든 곡물을 씻어 30분 불린 뒤 솥에 담고 물을 알맞게 부어 짓습니다."
+        "description": "냄비에 팥과 넉넉한 양의 물을 넣고 끓어오르면 떫은맛을 제거하기 위해 첫 물은 버리고, 다시 물을 부어 팥이 터지지 않을 정도로 삶아 건진다."
       },
       {
         "step": 3,
-        "description": "중약불로 뜸을 충분히 들여 고슬고슬하게 마무리합니다."
+        "description": "전기밥솥에 불린 쌀과 수수, 콩, 삶은 팥을 모두 고르게 섞어 넣는다."
+      },
+      {
+        "step": 4,
+        "description": "물 500ml에 소금을 완벽히 녹인 뒤 밥솥에 붓고 일반 취사 버튼을 눌러 밥을 짓는다."
       }
     ],
     "tips": [
@@ -1133,7 +1070,8 @@
     "relatedIngredients": [],
     "relatedHolidays": [
       "daeboreum"
-    ]
+    ],
+    "servingsUnit": "인분"
   },
   {
     "id": "mukeun-namul",
@@ -1200,44 +1138,45 @@
     "category": "명절음식",
     "description": "얇게 부친 밀전병에 나물과 고기를 넣어 말아 먹는 절식입니다.",
     "image": "recipe-miljeonbyeong.jpg",
-    "servings": 4,
-    "cookTime": "30분",
+    "servings": 5,
+    "cookTime": "20분",
     "difficulty": "초급",
     "ingredients": [
       {
         "name": "밀가루",
-        "amount": "1컵"
+        "amount": "100g"
       },
       {
         "name": "물",
-        "amount": "1컵"
-      },
-      {
-        "name": "소금",
-        "amount": "0.5작은술"
+        "amount": "150ml"
       },
       {
         "name": "식용유",
-        "amount": "1큰술"
-      },
-      {
-        "name": "나물/고기/김치",
-        "amount": "취향껏"
+        "amount": "2큰술"
       }
     ],
-    "seasoning": [],
+    "seasoning": [
+      {
+        "name": "소금",
+        "amount": "0.5작은술"
+      }
+    ],
     "steps": [
       {
         "step": 1,
-        "description": "밀가루와 물, 소금을 섞어 묽은 반죽을 만듭니다."
+        "description": "볼에 밀가루와 물, 소금을 넣고 덩어리가 완전히 풀릴 때까지 거품기로 곱게 저어 반죽을 만든다."
       },
       {
         "step": 2,
-        "description": "달군 팬에 기름을 살짝 두르고 반죽을 얇게 펼쳐 앞뒤로 굽습니다."
+        "description": "만들어진 반죽은 체에 한 번 걸러 질감을 부드럽게 만든 뒤, 실온에서 10분간 숙성시킨다."
       },
       {
         "step": 3,
-        "description": "전병 위에 나물이나 고기를 올려 돌돌 말아 한입 크기로 썹니다."
+        "description": "약한 불로 달군 팬에 식용유를 살짝 두르고 키친타월로 가볍게 닦아내어 코팅만 남긴다."
+      },
+      {
+        "step": 4,
+        "description": "반죽을 2큰술씩 떠서 팬에 올리고 둥글고 얇게 펼쳐 가장자리가 일어나면 뒤집어 하얗게 굽는다."
       }
     ],
     "tips": [
@@ -1246,7 +1185,8 @@
     "relatedIngredients": [],
     "relatedHolidays": [
       "chilseok"
-    ]
+    ],
+    "servingsUnit": "개"
   },
   {
     "id": "japchae",
@@ -1355,85 +1295,53 @@
     "category": "명절음식",
     "description": "명절 상차림의 기본인 다양한 전(동그랑땡, 생선전, 채소전)을 만드는 레시피입니다.",
     "image": "recipe-jeon.jpg",
-    "servings": 4,
-    "cookTime": "45분",
+    "servings": 5,
+    "cookTime": "25분",
     "difficulty": "중급",
     "ingredients": [
       {
-        "name": "동태포",
+        "name": "부침가루",
         "amount": "150g"
       },
       {
-        "name": "버섯 (표고 또는 새송이)",
-        "amount": "6개"
+        "name": "물",
+        "amount": "200ml"
       },
       {
-        "name": "호박",
-        "amount": "1/2개"
+        "name": "신김치",
+        "amount": "150g"
       },
       {
-        "name": "밀가루",
-        "amount": "1/2컵"
-      },
-      {
-        "name": "달걀",
-        "amount": "2개"
-      },
-      {
-        "name": "소금",
-        "amount": "0.5작은술"
-      },
-      {
-        "name": "후추",
-        "amount": "0.5작은술"
+        "name": "오징어",
+        "amount": "100g"
       },
       {
         "name": "식용유",
-        "amount": "2큰술"
+        "amount": "4큰술"
       }
     ],
     "seasoning": [
       {
-        "name": "간장",
-        "amount": "2큰술"
-      },
-      {
-        "name": "다진 파",
-        "amount": "2큰술"
-      },
-      {
-        "name": "다진 마늘",
-        "amount": "1큰술"
-      },
-      {
-        "name": "참기름",
-        "amount": "1큰술"
-      },
-      {
-        "name": "소금",
-        "amount": "0.5작은술"
-      },
-      {
-        "name": "후추",
+        "name": "설탕",
         "amount": "0.5작은술"
       }
     ],
     "steps": [
       {
         "step": 1,
-        "description": "동그랑땡: 다진 고기에 으깬 두부, 다진 파, 마늘, 간장, 참기름, 후추를 넣어 치댄 후 동그랗게 빚어 밀가루-달걀 순으로 묻혀 지집니다."
+        "description": "신김치는 1cm 크기로 잘게 썰고, 오징어는 한입 크기로 썬다."
       },
       {
         "step": 2,
-        "description": "애호박전: 애호박은 0.5cm 두께로 썰어 소금에 절였다가 물기를 빼고 밀가루-달걀 묻혀 지집니다."
+        "description": "볼에 부침가루와 물, 신김치 국물(분량 외)을 섞어 부침 반죽을 만든다."
       },
       {
         "step": 3,
-        "description": "버섯전: 버섯은 밀가루-달걀 입혀 지집니다."
+        "description": "반죽에 썰어둔 신김치, 오징어, 설탕을 넣고 고르게 섞는다."
       },
       {
         "step": 4,
-        "description": "중약불에서 노릇하게 지져 키친타월에 기름을 빼고 접시에 담습니다."
+        "description": "달군 팬에 식용유를 넉넉히 두르고 반죽을 한 국자 넓게 펴서 앞뒤로 노릇하게 굽는다."
       }
     ],
     "tips": [
@@ -1448,7 +1356,8 @@
     "relatedHolidays": [
       "seollal",
       "chuseok"
-    ]
+    ],
+    "servingsUnit": "개"
   },
   {
     "id": "hwajeon",
@@ -1457,60 +1366,52 @@
     "description": "찹쌀 반죽에 진달래꽃을 올려 지진 삼짇날의 대표 음식입니다.",
     "image": "recipe-hwajeon.jpg",
     "servings": 5,
-    "cookTime": "40분",
+    "cookTime": "20분",
     "difficulty": "중급",
     "ingredients": [
       {
         "name": "찹쌀가루",
-        "amount": "33g"
+        "amount": "100g"
       },
       {
         "name": "뜨거운 물",
-        "amount": "2큰술"
+        "amount": "3큰술"
       },
       {
-        "name": "소금",
-        "amount": "0.5작은술"
-      },
-      {
-        "name": "진달래",
-        "amount": "2송이"
+        "name": "식용 진달래꽃",
+        "amount": "5개"
       },
       {
         "name": "식용유",
-        "amount": "1작은술"
+        "amount": "2큰술"
       }
     ],
     "seasoning": [
       {
         "name": "꿀",
-        "amount": "1작은술"
+        "amount": "2큰술"
+      },
+      {
+        "name": "소금",
+        "amount": "0.5작은술"
       }
     ],
     "steps": [
       {
         "step": 1,
-        "description": "진달래꽃은 꽃받침을 떼고 깨끗이 씻어 물기를 빼둡니다."
+        "description": "식용 꽃은 수술을 떼고 찬물에 헹군 뒤 키친타월로 물기를 완전히 제거한다."
       },
       {
         "step": 2,
-        "description": "찹쌀가루에 소금을 넣고 뜨거운 물을 조금씩 부으며 익반죽합니다."
+        "description": "찹쌀가루에 소금을 넣고 뜨거운 물을 부어 가며 익반죽한 뒤 치대어 반죽을 매끄럽게 만든다."
       },
       {
         "step": 3,
-        "description": "반죽을 한입 크기로 떼어 동그랗게 빚은 후 손바닥으로 눌러 납작하게 만듭니다."
+        "description": "반죽을 5등분하여 둥글고 납작하게 빚은 후, 약한 불로 달군 팬에 식용유를 두르고 올린다."
       },
       {
         "step": 4,
-        "description": "반죽 위에 진달래꽃을 살짝 눌러 붙입니다."
-      },
-      {
-        "step": 5,
-        "description": "달군 팬에 기름을 살짝 두르고 중약불에서 앞뒤로 노릇하게 지집니다."
-      },
-      {
-        "step": 6,
-        "description": "접시에 담고 꿀을 곁들여 냅니다."
+        "description": "반죽의 한쪽 면이 익어 투명해지면 뒤집은 뒤, 익은 면 위에 꽃을 올려 살짝 눌러 굽고 꿀을 바른다."
       }
     ],
     "tips": [
@@ -1531,51 +1432,52 @@
     "description": "수리취 잎을 넣어 만든 단오의 대표 떡입니다.",
     "image": "recipe-surichwitteok.jpg",
     "servings": 5,
-    "cookTime": "60분",
+    "cookTime": "40분",
     "difficulty": "중급",
     "ingredients": [
       {
         "name": "멥쌀가루",
-        "amount": "50g"
+        "amount": "300g"
       },
       {
-        "name": "수리취 가루(또는 데친 수리취)",
-        "amount": "1작은술"
+        "name": "데친 수리취",
+        "amount": "100g"
       },
       {
-        "name": "뜨거운 물",
+        "name": "물",
+        "amount": "4큰술"
+      },
+      {
+        "name": "참기름",
         "amount": "1큰술"
+      }
+    ],
+    "seasoning": [
+      {
+        "name": "설탕",
+        "amount": "2큰술"
       },
       {
         "name": "소금",
-        "amount": "0.5작은술"
-      },
-      {
-        "name": "팥소",
-        "amount": "2큰술"
+        "amount": "1.5작은술"
       }
     ],
-    "seasoning": [],
     "steps": [
       {
         "step": 1,
-        "description": "멥쌀가루에 수리취 가루와 소금을 섞고 뜨거운 물을 조금씩 부으며 익반죽합니다."
+        "description": "데친 수리취는 물기를 꼭 짜고 믹서에 물 4큰술과 함께 넣어 곱게 간다."
       },
       {
         "step": 2,
-        "description": "반죽을 30분 정도 숙성시킵니다."
+        "description": "멥쌀가루에 소금, 설탕, 갈아둔 수리취를 넣고 고루 섞어 체에 한번 내린다."
       },
       {
         "step": 3,
-        "description": "반죽을 한 입 크기로 떼어 동그랗게 빚은 후 가운데를 눌러 팥소를 넣고 반달 모양으로 빚습니다."
+        "description": "김이 오른 찜기에 베보자기를 깔고 반죽을 올려 25분간 찐다."
       },
       {
         "step": 4,
-        "description": "찜통에 면보를 깔고 떡을 올린 후 센 불에서 15~20분간 찝니다."
-      },
-      {
-        "step": 5,
-        "description": "찐 떡을 찬물에 헹궈 참기름을 살짝 발라 마무리합니다."
+        "description": "찐 떡을 찰기가 생기도록 치댄 후 5등분하여 떡살로 문양을 찍고 참기름을 바른다."
       }
     ],
     "tips": [
@@ -1669,56 +1571,52 @@
     "description": "국화꽃을 올려 지진 중양절의 대표 음식입니다.",
     "image": "recipe-gukwha-jeon.jpg",
     "servings": 5,
-    "cookTime": "35분",
+    "cookTime": "20분",
     "difficulty": "중급",
     "ingredients": [
       {
         "name": "찹쌀가루",
-        "amount": "33g"
+        "amount": "100g"
       },
       {
         "name": "뜨거운 물",
-        "amount": "2큰술"
+        "amount": "3큰술"
       },
       {
-        "name": "소금",
-        "amount": "0.5작은술"
-      },
-      {
-        "name": "국화",
-        "amount": "2송이"
+        "name": "식용 감국화",
+        "amount": "5개"
       },
       {
         "name": "식용유",
-        "amount": "1작은술"
+        "amount": "2큰술"
       }
     ],
     "seasoning": [
       {
         "name": "꿀",
-        "amount": "1작은술"
+        "amount": "2큰술"
+      },
+      {
+        "name": "소금",
+        "amount": "0.5작은술"
       }
     ],
     "steps": [
       {
         "step": 1,
-        "description": "국화꽃은 꽃받침을 떼고 깨끗이 씻어 물기를 빼둡니다."
+        "description": "식용 국화는 부드러운 꽃잎 위주로 깨끗이 씻어 물기를 완전히 말린다."
       },
       {
         "step": 2,
-        "description": "찹쌀가루에 소금을 넣고 뜨거운 물로 익반죽해 30분 숙성시킵니다."
+        "description": "찹쌀가루에 소금을 섞고 뜨거운 물을 넣어 갈라지지 않을 정도로 익반죽한다."
       },
       {
         "step": 3,
-        "description": "반죽을 한입 크기로 떼어 동그랗게 빚은 후 납작하게 누르고 국화꽃을 올립니다."
+        "description": "반죽을 동글게 빚어 팬에 올리고 숟가락 뒷면으로 눌러 가며 약한 불에서 굽는다."
       },
       {
         "step": 4,
-        "description": "달군 팬에 기름을 두르고 중약불에서 노릇하게 지집니다."
-      },
-      {
-        "step": 5,
-        "description": "꿀을 곁들여 냅니다."
+        "description": "뒤집어서 익힌 후 다시 뒤집어 국화꽃을 중앙에 얹고 가볍게 눌러 준 뒤 꿀을 곁들인다."
       }
     ],
     "tips": [
@@ -1738,96 +1636,68 @@
     "description": "소갈비를 무와 채소와 함께 달콤하게 조려낸 명절 대표 음식입니다.",
     "image": "recipe-galbijjim.jpg",
     "servings": 4,
-    "cookTime": "120분",
+    "cookTime": "90분",
     "difficulty": "상급",
     "ingredients": [
       {
+        "name": "물",
+        "amount": "600ml"
+      },
+      {
         "name": "소갈비",
-        "amount": "1.5kg"
+        "amount": "1000g"
       },
       {
         "name": "무",
-        "amount": "1/2개"
+        "amount": "150g"
       },
       {
         "name": "당근",
-        "amount": "1개"
+        "amount": "100g"
       },
       {
-        "name": "대추",
-        "amount": "10개"
-      },
-      {
-        "name": "밤",
-        "amount": "10개"
-      },
-      {
-        "name": "은행",
-        "amount": "10개"
-      },
-      {
-        "name": "대파",
-        "amount": "1대"
+        "name": "표고버섯",
+        "amount": "4개"
       }
     ],
     "seasoning": [
       {
-        "name": "간장",
-        "amount": "1컵"
+        "name": "진간장",
+        "amount": "8큰술"
       },
       {
         "name": "설탕",
-        "amount": "1/2컵"
+        "amount": "4큰술"
       },
       {
         "name": "맛술",
-        "amount": "1/2컵"
-      },
-      {
-        "name": "다진 마늘",
         "amount": "3큰술"
       },
       {
-        "name": "다진 생강",
-        "amount": "1큰술"
-      },
-      {
-        "name": "참기름",
+        "name": "다진마늘",
         "amount": "2큰술"
       },
       {
-        "name": "후추",
-        "amount": "0.5작은술"
-      },
-      {
-        "name": "물",
-        "amount": "3컵"
+        "name": "참기름",
+        "amount": "1큰술"
       }
     ],
     "steps": [
       {
         "step": 1,
-        "description": "소갈비는 찬물에 1시간 담가 핏물을 빼고 끓는 물에 데쳐 기름기를 제거합니다."
+        "description": "소갈비는 찬물에 1시간 동안 담가 핏물을 빼고, 끓는 물에 5분간 데쳐 불순물을 씻어낸다."
       },
       {
         "step": 2,
-        "description": "양념장을 만들어 갈비에 30분간 재워둡니다."
+        "description": "무와 당근은 한입 크기로 썰어 모서리를 둥글게 깎고, 표고버섯은 4등분한다."
       },
       {
         "step": 3,
-        "description": "압력솥에 갈비, 양념, 물을 넣고 20분간 익힙니다. (일반 냄비는 1시간 이상)"
+        "description": "냄비에 데친 갈비, 물 600ml와 분량의 양념 재료를 모두 넣고 강한 불에서 끓인다."
       },
       {
         "step": 4,
-        "description": "무와 당근을 큼직하게 썰어 넣고 10분 더 끓입니다."
-      },
-      {
-        "step": 5,
-        "description": "대추, 밤, 은행을 넣고 양념이 걸쭉해질 때까지 조립니다."
-      },
-      {
-        "step": 6,
-        "description": "대파를 넣고 마무리합니다."
+        "description": "끓어오르면 중약 불로 줄여 40분간 졸이다가 무, 당근, 표고버섯을 넣고 고기와 채소가 부드러워질 때까지 20분 더 졸인다."
       }
     ],
     "tips": [
@@ -1843,7 +1713,8 @@
     "relatedHolidays": [
       "seollal",
       "chuseok"
-    ]
+    ],
+    "servingsUnit": "인분"
   },
   {
     "id": "baechu-kimchi",
@@ -1852,92 +1723,64 @@
     "description": "한국의 대표 발효 음식으로, 배추에 고춧가루, 젓갈, 마늘 등으로 만든 양념을 버무려 숙성시킨 김치입니다.",
     "image": "recipe-baechu-kimchi.jpg",
     "servings": 1,
-    "cookTime": "180분",
+    "cookTime": "120분",
     "difficulty": "상급",
     "ingredients": [
       {
         "name": "절임배추",
-        "amount": "1kg"
-      },
-      {
-        "name": "굵은소금",
-        "amount": "4큰술"
+        "amount": "1000g"
       },
       {
         "name": "무",
-        "amount": "150g"
+        "amount": "200g"
       },
       {
         "name": "쪽파",
-        "amount": "25g"
-      },
-      {
-        "name": "갓",
-        "amount": "10g"
-      },
-      {
-        "name": "미나리",
-        "amount": "10g"
+        "amount": "50g"
       }
     ],
     "seasoning": [
       {
         "name": "고춧가루",
-        "amount": "4큰술"
+        "amount": "6큰술"
       },
       {
         "name": "멸치액젓",
-        "amount": "2큰술"
+        "amount": "3큰술"
       },
       {
         "name": "새우젓",
         "amount": "1큰술"
       },
       {
-        "name": "다진 마늘",
-        "amount": "1큰술"
+        "name": "다진마늘",
+        "amount": "2큰술"
       },
       {
-        "name": "다진 생강",
-        "amount": "0.5작은술"
-      },
-      {
-        "name": "설탕",
+        "name": "다진생강",
         "amount": "0.5작은술"
       },
       {
         "name": "찹쌀풀",
-        "amount": "2큰술"
+        "amount": "4큰술"
       }
     ],
     "steps": [
       {
         "step": 1,
-        "description": "배추는 반으로 갈라 굵은소금을 켜켜이 뿌려 8시간 절입니다. 중간에 뒤집어 줍니다."
+        "description": "절임배추는 채반에 밭쳐 1시간 동안 물기를 완벽하게 빼둔다."
       },
       {
         "step": 2,
-        "description": "절인 배추를 깨끗이 씻어 3시간 물기를 뺍니다."
+        "description": "무는 얇게 채 썰고 쪽파는 4cm 길이로 썰어 준비한다."
       },
       {
         "step": 3,
-        "description": "무는 채썰고, 쪽파·갓·미나리는 4cm 길이로 썹니다."
+        "description": "볼에 고춧가루, 멸치액젓, 새우젓, 다진마늘, 다진생강, 찹쌀풀을 섞어 양념을 만든 후 무와 쪽파를 버무린다."
       },
       {
         "step": 4,
-        "description": "찹쌀풀을 식혀 고춧가루를 넣어 불린 후 액젓, 새우젓, 마늘, 생강, 설탕을 섞어 양념을 만듭니다."
-      },
-      {
-        "step": 5,
-        "description": "양념에 무와 채소를 넣어 버무립니다."
-      },
-      {
-        "step": 6,
-        "description": "배추 잎 사이사이에 양념을 골고루 넣고 겉잎으로 감싸 김치통에 담습니다."
-      },
-      {
-        "step": 7,
-        "description": "상온에서 하루 숙성 후 냉장 보관합니다."
+        "description": "배추잎 사이사이에 준비한 김치 양념 소를 고르게 펴 바른 뒤 겉잎으로 감싸 보관 용기에 담는다."
       }
     ],
     "tips": [
@@ -1958,53 +1801,49 @@
     "category": "채소",
     "description": "데친 시금치에 참기름과 마늘로 간단히 무친 기본 나물 반찬입니다.",
     "image": "recipe-sigeumchi-namul.jpg",
-    "servings": 3,
-    "cookTime": "10분",
+    "servings": 2,
+    "cookTime": "15분",
     "difficulty": "초급",
     "ingredients": [
       {
         "name": "시금치",
-        "amount": "300g"
-      },
+        "amount": "200g"
+      }
+    ],
+    "seasoning": [
       {
-        "name": "다진 마늘",
-        "amount": "1작은술"
+        "name": "국간장",
+        "amount": "1큰술"
       },
       {
         "name": "참기름",
         "amount": "1큰술"
       },
       {
-        "name": "통깨",
-        "amount": "1/4작은술"
-      }
-    ],
-    "seasoning": [
-      {
-        "name": "국간장 또는 소금",
+        "name": "다진마늘",
         "amount": "0.5작은술"
+      },
+      {
+        "name": "통깨",
+        "amount": "1작은술"
       }
     ],
     "steps": [
       {
         "step": 1,
-        "description": "시금치는 뿌리를 다듬고 깨끗이 씻습니다."
+        "description": "시금치는 뿌리 부분을 다듬고 깨끗이 씻어 채반에 밭쳐둔다."
       },
       {
         "step": 2,
-        "description": "끓는 물에 소금을 약간 넣고 시금치를 데쳐 찬물에 헹굽니다."
+        "description": "끓는 물에 소금(분량 외)을 넣고 시금치를 뿌리부터 넣어 30초간 데친 후 즉시 찬물에 헹군다."
       },
       {
         "step": 3,
-        "description": "물기를 꼭 짜서 한입 크기로 썹니다."
+        "description": "데친 시금치는 손으로 물기를 꼭 짜낸 후 먹기 좋은 크기로 2등분한다."
       },
       {
         "step": 4,
-        "description": "시금치에 다진 마늘, 참기름, 소금을 넣고 조물조물 무칩니다."
-      },
-      {
-        "step": 5,
-        "description": "통깨를 뿌려 마무리합니다."
+        "description": "볼에 시금치를 넣고 국간장, 참기름, 다진마늘, 통깨를 넣어 조물조물 무쳐낸다."
       }
     ],
     "tips": [
@@ -2014,7 +1853,8 @@
     "relatedIngredients": [
       "시금치"
     ],
-    "relatedHolidays": []
+    "relatedHolidays": [],
+    "servingsUnit": "인분"
   },
   {
     "id": "kkakdugi",
@@ -2107,53 +1947,53 @@
     "category": "채소",
     "description": "애호박을 새우젓이나 멸치와 함께 볶은 간단한 밑반찬입니다.",
     "image": "recipe-aehobak-bokkeum.jpg",
-    "servings": 3,
+    "servings": 2,
     "cookTime": "15분",
     "difficulty": "초급",
     "ingredients": [
       {
         "name": "애호박",
-        "amount": "2개"
-      },
-      {
-        "name": "양파",
-        "amount": "1/2개"
+        "amount": "1개"
       },
       {
         "name": "대파",
-        "amount": "1/2대"
+        "amount": "0.25대"
       },
       {
-        "name": "새우젓(또는 멸치)",
+        "name": "식용유",
         "amount": "1큰술"
       }
     ],
     "seasoning": [
       {
-        "name": "다진 마늘",
-        "amount": "1작은술"
+        "name": "새우젓",
+        "amount": "0.5큰술"
+      },
+      {
+        "name": "다진마늘",
+        "amount": "0.5작은술"
       },
       {
         "name": "참기름",
-        "amount": "1큰술"
-      },
-      {
-        "name": "소금",
         "amount": "0.5작은술"
       }
     ],
     "steps": [
       {
         "step": 1,
-        "description": "애호박과 양파는 0.5cm 두께로 반달썰기하고 대파는 어슷썰기합니다."
+        "description": "애호박은 반으로 갈라 0.5cm 두께의 반달 모양으로 썰고, 대파는 송송 썬다."
       },
       {
         "step": 2,
-        "description": "팬에 참기름을 두르고 마늘을 볶다가 애호박과 양파를 넣어 볶습니다."
+        "description": "달군 팬에 식용유를 두르고 다진마늘과 대파를 넣어 중불에서 1분간 볶아 향을 낸다."
       },
       {
         "step": 3,
-        "description": "새우젓으로 간하고 대파를 넣어 마무리합니다."
+        "description": "애호박을 넣고 호박이 살짝 투명해질 때까지 3분간 볶는다."
+      },
+      {
+        "step": 4,
+        "description": "새우젓으로 간을 하여 1분 더 볶은 후 불을 끄고 참기름을 섞어 완성한다."
       }
     ],
     "tips": [
@@ -2163,7 +2003,8 @@
     "relatedIngredients": [
       "애호박"
     ],
-    "relatedHolidays": []
+    "relatedHolidays": [],
+    "servingsUnit": "인분"
   },
   {
     "id": "gamja-jorim",
@@ -2455,47 +2296,35 @@
     "category": "채소",
     "description": "아삭한 오이를 고춧가루 양념에 무친 상큼한 반찬입니다.",
     "image": "recipe-oi-muchim.jpg",
-    "servings": 3,
+    "servings": 2,
     "cookTime": "15분",
     "difficulty": "초급",
     "ingredients": [
       {
         "name": "오이",
-        "amount": "3개"
+        "amount": "1개"
       },
       {
         "name": "양파",
-        "amount": "1/4개"
-      },
-      {
-        "name": "대파",
-        "amount": "1/2대"
+        "amount": "0.5개"
       }
     ],
     "seasoning": [
       {
         "name": "고춧가루",
-        "amount": "1.5큰술"
+        "amount": "1큰술"
+      },
+      {
+        "name": "고추장",
+        "amount": "0.5큰술"
       },
       {
         "name": "식초",
-        "amount": "2큰술"
+        "amount": "1큰술"
       },
       {
         "name": "설탕",
-        "amount": "1큰술"
-      },
-      {
-        "name": "다진 마늘",
-        "amount": "1작은술"
-      },
-      {
-        "name": "참기름",
-        "amount": "1큰술"
-      },
-      {
-        "name": "통깨",
-        "amount": "1작은술"
+        "amount": "0.5큰술"
       },
       {
         "name": "소금",
@@ -2505,23 +2334,19 @@
     "steps": [
       {
         "step": 1,
-        "description": "오이는 소금으로 문질러 씻어 0.5cm 두께로 어슷썰기합니다."
+        "description": "오이는 깨끗이 씻어 동글게 동글게 0.5cm 두께로 썰고, 양파는 채 썬다."
       },
       {
         "step": 2,
-        "description": "오이에 소금을 살짝 뿌려 10분간 절여 물기를 짭니다."
+        "description": "볼에 고춧가루, 고추장, 식초, 설탕, 소금을 넣고 잘 섞어 무침 양념장을 만든다."
       },
       {
         "step": 3,
-        "description": "양파와 대파는 채썰어 준비합니다."
+        "description": "양념장에 썰어둔 오이와 양파를 넣는다."
       },
       {
         "step": 4,
-        "description": "오이에 양념과 채소를 넣고 조물조물 무칩니다."
-      },
-      {
-        "step": 5,
-        "description": "통깨를 뿌려 마무리합니다."
+        "description": "양념이 고루 배도록 가볍고 빠르게 버무려 접시에 담아낸다."
       }
     ],
     "tips": [
@@ -2531,7 +2356,8 @@
     "relatedIngredients": [
       "오이"
     ],
-    "relatedHolidays": []
+    "relatedHolidays": [],
+    "servingsUnit": "인분"
   },
   {
     "id": "yeolmu-kimchi",
@@ -2692,39 +2518,35 @@
     "category": "채소",
     "description": "무를 멸치 육수에 끓인 시원하고 개운한 국입니다.",
     "image": "recipe-mu-guk.jpg",
-    "servings": 3,
-    "cookTime": "25분",
+    "servings": 2,
+    "cookTime": "30분",
     "difficulty": "초급",
     "ingredients": [
       {
-        "name": "무",
-        "amount": "1/3개 (약 400g)"
-      },
-      {
-        "name": "멸치",
-        "amount": "10마리"
-      },
-      {
-        "name": "다시마",
-        "amount": "1조각"
-      },
-      {
-        "name": "대파",
-        "amount": "1/2대"
-      },
-      {
         "name": "물",
-        "amount": "5컵"
+        "amount": "800ml"
+      },
+      {
+        "name": "무",
+        "amount": "200g"
+      },
+      {
+        "name": "소고기",
+        "amount": "100g"
+      },
+      {
+        "name": "참기름",
+        "amount": "1큰술"
       }
     ],
     "seasoning": [
       {
         "name": "국간장",
-        "amount": "2큰술"
+        "amount": "1큰술"
       },
       {
-        "name": "다진 마늘",
-        "amount": "1작은술"
+        "name": "다진마늘",
+        "amount": "0.5큰술"
       },
       {
         "name": "소금",
@@ -2734,15 +2556,19 @@
     "steps": [
       {
         "step": 1,
-        "description": "냄비에 물, 멸치, 다시마를 넣고 10분간 끓여 육수를 냅니다."
+        "description": "무는 사방 3cm 크기로 얇게 나박 썰고, 소고기는 키친타월로 핏물을 제거한다."
       },
       {
         "step": 2,
-        "description": "멸치와 다시마를 건져내고 무를 넣어 끓입니다."
+        "description": "냄비에 참기름을 두르고 소고기를 넣어 겉면이 익을 때까지 볶다가 무를 함께 넣어 2분간 더 볶는다."
       },
       {
         "step": 3,
-        "description": "무가 투명해지면 국간장, 다진 마늘로 간을 맞추고 대파를 넣어 마무리합니다."
+        "description": "물 800ml를 붓고 센 불에서 끓이다가 끓어오르면 거품을 걷어내고 중불로 줄인다."
+      },
+      {
+        "step": 4,
+        "description": "국간장, 다진마늘을 넣고 무가 투명하게 익으면 소금으로 최종 간을 맞춘다."
       }
     ],
     "tips": [
@@ -2752,7 +2578,8 @@
     "relatedIngredients": [
       "무"
     ],
-    "relatedHolidays": []
+    "relatedHolidays": [],
+    "servingsUnit": "인분"
   },
   {
     "id": "hobak-juk",
@@ -3014,65 +2841,65 @@
     "category": "해산물",
     "description": "대구를 무와 함께 끓인 시원하고 담백한 생선탕입니다.",
     "image": "recipe-daegu-tang.jpg",
-    "servings": 3,
-    "cookTime": "30분",
+    "servings": 2,
+    "cookTime": "35분",
     "difficulty": "초급",
     "ingredients": [
       {
+        "name": "물",
+        "amount": "1000ml"
+      },
+      {
         "name": "대구",
-        "amount": "2토막"
+        "amount": "400g"
       },
       {
         "name": "무",
-        "amount": "1/4개"
+        "amount": "150g"
       },
       {
-        "name": "두부",
-        "amount": "1/2모"
+        "name": "미나리",
+        "amount": "50g"
       },
       {
         "name": "대파",
-        "amount": "1대"
-      },
-      {
-        "name": "청양고추",
-        "amount": "2개"
-      },
-      {
-        "name": "물",
-        "amount": "5컵"
+        "amount": "0.5대"
       }
     ],
     "seasoning": [
       {
-        "name": "국간장",
+        "name": "고춧가루",
         "amount": "2큰술"
       },
       {
-        "name": "다진 마늘",
+        "name": "국간장",
+        "amount": "1.5큰술"
+      },
+      {
+        "name": "다진마늘",
         "amount": "1큰술"
       },
       {
         "name": "소금",
-        "amount": "0.5작은술"
-      },
-      {
-        "name": "후추",
         "amount": "0.5작은술"
       }
     ],
     "steps": [
       {
         "step": 1,
-        "description": "냄비에 물과 무를 넣고 끓입니다."
+        "description": "대구는 핏물과 불순물을 씻어내고, 무는 나박 썰고, 미나리와 대파는 5cm 길이로 썬다."
       },
       {
         "step": 2,
-        "description": "무가 반쯤 익으면 대구를 넣고 10분간 끓입니다."
+        "description": "냄비에 물과 무, 고춧가루를 넣고 강한 불에서 10분간 끓여 무를 먼저 익힌다."
       },
       {
         "step": 3,
-        "description": "국간장, 다진 마늘로 간을 맞추고 두부, 대파, 고추를 넣어 5분 더 끓입니다."
+        "description": "무가 투명해지면 대구와 다진마늘, 국간장을 넣고 중불에서 15분간 더 끓인다."
+      },
+      {
+        "step": 4,
+        "description": "대구가 완전히 익으면 미나리와 대파를 얹고, 소금으로 간을 맞춘 뒤 1분 후 불을 끈다."
       }
     ],
     "tips": [
@@ -3083,7 +2910,8 @@
       "대구",
       "무"
     ],
-    "relatedHolidays": []
+    "relatedHolidays": [],
+    "servingsUnit": "인분"
   },
   {
     "id": "dongtae-jjigae",
@@ -3091,69 +2919,65 @@
     "category": "해산물",
     "description": "얼린 명태인 동태를 매콤하게 끓인 겨울철 별미 찌개입니다.",
     "image": "recipe-dongtae-jjigae.jpg",
-    "servings": 3,
-    "cookTime": "25분",
+    "servings": 2,
+    "cookTime": "35분",
     "difficulty": "초급",
     "ingredients": [
       {
-        "name": "명태(동태)",
-        "amount": "1마리 (토막)"
+        "name": "물",
+        "amount": "800ml"
+      },
+      {
+        "name": "동태",
+        "amount": "400g"
       },
       {
         "name": "무",
-        "amount": "1/4개"
+        "amount": "150g"
       },
       {
         "name": "두부",
-        "amount": "1/2모"
+        "amount": "0.5모"
       },
       {
         "name": "대파",
-        "amount": "1대"
-      },
-      {
-        "name": "청양고추",
-        "amount": "2개"
-      },
-      {
-        "name": "물",
-        "amount": "4컵"
+        "amount": "0.5대"
       }
     ],
     "seasoning": [
-      {
-        "name": "고춧가루",
-        "amount": "2큰술"
-      },
       {
         "name": "고추장",
         "amount": "1큰술"
       },
       {
-        "name": "국간장",
+        "name": "고춧가루",
         "amount": "2큰술"
       },
       {
-        "name": "다진 마늘",
-        "amount": "1큰술"
+        "name": "국간장",
+        "amount": "1.5큰술"
       },
       {
-        "name": "소금",
-        "amount": "0.5작은술"
+        "name": "다진마늘",
+        "amount": "1큰술"
       }
     ],
     "steps": [
       {
         "step": 1,
-        "description": "냄비에 물과 무를 넣고 끓입니다."
+        "description": "동태는 내장 안쪽의 검은 막을 제거하여 씻고, 무와 두부는 한입 크기로, 대파는 어슷하게 썬다."
       },
       {
         "step": 2,
-        "description": "무가 반쯤 익으면 동태와 양념을 넣고 끓입니다."
+        "description": "냄비에 물과 무를 넣고 끓이다가, 물이 끓어오르면 고추장과 고춧가루를 푼다."
       },
       {
         "step": 3,
-        "description": "두부, 대파, 고추를 넣고 5분 더 끓여 마무리합니다."
+        "description": "동태와 다진마늘, 국간장을 넣고 중간 불에서 15분 동안 끓여 생선을 익힌다."
+      },
+      {
+        "step": 4,
+        "description": "두부와 대파를 넣고 5분간 더 끓여 국물이 배어들게 한 뒤 완성한다."
       }
     ],
     "tips": [
@@ -3164,7 +2988,8 @@
       "명태(동태)",
       "무"
     ],
-    "relatedHolidays": []
+    "relatedHolidays": [],
+    "servingsUnit": "인분"
   },
   {
     "id": "chueotang",
@@ -3172,77 +2997,61 @@
     "category": "해산물",
     "description": "미꾸라지를 통째로 갈아 시래기와 함께 끓인 가을철 보양식입니다.",
     "image": "recipe-chueotang.jpg",
-    "servings": 4,
+    "servings": 2,
     "cookTime": "60분",
     "difficulty": "상급",
     "ingredients": [
       {
-        "name": "미꾸라지",
-        "amount": "500g"
-      },
-      {
-        "name": "시래기",
-        "amount": "100g"
-      },
-      {
-        "name": "우거지",
-        "amount": "100g"
-      },
-      {
-        "name": "대파",
-        "amount": "1대"
-      },
-      {
-        "name": "들깨가루",
-        "amount": "1/2컵"
-      },
-      {
         "name": "물",
-        "amount": "6컵"
+        "amount": "1200ml"
+      },
+      {
+        "name": "미꾸라지",
+        "amount": "400g"
+      },
+      {
+        "name": "삶은 얼갈이배추",
+        "amount": "200g"
+      },
+      {
+        "name": "부추",
+        "amount": "50g"
       }
     ],
     "seasoning": [
       {
         "name": "된장",
-        "amount": "2큰술"
+        "amount": "3큰술"
       },
       {
         "name": "고춧가루",
-        "amount": "1큰술"
-      },
-      {
-        "name": "다진 마늘",
         "amount": "2큰술"
       },
       {
-        "name": "소금",
-        "amount": "0.5작은술"
+        "name": "다진마늘",
+        "amount": "1.5큰술"
+      },
+      {
+        "name": "들깨가루",
+        "amount": "3큰술"
       }
     ],
     "steps": [
       {
         "step": 1,
-        "description": "미꾸라지는 굵은소금으로 문질러 씻어 내장을 제거합니다."
+        "description": "미꾸라지는 소금을 뿌려 해감한 뒤 깨끗이 씻어, 끓는 물(분량 외)에 푹 삶은 후 믹서에 곱게 간다."
       },
       {
         "step": 2,
-        "description": "냄비에 물을 끓여 미꾸라지를 넣고 20분간 삶습니다."
+        "description": "삶은 얼갈이배추의 물기를 짜고 된장과 고춧가루, 다진마늘을 넣어 조물조물 버무린다."
       },
       {
         "step": 3,
-        "description": "삶은 미꾸라지와 국물을 믹서에 갈아 체에 내립니다."
+        "description": "냄비에 물 1200ml와 곱게 간 미꾸라지, 양념한 얼갈이배추를 넣고 중불에서 30분간 푹 끓인다."
       },
       {
         "step": 4,
-        "description": "냄비에 갈은 미꾸라지, 시래기, 우거지를 넣고 끓입니다."
-      },
-      {
-        "step": 5,
-        "description": "된장, 고춧가루, 다진 마늘로 간하고 들깨가루를 넣어 걸쭉하게 만듭니다."
-      },
-      {
-        "step": 6,
-        "description": "대파를 넣고 마무리합니다."
+        "description": "국물이 진해지면 5cm 길이로 썬 부추와 들깨가루를 얹어 불을 끈다."
       }
     ],
     "tips": [
@@ -3253,7 +3062,8 @@
     "relatedIngredients": [
       "미꾸라지"
     ],
-    "relatedHolidays": []
+    "relatedHolidays": [],
+    "servingsUnit": "인분"
   },
   {
     "id": "maesaengi-gul-guk",
@@ -3261,10 +3071,14 @@
     "category": "해산물",
     "description": "매생이와 굴을 넣어 끓인 시원하고 영양 만점인 겨울철 국입니다.",
     "image": "recipe-maesaengi-gul-guk.jpg",
-    "servings": 3,
-    "cookTime": "15분",
+    "servings": 2,
+    "cookTime": "20분",
     "difficulty": "초급",
     "ingredients": [
+      {
+        "name": "물",
+        "amount": "800ml"
+      },
       {
         "name": "매생이",
         "amount": "200g"
@@ -3272,32 +3086,20 @@
       {
         "name": "굴",
         "amount": "150g"
-      },
-      {
-        "name": "두부",
-        "amount": "1/2모"
-      },
-      {
-        "name": "대파",
-        "amount": "1/2대"
-      },
-      {
-        "name": "물",
-        "amount": "5컵"
       }
     ],
     "seasoning": [
       {
-        "name": "국간장",
-        "amount": "2큰술"
-      },
-      {
-        "name": "다진 마늘",
-        "amount": "1작은술"
-      },
-      {
         "name": "참기름",
         "amount": "1큰술"
+      },
+      {
+        "name": "국간장",
+        "amount": "1.5큰술"
+      },
+      {
+        "name": "다진마늘",
+        "amount": "0.5큰술"
       },
       {
         "name": "소금",
@@ -3307,19 +3109,19 @@
     "steps": [
       {
         "step": 1,
-        "description": "매생이는 흐르는 물에 헹궈 이물질을 제거하고 굴은 소금물에 씻습니다."
+        "description": "매생이는 고운 체에 밭쳐 소금물에 여러 번 흔들어 씻고, 굴도 가볍게 헹구어 물기를 뺀다."
       },
       {
         "step": 2,
-        "description": "냄비에 물을 끓여 두부를 넣고 끓입니다."
+        "description": "냄비에 참기름을 두르고 굴과 다진마늘을 넣어 약불에서 1분간 살짝 볶는다."
       },
       {
         "step": 3,
-        "description": "국간장으로 간을 맞추고 매생이를 넣어 한소끔 끓입니다."
+        "description": "물을 붓고 끓어오르면 매생이를 넣고 가볍게 풀어주며 3분간 끓인다."
       },
       {
         "step": 4,
-        "description": "굴, 다진 마늘, 대파를 넣고 1분만 더 끓여 참기름을 넣고 마무리합니다."
+        "description": "국간장과 소금으로 간을 맞춘 후 매생이가 부드러워지면 바로 불을 끈다."
       }
     ],
     "tips": [
@@ -3330,7 +3132,8 @@
       "매생이",
       "굴"
     ],
-    "relatedHolidays": []
+    "relatedHolidays": [],
+    "servingsUnit": "인분"
   },
   {
     "id": "honghap-tang",
@@ -3338,39 +3141,31 @@
     "category": "해산물",
     "description": "홍합으로 우려낸 시원한 국물맛이 일품인 탕입니다.",
     "image": "recipe-honghap-tang.jpg",
-    "servings": 3,
-    "cookTime": "25분",
+    "servings": 2,
+    "cookTime": "20분",
     "difficulty": "초급",
     "ingredients": [
+      {
+        "name": "물",
+        "amount": "1000ml"
+      },
       {
         "name": "홍합",
         "amount": "500g"
       },
       {
-        "name": "무",
-        "amount": "1/4개"
-      },
-      {
-        "name": "두부",
-        "amount": "1/2모"
-      },
-      {
         "name": "대파",
-        "amount": "1대"
+        "amount": "0.5대"
       },
       {
-        "name": "물",
-        "amount": "5컵"
+        "name": "청양고추",
+        "amount": "1개"
       }
     ],
     "seasoning": [
       {
-        "name": "국간장",
-        "amount": "1.5큰술"
-      },
-      {
-        "name": "다진 마늘",
-        "amount": "1작은술"
+        "name": "다진마늘",
+        "amount": "0.5큰술"
       },
       {
         "name": "소금",
@@ -3380,19 +3175,19 @@
     "steps": [
       {
         "step": 1,
-        "description": "홍합은 수염을 떼고 솔로 껍질을 문질러 씻습니다."
+        "description": "홍합은 껍데기끼리 문질러 씻고 삐져나온 수염(족사)을 잡아당겨 제거한다."
       },
       {
         "step": 2,
-        "description": "냄비에 물과 무를 넣고 끓입니다."
+        "description": "냄비에 물과 손질한 홍합을 넣고 처음부터 함께 끓인다."
       },
       {
         "step": 3,
-        "description": "무가 반쯤 익으면 홍합을 넣고 입이 벌어질 때까지 끓입니다."
+        "description": "물이 끓어오르고 홍합이 입을 벌리기 시작하면 떠오르는 거품을 말끔히 걷어낸다."
       },
       {
         "step": 4,
-        "description": "국간장, 다진 마늘로 간을 맞추고 두부, 대파를 넣어 마무리합니다."
+        "description": "다진마늘, 송송 썬 대파와 청양고추를 넣고 소금으로 간을 한 뒤 1분 더 끓인다."
       }
     ],
     "tips": [
@@ -3403,7 +3198,8 @@
       "홍합",
       "무"
     ],
-    "relatedHolidays": []
+    "relatedHolidays": [],
+    "servingsUnit": "인분"
   },
   {
     "id": "myeolchi-bokkeum",
@@ -3565,39 +3361,39 @@
     "category": "해산물",
     "description": "농어를 맑게 끓인 여름철 보양 생선탕입니다.",
     "image": "recipe-nongeo-tang.jpg",
-    "servings": 3,
-    "cookTime": "30분",
+    "servings": 2,
+    "cookTime": "35분",
     "difficulty": "초급",
     "ingredients": [
       {
+        "name": "물",
+        "amount": "1000ml"
+      },
+      {
         "name": "농어",
-        "amount": "1마리 (토막)"
+        "amount": "400g"
       },
       {
         "name": "무",
-        "amount": "1/4개"
+        "amount": "150g"
       },
       {
-        "name": "대파",
-        "amount": "1대"
-      },
-      {
-        "name": "미나리",
+        "name": "쑥갓",
         "amount": "50g"
-      },
-      {
-        "name": "물",
-        "amount": "5컵"
       }
     ],
     "seasoning": [
       {
-        "name": "국간장",
+        "name": "고춧가루",
         "amount": "2큰술"
       },
       {
-        "name": "다진 마늘",
-        "amount": "1작은술"
+        "name": "국간장",
+        "amount": "1.5큰술"
+      },
+      {
+        "name": "다진마늘",
+        "amount": "1큰술"
       },
       {
         "name": "소금",
@@ -3607,15 +3403,19 @@
     "steps": [
       {
         "step": 1,
-        "description": "냄비에 물과 무를 넣고 끓입니다."
+        "description": "농어는 비늘과 내장을 제거하고 3토막으로 자르며, 무는 얇게 나박 썰어 준비한다."
       },
       {
         "step": 2,
-        "description": "무가 익으면 농어를 넣고 15분간 끓입니다."
+        "description": "냄비에 물과 무, 고춧가루를 넣고 강한 불에서 끓어오를 때까지 끓인다."
       },
       {
         "step": 3,
-        "description": "국간장으로 간을 맞추고 대파, 미나리를 넣어 마무리합니다."
+        "description": "끓는 국물에 농어와 다진마늘, 국간장을 넣고 중불에서 15분간 생선 속까지 푹 익힌다."
+      },
+      {
+        "step": 4,
+        "description": "소금으로 부족한 간을 맞추고, 불을 끄기 직전 쑥갓을 올려 향을 낸다."
       }
     ],
     "tips": [
@@ -3626,7 +3426,8 @@
       "농어",
       "무"
     ],
-    "relatedHolidays": []
+    "relatedHolidays": [],
+    "servingsUnit": "인분"
   },
   {
     "id": "mineo-gui",
@@ -3635,27 +3436,44 @@
     "description": "민어에 소금간을 해 구운 여름철 보양 구이입니다.",
     "image": "recipe-mineo-gui.jpg",
     "servings": 2,
-    "cookTime": "15분",
+    "cookTime": "20분",
     "difficulty": "초급",
     "ingredients": [
       {
         "name": "민어",
-        "amount": "2토막"
+        "amount": "300g"
       },
       {
-        "name": "굵은소금",
-        "amount": "0.5작은술"
+        "name": "식용유",
+        "amount": "2큰술"
       }
     ],
-    "seasoning": [],
+    "seasoning": [
+      {
+        "name": "소금",
+        "amount": "1작은술"
+      },
+      {
+        "name": "참기름",
+        "amount": "1큰술"
+      }
+    ],
     "steps": [
       {
         "step": 1,
-        "description": "민어에 소금을 뿌려 10분간 둡니다."
+        "description": "민어는 내장을 제거하고 깨끗이 씻은 후 물기를 꼼꼼히 닦아내고 양면에 깊게 칼집을 낸다."
       },
       {
         "step": 2,
-        "description": "팬이나 그릴에 기름을 살짝 두르고 중불에서 노릇하게 굽습니다."
+        "description": "민어 겉면과 칼집 사이에 소금을 고루 뿌려 15분간 절여둔다."
+      },
+      {
+        "step": 3,
+        "description": "키친타월로 배어 나온 수분을 다시 한번 닦아낸 뒤, 참기름을 생선 겉면에 골고루 바른다."
+      },
+      {
+        "step": 4,
+        "description": "달군 팬에 식용유를 두르고 중약 불에서 앞뒤로 타지 않게 15분간 굽는다."
       }
     ],
     "tips": [
@@ -3664,7 +3482,8 @@
     "relatedIngredients": [
       "민어"
     ],
-    "relatedHolidays": []
+    "relatedHolidays": [],
+    "servingsUnit": "인분"
   },
   {
     "id": "jeonuh-gui",
@@ -3681,23 +3500,32 @@
         "amount": "4마리"
       },
       {
-        "name": "굵은소금",
-        "amount": "0.5작은술"
+        "name": "식용유",
+        "amount": "2큰술"
       }
     ],
-    "seasoning": [],
+    "seasoning": [
+      {
+        "name": "소금",
+        "amount": "1.5작은술"
+      }
+    ],
     "steps": [
       {
         "step": 1,
-        "description": "전어는 내장을 제거하고 깨끗이 씻어 칼집을 냅니다."
+        "description": "전어는 칼등으로 비늘을 긁어내고 씻은 뒤, 몸통에 X자 모양으로 칼집을 낸다."
       },
       {
         "step": 2,
-        "description": "소금을 뿌려 10분간 둡니다."
+        "description": "칼집 사이와 겉면에 소금을 뿌려 10분간 절인다."
       },
       {
         "step": 3,
-        "description": "달군 팬이나 그릴에서 노릇하게 굽습니다."
+        "description": "키친타월을 이용해 생선 표면의 수분을 가볍게 제거한다."
+      },
+      {
+        "step": 4,
+        "description": "식용유를 두른 팬을 달구고 중불에서 전어를 앞뒤로 노릇하고 바삭하게 굽는다."
       }
     ],
     "tips": [
@@ -3707,7 +3535,8 @@
     "relatedIngredients": [
       "전어"
     ],
-    "relatedHolidays": []
+    "relatedHolidays": [],
+    "servingsUnit": "인분"
   },
   {
     "id": "jangeo-gui",
@@ -3716,29 +3545,25 @@
     "description": "장어를 양념에 재워 구운 여름 보양식입니다.",
     "image": "recipe-jangeo-gui.jpg",
     "servings": 2,
-    "cookTime": "30분",
+    "cookTime": "25분",
     "difficulty": "중급",
     "ingredients": [
       {
-        "name": "장어",
-        "amount": "2마리 (손질)"
+        "name": "손질된 장어",
+        "amount": "400g"
       },
       {
-        "name": "양파",
-        "amount": "1/2개"
-      },
-      {
-        "name": "대파",
-        "amount": "1/2대"
+        "name": "식용유",
+        "amount": "1큰술"
       }
     ],
     "seasoning": [
       {
-        "name": "간장",
-        "amount": "4큰술"
+        "name": "진간장",
+        "amount": "3큰술"
       },
       {
-        "name": "설탕",
+        "name": "물엿",
         "amount": "2큰술"
       },
       {
@@ -3746,34 +3571,26 @@
         "amount": "2큰술"
       },
       {
-        "name": "다진 마늘",
-        "amount": "1큰술"
-      },
-      {
-        "name": "참기름",
-        "amount": "1큰술"
-      },
-      {
-        "name": "후추",
+        "name": "다진생강",
         "amount": "0.5작은술"
       }
     ],
     "steps": [
       {
         "step": 1,
-        "description": "장어는 한입 크기로 자릅니다."
+        "description": "손질된 장어는 껍질 쪽의 진액을 칼등으로 살살 긁어내고 키친타월로 핏물과 물기를 닦는다."
       },
       {
         "step": 2,
-        "description": "양념장을 만들어 장어에 20분간 재웁니다."
+        "description": "작은 냄비에 진간장, 물엿, 맛술, 다진생강을 넣고 약불에서 걸쭉해질 때까지 3분간 끓여 데리야끼 소스를 만든다."
       },
       {
         "step": 3,
-        "description": "팬이나 그릴에 양파를 깔고 장어를 올려 중불에서 굽습니다."
+        "description": "식용유를 두른 팬에 장어를 등 쪽부터 올려 중불에서 앞뒤로 70% 정도 초벌구이 한다."
       },
       {
         "step": 4,
-        "description": "양면이 노릇해지면 대파를 넣고 마무리합니다."
+        "description": "만들어둔 소스를 붓을 이용해 장어 앞뒤로 여러 번 덧발라가며 약불에서 윤기 나게 굽는다."
       }
     ],
     "tips": [
@@ -3783,7 +3600,8 @@
     "relatedIngredients": [
       "장어"
     ],
-    "relatedHolidays": []
+    "relatedHolidays": [],
+    "servingsUnit": "인분"
   },
   {
     "id": "kkongchi-gui",
@@ -3792,31 +3610,44 @@
     "description": "꽁치를 소금구이로 고소하게 구워낸 가을 별미입니다.",
     "image": "recipe-kkongchi-gui.jpg",
     "servings": 2,
-    "cookTime": "12분",
+    "cookTime": "15분",
     "difficulty": "초급",
     "ingredients": [
       {
         "name": "꽁치",
-        "amount": "4마리"
+        "amount": "2마리"
       },
       {
-        "name": "굵은소금",
-        "amount": "0.5작은술"
+        "name": "식용유",
+        "amount": "2큰술"
       }
     ],
-    "seasoning": [],
+    "seasoning": [
+      {
+        "name": "소금",
+        "amount": "1작은술"
+      },
+      {
+        "name": "청주",
+        "amount": "1큰술"
+      }
+    ],
     "steps": [
       {
         "step": 1,
-        "description": "꽁치는 내장을 제거하고 씻어 물기를 닦습니다."
+        "description": "꽁치는 흐르는 물에 씻어 물기를 닦아내고 몸통 양면에 사선으로 3번씩 칼집을 낸다."
       },
       {
         "step": 2,
-        "description": "소금을 살짝 뿌려 10분간 둡니다."
+        "description": "비린내를 제거하기 위해 꽁치 겉면에 청주를 바르고 소금을 골고루 뿌려 10분간 둔다."
       },
       {
         "step": 3,
-        "description": "그릴이나 에어프라이어에서 노릇하게 굽습니다."
+        "description": "절여둔 꽁치의 겉면 수분을 키친타월로 한 번 더 제거한다."
+      },
+      {
+        "step": 4,
+        "description": "팬에 식용유를 두르고 중불에서 앞뒤로 뒤집어가며 속까지 고루 익도록 굽는다."
       }
     ],
     "tips": [
@@ -3825,7 +3656,8 @@
     "relatedIngredients": [
       "꽁치"
     ],
-    "relatedHolidays": []
+    "relatedHolidays": [],
+    "servingsUnit": "인분"
   },
   {
     "id": "daeha-gui",
@@ -3834,35 +3666,40 @@
     "description": "큰 새우인 대하를 소금구이로 간단하게 구워낸 요리입니다.",
     "image": "recipe-daeha-gui.jpg",
     "servings": 2,
-    "cookTime": "10분",
+    "cookTime": "20분",
     "difficulty": "초급",
     "ingredients": [
       {
         "name": "대하",
-        "amount": "8마리"
+        "amount": "400g"
       },
       {
         "name": "굵은소금",
-        "amount": "0.5작은술"
-      },
-      {
-        "name": "레몬",
-        "amount": "1/4개"
+        "amount": "300g"
       }
     ],
-    "seasoning": [],
+    "seasoning": [
+      {
+        "name": "레몬즙",
+        "amount": "1큰술"
+      }
+    ],
     "steps": [
       {
         "step": 1,
-        "description": "대하는 수염과 내장선을 제거하고 씻습니다."
+        "description": "대하는 흐르는 물에 씻어 수염과 내장을 이쑤시개로 제거하고 키친타월로 물기를 완전히 닦는다."
       },
       {
         "step": 2,
-        "description": "팬을 달궈 대하를 올리고 소금을 뿌려 굽습니다."
+        "description": "두꺼운 프라이팬이나 냄비 바닥에 종이 호일을 깔고 굵은소금을 1cm 두께로 고르게 깐다."
       },
       {
         "step": 3,
-        "description": "껍질이 빨갛게 익으면 뒤집어 구워 레몬을 곁들여 냅니다."
+        "description": "뚜껑을 덮고 강한 불에서 5분간 가열하여 소금을 뜨겁게 달군다."
+      },
+      {
+        "step": 4,
+        "description": "달궈진 소금 위에 대하를 겹치지 않게 올리고 뚜껑을 덮어 10분간 붉은빛이 돌 때까지 구운 뒤 레몬즙을 뿌려 완성한다."
       }
     ],
     "tips": [
@@ -3871,7 +3708,8 @@
     "relatedIngredients": [
       "대하"
     ],
-    "relatedHolidays": []
+    "relatedHolidays": [],
+    "servingsUnit": "인분"
   },
   {
     "id": "jeonbok-gui",
@@ -3885,19 +3723,15 @@
     "ingredients": [
       {
         "name": "전복",
-        "amount": "4개"
+        "amount": "400g"
       },
       {
         "name": "버터",
-        "amount": "30g"
+        "amount": "2큰술"
       },
       {
-        "name": "다진 마늘",
-        "amount": "1큰술"
-      },
-      {
-        "name": "파슬리가루",
-        "amount": "0.5작은술"
+        "name": "통마늘",
+        "amount": "10개"
       }
     ],
     "seasoning": [
@@ -3906,26 +3740,26 @@
         "amount": "0.5작은술"
       },
       {
-        "name": "후추",
+        "name": "파슬리가루",
         "amount": "0.5작은술"
       }
     ],
     "steps": [
       {
         "step": 1,
-        "description": "전복은 솔로 껍질을 씻고 살을 분리해 칼집을 냅니다."
+        "description": "전복은 솔을 이용해 표면의 이물질을 문질러 씻은 뒤 숟가락을 넣어 껍데기와 살을 분리하고 이빨을 제거한다."
       },
       {
         "step": 2,
-        "description": "버터와 다진 마늘을 섞어 전복 위에 올립니다."
+        "description": "손질한 전복 살의 앞면에 바둑판 모양으로 깊게 칼집을 낸다."
       },
       {
         "step": 3,
-        "description": "200℃ 오븐이나 에어프라이어에서 8~10분 굽습니다."
+        "description": "달군 팬에 버터를 녹이고 편으로 썬 통마늘을 넣어 향을 낸다."
       },
       {
         "step": 4,
-        "description": "소금, 후추, 파슬리를 뿌려 마무리합니다."
+        "description": "전복을 칼집 낸 부분이 바닥으로 향하게 올린 뒤 소금을 뿌리고, 양면을 노릇하게 구워 파슬리가루를 뿌린다."
       }
     ],
     "tips": [
@@ -3935,7 +3769,8 @@
     "relatedIngredients": [
       "전복"
     ],
-    "relatedHolidays": []
+    "relatedHolidays": [],
+    "servingsUnit": "인분"
   },
   {
     "id": "kijogae-gui",
@@ -3944,40 +3779,48 @@
     "description": "키조개 관자를 버터에 구운 고소한 요리입니다.",
     "image": "recipe-kijogae-gui.jpg",
     "servings": 2,
-    "cookTime": "10분",
+    "cookTime": "15분",
     "difficulty": "초급",
     "ingredients": [
       {
         "name": "키조개 관자",
-        "amount": "6개"
+        "amount": "200g"
       },
       {
-        "name": "버터",
-        "amount": "20g"
+        "name": "양파",
+        "amount": "0.5개"
+      },
+      {
+        "name": "모차렐라 치즈",
+        "amount": "50g"
       }
     ],
     "seasoning": [
       {
-        "name": "소금",
-        "amount": "0.5작은술"
+        "name": "초고추장",
+        "amount": "2큰술"
       },
       {
-        "name": "후추",
-        "amount": "0.5작은술"
+        "name": "참기름",
+        "amount": "1큰술"
       }
     ],
     "steps": [
       {
         "step": 1,
-        "description": "키조개 관자는 깨끗이 씻어 물기를 뺍니다."
+        "description": "키조개 관자는 얇은 막을 벗겨내고 깨끗이 씻은 후 0.5cm 두께로 슬라이스한다."
       },
       {
         "step": 2,
-        "description": "팬에 버터를 녹이고 관자를 올려 앞뒤로 1분씩 굽습니다."
+        "description": "양파는 잘게 다져 관자와 함께 볼에 담는다."
       },
       {
         "step": 3,
-        "description": "소금, 후추로 간해 마무리합니다."
+        "description": "관자와 양파에 초고추장과 참기름을 넣고 골고루 버무린다."
+      },
+      {
+        "step": 4,
+        "description": "은박지나 오븐용 용기에 버무린 재료를 담고 모차렐라 치즈를 올린 뒤, 200도로 예열된 오븐에서 10분간 치즈가 녹을 때까지 굽는다."
       }
     ],
     "tips": [
@@ -3986,7 +3829,8 @@
     "relatedIngredients": [
       "키조개"
     ],
-    "relatedHolidays": []
+    "relatedHolidays": [],
+    "servingsUnit": "인분"
   },
   {
     "id": "garibi-gui",
@@ -3995,48 +3839,44 @@
     "description": "가리비를 껍질째 구워낸 고급 요리입니다.",
     "image": "recipe-garibi-gui.jpg",
     "servings": 2,
-    "cookTime": "12분",
+    "cookTime": "15분",
     "difficulty": "초급",
     "ingredients": [
       {
         "name": "가리비",
-        "amount": "6개"
+        "amount": "500g"
       },
       {
-        "name": "버터",
-        "amount": "30g"
+        "name": "모차렐라 치즈",
+        "amount": "50g"
       },
       {
-        "name": "다진 마늘",
-        "amount": "1작은술"
+        "name": "다진 양파",
+        "amount": "2큰술"
       }
     ],
     "seasoning": [
       {
-        "name": "소금",
-        "amount": "0.5작은술"
-      },
-      {
-        "name": "레몬즙",
-        "amount": "1/2작은술"
+        "name": "초고추장",
+        "amount": "2큰술"
       }
     ],
     "steps": [
       {
         "step": 1,
-        "description": "가리비는 껍질을 열어 내장을 제거하고 관자만 남깁니다."
+        "description": "가리비는 해감 후 껍데기를 솔로 씻어 준비한다."
       },
       {
         "step": 2,
-        "description": "껍질에 관자를 다시 올리고 버터와 마늘을 올립니다."
+        "description": "끓는 물(분량 외)에 가리비를 살짝 데쳐 입을 벌리게 한 뒤 건져내어 한쪽 껍데기를 떼어낸다."
       },
       {
         "step": 3,
-        "description": "200℃ 오븐이나 그릴에서 8~10분 굽습니다."
+        "description": "가리비 살 위에 다진 양파와 초고추장을 조금씩 나누어 올린다."
       },
       {
         "step": 4,
-        "description": "레몬즙을 뿌려 냅니다."
+        "description": "모차렐라 치즈를 얹고 프라이팬에 올린 뒤 뚜껑을 덮고 약불에서 치즈가 녹을 때까지 5분간 굽는다."
       }
     ],
     "tips": [
@@ -4045,7 +3885,8 @@
     "relatedIngredients": [
       "가리비"
     ],
-    "relatedHolidays": []
+    "relatedHolidays": [],
+    "servingsUnit": "인분"
   },
   {
     "id": "kkomak-muchim",
@@ -4200,60 +4041,66 @@
     "name": "소라무침",
     "description": "신선한 소라를 양념에 버무린 한국 전통 무침 요리.",
     "servings": 2,
-    "cookTime": "15분",
+    "cookTime": "20분",
     "difficulty": "쉬움",
     "ingredients": [
       {
-        "name": "소라",
+        "name": "삶은 소라살",
         "amount": "200g"
+      },
+      {
+        "name": "오이",
+        "amount": "0.5개"
+      },
+      {
+        "name": "당근",
+        "amount": "50g"
+      }
+    ],
+    "seasoning": [
+      {
+        "name": "고추장",
+        "amount": "2큰술"
       },
       {
         "name": "고춧가루",
         "amount": "1큰술"
       },
       {
-        "name": "다진 마늘",
-        "amount": "1작은술"
-      },
-      {
-        "name": "참기름",
-        "amount": "1작은술"
-      },
-      {
         "name": "식초",
-        "amount": "1큰술"
+        "amount": "2큰술"
       },
       {
         "name": "설탕",
-        "amount": "1작은술"
+        "amount": "1큰술"
       },
       {
-        "name": "소금",
-        "amount": "0.5작은술"
+        "name": "다진마늘",
+        "amount": "0.5큰술"
       }
     ],
-    "seasoning": [],
     "steps": [
       {
         "step": 1,
-        "description": "소라를 깨끗이 씻어 끓는 물에 2분 정도 데쳐 식힌다."
+        "description": "삶은 소라살은 내장 부위를 제거하고 먹기 좋은 크기로 얇게 저민다."
       },
       {
         "step": 2,
-        "description": "데친 소라를 먹기 좋은 크기로 썬다."
+        "description": "오이와 당근은 세로로 반을 갈라 얇게 반달 모양으로 썬다."
       },
       {
         "step": 3,
-        "description": "볼에 고춧가루, 다진 마늘, 참기름, 식초, 설탕, 소금을 넣고 양념장을 만든다."
+        "description": "볼에 고추장, 고춧가루, 식초, 설탕, 다진마늘을 넣고 섞어 무침 양념장을 만든다."
       },
       {
         "step": 4,
-        "description": "소라와 양념장을 버무려 10분 정도 숙성시킨다."
+        "description": "양념장에 손질한 소라살과 오이, 당근을 모두 넣고 양념이 잘 배어들도록 힘주어 버무린다."
       }
     ],
     "tips": [
       "신선한 소라를 사용하면 더욱 맛있습니다."
-    ]
+    ],
+    "servingsUnit": "인분"
   },
   {
     "id": "bajirak-suljjim",
@@ -4938,32 +4785,45 @@
     "category": "채소",
     "description": "옥수수를 쪄서 간식으로 즐기는 여름 별미입니다.",
     "image": "recipe-oksusu.jpg",
-    "servings": 2,
-    "cookTime": "20분",
+    "servings": 5,
+    "cookTime": "45분",
     "difficulty": "초급",
     "ingredients": [
       {
         "name": "옥수수",
-        "amount": "2개"
+        "amount": "5개"
+      },
+      {
+        "name": "물",
+        "amount": "1500ml"
+      }
+    ],
+    "seasoning": [
+      {
+        "name": "설탕",
+        "amount": "3큰술"
       },
       {
         "name": "소금",
-        "amount": "0.5작은술"
+        "amount": "1큰술"
       }
     ],
-    "seasoning": [],
     "steps": [
       {
         "step": 1,
-        "description": "옥수수는 겉껍질을 일부 남기고 수염을 제거합니다."
+        "description": "옥수수는 겉껍질을 벗겨내고 수분을 유지할 수 있도록 가장 안쪽 껍질 한 겹만 남겨둔 채 수염을 떼어낸다."
       },
       {
         "step": 2,
-        "description": "찜통이나 냄비에 물을 붓고 옥수수를 넣어 20분간 찝니다."
+        "description": "넓은 냄비에 물 1500ml를 붓고 설탕과 소금을 넣어 완전히 녹인다."
       },
       {
         "step": 3,
-        "description": "소금을 살짝 뿌려 냅니다."
+        "description": "옥수수를 냄비에 엇갈리게 넣고 뚜껑을 덮은 뒤 강한 불에서 20분간 끓인다."
+      },
+      {
+        "step": 4,
+        "description": "중간 불로 줄여 20분 더 푹 찐 다음, 불을 끄고 뚜껑을 덮은 채로 5분간 뜸을 들인다."
       }
     ],
     "tips": [
@@ -4973,7 +4833,8 @@
     "relatedIngredients": [
       "옥수수"
     ],
-    "relatedHolidays": []
+    "relatedHolidays": [],
+    "servingsUnit": "개"
   },
   {
     "id": "goguma-mattang",
@@ -5101,38 +4962,38 @@
     "category": "기타",
     "description": "토란을 끓인 구수한 국입니다.",
     "image": "recipe-toran-guk.jpg",
-    "servings": 3,
-    "cookTime": "30분",
+    "servings": 2,
+    "cookTime": "40분",
     "difficulty": "초급",
     "ingredients": [
       {
-        "name": "토란",
-        "amount": "300g"
+        "name": "물",
+        "amount": "800ml"
       },
       {
-        "name": "쇠고기",
+        "name": "토란",
+        "amount": "200g"
+      },
+      {
+        "name": "소고기",
         "amount": "100g"
       },
       {
         "name": "대파",
-        "amount": "1/2대"
-      },
-      {
-        "name": "물",
-        "amount": "5컵"
+        "amount": "0.5대"
       }
     ],
     "seasoning": [
+      {
+        "name": "참기름",
+        "amount": "1큰술"
+      },
       {
         "name": "국간장",
         "amount": "2큰술"
       },
       {
-        "name": "다진 마늘",
-        "amount": "1작은술"
-      },
-      {
-        "name": "참기름",
+        "name": "다진마늘",
         "amount": "1큰술"
       },
       {
@@ -5143,19 +5004,19 @@
     "steps": [
       {
         "step": 1,
-        "description": "토란은 껍질을 벗겨 물에 담가 미끌거림을 빼냅니다."
+        "description": "토란은 껍질을 벗기고 쌀뜨물(분량 외)에 5분간 데쳐 독성과 미끈거리는 성분을 제거한 뒤 찬물에 헹군다."
       },
       {
         "step": 2,
-        "description": "쇠고기를 참기름에 볶다가 토란을 넣어 함께 볶습니다."
+        "description": "냄비에 참기름을 두르고 소고기를 넣어 고기 겉면이 익을 때까지 볶는다."
       },
       {
         "step": 3,
-        "description": "물을 붓고 토란이 익을 때까지 끓입니다."
+        "description": "고기가 익으면 물 800ml를 붓고 끓이다가 거품을 걷어내고 데친 토란과 다진마늘, 국간장을 넣는다."
       },
       {
         "step": 4,
-        "description": "국간장과 마늘로 간을 맞추고 대파를 넣어 마무리합니다."
+        "description": "중불에서 20분간 푹 끓여 토란이 부드럽게 익으면 대파를 넣고 소금으로 최종 간을 맞춘다."
       }
     ],
     "tips": [
@@ -5164,7 +5025,8 @@
     "relatedIngredients": [
       "토란"
     ],
-    "relatedHolidays": []
+    "relatedHolidays": [],
+    "servingsUnit": "인분"
   },
   {
     "id": "deodeok-gui",
@@ -5293,39 +5155,40 @@
     "description": "송이버섯을 소금구이로 간단하게 구워 향을 즐기는 요리입니다.",
     "image": "recipe-songi-gui.jpg",
     "servings": 2,
-    "cookTime": "10분",
+    "cookTime": "15분",
     "difficulty": "초급",
     "ingredients": [
       {
         "name": "송이버섯",
-        "amount": "4개"
+        "amount": "150g"
+      }
+    ],
+    "seasoning": [
+      {
+        "name": "참기름",
+        "amount": "2큰술"
       },
       {
         "name": "소금",
         "amount": "0.5작은술"
-      },
-      {
-        "name": "참기름",
-        "amount": "1/4작은술"
       }
     ],
-    "seasoning": [],
     "steps": [
       {
         "step": 1,
-        "description": "송이는 마른 행주로 살짝 닦아 흙만 제거합니다. 물로 씻지 마세요."
+        "description": "송이버섯은 물에 씻지 않고 젖은 면포나 키친타월을 이용해 겉면의 흙과 먼지만 가볍게 털어내며 닦는다."
       },
       {
         "step": 2,
-        "description": "손으로 찢거나 칼로 적당히 썹니다."
+        "description": "버섯의 밑동을 살짝 잘라낸 뒤, 세로 방향으로 0.5cm 두께로 길게 찢거나 슬라이스한다."
       },
       {
         "step": 3,
-        "description": "팬에 송이를 올려 소금을 살짝 뿌리고 구웁니다."
+        "description": "달군 팬이나 석쇠에 버섯을 올리고 중약 불에서 표면에 물기가 촉촉하게 배어 나올 때까지 앞뒤로 가볍게 굽는다."
       },
       {
         "step": 4,
-        "description": "참기름을 살짝 발라 냅니다."
+        "description": "종지 그릇에 참기름과 소금을 섞어 기름장을 만든 뒤 구운 버섯에 곁들인다."
       }
     ],
     "tips": [
@@ -5335,7 +5198,8 @@
     "relatedIngredients": [
       "송이버섯"
     ],
-    "relatedHolidays": []
+    "relatedHolidays": [],
+    "servingsUnit": "인분"
   },
   {
     "id": "eunhaeng-gui",
@@ -5352,19 +5216,32 @@
         "amount": "100g"
       },
       {
+        "name": "식용유",
+        "amount": "1큰술"
+      }
+    ],
+    "seasoning": [
+      {
         "name": "소금",
         "amount": "0.5작은술"
       }
     ],
-    "seasoning": [],
     "steps": [
       {
         "step": 1,
-        "description": "은행은 겉껍질을 까고 팬에 소금을 넣어 볶습니다."
+        "description": "딱딱한 겉껍질을 깐 속 은행을 준비한다."
       },
       {
         "step": 2,
-        "description": "껍질이 벗겨지면 불을 끄고 식힙니다."
+        "description": "약한 불로 달군 팬에 식용유를 두르고 은행을 넣어 타지 않게 굴려 가며 볶는다."
+      },
+      {
+        "step": 3,
+        "description": "은행이 초록빛을 띠고 얇은 속껍질이 자연스럽게 벗겨지기 시작하면 불을 끈다."
+      },
+      {
+        "step": 4,
+        "description": "키친타월 위로 은행을 옮겨 남은 속껍질을 비벼 벗겨낸 뒤 소금을 솔솔 뿌려 완성한다."
       }
     ],
     "tips": [
@@ -5373,7 +5250,8 @@
     "relatedIngredients": [
       "은행"
     ],
-    "relatedHolidays": []
+    "relatedHolidays": [],
+    "servingsUnit": "인분"
   },
   {
     "id": "pyogo-bokkeum",
@@ -5565,57 +5443,53 @@
     "category": "채소",
     "description": "배추와 멸치·다시마 육수로 개운하게 끓이는 집밥 국입니다.",
     "image": "recipe-baechu-guk.jpg",
-    "servings": 3,
-    "cookTime": "20분",
+    "servings": 2,
+    "cookTime": "25분",
     "difficulty": "초급",
     "ingredients": [
       {
-        "name": "배추",
-        "amount": "1/4통 (300g)"
+        "name": "물",
+        "amount": "800ml"
       },
       {
-        "name": "멸치",
-        "amount": "10마리"
-      },
-      {
-        "name": "다시마",
-        "amount": "1조각"
+        "name": "얼갈이배추",
+        "amount": "200g"
       },
       {
         "name": "대파",
-        "amount": "1/2대"
-      },
-      {
-        "name": "물",
-        "amount": "5컵"
+        "amount": "0.5대"
       }
     ],
     "seasoning": [
       {
-        "name": "국간장",
-        "amount": "1.5큰술"
+        "name": "된장",
+        "amount": "2.5큰술"
       },
       {
-        "name": "다진 마늘",
-        "amount": "1작은술"
+        "name": "다진마늘",
+        "amount": "1큰술"
       },
       {
-        "name": "소금",
-        "amount": "0.5작은술"
+        "name": "고춧가루",
+        "amount": "0.5큰술"
       }
     ],
     "steps": [
       {
         "step": 1,
-        "description": "냄비에 물, 멸치, 다시마를 넣고 10분 끓여 육수를 낸 뒤 건져냅니다."
+        "description": "얼갈이배추는 뿌리를 자르고 깨끗이 씻은 뒤 5cm 길이로 먹기 좋게 썰고, 대파는 송송 썬다."
       },
       {
         "step": 2,
-        "description": "배추는 큼직하게 썰어 넣고 투명해질 때까지 끓입니다."
+        "description": "냄비에 물 800ml를 붓고 된장을 체에 밭쳐 덩어리 없이 곱게 푼 뒤 강한 불에서 끓인다."
       },
       {
         "step": 3,
-        "description": "국간장과 마늘로 간을 맞추고 대파를 넣어 한소끔 더 끓입니다."
+        "description": "된장 국물이 끓어오르면 썰어둔 배추와 다진마늘, 고춧가루를 넣고 10분간 더 끓인다."
+      },
+      {
+        "step": 4,
+        "description": "배추가 부드럽게 숨이 죽고 국물이 우러나면 대파를 넣고 1분간 더 끓여 완성한다."
       }
     ],
     "tips": [
@@ -5625,7 +5499,8 @@
     "relatedIngredients": [
       "배추"
     ],
-    "relatedHolidays": []
+    "relatedHolidays": [],
+    "servingsUnit": "인분"
   },
   {
     "id": "bokbunja-cheong",
@@ -6049,44 +5924,49 @@
     "category": "채소",
     "description": "얇게 썬 애호박을 밀가루와 달걀옷을 입혀 부친 기본 전입니다.",
     "image": "recipe-aehobak-jeon.jpg",
-    "servings": 2,
-    "cookTime": "20분",
+    "servings": 5,
+    "cookTime": "15분",
     "difficulty": "초급",
     "ingredients": [
       {
         "name": "애호박",
-        "amount": "1개"
+        "amount": "0.5개"
       },
       {
-        "name": "밀가루",
-        "amount": "1/2컵"
+        "name": "부침가루",
+        "amount": "2큰술"
       },
       {
         "name": "달걀",
         "amount": "1개"
       },
       {
-        "name": "소금",
-        "amount": "0.5작은술"
-      },
-      {
         "name": "식용유",
-        "amount": "1큰술"
+        "amount": "2큰술"
       }
     ],
-    "seasoning": [],
+    "seasoning": [
+      {
+        "name": "소금",
+        "amount": "0.5작은술"
+      }
+    ],
     "steps": [
       {
         "step": 1,
-        "description": "애호박은 0.7cm 두께로 썰어 소금 약간 뿌려 잠시 둡니다."
+        "description": "애호박은 0.5cm 두께로 동글게 썰어 도마에 펼쳐둔다."
       },
       {
         "step": 2,
-        "description": "키친타월로 수분을 닦고 밀가루를 얇게 묻힌 뒤 달걀물에 적십니다."
+        "description": "애호박 앞뒤에 소금을 고루 뿌려 5분간 절인 뒤, 키친타월로 배어 나온 물기를 닦는다."
       },
       {
         "step": 3,
-        "description": "중약불 팬에 기름을 두르고 앞뒤로 노릇하게 부칩니다."
+        "description": "물기를 닦은 애호박에 부침가루를 얇게 묻히고 달걀물을 입힌다."
+      },
+      {
+        "step": 4,
+        "description": "식용유를 두른 팬을 달구고 중약 불에서 앞뒤로 노릇하게 구워 완성한다."
       }
     ],
     "tips": [
@@ -6095,7 +5975,8 @@
     "relatedIngredients": [
       "애호박"
     ],
-    "relatedHolidays": []
+    "relatedHolidays": [],
+    "servingsUnit": "개"
   },
   {
     "id": "gunbam",
@@ -6103,28 +5984,32 @@
     "category": "기타",
     "description": "밤을 칼집 내어 구워 고소하게 즐기는 겨울 간식입니다.",
     "image": "recipe-gunbam.jpg",
-    "servings": 2,
-    "cookTime": "20분",
+    "servings": 5,
+    "cookTime": "25분",
     "difficulty": "초급",
     "ingredients": [
       {
         "name": "밤",
-        "amount": "300g"
-      },
-      {
-        "name": "소금(선택)",
-        "amount": "0.5작은술"
+        "amount": "5개"
       }
     ],
     "seasoning": [],
     "steps": [
       {
         "step": 1,
-        "description": "밤에 십자 칼집을 내고 물에 잠깐 적십니다."
+        "description": "밤은 물에 1시간 정도 담가 불린 뒤 흐르는 물에 깨끗이 씻는다."
       },
       {
         "step": 2,
-        "description": "에어프라이어 180℃ 12~15분 또는 팬에 굵은소금 깔고 중불 15분 굽습니다."
+        "description": "굽는 도중 터지는 것을 방지하기 위해 밤의 평평한 부분이나 뾰족한 부분에 깊게 십자(+) 모양의 칼집을 낸다."
+      },
+      {
+        "step": 3,
+        "description": "에어프라이어 바스켓에 칼집 낸 밤을 겹치지 않게 넣는다."
+      },
+      {
+        "step": 4,
+        "description": "200도로 예열된 에어프라이어에서 20분간 굽고, 칼집이 벌어지며 속이 노랗게 익으면 꺼낸다."
       }
     ],
     "tips": [
@@ -6133,7 +6018,8 @@
     "relatedIngredients": [
       "밤"
     ],
-    "relatedHolidays": []
+    "relatedHolidays": [],
+    "servingsUnit": "개"
   },
   {
     "id": "daegu-jjim",
@@ -6215,27 +6101,60 @@
     "description": "대하를 간단히 쪄내 달큰한 풍미를 살린 요리입니다.",
     "image": "recipe-daeha-jjim.jpg",
     "servings": 2,
-    "cookTime": "12분",
+    "cookTime": "25분",
     "difficulty": "초급",
     "ingredients": [
       {
-        "name": "대하",
-        "amount": "8마리"
+        "name": "물",
+        "amount": "200ml"
       },
       {
-        "name": "소금",
-        "amount": "0.5작은술"
+        "name": "대하",
+        "amount": "400g"
+      },
+      {
+        "name": "찜용 콩나물",
+        "amount": "200g"
+      },
+      {
+        "name": "미나리",
+        "amount": "50g"
       }
     ],
-    "seasoning": [],
+    "seasoning": [
+      {
+        "name": "고춧가루",
+        "amount": "3큰술"
+      },
+      {
+        "name": "진간장",
+        "amount": "2큰술"
+      },
+      {
+        "name": "다진마늘",
+        "amount": "1큰술"
+      },
+      {
+        "name": "전분물",
+        "amount": "2큰술"
+      }
+    ],
     "steps": [
       {
         "step": 1,
-        "description": "대하는 수염과 내장선 제거 후 깨끗이 씻습니다."
+        "description": "대하는 수염과 내장을 제거하고 씻어 준비하며, 콩나물은 씻어 건지고 미나리는 5cm 길이로 썬다."
       },
       {
         "step": 2,
-        "description": "찜기에 소금을 약간 뿌리고 8~10분 찝니다."
+        "description": "넓은 냄비에 물 200ml와 대하를 넣고 뚜껑을 덮어 중간 불에서 5분간 끓인다."
+      },
+      {
+        "step": 3,
+        "description": "대하가 붉게 익으면 콩나물과 고춧가루, 진간장, 다진마늘을 넣고 뚜껑을 연 채로 강한 불에서 재빨리 볶듯이 끓인다."
+      },
+      {
+        "step": 4,
+        "description": "콩나물 숨이 죽으면 전분물을 둘러 농도를 맞추고, 불을 끈 뒤 미나리를 넣어 잔열로 익힌다."
       }
     ],
     "tips": [
@@ -6244,7 +6163,8 @@
     "relatedIngredients": [
       "대하"
     ],
-    "relatedHolidays": []
+    "relatedHolidays": [],
+    "servingsUnit": "인분"
   },
   {
     "id": "dallae-jang",
@@ -6417,8 +6337,8 @@
     "category": "채소",
     "description": "간단한 감자 반죽으로 부치는 바삭한 전입니다.",
     "image": "recipe-gamja-jeon.jpg",
-    "servings": 2,
-    "cookTime": "20분",
+    "servings": 5,
+    "cookTime": "30분",
     "difficulty": "초급",
     "ingredients": [
       {
@@ -6426,23 +6346,32 @@
         "amount": "3개"
       },
       {
-        "name": "소금",
-        "amount": "0.5작은술"
-      },
-      {
         "name": "식용유",
-        "amount": "1큰술"
+        "amount": "4큰술"
       }
     ],
-    "seasoning": [],
+    "seasoning": [
+      {
+        "name": "소금",
+        "amount": "0.5작은술"
+      }
+    ],
     "steps": [
       {
         "step": 1,
-        "description": "감자를 강판에 갈아 체에 밭치고 전분을 가라앉힌 뒤 윗물을 버립니다."
+        "description": "감자는 껍질을 벗기고 강판에 곱게 간다."
       },
       {
         "step": 2,
-        "description": "가라앉은 전분과 섞어 소금 간 후 팬에 얇게 부칩니다."
+        "description": "간 감자는 면포에 짜서 수분과 건더기를 분리한 후, 수분을 10분간 가라앉혀 윗물은 버리고 바닥에 남은 전분만 건더기와 섞는다."
+      },
+      {
+        "step": 3,
+        "description": "반죽에 소금을 넣어 고루 섞는다."
+      },
+      {
+        "step": 4,
+        "description": "달군 팬에 식용유를 넉넉히 두르고 반죽을 한 숟가락씩 올려 노릇하고 바삭하게 굽는다."
       }
     ],
     "tips": [
@@ -6451,7 +6380,8 @@
     "relatedIngredients": [
       "감자"
     ],
-    "relatedHolidays": []
+    "relatedHolidays": [],
+    "servingsUnit": "개"
   },
   {
     "id": "gun-goguma",
@@ -6553,44 +6483,56 @@
     "description": "홍합과 쌀을 함께 지어 바다 향 가득한 솥밥입니다.",
     "image": "recipe-honghap-bap.jpg",
     "servings": 2,
-    "cookTime": "35분",
+    "cookTime": "45분",
     "difficulty": "초급",
     "ingredients": [
       {
-        "name": "홍합",
-        "amount": "400g"
-      },
-      {
-        "name": "쌀",
-        "amount": "2컵"
-      },
-      {
         "name": "물",
-        "amount": "2컵"
+        "amount": "400ml"
       },
       {
-        "name": "대파",
-        "amount": "1/3대"
+        "name": "불린 쌀",
+        "amount": "200g"
+      },
+      {
+        "name": "홍합살",
+        "amount": "200g"
       }
     ],
     "seasoning": [
       {
-        "name": "국간장",
+        "name": "참기름",
         "amount": "1큰술"
       },
       {
-        "name": "소금",
-        "amount": "0.5작은술"
+        "name": "진간장",
+        "amount": "2큰술"
+      },
+      {
+        "name": "다진대파",
+        "amount": "1큰술"
+      },
+      {
+        "name": "통깨",
+        "amount": "1큰술"
       }
     ],
     "steps": [
       {
         "step": 1,
-        "description": "해감한 홍합을 손질하고 쌀은 씻어 불립니다."
+        "description": "홍합살은 연한 소금물(분량 외)에 살살 흔들어 씻은 뒤 체에 밭쳐 물기를 뺀다."
       },
       {
         "step": 2,
-        "description": "냄비에 쌀과 물, 홍합을 넣어 밥을 짓고 뜸 들인 후 간을 맞춥니다."
+        "description": "냄비에 참기름을 두르고 불린 쌀을 넣어 쌀알이 투명해질 때까지 2분간 볶는다."
+      },
+      {
+        "step": 3,
+        "description": "홍합살을 넣고 가볍게 섞은 뒤 물 400ml를 붓고 뚜껑을 덮어 센 불에서 끓인다."
+      },
+      {
+        "step": 4,
+        "description": "물이 잦아들면 약불로 줄여 15분간 뜸을 들이고, 진간장, 다진대파, 통깨를 섞은 양념장을 곁들인다."
       }
     ],
     "tips": [
@@ -6600,7 +6542,8 @@
       "홍합",
       "쌀"
     ],
-    "relatedHolidays": []
+    "relatedHolidays": [],
+    "servingsUnit": "인분"
   },
   {
     "id": "kijogae-hoe",
@@ -7034,44 +6977,60 @@
     "description": "오이와 식초·간장으로 시원하게 만든 여름 별미 냉국입니다.",
     "image": "recipe-oi-naengguk.jpg",
     "servings": 2,
-    "cookTime": "10분",
+    "cookTime": "15분",
     "difficulty": "초급",
     "ingredients": [
+      {
+        "name": "물",
+        "amount": "600ml"
+      },
       {
         "name": "오이",
         "amount": "1개"
       },
       {
-        "name": "물",
-        "amount": "2컵"
+        "name": "양파",
+        "amount": "0.5개"
       }
     ],
     "seasoning": [
       {
-        "name": "식초",
-        "amount": "2큰술"
-      },
-      {
-        "name": "간장",
+        "name": "국간장",
         "amount": "1큰술"
       },
       {
+        "name": "식초",
+        "amount": "4큰술"
+      },
+      {
         "name": "설탕",
-        "amount": "1작은술"
+        "amount": "2큰술"
       },
       {
         "name": "소금",
-        "amount": "0.5작은술"
+        "amount": "1작은술"
+      },
+      {
+        "name": "통깨",
+        "amount": "1큰술"
       }
     ],
     "steps": [
       {
         "step": 1,
-        "description": "오이는 채썰어 소금에 살짝 절여 물기를 짭니다."
+        "description": "오이는 굵은소금(분량 외)으로 문질러 씻은 뒤 얇게 채 썰고, 양파도 최대한 얇게 채 썬다."
       },
       {
         "step": 2,
-        "description": "물과 양념을 섞어 국물을 만들고 오이를 넣어 차게 둡니다."
+        "description": "볼에 채 썬 오이와 양파를 담고 국간장, 식초, 설탕, 소금을 넣어 5분간 밑간을 해둔다."
+      },
+      {
+        "step": 3,
+        "description": "차가운 물 600ml를 붓고 설탕과 소금이 완전히 녹을 때까지 잘 젓는다."
+      },
+      {
+        "step": 4,
+        "description": "통깨를 뿌려 완성하며, 냉장고에 넣어 차갑게 한 뒤 먹는다."
       }
     ],
     "tips": [
@@ -7080,7 +7039,8 @@
     "relatedIngredients": [
       "오이"
     ],
-    "relatedHolidays": []
+    "relatedHolidays": [],
+    "servingsUnit": "인분"
   },
   {
     "id": "oksusu-jeon",
@@ -7164,31 +7124,39 @@
     "category": "기타",
     "description": "송이버섯을 맑은 육수에 끓여 향을 살린 전골입니다.",
     "image": "recipe-songi-jeongol.jpg",
-    "servings": 3,
-    "cookTime": "25분",
+    "servings": 2,
+    "cookTime": "35분",
     "difficulty": "초급",
     "ingredients": [
       {
+        "name": "물",
+        "amount": "800ml"
+      },
+      {
         "name": "송이버섯",
-        "amount": "200g"
+        "amount": "150g"
       },
       {
-        "name": "멸치다시 육수",
-        "amount": "4컵"
+        "name": "소고기 불고기감",
+        "amount": "150g"
       },
       {
-        "name": "두부",
-        "amount": "1/2모"
+        "name": "배추",
+        "amount": "100g"
       },
       {
         "name": "대파",
-        "amount": "1/2대"
+        "amount": "0.5대"
       }
     ],
     "seasoning": [
       {
         "name": "국간장",
-        "amount": "1.5큰술"
+        "amount": "2큰술"
+      },
+      {
+        "name": "다진마늘",
+        "amount": "1큰술"
       },
       {
         "name": "소금",
@@ -7198,11 +7166,19 @@
     "steps": [
       {
         "step": 1,
-        "description": "육수를 끓이고 송이와 두부를 넣어 한소끔 끓입니다."
+        "description": "송이버섯은 젖은 면포로 먼지를 닦고 세로로 찢으며, 배추와 소고기는 한입 크기로 썰고, 대파는 어슷하게 썬다."
       },
       {
         "step": 2,
-        "description": "국간장과 소금으로 간하고 대파를 넣어 마무리합니다."
+        "description": "전골 냄비 바닥에 배추를 깔고 그 위에 소고기와 대파, 송이버섯을 보기 좋게 둘러 담는다."
+      },
+      {
+        "step": 3,
+        "description": "물 800ml에 국간장과 다진마늘을 풀어 넣고 냄비에 부어 강한 불에서 끓인다."
+      },
+      {
+        "step": 4,
+        "description": "고기가 익고 국물이 우러나면 거품을 걷어내고 소금으로 간을 맞춘 뒤 1분 후 불을 끈다."
       }
     ],
     "tips": [
@@ -7211,7 +7187,8 @@
     "relatedIngredients": [
       "송이버섯"
     ],
-    "relatedHolidays": []
+    "relatedHolidays": [],
+    "servingsUnit": "인분"
   },
   {
     "id": "ssuk-tteok",
@@ -7224,32 +7201,44 @@
     "difficulty": "초급",
     "ingredients": [
       {
-        "name": "찹쌀가루",
-        "amount": "17g"
+        "name": "멥쌀가루",
+        "amount": "300g"
       },
       {
         "name": "데친 쑥",
-        "amount": "8g"
+        "amount": "100g"
       },
       {
-        "name": "소금",
-        "amount": "0.5작은술"
+        "name": "물",
+        "amount": "4큰술"
       }
     ],
     "seasoning": [
       {
-        "name": "꿀",
-        "amount": "곁들임"
+        "name": "소금",
+        "amount": "1.5작은술"
+      },
+      {
+        "name": "참기름",
+        "amount": "1큰술"
       }
     ],
     "steps": [
       {
         "step": 1,
-        "description": "찹쌀가루에 소금과 쑥을 넣어 익반죽합니다."
+        "description": "데친 쑥은 물기를 꼭 짜고 믹서에 물 4큰술을 넣어 아주 곱게 간다."
       },
       {
         "step": 2,
-        "description": "한입 크기로 빚어 찜기에 15분 찝니다."
+        "description": "멥쌀가루에 소금과 곱게 간 쑥을 넣고 양손으로 비벼가며 고루 섞은 뒤 체에 한 번 내린다."
+      },
+      {
+        "step": 3,
+        "description": "찜기에 면포를 깔고 섞은 가루를 올려 김이 오른 상태에서 25분간 찐다."
+      },
+      {
+        "step": 4,
+        "description": "다 쪄진 떡은 볼에 옮겨 찰기가 생기도록 방망이로 치댄 후, 5등분하여 둥글게 빚고 참기름을 얇게 바른다."
       }
     ],
     "tips": [
@@ -7437,7 +7426,31 @@
       {
         "name": "버터",
         "amount": "2큰술"
+      }
+    ],
+    "steps": [
+      {
+        "step": 1,
+        "description": "한치는 내장과 투명한 뼈를 제거하고 깨끗이 씻은 후 물기를 닦고 몸통 양면에 일정한 간격으로 칼집을 낸다."
       },
+      {
+        "step": 2,
+        "description": "상온에서 녹인 부드러운 버터에 다진마늘과 소금을 섞어 마늘버터를 만든다."
+      },
+      {
+        "step": 3,
+        "description": "칼집을 낸 한치 겉면에 마늘버터를 골고루 바른다."
+      },
+      {
+        "step": 4,
+        "description": "200도로 예열된 오븐에 넣고 10분간 구워 노릇해지면 꺼내어 파슬리가루를 뿌린다."
+      }
+    ],
+    "name": "한치 통오븐구이",
+    "cookTime": "20분",
+    "description": "한치 통오븐구이 레시피입니다.",
+    "servingsUnit": "인분",
+    "seasoning": [
       {
         "name": "다진마늘",
         "amount": "1큰술"
@@ -7447,31 +7460,10 @@
         "amount": "0.5작은술"
       },
       {
-        "name": "후추",
+        "name": "파슬리가루",
         "amount": "0.5작은술"
       }
-    ],
-    "steps": [
-      {
-        "step": 1,
-        "description": "한치는 내장을 제거하고 통째로 깨끗하게 씻어 물기를 닦아냅니다."
-      },
-      {
-        "step": 2,
-        "description": "몸통 양쪽에 칼집을 살짝 내줍니다."
-      },
-      {
-        "step": 3,
-        "description": "녹인 버터에 다진마늘, 소금, 후추를 섞어 한치 겉면에 골고루 발라줍니다."
-      },
-      {
-        "step": 4,
-        "description": "200도로 예열된 오븐이나 에어프라이어에서 10~15분간 노릇하게 구워냅니다."
-      }
-    ],
-    "name": "한치 통오븐구이",
-    "cookTime": "25분",
-    "description": "한치 통오븐구이 레시피입니다."
+    ]
   },
   {
     "id": "nakji-bokkeum",
@@ -7737,85 +7729,67 @@
     "id": "gul-jeongol",
     "name": "굴전골",
     "description": "굴과 다양한 해산물을 넣어 끓인 전골 요리.",
-    "servings": 4,
-    "cookTime": "30분",
+    "servings": 2,
+    "cookTime": "25분",
     "difficulty": "보통",
     "ingredients": [
       {
-        "name": "굴",
-        "amount": "300g"
+        "name": "물",
+        "amount": "800ml"
       },
       {
-        "name": "새우",
+        "name": "굴",
         "amount": "200g"
       },
       {
-        "name": "오징어",
-        "amount": "150g"
+        "name": "무",
+        "amount": "100g"
       },
       {
-        "name": "양파",
-        "amount": "1개"
+        "name": "두부",
+        "amount": "0.5모"
       },
       {
-        "name": "대파",
-        "amount": "1대"
-      },
+        "name": "부추",
+        "amount": "50g"
+      }
+    ],
+    "seasoning": [
       {
-        "name": "청양고추",
-        "amount": "2개"
-      },
-      {
-        "name": "다진 마늘",
-        "amount": "1큰술"
-      },
-      {
-        "name": "고춧가루",
-        "amount": "1큰술"
+        "name": "새우젓",
+        "amount": "1.5큰술"
       },
       {
         "name": "국간장",
-        "amount": "2큰술"
+        "amount": "1큰술"
       },
       {
-        "name": "소금",
-        "amount": "0.5작은술"
-      },
-      {
-        "name": "후추",
-        "amount": "0.5작은술"
-      },
-      {
-        "name": "물",
-        "amount": "1L"
+        "name": "다진마늘",
+        "amount": "1큰술"
       }
     ],
-    "seasoning": [],
     "steps": [
       {
         "step": 1,
-        "description": "굴은 깨끗이 씻어 물기를 제거한다."
+        "description": "굴은 소금물에 가볍게 씻어 물기를 빼고, 무와 두부는 나박 썰고, 부추는 5cm 길이로 썬다."
       },
       {
         "step": 2,
-        "description": "새우와 오징어는 먹기 좋은 크기로 썬다."
+        "description": "전골 냄비에 물과 무를 넣고 강한 불에서 끓여 무가 투명해질 때까지 익힌다."
       },
       {
         "step": 3,
-        "description": "냄비에 물을 붓고 다진 마늘, 고춧가루, 국간장을 넣어 끓인다."
+        "description": "무가 익으면 굴, 두부, 다진마늘, 국간장을 넣고 중간 불에서 3분간 더 끓인다."
       },
       {
         "step": 4,
-        "description": "재료들을 모두 넣고 15분 정도 끓인다."
-      },
-      {
-        "step": 5,
-        "description": "소금과 후추로 간을 맞춘 뒤 불을 끈다."
+        "description": "새우젓으로 시원하게 간을 맞추고, 불을 끄기 직전 부추를 올려 살짝 숨만 죽여 낸다."
       }
     ],
     "tips": [
       "굴은 너무 오래 끓이면 질겨질 수 있으니 마지막에 넣으세요."
-    ]
+    ],
+    "servingsUnit": "인분"
   },
   {
     "id": "grape-jam",
@@ -8234,41 +8208,46 @@
     "description": "빵과 찰떡궁합인 아삭한 사과의 식감이 느껴지는 잼입니다.",
     "image": "recipe-apple-jam.jpg",
     "servings": 500,
-    "cookTime": "50분",
+    "cookTime": "60분",
     "difficulty": "초급",
     "ingredients": [
       {
         "name": "사과",
-        "amount": "650g"
-      },
-      {
-        "name": "설탕",
-        "amount": "300g"
-      },
-      {
-        "name": "계핏가루",
-        "amount": "0.5작은술"
+        "amount": "500g"
       }
     ],
     "steps": [
       {
         "step": 1,
-        "description": "사과는 껍질과 씨를 제거하고 잘게 다지듯 썹니다."
+        "description": "사과는 껍질과 씨를 제거하고 아주 잘게 다지거나 믹서에 거칠게 간다."
       },
       {
         "step": 2,
-        "description": "냄비에 사과와 설탕을 넣고 수분이 나올 때까지 저으며 끓입니다."
+        "description": "코팅된 깊은 냄비에 손질한 사과와 설탕을 넣고 고루 섞은 뒤 10분간 두어 수분이 빠져나오게 한다."
       },
       {
         "step": 3,
-        "description": "계핏가루를 취향껏 넣어 향을 더한 뒤 조려냅니다."
+        "description": "중간 불에서 끓이기 시작하여 끓어오르면 약한 불로 줄이고 바닥이 눋지 않게 주걱으로 저어가며 40분간 졸인다."
+      },
+      {
+        "step": 4,
+        "description": "잼이 걸쭉해지면 레몬즙을 넣고 5분 더 졸인 뒤, 소독된 유리병에 담아 밀봉한다."
       }
     ],
     "relatedIngredients": [
       "사과"
     ],
     "relatedHolidays": [],
-    "seasoning": [],
+    "seasoning": [
+      {
+        "name": "설탕",
+        "amount": "250g"
+      },
+      {
+        "name": "레몬즙",
+        "amount": "2큰술"
+      }
+    ],
     "servingsUnit": "ml"
   },
   {
@@ -8589,47 +8568,54 @@
     "category": "채소",
     "description": "쫄깃한 팽이버섯과 고소한 계란이 어우러진 간단하고 맛있는 전 요리입니다.",
     "image": "enoki-pancake.png",
-    "servings": 2,
+    "servings": 5,
     "cookTime": "15분",
     "difficulty": "초급",
     "ingredients": [
       {
         "name": "팽이버섯",
-        "amount": "1봉지"
+        "amount": "150g"
       },
       {
-        "name": "계란",
+        "name": "당근",
+        "amount": "30g"
+      },
+      {
+        "name": "달걀",
         "amount": "2개"
       },
       {
-        "name": "쪽파",
-        "amount": "2대"
-      },
-      {
-        "name": "소금",
-        "amount": "0.5작은술"
+        "name": "식용유",
+        "amount": "3큰술"
       }
     ],
     "steps": [
       {
         "step": 1,
-        "description": "팽이버섯 밑동을 자르고 가닥가닥 찢어 준비합니다."
+        "description": "팽이버섯은 밑동을 자르고 가닥가닥 뜯어 1cm 길이로 썰고, 당근도 매우 잘게 다진다."
       },
       {
         "step": 2,
-        "description": "쪽파를 송송 썰어 준비합니다."
+        "description": "볼에 달걀을 풀고 소금을 넣어 간을 맞춘다."
       },
       {
         "step": 3,
-        "description": "볼에 계란을 풀고 소금으로 간한 뒤, 팽이버섯과 채소를 넣어 잘 섞습니다."
+        "description": "달걀물에 잘게 썬 팽이버섯과 당근을 넣고 고루 섞어 반죽을 만든다."
       },
       {
         "step": 4,
-        "description": "달군 팬에 식용유를 두르고 한 숟갈씩 떠서 노릇하게 지집니다."
+        "description": "달군 팬에 식용유를 두르고 반죽을 한 숟가락씩 둥글게 올려 앞뒤로 노릇하게 굽는다."
       }
     ],
     "relatedIngredients": [
       "팽이버섯"
+    ],
+    "servingsUnit": "개",
+    "seasoning": [
+      {
+        "name": "소금",
+        "amount": "0.5작은술"
+      }
     ]
   },
   {
@@ -9013,29 +8999,25 @@
     "category": "채소",
     "description": "새콤달콤한 소스에 절여 차갑게 먹는 고급스러운 토마토 샐러드입니다.",
     "servings": 2,
-    "cookTime": "20분",
+    "cookTime": "15분",
     "difficulty": "중",
     "ingredients": [
       {
         "name": "방울토마토",
-        "amount": "30알"
+        "amount": "200g"
       },
       {
         "name": "양파",
-        "amount": "1/4개"
-      },
-      {
-        "name": "바질잎",
-        "amount": "3장"
+        "amount": "0.5개"
       }
     ],
     "seasoning": [
       {
-        "name": "올리브유",
+        "name": "올리브오일",
         "amount": "3큰술"
       },
       {
-        "name": "발사믹 식초",
+        "name": "발사믹식초",
         "amount": "2큰술"
       },
       {
@@ -9043,83 +9025,77 @@
         "amount": "1큰술"
       },
       {
-        "name": "레몬즙",
-        "amount": "1큰술"
-      },
-      {
         "name": "소금",
-        "amount": "0.5작은술"
-      },
-      {
-        "name": "후추",
         "amount": "0.5작은술"
       }
     ],
     "steps": [
       {
         "step": 1,
-        "description": "방울토마토는 십자 모양으로 칼집을 내어 끓는 물에 살짝 데친 뒤 껍질을 벗깁니다."
+        "description": "방울토마토는 꼭지를 떼고 꼭지 반대편에 십자(+) 모양으로 얕게 칼집을 낸다."
       },
       {
         "step": 2,
-        "description": "양파는 잘게 다지고 바질잎은 적당한 크기로 찢어 준비합니다."
+        "description": "끓는 물에 토마토를 10초간 데친 후 바로 찬물에 건져 껍질을 모두 벗긴다."
       },
       {
         "step": 3,
-        "description": "분량의 양념 재료를 섞어 마리네이드 소스를 만듭니다."
+        "description": "양파는 매우 잘게 다져 볼에 담고 올리브오일, 발사믹식초, 꿀, 소금을 넣어 드레싱을 만든다."
       },
       {
         "step": 4,
-        "description": "볼에 토마토, 양파, 바질, 소스를 넣고 버무려 냉장고에서 한 시간 이상 차갑게 보관합니다."
+        "description": "드레싱에 껍질 벗긴 방울토마토를 넣고 버무린 뒤, 냉장고에 1시간 이상 차갑게 보관하여 맛을 들인다."
       }
-    ]
+    ],
+    "servingsUnit": "인분"
   },
   {
     "id": "asparagus-bacon-roll",
     "name": "아스파라거스 베이컨 말이",
     "category": "채소",
     "description": "아삭한 아스파라거스를 짭조름한 베이컨으로 말아 구운 고소한 요리입니다.",
-    "servings": 2,
+    "servings": 5,
     "cookTime": "15분",
     "difficulty": "하",
     "ingredients": [
       {
         "name": "아스파라거스",
-        "amount": "10대"
+        "amount": "5대"
       },
       {
         "name": "베이컨",
-        "amount": "5줄"
+        "amount": "5장"
+      },
+      {
+        "name": "식용유",
+        "amount": "1큰술"
       }
     ],
     "seasoning": [
       {
-        "name": "소금",
-        "amount": "0.5작은술"
-      },
-      {
-        "name": "후추",
+        "name": "후춧가루",
         "amount": "0.5작은술"
       }
     ],
     "steps": [
       {
         "step": 1,
-        "description": "아스파라거스는 밑동을 자르고 필러로 아랫부분 껍질을 벗긴 뒤 끓는 물에 30초간 데칩니다."
+        "description": "아스파라거스는 밑동의 질긴 부분을 잘라내고 감자칼로 겉껍질을 살짝 벗겨낸다."
       },
       {
         "step": 2,
-        "description": "베이컨은 반으로 잘라 준비합니다."
+        "description": "손질된 아스파라거스에 후춧가루를 고루 뿌려 향을 입힌다."
       },
       {
         "step": 3,
-        "description": "아스파라거스에 베이컨을 돌돌 말아 끝부분이 아래로 가게 팬에 올립니다."
+        "description": "아스파라거스 1대당 베이컨 1장을 나선형으로 빈틈없이 돌돌 만다."
       },
       {
         "step": 4,
-        "description": "소금과 후추를 살짝 뿌려 베이컨이 노릇해질 때까지 굴려가며 굽습니다."
+        "description": "달군 팬에 식용유를 살짝 두르고 베이컨의 끝부분이 바닥에 닿게 올려 풀어지지 않게 고정한 뒤 돌려가며 바삭하게 굽는다."
       }
-    ]
+    ],
+    "servingsUnit": "개"
   },
   {
     "id": "shinemuscat-yogurt-salad",
@@ -9217,7 +9193,7 @@
     "category": "과일",
     "description": "참외의 달콤함과 고추장 양념의 매콤함이 어우러진 여름철 별미 반찬입니다.",
     "servings": 2,
-    "cookTime": "15분",
+    "cookTime": "10분",
     "difficulty": "중",
     "ingredients": [
       {
@@ -9225,18 +9201,14 @@
         "amount": "1개"
       },
       {
-        "name": "부추",
-        "amount": "20g"
+        "name": "대파",
+        "amount": "0.25대"
       }
     ],
     "seasoning": [
       {
         "name": "고추장",
         "amount": "1큰술"
-      },
-      {
-        "name": "고춧가루",
-        "amount": "0.5큰술"
       },
       {
         "name": "식초",
@@ -9247,32 +9219,33 @@
         "amount": "0.5큰술"
       },
       {
-        "name": "다진 마늘",
+        "name": "다진마늘",
         "amount": "0.5작은술"
       },
       {
-        "name": "참기름",
-        "amount": "1/4작은술"
-      },
-      {
-        "name": "깨",
-        "amount": "1/4작은술"
+        "name": "통깨",
+        "amount": "1큰술"
       }
     ],
     "steps": [
       {
         "step": 1,
-        "description": "참외는 껍질을 깎아 씨를 제거하고 한입 크기로 얇게 썹니다."
+        "description": "참외는 껍질을 벗기고 반으로 갈라 숟가락으로 안쪽의 씨와 태좌를 모두 긁어낸다."
       },
       {
         "step": 2,
-        "description": "양념 재료를 모두 섞어 양념장을 만듭니다."
+        "description": "씨를 뺀 참외는 0.5cm 두께로 반달 모양으로 썰고, 대파는 송송 썬다."
       },
       {
         "step": 3,
-        "description": "참외와 양념장을 넣고 살살 버무린 뒤 마지막에 참기름과 깨를 뿌려 마무리합니다."
+        "description": "볼에 고추장, 식초, 설탕, 다진마늘, 통깨를 넣고 잘 섞어 양념장을 만든다."
+      },
+      {
+        "step": 4,
+        "description": "썰어둔 참외와 대파를 양념장에 넣고 물이 생기지 않도록 먹기 직전에 가볍게 버무려 낸다."
       }
-    ]
+    ],
+    "servingsUnit": "인분"
   },
   {
     "id": "cuttlefish-stir-fry",
@@ -9652,62 +9625,55 @@
     "category": "채소",
     "description": "완두콩의 고소함과 부드러운 우유가 만나 입안 가득 퍼지는 따뜻하고 든든한 스프입니다.",
     "servings": 2,
-    "cookTime": "20분",
+    "cookTime": "25분",
     "difficulty": "하",
     "ingredients": [
       {
-        "name": "완두콩",
-        "amount": "200g"
+        "name": "물",
+        "amount": "200ml"
       },
       {
-        "name": "양파",
-        "amount": "1/2개"
+        "name": "완두콩",
+        "amount": "200g"
       },
       {
         "name": "우유",
         "amount": "200ml"
       },
       {
-        "name": "물",
-        "amount": "100ml"
+        "name": "양파",
+        "amount": "0.5개"
       },
       {
         "name": "버터",
-        "amount": "15g"
+        "amount": "1큰술"
       }
     ],
     "seasoning": [
       {
         "name": "소금",
         "amount": "0.5작은술"
-      },
-      {
-        "name": "후추",
-        "amount": "0.5작은술"
       }
     ],
     "steps": [
       {
         "step": 1,
-        "description": "완두콩은 끓는 물에 소금을 약간 넣고 3~4분간 데친 후 찬물에 헹궈 준비합니다."
+        "description": "완두콩은 끓는 물(분량 외)에 5분간 데쳐 건져내고, 양파는 얇게 채 썬다."
       },
       {
         "step": 2,
-        "description": "양파는 얇게 채 썰어 줍니다."
+        "description": "냄비에 버터를 녹이고 채 썬 양파를 넣어 투명해질 때까지 중약 불에서 볶는다."
       },
       {
         "step": 3,
-        "description": "냄비에 버터를 두르고 양파가 투명해질 때까지 약불에서 볶아줍니다."
+        "description": "믹서에 볶은 양파, 데친 완두콩, 물 200ml를 넣고 건더기가 없도록 아주 곱게 간다."
       },
       {
         "step": 4,
-        "description": "볶은 양파와 데친 완두콩, 물 100ml를 믹서기에 넣고 곱게 갈아줍니다."
-      },
-      {
-        "step": 5,
-        "description": "갈아낸 재료를 다시 냄비에 붓고 우유를 저어가며 끓인 뒤, 소금과 후추로 간을 맞춥니다."
+        "description": "간 재료를 냄비에 붓고 우유를 넣어 농도를 맞춘 뒤, 약불에서 끓어오르기 직전까지 뭉근하게 데우며 소금으로 간을 맞춘다."
       }
-    ]
+    ],
+    "servingsUnit": "인분"
   },
   {
     "id": "chives-pancake",

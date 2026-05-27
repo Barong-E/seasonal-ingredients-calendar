@@ -1,0 +1,226 @@
+[
+  {
+    "name": "떡국",
+    "cookTime": "30분",
+    "servings": 2,
+    "servingsUnit": "인분",
+    "ingredients": [
+      { "name": "물", "amount": "800ml" },
+      { "name": "떡국떡", "amount": "400g" },
+      { "name": "소고기", "amount": "100g" },
+      { "name": "대파", "amount": "0.5대" }
+    ],
+    "seasoning": [
+      { "name": "국간장", "amount": "1큰술" },
+      { "name": "참기름", "amount": "1큰술" },
+      { "name": "다진마늘", "amount": "0.5작은술" },
+      { "name": "소금", "amount": "0.5작은술" }
+    ],
+    "steps": [
+      { "step": 1, "description": "소고기는 핏물을 빼고, 떡국떡은 물에 30분간 불려 준비한다." },
+      { "step": 2, "description": "냄비에 참기름을 두르고 소고기를 볶다가, 고기가 익으면 물을 붓고 끓인다." },
+      { "step": 3, "description": "국물이 끓어오르면 불린 떡국떡과 다진마늘, 국간장을 넣고 끓인다." },
+      { "step": 4, "description": "떡이 위로 떠오르면 대파를 넣고, 소금으로 간을 맞춘 뒤 1분 더 끓여 완성한다." }
+    ]
+  },
+  {
+    "name": "송편",
+    "cookTime": "50분",
+    "servings": 5,
+    "servingsUnit": "개",
+    "ingredients": [
+      { "name": "멥쌀가루", "amount": "200g" },
+      { "name": "뜨거운 물", "amount": "4큰술" },
+      { "name": "깨", "amount": "3큰술" }
+    ],
+    "seasoning": [
+      { "name": "설탕", "amount": "2큰술" },
+      { "name": "꿀", "amount": "1큰술" },
+      { "name": "소금", "amount": "0.5작은술" }
+    ],
+    "steps": [
+      { "step": 1, "description": "멥쌀가루에 소금과 뜨거운 물을 넣고 익반죽하여 표면이 매끄러워지도록 여러 번 치댄다." },
+      { "step": 2, "description": "설탕, 꿀, 깨를 섞어 송편 소를 만든다." },
+      { "step": 3, "description": "반죽을 조금씩 떼어 둥글게 빚은 후, 가운데 홈을 파고 소를 넣어 반달 모양으로 빚는다." },
+      { "step": 4, "description": "찜기에 젖은 면포를 깔고 송편을 올려 20분간 찌고 꺼내어 식힌다." }
+    ]
+  },
+  {
+    "name": "굴전",
+    "cookTime": "20분",
+    "servings": 5,
+    "servingsUnit": "개",
+    "ingredients": [
+      { "name": "굴", "amount": "150g" },
+      { "name": "달걀", "amount": "2개" },
+      { "name": "부침가루", "amount": "3큰술" },
+      { "name": "식용유", "amount": "3큰술" }
+    ],
+    "seasoning": [
+      { "name": "소금", "amount": "0.5작은술" },
+      { "name": "후춧가루", "amount": "0.5작은술" }
+    ],
+    "steps": [
+      { "step": 1, "description": "굴은 소금물(분량 외)에 가볍게 씻은 후 체에 밭쳐 물기를 완전히 뺀다." },
+      { "step": 2, "description": "달걀을 풀고 소금과 후춧가루를 넣어 섞는다." },
+      { "step": 3, "description": "굴에 부침가루를 고루 묻힌 후, 달걀물에 담가 얇게 옷을 입힌다." },
+      { "step": 4, "description": "달군 팬에 식용유를 두르고 굴을 올려 앞뒤로 노릇하게 굽는다." }
+    ]
+  },
+  {
+    "name": "굴국밥",
+    "cookTime": "25분",
+    "servings": 2,
+    "servingsUnit": "인분",
+    "ingredients": [
+      { "name": "물", "amount": "1000ml" },
+      { "name": "굴", "amount": "200g" },
+      { "name": "밥", "amount": "400g" },
+      { "name": "무", "amount": "100g" },
+      { "name": "부추", "amount": "50g" }
+    ],
+    "seasoning": [
+      { "name": "국간장", "amount": "1큰술" },
+      { "name": "새우젓", "amount": "1큰술" },
+      { "name": "다진마늘", "amount": "1큰술" }
+    ],
+    "steps": [
+      { "step": 1, "description": "굴은 가볍게 씻어 물기를 빼고, 무는 얇게 나박 썰고, 부추는 4cm 길이로 썬다." },
+      { "step": 2, "description": "냄비에 물과 무를 넣고 먼저 끓여 시원한 무 육수를 낸다." },
+      { "step": 3, "description": "무가 투명해지면 밥과 굴, 다진마늘, 국간장, 새우젓을 넣고 3분간 끓인다." },
+      { "step": 4, "description": "굴이 통통하게 익으면 부추를 얹고 바로 불을 끈다." }
+    ]
+  },
+  {
+    "name": "도다리쑥국",
+    "cookTime": "35분",
+    "servings": 2,
+    "servingsUnit": "인분",
+    "ingredients": [
+      { "name": "물", "amount": "1000ml" },
+      { "name": "도다리", "amount": "400g" },
+      { "name": "쑥", "amount": "100g" },
+      { "name": "무", "amount": "100g" },
+      { "name": "대파", "amount": "0.5대" }
+    ],
+    "seasoning": [
+      { "name": "된장", "amount": "2큰술" },
+      { "name": "국간장", "amount": "1큰술" },
+      { "name": "다진마늘", "amount": "1큰술" }
+    ],
+    "steps": [
+      { "step": 1, "description": "도다리는 내장과 비늘을 제거하고 흐르는 물에 씻어 2토막으로 자른다." },
+      { "step": 2, "description": "쑥은 질긴 줄기를 떼어내고 씻어 물기를 빼며, 무는 나박 썰고, 대파는 어슷하게 썬다." },
+      { "step": 3, "description": "냄비에 물과 무를 넣고 끓인 뒤, 무가 익으면 된장을 체에 밭쳐 곱게 푼다." },
+      { "step": 4, "description": "국물이 끓으면 도다리와 다진마늘, 국간장을 넣고 생선이 완전히 익을 때까지 끓인 후, 마지막에 쑥과 대파를 넣고 1분간 더 끓인다." }
+    ]
+  },
+  {
+    "name": "바지락칼국수",
+    "cookTime": "30분",
+    "servings": 2,
+    "servingsUnit": "인분",
+    "ingredients": [
+      { "name": "물", "amount": "1200ml" },
+      { "name": "바지락", "amount": "400g" },
+      { "name": "칼국수면", "amount": "300g" },
+      { "name": "애호박", "amount": "0.5개" }
+    ],
+    "seasoning": [
+      { "name": "국간장", "amount": "1큰술" },
+      { "name": "다진마늘", "amount": "1큰술" },
+      { "name": "소금", "amount": "0.5작은술" }
+    ],
+    "steps": [
+      { "step": 1, "description": "바지락은 소금물에 1시간 이상 담가 해감하고, 애호박은 일정한 굵기로 채 썬다." },
+      { "step": 2, "description": "냄비에 물을 붓고 끓으면 바지락을 넣어 입을 벌릴 때까지 끓인 후, 바지락만 따로 건져낸다." },
+      { "step": 3, "description": "조개 육수에 다진마늘, 국간장을 넣고 끓어오르면 덧가루를 턴 칼국수면을 넣어 끓인다." },
+      { "step": 4, "description": "면이 투명해지며 거의 익으면 애호박과 건져둔 바지락을 다시 넣고, 소금으로 간을 맞춰 완성한다." }
+    ]
+  },
+  {
+    "name": "전복죽",
+    "cookTime": "45분",
+    "servings": 2,
+    "servingsUnit": "인분",
+    "ingredients": [
+      { "name": "물", "amount": "800ml" },
+      { "name": "불린 쌀", "amount": "200g" },
+      { "name": "전복", "amount": "150g" }
+    ],
+    "seasoning": [
+      { "name": "참기름", "amount": "2큰술" },
+      { "name": "국간장", "amount": "1큰술" },
+      { "name": "소금", "amount": "0.5작은술" }
+    ],
+    "steps": [
+      { "step": 1, "description": "전복은 솔로 문질러 씻은 뒤 살과 내장을 분리하고, 전복 살은 얇게 썰며 내장은 잘게 다진다." },
+      { "step": 2, "description": "냄비에 참기름을 두르고 전복 살과 내장을 볶다가, 불린 쌀을 넣고 쌀알이 반투명해질 때까지 볶는다." },
+      { "step": 3, "description": "물을 붓고 강한 불에서 끓어오르면 약한 불로 줄이고 바닥이 눋지 않게 저어가며 쌀이 완전히 퍼질 때까지 끓인다." },
+      { "step": 4, "description": "국간장과 소금으로 최종 간을 맞추어 완성한다." }
+    ]
+  },
+  {
+    "name": "삼치구이",
+    "cookTime": "20분",
+    "servings": 2,
+    "servingsUnit": "인분",
+    "ingredients": [
+      { "name": "삼치", "amount": "300g" },
+      { "name": "식용유", "amount": "2큰술" }
+    ],
+    "seasoning": [
+      { "name": "청주", "amount": "1큰술" },
+      { "name": "소금", "amount": "1.5작은술" }
+    ],
+    "steps": [
+      { "step": 1, "description": "삼치는 흐르는 물에 가볍게 씻은 후 물기를 제거하고, 양면에 청주와 소금을 뿌려 10분간 둔다." },
+      { "step": 2, "description": "삼치 표면으로 배어 나온 수분을 키친타월로 꼼꼼하게 닦아낸다." },
+      { "step": 3, "description": "달군 팬에 식용유를 두르고 삼치를 껍질 부분부터 올려 중간 불에서 굽는다." },
+      { "step": 4, "description": "밑면이 바삭하고 노릇해지면 조심스럽게 뒤집어 반대쪽도 속까지 완전히 익도록 굽는다." }
+    ]
+  },
+  {
+    "name": "오곡밥",
+    "cookTime": "60분",
+    "servings": 4,
+    "servingsUnit": "인분",
+    "ingredients": [
+      { "name": "물", "amount": "500ml" },
+      { "name": "찹쌀", "amount": "200g" },
+      { "name": "멥쌀", "amount": "100g" },
+      { "name": "찰수수", "amount": "50g" },
+      { "name": "검은콩", "amount": "50g" },
+      { "name": "팥", "amount": "50g" }
+    ],
+    "seasoning": [
+      { "name": "소금", "amount": "1.5작은술" }
+    ],
+    "steps": [
+      { "step": 1, "description": "찹쌀, 멥쌀, 찰수수는 씻어서 1시간 동안 불리고, 검은콩은 3시간 동안 물에 불려둔다." },
+      { "step": 2, "description": "냄비에 팥과 넉넉한 양의 물을 넣고 끓어오르면 떫은맛을 제거하기 위해 첫 물은 버리고, 다시 물을 부어 팥이 터지지 않을 정도로 삶아 건진다." },
+      { "step": 3, "description": "전기밥솥에 불린 쌀과 수수, 콩, 삶은 팥을 모두 고르게 섞어 넣는다." },
+      { "step": 4, "description": "물 500ml에 소금을 완벽히 녹인 뒤 밥솥에 붓고 일반 취사 버튼을 눌러 밥을 짓는다." }
+    ]
+  },
+  {
+    "name": "밀전병",
+    "cookTime": "20분",
+    "servings": 5,
+    "servingsUnit": "개",
+    "ingredients": [
+      { "name": "밀가루", "amount": "100g" },
+      { "name": "물", "amount": "150ml" },
+      { "name": "식용유", "amount": "2큰술" }
+    ],
+    "seasoning": [
+      { "name": "소금", "amount": "0.5작은술" }
+    ],
+    "steps": [
+      { "step": 1, "description": "볼에 밀가루와 물, 소금을 넣고 덩어리가 완전히 풀릴 때까지 거품기로 곱게 저어 반죽을 만든다." },
+      { "step": 2, "description": "만들어진 반죽은 체에 한 번 걸러 질감을 부드럽게 만든 뒤, 실온에서 10분간 숙성시킨다." },
+      { "step": 3, "description": "약한 불로 달군 팬에 식용유를 살짝 두르고 키친타월로 가볍게 닦아내어 코팅만 남긴다." },
+      { "step": 4, "description": "반죽을 2큰술씩 떠서 팬에 올리고 둥글고 얇게 펼쳐 가장자리가 일어나면 뒤집어 하얗게 굽는다." }
+    ]
+  }
+]
