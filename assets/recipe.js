@@ -306,7 +306,8 @@ function renderRecipe(recipe) {
   // 기본 정보
   document.getElementById('recipeName').textContent = recipe.name;
   document.getElementById('recipeDescription').textContent = recipe.description;
-  document.getElementById('recipeServings').textContent = `${currentServings}인분`;
+  const unit = recipe.servingsUnit || '인분';
+  document.getElementById('recipeServings').textContent = `${currentServings}${unit}`;
   document.getElementById('recipeCookTime').textContent = recipe.cookTime;
   document.getElementById('recipeDifficulty').textContent = recipe.difficulty;
 
@@ -463,6 +464,24 @@ async function loadSeasonalIngredients() {
   }
 }
 
+// 단위 기반 분량 단계 및 한계점 구하기
+function getServingsStep(recipe) {
+  const unit = recipe.servingsUnit || '인분';
+  if (unit === '개') return 5;
+  if (unit === 'g') return 500;
+  if (unit === 'ml') return 500;
+  if (unit === 'kg') return 1;
+  return 1;
+}
+
+function getServingsLimits(recipe) {
+  const step = getServingsStep(recipe);
+  return {
+    min: step,
+    max: step * 10
+  };
+}
+
 // 초기화
 async function init() {
   const recipeId = getRecipeIdFromUrl();
@@ -489,9 +508,13 @@ async function init() {
   }
 
   baseServings = currentRecipe.servings || 2;
-  const savedServings = localStorage.getItem('user_preferred_servings');
+  const step = getServingsStep(currentRecipe);
+  const limits = getServingsLimits(currentRecipe);
+  const savedServings = localStorage.getItem(`user_preferred_servings_${currentRecipe.id}`);
   currentServings = savedServings ? parseInt(savedServings, 10) : baseServings;
-  if (isNaN(currentServings) || currentServings < 1) currentServings = 1;
+  if (isNaN(currentServings) || currentServings < limits.min || currentServings > limits.max || currentServings % step !== 0) {
+    currentServings = baseServings;
+  }
 
   renderRecipe(currentRecipe);
 
@@ -507,10 +530,12 @@ async function init() {
 
   if (btnMinus) {
     btnMinus.addEventListener('click', () => {
-      if (currentServings > 1) {
-        currentServings--;
-        localStorage.setItem('user_preferred_servings', currentServings);
-        document.getElementById('recipeServings').textContent = `${currentServings}인분`;
+      const step = getServingsStep(currentRecipe);
+      const limits = getServingsLimits(currentRecipe);
+      if (currentServings > limits.min) {
+        currentServings -= step;
+        localStorage.setItem(`user_preferred_servings_${currentRecipe.id}`, currentServings);
+        document.getElementById('recipeServings').textContent = `${currentServings}${currentRecipe.servingsUnit || '인분'}`;
         renderIngredients(currentRecipe.ingredients);
         if (currentRecipe.seasoning && currentRecipe.seasoning.length > 0) renderSeasoning(currentRecipe.seasoning);
       }
@@ -519,10 +544,12 @@ async function init() {
 
   if (btnPlus) {
     btnPlus.addEventListener('click', () => {
-      if (currentServings < 20) {
-        currentServings++;
-        localStorage.setItem('user_preferred_servings', currentServings);
-        document.getElementById('recipeServings').textContent = `${currentServings}인분`;
+      const step = getServingsStep(currentRecipe);
+      const limits = getServingsLimits(currentRecipe);
+      if (currentServings < limits.max) {
+        currentServings += step;
+        localStorage.setItem(`user_preferred_servings_${currentRecipe.id}`, currentServings);
+        document.getElementById('recipeServings').textContent = `${currentServings}${currentRecipe.servingsUnit || '인분'}`;
         renderIngredients(currentRecipe.ingredients);
         if (currentRecipe.seasoning && currentRecipe.seasoning.length > 0) renderSeasoning(currentRecipe.seasoning);
       }
