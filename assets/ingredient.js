@@ -5,7 +5,7 @@ import { getRecipeIdFromDishName } from './recipe-mapper.js';
 
 async function loadIngredientData() {
   try {
-    const res = await fetch('data/ingredients.json?v=v41', { cache: 'no-cache' });
+    const res = await fetch('data/ingredients.json?v=v42', { cache: 'no-cache' });
     if (!res.ok) throw new Error('Failed to load data');
     return await res.json();
   } catch (err) {
@@ -71,6 +71,19 @@ async function init() {
   document.getElementById('detailImage').alt = item.name_ko;
   document.getElementById('detailTitle').textContent = item.name_ko;
   document.getElementById('detailDesc').textContent = item.description_ko || '';
+
+  // 추천 대상 렌더링
+  if (item.recommended_for && item.recommended_for.length > 0) {
+    const recContainer = document.getElementById('recommendedForContainer');
+    recContainer.innerHTML = '';
+    item.recommended_for.forEach(rec => {
+      const span = document.createElement('span');
+      span.className = 'recommended-badge';
+      span.textContent = rec;
+      recContainer.appendChild(span);
+    });
+    recContainer.style.display = 'flex';
+  }
 
   // 계절 테마 설정
   if (item.months && item.months.length > 0) {

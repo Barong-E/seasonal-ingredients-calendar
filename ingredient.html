@@ -125,6 +125,29 @@
         word-break: keep-all;
       }
       
+      /* 추천 대상 스타일 */
+      .recommended-for-container {
+        margin-top: 12px;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 6px;
+      }
+      .recommended-badge {
+        display: inline-flex;
+        align-items: center;
+        background: rgba(10, 123, 52, 0.1);
+        color: #0A7B34;
+        padding: 4px 10px;
+        border-radius: 12px;
+        font-size: 0.75rem;
+        font-weight: 600;
+      }
+      .recommended-badge::before {
+        content: '👍';
+        margin-right: 4px;
+        font-size: 0.8rem;
+      }
+      
       @media (max-width: 767px) {
         .detail-title {
           font-size: 0.95rem;
@@ -219,6 +242,7 @@
           <div class="detail-header-text">
             <h1 id="detailTitle" class="detail-title"></h1>
             <p id="detailDesc" class="detail-desc"></p>
+            <div id="recommendedForContainer" class="recommended-for-container" style="display: none;"></div>
           </div>
         </div>
         <div class="detail-body">

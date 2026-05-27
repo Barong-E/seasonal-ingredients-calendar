@@ -71,6 +71,7 @@
   "category": "해산물/채소/과일/기타",
   "image": "image_name.png",
   "description_ko": "식재료 설명",
+  "recommended_for": ["추천 대상 1", "추천 대상 2"], // 이 식재료를 추천하는 대상 (질환자, 환경 등)
   "preparation_ko": "손질법",
   "storage_refrigerator": "냉장보관법",
   "months": [1, 2, 12], // 제철 달(월) 정보 (숫자 배열)
