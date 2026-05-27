@@ -159,7 +159,6 @@ function parseAndCalculateAmount(name, amountStr, baseS, currS) {
   // ─── 💧 단계 5: 물/육수 계열은 80% 황금 감쇠 공식 ───────────────────────
   // 라면 국물의 비밀!
   // 냄비에서 수증기로 날아가는 물의 양은 인분 수에 비례하지 않아요.
-  // 그래서 단순 2배 대신 80%씩만 추가하는 스마트 공식을 써요.
   // 공식: 1인분 물의 양 × [ 1 + (인분수 - 1) × 0.8 ]
   const waterKeywords = ['물', '육수', '쌀뜨물', '다시마물', '멸치육수', '채수', '사골육수'];
   const isWater = waterKeywords.some(kw => name.includes(kw));
@@ -172,27 +171,21 @@ function parseAndCalculateAmount(name, amountStr, baseS, currS) {
     calculated = (numVal / baseS) * currS;
   }
 
-  // 소수점 1자리까지만 보여주기 (0.33333... 같은 숫자가 안 보이도록)
-  const rounded = Math.round(calculated * 10) / 10;
-
-  // ─── 🥄 단계 6: 꼬집으로 시작했는데 계산 후 t스푼 변환 필요한 경우 ──────
-  // (이미 꼬집 케이스는 위에서 처리했으므로 여기선 일반 단위 반환)
-
   // ─── ⚖️ 단계 7: 무게(g) 단위일 때 저울 없는 사람을 위한 스마트 괄호 일상 단위 추가 ───
   let appendStr = '';
   if (unit.trim().startsWith('g')) {
-    // 0.5 단위로 반올림하는 헬퍼 함수 (예: 1.2 -> 1, 1.4 -> 1.5, 1.8 -> 2)
+    // 0.5 단위로 반올림하는 헬퍼 함수
     const roundHalf = val => Math.round(val * 2) / 2;
 
     if (name.includes('가루') || name.includes('밀가루') || name.includes('설탕') || name.includes('소금') || name.includes('된장') || name.includes('고추장') || name.includes('버터')) {
-      if (rounded >= 50) {
+      if (calculated >= 50) {
         // 100g ≈ 1종이컵 (50g 이상일 때 0.5컵 단위 표기)
-        const cups = roundHalf(rounded / 100);
+        const cups = roundHalf(calculated / 100);
         appendStr = ` (약 ${cups}종이컵)`;
       } else {
         // 1큰술 = 15g, 1작은술 = 5g (큰술의 1/3)
-        let tbs = Math.floor(rounded / 15);
-        let rem = rounded % 15;
+        let tbs = Math.floor(calculated / 15);
+        let rem = calculated % 15;
         let tsp = Math.round(rem / 5); // 작은술 소수점 없이 반올림
 
         // 작은술이 3이 되면 1큰술로 승급!
@@ -210,109 +203,96 @@ function parseAndCalculateAmount(name, amountStr, baseS, currS) {
       }
     } else if (['감자', '양파', '고구마', '당근', '애호박', '오이', '사과', '배', '토마토', '피망', '파프리카'].some(kw => name.includes(kw))) {
       // 200g ≈ 1개
-      const cnt = roundHalf(rounded / 200);
+      const cnt = roundHalf(calculated / 200);
       appendStr = ` (약 ${cnt < 0.5 ? 0.5 : cnt}개)`;
     } else if (name.includes('무') || name.includes('배추') || name.includes('단호박')) {
-      if (rounded >= 90) {
+      if (calculated >= 90) {
         // 180g ≈ 1종이컵 부피 (90g 이상일 때 0.5컵 단위 표기)
-        const cups = roundHalf(rounded / 180);
+        const cups = roundHalf(calculated / 180);
         appendStr = ` (약 ${cups}종이컵 부피)`;
       } else {
-        const tbs = Math.round(rounded / 15);
+        const tbs = Math.round(calculated / 15);
         appendStr = ` (약 ${tbs < 1 ? 1 : tbs}큰술)`;
       }
     } else if (['쑥', '냉이', '달래', '부추', '미나리', '깻잎', '상추', '시금치', '콩나물', '숙주', '고사리', '버섯', '파', '갓', '쪽파'].some(kw => name.includes(kw))) {
       // 50g ≈ 1줌
-      const jum = roundHalf(rounded / 50);
+      const jum = roundHalf(calculated / 50);
       appendStr = ` (약 ${jum < 0.5 ? 0.5 : jum}줌)`;
     } else {
       // 육류 / 해산물 / 기타: 180g ≈ 1종이컵
-      if (rounded >= 90) {
+      if (calculated >= 90) {
         // 90g 이상일 때 0.5컵 단위 표기
-        const cups = roundHalf(rounded / 180);
+        const cups = roundHalf(calculated / 180);
         appendStr = ` (약 ${cups}종이컵)`;
       } else {
-        const tbs = Math.round(rounded / 15);
+        const tbs = Math.round(calculated / 15);
         appendStr = ` (약 ${tbs < 1 ? 1 : tbs}큰술)`;
       }
     }
   }
 
-
   // ─── 🔧 단계 8: 모든 단위에 대한 소수점·작은 값 범용 후처리 ────────────────
-  //
-  // 계산 후 소수점이 생기거나 1 미만의 어색한 값이 나올 때,
-  // 사람이 요리하기 편한 단위로 자동 변환해 줘요.
   const cu = unit.trim();
 
   // ── 컵 / 종이컵 ──────────────────────────────────────────────────────────
-  // 0.5컵 미만 → 큰술로 변환 (1컵 = 16큰술 기준)
   if (cu === '컵' || cu === '종이컵') {
-    if (rounded < 0.5) {
-      const tbs = Math.round(rounded * 16);
+    if (calculated < 0.5) {
+      const tbs = Math.round(calculated * 16);
       return `약 ${tbs < 1 ? 1 : tbs}큰술`;
     }
-    const halfCup = Math.round(rounded * 2) / 2;
+    const halfCup = Math.round(calculated * 2) / 2;
     return `${halfCup}${cu}${appendStr}`;
   }
 
   // ── 큰술 ──────────────────────────────────────────────────────────────────
-  // 소수점은 반올림해서 정수로, 0.5 미만이면 작은술로 변환
-  // 1큰술 ≈ 3작은술
   if (cu === '큰술') {
-    if (rounded < 0.5) {
-      const tsp = Math.round(rounded * 3);
+    if (calculated < 0.5) {
+      const tsp = Math.round(calculated * 3);
       return `${tsp < 1 ? 1 : tsp}작은술`;
     }
-    return `${Math.round(rounded)}큰술`;
+    return `${Math.round(calculated)}큰술`;
   }
 
   // ── 작은술 ────────────────────────────────────────────────────────────────
-  // 소수점은 올림해서 1작은술 최소 보장
   if (cu === '작은술') {
-    const tsp = Math.round(rounded);
+    const tsp = Math.round(calculated);
     return `${tsp < 1 ? 1 : tsp}작은술`;
   }
 
-
-
   // ── kg → g 변환 ───────────────────────────────────────────────────────────
-  // 0.5kg 미만이면 g 단위로 표현 (예: 0.1kg → 100g)
   if (cu === 'kg') {
-    if (rounded < 0.5) {
-      const grams = Math.round(rounded * 1000);
+    if (calculated < 0.5) {
+      const grams = Math.round(calculated * 1000);
       return `${grams}g`;
     }
-    const halfKg = Math.round(rounded * 2) / 2;
+    const halfKg = Math.round(calculated * 2) / 2;
     return `${halfKg}kg`;
   }
 
   // ── L → ml 변환 ───────────────────────────────────────────────────────────
-  // 0.5L 미만이면 ml 단위로 표현 (예: 0.3L → 300ml)
   if (cu === 'L') {
-    if (rounded < 0.5) {
-      const ml = Math.round(rounded * 1000);
+    if (calculated < 0.5) {
+      const ml = Math.round(calculated * 1000);
       return `${ml}ml`;
     }
-    const halfL = Math.round(rounded * 2) / 2;
+    const halfL = Math.round(calculated * 2) / 2;
     return `${halfL}L`;
   }
 
   // ── ml ────────────────────────────────────────────────────────────────────
-  // 소수점은 정수로 반올림
   if (cu === 'ml') {
-    return `${Math.round(rounded)}ml`;
+    return `${Math.round(calculated)}ml`;
   }
 
   // ── 개 / 대 / 마리 / 장 / 알 / 송이 / 조각 / 쪽 / 모 / 토막 등 셀 수 있는 단위 ──
-  // 0.5 단위로 표기, 0.5 미만이면 최소 0.5로 고정
   const countUnits = ['개', '대', '마리', '장', '알', '송이', '조각', '쪽', '모', '토막', '공기', '봉지', '팩', '톨', '줄', '포기', '인분'];
   if (countUnits.includes(cu)) {
-    const halfVal = Math.round(rounded * 2) / 2;
+    const halfVal = Math.round(calculated * 2) / 2;
     return `${halfVal < 0.5 ? 0.5 : halfVal}${cu}`;
   }
 
-  return `${rounded}${unit}${appendStr}`;
+  const finalVal = Math.round(calculated * 10) / 10;
+  return `${finalVal}${unit}${appendStr}`;
 }
 
 // 레시피 렌더링
