@@ -58,8 +58,14 @@
           <div class="recipe-title-section">
             <h2 id="recipeName" class="recipe-name"></h2>
             <p id="recipeDescription" class="recipe-description"></p>
-            <div id="wakeLockBadge" class="wakelock-badge" role="status" aria-live="polite">
-              <span class="badge-icon">💡</span>화면 켜짐 유지 중
+            <div class="wakelock-container">
+              <div id="wakeLockBadge" class="wakelock-badge" role="status" aria-live="polite">
+                <span class="badge-icon">💡</span>화면 켜짐 유지 중
+              </div>
+              <label class="switch" title="화면 켜짐 유지 켜기/끄기">
+                <input type="checkbox" id="wakeLockToggle" checked>
+                <span class="slider round"></span>
+              </label>
             </div>
           </div>
         </section>

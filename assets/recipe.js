@@ -4,16 +4,23 @@ let currentRecipe = null;
 let baseServings = 2;
 let currentServings = 2;
 let wakeLock = null;
+let isWakeLockEnabled = true;
 
 // 🕯️ 잠들지 않는 마법의 촛불 (Wake Lock API)
 async function requestWakeLock() {
+  if (!isWakeLockEnabled) {
+    updateWakeLockUI(false);
+    return;
+  }
   if ('wakeLock' in navigator) {
     try {
+      if (wakeLock) return;
       wakeLock = await navigator.wakeLock.request('screen');
       console.log('Wake Lock 활성화 (화면 켜짐 유지)');
       updateWakeLockUI(true);
       wakeLock.addEventListener('release', () => {
         console.log('Wake Lock 해제됨');
+        wakeLock = null;
         updateWakeLockUI(false);
       });
     } catch (err) {
@@ -23,6 +30,19 @@ async function requestWakeLock() {
   } else {
     updateWakeLockUI(false);
   }
+}
+
+async function releaseWakeLock() {
+  if (wakeLock) {
+    try {
+      await wakeLock.release();
+      wakeLock = null;
+      console.log('Wake Lock 사용자 요청으로 해제됨');
+    } catch (err) {
+      console.error('Wake Lock 해제 실패:', err);
+    }
+  }
+  updateWakeLockUI(false);
 }
 
 function updateWakeLockUI(isActive) {
@@ -57,7 +77,7 @@ function getRecipeIdFromUrl() {
 // 레시피 데이터 로드
 async function loadRecipe(recipeId) {
   try {
-    const res = await fetch('data/recipes.json?v=v40');
+    const res = await fetch('data/recipes.json?v=v41');
     if (!res.ok) throw new Error('레시피 데이터 로드 실패');
     const recipes = await res.json();
     return recipes.find(recipe => recipe.id === recipeId);
@@ -431,7 +451,7 @@ let seasonalIngredientsList = [];
 
 async function loadSeasonalIngredients() {
   try {
-    const res = await fetch('data/ingredients.json?v=v40');
+    const res = await fetch('data/ingredients.json?v=v41');
     if (res.ok) {
       seasonalIngredientsList = await res.json();
     }
@@ -528,6 +548,24 @@ async function init() {
         document.getElementById('recipeServings').textContent = `${currentServings}${currentRecipe.servingsUnit || '인분'}`;
         renderIngredients(currentRecipe.ingredients);
         if (currentRecipe.seasoning && currentRecipe.seasoning.length > 0) renderSeasoning(currentRecipe.seasoning);
+      }
+    });
+  }
+
+  // 화면 켜짐 유지 사용자 설정 로드 및 적용
+  const savedWakeLock = localStorage.getItem('user_wakelock_enabled');
+  isWakeLockEnabled = savedWakeLock !== 'false';
+  
+  const toggle = document.getElementById('wakeLockToggle');
+  if (toggle) {
+    toggle.checked = isWakeLockEnabled;
+    toggle.addEventListener('change', async (e) => {
+      isWakeLockEnabled = e.target.checked;
+      localStorage.setItem('user_wakelock_enabled', isWakeLockEnabled);
+      if (isWakeLockEnabled) {
+        await requestWakeLock();
+      } else {
+        await releaseWakeLock();
       }
     });
   }
