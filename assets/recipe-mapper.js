@@ -164,6 +164,9 @@ export function getRecipeIdFromDishName(dishName) {
   '완두콩스프': 'green-pea-soup',
   '부추전': 'chives-pancake',
   '죽순볶음': 'bamboo-shoot-stir-fry',
+  '참나물무침': 'channamul-muchim',
+  '곤드레밥': 'gondre-bap',
+  '다시마부각': 'dasima-bugak',
 
 };
   return mapping[dishName] || null;

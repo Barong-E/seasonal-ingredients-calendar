@@ -2441,5 +2441,85 @@
       "혈관 건강 관리가 필요하신 분",
       "장 건강 개선 및 변비 해소가 필요한 분"
     ]
+  },
+  {
+    "name_ko": "참나물",
+    "category": "채소",
+    "image": "channamul.png",
+    "description_ko": "향긋하고 쌉싸름한 맛이 일품인 대표적인 봄~여름 채소입니다. 은은한 향이 입맛을 돋우며, 베타카로틴 and 비타민 A가 풍부해 안구 건강과 피로 해소에 큰 도움을 줍니다.",
+    "preparation_ko": "시든 잎과 억센 줄기를 떼어내고, 흐르는 물에 깨끗이 씻어 흙을 털어낸 후 물기를 제거하여 조리합니다.",
+    "storage_room_temp": "",
+    "storage_refrigerator": "씻지 않은 상태로 키친타월에 싸서 비닐 팩에 담아 냉장 보관하며, 3~5일 이내에 섭취합니다.",
+    "storage_freezer": "끓는 물에 살짝 데쳐 찬물에 헹군 후 물기를 짜서 소분해 밀폐 용기에 냉동 보관합니다. (최대 1개월)",
+    "external_url": "",
+    "calories_per_100g": 29,
+    "calories_per_serving": "1회 분량(50g) 약 15kcal",
+    "name_en": "",
+    "name_ja": "",
+    "description_en": "",
+    "description_ja": "",
+    "popular_dish": "참나물무침",
+    "months": [
+      5,
+      6,
+      7,
+      8
+    ],
+    "recommended_for": [
+      "만성 피로를 느끼는 직장인이나 수험생",
+      "눈 건강과 면역력 증진이 필요한 분"
+    ]
+  },
+  {
+    "name_ko": "곤드레",
+    "category": "채소",
+    "image": "gondre.png",
+    "description_ko": "정식 명칭은 고려엉겅퀴이며, 구수하고 담백한 맛이 특징인 나물입니다. 열량이 낮고 섬유질이 매우 풍부해 다이어트와 성인병 예방에 아주 훌륭한 웰빙 건강식품입니다.",
+    "preparation_ko": "생 곤드레는 끓는 물에 삶아 찬물에 헹군 뒤 물기를 짜서 사용하고, 말린 곤드레는 물에 충분히 불린 후 삶아서 사용합니다.",
+    "storage_room_temp": "",
+    "storage_refrigerator": "삶은 곤드레를 물기가 있는 상태로 밀폐 용기에 담아 냉장 보관하며, 2~3일 이내에 사용합니다.",
+    "storage_freezer": "삶은 곤드레의 물기를 짜서 지퍼백에 넣어 급속 냉동 보관하면 오래 보관할 수 있습니다. (최대 6개월)",
+    "external_url": "",
+    "calories_per_100g": 27,
+    "calories_per_serving": "1회 분량(70g) 약 19kcal",
+    "name_en": "",
+    "name_ja": "",
+    "description_en": "",
+    "description_ja": "",
+    "popular_dish": "곤드레밥",
+    "months": [
+      5,
+      6
+    ],
+    "recommended_for": [
+      "소화가 잘 안 되거나 위가 약하신 분",
+      "체중 조절과 장 건강 관리가 필요한 분"
+    ]
+  },
+  {
+    "name_ko": "다시마",
+    "category": "해산물",
+    "image": "dasima.png",
+    "description_ko": "바다의 채소라고 불리는 대표적인 해조류입니다. 알긴산과 같은 수용성 식이섬유가 풍부해 변비 예방과 콜레스테롤 저하에 탁월하며, 감칠맛이 깊어 국물용이나 튀각 등으로 널리 사랑받습니다.",
+    "preparation_ko": "표면의 흰 가루는 천연 감칠맛 성분이므로 물로 가볍게 헹구거나 젖은 행주로 살짝 닦아내고 용도에 맞게 썰어 사용합니다.",
+    "storage_room_temp": "건다시마는 밀봉하여 직사광선을 피해 서늘하고 건조한 상온에 오래 보관할 수 있습니다.",
+    "storage_refrigerator": "생다시마(염장 다시마 포함)는 깨끗이 씻어 밀폐 용기에 담아 냉장 보관하며 3~5일 이내 소비합니다.",
+    "storage_freezer": "생다시마를 끓는 물에 살짝 데쳐 한입 크기로 썰어 소분한 뒤 밀봉 냉동 보관합니다. (최대 3개월)",
+    "external_url": "",
+    "calories_per_100g": 19,
+    "calories_per_serving": "조리된 1회 분량(50g) 약 10kcal",
+    "name_en": "",
+    "name_ja": "",
+    "description_en": "",
+    "description_ja": "",
+    "popular_dish": "다시마부각",
+    "months": [
+      5,
+      6
+    ],
+    "recommended_for": [
+      "장 건강 개선 및 변비 해소가 필요한 분",
+      "혈압 조절 및 콜레스테롤 관리가 필요하신 분"
+    ]
   }
 ]

@@ -7,11 +7,12 @@ import { getRecipeIdFromDishName } from './recipe-mapper.js';
 // 띵동 제철음식 메인 스크립트
 // 규칙: ES 모듈 없이 단일 페이지 스크립트
 
-const CACHE_KEY = 'seasons:ingredients:v42';
+const CACHE_KEY = 'seasons:ingredients:v43';
 const CACHE_TTL_MS = 24 * 60 * 60 * 1000; // 24h
 
 // 구버전 캐시 강제 삭제 (버전 충돌 방지)
 try {
+  localStorage.removeItem('seasons:ingredients:v42');
   localStorage.removeItem('seasons:ingredients:v40');
   localStorage.removeItem('seasons:ingredients:v39');
   localStorage.removeItem('seasons:ingredients:v38');
@@ -19,7 +20,7 @@ try {
   localStorage.removeItem('seasons:ingredients:v36');
   localStorage.removeItem('seasons:ingredients:v20');
   localStorage.removeItem('seasons:ingredients:v19');
-  console.log('구버전 캐시 초기화 완료 (v42)');
+  console.log('구버전 캐시 초기화 완료 (v43)');
 } catch (e) {
   // ignore
 }
@@ -384,7 +385,7 @@ async function loadIngredients() {
     }
   } catch {}
 
-  const res = await fetch('data/ingredients.json?v=v42', { cache: 'no-cache' });
+  const res = await fetch('data/ingredients.json?v=v43', { cache: 'no-cache' });
   if (!res.ok) throw new Error('데이터 로드 실패');
   const data = await res.json();
   try {

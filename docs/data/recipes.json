@@ -9908,5 +9908,169 @@
         "description": "불을 끄고 참기름과 통깨를 둘러 가볍게 섞어 마무리합니다."
       }
     ]
+  },
+  {
+    "id": "channamul-muchim",
+    "name": "참나물무침",
+    "category": "채소",
+    "description": "참나물 고유의 파릇함과 은은한 향을 살려 가볍고 향긋하게 무쳐낸 건강 반찬입니다.",
+    "servings": 2,
+    "servingsUnit": "인분",
+    "cookTime": "15분",
+    "difficulty": "하",
+    "ingredients": [
+      {
+        "name": "참나물",
+        "amount": "150g"
+      }
+    ],
+    "seasoning": [
+      {
+        "name": "국간장",
+        "amount": "1큰술"
+      },
+      {
+        "name": "참기름",
+        "amount": "1큰술"
+      },
+      {
+        "name": "다진 마늘",
+        "amount": "0.5작은술"
+      },
+      {
+        "name": "통깨",
+        "amount": "1작은술"
+      }
+    ],
+    "steps": [
+      {
+        "step": 1,
+        "description": "참나물의 억센 줄기 밑동을 잘라내고 찬물에 깨끗이 씻어 물기를 뺍니다."
+      },
+      {
+        "step": 2,
+        "description": "손질한 참나물을 먹기 좋은 크기(약 5~6cm)로 자릅니다."
+      },
+      {
+        "step": 3,
+        "description": "볼에 국간장, 참기름, 다진 마늘을 넣고 잘 섞어 양념장을 만듭니다."
+      },
+      {
+        "step": 4,
+        "description": "양념장이 담긴 볼에 참나물을 넣고 살살 버무린 후 통깨를 뿌려 완성합니다."
+      }
+    ]
+  },
+  {
+    "id": "gondre-bap",
+    "name": "곤드레밥",
+    "category": "채소",
+    "description": "구수한 곤드레나물의 향이 밥알에 쏙 배어들어 입맛을 사로잡는 영양 가득한 별미 밥입니다.",
+    "servings": 2,
+    "servingsUnit": "인분",
+    "cookTime": "40분",
+    "difficulty": "중",
+    "ingredients": [
+      {
+        "name": "쌀",
+        "amount": "300g"
+      },
+      {
+        "name": "생 곤드레나물",
+        "amount": "150g"
+      },
+      {
+        "name": "물",
+        "amount": "350ml"
+      }
+    ],
+    "seasoning": [
+      {
+        "name": "국간장",
+        "amount": "1큰술"
+      },
+      {
+        "name": "들기름",
+        "amount": "1큰술"
+      }
+    ],
+    "steps": [
+      {
+        "step": 1,
+        "description": "쌀을 씻어 찬물에 30분간 불려 둔 뒤 체에 밭쳐 물기를 뺍니다."
+      },
+      {
+        "step": 2,
+        "description": "끓는 물에 소금을 약간 넣고 생 곤드레나물을 2분간 데친 후 찬물에 헹궈 물기를 꼭 짭니다."
+      },
+      {
+        "step": 3,
+        "description": "데친 곤드레나물을 먹기 좋은 크기(약 3~4cm)로 썰어 국간장과 들기름을 넣어 조물조물 밑간을 합니다."
+      },
+      {
+        "step": 4,
+        "description": "전기밥솥에 불린 쌀 and 물 350ml를 넣고 그 위에 밑간한 곤드레나물을 평평하게 올린 뒤 취사 버튼을 누릅니다."
+      },
+      {
+        "step": 5,
+        "description": "밥이 완성되면 곤드레나물과 밥을 고루 섞어 그릇에 담아냅니다."
+      }
+    ]
+  },
+  {
+    "id": "dasima-bugak",
+    "name": "다시마부각",
+    "category": "해산물",
+    "description": "건다시마에 찹쌀풀을 발라 말려 튀겨낸, 바삭하고 고소함이 일품인 전통 간식이자 밑반찬입니다.",
+    "servings": 2,
+    "servingsUnit": "인분",
+    "cookTime": "30분",
+    "difficulty": "중",
+    "ingredients": [
+      {
+        "name": "건다시마",
+        "amount": "50g"
+      },
+      {
+        "name": "찹쌀가루",
+        "amount": "3큰술"
+      },
+      {
+        "name": "물",
+        "amount": "150ml"
+      },
+      {
+        "name": "식용유",
+        "amount": "300ml"
+      }
+    ],
+    "seasoning": [
+      {
+        "name": "설탕",
+        "amount": "1큰술"
+      }
+    ],
+    "steps": [
+      {
+        "step": 1,
+        "description": "건다시마는 젖은 면포로 겉면을 닦아내고 한입 크기(사방 3cm 정도)로 자릅니다."
+      },
+      {
+        "step": 2,
+        "description": "냄비에 물 150ml와 찹쌀가루 3큰술을 넣고 잘 푼 뒤, 약불에서 저어가며 걸쭉한 찹쌀풀을 쑵니다."
+      },
+      {
+        "step": 3,
+        "description": "자른 다시마의 한쪽 면에 따뜻한 찹쌀풀을 골고루 바른 뒤 채반에 널어 바짝 말립니다."
+      },
+      {
+        "step": 4,
+        "description": "팬에 식용유 300ml를 붓고 170도 온도로 달군 후, 말린 다시마를 넣어 1~2초간 빠르게 튀겨냅니다."
+      },
+      {
+        "step": 5,
+        "description": "키친타월에 올려 기름을 뺀 뒤 뜨거울 때 설탕을 솔솔 뿌려 완성합니다."
+      }
+    ]
   }
 ]
