@@ -503,6 +503,40 @@ async function init() {
     return;
   }
 
+  // 즐겨찾기 로직 추가
+  const favBtn = document.getElementById('favoriteButton');
+  if (favBtn) {
+    const STORAGE_KEY = 'seasons:favorites:recipes';
+    let favorites = [];
+    try {
+      favorites = JSON.parse(localStorage.getItem(STORAGE_KEY)) || [];
+    } catch {}
+
+    const isFav = favorites.includes(currentRecipe.id);
+    if (isFav) {
+      favBtn.classList.add('active');
+      favBtn.setAttribute('aria-label', '즐겨찾기 해제');
+    }
+
+    favBtn.onclick = () => {
+      try {
+        favorites = JSON.parse(localStorage.getItem(STORAGE_KEY)) || [];
+      } catch {}
+
+      const index = favorites.indexOf(currentRecipe.id);
+      if (index > -1) {
+        favorites.splice(index, 1);
+        favBtn.classList.remove('active');
+        favBtn.setAttribute('aria-label', '즐겨찾기 추가');
+      } else {
+        favorites.push(currentRecipe.id);
+        favBtn.classList.add('active');
+        favBtn.setAttribute('aria-label', '즐겨찾기 해제');
+      }
+      localStorage.setItem(STORAGE_KEY, JSON.stringify(favorites));
+    };
+  }
+
   baseServings = currentRecipe.servings || 2;
   const step = getServingsStep(currentRecipe);
   const limits = getServingsLimits(currentRecipe);

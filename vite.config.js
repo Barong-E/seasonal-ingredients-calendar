@@ -12,7 +12,8 @@ export default defineConfig({
         ingredient: resolve(__dirname, 'ingredient.html'),
         holiday: resolve(__dirname, 'holiday.html'),
         holidays: resolve(__dirname, 'holidays.html'),
-        setting: resolve(__dirname, 'setting.html')
+        setting: resolve(__dirname, 'setting.html'),
+        favorites: resolve(__dirname, 'favorites.html')
       },
       output: {
         entryFileNames: `assets/[name].js`,

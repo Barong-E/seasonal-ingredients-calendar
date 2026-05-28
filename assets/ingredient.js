@@ -175,6 +175,40 @@ async function init() {
     };
   }
 
+  // 즐겨찾기 로직 추가
+  const favBtn = document.getElementById('favoriteButton');
+  if (favBtn) {
+    const STORAGE_KEY = 'seasons:favorites:ingredients';
+    let favorites = [];
+    try {
+      favorites = JSON.parse(localStorage.getItem(STORAGE_KEY)) || [];
+    } catch {}
+
+    const isFav = favorites.includes(item.name_ko);
+    if (isFav) {
+      favBtn.classList.add('active');
+      favBtn.setAttribute('aria-label', '즐겨찾기 해제');
+    }
+
+    favBtn.onclick = () => {
+      try {
+        favorites = JSON.parse(localStorage.getItem(STORAGE_KEY)) || [];
+      } catch {}
+
+      const index = favorites.indexOf(item.name_ko);
+      if (index > -1) {
+        favorites.splice(index, 1);
+        favBtn.classList.remove('active');
+        favBtn.setAttribute('aria-label', '즐겨찾기 추가');
+      } else {
+        favorites.push(item.name_ko);
+        favBtn.classList.add('active');
+        favBtn.setAttribute('aria-label', '즐겨찾기 해제');
+      }
+      localStorage.setItem(STORAGE_KEY, JSON.stringify(favorites));
+    };
+  }
+
   // 스크롤 복원
   const savedScroll = sessionStorage.getItem('scrollPos_' + window.location.href);
   if (savedScroll) {

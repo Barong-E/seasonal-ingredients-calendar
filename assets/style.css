@@ -1721,3 +1721,44 @@ main {
   transform: scale(0.98);
   opacity: 0.95;
 }
+
+/* --- 즐겨찾기 버튼 공통 스타일 --- */
+.favorite-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  background: transparent;
+  color: #666;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  flex-shrink: 0;
+  margin-left: auto; /* 우측 정렬 보장 */
+}
+
+.favorite-button:hover {
+  background: rgba(0, 0, 0, 0.05);
+}
+
+.favorite-button:active {
+  transform: scale(0.92);
+}
+
+.favorite-button.active {
+  color: var(--accent);
+}
+
+.favorite-button.active svg {
+  fill: var(--accent);
+  stroke: var(--accent);
+  animation: heartPop 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+@keyframes heartPop {
+  0% { transform: scale(0.6); }
+  50% { transform: scale(1.2); }
+  100% { transform: scale(1); }
+}
