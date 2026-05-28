@@ -1,320 +1,338 @@
 <!doctype html>
 <html lang="ko">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, user-scalable=no">
-    <meta name="mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="default">
-    <title>띵동 제철음식 - 식재료 상세</title>
-    
 
-    <link rel="manifest" href="/manifest.webmanifest">
-    <meta name="theme-color" content="#0A7B34">
-    <link rel="icon" href="/images/icons/app-icon-192.png" type="image/png">
-    <link rel="apple-touch-icon" href="/images/icons/app-icon-192.png">
-    
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=%VITE_GA_ID%"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', '%VITE_GA_ID%');
-    </script>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, user-scalable=no">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <title>띵동 제철음식 - 식재료 상세</title>
 
-    <!-- MS Clarity -->
-    <script type="text/javascript">
-        (function(c,l,a,r,i,t,y){
-            c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
-            t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
-            y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
-        })(window, document, "clarity", "script", "%VITE_CLARITY_ID%");
-    </script>
 
-    <link rel="stylesheet" href="assets/style.css">
-    <style>
-      /* 상세 페이지 전용 스타일 */
-      .page-header {
-        display: flex;
-        align-items: center;
-        gap: 16px;
-      }
-      .back-button {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        width: 40px;
-        height: 40px;
-        background: transparent;
-        color: #333;
-        border: none;
-        border-radius: 50%;
-        cursor: pointer;
-        transition: background 0.2s;
-        margin-left: -8px; /* 정렬 보정 */
-      }
-      .back-button:hover {
-        background: rgba(0, 0, 0, 0.05);
-      }
-      
-      .detail-container {
-        padding: calc(var(--header-offset, 80px) + 20px) 20px 160px;
-        max-width: 600px;
-        margin: 0 auto;
-        display: none; /* 로딩 전 숨김 */
-      }
-      
-      .detail-card {
-        background: #fff;
-        border-radius: var(--border-radius-lg, 24px);
-        box-shadow: var(--shadow-md, 0 8px 24px rgba(0,0,0,0.12));
-        overflow: hidden;
-      }
-      
-      .detail-header-row {
-        display: flex;
-        gap: 16px;
-        padding: 24px 24px 8px 24px;
-      }
+  <link rel="manifest" href="/manifest.webmanifest">
+  <meta name="theme-color" content="#0A7B34">
+  <link rel="icon" href="/images/icons/app-icon-192.png" type="image/png">
+  <link rel="apple-touch-icon" href="/images/icons/app-icon-192.png">
 
-      .detail-image-wrap {
-        flex-shrink: 0;
-        width: 110px;
-        height: 110px;
-        position: relative;
-        border-radius: var(--border-radius-md, 16px);
-        overflow: hidden;
-        background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
-        box-shadow: 0 4px 12px rgba(0,0,0,0.06);
-      }
-      
-      .detail-image {
-        position: absolute;
-        top: 0; left: 0; width: 100%; height: 100%;
-        object-fit: cover;
-      }
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=%VITE_GA_ID%"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', '%VITE_GA_ID%');
+  </script>
 
-      .detail-header-text {
-        flex: 1;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-      }
-      
-      .detail-body {
-        padding: 8px 24px 24px 24px;
-      }
-      
+  <!-- MS Clarity -->
+  <script type="text/javascript">
+    (function (c, l, a, r, i, t, y) {
+      c[a] = c[a] || function () { (c[a].q = c[a].q || []).push(arguments) };
+      t = l.createElement(r); t.async = 1; t.src = "https://www.clarity.ms/tag/" + i;
+      y = l.getElementsByTagName(r)[0]; y.parentNode.insertBefore(t, y);
+    })(window, document, "clarity", "script", "%VITE_CLARITY_ID%");
+  </script>
+
+  <link rel="stylesheet" href="assets/style.css">
+  <style>
+    /* 상세 페이지 전용 스타일 */
+    .page-header {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+
+    .back-button {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 40px;
+      height: 40px;
+      background: transparent;
+      color: #333;
+      border: none;
+      border-radius: 50%;
+      cursor: pointer;
+      transition: background 0.2s;
+      margin-left: -8px;
+      /* 정렬 보정 */
+    }
+
+    .back-button:hover {
+      background: rgba(0, 0, 0, 0.05);
+    }
+
+    .detail-container {
+      padding: calc(var(--header-offset, 80px) + 20px) 20px 160px;
+      max-width: 600px;
+      margin: 0 auto;
+      display: none;
+      /* 로딩 전 숨김 */
+    }
+
+    .detail-card {
+      background: #fff;
+      border-radius: var(--border-radius-lg, 24px);
+      box-shadow: var(--shadow-md, 0 8px 24px rgba(0, 0, 0, 0.12));
+      overflow: hidden;
+    }
+
+    .detail-header-row {
+      display: flex;
+      gap: 16px;
+      padding: 24px 24px 8px 24px;
+    }
+
+    .detail-image-wrap {
+      flex-shrink: 0;
+      width: 110px;
+      height: 110px;
+      position: relative;
+      border-radius: var(--border-radius-md, 16px);
+      overflow: hidden;
+      background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+    }
+
+    .detail-image {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .detail-header-text {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .detail-body {
+      padding: 8px 24px 24px 24px;
+    }
+
+    .detail-title {
+      margin: 0 0 6px 0;
+      font-size: 1.0rem;
+      font-weight: 800;
+      background: var(--primary-gradient);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      line-height: 1.2;
+    }
+
+    .detail-desc {
+      font-size: 0.85rem;
+      line-height: 1.5;
+      color: #444;
+      margin: 0;
+      word-break: keep-all;
+    }
+
+    /* 추천 대상 스타일 */
+    .recommended-for-container {
+      margin-top: 12px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+    }
+
+    .recommended-badge {
+      display: inline-flex;
+      align-items: center;
+      background: rgba(10, 123, 52, 0.1);
+      color: #0A7B34;
+      padding: 4px 10px;
+      border-radius: 12px;
+      font-size: 0.75rem;
+      font-weight: 600;
+    }
+
+    .recommended-badge::before {
+      content: '👍';
+      margin-right: 4px;
+      font-size: 0.8rem;
+    }
+
+    @media (max-width: 767px) {
       .detail-title {
-        margin: 0 0 6px 0;
-        font-size: 1.0rem;
-        font-weight: 800;
-        background: var(--primary-gradient);
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-        background-clip: text;
-        line-height: 1.2;
+        font-size: 0.95rem;
       }
-      
+
       .detail-desc {
-        font-size: 0.85rem;
-        line-height: 1.5;
-        color: #444;
-        margin: 0;
-        word-break: keep-all;
-      }
-      
-      /* 추천 대상 스타일 */
-      .recommended-for-container {
-        margin-top: 12px;
-        display: flex;
-        flex-wrap: wrap;
-        gap: 6px;
-      }
-      .recommended-badge {
-        display: inline-flex;
-        align-items: center;
-        background: rgba(10, 123, 52, 0.1);
-        color: #0A7B34;
-        padding: 4px 10px;
-        border-radius: 12px;
-        font-size: 0.75rem;
-        font-weight: 600;
-      }
-      .recommended-badge::before {
-        content: '👍';
-        margin-right: 4px;
         font-size: 0.8rem;
       }
-      
-      @media (max-width: 767px) {
-        .detail-title {
-          font-size: 0.95rem;
-        }
-        .detail-desc {
-          font-size: 0.8rem;
-        }
-      }
-      
-      .bottom-bar {
-        position: fixed;
-        bottom: 0; left: 0; right: 0;
-        padding: 12px 20px;
-        padding-bottom: calc(12px + env(safe-area-inset-bottom, 0px));
-        background: var(--glass-bg-heavy);
-        -webkit-backdrop-filter: blur(var(--glass-blur-heavy));
-        backdrop-filter: blur(var(--glass-blur-heavy));
-        border-top: 1px solid var(--glass-border);
-        box-shadow: var(--glass-shadow);
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        gap: 8px;
-        z-index: 100;
-      }
-      
-      .bottom-notice {
-        font-size: 0.75rem;
-        color: #666;
-        text-align: center;
-        line-height: 1.3;
-        margin: 0;
-        word-break: keep-all;
-      }
-      
-      .btn-purchase {
-        width: 100%;
-        max-width: 400px;
-        background: var(--primary-gradient);
-        color: white;
-        border: none;
-        border-radius: var(--border-radius-md, 12px);
-        padding: 16px;
-        font-size: 1.1rem;
-        font-weight: 700;
-        cursor: pointer;
-        box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-        transition: transform 0.2s;
-      }
-      .btn-purchase:active {
-        transform: scale(0.98);
-      }
-      
-      /* section 공통 처리 (style.css의 modal 섹션 재사용 유도 및 변형) */
-      .info-section {
-        margin-top: 24px;
-        padding-top: 24px;
-        border-top: 1px solid #eee;
-      }
-      
-      /* 로딩 상태 */
-      .loading {
-        padding-top: 120px;
-        text-align: center;
-        color: #666;
-      }
-    </style>
-  </head>
-  <body>
-    <header class="app-header">
-      <div class="header-bar page-header">
-        <button class="back-button" onclick="handleSmartBack('index.html')" aria-label="뒤로가기">
-          <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <polyline points="15 18 9 12 15 6"></polyline>
-          </svg>
-        </button>
-        <div class="brand">
-          <span class="brand__primary">식재료 상세</span>
+    }
+
+    .bottom-bar {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      padding: 12px 20px;
+      padding-bottom: calc(12px + env(safe-area-inset-bottom, 0px));
+      background: var(--glass-bg-heavy);
+      -webkit-backdrop-filter: blur(var(--glass-blur-heavy));
+      backdrop-filter: blur(var(--glass-blur-heavy));
+      border-top: 1px solid var(--glass-border);
+      box-shadow: var(--glass-shadow);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 8px;
+      z-index: 100;
+    }
+
+    .bottom-notice {
+      font-size: 0.75rem;
+      color: #666;
+      text-align: center;
+      line-height: 1.3;
+      margin: 0;
+      word-break: keep-all;
+    }
+
+    .btn-purchase {
+      width: 100%;
+      max-width: 400px;
+      background: var(--primary-gradient);
+      color: white;
+      border: none;
+      border-radius: var(--border-radius-md, 12px);
+      padding: 16px;
+      font-size: 1.1rem;
+      font-weight: 700;
+      cursor: pointer;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+      transition: transform 0.2s;
+    }
+
+    .btn-purchase:active {
+      transform: scale(0.98);
+    }
+
+    /* section 공통 처리 (style.css의 modal 섹션 재사용 유도 및 변형) */
+    .info-section {
+      margin-top: 24px;
+      padding-top: 24px;
+      border-top: 1px solid #eee;
+    }
+
+    /* 로딩 상태 */
+    .loading {
+      padding-top: 120px;
+      text-align: center;
+      color: #666;
+    }
+  </style>
+</head>
+
+<body>
+  <header class="app-header">
+    <div class="header-bar page-header">
+      <button class="back-button" onclick="handleSmartBack('index.html')" aria-label="뒤로가기">
+        <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2"
+          stroke-linecap="round" stroke-linejoin="round">
+          <polyline points="15 18 9 12 15 6"></polyline>
+        </svg>
+      </button>
+      <div class="brand">
+        <span class="brand__primary">식재료 상세</span>
+      </div>
+    </div>
+  </header>
+
+  <div id="loading" class="loading">정보를 불러오는 중입니다...</div>
+  <div id="error" class="loading" style="display:none; color: var(--accent);">식재료를 찾을 수 없습니다.</div>
+
+  <main id="detailContainer" class="detail-container">
+    <article class="detail-card">
+      <div class="detail-header-row">
+        <div class="detail-image-wrap">
+          <img id="detailImage" class="detail-image" src="" alt="" />
+        </div>
+        <div class="detail-header-text">
+          <h1 id="detailTitle" class="detail-title"></h1>
+          <p id="detailDesc" class="detail-desc"></p>
+          <div id="recommendedForContainer" class="recommended-for-container" style="display: none;"></div>
         </div>
       </div>
-    </header>
+      <div class="detail-body">
 
-    <div id="loading" class="loading">정보를 불러오는 중입니다...</div>
-    <div id="error" class="loading" style="display:none; color: var(--accent);">식재료를 찾을 수 없습니다.</div>
-
-    <main id="detailContainer" class="detail-container">
-      <article class="detail-card">
-        <div class="detail-header-row">
-          <div class="detail-image-wrap">
-            <img id="detailImage" class="detail-image" src="" alt="" />
+        <!-- 칼로리 정보 -->
+        <div id="caloriesSection" class="info-section modal__calories"
+          style="display: none; margin-top:0; padding-top:0; border:none;">
+          <div class="modal__section-header">
+            <span class="modal__icon">🔥</span>
+            <span class="modal__section-title">칼로리 정보</span>
           </div>
-          <div class="detail-header-text">
-            <h1 id="detailTitle" class="detail-title"></h1>
-            <p id="detailDesc" class="detail-desc"></p>
-            <div id="recommendedForContainer" class="recommended-for-container" style="display: none;"></div>
+          <div class="modal__calories-content">
+            <div class="calories-row">
+              <span class="calories-label">100g당</span>
+              <span id="caloriesPer100g" class="calories-number"></span>
+            </div>
+            <div class="calories-row">
+              <span id="caloriesPerServing" class="calories-serving"></span>
+            </div>
           </div>
         </div>
-        <div class="detail-body">
 
-          <!-- 칼로리 정보 -->
-          <div id="caloriesSection" class="info-section modal__calories" style="display: none; margin-top:0; padding-top:0; border:none;">
-            <div class="modal__section-header">
-              <span class="modal__icon">🔥</span>
-              <span class="modal__section-title">칼로리 정보</span>
-            </div>
-            <div class="modal__calories-content">
-              <div class="calories-row">
-                <span class="calories-label">100g당</span>
-                <span id="caloriesPer100g" class="calories-number"></span>
-              </div>
-              <div class="calories-row">
-                <span id="caloriesPerServing" class="calories-serving"></span>
-              </div>
-            </div>
+        <!-- 손질법 -->
+        <div id="prepSection" class="info-section modal__preparation" style="display: none;">
+          <div class="modal__section-header">
+            <span class="modal__icon">✂️</span>
+            <span class="modal__section-title">손질법</span>
           </div>
-
-          <!-- 손질법 -->
-          <div id="prepSection" class="info-section modal__preparation" style="display: none;">
-            <div class="modal__section-header">
-              <span class="modal__icon">✂️</span>
-              <span class="modal__section-title">손질법</span>
-            </div>
-            <p id="prepText" class="modal__preparation-text"></p>
-          </div>
-
-          <!-- 보관법 -->
-          <div id="storageSection" class="info-section modal__storage" style="display: none;">
-            <div class="modal__section-header">
-              <span class="modal__icon">❄️</span>
-              <span class="modal__section-title">보관법</span>
-            </div>
-            <div id="storageContent" class="modal__storage-content"></div>
-          </div>
-
-          <!-- 대표 요리 -->
-          <div id="dishSection" class="info-section modal__dish" style="display: none;">
-            <div class="modal__section-header">
-              <span class="modal__icon">🍽️</span>
-              <span class="modal__section-title">대표 요리</span>
-            </div>
-            <p id="dishText" class="modal__dish-text"></p>
-          </div>
+          <p id="prepText" class="modal__preparation-text"></p>
         </div>
-      </article>
-    </main>
 
-    <div id="bottomBar" class="bottom-bar" style="display:none;">
-      <p id="bottomNotice" class="bottom-notice"></p>
-      <button id="btnPurchase" class="btn-purchase" type="button">로켓배송으로 구매하기</button>
-    </div>
+        <!-- 보관법 -->
+        <div id="storageSection" class="info-section modal__storage" style="display: none;">
+          <div class="modal__section-header">
+            <span class="modal__icon">❄️</span>
+            <span class="modal__section-title">보관법</span>
+          </div>
+          <div id="storageContent" class="modal__storage-content"></div>
+        </div>
 
-    <script type="module" src="assets/ingredient.js?v=v12"></script>
-    <script>
-      function syncHeaderOffset() {
-        const header = document.querySelector('.app-header');
-        if (header) {
-          document.documentElement.style.setProperty('--header-offset', header.offsetHeight + 'px');
-        }
+        <!-- 대표 요리 -->
+        <div id="dishSection" class="info-section modal__dish" style="display: none;">
+          <div class="modal__section-header">
+            <span class="modal__icon">🍽️</span>
+            <span class="modal__section-title">대표 요리</span>
+          </div>
+          <p id="dishText" class="modal__dish-text"></p>
+        </div>
+      </div>
+    </article>
+  </main>
+
+  <div id="bottomBar" class="bottom-bar" style="display:none;">
+    <p id="bottomNotice" class="bottom-notice"></p>
+    <button id="btnPurchase" class="btn-purchase" type="button">로켓배송으로 구매하기</button>
+  </div>
+
+  <script type="module" src="assets/ingredient.js?v=v12"></script>
+  <script>
+    function syncHeaderOffset() {
+      const header = document.querySelector('.app-header');
+      if (header) {
+        document.documentElement.style.setProperty('--header-offset', header.offsetHeight + 'px');
       }
-      if (document.readyState === 'loading') {
-        document.addEventListener('DOMContentLoaded', syncHeaderOffset);
-      } else {
-        syncHeaderOffset();
-      }
-      window.addEventListener('load', syncHeaderOffset);
-      window.addEventListener('resize', syncHeaderOffset);
-    </script>
-      <script type="module" src="assets/app-back-button.js"></script>
-  </body>
+    }
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', syncHeaderOffset);
+    } else {
+      syncHeaderOffset();
+    }
+    window.addEventListener('load', syncHeaderOffset);
+    window.addEventListener('resize', syncHeaderOffset);
+  </script>
+  <script type="module" src="assets/app-back-button.js"></script>
+</body>
+
 </html>

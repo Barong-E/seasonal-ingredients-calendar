@@ -61,12 +61,12 @@ async function init() {
     const foodSection = document.getElementById('foodSection');
     const foodContent = document.getElementById('foodContent');
     foodSection.style.display = 'block';
-    
+
     item.details.foods.forEach(food => {
       const recipeId = getRecipeIdFromDishName(food.name);
       const div = document.createElement('div');
       div.className = 'item';
-      
+
       const nameEl = document.createElement('span');
       nameEl.className = 'item__name';
       if (recipeId) {
@@ -78,11 +78,11 @@ async function init() {
       } else {
         nameEl.textContent = food.name;
       }
-      
+
       const descEl = document.createElement('p');
       descEl.className = 'item__description';
       descEl.textContent = food.description;
-      
+
       div.appendChild(nameEl);
       div.appendChild(descEl);
       foodContent.appendChild(div);
@@ -94,7 +94,7 @@ async function init() {
     const customSection = document.getElementById('customSection');
     const customContent = document.getElementById('customContent');
     customSection.style.display = 'block';
-    
+
     item.details.customs.forEach(custom => {
       const div = document.createElement('div');
       div.className = 'item';
@@ -116,10 +116,10 @@ async function init() {
   }
 }
 
-window.handleSmartBack = function(defaultUrl) {
+window.handleSmartBack = function (defaultUrl) {
   const params = new URLSearchParams(window.location.search);
   const fromNoti = params.get('fromNoti');
-  
+
   // 알림을 통해 들어왔거나 히스토리가 없는 경우 강제 이동
   if (fromNoti === 'true' || window.history.length <= 1) {
     window.location.href = defaultUrl || 'index.html';

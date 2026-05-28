@@ -1,7 +1,10 @@
 /* Base reset */
-* { box-sizing: border-box; }
+* {
+  box-sizing: border-box;
+}
 
-html, body {
+html,
+body {
   overflow-x: hidden;
   min-height: 100%;
 }
@@ -131,10 +134,14 @@ body.theme-winter {
 
 .visually-hidden {
   position: absolute !important;
-  width: 1px; height: 1px;
-  padding: 0; margin: -1px;
-  overflow: hidden; clip: rect(0,0,1px,1px);
-  white-space: nowrap; border: 0;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 1px, 1px);
+  white-space: nowrap;
+  border: 0;
 }
 
 .app-header {
@@ -238,7 +245,7 @@ body.theme-winter {
   transition: transform 0.4s ease-out;
   border-top: 1px solid var(--glass-border);
   background-color: #f5f8ff;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
 
 .holiday-banner.hidden {
@@ -287,20 +294,23 @@ body.theme-winter {
   border-radius: 12px;
   object-fit: cover;
   background-color: #f0f0f0;
-  border: 1px solid rgba(0,0,0,0.05);
-  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 @media (max-width: 600px) {
   .holiday-banner__content {
     padding: 10px 16px;
   }
+
   .holiday-banner__date {
     font-size: 0.9rem;
   }
+
   .holiday-banner__description {
     font-size: 0.8rem;
   }
+
   .holiday-banner__image {
     width: 50px;
     height: 50px;
@@ -329,19 +339,22 @@ body.theme-winter {
   align-items: baseline;
   gap: 6px;
   font-weight: 800;
-  cursor: pointer; /* 클릭 가능 표시 */
+  cursor: pointer;
+  /* 클릭 가능 표시 */
   transition: opacity 0.2s;
 }
 
 .brand:active {
   opacity: 0.7;
 }
+
 .brand__primary {
   font-family: var(--serif-font);
   font-size: 1.25rem;
   color: var(--primary);
   letter-spacing: -0.5px;
 }
+
 .brand__secondary {
   font-size: 1rem;
   color: var(--text-muted);
@@ -355,7 +368,9 @@ body.theme-winter {
   flex: 1;
 }
 
-.header-search { flex: 1; }
+.header-search {
+  flex: 1;
+}
 
 .setting-button {
   display: flex;
@@ -425,8 +440,15 @@ body.has-banner .carousel {
 }
 
 @keyframes fadeSlideIn {
-  from { opacity: 0; transform: translateX(30px); }
-  to   { opacity: 1; transform: translateX(0); }
+  from {
+    opacity: 0;
+    transform: translateX(30px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
 }
 
 .month-section.slide-left {
@@ -434,8 +456,15 @@ body.has-banner .carousel {
 }
 
 @keyframes fadeSlideLeft {
-  from { opacity: 0; transform: translateX(-30px); }
-  to   { opacity: 1; transform: translateX(0); }
+  from {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
 }
 
 /* Period grid container */
@@ -446,7 +475,8 @@ body.has-banner .carousel {
 /* 신규 식재료 섹션 추가 스타일 */
 .new-ingredients-section {
   margin-bottom: 40px;
-  background-color: #f0fdf4; /* 매우 연한 에메랄드 그린 */
+  background-color: #f0fdf4;
+  /* 매우 연한 에메랄드 그린 */
   padding: 20px 14px;
   border-radius: var(--border-radius);
   border: 1px solid #d1fae5;
@@ -506,8 +536,15 @@ body.has-banner .carousel {
 }
 
 @keyframes float {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-3px); }
+
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-3px);
+  }
 }
 
 /* Grid */
@@ -518,13 +555,23 @@ body.has-banner .carousel {
 }
 
 @media (min-width: 768px) {
-  .grid { grid-template-columns: repeat(3, 1fr); }
-}
-@media (min-width: 1024px) {
-  .grid { grid-template-columns: repeat(4, 1fr); }
+  .grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
 }
 
-.empty { text-align: center; padding: 24px; color: #666; display: none; }
+@media (min-width: 1024px) {
+  .grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+.empty {
+  text-align: center;
+  padding: 24px;
+  color: #666;
+  display: none;
+}
 
 .offline-notice {
   position: fixed;
@@ -549,7 +596,7 @@ body.has-banner .carousel {
   background: #fffaf0;
   border: 1px solid #f6ad55;
   border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
 }
 
 .offline-notice__icon {
@@ -606,8 +653,12 @@ body.has-banner .carousel {
     border-color: var(--primary);
     background: rgba(255, 255, 255, 0.95);
   }
-  .card:hover::before { left: 100%; }
+
+  .card:hover::before {
+    left: 100%;
+  }
 }
+
 .card:focus,
 .card:focus-visible,
 .card:focus-within {
@@ -652,7 +703,8 @@ body.has-banner .carousel {
   padding: 2px 6px;
   border-radius: 6px;
   letter-spacing: -0.3px;
-  pointer-events: none; /* 클릭 방해 방지 */
+  pointer-events: none;
+  /* 클릭 방해 방지 */
   border: 1px solid rgba(255, 255, 255, 0.2);
 }
 
@@ -661,10 +713,18 @@ body.has-banner .carousel {
     transform: scale(1.1) rotate(2deg);
     box-shadow: var(--shadow-lg);
   }
-  .card:hover .thumb::after { opacity: 1; }
+
+  .card:hover .thumb::after {
+    opacity: 1;
+  }
 }
 
-.thumb .photo { width: 100%; height: 100%; object-fit: cover; display: block; }
+.thumb .photo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
 
 .card-content {
   display: flex;
@@ -690,12 +750,14 @@ body.has-banner .carousel {
   font-size: 0.82rem;
   color: var(--text-muted);
   width: 100%;
-  min-width: 0; /* flex 안에서 말줄임표가 작동하기 위한 필수 설정 */
+  min-width: 0;
+  /* flex 안에서 말줄임표가 작동하기 위한 필수 설정 */
 }
 
 .popular-dish-icon {
   font-size: 0.85rem;
-  flex-shrink: 0; /* 아이콘은 찌그러지지 않게 */
+  flex-shrink: 0;
+  /* 아이콘은 찌그러지지 않게 */
 }
 
 .popular-dish-value {
@@ -708,24 +770,35 @@ body.has-banner .carousel {
 /* 모달 스타일 */
 .modal {
   position: fixed;
-  top: 0; left: 0; right: 0; bottom: 0;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
   z-index: 1000;
   display: flex;
   align-items: center;
   justify-content: center;
   padding: 20px;
-  opacity: 0; visibility: hidden;
+  opacity: 0;
+  visibility: hidden;
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
+
 .modal[aria-hidden="false"] {
-  opacity: 1; visibility: visible;
+  opacity: 1;
+  visibility: visible;
 }
+
 .modal__backdrop {
   position: absolute;
-  top: 0; left: 0; right: 0; bottom: 0;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
   background: rgba(0, 0, 0, 0.6);
   backdrop-filter: blur(4px);
 }
+
 .modal__content {
   position: relative;
   background: #fff;
@@ -740,20 +813,30 @@ body.has-banner .carousel {
   display: flex;
   flex-direction: column;
 }
+
 .modal[aria-hidden="false"] .modal__content {
   transform: scale(1) translateY(0);
 }
+
 .modal__close {
   position: absolute;
-  top: 12px; right: 16px;
-  background: none; border: none;
-  font-size: 24px; color: #666;
-  cursor: pointer; z-index: 1;
-  width: 32px; height: 32px;
-  display: flex; align-items: center; justify-content: center;
+  top: 12px;
+  right: 16px;
+  background: none;
+  border: none;
+  font-size: 24px;
+  color: #666;
+  cursor: pointer;
+  z-index: 1;
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   border-radius: 50%;
   transition: all 0.2s ease;
 }
+
 .modal__close:hover {
   background: #f5f5f5;
   color: #333;
@@ -769,11 +852,13 @@ body.has-banner .carousel {
   justify-content: center;
   padding: 24px;
 }
+
 .info-modal__backdrop {
   position: absolute;
   inset: 0;
   background: rgba(0, 0, 0, 0.4);
 }
+
 .info-modal__content {
   position: relative;
   z-index: 1;
@@ -782,15 +867,17 @@ body.has-banner .carousel {
   background: #fff;
   border-radius: 16px;
   padding: 20px;
-  box-shadow: 0 12px 24px rgba(0,0,0,0.2);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
   text-align: center;
 }
+
 .info-modal__message {
   margin: 0 0 16px;
   font-size: 0.95rem;
   color: #333;
   line-height: 1.4;
 }
+
 .info-modal__close {
   border: 0;
   border-radius: 10px;
@@ -869,13 +956,29 @@ body.has-banner .carousel {
 }
 
 @keyframes redirect-arrow-line {
-  0%, 100% { opacity: 0.5; }
-  50% { opacity: 1; }
+
+  0%,
+  100% {
+    opacity: 0.5;
+  }
+
+  50% {
+    opacity: 1;
+  }
 }
 
 @keyframes redirect-arrow-head {
-  0%, 100% { opacity: 0.5; transform: translateY(-50%) translateX(0); }
-  50% { opacity: 1; transform: translateY(-50%) translateX(4px); }
+
+  0%,
+  100% {
+    opacity: 0.5;
+    transform: translateY(-50%) translateX(0);
+  }
+
+  50% {
+    opacity: 1;
+    transform: translateY(-50%) translateX(4px);
+  }
 }
 
 .modal__body {
@@ -884,8 +987,10 @@ body.has-banner .carousel {
   gap: 16px;
   flex: 1;
   overflow-y: auto;
-  min-height: 0; /* flexbox에서 스크롤을 위해 필요 */
-  overscroll-behavior: contain; /* 모달 끝에서 스크롤 시 배경 페이지 스크롤 방지 */
+  min-height: 0;
+  /* flexbox에서 스크롤을 위해 필요 */
+  overscroll-behavior: contain;
+  /* 모달 끝에서 스크롤 시 배경 페이지 스크롤 방지 */
 }
 
 /* 모달 스크롤바 스타일링 */
@@ -906,19 +1011,24 @@ body.has-banner .carousel {
 .modal__body::-webkit-scrollbar-thumb:hover {
   background: #a8a8a8;
 }
+
 .modal__image {
   flex: 0 0 auto;
 }
+
 .modal__image img {
-  width: 80px; height: 80px;
+  width: 80px;
+  height: 80px;
   border-radius: var(--border-radius-sm);
   object-fit: cover;
   background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
 }
+
 .modal__info {
   flex: 1;
   min-width: 0;
 }
+
 .modal__name {
   margin: 0 0 12px 0;
   font-size: 1.2rem;
@@ -929,6 +1039,7 @@ body.has-banner .carousel {
   -webkit-text-fill-color: transparent;
   background-clip: text;
 }
+
 .modal__description {
   margin: 0;
   font-size: 0.9rem;
@@ -1127,7 +1238,8 @@ body.has-banner .carousel {
   border-top: 1px solid #e9ecef;
   display: flex;
   justify-content: center;
-  flex-shrink: 0; /* 푸터가 축소되지 않도록 */
+  flex-shrink: 0;
+  /* 푸터가 축소되지 않도록 */
 }
 
 .modal__purchase-btn {
@@ -1167,7 +1279,7 @@ body.has-banner .carousel {
   background: var(--glass-bg);
   backdrop-filter: blur(20px);
   border-top: 1px solid var(--glass-border);
-  box-shadow: 0 -4px 20px rgba(0,0,0,0.08);
+  box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.08);
   position: sticky;
   bottom: 0;
   z-index: 100;
@@ -1187,7 +1299,14 @@ body.has-banner .carousel {
 }
 
 /* Category toggle styles removed */
-.search-label { display: block; font-size: 12px; color: #666; margin: 6px 0; font-weight: 500; }
+.search-label {
+  display: block;
+  font-size: 12px;
+  color: #666;
+  margin: 6px 0;
+  font-weight: 500;
+}
+
 .search-input {
   width: 100%;
   padding: 16px 20px;
@@ -1216,66 +1335,161 @@ body.has-banner .carousel {
 
 /* Reduce motion respect */
 @media (prefers-reduced-motion: reduce) {
-  .card, .search-input { transition: none; }
-  .card:hover, .search-input:focus { transform: none; }
+
+  .card,
+  .search-input {
+    transition: none;
+  }
+
+  .card:hover,
+  .search-input:focus {
+    transform: none;
+  }
 }
 
 /* Dragging performance guard */
-.is-dragging .card { backdrop-filter: none !important; background: rgba(255, 255, 255, 0.95); }
-.is-dragging .card, .is-dragging .search-input, .is-dragging .thumb { transition: none !important; }
-.card, .thumb .photo { backface-visibility: hidden; transform: translateZ(0); }
+.is-dragging .card {
+  backdrop-filter: none !important;
+  background: rgba(255, 255, 255, 0.95);
+}
+
+.is-dragging .card,
+.is-dragging .search-input,
+.is-dragging .thumb {
+  transition: none !important;
+}
+
+.card,
+.thumb .photo {
+  backface-visibility: hidden;
+  transform: translateZ(0);
+}
 
 /* 모바일 최적화 */
 @media (max-width: 767px) {
-  .app-header { padding: 12px 16px; }
-  .controls { padding: 12px 16px; }
-  .search-input { padding: 12px 16px; }
-  
-  .modal { padding: 16px; }
-  .modal__content { 
-    max-width: none; 
-    max-height: 95vh; /* 모바일에서 더 많은 공간 사용 */
+  .app-header {
+    padding: 12px 16px;
   }
-  .modal__body { 
-    padding: 20px; 
-    gap: 12px; 
-    max-height: calc(95vh - 120px); /* 푸터 공간 확보 */
+
+  .controls {
+    padding: 12px 16px;
   }
+
+  .search-input {
+    padding: 12px 16px;
+  }
+
+  .modal {
+    padding: 16px;
+  }
+
+  .modal__content {
+    max-width: none;
+    max-height: 95vh;
+    /* 모바일에서 더 많은 공간 사용 */
+  }
+
+  .modal__body {
+    padding: 20px;
+    gap: 12px;
+    max-height: calc(95vh - 120px);
+    /* 푸터 공간 확보 */
+  }
+
   #holidayModal .modal__body {
     padding-bottom: 24px;
   }
-  .modal__image img { width: 60px; height: 60px; }
-  .modal__name { font-size: 1.1rem; }
-  .modal__description { font-size: 0.85rem; }
-  .modal__footer { padding: 12px 20px 20px; }
-  .modal__purchase-btn { padding: 10px 20px; font-size: 0.9rem; min-width: 100px; }
-  .modal__preparation, .modal__storage, .modal__calories, .modal__dish { margin-top: 12px; padding-top: 12px; }
-  .modal__preparation-text, .modal__storage-item, .modal__dish-text, .calories-serving { font-size: 0.8rem; }
-  .modal__section-title { font-size: 0.9rem; }
-  .calories-number { font-size: 1.1rem; }
-  .calories { font-size: 0.7rem; padding: 2px 6px; }
-  .card-content { gap: 4px; }
+
+  .modal__image img {
+    width: 60px;
+    height: 60px;
+  }
+
+  .modal__name {
+    font-size: 1.1rem;
+  }
+
+  .modal__description {
+    font-size: 0.85rem;
+  }
+
+  .modal__footer {
+    padding: 12px 20px 20px;
+  }
+
+  .modal__purchase-btn {
+    padding: 10px 20px;
+    font-size: 0.9rem;
+    min-width: 100px;
+  }
+
+  .modal__preparation,
+  .modal__storage,
+  .modal__calories,
+  .modal__dish {
+    margin-top: 12px;
+    padding-top: 12px;
+  }
+
+  .modal__preparation-text,
+  .modal__storage-item,
+  .modal__dish-text,
+  .calories-serving {
+    font-size: 0.8rem;
+  }
+
+  .modal__section-title {
+    font-size: 0.9rem;
+  }
+
+  .calories-number {
+    font-size: 1.1rem;
+  }
+
+  .calories {
+    font-size: 0.7rem;
+    padding: 2px 6px;
+  }
+
+  .card-content {
+    gap: 4px;
+  }
 }
 
 /* Larger thumbnail on bigger screens */
 @media (min-width: 768px) {
-  .thumb { width: 56px; height: 56px; flex-basis: 56px; }
+  .thumb {
+    width: 56px;
+    height: 56px;
+    flex-basis: 56px;
+  }
 }
+
 @media (min-width: 1024px) {
-  .thumb { width: 64px; height: 64px; flex-basis: 64px; }
+  .thumb {
+    width: 64px;
+    height: 64px;
+    flex-basis: 64px;
+  }
 }
 
 
 /* --- Single-scroll hard guard (forces only body to scroll) --- */
-html, body { overflow-x: hidden !important; overflow-y: auto !important; }
+html,
+body {
+  overflow-x: hidden !important;
+  overflow-y: auto !important;
+}
 
 /* 명절 리스트 컨테이너 여백 조정 */
 .holidays-container {
   padding-top: 50vh !important;
   padding-bottom: 50vh !important;
-  opacity: 0; /* 초기에 숨김 (스크롤 위치 잡은 후 보여줄 예정) */
+  opacity: 0;
+  /* 초기에 숨김 (스크롤 위치 잡은 후 보여줄 예정) */
   transition: opacity 0.3s ease;
 }
+
 .holidays-container.visible {
   opacity: 1;
 }
@@ -1296,7 +1510,8 @@ html, body { overflow-x: hidden !important; overflow-y: auto !important; }
   align-items: stretch;
   justify-content: space-around;
   z-index: 100;
-  padding-bottom: env(safe-area-inset-bottom); /* iOS 노치 등 하단 여백 대응 */
+  padding-bottom: env(safe-area-inset-bottom);
+  /* iOS 노치 등 하단 여백 대응 */
 }
 
 /* GNB 공간만큼 main 하단에 여백 주기 (64px + safe-area + 여유 10px) */
@@ -1317,13 +1532,15 @@ main {
   -webkit-tap-highlight-color: transparent;
 }
 
-.gnb__item:hover, .gnb__item:focus {
+.gnb__item:hover,
+.gnb__item:focus {
   color: #868e96;
 }
 
 .gnb__icon {
   transition: transform 0.2s cubic-bezier(0.34, 1.56, 0.64, 1);
 }
+
 /* 명절 리스트 동적 포커스 스타일 */
 .holiday-item {
   display: flex;
@@ -1335,11 +1552,13 @@ main {
   color: inherit;
   box-shadow: var(--shadow-sm);
   transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-  margin-bottom: 24px; /* 간격 살짝 확대 */
+  margin-bottom: 24px;
+  /* 간격 살짝 확대 */
   overflow: hidden;
-  border: 1px solid rgba(0,0,0,0.05);
+  border: 1px solid rgba(0, 0, 0, 0.05);
   position: relative;
-  scroll-snap-align: center; /* 중앙 스냅 */
+  scroll-snap-align: center;
+  /* 중앙 스냅 */
   scroll-snap-stop: always;
 }
 
@@ -1414,7 +1633,7 @@ main {
   margin-top: 0;
   transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
   overflow: hidden;
-  border-top: 1px dashed rgba(0,0,0,0.05);
+  border-top: 1px dashed rgba(0, 0, 0, 0.05);
   padding-top: 0;
 }
 
@@ -1502,4 +1721,3 @@ main {
   transform: scale(0.98);
   opacity: 0.95;
 }
-

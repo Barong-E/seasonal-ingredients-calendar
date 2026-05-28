@@ -1,93 +1,100 @@
 <!doctype html>
 <html lang="ko">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, user-scalable=no">
-    <title>띵동 제철음식 - 명절·절기</title>
-    
 
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-1JF37PQSF4"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'G-1JF37PQSF4');
-    </script>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, user-scalable=no">
+  <title>띵동 제철음식 - 명절·절기</title>
 
-    <!-- MS Clarity -->
-    <script type="text/javascript">
-        (function(c,l,a,r,i,t,y){
-            c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
-            t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
-            y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
-        })(window, document, "clarity", "script", "wrj7abuj1x");
-    </script>
 
-    
-    <style>
-      .holidays-container {
-        padding: calc(var(--header-offset, 80px) + 20px) 20px 80px;
-        max-width: 800px;
-        margin: 0 auto;
-        display: flex;
-        flex-direction: column;
-        gap: 16px;
-      }
-    </style>
-    <script type="module" crossorigin src="/assets/holidays.js"></script>
-    <link rel="modulepreload" crossorigin href="/assets/app-back-button.js">
-    <link rel="modulepreload" crossorigin href="/assets/korean-lunar-calendar.js">
-    <link rel="stylesheet" crossorigin href="/assets/app-back-button.css">
-  </head>
-  <body class="page-holidays">
-    <header class="app-header">
-      <h1 class="visually-hidden">띵동 제철음식</h1>
-      <div class="header-bar" role="banner">
-        <div class="brand" aria-label="브랜드">
-          <span class="brand__primary">띵동 제철음식</span>
-        </div>
-        <div class="header-controls">
-          <form id="filtersForm" class="header-search" onsubmit="return false;" role="search">
-            <input id="searchInput" class="search-input" type="search" placeholder="이름·설명 검색" autocomplete="off" inputmode="search" aria-describedby="searchHelp">
-            <p id="searchHelp" class="visually-hidden">이름과 설명에서 검색합니다. 대소문자를 구분하지 않습니다.</p>
-          </form>
-          <button id="settingButton" class="setting-button" type="button" aria-label="알림 설정" title="알림 설정">
-            <svg class="setting-icon" viewBox="0 0 24 24" width="20" height="20" fill="currentColor">
-              <path d="M12 22c1.1 0 2-.9 2-2h-4c0 1.1.89 2 2 2zm6-6v-5c0-3.07-1.64-5.64-4.5-6.32V4c0-.83-.67-1.5-1.5-1.5s-1.5.67-1.5 1.5v.68C7.63 5.36 6 7.92 6 11v5l-2 2v1h16v-1l-2-2z"/>
-            </svg>
-          </button>
-        </div>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-1JF37PQSF4"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'G-1JF37PQSF4');
+  </script>
+
+  <!-- MS Clarity -->
+  <script type="text/javascript">
+    (function (c, l, a, r, i, t, y) {
+      c[a] = c[a] || function () { (c[a].q = c[a].q || []).push(arguments) };
+      t = l.createElement(r); t.async = 1; t.src = "https://www.clarity.ms/tag/" + i;
+      y = l.getElementsByTagName(r)[0]; y.parentNode.insertBefore(t, y);
+    })(window, document, "clarity", "script", "wrj7abuj1x");
+  </script>
+
+
+  <style>
+    .holidays-container {
+      padding: calc(var(--header-offset, 80px) + 20px) 20px 80px;
+      max-width: 800px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+  </style>
+  <script type="module" crossorigin src="/assets/holidays.js"></script>
+  <link rel="modulepreload" crossorigin href="/assets/app-back-button.js">
+  <link rel="modulepreload" crossorigin href="/assets/korean-lunar-calendar.js">
+  <link rel="stylesheet" crossorigin href="/assets/app-back-button.css">
+</head>
+
+<body class="page-holidays">
+  <header class="app-header">
+    <h1 class="visually-hidden">띵동 제철음식</h1>
+    <div class="header-bar" role="banner">
+      <div class="brand" aria-label="브랜드">
+        <span class="brand__primary">띵동 제철음식</span>
       </div>
-    </header>
+      <div class="header-controls">
+        <form id="filtersForm" class="header-search" onsubmit="return false;" role="search">
+          <input id="searchInput" class="search-input" type="search" placeholder="이름·설명 검색" autocomplete="off"
+            inputmode="search" aria-describedby="searchHelp">
+          <p id="searchHelp" class="visually-hidden">이름과 설명에서 검색합니다. 대소문자를 구분하지 않습니다.</p>
+        </form>
+        <button id="settingButton" class="setting-button" type="button" aria-label="알림 설정" title="알림 설정">
+          <svg class="setting-icon" viewBox="0 0 24 24" width="20" height="20" fill="currentColor">
+            <path
+              d="M12 22c1.1 0 2-.9 2-2h-4c0 1.1.89 2 2 2zm6-6v-5c0-3.07-1.64-5.64-4.5-6.32V4c0-.83-.67-1.5-1.5-1.5s-1.5.67-1.5 1.5v.68C7.63 5.36 6 7.92 6 11v5l-2 2v1h16v-1l-2-2z" />
+          </svg>
+        </button>
+      </div>
+    </div>
+  </header>
 
-    <main class="holidays-container" id="holidayListContainer">
-      <!-- JS로 리스트 렌더링 -->
-    </main>
+  <main class="holidays-container" id="holidayListContainer">
+    <!-- JS로 리스트 렌더링 -->
+  </main>
 
-    <!-- 하단 탭바 (GNB) -->
-    <nav class="gnb" aria-label="하단 네비게이션">
-      <a href="index.html" class="gnb__item">
-        <svg class="gnb__icon" viewBox="0 0 24 24" width="24" height="24" fill="currentColor">
-          <path d="M12 6c-2.5 0-4.5 1.8-4.9 4.2-.1.4-.1.8-.1 1.3 0 3.5 2.5 6.5 5 6.5s5-3 5-6.5c0-.5 0-.9-.1-1.3C16.5 7.8 14.5 6 12 6zm2.5-4c-1.4 0-2.5 1.1-2.5 2.5V5h1.5V4.5c0-.6.4-1 1-1h.5V2h-.5z" />
-        </svg>
-        <span class="gnb__label">제철 식재료</span>
-      </a>
-      <a href="holidays.html" class="gnb__item active" aria-current="page">
-        <svg class="gnb__icon" viewBox="0 0 24 24" width="24" height="24" fill="currentColor">
-          <path d="M17 4a4 4 0 1 1 0 8 4 4 0 0 1 0-8zm-5 7a7.5 7.5 0 0 0-7.5 7.5C4.5 20.43 6.07 22 8 22h12c1.93 0 3.5-1.57 3.5-3.5 0-3.3-2.34-6.07-5.5-6.47V15c0 .55-.45 1-1 1s-1-.45-1-1v-2.88c-.64-.08-1.3-.12-2-.12z M7 15c-.55 0-1 .45-1 1v4h2v-4c0-.55-.45-1-1-1z" />
-        </svg>
-        <span class="gnb__label">명절·절기</span>
-      </a>
-    </nav>
+  <!-- 하단 탭바 (GNB) -->
+  <nav class="gnb" aria-label="하단 네비게이션">
+    <a href="index.html" class="gnb__item">
+      <svg class="gnb__icon" viewBox="0 0 24 24" width="24" height="24" fill="currentColor">
+        <path
+          d="M12 6c-2.5 0-4.5 1.8-4.9 4.2-.1.4-.1.8-.1 1.3 0 3.5 2.5 6.5 5 6.5s5-3 5-6.5c0-.5 0-.9-.1-1.3C16.5 7.8 14.5 6 12 6zm2.5-4c-1.4 0-2.5 1.1-2.5 2.5V5h1.5V4.5c0-.6.4-1 1-1h.5V2h-.5z" />
+      </svg>
+      <span class="gnb__label">제철 식재료</span>
+    </a>
+    <a href="holidays.html" class="gnb__item active" aria-current="page">
+      <svg class="gnb__icon" viewBox="0 0 24 24" width="24" height="24" fill="currentColor">
+        <path
+          d="M17 4a4 4 0 1 1 0 8 4 4 0 0 1 0-8zm-5 7a7.5 7.5 0 0 0-7.5 7.5C4.5 20.43 6.07 22 8 22h12c1.93 0 3.5-1.57 3.5-3.5 0-3.3-2.34-6.07-5.5-6.47V15c0 .55-.45 1-1 1s-1-.45-1-1v-2.88c-.64-.08-1.3-.12-2-.12z M7 15c-.55 0-1 .45-1 1v4h2v-4c0-.55-.45-1-1-1z" />
+      </svg>
+      <span class="gnb__label">명절·절기</span>
+    </a>
+  </nav>
 
-    <script>
-      window.addEventListener('load', () => {
-        const header = document.querySelector('.holidays-header');
-        if (header) {
-          document.documentElement.style.setProperty('--header-offset', `${header.offsetHeight}px`);
-        }
-      });
-    </script>
-  </body>
+  <script>
+    window.addEventListener('load', () => {
+      const header = document.querySelector('.holidays-header');
+      if (header) {
+        document.documentElement.style.setProperty('--header-offset', `${header.offsetHeight}px`);
+      }
+    });
+  </script>
+</body>
+
 </html>

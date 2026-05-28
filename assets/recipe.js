@@ -334,7 +334,7 @@ function renderIngredients(ingredients) {
   ingredients.forEach(ingredient => {
     const item = document.createElement('div');
     item.className = 'ingredient-item';
-    
+
     // 제철 식재료 목록과 매칭 검사
     const matched = seasonalIngredientsList.find(s => s.name_ko === ingredient.name || ingredient.name.includes(s.name_ko));
 
@@ -481,7 +481,7 @@ function getServingsLimits(recipe) {
 // 초기화
 async function init() {
   const recipeId = getRecipeIdFromUrl();
-  
+
   if (!recipeId) {
     showError();
     return;
@@ -494,9 +494,9 @@ async function init() {
   }
 
   showLoading();
-  
+
   await loadSeasonalIngredients();
-  
+
   currentRecipe = await loadRecipe(recipeId);
   if (!currentRecipe) {
     showError();
@@ -555,7 +555,7 @@ async function init() {
   // 화면 켜짐 유지 사용자 설정 로드 및 적용
   const savedWakeLock = localStorage.getItem('user_wakelock_enabled');
   isWakeLockEnabled = savedWakeLock !== 'false';
-  
+
   const toggle = document.getElementById('wakeLockToggle');
   if (toggle) {
     toggle.checked = isWakeLockEnabled;

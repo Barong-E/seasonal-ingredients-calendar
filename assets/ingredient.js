@@ -112,13 +112,13 @@ async function init() {
   if (item.storage_room_temp || item.storage_refrigerator || item.storage_freezer) {
     document.getElementById('storageSection').style.display = 'block';
     const storageEl = document.getElementById('storageContent');
-    
+
     const types = [
       { t: '실온', i: '🏠', m: item.storage_room_temp },
       { t: '냉장', i: '🧊', m: item.storage_refrigerator },
       { t: '냉동', i: '❄️', m: item.storage_freezer }
     ];
-    
+
     types.forEach(s => {
       if (s.m) {
         const div = document.createElement('div');
@@ -134,7 +134,7 @@ async function init() {
     document.getElementById('dishSection').style.display = 'block';
     const dishEl = document.getElementById('dishText');
     const dishes = item.popular_dish.split(',').map(d => d.trim());
-    
+
     dishes.forEach((dish, index) => {
       const recipeId = getRecipeIdFromDishName(dish);
       if (recipeId) {
@@ -185,10 +185,10 @@ async function init() {
   }
 }
 
-window.handleSmartBack = function(defaultUrl) {
+window.handleSmartBack = function (defaultUrl) {
   const params = new URLSearchParams(window.location.search);
   const fromNoti = params.get('fromNoti');
-  
+
   // 알림을 통해 들어왔거나 히스토리가 없는 경우 강제 이동
   if (fromNoti === 'true' || window.history.length <= 1) {
     window.location.href = defaultUrl || 'index.html';
