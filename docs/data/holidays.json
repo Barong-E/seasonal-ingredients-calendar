@@ -7,7 +7,7 @@
       "month": 1,
       "day": 1
     },
-    "image": "holiday_seollal.png",
+    "image": "holidays/holiday_seollal.png",
     "main_food": "떡국",
     "summary": "새해의 첫날을 기념하며, 조상께 차례를 지내고 어른들께 세배를 올리는 우리나라 최대의 명절입니다.",
     "details": {
@@ -45,7 +45,7 @@
       "month": 1,
       "day": 15
     },
-    "image": "holiday_daeboreum.png",
+    "image": "holidays/holiday_daeboreum.png",
     "main_food": "오곡밥",
     "summary": "새해 첫 보름달이 뜨는 날로, 한 해의 풍요와 안녕을 기원하는 다양한 풍습이 행해집니다.",
     "details": {
@@ -91,7 +91,7 @@
       "month": 4,
       "day": 5
     },
-    "image": "holiday_hansik.png",
+    "image": "holidays/holiday_hansik.png",
     "main_food": "쑥떡",
     "summary": "동지 후 105일째 되는 날로, 불을 사용하지 않고 찬 음식을 먹으며 조상의 묘를 돌보는 날입니다.",
     "story": {
@@ -129,7 +129,7 @@
       "month": 3,
       "day": 3
     },
-    "image": "holiday_samjinnal.png",
+    "image": "holidays/holiday_samjinnal.png",
     "main_food": "화전",
     "summary": "봄기운이 완연한 날로, 강남 갔던 제비가 돌아온다고 알려져 있습니다. 꽃놀이를 즐기며 봄을 맞이합니다.",
     "details": {
@@ -167,7 +167,7 @@
       "month": 5,
       "day": 5
     },
-    "image": "holiday_dano.png",
+    "image": "holidays/holiday_dano.png",
     "main_food": "수리취떡",
     "summary": "일 년 중 양기가 가장 왕성한 날로, 여름을 건강하게 나기 위한 다양한 풍습이 행해집니다.",
     "details": {
@@ -213,7 +213,7 @@
       "month": 6,
       "day": 15
     },
-    "image": "holiday_yudu.png",
+    "image": "holidays/holiday_yudu.png",
     "main_food": "밀국수",
     "summary": "흐르는 물에 머리를 감고 몸을 씻어 액운을 떨쳐내고, 더위를 이겨내고자 했던 날입니다.",
     "details": {
@@ -243,7 +243,7 @@
       "month": 7,
       "day": 7
     },
-    "image": "holiday_chilseok.png",
+    "image": "holidays/holiday_chilseok.png",
     "main_food": "밀전병",
     "summary": "견우와 직녀가 일 년에 한 번 만난다는 전설이 깃든 날로, 별을 보며 소원을 빌었습니다.",
     "details": {
@@ -277,7 +277,7 @@
       "month": 7,
       "day": 15
     },
-    "image": "holiday_baekjung.png",
+    "image": "holidays/holiday_baekjung.png",
     "main_food": "고기 음식",
     "summary": "농사일이 잠시 뜸해지는 시기로, 주인은 머슴에게 음식을 대접하며 노고를 위로하고 공동체의 결속을 다졌습니다.",
     "details": {
@@ -307,7 +307,7 @@
       "month": 8,
       "day": 15
     },
-    "image": "holiday_chuseok.png",
+    "image": "holidays/holiday_chuseok.png",
     "main_food": "송편",
     "summary": "풍성한 수확의 기쁨을 조상과 나누고, 가족과 함께 즐기는 민족 최대의 명절 중 하나입니다.",
     "details": {
@@ -345,7 +345,7 @@
       "month": 9,
       "day": 9
     },
-    "image": "holiday_jungyangjeol.png",
+    "image": "holidays/holiday_jungyangjeol.png",
     "main_food": "국화전",
     "summary": "양수(홀수)인 9가 겹치는 날로, 국화와 관련된 풍습을 즐기며 장수를 기원했습니다.",
     "story": {
@@ -382,7 +382,7 @@
       "type": "dynamic",
       "name": "동지"
     },
-    "image": "holiday_dongji.png",
+    "image": "holidays/holiday_dongji.png",
     "main_food": "팥죽",
     "summary": "일 년 중 밤이 가장 길고 낮이 가장 짧은 날로, 팥죽을 쑤어 액운을 쫓는 풍습이 있습니다.",
     "details": {
@@ -412,7 +412,7 @@
       "month": 4,
       "day": 8
     },
-    "image": "holiday_chopail.png",
+    "image": "holidays/holiday_chopail.png",
     "main_food": "느티떡",
     "summary": "석가모니 부처님의 탄생을 기념하는 날로, 연등을 밝히고 사찰 음식을 나누어 먹는 전통이 있습니다.",
     "details": {
@@ -453,7 +453,7 @@
       "type": "dynamic",
       "name": "초복"
     },
-    "image": "holiday_chobok.png",
+    "image": "holidays/holiday_chobok.png",
     "main_food": "삼계탕",
     "summary": "삼복의 첫 번째 복날로, 일 년 중 가장 무더운 시기의 시작을 알리며 보양식을 먹고 기력을 보충하는 날입니다.",
     "details": {
@@ -494,7 +494,7 @@
       "type": "dynamic",
       "name": "중복"
     },
-    "image": "holiday_jungbok.png",
+    "image": "holidays/holiday_jungbok.png",
     "main_food": "삼계탕",
     "summary": "삼복의 두 번째 복날로, 일 년 중 더위가 가장 심한 시기이며 보양식을 먹고 기력을 보충하는 날입니다.",
     "details": {
@@ -535,7 +535,7 @@
       "type": "dynamic",
       "name": "말복"
     },
-    "image": "holiday_malbok.png",
+    "image": "holidays/holiday_malbok.png",
     "main_food": "삼계탕",
     "summary": "삼복의 마지막 복날로, 무더운 여름의 끝자락에서 영양 많은 보양식을 먹고 기력을 보충하는 날입니다.",
     "details": {
@@ -576,7 +576,7 @@
       "type": "dynamic",
       "name": "입춘"
     },
-    "image": "holiday_ipchun.png",
+    "image": "holidays/holiday_ipchun.png",
     "main_food": "오신채",
     "summary": "24절기의 첫 번째 절기로, 봄이 시작되는 날입니다. 대문에 좋은 글귀를 붙이고 봄나물을 먹으며 새 계절을 맞이합니다.",
     "details": {
@@ -609,7 +609,7 @@
       "type": "dynamic",
       "name": "섣달그믐"
     },
-    "image": "holiday_seotdal.png",
+    "image": "holidays/holiday_seotdal.png",
     "main_food": "비빔밥",
     "summary": "음력 12월의 마지막 날로, 한 해를 마무리하며 남은 음식을 정리하고 새해를 맞을 준비를 하는 날입니다.",
     "details": {

@@ -139,12 +139,38 @@ function createCardElement(item, type) {
     subText = infoParts.join(' · ');
   } else if (type === 'recipes') {
     titleText = item.name;
-    imagePath = `images/${item.image || 'recipe-galchi-jorim.jpg'}`; // 레시피 전용 이미지 대응
+    
+    // 식재료 매칭을 통한 제철 정보 및 대체 이미지 가져오기
+    let matchedIngredient = null;
+    if (item.ingredients && item.ingredients.length > 0) {
+      for (const ing of item.ingredients) {
+        const matched = State.ingredientsData.find(s => 
+          s.name_ko === ing.name || ing.name.includes(s.name_ko)
+        );
+        if (matched) {
+          matchedIngredient = matched;
+          break;
+        }
+      }
+    }
+    
+    // 1) 레시피 이미지 2) 매칭된 식재료 이미지 3) 기본 레시피 이미지
+    let imgName = item.image;
+    if (!imgName && matchedIngredient && matchedIngredient.image) {
+      imgName = matchedIngredient.image;
+    }
+    imagePath = `images/${imgName || 'recipes/recipe-galchi-jorim.jpg'}`;
     detailUrl = `recipe.html#${encodeURIComponent(item.id)}`;
-    subText = `⏱️ ${item.cookTime || '-'} · 🧑‍🍳 ${item.difficulty || '-'}`;
+    
+    const monthText = matchedIngredient ? getMonthsRangeText(matchedIngredient.months) : '';
+    let infoParts = [];
+    if (monthText) infoParts.push(`🗓️ ${monthText}`);
+    infoParts.push(`⏱️ ${item.cookTime || '-'}`);
+    infoParts.push(`🧑‍🍳 ${item.difficulty || '-'}`);
+    subText = infoParts.join(' · ');
   } else if (type === 'holidays') {
     titleText = item.name;
-    imagePath = `images/${item.image || 'holiday-seollal.jpg'}`;
+    imagePath = `images/${item.image || 'holidays/holiday-seollal.jpg'}`;
     detailUrl = `holiday.html?id=${encodeURIComponent(item.id)}`;
     subText = `🌾 ${item.main_food || '절기 음식'}`;
   }
@@ -152,7 +178,7 @@ function createCardElement(item, type) {
   // 카드 본문 뼈대
   card.innerHTML = `
     <div class="thumb" aria-hidden="true">
-      <img class="photo" src="${imagePath}" alt="${titleText} 이미지" onerror="this.onerror=null; this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDgiIGhlaWdodD0iNDgiIHZpZXdCb3g9IjAgMCA0OCA0OCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjQ4IiBoZWlnaHQ9IjQ4IiBmaWxsPSIjRjVGNUY1Ii8+CjxwYXRoIGQ9Ik0xMiAxMkgzNlYzNkgxMlYxMloiIGZpbGw9IiNEOUQ5RDkiLz4KPHN2Zz4K';" />
+      <img class="photo" src="${imagePath}" alt="${titleText} 이미지" onerror="this.onerror=null; this.src='images/_fallback.png';" />
     </div>
     <div class="card-content">
       <h2 class="title">${titleText}</h2>
