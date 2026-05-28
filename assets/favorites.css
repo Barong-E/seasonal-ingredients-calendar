@@ -1,19 +1,24 @@
-/* favorites.css */
+/* favorites.html 전용 헤더 및 탭 플로팅 고정 해제 */
+.favorites-page .app-header {
+  position: relative;
+  top: auto;
+  left: auto;
+  right: auto;
+  z-index: auto;
+}
 
 .tab-container {
-  position: fixed;
-  top: var(--header-offset, 60px);
-  left: 0;
-  right: 0;
-  z-index: 99;
+  position: relative;
+  top: auto;
+  left: auto;
+  right: auto;
+  z-index: auto;
   display: flex;
   background: var(--glass-bg);
-  backdrop-filter: blur(var(--glass-blur));
-  -webkit-backdrop-filter: blur(var(--glass-blur));
   border-bottom: 1px solid var(--glass-border);
-  box-shadow: var(--shadow-sm);
   padding: 4px 16px;
   height: 48px;
+  margin-bottom: 16px;
 }
 
 .tab-btn {
@@ -57,7 +62,7 @@ body.theme-winter .tab-btn.active {
 }
 
 .favorites-main {
-  padding: calc(var(--header-offset, 60px) + 48px + 20px) 20px 100px;
+  padding: 16px 20px 100px;
   max-width: 1000px;
   margin: 0 auto;
   min-height: 80vh;
@@ -78,7 +83,7 @@ body.theme-winter .tab-btn.active {
     gap: 12px;
   }
   .favorites-main {
-    padding-top: calc(var(--header-offset, 60px) + 48px + 12px);
+    padding-top: 12px;
     padding-left: 12px;
     padding-right: 12px;
   }

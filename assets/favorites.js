@@ -71,6 +71,50 @@ async function fetchData() {
   }
 }
 
+// 제철 시기 텍스트 변환 헬퍼 함수
+function getMonthsRangeText(months) {
+  if (!months || months.length === 0) return '';
+  if (months.length === 1) return `${months[0]}월`;
+
+  const sorted = [...months].sort((a, b) => a - b);
+
+  // 일반적인 연속성 검사 (예: 5, 6, 7 -> 5월~7월)
+  let isConsecutive = true;
+  for (let i = 1; i < sorted.length; i++) {
+    if (sorted[i] !== sorted[i - 1] + 1) {
+      isConsecutive = false;
+      break;
+    }
+  }
+  if (isConsecutive) {
+    return `${sorted[0]}월~${sorted[sorted.length - 1]}월`;
+  }
+
+  // 순환 연속성 검사 (예: 11, 12, 1, 2 -> 11월~2월)
+  const missing = [];
+  for (let m = 1; m <= 12; m++) {
+    if (!months.includes(m)) {
+      missing.push(m);
+    }
+  }
+
+  let isMissingConsecutive = true;
+  for (let i = 1; i < missing.length; i++) {
+    if (missing[i] !== missing[i - 1] + 1) {
+      isMissingConsecutive = false;
+      break;
+    }
+  }
+
+  if (isMissingConsecutive) {
+    const startMonth = missing[missing.length - 1] === 12 ? 1 : missing[missing.length - 1] + 1;
+    const endMonth = missing[0] === 1 ? 12 : missing[0] - 1;
+    return `${startMonth}월~${endMonth}월`;
+  }
+
+  return sorted.map(m => `${m}월`).join(', ');
+}
+
 // 카드 엘리먼트 생성
 function createCardElement(item, type) {
   const card = document.createElement('div');
@@ -86,7 +130,13 @@ function createCardElement(item, type) {
     titleText = item.name_ko;
     imagePath = `images/${item.image || '_fallback.png'}`;
     detailUrl = `ingredient.html?id=${encodeURIComponent(item.name_ko)}`;
-    subText = item.popular_dish ? `🍲 ${item.popular_dish.split(',')[0].trim()}` : '';
+    const monthText = getMonthsRangeText(item.months);
+    const dishText = item.popular_dish ? item.popular_dish.split(',')[0].trim() : '';
+
+    let infoParts = [];
+    if (monthText) infoParts.push(`🗓️ ${monthText}`);
+    if (dishText) infoParts.push(`🍲 ${dishText}`);
+    subText = infoParts.join(' · ');
   } else if (type === 'recipes') {
     titleText = item.name;
     imagePath = `images/${item.image || 'recipe-galchi-jorim.jpg'}`; // 레시피 전용 이미지 대응
