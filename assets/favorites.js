@@ -140,7 +140,7 @@ function createCardElement(item, type) {
   } else if (type === 'recipes') {
     titleText = item.name;
     
-    // 식재료 매칭을 통한 제철 정보 및 대체 이미지 가져오기
+    // 식재료 매칭을 통한 제철 정보 가져오기
     let matchedIngredient = null;
     if (item.ingredients && item.ingredients.length > 0) {
       for (const ing of item.ingredients) {
@@ -154,12 +154,8 @@ function createCardElement(item, type) {
       }
     }
     
-    // 1) 레시피 이미지 2) 매칭된 식재료 이미지 3) 기본 레시피 이미지
-    let imgName = item.image;
-    if (!imgName && matchedIngredient && matchedIngredient.image) {
-      imgName = matchedIngredient.image;
-    }
-    imagePath = `images/${imgName || 'recipes/recipe-galchi-jorim.jpg'}`;
+    // 레시피 전용 이미지 우선, 없으면 폴백 이미지
+    imagePath = `images/${item.image || '_fallback.png'}`;
     detailUrl = `recipe.html#${encodeURIComponent(item.id)}`;
     
     const monthText = matchedIngredient ? getMonthsRangeText(matchedIngredient.months) : '';
