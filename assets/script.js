@@ -7,7 +7,7 @@ import { getRecipeIdFromDishName } from './recipe-mapper.js';
 // 띵동 제철음식 메인 스크립트
 // 규칙: ES 모듈 없이 단일 페이지 스크립트
 
-const CACHE_KEY = 'seasons:ingredients:v50';
+const CACHE_KEY = 'seasons:ingredients:v51';
 const CACHE_TTL_MS = 24 * 60 * 60 * 1000; // 24h
 
 // 구버전 캐시 강제 삭제 (버전 충돌 방지)
