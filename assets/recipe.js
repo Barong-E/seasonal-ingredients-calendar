@@ -302,6 +302,19 @@ function renderRecipe(recipe) {
   // 기본 정보
   document.getElementById('recipeName').textContent = recipe.name;
   document.getElementById('recipeDescription').textContent = recipe.description;
+
+  // 이미지 렌더링
+  const recipeImg = document.getElementById('recipeImage');
+  if (recipeImg) {
+    if (recipe.image) {
+      recipeImg.src = `images/${recipe.image}`;
+      recipeImg.alt = `${recipe.name} 이미지`;
+    } else {
+      recipeImg.src = 'images/_fallback.png';
+      recipeImg.alt = '이미지 준비 중';
+    }
+  }
+
   const unit = recipe.servingsUnit || '인분';
   document.getElementById('recipeServings').textContent = `${currentServings}${unit}`;
   document.getElementById('recipeCookTime').textContent = recipe.cookTime;

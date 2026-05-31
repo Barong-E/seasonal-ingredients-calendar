@@ -63,17 +63,22 @@
     <div class="recipe-container">
       <!-- 레시피 헤더 -->
       <section class="recipe-header">
-        <div class="recipe-title-section">
-          <h2 id="recipeName" class="recipe-name"></h2>
-          <p id="recipeDescription" class="recipe-description"></p>
-          <div class="wakelock-container">
-            <div id="wakeLockBadge" class="wakelock-badge" role="status" aria-live="polite">
-              <span class="badge-icon">💡</span>화면 켜짐 유지 중
+        <div class="recipe-header-container">
+          <div class="recipe-image-wrapper">
+            <img id="recipeImage" class="recipe-image" src="" alt="레시피 이미지" onerror="this.src='images/_fallback.png'">
+          </div>
+          <div class="recipe-title-section">
+            <h2 id="recipeName" class="recipe-name"></h2>
+            <p id="recipeDescription" class="recipe-description"></p>
+            <div class="wakelock-container">
+              <div id="wakeLockBadge" class="wakelock-badge" role="status" aria-live="polite">
+                <span class="badge-icon">💡</span>화면 켜짐 유지 중
+              </div>
+              <label class="switch" title="화면 켜짐 유지 켜기/끄기">
+                <input type="checkbox" id="wakeLockToggle" checked>
+                <span class="slider round"></span>
+              </label>
             </div>
-            <label class="switch" title="화면 켜짐 유지 켜기/끄기">
-              <input type="checkbox" id="wakeLockToggle" checked>
-              <span class="slider round"></span>
-            </label>
           </div>
         </div>
       </section>
