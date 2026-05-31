@@ -1049,6 +1049,7 @@ body.has-banner .carousel {
 
 /* 손질법과 보관법 섹션 */
 .modal__preparation,
+.modal__selection,
 .modal__calories {
   margin-top: 16px;
   padding-top: 16px;
@@ -1113,7 +1114,8 @@ body.has-banner .carousel {
   color: var(--primary);
 }
 
-.modal__preparation-text {
+.modal__preparation-text,
+.modal__selection-text {
   margin: 0;
   font-size: 0.85rem;
   line-height: 1.5;
@@ -1424,6 +1426,7 @@ body.has-banner .carousel {
   }
 
   .modal__preparation,
+  .modal__selection,
   .modal__storage,
   .modal__calories,
   .modal__dish {
@@ -1432,6 +1435,7 @@ body.has-banner .carousel {
   }
 
   .modal__preparation-text,
+  .modal__selection-text,
   .modal__storage-item,
   .modal__dish-text,
   .calories-serving {

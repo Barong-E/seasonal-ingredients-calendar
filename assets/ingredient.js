@@ -102,6 +102,12 @@ async function init() {
     document.getElementById('caloriesPerServing').textContent = item.calories_per_serving || '';
   }
 
+  // 고르는 방법
+  if (item.selection_ko) {
+    document.getElementById('selectionSection').style.display = 'block';
+    document.getElementById('selectionText').textContent = item.selection_ko;
+  }
+
   // 손질법
   if (item.preparation_ko) {
     document.getElementById('prepSection').style.display = 'block';
