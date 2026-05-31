@@ -8849,7 +8849,7 @@
     "name": "말린 팽이버섯 차",
     "category": "채소",
     "description": "햇볕에 말려 영양이 응축된 팽이버섯을 덖어 만든 건강 차입니다. 고소한 풍미와 다이어트 효능이 뛰어납니다.",
-    "image": "recipes/enoki-mushroom.png",
+    "image": "recipes/recipe-enoki-mushroom.png",
     "servings": 1,
     "cookTime": "15분",
     "difficulty": "중급",
@@ -8950,7 +8950,8 @@
         "name": "통깨",
         "amount": "1큰술"
       }
-    ]
+    ],
+    "image": "recipes/recipe-chwinamul-bap.png"
   },
   {
     "id": "daseulgi-guk",
@@ -9003,7 +9004,8 @@
         "step": 4,
         "description": "마지막에 부추를 넣고 소금으로 간을 맞춘 뒤 불을 끕니다."
       }
-    ]
+    ],
+    "image": "recipes/recipe-daseulgi-guk.png"
   },
   {
     "id": "byeongeo-jorim",
