@@ -7288,7 +7288,7 @@
     "name": "쑥떡",
     "category": "기타",
     "description": "쑥을 넣은 반죽으로 빚어 찐 떡입니다.",
-    "image": "recipes/recipe-ssuk-tteok.jpg",
+    "image": "recipes/recipe-ssuk-tteok.png",
     "servings": 5,
     "cookTime": "40분",
     "difficulty": "초급",
@@ -7388,7 +7388,8 @@
     ],
     "name": "참두릅 숙회",
     "cookTime": "10분",
-    "description": "참두릅 숙회 레시피입니다."
+    "description": "참두릅 숙회 레시피입니다.",
+    "image": "recipes/recipe-cham-dureup-sukhoe.png"
   },
   {
     "id": "cham-dureup-beef-roll",
@@ -7446,7 +7447,8 @@
         "name": "후추",
         "amount": "0.2작은술"
       }
-    ]
+    ],
+    "image": "recipes/recipe-cham-dureup-beef-roll.png"
   },
   {
     "id": "hanchi-mulhoe",
@@ -7507,7 +7509,8 @@
     ],
     "name": "한치 물회",
     "cookTime": "15분",
-    "description": "한치 물회 레시피입니다."
+    "description": "한치 물회 레시피입니다.",
+    "image": "recipes/recipe-hanchi-mulhoe.png"
   },
   {
     "id": "hanchi-oven-roast",
@@ -7562,7 +7565,8 @@
         "name": "파슬리가루",
         "amount": "0.5작은술"
       }
-    ]
+    ],
+    "image": "recipes/recipe-hanchi-oven-roast.png"
   },
   {
     "id": "nakji-bokkeum",
@@ -7637,7 +7641,8 @@
         "name": "통깨",
         "amount": "1작은술"
       }
-    ]
+    ],
+    "image": "recipes/recipe-nakji-bokkeum.png"
   },
   {
     "id": "nakji-yeonpotang",
@@ -7702,7 +7707,8 @@
     ],
     "name": "연포탕",
     "cookTime": "30분",
-    "description": "연포탕 레시피입니다."
+    "description": "연포탕 레시피입니다.",
+    "image": "recipes/recipe-nakji-yeonpotang.png"
   },
   {
     "id": "bangeo-hoe-muchim",
@@ -7764,7 +7770,8 @@
         "name": "깨소금",
         "amount": "1/2작은술"
       }
-    ]
+    ],
+    "image": "recipes/recipe-bangeo-hoe-muchim.png"
   },
   {
     "id": "bangeo-radish-stew",
@@ -7824,7 +7831,8 @@
     ],
     "name": "방어 대가리 무조림",
     "cookTime": "40분",
-    "description": "방어 대가리 무조림 레시피입니다."
+    "description": "방어 대가리 무조림 레시피입니다.",
+    "image": "recipes/recipe-bangeo-radish-stew.png"
   },
   {
     "id": "gul-jeongol",
@@ -7890,14 +7898,15 @@
     "tips": [
       "굴은 너무 오래 끓이면 질겨질 수 있으니 마지막에 넣으세요."
     ],
-    "servingsUnit": "인분"
+    "servingsUnit": "인분",
+    "image": "recipes/recipe-gul-jeongol.png"
   },
   {
     "id": "grape-jam",
     "name": "포도잼",
     "category": "디저트",
     "description": "포도의 진한 맛과 향이 살아있는 달콤한 잼입니다.",
-    "image": "recipes/recipe-grape-jam.jpg",
+    "image": "recipes/recipe-grape-jam.png",
     "servings": 500,
     "cookTime": "60분",
     "difficulty": "초급",
@@ -7949,7 +7958,7 @@
     "name": "포도주스",
     "category": "음료",
     "description": "첨가물 없이 포도 본연의 맛을 느낄 수 있는 건강 주스입니다.",
-    "image": "recipes/recipe-grape-juice.jpg",
+    "image": "recipes/recipe-grape-juice.png",
     "servings": 2,
     "cookTime": "30분",
     "difficulty": "초급",
@@ -7991,7 +8000,7 @@
     "name": "살구잼",
     "category": "디저트",
     "description": "새콤달콤한 살구의 풍미가 가득한 잼입니다.",
-    "image": "recipes/recipe-apricot-jam.jpg",
+    "image": "recipes/recipe-apricot-jam.png",
     "servings": 500,
     "cookTime": "40분",
     "difficulty": "초급",
@@ -8039,7 +8048,7 @@
     "name": "살구청",
     "category": "디저트",
     "description": "에이드나 차로 즐기기 좋은 살구 수제청입니다.",
-    "image": "recipes/recipe-apricot-cheong.jpg",
+    "image": "recipes/recipe-apricot-cheong.png",
     "servings": 500,
     "cookTime": "20분",
     "difficulty": "초급",
@@ -8083,7 +8092,7 @@
     "name": "앵두편",
     "category": "디저트",
     "description": "앵두즙을 굳혀 만든 한국 전통의 새콤달콤한 과자입니다.",
-    "image": "recipes/recipe-aengdu-pyeon.jpg",
+    "image": "recipes/recipe-aengdu-pyeon.png",
     "servings": 4,
     "cookTime": "40분",
     "difficulty": "중급",
@@ -8133,7 +8142,7 @@
     "name": "한라봉청",
     "category": "디저트",
     "description": "제주산 한라봉의 향긋함을 그대로 담은 수제청입니다.",
-    "image": "recipes/recipe-hallabong-cheong.jpg",
+    "image": "recipes/recipe-hallabong-cheong.png",
     "servings": 500,
     "cookTime": "30분",
     "difficulty": "초급",
@@ -8177,7 +8186,7 @@
     "name": "한라봉에이드",
     "category": "음료",
     "description": "톡 쏘는 탄산과 한라봉의 달콤함이 어우러진 시원한 음료입니다.",
-    "image": "recipes/recipe-hallabong-ade.jpg",
+    "image": "recipes/recipe-hallabong-ade.png",
     "servings": 1,
     "cookTime": "5분",
     "difficulty": "초급",
