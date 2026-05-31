@@ -272,22 +272,13 @@
         <!-- 추천 대상 -->
         <div id="recommendedForContainer" class="recommended-for-container" style="display: none; margin-bottom: 16px; margin-top: 4px;"></div>
 
-        <!-- 칼로리 정보 -->
-        <div id="caloriesSection" class="info-section modal__calories"
-          style="display: none; margin-top:0; padding-top:0; border:none;">
+        <!-- 대표 요리 -->
+        <div id="dishSection" class="info-section modal__dish" style="display: none; margin-top:0; padding-top:0; border:none;">
           <div class="modal__section-header">
-            <span class="modal__icon">🔥</span>
-            <span class="modal__section-title">칼로리 정보</span>
+            <span class="modal__icon">🍽️</span>
+            <span class="modal__section-title">대표 요리</span>
           </div>
-          <div class="modal__calories-content">
-            <div class="calories-row">
-              <span class="calories-label">100g당</span>
-              <span id="caloriesPer100g" class="calories-number"></span>
-            </div>
-            <div class="calories-row">
-              <span id="caloriesPerServing" class="calories-serving"></span>
-            </div>
-          </div>
+          <p id="dishText" class="modal__dish-text"></p>
         </div>
 
         <!-- 고르는 방법 -->
@@ -317,13 +308,21 @@
           <div id="storageContent" class="modal__storage-content"></div>
         </div>
 
-        <!-- 대표 요리 -->
-        <div id="dishSection" class="info-section modal__dish" style="display: none;">
+        <!-- 칼로리 정보 -->
+        <div id="caloriesSection" class="info-section modal__calories" style="display: none;">
           <div class="modal__section-header">
-            <span class="modal__icon">🍽️</span>
-            <span class="modal__section-title">대표 요리</span>
+            <span class="modal__icon">🔥</span>
+            <span class="modal__section-title">칼로리 정보</span>
           </div>
-          <p id="dishText" class="modal__dish-text"></p>
+          <div class="modal__calories-content">
+            <div class="calories-row">
+              <span class="calories-label">100g당</span>
+              <span id="caloriesPer100g" class="calories-number"></span>
+            </div>
+            <div class="calories-row">
+              <span id="caloriesPerServing" class="calories-serving"></span>
+            </div>
+          </div>
         </div>
       </div>
     </article>
