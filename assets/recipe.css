@@ -100,12 +100,12 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin-top: 12px;
+  margin: 12px 20px 20px 20px;
   background: #f8f9fa;
-  padding: 8px 16px;
+  padding: 10px 16px;
   border-radius: 8px;
   border: 1px solid #e9ecef;
-  max-width: 250px;
+  max-width: none;
 }
 
 .wakelock-badge {
@@ -424,7 +424,7 @@ input:checked + .slider:before {
 /* 모바일 반응형 */
 @media (max-width: 640px) {
   .recipe-main {
-    padding: 0;
+    padding: calc(var(--header-offset, 0px) + 8px) 0 16px 0;
   }
 
   .recipe-container {
@@ -432,8 +432,12 @@ input:checked + .slider:before {
   }
 
   .recipe-header-container {
-    padding: 65px 16px 16px 16px;
+    padding: 20px 16px 16px 16px;
     gap: 16px;
+  }
+
+  .wakelock-container {
+    margin: 8px 16px 16px 16px;
   }
 
   .recipe-image-wrapper {
