@@ -112,10 +112,19 @@
 ---
 
 ## 3. 🖼️ 이미지 생성 가이드 (DALL-E 프롬프트)
-식재료 이미지를 생성할 때는 기존 앱의 **만화/일러스트 톤앤매너**를 유지해야 합니다.
+이미지를 생성할 때는 기존 앱의 **만화/일러스트 톤앤매너**를 유지해야 합니다. 식재료뿐만 아니라 연동되는 레시피(요리) 이미지도 반드시 함께 생성해야 합니다.
+
+### 🥬 식재료 이미지
 - **추천 프롬프트 스타일**: 
   > `Cute 2D cartoon style vector illustration of [식재료 영문명], bright colors, clean white background, simple outlines, food icon style`
-- **⚠️ 중요 (여백 조절)**: 이미지가 너무 작게 보이지 않도록 **피사체가 화면에 꽉 차게(Filling the frame)** 생성해야 합니다. 프롬프트에 `close up`, `filling the frame with minimal margins`와 같은 키워드를 추가하여 여백이 너무 많이 남지 않도록 조절하세요.
+- **저장 경로**: `public/images/[이미지명].png` (예: `public/images/fig.png`)
+
+### 🍲 레시피(요리) 이미지
+- **추천 프롬프트 스타일**: 
+  > `Cute 2D cartoon style vector illustration of Korean food [요리 영문명] served on a plate, bright colors, clean white background, simple outlines, food icon style, top-down view, centered, filling the frame with minimal margins`
+- **저장 경로**: `public/images/recipes/recipe-[요리ID].png` (예: `public/images/recipes/recipe-fig-jam.png`)
+
+- **⚠️ 중요 (여백 조절 - 공통)**: 이미지가 너무 작게 보이지 않도록 **피사체가 화면에 꽉 차게(Filling the frame)** 생성해야 합니다. 프롬프트에 `close up`, `filling the frame with minimal margins`와 같은 키워드를 추가하여 여백이 너무 많이 남지 않도록 조절하세요.
 
 ---
 
@@ -209,6 +218,7 @@ const mapping = {
 - ❌ **[주의] 계량 단위 혼용**: `t스푼`, `T스푼`을 사용하지 말고 반드시 `작은술`, `큰술`을 사용하세요. (섹션 5 참고)
 - ❌ **[주의] 범위 표현 사용**: `1~2큰술`, `3~4개` 같은 범위 표현은 인분 계산 오류를 유발합니다. 단일 숫자로만 기입하세요.
 - ❌ **[주의] 국물 요리에 물 누락**: 국, 탕, 찌개, 전골 요리에는 `ingredients`에 `물` 또는 `육수`를 반드시 기재하세요.
+- ❌ **[주의] 레시피 이미지 누락**: 신규 레시피를 추가하며 요리 이미지(`recipes/recipe-[id].png`)를 생성하지 않거나 `recipes.json`의 `image` 필드에 바르게 기입하지 않는 경우 (화면에 대체 이미지만 나오므로 완성도를 위해 필수 생성해야 함)
 
 ---
 
@@ -219,6 +229,7 @@ const mapping = {
 2.  **[ ] 보관 3종 세트**: 실온(`storage_room_temp`), 냉장(`storage_refrigerator`), 냉동(`storage_freezer`) 보관법을 모두 조사하여 기입했는가? (냉동이 불가능하면 필드를 비워둡니다)
 3.  **[ ] 레시피 100% 연동**: `popular_dish`에 적은 모든 요리가 `recipe-mapper.js`에 포함되어 있고, 실제 레시피 페이지로 연결되는가?
 4.  **[ ] 이미지 스타일**: 배경이 하얀색이며, 피사체가 화면에 꽉 차게 생성되었는가?
-5.  **[ ] 캐시 강제 갱신**: `script.js`의 `CACHE_KEY`와 모든 fetch URL의 버전 숫자를 기분 좋게(?) 한 단계 올렸는가?
+5.  **[ ] 레시피 이미지 매핑**: 신규 요리에 대한 이미지(`recipes/recipe-[요리ID].png`)가 정상적으로 생성 및 보관함에 복사되었고, `recipes.json`의 `image` 필드에 `"recipes/recipe-[요리ID].png"` 형태로 바르게 연결되었는가?
+6.  **[ ] 캐시 강제 갱신**: `script.js`의 `CACHE_KEY`와 모든 fetch URL의 버전 숫자를 기분 좋게(?) 한 단계 올렸는가?
 6.  **[ ] 쿠팡 파트너스 연동**: 배포가 완료된 후, 사용자가 직접 생성한 쿠팡 파트너스 구매 링크(URL)를 적절한 위치에 추가하도록 안내를 받았는가?
 7.  **[ ] 계량 단위 검증**: `amount` 필드에 `t스푼`, `T스푼`, 범위 표현(`~`)이 없는가? 국물 요리라면 `물` 또는 `육수`가 `ingredients`에 포함되어 있는가?
