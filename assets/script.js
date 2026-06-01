@@ -980,7 +980,19 @@ function showDetectedFoodTips(foodNameKo) {
   const item = AppState.allIngredients.find(i => i.name_ko === foodNameKo);
   if (item && item.selection_ko) {
     nameEl.textContent = `${foodNameKo} 고르는 방법`;
-    tipsEl.textContent = item.selection_ko;
+    
+    // 현재 실제 월 기준 제철 판별
+    const currentMonth = new Date().getMonth() + 1;
+    const isSeasonal = item.months && item.months.includes(currentMonth);
+
+    if (isSeasonal) {
+      tipsEl.innerHTML = `<span style="color: #0A7B34; font-weight: bold; display: block; margin-bottom: 8px;">지금 제철입니다! 🌱</span>${item.selection_ko}`;
+    } else if (item.months && item.months.length > 0) {
+      const seasonalMonthsText = item.months.map(m => `${m}월`).join(', ');
+      tipsEl.innerHTML = `<span style="color: #ef4444; font-weight: bold; display: block; margin-bottom: 8px;">지금은 제철이 아닙니다. (${seasonalMonthsText}이 제철입니다.) ⚠️</span>${item.selection_ko}`;
+    } else {
+      tipsEl.textContent = item.selection_ko;
+    }
     card.style.display = 'block';
   } else {
     nameEl.textContent = `${foodNameKo}`;
