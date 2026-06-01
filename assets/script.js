@@ -670,10 +670,16 @@ function initMonthNav() {
 
 // 검색 이벤트
 function initSearch() {
-  searchInputEl.addEventListener('input', (e) => {
-    AppState.searchText = e.target.value;
-    renderSingleMonth(getActiveMonth());
-  });
+  const form = document.getElementById('filtersForm');
+  if (form && searchInputEl) {
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const query = searchInputEl.value.trim();
+      if (query) {
+        window.location.href = `search.html?q=${encodeURIComponent(query)}`;
+      }
+    });
+  }
 }
 
 // 메인 초기화
@@ -802,6 +808,34 @@ async function init() {
     initHeaderAndBannerScroll();
     syncHeaderOffset();
 
+    // GNB 카메라 탭 이벤트 등록
+    const btnCamera = document.getElementById('btnCamera');
+    if (btnCamera) {
+      btnCamera.addEventListener('click', (e) => {
+        e.preventDefault();
+        startCameraScanner();
+      });
+    }
+
+    const btnExit = document.getElementById('btnExitScanner');
+    if (btnExit) {
+      btnExit.addEventListener('click', (e) => {
+        e.preventDefault();
+        closeCameraScanner();
+      });
+    }
+
+    // URL 파라미터 체크 (?openCamera=true)
+    const urlParams = new URLSearchParams(window.location.search);
+    if (urlParams.get('openCamera') === 'true') {
+      const url = new URL(window.location.href);
+      url.searchParams.delete('openCamera');
+      window.history.replaceState({}, '', url.pathname + url.hash);
+      
+      // 조금 대기 후 카메라 실행 (기기 렌더링 안정화)
+      setTimeout(startCameraScanner, 600);
+    }
+
     window.addEventListener('resize', () => { requestAnimationFrame(syncHeaderOffset); });
     window.addEventListener('orientationchange', () => { setTimeout(syncHeaderOffset, 250); });
 
@@ -818,6 +852,173 @@ async function init() {
     console.error('초기화 실패:', err);
     trackEl.innerHTML = '<div class="error">데이터를 불러올 수 없습니다.</div>';
   }
+}
+
+// =======================================================
+//  실시간 AI 카메라 스캐너 바인딩 함수군
+// =======================================================
+
+let cameraListener = null;
+let lastDetectedFood = null;
+let foodDetectTimeout = null;
+
+function mapEnglishLabelToKo(label) {
+  const map = {
+    "Apple": "사과",
+    "Banana": "바나나",
+    "Tomato": "토마토",
+    "Potato": "감자",
+    "Cucumber": "오이",
+    "Carrot": "당근",
+    "Broccoli": "브로콜리",
+    "Pumpkin": "애호박",
+    "Strawberry": "딸기",
+    "Grape": "포도",
+    "Watermelon": "수박",
+    "Peach": "복숭아",
+    "Orange": "귤",
+    "Mandarin orange": "귤",
+    "Lemon": "유자",
+    "Citrus": "한라봉",
+    "Eggplant": "가지",
+    "Corn": "옥수수",
+    "Garlic": "마늘",
+    "Mushroom": "표고버섯",
+    "Edible mushroom": "표고버섯",
+    "Chestnut": "밤",
+    "Fish": "갈치",
+    "Seafood": "갈치",
+    "Crab": "꽃게",
+    "Oyster": "굴",
+    "Clam": "바지락",
+    "Plum": "자두"
+  };
+  return map[label] || null;
+}
+
+async function startCameraScanner() {
+  if (!window.Capacitor || !window.Capacitor.isNativePlatform()) {
+    showCameraFallbackModal();
+    return;
+  }
+
+  try {
+    // 1. 웹뷰 배경 투명화 및 레이아웃 숨김
+    document.documentElement.classList.add('body-transparent');
+    const overlay = document.getElementById('cameraScannerOverlay');
+    if (overlay) overlay.style.display = 'flex';
+
+    // 2. 네이티브 카메라 켜기
+    await window.Capacitor.Plugins.FoodScanner.startCamera();
+
+    // 3. 실시간 AI 라벨 감지 리스너 등록
+    if (cameraListener === null) {
+      cameraListener = await window.Capacitor.Plugins.FoodScanner.addListener('foodDetected', (data) => {
+        const foodNameKo = mapEnglishLabelToKo(data.label);
+        if (foodNameKo) {
+          showDetectedFoodTips(foodNameKo);
+        }
+      });
+    }
+  } catch (err) {
+    console.error('카메라 시작 에러:', err);
+    alert('카메라 실행 중 에러가 발생했습니다: ' + err.message);
+    closeCameraScanner();
+  }
+}
+
+async function closeCameraScanner() {
+  try {
+    if (window.Capacitor && window.Capacitor.isNativePlatform()) {
+      await window.Capacitor.Plugins.FoodScanner.stopCamera();
+    }
+  } catch (err) {
+    console.error(err);
+  }
+
+  // 리스너 해제
+  if (cameraListener) {
+    await cameraListener.remove();
+    cameraListener = null;
+  }
+
+  // 뷰 상태 원복
+  document.documentElement.classList.remove('body-transparent');
+  const overlay = document.getElementById('cameraScannerOverlay');
+  if (overlay) overlay.style.display = 'none';
+
+  const card = document.getElementById('scannerResultCard');
+  if (card) card.style.display = 'none';
+
+  lastDetectedFood = null;
+  if (foodDetectTimeout) {
+    clearTimeout(foodDetectTimeout);
+    foodDetectTimeout = null;
+  }
+}
+
+function showDetectedFoodTips(foodNameKo) {
+  const card = document.getElementById('scannerResultCard');
+  const nameEl = document.getElementById('detectedFoodName');
+  const tipsEl = document.getElementById('detectedFoodTips');
+  
+  if (!card || !nameEl || !tipsEl) return;
+
+  // 실시간으로 이벤트가 들어오므로, 2.5초 동안 추가 감지가 안 되면 카드를 부드럽게 숨김
+  if (foodDetectTimeout) {
+    clearTimeout(foodDetectTimeout);
+  }
+  foodDetectTimeout = setTimeout(() => {
+    card.style.display = 'none';
+    lastDetectedFood = null;
+  }, 2500);
+
+  if (lastDetectedFood === foodNameKo) return;
+  lastDetectedFood = foodNameKo;
+
+  // 데이터베이스에서 해당 식재료 정보 조회
+  const item = AppState.allIngredients.find(i => i.name_ko === foodNameKo);
+  if (item && item.selection_ko) {
+    nameEl.textContent = `${foodNameKo} 고르는 방법`;
+    tipsEl.textContent = item.selection_ko;
+    card.style.display = 'block';
+  } else {
+    nameEl.textContent = `${foodNameKo}`;
+    tipsEl.textContent = '신선하고 고유의 색택이 선명하며 흠집이 없는 것을 고르는 것이 좋습니다.';
+    card.style.display = 'block';
+  }
+}
+
+function showCameraFallbackModal() {
+  const existing = document.getElementById('webCameraInfoModal');
+  if (existing) existing.remove();
+
+  const modal = document.createElement('div');
+  modal.id = 'webCameraInfoModal';
+  modal.className = 'info-modal';
+  modal.setAttribute('role', 'dialog');
+  modal.setAttribute('aria-modal', 'true');
+  modal.innerHTML = `
+    <div class="info-modal__backdrop"></div>
+    <div class="info-modal__content">
+      <p class="info-modal__message">📷 실시간 AI 식재료 스캔은 모바일 앱 전용 기능이에요. 지금 바로 앱을 다운로드받아 카메라 사물 인식 기능을 경험해 보세요! 🌱</p>
+      <div class="info-modal__buttons">
+        <a href="https://play.google.com/store/apps/details?id=net.seasonalfood.app&referrer=utm_source%3Dseasonalfood_web%26utm_medium%3Dinternal%26utm_campaign%3Dcamera_tab" target="_blank" rel="noopener noreferrer" class="info-modal__btn info-modal__btn--android">Android 설치</a>
+      </div>
+      <button type="button" class="info-modal__close">닫기</button>
+    </div>
+  `;
+
+  function close() {
+    modal.remove();
+    document.body.style.overflow = '';
+  }
+
+  modal.querySelector('.info-modal__backdrop').addEventListener('click', close);
+  modal.querySelector('.info-modal__close').addEventListener('click', close);
+
+  document.body.appendChild(modal);
+  document.body.style.overflow = 'hidden';
 }
 
 window.addEventListener('pagehide', () => {

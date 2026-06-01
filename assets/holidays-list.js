@@ -341,12 +341,17 @@ function scrollToClosestHoliday(holidays, today) {
 }
 
 function initSearch() {
+  const form = document.getElementById('filtersForm');
   const searchInput = document.getElementById('searchInput');
-  if (!searchInput) return;
-
-  searchInput.addEventListener('input', (e) => {
-    renderHolidaysList(e.target.value);
-  });
+  if (form && searchInput) {
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const query = searchInput.value.trim();
+      if (query) {
+        window.location.href = `search.html?q=${encodeURIComponent(query)}`;
+      }
+    });
+  }
 }
 
 function handleRedirect() {

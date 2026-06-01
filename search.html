@@ -7,8 +7,8 @@
   <meta name="mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="default">
-  <title>띵동 제철음식 - 즐겨찾기 보관함</title>
-  <meta name="description" content="내가 즐겨찾기한 제철 식재료, 건강 레시피, 전통 명절 정보를 한눈에 모아보세요. 기기 변경 대비 백업/복구 기능도 제공합니다.">
+  <title>띵동 제철음식 - 통합 검색 결과</title>
+  <meta name="description" content="제철 식재료, 명절·절기 음식, 맛있는 요리 레시피를 한곳에서 쉽고 빠르게 검색해 보세요.">
   <meta name="robots" content="index, follow">
 
   <link rel="manifest" href="/manifest.webmanifest">
@@ -16,51 +16,72 @@
   <link rel="icon" href="/images/icons/app-icon-192.png" type="image/png">
   <link rel="apple-touch-icon" href="/images/icons/app-icon-192.png">
 
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=%VITE_GA_ID%"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', '%VITE_GA_ID%');
+  </script>
+
+  <!-- MS Clarity -->
+  <script type="text/javascript">
+    (function (c, l, a, r, i, t, y) {
+      c[a] = c[a] || function () { (c[a].q = c[a].q || []).push(arguments) };
+      t = l.createElement(r); t.async = 1; t.src = "https://www.clarity.ms/tag/" + i;
+      y = l.getElementsByTagName(r)[0]; y.parentNode.insertBefore(t, y);
+    })(window, document, "clarity", "script", "%VITE_CLARITY_ID%");
+  </script>
+
   <link rel="stylesheet" href="assets/style.css">
-  <link rel="stylesheet" href="assets/favorites.css">
 </head>
 
-<body class="favorites-page">
+<body class="search-page">
   <header class="app-header">
-    <h1 class="visually-hidden">즐겨찾기 보관함</h1>
-    <div class="header-bar" role="banner">
-      <div class="brand" aria-label="브랜드">
-        <span class="brand__primary">즐겨찾기 보관함</span>
-      </div>
+    <div class="header-bar page-header">
+      <button class="back-button" onclick="handleSmartBack('index.html')" aria-label="뒤로가기">
+        <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2"
+          stroke-linecap="round" stroke-linejoin="round">
+          <polyline points="15 18 9 12 15 6"></polyline>
+        </svg>
+      </button>
+      <form id="filtersForm" class="header-search" onsubmit="return false;" role="search" style="flex: 1;">
+        <input id="searchInput" class="search-input" type="search" placeholder="검색어를 입력해 주세요" autocomplete="off"
+          inputmode="search" aria-describedby="searchHelp">
+        <p id="searchHelp" class="visually-hidden">이름과 설명에서 검색합니다. 대소문자를 구분하지 않습니다.</p>
+      </form>
     </div>
   </header>
 
   <!-- 탭 컨트롤러 -->
-  <div class="tab-container" role="tablist">
-    <button class="tab-btn active" role="tab" aria-selected="true" data-tab="ingredients">🥬 식재료</button>
-    <button class="tab-btn" role="tab" aria-selected="false" data-tab="recipes">🍲 레시피</button>
-    <button class="tab-btn" role="tab" aria-selected="false" data-tab="holidays">📅 명절·절기</button>
+  <div class="search-tab-container" role="tablist">
+    <button class="search-tab-btn active" role="tab" aria-selected="true" data-tab="ingredients">
+      🥬 식재료 <span class="badge" id="count-ingredients">0</span>
+    </button>
+    <button class="search-tab-btn" role="tab" aria-selected="false" data-tab="holidays">
+      📅 명절·절기 <span class="badge" id="count-holidays">0</span>
+    </button>
+    <button class="search-tab-btn" role="tab" aria-selected="false" data-tab="recipes">
+      🍲 레시피 <span class="badge" id="count-recipes">0</span>
+    </button>
+    <button class="search-tab-btn" role="tab" aria-selected="false" data-tab="recommendations">
+      👍 추천 <span class="badge" id="count-recommendations">0</span>
+    </button>
   </div>
 
-  <main class="favorites-main">
-    <div id="favoritesList" class="favorites-grid" role="list">
+  <main class="search-main">
+    <div id="searchResultList" class="search-grid" role="list">
       <!-- 동적 카드 목록이 여기에 들어갑니다 -->
     </div>
     <div id="emptyState" class="empty-state" style="display: none;">
-      <span class="empty-state__icon">❤️</span>
-      <p class="empty-state__title">보관함이 비어 있습니다</p>
-      <p class="empty-state__desc">식재료, 레시피, 명절 화면에서 하트 버튼을 눌러 소중한 정보를 저장해 보세요!</p>
+      <span class="empty-state__icon">🔍</span>
+      <p class="empty-state__title">검색 결과가 없습니다</p>
+      <p class="empty-state__desc">다른 키워드로 검색해 보세요!</p>
     </div>
-
-    <!-- 백업 & 복구 아코디언 -->
-    <details class="backup-details">
-      <summary class="backup-summary">📂 즐겨찾기 백업 및 복원</summary>
-      <div class="backup-content">
-        <p class="backup-help">기기를 변경하거나 앱을 지우기 전, 현재 즐겨찾기 목록을 복사해 보관할 수 있습니다.</p>
-        <div class="backup-actions">
-          <button id="btnExport" class="backup-btn" type="button">📋 백업 코드 복사하기</button>
-          <button id="btnImport" class="backup-btn backup-btn--secondary" type="button">📥 백업 코드 불러오기</button>
-        </div>
-      </div>
-    </details>
   </main>
 
-  <!-- 하단 탭바 (GNB) -->
+  <!-- 하단 GNB -->
   <nav class="gnb" aria-label="하단 네비게이션">
     <a href="index.html" class="gnb__item">
       <svg class="gnb__icon" viewBox="0 0 24 24" width="24" height="24" fill="currentColor">
@@ -76,7 +97,7 @@
       </svg>
       <span class="gnb__label">명절·절기</span>
     </a>
-    <a href="favorites.html" class="gnb__item active" aria-current="page">
+    <a href="favorites.html" class="gnb__item">
       <svg class="gnb__icon" viewBox="0 0 24 24" width="24" height="24" fill="currentColor">
         <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
       </svg>
@@ -90,7 +111,7 @@
     </a>
   </nav>
 
-  <script type="module" src="assets/favorites.js"></script>
+  <script type="module" src="assets/search.js"></script>
   <script>
     function syncHeaderOffset() {
       const header = document.querySelector('.app-header');

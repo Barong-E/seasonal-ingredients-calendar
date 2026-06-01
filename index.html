@@ -148,7 +148,33 @@
       </svg>
       <span class="gnb__label">즐겨찾기</span>
     </a>
+    <a id="btnCamera" href="#" class="gnb__item">
+      <svg class="gnb__icon" viewBox="0 0 24 24" width="24" height="24" fill="currentColor">
+        <path d="M9 2L7.17 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2h-3.17L15 2H9zm3 15c-2.76 0-5-2.24-5-5s2.24-5 5-5 5 2.24 5 5-2.24 5-5 5zm0-8c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z"/>
+      </svg>
+      <span class="gnb__label">사진기</span>
+    </a>
   </nav>
+
+  <!-- 실시간 카메라 스캔 화면 오버레이 -->
+  <div id="cameraScannerOverlay" class="scanner-overlay" style="display: none;">
+    <div class="scanner-header">
+      <button id="btnExitScanner" class="scanner-exit-btn" aria-label="닫기">✕</button>
+      <h2 class="scanner-title">식재료 스캔</h2>
+    </div>
+    <div class="scanner-target-box">
+      <div class="target-corner top-left"></div>
+      <div class="target-corner top-right"></div>
+      <div class="target-corner bottom-left"></div>
+      <div class="target-corner bottom-right"></div>
+    </div>
+    
+    <!-- 실시간 사물 인식 결과 반투명 안내 카드 -->
+    <div id="scannerResultCard" class="scanner-result-card" style="display: none;">
+      <h3 id="detectedFoodName" class="detected-food-name"></h3>
+      <p id="detectedFoodTips" class="detected-food-tips"></p>
+    </div>
+  </div>
 
 
   <template id="cardTemplate">
