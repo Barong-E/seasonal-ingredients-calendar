@@ -456,6 +456,10 @@ function renderResults() {
       container.appendChild(card);
     });
   }
+
+  if (window.updateTabScrollIndicator) {
+    window.updateTabScrollIndicator();
+  }
 }
 
 // 탭 버튼 클릭 설정
@@ -512,11 +516,46 @@ function parseQueryFromUrl() {
   }
 }
 
+// 탭 바 가로 스크롤 상태를 감시하여 우측 그라데이션 가이드 표시 조절
+function initTabScrollIndicator() {
+  const container = document.querySelector('.search-tab-container');
+  const wrapper = document.querySelector('.search-tab-wrapper');
+  if (!container || !wrapper) return;
+
+  function updateIndicator() {
+    const maxScroll = container.scrollWidth - container.clientWidth;
+    // 끝에 거의 도달했을 때 (오차범위 5px 감안)
+    if (maxScroll <= 0 || container.scrollLeft >= maxScroll - 5) {
+      wrapper.classList.add('scroll-end');
+    } else {
+      wrapper.classList.remove('scroll-end');
+    }
+  }
+
+  // 스크롤 이벤트 등록
+  container.addEventListener('scroll', updateIndicator);
+  // 초기 갱신 및 화면 리사이즈 대응
+  updateIndicator();
+  window.addEventListener('resize', updateIndicator);
+
+  // 개별 탭 클릭 시 약간의 대기 후 상태 업데이트
+  const tabs = document.querySelectorAll('.search-tab-btn');
+  tabs.forEach(tab => {
+    tab.addEventListener('click', () => {
+      setTimeout(updateIndicator, 100);
+    });
+  });
+
+  // 외부(예: 렌더링 완료 시점)에서 명시적으로 업데이트할 수 있도록 전역 함수로 공유
+  window.updateTabScrollIndicator = updateIndicator;
+}
+
 // 메인 초기화
 async function init() {
   applySeasonTheme();
   initTabs();
   initSearchEvents();
+  initTabScrollIndicator(); // 스크롤 인디케이터 초기 활성화
 
   // 대기 문구 렌더링
   const container = document.getElementById('searchResultList');

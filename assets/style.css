@@ -1943,18 +1943,58 @@ main {
 /* =======================================================
    통합 검색 결과 페이지 (search.html) 스타일
    ======================================================= */
-.search-page .search-tab-container {
-  display: flex;
-  overflow-x: auto;
-  -webkit-overflow-scrolling: touch;
-  background: var(--glass-bg);
-  border-bottom: 1px solid var(--glass-border);
+.search-page .search-tab-wrapper {
   position: fixed;
   top: var(--header-offset, 80px);
   left: 0;
   right: 0;
   z-index: 90;
+  background: var(--glass-bg);
+  border-bottom: 1px solid var(--glass-border);
+  display: flex;
+  align-items: center;
+}
+
+/* 우측 그라데이션 페이드 효과 (오른쪽에 콘텐츠가 더 있다는 시각적 단서) */
+.search-page .search-tab-wrapper::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 48px;
+  background: linear-gradient(to left, rgba(255, 255, 255, 0.95), transparent);
+  pointer-events: none; /* 클릭 이벤트 통과 */
+  z-index: 2;
+  transition: opacity 0.3s ease;
+}
+
+/* 계절 테마별 배경색과 어우러지는 그라데이션 설정 */
+.theme-spring .search-page .search-tab-wrapper::after {
+  background: linear-gradient(to left, rgba(240, 253, 244, 0.95), transparent);
+}
+.theme-summer .search-page .search-tab-wrapper::after {
+  background: linear-gradient(to left, rgba(239, 246, 255, 0.95), transparent);
+}
+.theme-autumn .search-page .search-tab-wrapper::after {
+  background: linear-gradient(to left, rgba(254, 243, 199, 0.95), transparent);
+}
+.theme-winter .search-page .search-tab-wrapper::after {
+  background: linear-gradient(to left, rgba(243, 244, 246, 0.95), transparent);
+}
+
+/* 스크롤 끝에 다다랐을 때 그라데이션 숨기기 */
+.search-page .search-tab-wrapper.scroll-end::after {
+  opacity: 0;
+}
+
+.search-page .search-tab-container {
+  display: flex;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  width: 100%;
   padding: 8px 12px;
+  padding-right: 48px; /* 우측 그라데이션 영역과 겹쳐서 가려지지 않도록 여백 부여 */
   gap: 8px;
   scrollbar-width: none; /* Firefox */
 }
