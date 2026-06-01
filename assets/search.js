@@ -1,6 +1,15 @@
 import { Capacitor } from '@capacitor/core';
 import KoreanLunarCalendar from 'korean-lunar-calendar';
 
+// 뒤로가기 전역 함수 정의
+window.handleSmartBack = function(fallbackUrl) {
+  if (window.history.length <= 1) {
+    window.location.href = fallbackUrl || 'index.html';
+  } else {
+    window.history.back();
+  }
+};
+
 // 글로벌 상태 관리
 const SearchState = {
   currentTab: 'ingredients', // 'ingredients', 'holidays', 'recipes', 'recommendations'
