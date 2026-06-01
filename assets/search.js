@@ -378,7 +378,7 @@ function renderResults() {
       card.setAttribute('role', 'listitem');
 
       const dateStr = formatDateString(item.solarDate);
-      const subText = `🗓️ ${dateStr} · 🍲 ${item.main_food || '대표 음식'}`;
+      const subText = `🗓️ ${dateStr}`;
 
       card.innerHTML = `
         <div class="thumb" aria-hidden="true">
@@ -387,7 +387,6 @@ function renderResults() {
         <div class="card-content">
           <h2 class="title">${item.name}</h2>
           <div class="popular-dish"><span class="popular-dish-value">${subText}</span></div>
-          <p class="search-holiday-summary" style="font-size: 0.78rem; color: #777; margin: 4px 0 0 0; line-height: 1.3; overflow: hidden; text-overflow: ellipsis; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical;">${item.summary || ''}</p>
         </div>
       `;
 
@@ -404,26 +403,8 @@ function renderResults() {
       card.className = 'card';
       card.setAttribute('role', 'listitem');
 
-      // 식재료 매칭을 통한 제철 정보 가져오기
-      let matchedIngredient = null;
-      if (item.ingredients && item.ingredients.length > 0) {
-        for (const ing of item.ingredients) {
-          const matched = SearchState.ingredientsData.find(s => 
-            s.name_ko === ing.name || ing.name.includes(s.name_ko)
-          );
-          if (matched) {
-            matchedIngredient = matched;
-            break;
-          }
-        }
-      }
-
-      const monthText = matchedIngredient ? getMonthsRangeText(matchedIngredient.months) : '';
-      let infoParts = [];
-      if (monthText) infoParts.push(`🗓️ ${monthText}`);
-      infoParts.push(`⏱️ ${item.cookTime || '-'}`);
-      infoParts.push(`🧑‍🍳 ${item.difficulty || '-'}`);
-      const subText = infoParts.join(' · ');
+      const ingredientNames = (item.ingredients || []).map(ing => ing.name).join(', ');
+      const subText = `🥕 재료: ${ingredientNames}`;
 
       card.innerHTML = `
         <div class="thumb" aria-hidden="true">
