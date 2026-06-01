@@ -207,8 +207,8 @@ function parseAndCalculateAmount(name, amountStr, baseS, currS) {
         const cups = roundHalf(calculated / 180);
         appendStr = ` (약 ${cups}종이컵 부피)`;
       } else {
-        const tbs = Math.round(calculated / 15);
-        appendStr = ` (약 ${tbs < 1 ? 1 : tbs}큰술)`;
+        const tbs = Math.round((calculated / 15) * 2) / 2;
+        appendStr = ` (약 ${tbs < 0.5 ? 0.5 : tbs}큰술)`;
       }
     } else if (['쑥', '냉이', '달래', '부추', '미나리', '깻잎', '상추', '시금치', '콩나물', '숙주', '고사리', '버섯', '파', '갓', '쪽파'].some(kw => name.includes(kw))) {
       // 50g ≈ 1줌
@@ -221,8 +221,8 @@ function parseAndCalculateAmount(name, amountStr, baseS, currS) {
         const cups = roundHalf(calculated / 180);
         appendStr = ` (약 ${cups}종이컵)`;
       } else {
-        const tbs = Math.round(calculated / 15);
-        appendStr = ` (약 ${tbs < 1 ? 1 : tbs}큰술)`;
+        const tbs = Math.round((calculated / 15) * 2) / 2;
+        appendStr = ` (약 ${tbs < 0.5 ? 0.5 : tbs}큰술)`;
       }
     }
   }
@@ -233,8 +233,8 @@ function parseAndCalculateAmount(name, amountStr, baseS, currS) {
   // ── 컵 / 종이컵 ──────────────────────────────────────────────────────────
   if (cu === '컵' || cu === '종이컵') {
     if (calculated < 0.5) {
-      const tbs = Math.round(calculated * 16);
-      return `약 ${tbs < 1 ? 1 : tbs}큰술`;
+      const tbs = Math.round((calculated * 16) * 2) / 2;
+      return `약 ${tbs < 0.5 ? 0.5 : tbs}큰술`;
     }
     const halfCup = Math.round(calculated * 2) / 2;
     return `${halfCup}${cu}${appendStr}`;
@@ -246,7 +246,8 @@ function parseAndCalculateAmount(name, amountStr, baseS, currS) {
       const tsp = Math.round(calculated * 3 * 2) / 2; // 작은술로 변환하되 0.5단위 반올림
       return `${tsp < 0.5 ? 0.5 : tsp}작은술`;
     }
-    return `${Math.round(calculated)}큰술`;
+    const halfTbs = Math.round(calculated * 2) / 2;
+    return `${halfTbs}큰술`;
   }
 
   // ── 작은술 ────────────────────────────────────────────────────────────────
