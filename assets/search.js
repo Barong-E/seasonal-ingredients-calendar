@@ -358,7 +358,7 @@ function renderResults() {
         <div class="thumb" aria-hidden="true">
           <img class="photo" src="images/${item.image || '_fallback.png'}" alt="${item.name_ko} 이미지" onerror="this.onerror=null; this.src='images/_fallback.png';" />
         </div>
-        <div class="card-content">
+        <div class="card-content" style="min-width:0;">
           <h2 class="title">${item.name_ko}</h2>
           ${subText ? `<div class="popular-dish"><span class="popular-dish-value">${subText}</span></div>` : ''}
         </div>
@@ -377,16 +377,16 @@ function renderResults() {
       card.className = 'card';
       card.setAttribute('role', 'listitem');
 
-      const dateStr = formatDateString(item.solarDate);
-      const subText = `🗓️ ${dateStr}`;
+      const mainFood = item.main_food || '';
+      const subText = mainFood ? `🍲 ${mainFood}` : '';
 
       card.innerHTML = `
         <div class="thumb" aria-hidden="true">
           <img class="photo" src="images/${item.image || '_fallback.png'}" alt="${item.name} 이미지" onerror="this.onerror=null; this.src='images/_fallback.png';" />
         </div>
-        <div class="card-content">
+        <div class="card-content" style="min-width:0;">
           <h2 class="title">${item.name}</h2>
-          <div class="popular-dish"><span class="popular-dish-value">${subText}</span></div>
+          ${subText ? `<div class="popular-dish"><span class="popular-dish-value">${subText}</span></div>` : ''}
         </div>
       `;
 
@@ -410,7 +410,7 @@ function renderResults() {
         <div class="thumb" aria-hidden="true">
           <img class="photo" src="images/${item.image || '_fallback.png'}" alt="${item.name} 이미지" onerror="this.onerror=null; this.src='images/_fallback.png';" />
         </div>
-        <div class="card-content">
+        <div class="card-content" style="min-width:0;">
           <h2 class="title">${item.name}</h2>
           <div class="popular-dish"><span class="popular-dish-value">${subText}</span></div>
         </div>
@@ -439,13 +439,13 @@ function renderResults() {
         <div class="thumb" aria-hidden="true">
           <img class="photo" src="images/${item.image || '_fallback.png'}" alt="${item.name_ko} 이미지" onerror="this.onerror=null; this.src='images/_fallback.png';" />
         </div>
-        <div class="card-content">
+        <div class="card-content" style="min-width:0;">
           <h2 class="title">${item.name_ko}</h2>
           <div class="popular-dish" style="margin-bottom: 2px;">
             <span class="popular-dish-value">🗓️ 제철: ${monthText}</span>
           </div>
           <div class="rec-badge-wrap" style="display: flex; flex-wrap: wrap; gap: 4px; margin-top: 4px;">
-            <span class="recommended-badge" style="background: rgba(10, 123, 52, 0.08); color: #0A7B34; padding: 2px 8px; border-radius: 8px; font-size: 0.72rem; font-weight: 600;">👍 ${matchedRec}</span>
+            <span class="recommended-badge" style="background: rgba(10, 123, 52, 0.08); color: #0A7B34; padding: 2px 8px; border-radius: 8px; font-size: 0.72rem; font-weight: 600; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 100%;">👍 ${matchedRec}</span>
           </div>
         </div>
       `;

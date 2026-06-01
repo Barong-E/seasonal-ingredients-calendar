@@ -731,6 +731,8 @@ body.has-banner .carousel {
   flex-direction: column;
   gap: 6px;
   flex: 1;
+  min-width: 0;
+  overflow: hidden;
 }
 
 .title {
@@ -740,6 +742,9 @@ body.has-banner .carousel {
   font-size: 0.95rem;
   line-height: 1.3;
   margin: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 /* 칼로리 정보 */
