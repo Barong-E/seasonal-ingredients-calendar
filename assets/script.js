@@ -1015,7 +1015,8 @@ function showCameraFallbackModal() {
     <div class="info-modal__content">
       <p class="info-modal__message">📷 실시간 AI 식재료 스캔은 모바일 앱 전용 기능이에요. 지금 바로 앱을 다운로드받아 카메라 사물 인식 기능을 경험해 보세요! 🌱</p>
       <div class="info-modal__buttons">
-        <a href="https://play.google.com/store/apps/details?id=net.seasonalfood.app&referrer=utm_source%3Dseasonalfood_web%26utm_medium%3Dinternal%26utm_campaign%3Dcamera_tab" target="_blank" rel="noopener noreferrer" class="info-modal__btn info-modal__btn--android">Android 설치</a>
+        <button type="button" class="info-modal__btn info-modal__btn--ios" disabled>iOS (준비중)</button>
+        <a href="https://play.google.com/store/apps/details?id=net.seasonalfood.app&referrer=utm_source%3Dseasonalfood_web%26utm_medium%3Dinternal%26utm_campaign%3Dai_scan_popup" target="_blank" rel="noopener noreferrer" class="info-modal__btn info-modal__btn--android">Android 설치</a>
       </div>
       <button type="button" class="info-modal__close">닫기</button>
     </div>
