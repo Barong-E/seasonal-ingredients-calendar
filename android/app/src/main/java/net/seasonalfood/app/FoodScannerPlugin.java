@@ -45,22 +45,16 @@ import java.nio.ByteBuffer;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
-@CapacitorPlugin(
-    name = "FoodScanner",
-    permissions = {
-        @Permission(
-            strings = { Manifest.permission.CAMERA },
-            alias = "camera"
-        )
-    }
-)
+@CapacitorPlugin(name = "FoodScanner", permissions = {
+        @Permission(strings = { Manifest.permission.CAMERA }, alias = "camera")
+})
 public class FoodScannerPlugin extends Plugin {
     private static final String TAG = "FoodScannerPlugin";
 
     // ====================================================================
     // 🔑기에 발급받으신 Gemini API 키를 입력해 주세요. (따옴표 안에 넣어주시면 됩니다!)
     // ====================================================================
-    private static final String GEMINI_API_KEY = "YOUR_GEMINI_API_KEY";
+    private static final String GEMINI_API_KEY = "AQ.Ab8RN6Iu-bU4wqPG0yy1FXXKwIa3rCDGUvO3aRoUSBCffRfy1A";
 
     private PreviewView previewView;
     private ProcessCameraProvider cameraProvider;
@@ -110,11 +104,10 @@ public class FoodScannerPlugin extends Plugin {
                 // 3. 네이티브 카메라 렌더링용 PreviewView 생성
                 previewView = new PreviewView(getActivity());
                 previewView.setScaleType(PreviewView.ScaleType.FILL_CENTER);
-                
+
                 FrameLayout.LayoutParams params = new FrameLayout.LayoutParams(
                         FrameLayout.LayoutParams.MATCH_PARENT,
-                        FrameLayout.LayoutParams.MATCH_PARENT
-                );
+                        FrameLayout.LayoutParams.MATCH_PARENT);
 
                 // 웹뷰 레이어 아래(인덱스 0)에 삽입
                 container.addView(previewView, 0, params);
@@ -129,8 +122,7 @@ public class FoodScannerPlugin extends Plugin {
     }
 
     private void startCameraX(PluginCall call) {
-        ListenableFuture<ProcessCameraProvider> cameraProviderFuture = 
-                ProcessCameraProvider.getInstance(getActivity());
+        ListenableFuture<ProcessCameraProvider> cameraProviderFuture = ProcessCameraProvider.getInstance(getActivity());
 
         cameraProviderFuture.addListener(() -> {
             try {
@@ -154,8 +146,7 @@ public class FoodScannerPlugin extends Plugin {
                         getActivity(),
                         cameraSelector,
                         preview,
-                        imageCapture
-                );
+                        imageCapture);
 
                 call.resolve();
             } catch (Exception e) {
@@ -179,52 +170,55 @@ public class FoodScannerPlugin extends Plugin {
 
         // 🔑 API 키 입력 여부 검사 (설정 안 하고 실행하면 친절히 안내함)
         if ("YOUR_GEMINI_API_KEY".equals(GEMINI_API_KEY) || GEMINI_API_KEY.isEmpty()) {
-            call.reject("API_KEY_MISSING", "Gemini API 키가 설정되지 않았습니다. FoodScannerPlugin.java 파일 상단의 GEMINI_API_KEY 변수에 발급받으신 키를 입력해 주세요.");
+            call.reject("API_KEY_MISSING",
+                    "Gemini API 키가 설정되지 않았습니다. FoodScannerPlugin.java 파일 상단의 GEMINI_API_KEY 변수에 발급받으신 키를 입력해 주세요.");
             return;
         }
 
         // 사진 촬영 시작
-        imageCapture.takePicture(ContextCompat.getMainExecutor(getActivity()), new ImageCapture.OnImageCapturedCallback() {
-            @Override
-            public void onCaptureSuccess(@NonNull ImageProxy image) {
-                // 비디오 프레임 버퍼가 쌓이지 않도록 백그라운드 스레드에서 즉시 비동기 분석 수행
-                cameraExecutor.execute(() -> {
-                    try {
-                        byte[] jpegBytes = imageToByteArray(image);
-                        image.close(); // 중요: 이미지 리소스를 해제해야 카메라가 막히지 않음
+        imageCapture.takePicture(ContextCompat.getMainExecutor(getActivity()),
+                new ImageCapture.OnImageCapturedCallback() {
+                    @Override
+                    public void onCaptureSuccess(@NonNull ImageProxy image) {
+                        // 비디오 프레임 버퍼가 쌓이지 않도록 백그라운드 스레드에서 즉시 비동기 분석 수행
+                        cameraExecutor.execute(() -> {
+                            try {
+                                byte[] jpegBytes = imageToByteArray(image);
+                                image.close(); // 중요: 이미지 리소스를 해제해야 카메라가 막히지 않음
 
-                        // 이미지 가로세로 최대 800px로 리사이징하여 API 전송 속도 극대화
-                        byte[] optimizedBytes = resizeImage(jpegBytes, 800);
+                                // 이미지 가로세로 최대 800px로 리사이징하여 API 전송 속도 극대화
+                                byte[] optimizedBytes = resizeImage(jpegBytes, 800);
 
-                        // 구글 Gemini 서버로 이미지와 한국어 질문 전송
-                        callGeminiAPI(optimizedBytes, call);
-                    } catch (Exception e) {
-                        Log.e(TAG, "이미지 처리 실패", e);
-                        call.reject("IMAGE_PROCESSING_FAILED", "이미지를 가공하는 데 실패했습니다: " + e.getMessage());
+                                // 구글 Gemini 서버로 이미지와 한국어 질문 전송
+                                callGeminiAPI(optimizedBytes, call);
+                            } catch (Exception e) {
+                                Log.e(TAG, "이미지 처리 실패", e);
+                                call.reject("IMAGE_PROCESSING_FAILED", "이미지를 가공하는 데 실패했습니다: " + e.getMessage());
+                            }
+                        });
+                    }
+
+                    @Override
+                    public void onError(@NonNull ImageCaptureException exception) {
+                        Log.e(TAG, "사진 촬영 실패", exception);
+                        call.reject("CAPTURE_FAILED", "사진 촬영에 실패했습니다: " + exception.getMessage());
                     }
                 });
-            }
-
-            @Override
-            public void onError(@NonNull ImageCaptureException exception) {
-                Log.e(TAG, "사진 촬영 실패", exception);
-                call.reject("CAPTURE_FAILED", "사진 촬영에 실패했습니다: " + exception.getMessage());
-            }
-        });
     }
 
     private byte[] imageToByteArray(ImageProxy image) {
         ByteBuffer buffer = image.getPlanes()[0].getBuffer();
         byte[] bytes = new byte[buffer.remaining()];
         buffer.get(bytes);
-        
+
         // 폰 회전 각도에 맞게 원본 이미지 회전 보정
         int rotationDegrees = image.getImageInfo().getRotationDegrees();
         if (rotationDegrees != 0) {
             Bitmap bitmap = BitmapFactory.decodeByteArray(bytes, 0, bytes.length);
             Matrix matrix = new Matrix();
             matrix.postRotate(rotationDegrees);
-            Bitmap rotatedBitmap = Bitmap.createBitmap(bitmap, 0, 0, bitmap.getWidth(), bitmap.getHeight(), matrix, true);
+            Bitmap rotatedBitmap = Bitmap.createBitmap(bitmap, 0, 0, bitmap.getWidth(), bitmap.getHeight(), matrix,
+                    true);
             ByteArrayOutputStream out = new ByteArrayOutputStream();
             rotatedBitmap.compress(Bitmap.CompressFormat.JPEG, 100, out);
             bitmap.recycle();
@@ -257,7 +251,9 @@ public class FoodScannerPlugin extends Plugin {
 
     private void callGeminiAPI(byte[] imageBytes, PluginCall call) {
         try {
-            URL url = new URL("https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=" + GEMINI_API_KEY);
+            URL url = new URL(
+                    "https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key="
+                            + GEMINI_API_KEY);
             HttpURLConnection conn = (HttpURLConnection) url.openConnection();
             conn.setRequestMethod("POST");
             conn.setRequestProperty("Content-Type", "application/json; utf-8");
@@ -332,7 +328,7 @@ public class FoodScannerPlugin extends Plugin {
                 JSObject ret = new JSObject();
                 ret.put("name", resultData.optString("name", ""));
                 ret.put("selection_tip", resultData.optString("selection_tip", ""));
-                
+
                 JSONArray monthsArray = resultData.optJSONArray("seasonal_months");
                 JSArray jsMonths = new JSArray();
                 if (monthsArray != null) {
