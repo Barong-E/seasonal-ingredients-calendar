@@ -257,6 +257,7 @@ public class FoodScannerPlugin extends Plugin {
             HttpURLConnection conn = (HttpURLConnection) url.openConnection();
             conn.setRequestMethod("POST");
             conn.setRequestProperty("Content-Type", "application/json; utf-8");
+            conn.setRequestProperty("X-goog-api-key", GEMINI_API_KEY);
             conn.setDoOutput(true);
             conn.setConnectTimeout(15000);
             conn.setReadTimeout(15000);
