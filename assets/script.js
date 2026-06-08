@@ -855,46 +855,8 @@ async function init() {
 }
 
 // =======================================================
-//  실시간 AI 카메라 스캐너 바인딩 함수군
+//  AI 카메라 스캐너 바인딩 함수군 (Gemini 1.5 Flash 셔터 방식)
 // =======================================================
-
-let cameraListener = null;
-let lastDetectedFood = null;
-let foodDetectTimeout = null;
-
-function mapEnglishLabelToKo(label) {
-  const map = {
-    "Apple": "사과",
-    "Banana": "바나나",
-    "Tomato": "토마토",
-    "Potato": "감자",
-    "Cucumber": "오이",
-    "Carrot": "당근",
-    "Broccoli": "브로콜리",
-    "Pumpkin": "애호박",
-    "Strawberry": "딸기",
-    "Grape": "포도",
-    "Watermelon": "수박",
-    "Peach": "복숭아",
-    "Orange": "귤",
-    "Mandarin orange": "귤",
-    "Lemon": "유자",
-    "Citrus": "한라봉",
-    "Eggplant": "가지",
-    "Corn": "옥수수",
-    "Garlic": "마늘",
-    "Mushroom": "표고버섯",
-    "Edible mushroom": "표고버섯",
-    "Chestnut": "밤",
-    "Fish": "갈치",
-    "Seafood": "갈치",
-    "Crab": "꽃게",
-    "Oyster": "굴",
-    "Clam": "바지락",
-    "Plum": "자두"
-  };
-  return map[label] || null;
-}
 
 async function startCameraScanner() {
   if (!window.Capacitor || !window.Capacitor.isNativePlatform()) {
@@ -908,18 +870,22 @@ async function startCameraScanner() {
     const overlay = document.getElementById('cameraScannerOverlay');
     if (overlay) overlay.style.display = 'flex';
 
-    // 2. 네이티브 카메라 켜기
-    await window.Capacitor.Plugins.FoodScanner.startCamera();
+    // 2. 결과 카드 및 로딩 상태 초기화
+    const card = document.getElementById('scannerResultCard');
+    if (card) card.style.display = 'none';
 
-    // 3. 실시간 AI 라벨 감지 리스너 등록
-    if (cameraListener === null) {
-      cameraListener = await window.Capacitor.Plugins.FoodScanner.addListener('foodDetected', (data) => {
-        const foodNameKo = mapEnglishLabelToKo(data.label);
-        if (foodNameKo) {
-          showDetectedFoodTips(foodNameKo);
-        }
-      });
+    const shutterBtn = document.getElementById('btnCapturePhoto');
+    const loadingEl = document.getElementById('scannerLoading');
+    if (shutterBtn) {
+      shutterBtn.style.display = 'flex';
+      shutterBtn.disabled = false;
+      // 이벤트 리스너 중복 방지를 위한 단일 바인딩
+      shutterBtn.onclick = takePhotoAndAnalyze;
     }
+    if (loadingEl) loadingEl.style.display = 'none';
+
+    // 3. 네이티브 카메라 켜기
+    await window.Capacitor.Plugins.FoodScanner.startCamera();
   } catch (err) {
     console.error('카메라 시작 에러:', err);
     alert('카메라 실행 중 에러가 발생했습니다: ' + err.message);
@@ -936,12 +902,6 @@ async function closeCameraScanner() {
     console.error(err);
   }
 
-  // 리스너 해제
-  if (cameraListener) {
-    await cameraListener.remove();
-    cameraListener = null;
-  }
-
   // 뷰 상태 원복
   document.documentElement.classList.remove('body-transparent');
   const overlay = document.getElementById('cameraScannerOverlay');
@@ -950,38 +910,87 @@ async function closeCameraScanner() {
   const card = document.getElementById('scannerResultCard');
   if (card) card.style.display = 'none';
 
-  lastDetectedFood = null;
-  if (foodDetectTimeout) {
-    clearTimeout(foodDetectTimeout);
-    foodDetectTimeout = null;
+  const shutterBtn = document.getElementById('btnCapturePhoto');
+  const loadingEl = document.getElementById('scannerLoading');
+  if (shutterBtn) {
+    shutterBtn.disabled = false;
+    shutterBtn.onclick = null;
+  }
+  if (loadingEl) loadingEl.style.display = 'none';
+}
+
+async function takePhotoAndAnalyze() {
+  const shutterBtn = document.getElementById('btnCapturePhoto');
+  const loadingEl = document.getElementById('scannerLoading');
+  const card = document.getElementById('scannerResultCard');
+
+  if (!window.Capacitor || !window.Capacitor.isNativePlatform()) return;
+
+  try {
+    // UI를 '분석 중' 상태로 전환
+    if (shutterBtn) shutterBtn.style.display = 'none';
+    if (loadingEl) loadingEl.style.display = 'flex';
+    if (card) card.style.display = 'none';
+
+    // 네이티브에서 캡처 & Gemini 호출 일괄 실행
+    const result = await window.Capacitor.Plugins.FoodScanner.captureAndAnalyze();
+    
+    // UI 원복
+    if (loadingEl) loadingEl.style.display = 'none';
+    if (shutterBtn) {
+      shutterBtn.style.display = 'flex';
+      shutterBtn.disabled = false;
+    }
+
+    if (result) {
+      showDetectedFoodTips(result);
+    }
+  } catch (err) {
+    console.error('AI 분석 에러:', err);
+
+    // UI 원복
+    if (loadingEl) loadingEl.style.display = 'none';
+    if (shutterBtn) {
+      shutterBtn.style.display = 'flex';
+      shutterBtn.disabled = false;
+    }
+
+    // 에러 종류별 분기 팝업 처리
+    if (err.code === 'API_LIMIT_EXCEEDED') {
+      alert('앗! 이달의 AI 스캔 무료 사용량(한도)을 모두 채웠어요. 다음 달에 다시 이용해 주세요! 💚');
+    } else if (err.code === 'API_KEY_MISSING') {
+      alert('Gemini API 키가 아직 설정되지 않았습니다. android/app/src/main/java/net/seasonalfood/app/FoodScannerPlugin.java 파일 상단의 GEMINI_API_KEY에 발급받으신 키를 적고 다시 빌드해 주세요!');
+    } else {
+      alert('네트워크 연결 상태를 확인해 주시거나 잠시 후 다시 시도해 주세요.');
+    }
   }
 }
 
-function showDetectedFoodTips(foodNameKo) {
+function showDetectedFoodTips(result) {
   const card = document.getElementById('scannerResultCard');
   const nameEl = document.getElementById('detectedFoodName');
   const tipsEl = document.getElementById('detectedFoodTips');
   
   if (!card || !nameEl || !tipsEl) return;
 
-  // 실시간으로 이벤트가 들어오므로, 2.5초 동안 추가 감지가 안 되면 카드를 부드럽게 숨김
-  if (foodDetectTimeout) {
-    clearTimeout(foodDetectTimeout);
+  const foodNameKo = result.name;
+  const isFood = result.is_food;
+
+  // 식재료가 아니라고 판단된 경우 예외 처리
+  if (!isFood || !foodNameKo) {
+    nameEl.textContent = '인식 불가';
+    tipsEl.textContent = '식재료를 감지하지 못했습니다. 식재료를 화면 가득 찬 곳에서 다시 찍어주세요.';
+    card.style.display = 'block';
+    return;
   }
-  foodDetectTimeout = setTimeout(() => {
-    card.style.display = 'none';
-    lastDetectedFood = null;
-  }, 2500);
 
-  if (lastDetectedFood === foodNameKo) return;
-  lastDetectedFood = foodNameKo;
-
-  // 데이터베이스에서 해당 식재료 정보 조회
+  // 로컬 데이터베이스에서 동일한 이름의 식재료 찾기
   const item = AppState.allIngredients.find(i => i.name_ko === foodNameKo);
+  
+  // 1. 기존 DB에 있는 식재료라면, 훨씬 정확도가 높은 사람이 직접 적은 로컬 꿀팁을 노출함
   if (item && item.selection_ko) {
     nameEl.textContent = `${foodNameKo} 고르는 방법`;
     
-    // 현재 실제 월 기준 제철 판별
     const currentMonth = new Date().getMonth() + 1;
     const isSeasonal = item.months && item.months.includes(currentMonth);
 
@@ -993,12 +1002,26 @@ function showDetectedFoodTips(foodNameKo) {
     } else {
       tipsEl.textContent = item.selection_ko;
     }
-    card.style.display = 'block';
-  } else {
-    nameEl.textContent = `${foodNameKo}`;
-    tipsEl.textContent = '신선하고 고유의 색택이 선명하며 흠집이 없는 것을 고르는 것이 좋습니다.';
-    card.style.display = 'block';
+  } 
+  // 2. 기존 DB에 없는 새로운 식재료라면, Gemini가 실시간으로 직접 작성한 꿀팁을 화면에 동적으로 뿌려줌
+  else {
+    nameEl.textContent = `${foodNameKo} 고르는 방법 (AI)`;
+    
+    const currentMonth = new Date().getMonth() + 1;
+    const isSeasonal = result.seasonal_months && result.seasonal_months.includes(currentMonth);
+    const selectionTip = result.selection_tip || '신선하고 고유의 색택이 선명하며 흠집이 없는 것을 고르는 것이 좋습니다.';
+
+    if (isSeasonal) {
+      tipsEl.innerHTML = `<span style="color: #0A7B34; font-weight: bold; display: block; margin-bottom: 8px;">지금 제철입니다! 🌱</span>${selectionTip}`;
+    } else if (result.seasonal_months && result.seasonal_months.length > 0) {
+      const seasonalMonthsText = result.seasonal_months.map(m => `${m}월`).join(', ');
+      tipsEl.innerHTML = `<span style="color: #ef4444; font-weight: bold; display: block; margin-bottom: 8px;">지금은 제철이 아닙니다. (${seasonalMonthsText}이 제철입니다.) ⚠️</span>${selectionTip}`;
+    } else {
+      tipsEl.textContent = selectionTip;
+    }
   }
+
+  card.style.display = 'block';
 }
 
 function showCameraFallbackModal() {

@@ -1,21 +1,26 @@
 package net.seasonalfood.app;
 
 import android.Manifest;
-import android.content.pm.PackageManager;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.graphics.Color;
+import android.graphics.Matrix;
+import android.util.Base64;
 import android.util.Log;
 import android.view.ViewGroup;
 import android.widget.FrameLayout;
 
 import androidx.annotation.NonNull;
 import androidx.camera.core.CameraSelector;
-import androidx.camera.core.ImageAnalysis;
+import androidx.camera.core.ImageCapture;
+import androidx.camera.core.ImageCaptureException;
 import androidx.camera.core.ImageProxy;
 import androidx.camera.core.Preview;
 import androidx.camera.lifecycle.ProcessCameraProvider;
 import androidx.camera.view.PreviewView;
 import androidx.core.content.ContextCompat;
 
+import com.getcapacitor.JSArray;
 import com.getcapacitor.JSObject;
 import com.getcapacitor.PermissionState;
 import com.getcapacitor.Plugin;
@@ -25,15 +30,18 @@ import com.getcapacitor.annotation.CapacitorPlugin;
 import com.getcapacitor.annotation.Permission;
 import com.getcapacitor.annotation.PermissionCallback;
 import com.google.common.util.concurrent.ListenableFuture;
-import com.google.mlkit.vision.common.InputImage;
-import com.google.mlkit.vision.label.ImageLabel;
-import com.google.mlkit.vision.label.ImageLabeler;
-import com.google.mlkit.vision.label.ImageLabeling;
-import com.google.mlkit.vision.label.defaults.ImageLabelerOptions;
 
-import java.util.HashSet;
-import java.util.List;
-import java.util.Set;
+import org.json.JSONArray;
+import org.json.JSONObject;
+
+import java.io.BufferedReader;
+import java.io.ByteArrayOutputStream;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.io.OutputStream;
+import java.net.HttpURLConnection;
+import java.net.URL;
+import java.nio.ByteBuffer;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
@@ -49,54 +57,22 @@ import java.util.concurrent.Executors;
 public class FoodScannerPlugin extends Plugin {
     private static final String TAG = "FoodScannerPlugin";
 
+    // ====================================================================
+    // 🔑기에 발급받으신 Gemini API 키를 입력해 주세요. (따옴표 안에 넣어주시면 됩니다!)
+    // ====================================================================
+    private static final String GEMINI_API_KEY = "YOUR_GEMINI_API_KEY";
+
     private PreviewView previewView;
     private ProcessCameraProvider cameraProvider;
     private ExecutorService cameraExecutor;
     private FrameLayout container;
-    private ImageLabeler labeler;
-
-    // ML Kit 감지 사전 (웹뷰에 노출되어 매핑 가능한 핵심 라벨 목록)
-    private static final Set<String> TARGET_LABELS = new HashSet<>();
-    static {
-        TARGET_LABELS.add("Apple");
-        TARGET_LABELS.add("Banana");
-        TARGET_LABELS.add("Tomato");
-        TARGET_LABELS.add("Potato");
-        TARGET_LABELS.add("Cucumber");
-        TARGET_LABELS.add("Carrot");
-        TARGET_LABELS.add("Broccoli");
-        TARGET_LABELS.add("Pumpkin");
-        TARGET_LABELS.add("Strawberry");
-        TARGET_LABELS.add("Grape");
-        TARGET_LABELS.add("Watermelon");
-        TARGET_LABELS.add("Peach");
-        TARGET_LABELS.add("Orange");
-        TARGET_LABELS.add("Mandarin orange");
-        TARGET_LABELS.add("Lemon");
-        TARGET_LABELS.add("Citrus");
-        TARGET_LABELS.add("Eggplant");
-        TARGET_LABELS.add("Corn");
-        TARGET_LABELS.add("Garlic");
-        TARGET_LABELS.add("Mushroom");
-        TARGET_LABELS.add("Edible mushroom");
-        TARGET_LABELS.add("Chestnut");
-        TARGET_LABELS.add("Fish");
-        TARGET_LABELS.add("Seafood");
-        TARGET_LABELS.add("Crab");
-        TARGET_LABELS.add("Oyster");
-        TARGET_LABELS.add("Clam");
-        TARGET_LABELS.add("Plum");
-    }
+    private ImageCapture imageCapture;
 
     @Override
     public void load() {
         super.load();
-        // 분석을 위한 백그라운드 스레드 생성
+        // 백그라운드 작업을 처리할 1인용 스레드 풀 생성
         cameraExecutor = Executors.newSingleThreadExecutor();
-        // ML Kit 이미지 분류기 초기화 (기본 옵션 - 신뢰도 0.5 이상만 1차 통과)
-        labeler = ImageLabeling.getClient(new ImageLabelerOptions.Builder()
-                .setConfidenceThreshold(0.5f)
-                .build());
     }
 
     @PluginMethod
@@ -125,13 +101,13 @@ public class FoodScannerPlugin extends Plugin {
                     return;
                 }
 
-                // 1. 웹뷰 배경 투명화
+                // 1. 웹뷰 배경을 투명하게 만들어 네이티브 프리뷰가 보이도록 함
                 bridge.getWebView().setBackgroundColor(Color.TRANSPARENT);
 
-                // 2. 웹뷰의 부모 레이아웃 획득 (FrameLayout)
+                // 2. 웹뷰의 부모 레이아웃 가져오기
                 container = (FrameLayout) bridge.getWebView().getParent();
 
-                // 3. 네이티브 PreviewView 생성 및 동적 추가
+                // 3. 네이티브 카메라 렌더링용 PreviewView 생성
                 previewView = new PreviewView(getActivity());
                 previewView.setScaleType(PreviewView.ScaleType.FILL_CENTER);
                 
@@ -140,10 +116,10 @@ public class FoodScannerPlugin extends Plugin {
                         FrameLayout.LayoutParams.MATCH_PARENT
                 );
 
-                // 웹뷰 바로 아래 레이어(인덱스 0)에 꽂아서 얹음
+                // 웹뷰 레이어 아래(인덱스 0)에 삽입
                 container.addView(previewView, 0, params);
 
-                // 4. CameraX 실행
+                // 4. CameraX 실행 및 바인딩
                 startCameraX(call);
             } catch (Exception e) {
                 Log.e(TAG, "카메라 초기화 실패", e);
@@ -160,32 +136,25 @@ public class FoodScannerPlugin extends Plugin {
             try {
                 cameraProvider = cameraProviderFuture.get();
 
-                // 프리뷰 설정
+                // 프리뷰(뷰파인더) 설정
                 Preview preview = new Preview.Builder().build();
                 preview.setSurfaceProvider(previewView.getSurfaceProvider());
 
-                // 실시간 이미지 분석 설정
-                ImageAnalysis imageAnalysis = new ImageAnalysis.Builder()
-                        .setBackpressureStrategy(ImageAnalysis.STRATEGY_KEEP_ONLY_LATEST)
+                // 사진 캡처 전용 유즈케이스 바인딩 (딜레이 최소화 모드)
+                imageCapture = new ImageCapture.Builder()
+                        .setCaptureMode(ImageCapture.CAPTURE_MODE_MINIMIZE_LATENCY)
                         .build();
 
-                imageAnalysis.setAnalyzer(cameraExecutor, new ImageAnalysis.Analyzer() {
-                    @Override
-                    public void analyze(@NonNull ImageProxy imageProxy) {
-                        analyzeFrame(imageProxy);
-                    }
-                });
-
-                // 후면 카메라 기본 선택
+                // 후면 카메라 사용
                 CameraSelector cameraSelector = CameraSelector.DEFAULT_BACK_CAMERA;
 
-                // 기존 바인딩 해제 후 재바인딩
+                // 기존 바인딩 전부 풀고 새로 프리뷰와 캡처 연결
                 cameraProvider.unbindAll();
                 cameraProvider.bindToLifecycle(
                         getActivity(),
                         cameraSelector,
                         preview,
-                        imageAnalysis
+                        imageCapture
                 );
 
                 call.resolve();
@@ -196,47 +165,195 @@ public class FoodScannerPlugin extends Plugin {
         }, ContextCompat.getMainExecutor(getActivity()));
     }
 
-    @androidx.annotation.OptIn(markerClass = androidx.camera.core.ExperimentalGetImage.class)
-    private void analyzeFrame(ImageProxy imageProxy) {
-        if (imageProxy.getImage() == null) {
-            imageProxy.close();
+    @PluginMethod
+    public void captureAndAnalyze(PluginCall call) {
+        if (getPermissionState("camera") != PermissionState.GRANTED) {
+            call.reject("카메라 사용 권한이 없습니다.");
             return;
         }
 
-        // ML Kit 전용 InputImage 변환
-        InputImage image = InputImage.fromMediaImage(
-                imageProxy.getImage(),
-                imageProxy.getImageInfo().getRotationDegrees()
-        );
+        if (imageCapture == null) {
+            call.reject("카메라가 준비되지 않았습니다.");
+            return;
+        }
 
-        labeler.process(image)
-                .addOnSuccessListener(labels -> {
-                    processLabels(labels);
-                })
-                .addOnFailureListener(e -> {
-                    Log.e(TAG, "ML Kit 분석 실패", e);
-                })
-                .addOnCompleteListener(task -> {
-                    // 분석 완료 후 반드시 프레임 클로즈하여 다음 프레임 대기
-                    imageProxy.close();
+        // 🔑 API 키 입력 여부 검사 (설정 안 하고 실행하면 친절히 안내함)
+        if ("YOUR_GEMINI_API_KEY".equals(GEMINI_API_KEY) || GEMINI_API_KEY.isEmpty()) {
+            call.reject("API_KEY_MISSING", "Gemini API 키가 설정되지 않았습니다. FoodScannerPlugin.java 파일 상단의 GEMINI_API_KEY 변수에 발급받으신 키를 입력해 주세요.");
+            return;
+        }
+
+        // 사진 촬영 시작
+        imageCapture.takePicture(ContextCompat.getMainExecutor(getActivity()), new ImageCapture.OnImageCapturedCallback() {
+            @Override
+            public void onCaptureSuccess(@NonNull ImageProxy image) {
+                // 비디오 프레임 버퍼가 쌓이지 않도록 백그라운드 스레드에서 즉시 비동기 분석 수행
+                cameraExecutor.execute(() -> {
+                    try {
+                        byte[] jpegBytes = imageToByteArray(image);
+                        image.close(); // 중요: 이미지 리소스를 해제해야 카메라가 막히지 않음
+
+                        // 이미지 가로세로 최대 800px로 리사이징하여 API 전송 속도 극대화
+                        byte[] optimizedBytes = resizeImage(jpegBytes, 800);
+
+                        // 구글 Gemini 서버로 이미지와 한국어 질문 전송
+                        callGeminiAPI(optimizedBytes, call);
+                    } catch (Exception e) {
+                        Log.e(TAG, "이미지 처리 실패", e);
+                        call.reject("IMAGE_PROCESSING_FAILED", "이미지를 가공하는 데 실패했습니다: " + e.getMessage());
+                    }
                 });
+            }
+
+            @Override
+            public void onError(@NonNull ImageCaptureException exception) {
+                Log.e(TAG, "사진 촬영 실패", exception);
+                call.reject("CAPTURE_FAILED", "사진 촬영에 실패했습니다: " + exception.getMessage());
+            }
+        });
     }
 
-    private void processLabels(List<ImageLabel> labels) {
-        for (ImageLabel label : labels) {
-            String text = label.getText();
-            float confidence = label.getConfidence();
+    private byte[] imageToByteArray(ImageProxy image) {
+        ByteBuffer buffer = image.getPlanes()[0].getBuffer();
+        byte[] bytes = new byte[buffer.remaining()];
+        buffer.get(bytes);
+        
+        // 폰 회전 각도에 맞게 원본 이미지 회전 보정
+        int rotationDegrees = image.getImageInfo().getRotationDegrees();
+        if (rotationDegrees != 0) {
+            Bitmap bitmap = BitmapFactory.decodeByteArray(bytes, 0, bytes.length);
+            Matrix matrix = new Matrix();
+            matrix.postRotate(rotationDegrees);
+            Bitmap rotatedBitmap = Bitmap.createBitmap(bitmap, 0, 0, bitmap.getWidth(), bitmap.getHeight(), matrix, true);
+            ByteArrayOutputStream out = new ByteArrayOutputStream();
+            rotatedBitmap.compress(Bitmap.CompressFormat.JPEG, 100, out);
+            bitmap.recycle();
+            rotatedBitmap.recycle();
+            return out.toByteArray();
+        }
+        return bytes;
+    }
 
-            // 신뢰도가 75% 이상이고, 우리가 인식하고자 하는 핵심 사전(Target)에 해당할 때만 웹뷰로 실시간 전달
-            if (confidence >= 0.75f && TARGET_LABELS.contains(text)) {
-                JSObject ret = new JSObject();
-                ret.put("label", text);
-                ret.put("confidence", confidence);
-                
-                // Capacitor 이벤트 발생
-                notifyListeners("foodDetected", ret);
-                break; // 한 프레임당 가장 유력한 사물 1개만 전달
+    private byte[] resizeImage(byte[] jpegBytes, int maxDimension) {
+        Bitmap bitmap = BitmapFactory.decodeByteArray(jpegBytes, 0, jpegBytes.length);
+        int width = bitmap.getWidth();
+        int height = bitmap.getHeight();
+
+        if (width <= maxDimension && height <= maxDimension) {
+            return jpegBytes;
+        }
+
+        float ratio = Math.min((float) maxDimension / width, (float) maxDimension / height);
+        int newWidth = Math.round(ratio * width);
+        int newHeight = Math.round(ratio * height);
+
+        Bitmap resized = Bitmap.createScaledBitmap(bitmap, newWidth, newHeight, true);
+        ByteArrayOutputStream out = new ByteArrayOutputStream();
+        resized.compress(Bitmap.CompressFormat.JPEG, 85, out);
+        bitmap.recycle();
+        resized.recycle();
+        return out.toByteArray();
+    }
+
+    private void callGeminiAPI(byte[] imageBytes, PluginCall call) {
+        try {
+            URL url = new URL("https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=" + GEMINI_API_KEY);
+            HttpURLConnection conn = (HttpURLConnection) url.openConnection();
+            conn.setRequestMethod("POST");
+            conn.setRequestProperty("Content-Type", "application/json; utf-8");
+            conn.setDoOutput(true);
+            conn.setConnectTimeout(15000);
+            conn.setReadTimeout(15000);
+
+            // 이미지 바이트를 Base64로 인코딩하여 JSON에 내장시킴
+            String base64Image = Base64.encodeToString(imageBytes, Base64.NO_WRAP);
+
+            // 구글 Gemini 1.5 API 명세 구조에 맞춤 JSON 빌드
+            JSONObject payload = new JSONObject();
+            JSONArray contents = new JSONArray();
+            JSONObject contentObj = new JSONObject();
+            JSONArray parts = new JSONArray();
+
+            // 1. 프롬프트 정의
+            JSONObject textPart = new JSONObject();
+            textPart.put("text", "이 사진 속의 식재료가 무엇인지 한국어로 알려주세요.\n" +
+                    "반드시 다음 JSON 형식으로만 응답해주세요 (백틱 ```json과 같은 마크다운 펜스는 절대 씌우지 말고 오직 순수 JSON 데이터만 반환하세요):\n" +
+                    "{\n" +
+                    "  \"name\": \"식재료 한국어 이름 (예: 사과, 마늘, 달래 등)\",\n" +
+                    "  \"selection_tip\": \"신선하고 맛있는 것을 고르는 꿀팁 (2~3문장으로 간결하게)\",\n" +
+                    "  \"seasonal_months\": [제철인 월 숫자 배열, 예: 봄나물이면 [3,4,5], 가을버섯이면 [9,10,11]],\n" +
+                    "  \"is_food\": true 또는 false (식재료가 아닌 사물이나 사람인 경우 false로 설정)\n" +
+                    "}");
+            parts.put(textPart);
+
+            // 2. Base64 이미지 세팅
+            JSONObject imagePart = new JSONObject();
+            JSONObject inlineData = new JSONObject();
+            inlineData.put("mimeType", "image/jpeg");
+            inlineData.put("data", base64Image);
+            imagePart.put("inlineData", inlineData);
+            parts.put(imagePart);
+
+            contentObj.put("parts", parts);
+            contents.put(contentObj);
+            payload.put("contents", contents);
+
+            String jsonPayload = payload.toString();
+
+            try (OutputStream os = conn.getOutputStream()) {
+                byte[] input = jsonPayload.getBytes("utf-8");
+                os.write(input, 0, input.length);
             }
+
+            int responseCode = conn.getResponseCode();
+            if (responseCode == 200) {
+                BufferedReader br = new BufferedReader(new InputStreamReader(conn.getInputStream(), "utf-8"));
+                StringBuilder response = new StringBuilder();
+                String responseLine;
+                while ((responseLine = br.readLine()) != null) {
+                    response.append(responseLine.trim());
+                }
+
+                // 결과 본문에서 AI 텍스트 추출
+                JSONObject responseJson = new JSONObject(response.toString());
+                JSONArray candidates = responseJson.getJSONArray("candidates");
+                JSONObject candidate = candidates.getJSONObject(0);
+                JSONObject content = candidate.getJSONObject("content");
+                JSONArray resParts = content.getJSONArray("parts");
+                String rawText = resParts.getJSONObject(0).getString("text").trim();
+
+                // Gemini의 마크다운 펜스 제거
+                if (rawText.startsWith("```")) {
+                    rawText = rawText.replaceAll("```json", "").replaceAll("```", "").trim();
+                }
+
+                // 최종 데이터를 Capacitor 플러그인의 JSObject로 빌드하여 웹뷰에 전달
+                JSONObject resultData = new JSONObject(rawText);
+                JSObject ret = new JSObject();
+                ret.put("name", resultData.optString("name", ""));
+                ret.put("selection_tip", resultData.optString("selection_tip", ""));
+                
+                JSONArray monthsArray = resultData.optJSONArray("seasonal_months");
+                JSArray jsMonths = new JSArray();
+                if (monthsArray != null) {
+                    for (int i = 0; i < monthsArray.length(); i++) {
+                        jsMonths.put(monthsArray.optInt(i));
+                    }
+                }
+                ret.put("seasonal_months", jsMonths);
+                ret.put("is_food", resultData.optBoolean("is_food", false));
+
+                call.resolve(ret);
+            } else if (responseCode == 429 || responseCode == 403) {
+                Log.e(TAG, "Gemini API 할당량 초과 또는 인증 에러 (코드: " + responseCode + ")");
+                call.reject("API_LIMIT_EXCEEDED", "이달의 AI 스캔 한도를 초과했습니다.");
+            } else {
+                Log.e(TAG, "Gemini API 오류 발생 (코드: " + responseCode + ")");
+                call.reject("API_ERROR", "서버 분석 오류가 발생했습니다. (코드: " + responseCode + ")");
+            }
+        } catch (Exception e) {
+            Log.e(TAG, "Gemini API 연동 중 예외 발생", e);
+            call.reject("NETWORK_ERROR", "네트워크 상태를 확인해 주시거나 잠시 후 다시 시도해 주세요.");
         }
     }
 
@@ -244,18 +361,16 @@ public class FoodScannerPlugin extends Plugin {
     public void stopCamera(PluginCall call) {
         getActivity().runOnUiThread(() -> {
             try {
-                // CameraX 바인딩 해제
                 if (cameraProvider != null) {
                     cameraProvider.unbindAll();
                 }
 
-                // 뷰 제거 및 투명 복구
                 if (previewView != null && container != null) {
                     container.removeView(previewView);
                     previewView = null;
                 }
 
-                // 웹뷰 배경 원래대로 돌림 (하얗게 원복)
+                // 웹뷰 배경색 복원
                 bridge.getWebView().setBackgroundColor(Color.WHITE);
 
                 call.resolve();

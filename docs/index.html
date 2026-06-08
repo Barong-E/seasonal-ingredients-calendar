@@ -166,17 +166,25 @@
       <button id="btnExitScanner" class="scanner-exit-btn" aria-label="닫기">✕</button>
       <h2 class="scanner-title">식재료 스캔</h2>
     </div>
-    <div class="scanner-target-box">
-      <div class="target-corner top-left"></div>
-      <div class="target-corner top-right"></div>
-      <div class="target-corner bottom-left"></div>
-      <div class="target-corner bottom-right"></div>
-    </div>
+    
+    <!-- 안내 문구 -->
+    <p class="scanner-guide-text">식재료를 화면 중앙에 맞추고<br>아래 버튼을 눌러 촬영하세요</p>
     
     <!-- 실시간 사물 인식 결과 반투명 안내 카드 -->
     <div id="scannerResultCard" class="scanner-result-card" style="display: none;">
       <h3 id="detectedFoodName" class="detected-food-name"></h3>
       <p id="detectedFoodTips" class="detected-food-tips"></p>
+    </div>
+
+    <!-- 하단: 셔터 버튼 + 로딩 스피너 -->
+    <div class="scanner-bottom-area">
+      <button id="btnCapturePhoto" class="scanner-shutter-btn" type="button" aria-label="사진 촬영">
+        <span class="shutter-inner"></span>
+      </button>
+      <div id="scannerLoading" class="scanner-loading" style="display: none;">
+        <span class="scanner-loading__spinner"></span>
+        <span class="scanner-loading__text">AI가 분석 중입니다...</span>
+      </div>
     </div>
   </div>
 
