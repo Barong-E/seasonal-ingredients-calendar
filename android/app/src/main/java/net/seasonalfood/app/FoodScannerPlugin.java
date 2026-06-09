@@ -311,36 +311,55 @@ public class FoodScannerPlugin extends Plugin {
                     response.append(responseLine.trim());
                 }
 
-                // 결과 본문에서 AI 텍스트 추출
-                JSONObject responseJson = new JSONObject(response.toString());
-                JSONArray candidates = responseJson.getJSONArray("candidates");
-                JSONObject candidate = candidates.getJSONObject(0);
-                JSONObject content = candidate.getJSONObject("content");
-                JSONArray resParts = content.getJSONArray("parts");
-                String rawText = resParts.getJSONObject(0).getString("text").trim();
-
-                // Gemini의 마크다운 펜스 제거
-                if (rawText.startsWith("```")) {
-                    rawText = rawText.replaceAll("```json", "").replaceAll("```", "").trim();
-                }
-
-                // 최종 데이터를 Capacitor 플러그인의 JSObject로 빌드하여 웹뷰에 전달
-                JSONObject resultData = new JSONObject(rawText);
-                JSObject ret = new JSObject();
-                ret.put("name", resultData.optString("name", ""));
-                ret.put("selection_tip", resultData.optString("selection_tip", ""));
-
-                JSONArray monthsArray = resultData.optJSONArray("seasonal_months");
-                JSArray jsMonths = new JSArray();
-                if (monthsArray != null) {
-                    for (int i = 0; i < monthsArray.length(); i++) {
-                        jsMonths.put(monthsArray.optInt(i));
+                try {
+                    // 결과 본문에서 AI 텍스트 추출
+                    JSONObject responseJson = new JSONObject(response.toString());
+                    JSONArray candidates = responseJson.optJSONArray("candidates");
+                    if (candidates == null || candidates.length() == 0) {
+                        throw new Exception("No candidates found");
                     }
-                }
-                ret.put("seasonal_months", jsMonths);
-                ret.put("is_food", resultData.optBoolean("is_food", false));
+                    JSONObject candidate = candidates.getJSONObject(0);
+                    JSONObject content = candidate.optJSONObject("content");
+                    if (content == null) {
+                        throw new Exception("No content found (possibly blocked by safety filter)");
+                    }
+                    JSONArray resParts = content.optJSONArray("parts");
+                    if (resParts == null || resParts.length() == 0) {
+                        throw new Exception("No parts found");
+                    }
+                    String rawText = resParts.getJSONObject(0).optString("text", "").trim();
 
-                call.resolve(ret);
+                    // Gemini의 마크다운 펜스 제거
+                    if (rawText.startsWith("```")) {
+                        rawText = rawText.replaceAll("```json", "").replaceAll("```", "").trim();
+                    }
+
+                    // 최종 데이터를 Capacitor 플러그인의 JSObject로 빌드하여 웹뷰에 전달
+                    JSONObject resultData = new JSONObject(rawText);
+                    JSObject ret = new JSObject();
+                    ret.put("name", resultData.optString("name", ""));
+                    ret.put("selection_tip", resultData.optString("selection_tip", ""));
+
+                    JSONArray monthsArray = resultData.optJSONArray("seasonal_months");
+                    JSArray jsMonths = new JSArray();
+                    if (monthsArray != null) {
+                        for (int i = 0; i < monthsArray.length(); i++) {
+                            jsMonths.put(monthsArray.optInt(i));
+                        }
+                    }
+                    ret.put("seasonal_months", jsMonths);
+                    ret.put("is_food", resultData.optBoolean("is_food", false));
+
+                    call.resolve(ret);
+                } catch (Exception parseEx) {
+                    Log.e(TAG, "Gemini 응답 파싱 실패 또는 식재료가 아님", parseEx);
+                    // 에러가 나거나 JSON이 아닐 경우, 앱이 튕기거나 네트워크 오류로 처리하지 않고
+                    // "인식 불가" 상태로 웹뷰에 예쁘게 전달
+                    JSObject fallback = new JSObject();
+                    fallback.put("is_food", false);
+                    fallback.put("name", "");
+                    call.resolve(fallback);
+                }
             } else if (responseCode == 429 || responseCode == 403) {
                 Log.e(TAG, "Gemini API 할당량 초과 또는 인증 에러 (코드: " + responseCode + ")");
                 call.reject("API_LIMIT_EXCEEDED", "이달의 AI 스캔 한도를 초과했습니다.");
