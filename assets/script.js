@@ -1,7 +1,10 @@
-import { Capacitor } from '@capacitor/core';
+import { Capacitor, registerPlugin } from '@capacitor/core';
 import { initPush } from './push.js';
 import KoreanLunarCalendar from 'korean-lunar-calendar';
 import { getRecipeIdFromDishName } from './recipe-mapper.js';
+
+// AI 식재료 스캔용 커스텀 네이티브 플러그인 등록
+registerPlugin('FoodScanner');
 
 
 // 띵동 제철음식 메인 스크립트
