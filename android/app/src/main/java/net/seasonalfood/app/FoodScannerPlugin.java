@@ -59,7 +59,7 @@ public class FoodScannerPlugin extends Plugin {
     private PreviewView previewView;
     private ProcessCameraProvider cameraProvider;
     private ExecutorService cameraExecutor;
-    private FrameLayout container;
+    private ViewGroup container;
     private ImageCapture imageCapture;
 
     @Override
@@ -99,15 +99,15 @@ public class FoodScannerPlugin extends Plugin {
                 bridge.getWebView().setBackgroundColor(Color.TRANSPARENT);
 
                 // 2. 웹뷰의 부모 레이아웃 가져오기
-                container = (FrameLayout) bridge.getWebView().getParent();
+                container = (ViewGroup) bridge.getWebView().getParent();
 
                 // 3. 네이티브 카메라 렌더링용 PreviewView 생성
                 previewView = new PreviewView(getActivity());
                 previewView.setScaleType(PreviewView.ScaleType.FILL_CENTER);
 
-                FrameLayout.LayoutParams params = new FrameLayout.LayoutParams(
-                        FrameLayout.LayoutParams.MATCH_PARENT,
-                        FrameLayout.LayoutParams.MATCH_PARENT);
+                ViewGroup.LayoutParams params = new ViewGroup.LayoutParams(
+                        ViewGroup.LayoutParams.MATCH_PARENT,
+                        ViewGroup.LayoutParams.MATCH_PARENT);
 
                 // 웹뷰 레이어 아래(인덱스 0)에 삽입
                 container.addView(previewView, 0, params);
