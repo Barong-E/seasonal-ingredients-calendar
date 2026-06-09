@@ -4,7 +4,7 @@ import KoreanLunarCalendar from 'korean-lunar-calendar';
 import { getRecipeIdFromDishName } from './recipe-mapper.js';
 
 // AI 식재료 스캔용 커스텀 네이티브 플러그인 등록
-registerPlugin('FoodScanner');
+const FoodScanner = registerPlugin('FoodScanner');
 
 
 // 띵동 제철음식 메인 스크립트
@@ -888,7 +888,7 @@ async function startCameraScanner() {
     if (loadingEl) loadingEl.style.display = 'none';
 
     // 3. 네이티브 카메라 켜기
-    await window.Capacitor.Plugins.FoodScanner.startCamera();
+    await FoodScanner.startCamera();
   } catch (err) {
     console.error('카메라 시작 에러:', err);
     alert('카메라 실행 중 에러가 발생했습니다: ' + err.message);
@@ -899,7 +899,7 @@ async function startCameraScanner() {
 async function closeCameraScanner() {
   try {
     if (window.Capacitor && window.Capacitor.isNativePlatform()) {
-      await window.Capacitor.Plugins.FoodScanner.stopCamera();
+      await FoodScanner.stopCamera();
     }
   } catch (err) {
     console.error(err);
@@ -936,7 +936,7 @@ async function takePhotoAndAnalyze() {
     if (card) card.style.display = 'none';
 
     // 네이티브에서 캡처 & Gemini 호출 일괄 실행
-    const result = await window.Capacitor.Plugins.FoodScanner.captureAndAnalyze();
+    const result = await FoodScanner.captureAndAnalyze();
     
     // UI 원복
     if (loadingEl) loadingEl.style.display = 'none';
