@@ -252,7 +252,7 @@ public class FoodScannerPlugin extends Plugin {
     private void callGeminiAPI(byte[] imageBytes, PluginCall call) {
         try {
             URL url = new URL(
-                    "https://generativelanguage.googleapis.com/v1beta/models/gemini-flash-lite-latest:generateContent?key="
+                    "https://generativelanguage.googleapis.com/v1beta/models/gemini-3.1-flash-lite:generateContent?key="
                             + GEMINI_API_KEY);
             HttpURLConnection conn = (HttpURLConnection) url.openConnection();
             conn.setRequestMethod("POST");
