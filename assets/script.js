@@ -963,6 +963,8 @@ async function takePhotoAndAnalyze() {
       alert('앗! 이달의 AI 스캔 무료 사용량(한도)을 모두 채웠어요. 다음 달에 다시 이용해 주세요! 💚');
     } else if (err.code === 'API_KEY_MISSING') {
       alert('Gemini API 키가 아직 설정되지 않았습니다. android/app/src/main/java/net/seasonalfood/app/FoodScannerPlugin.java 파일 상단의 GEMINI_API_KEY에 발급받으신 키를 적고 다시 빌드해 주세요!');
+    } else if (err.code === 'API_AUTH_FAILED') {
+      alert('API 인증에 실패했습니다. 관리자에게 문의해 주세요.');
     } else {
       alert('네트워크 연결 상태를 확인해 주시거나 잠시 후 다시 시도해 주세요.');
     }

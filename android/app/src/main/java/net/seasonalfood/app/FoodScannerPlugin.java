@@ -170,8 +170,8 @@ public class FoodScannerPlugin extends Plugin {
 
         // 🔑 API 키 입력 여부 검사 (설정 안 하고 실행하면 친절히 안내함)
         if ("YOUR_GEMINI_API_KEY".equals(GEMINI_API_KEY) || GEMINI_API_KEY.isEmpty()) {
-            call.reject("API_KEY_MISSING",
-                    "Gemini API 키가 설정되지 않았습니다. FoodScannerPlugin.java 파일 상단의 GEMINI_API_KEY 변수에 발급받으신 키를 입력해 주세요.");
+            call.reject("Gemini API 키가 설정되지 않았습니다. FoodScannerPlugin.java 파일 상단의 GEMINI_API_KEY 변수에 발급받으신 키를 입력해 주세요.",
+                    "API_KEY_MISSING");
             return;
         }
 
@@ -193,7 +193,7 @@ public class FoodScannerPlugin extends Plugin {
                                 callGeminiAPI(optimizedBytes, call);
                             } catch (Exception e) {
                                 Log.e(TAG, "이미지 처리 실패", e);
-                                call.reject("IMAGE_PROCESSING_FAILED", "이미지를 가공하는 데 실패했습니다: " + e.getMessage());
+                                call.reject("이미지를 가공하는 데 실패했습니다: " + e.getMessage(), "IMAGE_PROCESSING_FAILED");
                             }
                         });
                     }
@@ -201,7 +201,7 @@ public class FoodScannerPlugin extends Plugin {
                     @Override
                     public void onError(@NonNull ImageCaptureException exception) {
                         Log.e(TAG, "사진 촬영 실패", exception);
-                        call.reject("CAPTURE_FAILED", "사진 촬영에 실패했습니다: " + exception.getMessage());
+                        call.reject("사진 촬영에 실패했습니다: " + exception.getMessage(), "CAPTURE_FAILED");
                     }
                 });
     }
@@ -360,16 +360,19 @@ public class FoodScannerPlugin extends Plugin {
                     fallback.put("name", "");
                     call.resolve(fallback);
                 }
-            } else if (responseCode == 429 || responseCode == 403) {
-                Log.e(TAG, "Gemini API 할당량 초과 또는 인증 에러 (코드: " + responseCode + ")");
-                call.reject("API_LIMIT_EXCEEDED", "이달의 AI 스캔 한도를 초과했습니다.");
+            } else if (responseCode == 429) {
+                Log.e(TAG, "Gemini API 할당량 초과 (코드: " + responseCode + ")");
+                call.reject("이달의 AI 스캔 한도를 초과했습니다.", "API_LIMIT_EXCEEDED");
+            } else if (responseCode == 403) {
+                Log.e(TAG, "Gemini API 인증 실패 (코드: " + responseCode + ")");
+                call.reject("API 인증에 실패했습니다. API 키를 확인해 주세요.", "API_AUTH_FAILED");
             } else {
                 Log.e(TAG, "Gemini API 오류 발생 (코드: " + responseCode + ")");
-                call.reject("API_ERROR", "서버 분석 오류가 발생했습니다. (코드: " + responseCode + ")");
+                call.reject("서버 분석 오류가 발생했습니다. (코드: " + responseCode + ")", "API_ERROR");
             }
         } catch (Exception e) {
             Log.e(TAG, "Gemini API 연동 중 예외 발생", e);
-            call.reject("NETWORK_ERROR", "네트워크 상태를 확인해 주시거나 잠시 후 다시 시도해 주세요.");
+            call.reject("네트워크 상태를 확인해 주시거나 잠시 후 다시 시도해 주세요.", "NETWORK_ERROR");
         }
     }
 

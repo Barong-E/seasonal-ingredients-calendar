@@ -1787,7 +1787,11 @@ main {
 
 .body-transparent .carousel,
 .body-transparent main,
-.body-transparent .gnb {
+.body-transparent .gnb,
+.body-transparent .app-header,
+.body-transparent #monthNav,
+.body-transparent #holidayBanner,
+.body-transparent #offlineNotice {
   display: none !important; /* 스캔 중에는 기존 본문 감춤 */
 }
 
