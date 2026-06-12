@@ -930,8 +930,11 @@ async function takePhotoAndAnalyze() {
   if (!window.Capacitor || !window.Capacitor.isNativePlatform()) return;
 
   try {
-    // UI를 '분석 중' 상태로 전환
-    if (shutterBtn) shutterBtn.style.display = 'none';
+    // UI를 '분석 중' 상태로 전환 (disabled 먼저 처리해 연속 탭으로 인한 중복 호출 방지)
+    if (shutterBtn) {
+      shutterBtn.disabled = true;
+      shutterBtn.style.display = 'none';
+    }
     if (loadingEl) loadingEl.style.display = 'flex';
     if (card) card.style.display = 'none';
 
@@ -979,13 +982,13 @@ async function takePhotoAndAnalyze() {
         }
       }
     } else {
-      // 식재료가 아니거나 결과가 없을 때
+      // 식재료가 아니거나 결과가 없을 때 (result가 null이어도 안전하게 처리)
       if (loadingEl) loadingEl.style.display = 'none';
       if (shutterBtn) {
         shutterBtn.style.display = 'flex';
         shutterBtn.disabled = false;
       }
-      showDetectedFoodTips(result, null);
+      showDetectedFoodTips(result || { is_food: false, name: '' }, null);
     }
   } catch (err) {
     console.error('AI 분석 에러:', err);
@@ -1051,13 +1054,15 @@ function showDetectedFoodTips(result, localItem) {
     nameEl.textContent = `${foodNameKo} 고르는 방법 (AI)`;
     
     const currentMonth = new Date().getMonth() + 1;
-    const isSeasonal = result.seasonal_months && result.seasonal_months.includes(currentMonth);
+    // Capacitor JSArray는 includes()를 지원하지 않을 수 있으므로 Array.from()으로 안전하게 변환
+    const seasonalMonths = Array.from(result.seasonal_months || []);
+    const isSeasonal = seasonalMonths.includes(currentMonth);
     const selectionTip = result.selection_tip || '신선하고 고유의 색택이 선명하며 흠집이 없는 것을 고르는 것이 좋습니다.';
 
     if (isSeasonal) {
       tipsEl.innerHTML = `<span style="color: #0A7B34; font-weight: bold; display: block; margin-bottom: 8px;">지금 제철입니다! 🌱</span>${selectionTip}`;
-    } else if (result.seasonal_months && result.seasonal_months.length > 0) {
-      const seasonalMonthsText = result.seasonal_months.map(m => `${m}월`).join(', ');
+    } else if (seasonalMonths.length > 0) {
+      const seasonalMonthsText = seasonalMonths.map(m => `${m}월`).join(', ');
       tipsEl.innerHTML = `<span style="color: #ef4444; font-weight: bold; display: block; margin-bottom: 8px;">지금은 제철이 아닙니다. (${seasonalMonthsText}이 제철입니다.) ⚠️</span>${selectionTip}`;
     } else {
       tipsEl.textContent = selectionTip;
