@@ -165,9 +165,9 @@ export function getRecipeIdFromDishName(dishName) {
   '부추전': 'chives-pancake',
   '죽순볶음': 'bamboo-shoot-stir-fry',
   '참나물무침': 'channamul-muchim',
-  '곤드레밥': 'gondre-bap',
-  '다시마부각': 'dasima-bugak',
-
-};
+    '곤드레밥': 'gondre-bap',
+    '다시마부각': 'dasima-bugak',
+    '양파장아찌': 'recipe-onion-pickle',
+  };
   return mapping[dishName] || null;
 }

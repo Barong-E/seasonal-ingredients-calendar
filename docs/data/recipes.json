@@ -10087,5 +10087,34 @@
       }
     ],
     "image": "recipes/dasima-bugak.png"
+  },
+  {
+    "id": "recipe-onion-pickle",
+    "name": "양파장아찌",
+    "category": "채소",
+    "description": "새콤달콤하고 아삭아삭하여 삼겹살이나 전 요리에 곁들이기 아주 좋은 든든한 밑반찬입니다.",
+    "servings": 500,
+    "servingsUnit": "g",
+    "cookTime": "15분",
+    "difficulty": "하",
+    "image": "recipes/recipe-onion-pickle.png",
+    "ingredients": [
+      { "name": "양파", "amount": "500g" },
+      { "name": "청양고추", "amount": "2개" },
+      { "name": "물", "amount": "200ml" }
+    ],
+    "seasoning": [
+      { "name": "간장", "amount": "200ml" },
+      { "name": "식초", "amount": "150ml" },
+      { "name": "설탕", "amount": "150ml" }
+    ],
+    "steps": [
+      { "step": 1, "description": "양파는 한입 크기로 큼직하게 썰고, 청양고추는 송송 썰어 준비합니다." },
+      { "step": 2, "description": "냄비에 간장, 설탕, 식초, 물을 한데 넣고 잘 섞어 절임물을 만듭니다." },
+      { "step": 3, "description": "절임물을 불에 올려 설탕이 다 녹고 한소끔 끓어오를 때까지 끓인 후 불을 끕니다." },
+      { "step": 4, "description": "열탕 소독한 유리병에 썰어둔 양파와 청양고추를 차곡차곡 담습니다." },
+      { "step": 5, "description": "뜨거운 상태의 절임물을 양파와 청양고추가 완전히 잠기도록 유리병에 부어줍니다." },
+      { "step": 6, "description": "한김 식힌 후 뚜껑을 덮어 실온에서 하루 보관했다가 냉장고에 넣어 숙성시킵니다." }
+    ]
   }
 ]
