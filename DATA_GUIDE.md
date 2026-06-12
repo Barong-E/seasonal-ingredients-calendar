@@ -124,6 +124,7 @@
 - **저장 경로**: `public/images/recipes/recipe-[요리ID].png` (예: `public/images/recipes/recipe-fig-jam.png`)
 
 - **⚠️ 중요 (여백 조절 - 공통)**: 이미지가 너무 작게 보이지 않도록 **피사체가 화면에 꽉 차게(Filling the frame)** 생성해야 합니다. 프롬프트에 `close up`, `filling the frame with minimal margins`와 같은 키워드를 추가하여 여백이 너무 많이 남지 않도록 조절하세요.
+- **⚠️ 중요 (한국식 식재료 형태 반영)**: 서양식과 한국식 식재료 비주얼이 다른 경우(예: 서양식의 결구형 둥근 양상추 vs 한국식 잎이 나풀거리는 적상추/청상추), 반드시 한국인들에게 친숙하고 익숙한 한식 형태의 비주얼 특징을 프롬프트에 명시적으로 추가해주어야 합니다. 단순한 영어 단어(예: `lettuce`) 대신 구체적인 묘사(예: `Korean red leaf lettuce stack, individual loose fresh wavy leaves stacked`)를 기입하세요.
 
 ---
 
