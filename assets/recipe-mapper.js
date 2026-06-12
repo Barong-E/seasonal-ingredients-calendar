@@ -168,6 +168,7 @@ export function getRecipeIdFromDishName(dishName) {
     '곤드레밥': 'gondre-bap',
     '다시마부각': 'dasima-bugak',
     '양파장아찌': 'recipe-onion-pickle',
+    '상추겉절이': 'recipe-lettuce-geotjeori',
   };
   return mapping[dishName] || null;
 }

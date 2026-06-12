@@ -2646,5 +2646,32 @@
       "혈관 건강 관리가 필요하신 분"
     ],
     "selection_ko": "표면이 잘 마르고 광택이 나며 단단하고 묵직한 것이 좋습니다. 싹이 나거나 눌렀을 때 물렁물렁한 것은 피해야 합니다."
+  },
+  {
+    "name_ko": "상추",
+    "category": "채소",
+    "image": "ingredients/lettuce.png",
+    "description_ko": "여름 밥상의 대표 쌈 채소로, 수분과 비타민이 풍부해 갈증 해소와 피로 완화에 좋습니다. 락투카리움 성분 덕분에 불면증 완화와 스트레스 해소에도 도움을 줍니다.",
+    "preparation_ko": "흐르는 물에 잎을 한 장씩 깨끗이 흔들어 씻어 흙을 제거하고, 물기를 가볍게 털어내어 사용합니다.",
+    "storage_room_temp": "상온에서는 시들기 쉬우므로 즉시 냉장 보관하는 것이 좋습니다.",
+    "storage_refrigerator": "씻지 않은 상태로 키친타월에 싸서 지퍼백에 밀봉한 뒤 세워서 냉장 보관하면 3~5일 정도 보관 가능합니다.",
+    "storage_freezer": "",
+    "calories_per_100g": 15,
+    "calories_per_serving": "10장(약 30g) 약 5kcal",
+    "name_en": "",
+    "name_ja": "",
+    "description_en": "",
+    "description_ja": "",
+    "popular_dish": "상추겉절이",
+    "months": [
+      6,
+      7,
+      8
+    ],
+    "recommended_for": [
+      "스트레스 완화가 필요하신 분",
+      "가벼운 식단 관리가 필요한 분"
+    ],
+    "selection_ko": "잎이 힘 있고 아삭하며 연한 초록빛을 띠고 흠집이 없는 것이 좋습니다. 줄기 끝부분을 잘랐을 때 하얀 즙이 신선한 상추의 특징입니다."
   }
 ]
