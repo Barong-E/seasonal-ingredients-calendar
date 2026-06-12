@@ -62,7 +62,7 @@ body.theme-winter .tab-btn.active {
 }
 
 .favorites-main {
-  padding: 16px 20px 100px;
+  padding: 16px 20px calc(88px + env(safe-area-inset-bottom));
   max-width: 1000px;
   margin: 0 auto;
   min-height: 80vh;
