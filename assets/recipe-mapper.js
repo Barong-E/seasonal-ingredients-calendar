@@ -172,7 +172,15 @@ export function getRecipeIdFromDishName(dishName) {
     "마늘장아찌": "recipe-garlic-pickle",
     "아욱된장국": "recipe-awook-doenjang-guk",
     "근대국": "recipe-geundae-guk",
-    "비름나물무침": "recipe-bireum-namul-muchim"
+    "비름나물무침": "recipe-bireum-namul-muchim",
+    "도라지나물볶음": "recipe-doraji-namul-bokkeum",
+    "도라지구이": "recipe-doraji-gui",
+    "물미역초무침": "recipe-mulmiyeok-cho-muchim",
+    "물미역두부무침": "recipe-mulmiyeok-dubu-muchim",
+    "돌미역국": "recipe-dolmiyeok-guk",
+    "돌미역무침": "recipe-dolmiyeok-muchim",
+    "단호박찜": "recipe-danhobak-jjim",
+    "단호박죽": "recipe-danhobak-juk"
   };
   return mapping[dishName] || null;
 }
