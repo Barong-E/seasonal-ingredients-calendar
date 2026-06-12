@@ -2702,5 +2702,77 @@
       "만성 피로를 느끼는 직장인이나 수험생"
     ],
     "selection_ko": "전체적으로 단단하고 둥글며 묵직한 무게감이 느껴지는 것이 좋습니다. 껍질이 잘 말라 있고 싹이 트지 않은 것을 고르세요."
+  },
+  {
+    "name_ko": "아욱",
+    "category": "채소",
+    "image": "ingredients/awook.png",
+    "description_ko": "칼슘, 단백질, 비타민 등이 풍부해 '채소의 왕'이라고 불리며, 초여름부터 가을까지 맛이 좋습니다. 찬 성질이 있어 몸의 열을 내리고 뼈 건강과 장 건강에 탁월한 효능을 보입니다.",
+    "preparation_ko": "줄기가 억센 부분은 껍질을 벗겨내고, 풋내를 제거하기 위해 굵은 소금으로 바락바락 주물러 씻은 뒤 찬물에 헹궈 물기를 뺍니다.",
+    "storage_room_temp": "수분이 마르기 쉬워 상온 보관은 권장하지 않습니다.",
+    "storage_refrigerator": "씻지 않은 채 신문지나 젖은 키친타월에 싸서 비닐 팩에 담아 냉장 보관하며, 3~5일 이내 사용합니다.",
+    "storage_freezer": "끓는 소금물에 살짝 데쳐 찬물에 헹군 뒤 물기를 꼭 짜서 소분해 밀폐 용기에 담아 냉동 보관(1개월)합니다.",
+    "external_url": "",
+    "calories_per_100g": 23,
+    "calories_per_serving": "한 줌(약 80g) 약 18kcal",
+    "name_en": "",
+    "name_ja": "",
+    "description_en": "",
+    "description_ja": "",
+    "popular_dish": "아욱된장국",
+    "months": [6, 7],
+    "recommended_for": [
+      "성장기 어린이 및 뼈 건강 관리가 필요한 분",
+      "장 건강 개선 및 변비 해소가 필요한 분"
+    ],
+    "selection_ko": "잎이 넓고 짙은 연록색을 띠며 부드러운 것이 좋습니다. 줄기는 너무 굵지 않고 대가 꺾였을 때 쉽게 꺾이며 가시가 없는 것을 고르세요."
+  },
+  {
+    "name_ko": "근대",
+    "category": "채소",
+    "image": "ingredients/geundae.png",
+    "description_ko": "수분이 많고 부드러운 근대는 비타민 A와 철분이 풍부하여 눈 건강과 빈혈 예방에 매우 뛰어난 효능을 지닙니다. 밤에 컴퓨터나 스마트폰을 자주 보는 현대인에게 특히 추천합니다.",
+    "preparation_ko": "흐르는 물에 깨끗이 씻은 후 억센 줄기 끝을 잘라내고 사용하며, 껍질을 살짝 벗겨내면 더 부드럽게 먹을 수 있습니다.",
+    "storage_room_temp": "쉽게 상하므로 상온 보관은 피해야 합니다.",
+    "storage_refrigerator": "종이타월이나 신문지에 싸서 냉장 보관하되, 3~4일 이내 조리하는 것이 좋습니다.",
+    "storage_freezer": "살짝 데쳐 찬물에 식히고 물기를 뺀 뒤 밀봉하여 냉동 보관(1개월)합니다.",
+    "external_url": "",
+    "calories_per_100g": 19,
+    "calories_per_serving": "한 줌(약 80g) 약 15kcal",
+    "name_en": "",
+    "name_ja": "",
+    "description_en": "",
+    "description_ja": "",
+    "popular_dish": "근대국",
+    "months": [6, 7, 8],
+    "recommended_for": [
+      "눈이 쉽게 피로해지는 직장인이나 수험생",
+      "빈혈 예방이 필요한 임산부나 여성"
+    ],
+    "selection_ko": "잎이 넓고 두꺼우며 선명한 초록빛을 띠고 짓무르지 않은 것이 좋습니다. 줄기가 단단하고 싱싱해 보이는 것을 고르세요."
+  },
+  {
+    "name_ko": "비름나물",
+    "category": "채소",
+    "image": "ingredients/bireum-namul.png",
+    "description_ko": "옛날부터 장수하는 풀이라 하여 '장명채'로 불릴 만큼 영양가 높은 나물입니다. 칼슘과 아미노산이 매우 풍부하며, 무더운 여름철 기운을 돋우는 역할을 합니다.",
+    "preparation_ko": "억세고 질긴 줄기는 잘라내고, 연한 잎과 줄기만 다듬은 뒤 물에 씻어 끓는 물에 가볍게 데쳐서 사용합니다.",
+    "storage_room_temp": "나물 종류는 상온에 두면 빠르게 시들고 영양이 손실되어 권장하지 않습니다.",
+    "storage_refrigerator": "지퍼백이나 밀폐용기에 담아 수분을 채워 냉장 보관하며 2~3일 내 섭취합니다.",
+    "storage_freezer": "데친 후 물기를 꼭 짜서 동그랗게 뭉쳐 소분 밀봉 후 냉동 보관(1개월)합니다.",
+    "external_url": "",
+    "calories_per_100g": 31,
+    "calories_per_serving": "한 줌(약 60g) 약 19kcal",
+    "name_en": "",
+    "name_ja": "",
+    "description_en": "",
+    "description_ja": "",
+    "popular_dish": "비름나물무침",
+    "months": [6, 7],
+    "recommended_for": [
+      "성장기 어린이 및 뼈 건강 관리가 필요한 분",
+      "만성 피로로 보충이 필요한 직장인"
+    ],
+    "selection_ko": "잎의 초록색이 선명하고 신선하며, 줄기가 너무 길거나 굵지 않고 부드러운 순이 돋아난 비름나물을 선택하는 것이 연하고 맛있습니다."
   }
 ]

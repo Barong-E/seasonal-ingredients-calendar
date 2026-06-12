@@ -5,7 +5,7 @@ import { getRecipeIdFromDishName } from './recipe-mapper.js';
 
 async function loadIngredientData() {
   try {
-    const res = await fetch('data/ingredients.json?v=v48', { cache: 'no-cache' });
+    const res = await fetch('data/ingredients.json?v=v49', { cache: 'no-cache' });
     if (!res.ok) throw new Error('Failed to load data');
     return await res.json();
   } catch (err) {

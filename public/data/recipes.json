@@ -10176,5 +10176,91 @@
       { "step": 5, "description": "식힌 간장 양념물을 마늘이 담긴 병에 다시 부어줍니다." },
       { "step": 6, "description": "뚜껑을 잘 닫아 그늘진 실온에서 2~3주간 더 숙성시킨 뒤 아린 맛이 빠지면 냉장고에 넣어 두고 먹습니다." }
     ]
+  },
+  {
+    "id": "recipe-awook-doenjang-guk",
+    "name": "아욱된장국",
+    "category": "채소",
+    "description": "건새우와 된장을 더해 구수하고 시원하게 끓여낸 건강한 아욱국입니다.",
+    "servings": 3,
+    "servingsUnit": "인분",
+    "cookTime": "25분",
+    "difficulty": "하",
+    "image": "recipes/recipe-awook-doenjang-guk.png",
+    "ingredients": [
+      { "name": "아욱", "amount": "150g" },
+      { "name": "건새우", "amount": "20g" },
+      { "name": "물", "amount": "1L" }
+    ],
+    "seasoning": [
+      { "name": "된장", "amount": "2큰술" },
+      { "name": "다진 마늘", "amount": "1작은술" },
+      { "name": "국간장", "amount": "1작은술" },
+      { "name": "대파", "amount": "1대" },
+      { "name": "고추장", "amount": "0.5작은술" }
+    ],
+    "steps": [
+      { "step": 1, "description": "아욱은 억센 줄기를 껍질 벗겨 정리한 뒤, 굵은 소금으로 주물러 씻어 풋내를 빼고 찬물에 여러 번 헹궈 먹기 좋은 크기로 썹니다." },
+      { "step": 2, "description": "냄비에 물을 붓고 건새우를 넣어 끓여 육수를 냅니다." },
+      { "step": 3, "description": "육수가 끓으면 된장 and 고추장을 체에 걸러 풀고 손질한 아욱을 넣습니다." },
+      { "step": 4, "description": "아욱이 부드러워질 때까지 끓이다가, 다진 마늘과 대파를 넣고 국간장으로 간을 맞춰 한소끔 더 끓여 완성합니다." }
+    ]
+  },
+  {
+    "id": "recipe-geundae-guk",
+    "name": "근대국",
+    "category": "채소",
+    "description": "된장 육수에 바지락 조개를 더해 시원하고 맑게 끓여낸 근대국입니다.",
+    "servings": 3,
+    "servingsUnit": "인분",
+    "cookTime": "20분",
+    "difficulty": "하",
+    "image": "recipes/recipe-geundae-guk.png",
+    "ingredients": [
+      { "name": "근대", "amount": "150g" },
+      { "name": "바지락 조개", "amount": "100g" },
+      { "name": "물", "amount": "1L" }
+    ],
+    "seasoning": [
+      { "name": "된장", "amount": "2큰술" },
+      { "name": "다진 마늘", "amount": "1작은술" },
+      { "name": "국간장", "amount": "1작은술" },
+      { "name": "대파", "amount": "1대" },
+      { "name": "고추장", "amount": "0.5작은술" }
+    ],
+    "steps": [
+      { "step": 1, "description": "근대는 흐르는 물에 깨끗이 씻어 억센 줄기 끝을 잘라내고 한입 크기로 썹니다." },
+      { "step": 2, "description": "냄비에 물과 해감된 바지락 조개를 넣어 조개 육수를 냅니다." },
+      { "step": 3, "description": "육수가 끓으면 된장 and 고추장을 체에 걸러 풀고 손질한 근대를 넣습니다." },
+      { "step": 4, "description": "근대가 부드러워질 때까지 끓이다가, 다진 마늘과 대파를 넣고 국간장으로 간을 맞춰 마무리합니다." }
+    ]
+  },
+  {
+    "id": "recipe-bireum-namul-muchim",
+    "name": "비름나물무침",
+    "category": "채소",
+    "description": "데친 비름나물을 매콤새콤한 고추장 양념에 맛있게 무쳐낸 6월 대표 밑반찬입니다.",
+    "servings": 3,
+    "servingsUnit": "인분",
+    "cookTime": "15분",
+    "difficulty": "하",
+    "image": "recipes/recipe-bireum-namul-muchim.png",
+    "ingredients": [
+      { "name": "비름나물", "amount": "200g" }
+    ],
+    "seasoning": [
+      { "name": "고추장", "amount": "1큰술" },
+      { "name": "된장", "amount": "0.5작은술" },
+      { "name": "다진 마늘", "amount": "1작은술" },
+      { "name": "매실청", "amount": "1작은술" },
+      { "name": "참기름", "amount": "1큰술" },
+      { "name": "통깨", "amount": "1작은술" }
+    ],
+    "steps": [
+      { "step": 1, "description": "비름나물은 억세고 질긴 줄기 끝을 다듬고 잎 부분 위주로 깨끗이 씻어 준비합니다." },
+      { "step": 2, "description": "끓는 물에 소금을 약간 넣고 손질한 비름나물을 넣어 가볍게 데친 뒤, 즉시 찬물에 헹궈 물기를 꼭 짭니다." },
+      { "step": 3, "description": "볼에 고추장, 된장, 다진 마늘, 매실청, 참기름을 섞어 양념장을 만듭니다." },
+      { "step": 4, "description": "물기를 짠 비름나물을 양념장에 골고루 무친 후 접시에 담고 통깨를 뿌려 완성합니다." }
+    ]
   }
 ]
