@@ -10148,5 +10148,33 @@
       { "step": 5, "description": "상추가 숨이 죽지 않도록 힘을 빼고 손끝으로 살살 가볍게 버무려줍니다." },
       { "step": 6, "description": "마지막으로 참기름과 통깨를 둘러 가볍게 섞어 완성합니다. (물이 생기기 쉬우니 먹기 직전에 무치는 것이 좋습니다)" }
     ]
+  },
+  {
+    "id": "recipe-garlic-pickle",
+    "name": "마늘장아찌",
+    "category": "채소",
+    "description": "아삭한 식감과 새콤달콤하고 짭조름한 간장물이 마늘의 아린 맛을 부드럽게 감싸주는 1년 내내 든든한 대표 저장 밑반찬입니다.",
+    "servings": 500,
+    "servingsUnit": "g",
+    "cookTime": "30분",
+    "difficulty": "하",
+    "image": "recipes/recipe-garlic-pickle.png",
+    "ingredients": [
+      { "name": "깐마늘", "amount": "500g" },
+      { "name": "식초", "amount": "300ml" },
+      { "name": "물", "amount": "150ml" }
+    ],
+    "seasoning": [
+      { "name": "간장", "amount": "150ml" },
+      { "name": "설탕", "amount": "150ml" }
+    ],
+    "steps": [
+      { "step": 1, "description": "깐마늘은 깨끗이 씻어 물기를 완전히 말리고 지저분한 꼭지 부분을 칼로 깔끔하게 잘라냅니다." },
+      { "step": 2, "description": "유리병에 손질한 마늘을 담고, 식초와 물을 부어 마늘의 아린 맛을 빼기 위해 1주일간 실온의 그늘진 곳에 둡니다." },
+      { "step": 3, "description": "1주일 후 마늘을 담가두었던 식초물 중 절반을 냄비에 따라냅니다." },
+      { "step": 4, "description": "따라낸 식초물에 간장와 설탕을 넣고 설탕이 녹을 때까지 한소끔 팔팔 끓인 뒤 완전히 식혀줍니다." },
+      { "step": 5, "description": "식힌 간장 양념물을 마늘이 담긴 병에 다시 부어줍니다." },
+      { "step": 6, "description": "뚜껑을 잘 닫아 그늘진 실온에서 2~3주간 더 숙성시킨 뒤 아린 맛이 빠지면 냉장고에 넣어 두고 먹습니다." }
+    ]
   }
 ]

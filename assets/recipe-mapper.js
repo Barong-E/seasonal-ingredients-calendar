@@ -169,6 +169,7 @@ export function getRecipeIdFromDishName(dishName) {
     '다시마부각': 'dasima-bugak',
     '양파장아찌': 'recipe-onion-pickle',
     '상추겉절이': 'recipe-lettuce-geotjeori',
+    '마늘장아찌': 'recipe-garlic-pickle',
   };
   return mapping[dishName] || null;
 }
