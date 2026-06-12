@@ -327,9 +327,12 @@ public class FoodScannerPlugin extends Plugin {
                     }
                     String rawText = resParts.getJSONObject(0).optString("text", "").trim();
 
-                    // Gemini의 마크다운 펜스 제거
-                    if (rawText.startsWith("```")) {
-                        rawText = rawText.replaceAll("```json", "").replaceAll("```", "").trim();
+                    // Gemini 응답에서 JSON 본문({...}) 부분만 정확하게 추출
+                    // startsWith 체크 방식보다 훨씬 안전 (개행/마크다운 펜스 등 무관)
+                    int jsonStart = rawText.indexOf('{');
+                    int jsonEnd = rawText.lastIndexOf('}');
+                    if (jsonStart != -1 && jsonEnd != -1 && jsonEnd > jsonStart) {
+                        rawText = rawText.substring(jsonStart, jsonEnd + 1);
                     }
 
                     // 최종 데이터를 Capacitor 플러그인의 JSObject로 빌드하여 웹뷰에 전달
@@ -451,8 +454,12 @@ public class FoodScannerPlugin extends Plugin {
                     }
                     String rawText = resParts.getJSONObject(0).optString("text", "").trim();
 
-                    if (rawText.startsWith("```")) {
-                        rawText = rawText.replaceAll("```json", "").replaceAll("```", "").trim();
+                    // Gemini 응답에서 JSON 본문({...}) 부분만 정확하게 추출
+                    // startsWith 체크 방식보다 훨씬 안전 (개행/마크다운 펜스 등 무관)
+                    int jsonStart = rawText.indexOf('{');
+                    int jsonEnd = rawText.lastIndexOf('}');
+                    if (jsonStart != -1 && jsonEnd != -1 && jsonEnd > jsonStart) {
+                        rawText = rawText.substring(jsonStart, jsonEnd + 1);
                     }
 
                     JSONObject resultData = new JSONObject(rawText);
