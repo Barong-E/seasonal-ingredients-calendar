@@ -935,18 +935,57 @@ async function takePhotoAndAnalyze() {
     if (loadingEl) loadingEl.style.display = 'flex';
     if (card) card.style.display = 'none';
 
-    // 네이티브에서 캡처 & Gemini 호출 일괄 실행
+    // 1차 이미지 분석 호출 (식재료 이름 & 여부 판정)
     const result = await FoodScanner.captureAndAnalyze();
     
-    // UI 원복
-    if (loadingEl) loadingEl.style.display = 'none';
-    if (shutterBtn) {
-      shutterBtn.style.display = 'flex';
-      shutterBtn.disabled = false;
-    }
+    if (result && result.is_food && result.name) {
+      const foodNameKo = result.name;
+      // 로컬 DB에서 식재료 검색
+      const localItem = AppState.allIngredients.find(i => i.name_ko === foodNameKo);
 
-    if (result) {
-      showDetectedFoodTips(result);
+      if (localItem) {
+        // 로컬 DB에 있는 경우: 2차 호출 없이 바로 결과 출력
+        if (loadingEl) loadingEl.style.display = 'none';
+        if (shutterBtn) {
+          shutterBtn.style.display = 'flex';
+          shutterBtn.disabled = false;
+        }
+        showDetectedFoodTips(result, localItem);
+      } else {
+        // 로컬 DB에 없는 경우: 텍스트 기반 2차 API 호출
+        try {
+          const tipsResult = await FoodScanner.getIngredientTipsByName({ ingredientName: foodNameKo });
+          const finalResult = {
+            ...result,
+            selection_tip: tipsResult.selection_tip,
+            seasonal_months: tipsResult.seasonal_months
+          };
+
+          if (loadingEl) loadingEl.style.display = 'none';
+          if (shutterBtn) {
+            shutterBtn.style.display = 'flex';
+            shutterBtn.disabled = false;
+          }
+          showDetectedFoodTips(finalResult, null);
+        } catch (tipsErr) {
+          console.error('2차 AI 분석 에러:', tipsErr);
+          // 2차 호출 실패 시 기본 안내와 함께 1차 정보로 결과 출력
+          if (loadingEl) loadingEl.style.display = 'none';
+          if (shutterBtn) {
+            shutterBtn.style.display = 'flex';
+            shutterBtn.disabled = false;
+          }
+          showDetectedFoodTips(result, null);
+        }
+      }
+    } else {
+      // 식재료가 아니거나 결과가 없을 때
+      if (loadingEl) loadingEl.style.display = 'none';
+      if (shutterBtn) {
+        shutterBtn.style.display = 'flex';
+        shutterBtn.disabled = false;
+      }
+      showDetectedFoodTips(result, null);
     }
   } catch (err) {
     console.error('AI 분석 에러:', err);
@@ -973,15 +1012,15 @@ async function takePhotoAndAnalyze() {
   }
 }
 
-function showDetectedFoodTips(result) {
+function showDetectedFoodTips(result, localItem) {
   const card = document.getElementById('scannerResultCard');
   const nameEl = document.getElementById('detectedFoodName');
   const tipsEl = document.getElementById('detectedFoodTips');
   
   if (!card || !nameEl || !tipsEl) return;
 
-  const foodNameKo = result.name;
-  const isFood = result.is_food;
+  const foodNameKo = result ? result.name : '';
+  const isFood = result ? result.is_food : false;
 
   // 식재료가 아니라고 판단된 경우 예외 처리
   if (!isFood || !foodNameKo) {
@@ -991,23 +1030,20 @@ function showDetectedFoodTips(result) {
     return;
   }
 
-  // 로컬 데이터베이스에서 동일한 이름의 식재료 찾기
-  const item = AppState.allIngredients.find(i => i.name_ko === foodNameKo);
-  
   // 1. 기존 DB에 있는 식재료라면, 훨씬 정확도가 높은 사람이 직접 적은 로컬 꿀팁을 노출함
-  if (item && item.selection_ko) {
+  if (localItem && localItem.selection_ko) {
     nameEl.textContent = `${foodNameKo} 고르는 방법`;
     
     const currentMonth = new Date().getMonth() + 1;
-    const isSeasonal = item.months && item.months.includes(currentMonth);
+    const isSeasonal = localItem.months && localItem.months.includes(currentMonth);
 
     if (isSeasonal) {
-      tipsEl.innerHTML = `<span style="color: #0A7B34; font-weight: bold; display: block; margin-bottom: 8px;">지금 제철입니다! 🌱</span>${item.selection_ko}`;
-    } else if (item.months && item.months.length > 0) {
-      const seasonalMonthsText = item.months.map(m => `${m}월`).join(', ');
-      tipsEl.innerHTML = `<span style="color: #ef4444; font-weight: bold; display: block; margin-bottom: 8px;">지금은 제철이 아닙니다. (${seasonalMonthsText}이 제철입니다.) ⚠️</span>${item.selection_ko}`;
+      tipsEl.innerHTML = `<span style="color: #0A7B34; font-weight: bold; display: block; margin-bottom: 8px;">지금 제철입니다! 🌱</span>${localItem.selection_ko}`;
+    } else if (localItem.months && localItem.months.length > 0) {
+      const seasonalMonthsText = localItem.months.map(m => `${m}월`).join(', ');
+      tipsEl.innerHTML = `<span style="color: #ef4444; font-weight: bold; display: block; margin-bottom: 8px;">지금은 제철이 아닙니다. (${seasonalMonthsText}이 제철입니다.) ⚠️</span>${localItem.selection_ko}`;
     } else {
-      tipsEl.textContent = item.selection_ko;
+      tipsEl.textContent = localItem.selection_ko;
     }
   } 
   // 2. 기존 DB에 없는 새로운 식재료라면, Gemini가 실시간으로 직접 작성한 꿀팁을 화면에 동적으로 뿌려줌

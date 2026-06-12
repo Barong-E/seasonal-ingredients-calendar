@@ -265,7 +265,7 @@ public class FoodScannerPlugin extends Plugin {
             // 이미지 바이트를 Base64로 인코딩하여 JSON에 내장시킴
             String base64Image = Base64.encodeToString(imageBytes, Base64.NO_WRAP);
 
-            // 구글 Gemini 1.5 API 명세 구조에 맞춤 JSON 빌드
+            // 구글 Gemini API 명세 구조에 맞춤 JSON 빌드
             JSONObject payload = new JSONObject();
             JSONArray contents = new JSONArray();
             JSONObject contentObj = new JSONObject();
@@ -277,8 +277,6 @@ public class FoodScannerPlugin extends Plugin {
                     "반드시 다음 JSON 형식으로만 응답해주세요 (백틱 ```json과 같은 마크다운 펜스는 절대 씌우지 말고 오직 순수 JSON 데이터만 반환하세요):\n" +
                     "{\n" +
                     "  \"name\": \"식재료 한국어 이름 (예: 사과, 마늘, 달래 등)\",\n" +
-                    "  \"selection_tip\": \"신선하고 맛있는 것을 고르는 꿀팁 (2~3문장으로 간결하게)\",\n" +
-                    "  \"seasonal_months\": [제철인 월 숫자 배열, 예: 봄나물이면 [3,4,5], 가을버섯이면 [9,10,11]],\n" +
                     "  \"is_food\": true 또는 false (식재료가 아닌 사물이나 사람인 경우 false로 설정)\n" +
                     "}");
             parts.put(textPart);
@@ -338,6 +336,127 @@ public class FoodScannerPlugin extends Plugin {
                     JSONObject resultData = new JSONObject(rawText);
                     JSObject ret = new JSObject();
                     ret.put("name", resultData.optString("name", ""));
+                    ret.put("is_food", resultData.optBoolean("is_food", false));
+
+                    call.resolve(ret);
+                } catch (Exception parseEx) {
+                    Log.e(TAG, "Gemini 응답 파싱 실패 또는 식재료가 아님", parseEx);
+                    // 에러가 나거나 JSON이 아닐 경우 "인식 불가" 상태로 웹뷰에 예쁘게 전달
+                    JSObject fallback = new JSObject();
+                    fallback.put("is_food", false);
+                    fallback.put("name", "");
+                    call.resolve(fallback);
+                }
+            } else if (responseCode == 429) {
+                Log.e(TAG, "Gemini API 할당량 초과 (코드: " + responseCode + ")");
+                call.reject("이달의 AI 스캔 무료 사용량(한도)을 모두 채웠어요. 다음 달에 다시 이용해 주세요! 💚", "API_LIMIT_EXCEEDED");
+            } else if (responseCode == 403) {
+                Log.e(TAG, "Gemini API 인증 실패 (코드: " + responseCode + ")");
+                call.reject("API 인증에 실패했습니다. 관리자에게 문의해 주세요.", "API_AUTH_FAILED");
+            } else {
+                Log.e(TAG, "Gemini API 오류 발생 (코드: " + responseCode + ")");
+                call.reject("AI 서버에서 오류가 발생했습니다. 잠시 후 다시 시도해 주세요.", "API_ERROR");
+            }
+        } catch (Exception e) {
+            Log.e(TAG, "Gemini API 연동 중 예외 발생", e);
+            call.reject("네트워크 연결 상태를 확인해 주시거나 잠시 후 다시 시도해 주세요.", "NETWORK_ERROR");
+        }
+    }
+
+    @PluginMethod
+    public void getIngredientTipsByName(PluginCall call) {
+        String ingredientName = call.getString("ingredientName");
+        if (ingredientName == null || ingredientName.trim().isEmpty()) {
+            call.reject("식재료 이름이 유효하지 않습니다.");
+            return;
+        }
+
+        if ("YOUR_GEMINI_API_KEY".equals(GEMINI_API_KEY) || GEMINI_API_KEY.isEmpty()) {
+            call.reject("Gemini API 키가 설정되지 않았습니다. FoodScannerPlugin.java 파일 상단의 GEMINI_API_KEY 변수에 발급받으신 키를 입력해 주세요.",
+                    "API_KEY_MISSING");
+            return;
+        }
+
+        cameraExecutor.execute(() -> {
+            try {
+                callGeminiAPITextOnly(ingredientName.trim(), call);
+            } catch (Exception e) {
+                Log.e(TAG, "식재료 팁 조회 실패", e);
+                call.reject("식재료 정보를 조회하는 데 실패했습니다: " + e.getMessage(), "API_ERROR");
+            }
+        });
+    }
+
+    private void callGeminiAPITextOnly(String name, PluginCall call) {
+        try {
+            URL url = new URL(
+                    "https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key="
+                            + GEMINI_API_KEY);
+            HttpURLConnection conn = (HttpURLConnection) url.openConnection();
+            conn.setRequestMethod("POST");
+            conn.setRequestProperty("Content-Type", "application/json; utf-8");
+            conn.setRequestProperty("X-goog-api-key", GEMINI_API_KEY);
+            conn.setDoOutput(true);
+            conn.setConnectTimeout(15000);
+            conn.setReadTimeout(15000);
+
+            JSONObject payload = new JSONObject();
+            JSONArray contents = new JSONArray();
+            JSONObject contentObj = new JSONObject();
+            JSONArray parts = new JSONArray();
+
+            JSONObject textPart = new JSONObject();
+            textPart.put("text", "대한민국(한국)의 사계절 기후와 수확 시기를 기준으로, 식재료 '" + name + "'의 제철 월과 고르는 방법을 알려주세요.\n" +
+                    "반드시 다음 JSON 형식으로만 응답해주세요 (백틱 ```json과 같은 마크다운 펜스는 절대 씌우지 말고 오직 순수 JSON 데이터만 반환하세요):\n" +
+                    "{\n" +
+                    "  \"selection_tip\": \"신선하고 맛있는 것을 고르는 꿀팁 (2~3문장으로 간결하게)\",\n" +
+                    "  \"seasonal_months\": [제철인 월 숫자 배열, 예: 봄나물이면 [3,4,5], 가을버섯이면 [9,10,11]]\n" +
+                    "}");
+            parts.put(textPart);
+
+            contentObj.put("parts", parts);
+            contents.put(contentObj);
+            payload.put("contents", contents);
+
+            String jsonPayload = payload.toString();
+
+            try (OutputStream os = conn.getOutputStream()) {
+                byte[] input = jsonPayload.getBytes("utf-8");
+                os.write(input, 0, input.length);
+            }
+
+            int responseCode = conn.getResponseCode();
+            if (responseCode == 200) {
+                BufferedReader br = new BufferedReader(new InputStreamReader(conn.getInputStream(), "utf-8"));
+                StringBuilder response = new StringBuilder();
+                String responseLine;
+                while ((responseLine = br.readLine()) != null) {
+                    response.append(responseLine.trim());
+                }
+
+                try {
+                    JSONObject responseJson = new JSONObject(response.toString());
+                    JSONArray candidates = responseJson.optJSONArray("candidates");
+                    if (candidates == null || candidates.length() == 0) {
+                        throw new Exception("No candidates found");
+                    }
+                    JSONObject candidate = candidates.getJSONObject(0);
+                    JSONObject content = candidate.optJSONObject("content");
+                    if (content == null) {
+                        throw new Exception("No content found (possibly blocked by safety filter)");
+                    }
+                    JSONArray resParts = content.optJSONArray("parts");
+                    if (resParts == null || resParts.length() == 0) {
+                        throw new Exception("No parts found");
+                    }
+                    String rawText = resParts.getJSONObject(0).optString("text", "").trim();
+
+                    if (rawText.startsWith("```")) {
+                        rawText = rawText.replaceAll("```json", "").replaceAll("```", "").trim();
+                    }
+
+                    JSONObject resultData = new JSONObject(rawText);
+                    JSObject ret = new JSObject();
                     ret.put("selection_tip", resultData.optString("selection_tip", ""));
 
                     JSONArray monthsArray = resultData.optJSONArray("seasonal_months");
@@ -348,31 +467,28 @@ public class FoodScannerPlugin extends Plugin {
                         }
                     }
                     ret.put("seasonal_months", jsMonths);
-                    ret.put("is_food", resultData.optBoolean("is_food", false));
 
                     call.resolve(ret);
                 } catch (Exception parseEx) {
-                    Log.e(TAG, "Gemini 응답 파싱 실패 또는 식재료가 아님", parseEx);
-                    // 에러가 나거나 JSON이 아닐 경우, 앱이 튕기거나 네트워크 오류로 처리하지 않고
-                    // "인식 불가" 상태로 웹뷰에 예쁘게 전달
+                    Log.e(TAG, "Gemini 응답 파싱 실패", parseEx);
                     JSObject fallback = new JSObject();
-                    fallback.put("is_food", false);
-                    fallback.put("name", "");
+                    fallback.put("selection_tip", "신선하고 고유의 색택이 선명하며 흠집이 없는 것을 고르는 것이 좋습니다.");
+                    fallback.put("seasonal_months", new JSArray());
                     call.resolve(fallback);
                 }
             } else if (responseCode == 429) {
                 Log.e(TAG, "Gemini API 할당량 초과 (코드: " + responseCode + ")");
-                call.reject("이달의 AI 스캔 한도를 초과했습니다.", "API_LIMIT_EXCEEDED");
+                call.reject("이달의 AI 스캔 무료 사용량(한도)을 모두 채웠어요. 다음 달에 다시 이용해 주세요! 💚", "API_LIMIT_EXCEEDED");
             } else if (responseCode == 403) {
                 Log.e(TAG, "Gemini API 인증 실패 (코드: " + responseCode + ")");
-                call.reject("API 인증에 실패했습니다. API 키를 확인해 주세요.", "API_AUTH_FAILED");
+                call.reject("API 인증에 실패했습니다. 관리자에게 문의해 주세요.", "API_AUTH_FAILED");
             } else {
                 Log.e(TAG, "Gemini API 오류 발생 (코드: " + responseCode + ")");
-                call.reject("서버 분석 오류가 발생했습니다. (코드: " + responseCode + ")", "API_ERROR");
+                call.reject("AI 서버에서 오류가 발생했습니다. 잠시 후 다시 시도해 주세요.", "API_ERROR");
             }
         } catch (Exception e) {
             Log.e(TAG, "Gemini API 연동 중 예외 발생", e);
-            call.reject("네트워크 상태를 확인해 주시거나 잠시 후 다시 시도해 주세요.", "NETWORK_ERROR");
+            call.reject("네트워크 연결 상태를 확인해 주시거나 잠시 후 다시 시도해 주세요.", "NETWORK_ERROR");
         }
     }
 
