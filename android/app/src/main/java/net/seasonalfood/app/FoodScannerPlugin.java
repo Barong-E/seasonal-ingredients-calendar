@@ -367,6 +367,181 @@ public class FoodScannerPlugin extends Plugin {
     }
 
     @PluginMethod
+    public void captureAndAnalyzeCalorie(PluginCall call) {
+        if (getPermissionState("camera") != PermissionState.GRANTED) {
+            call.reject("카메라 사용 권한이 없습니다.");
+            return;
+        }
+
+        if (imageCapture == null) {
+            call.reject("카메라가 준비되지 않았습니다.");
+            return;
+        }
+
+        if ("YOUR_GEMINI_API_KEY".equals(GEMINI_API_KEY) || GEMINI_API_KEY.isEmpty()) {
+            call.reject("Gemini API 키가 설정되지 않았습니다.", "API_KEY_MISSING");
+            return;
+        }
+
+        imageCapture.takePicture(ContextCompat.getMainExecutor(getActivity()),
+                new ImageCapture.OnImageCapturedCallback() {
+                    @Override
+                    public void onCaptureSuccess(@NonNull ImageProxy image) {
+                        cameraExecutor.execute(() -> {
+                            try {
+                                byte[] jpegBytes = imageToByteArray(image);
+                                image.close();
+                                byte[] optimizedBytes = resizeImage(jpegBytes, 800);
+                                callGeminiAPIForCalorie(optimizedBytes, call);
+                            } catch (Exception e) {
+                                Log.e(TAG, "칼로리 분석 이미지 처리 실패", e);
+                                call.reject("이미지 처리 실패: " + e.getMessage(), "IMAGE_PROCESSING_FAILED");
+                            }
+                        });
+                    }
+
+                    @Override
+                    public void onError(@NonNull ImageCaptureException exception) {
+                        Log.e(TAG, "칼로리 분석 사진 촬영 실패", exception);
+                        call.reject("사진 촬영 실패: " + exception.getMessage(), "CAPTURE_FAILED");
+                    }
+                });
+    }
+
+    private void callGeminiAPIForCalorie(byte[] imageBytes, PluginCall call) {
+        try {
+            URL url = new URL(
+                    "https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key="
+                            + GEMINI_API_KEY);
+            HttpURLConnection conn = (HttpURLConnection) url.openConnection();
+            conn.setRequestMethod("POST");
+            conn.setRequestProperty("Content-Type", "application/json; utf-8");
+            conn.setRequestProperty("X-goog-api-key", GEMINI_API_KEY);
+            conn.setDoOutput(true);
+            conn.setConnectTimeout(15000);
+            conn.setReadTimeout(15000);
+
+            String base64Image = Base64.encodeToString(imageBytes, Base64.NO_WRAP);
+
+            JSONObject payload = new JSONObject();
+            JSONArray contents = new JSONArray();
+            JSONObject contentObj = new JSONObject();
+            JSONArray parts = new JSONArray();
+
+            JSONObject textPart = new JSONObject();
+            textPart.put("text", "이 사진 속의 음식을 분석해주세요.\n" +
+                    "반드시 다음 JSON 형식으로만 응답해주세요 (백틱 ```json과 같은 마크다운 펜스는 절대 씌우지 말고 오직 순수 JSON 데이터만 반환하세요):\n" +
+                    "{\n" +
+                    "  \"name\": \"음식 이름 (한국어, 예: 김치볶음밥)\",\n" +
+                    "  \"calories\": 총 칼로리 숫자 (정수),\n" +
+                    "  \"protein\": 단백질 g 숫자 (정수),\n" +
+                    "  \"carbs\": 탄수화물 g 숫자 (정수),\n" +
+                    "  \"fat\": 지방 g 숫자 (정수),\n" +
+                    "  \"ingredients\": [\n" +
+                    "    {\"name\": \"재료명1\", \"calories\": 칼로리숫자},\n" +
+                    "    {\"name\": \"재료명2\", \"calories\": 칼로리숫자}\n" +
+                    "  ],\n" +
+                    "  \"is_food\": true 또는 false (음식이 아닌 사물이나 사람인 경우 false)\n" +
+                    "}");
+            parts.put(textPart);
+
+            JSONObject imagePart = new JSONObject();
+            JSONObject inlineData = new JSONObject();
+            inlineData.put("mimeType", "image/jpeg");
+            inlineData.put("data", base64Image);
+            imagePart.put("inlineData", inlineData);
+            parts.put(imagePart);
+
+            contentObj.put("parts", parts);
+            contents.put(contentObj);
+            payload.put("contents", contents);
+
+            String jsonPayload = payload.toString();
+
+            try (OutputStream os = conn.getOutputStream()) {
+                byte[] input = jsonPayload.getBytes("utf-8");
+                os.write(input, 0, input.length);
+            }
+
+            int responseCode = conn.getResponseCode();
+            if (responseCode == 200) {
+                BufferedReader br = new BufferedReader(new InputStreamReader(conn.getInputStream(), "utf-8"));
+                StringBuilder response = new StringBuilder();
+                String responseLine;
+                while ((responseLine = br.readLine()) != null) {
+                    response.append(responseLine.trim());
+                }
+
+                try {
+                    JSONObject responseJson = new JSONObject(response.toString());
+                    JSONArray candidates = responseJson.optJSONArray("candidates");
+                    if (candidates == null || candidates.length() == 0) {
+                        throw new Exception("No candidates found");
+                    }
+                    JSONObject candidate = candidates.getJSONObject(0);
+                    JSONObject content = candidate.optJSONObject("content");
+                    if (content == null) {
+                        throw new Exception("No content found");
+                    }
+                    JSONArray resParts = content.optJSONArray("parts");
+                    if (resParts == null || resParts.length() == 0) {
+                        throw new Exception("No parts found");
+                    }
+                    String rawText = resParts.getJSONObject(0).optString("text", "").trim();
+
+                    int jsonStart = rawText.indexOf('{');
+                    int jsonEnd = rawText.lastIndexOf('}');
+                    if (jsonStart != -1 && jsonEnd != -1 && jsonEnd > jsonStart) {
+                        rawText = rawText.substring(jsonStart, jsonEnd + 1);
+                    }
+
+                    JSONObject resultData = new JSONObject(rawText);
+                    JSObject ret = new JSObject();
+                    ret.put("name", resultData.optString("name", ""));
+                    ret.put("is_food", resultData.optBoolean("is_food", false));
+                    ret.put("calories", resultData.optInt("calories", 0));
+                    ret.put("protein", resultData.optInt("protein", 0));
+                    ret.put("carbs", resultData.optInt("carbs", 0));
+                    ret.put("fat", resultData.optInt("fat", 0));
+
+                    // 재료 목록 변환
+                    JSONArray ingredientsArray = resultData.optJSONArray("ingredients");
+                    JSArray jsIngredients = new JSArray();
+                    if (ingredientsArray != null) {
+                        for (int i = 0; i < ingredientsArray.length(); i++) {
+                            JSONObject ingObj = ingredientsArray.optJSONObject(i);
+                            if (ingObj != null) {
+                                JSObject jsIng = new JSObject();
+                                jsIng.put("name", ingObj.optString("name", ""));
+                                jsIng.put("calories", ingObj.optInt("calories", 0));
+                                jsIngredients.put(jsIng);
+                            }
+                        }
+                    }
+                    ret.put("ingredients", jsIngredients);
+
+                    call.resolve(ret);
+                } catch (Exception parseEx) {
+                    Log.e(TAG, "칼로리 분석 응답 파싱 실패", parseEx);
+                    JSObject fallback = new JSObject();
+                    fallback.put("is_food", false);
+                    fallback.put("name", "");
+                    call.resolve(fallback);
+                }
+            } else if (responseCode == 429) {
+                call.reject("이달의 AI 스캔 무료 사용량을 모두 채웠어요. 다음 달에 다시 이용해 주세요! 💚", "API_LIMIT_EXCEEDED");
+            } else if (responseCode == 403) {
+                call.reject("API 인증에 실패했습니다. 관리자에게 문의해 주세요.", "API_AUTH_FAILED");
+            } else {
+                call.reject("AI 서버에서 오류가 발생했습니다. 잠시 후 다시 시도해 주세요.", "API_ERROR");
+            }
+        } catch (Exception e) {
+            Log.e(TAG, "칼로리 분석 API 연동 중 예외 발생", e);
+            call.reject("네트워크 연결 상태를 확인해 주시거나 잠시 후 다시 시도해 주세요.", "NETWORK_ERROR");
+        }
+    }
+
+    @PluginMethod
     public void getIngredientTipsByName(PluginCall call) {
         String ingredientName = call.getString("ingredientName");
         if (ingredientName == null || ingredientName.trim().isEmpty()) {

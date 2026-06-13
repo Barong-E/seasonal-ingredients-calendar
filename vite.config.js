@@ -14,7 +14,8 @@ export default defineConfig({
         holidays: resolve(__dirname, 'holidays.html'),
         setting: resolve(__dirname, 'setting.html'),
         favorites: resolve(__dirname, 'favorites.html'),
-        search: resolve(__dirname, 'search.html')
+        search: resolve(__dirname, 'search.html'),
+        calorie: resolve(__dirname, 'calorie.html')
       },
       output: {
         entryFileNames: `assets/[name].js`,

@@ -1509,7 +1509,7 @@ body {
   bottom: 0;
   left: 0;
   right: 0;
-  height: calc(76px + env(safe-area-inset-bottom));
+  height: calc(60px + env(safe-area-inset-bottom));
   background: var(--glass-bg);
   backdrop-filter: blur(24px);
   -webkit-backdrop-filter: blur(24px);
@@ -1519,15 +1519,15 @@ body {
   align-items: stretch;
   justify-content: space-around;
   z-index: 100;
-  padding-top: 8px;
-  padding-bottom: calc(8px + env(safe-area-inset-bottom));
+  padding-top: 6px;
+  padding-bottom: calc(6px + env(safe-area-inset-bottom));
   box-sizing: border-box;
   /* iOS 노치 등 하단 여백 대응 */
 }
 
-/* GNB 공간만큼 main 하단에 여백 주기 (76px + safe-area + 여유 12px) */
+/* GNB 공간만큼 main 하단에 여백 주기 (60px + safe-area + 여유 12px) */
 main {
-  padding-bottom: calc(88px + env(safe-area-inset-bottom));
+  padding-bottom: calc(72px + env(safe-area-inset-bottom));
 }
 
 .gnb__item {
@@ -1549,6 +1549,8 @@ main {
 }
 
 .gnb__icon {
+  width: 20px;
+  height: 20px;
   transition: transform 0.2s cubic-bezier(0.34, 1.56, 0.64, 1);
 }
 
@@ -1674,8 +1676,9 @@ main {
 }
 
 .gnb__label {
-  font-size: 0.75rem;
+  font-size: 0.6rem;
   font-weight: 500;
+  letter-spacing: -0.02em;
 }
 
 /* 활성화 상태 */
@@ -1684,7 +1687,7 @@ main {
 }
 
 .gnb__item.active .gnb__icon {
-  transform: translateY(-2px) scale(1.1);
+  transform: translateY(-1px) scale(1.08);
 }
 
 .gnb__item.active .gnb__label {
