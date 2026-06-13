@@ -178,7 +178,7 @@
   justify-content: space-between;
   align-items: center;
   margin-bottom: 6px;
-  margin-right: 40px; /* 삭제 버튼 영역 회피를 위해 여백 크게 확보 */
+  padding-right: 44px; /* 삭제 버튼(28px)과 칼로리 텍스트 겹침 방지 여백 */
 }
 
 .meal-card__time-tag {
@@ -215,8 +215,8 @@
 
 .meal-card__delete-btn {
   position: absolute;
-  top: 14px;
-  right: 16px;
+  top: 8px;
+  right: 8px;
   width: 28px;
   height: 28px;
   border: none;
@@ -310,11 +310,6 @@
   cursor: pointer;
   z-index: 90;
   transition: all 0.2s cubic-bezier(0.34, 1.56, 0.64, 1);
-}
-
-.body-transparent .fab-camera,
-.body-transparent .gnb {
-  display: none !important;
 }
 
 .fab-camera:active {
@@ -871,79 +866,4 @@
   border-left: none;
   border-top: none;
   border-bottom-right-radius: 16px;
-}
-
-/* 커스텀 Confirm 모달 */
-.custom-confirm-overlay {
-  position: fixed;
-  inset: 0;
-  background: rgba(0, 0, 0, 0.4);
-  z-index: 10000;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  opacity: 0;
-  transition: opacity 0.2s ease;
-  backdrop-filter: blur(2px);
-}
-
-.custom-confirm-overlay.show {
-  opacity: 1;
-}
-
-.custom-confirm-modal {
-  background: #fff;
-  width: 280px;
-  border-radius: 16px;
-  padding: 24px 20px 20px;
-  text-align: center;
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
-  transform: scale(0.95);
-  transition: transform 0.2s cubic-bezier(0.34, 1.56, 0.64, 1);
-}
-
-.custom-confirm-overlay.show .custom-confirm-modal {
-  transform: scale(1);
-}
-
-.custom-confirm-modal p {
-  margin: 0 0 20px;
-  font-size: 1.05rem;
-  font-weight: 600;
-  color: #111827;
-  line-height: 1.5;
-}
-
-.custom-confirm-btns {
-  display: flex;
-  gap: 12px;
-}
-
-.custom-confirm-btns button {
-  flex: 1;
-  padding: 12px 0;
-  border-radius: 12px;
-  font-size: 0.95rem;
-  font-weight: 700;
-  border: none;
-  cursor: pointer;
-  transition: all 0.2s;
-}
-
-.custom-confirm-btns .btn-cancel {
-  background: #f3f4f6;
-  color: #4b5563;
-}
-
-.custom-confirm-btns .btn-cancel:active {
-  background: #e5e7eb;
-}
-
-.custom-confirm-btns .btn-confirm {
-  background: #ef4444;
-  color: #fff;
-}
-
-.custom-confirm-btns .btn-confirm:active {
-  background: #dc2626;
 }
