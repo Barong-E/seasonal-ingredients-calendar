@@ -45,11 +45,6 @@
       <div class="brand" aria-label="브랜드">
         <span class="brand__primary">🔥 칼로리 분석</span>
       </div>
-      <button id="btnTargetSetting" class="setting-button" type="button" aria-label="목표 칼로리 설정" title="목표 칼로리 설정">
-        <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor">
-          <path d="M19.14 12.94c.04-.31.06-.63.06-.94 0-.31-.02-.63-.06-.94l2.03-1.58a.49.49 0 0 0 .12-.61l-1.92-3.32a.488.488 0 0 0-.59-.22l-2.39.96c-.5-.38-1.03-.7-1.62-.94l-.36-2.54c-.04-.24-.24-.41-.48-.41h-3.84c-.24 0-.43.17-.47.41l-.36 2.54c-.59.24-1.13.57-1.62.94l-2.39-.96c-.22-.08-.47 0-.59.22L2.74 8.87c-.12.21-.08.47.12.61l2.03 1.58c-.04.31-.06.63-.06.94s.02.63.06.94l-2.03 1.58a.49.49 0 0 0-.12.61l1.92 3.32c.12.22.37.29.59.22l2.39-.96c.5.38 1.03.7 1.62.94l.36 2.54c.05.24.24.41.48.41h3.84c.24 0 .44-.17.47-.41l.36-2.54c.59-.24 1.13-.56 1.62-.94l2.39.96c.22.08.47 0 .59-.22l1.92-3.32c.12-.22.07-.47-.12-.61l-2.01-1.58zM12 15.6c-1.98 0-3.6-1.62-3.6-3.6s1.62-3.6 3.6-3.6 3.6 1.62 3.6 3.6-1.62 3.6-3.6 3.6z"/>
-        </svg>
-      </button>
     </div>
   </header>
 
@@ -69,7 +64,7 @@
         </svg>
         <div class="gauge-text">
           <span class="gauge-current" id="gaugeCurrentCal">0</span>
-          <span class="gauge-divider">/ <span id="gaugeTargetCal">2,000</span></span>
+          <span class="gauge-divider">/ <span id="btnTargetSetting" class="gauge-target-clickable" role="button" tabindex="0" aria-label="목표 칼로리 설정"><span id="gaugeTargetCal">2,000</span></span></span>
           <span class="gauge-unit">kcal</span>
         </div>
       </div>
@@ -220,7 +215,7 @@
       <svg class="gnb__icon" viewBox="0 0 24 24" width="20" height="20" fill="currentColor">
         <path d="M17 4a4 4 0 1 1 0 8 4 4 0 0 1 0-8zm-5 7a7.5 7.5 0 0 0-7.5 7.5C4.5 20.43 6.07 22 8 22h12c1.93 0 3.5-1.57 3.5-3.5 0-3.3-2.34-6.07-5.5-6.47V15c0 .55-.45 1-1 1s-1-.45-1-1v-2.88c-.64-.08-1.3-.12-2-.12z M7 15c-.55 0-1 .45-1 1v4h2v-4c0-.55-.45-1-1-1z" />
       </svg>
-      <span class="gnb__label">세기</span>
+      <span class="gnb__label">세시</span>
     </a>
     <a href="favorites.html" class="gnb__item">
       <svg class="gnb__icon" viewBox="0 0 24 24" width="20" height="20" fill="currentColor">

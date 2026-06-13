@@ -304,6 +304,17 @@ function showScannerOverlay() {
         <button class="scanner-exit-btn" id="calorieScannerExit" type="button">✕</button>
         <h2 class="scanner-title">🔥 칼로리 분석</h2>
       </div>
+      
+      <!-- 네모 가이드라인 (CalAI 스타일) -->
+      <div class="scanner-frame-container">
+        <div class="scanner-frame">
+          <div class="corner corner-tl"></div>
+          <div class="corner corner-tr"></div>
+          <div class="corner corner-bl"></div>
+          <div class="corner corner-br"></div>
+        </div>
+      </div>
+
       <p class="scanner-guide-text">음식을 화면 중앙에 맞추고<br>아래 버튼을 눌러주세요</p>
       <div class="scanner-bottom-area">
         <button class="scanner-shutter-btn" id="calorieShutterBtn" type="button">
@@ -336,17 +347,25 @@ async function takePhotoAndAnalyze() {
   if (shutterBtn) shutterBtn.disabled = true;
 
   try {
-    // 분석 오버레이 표시 (CalAI 스타일)
-    // 먼저 카메라 UI를 닫고 분석 오버레이로 전환
+    // 1. 촬영 실행 (카메라가 켜진 상태에서 즉시 캡처)
+    const captureResult = await FoodScanner.capturePhoto();
+    if (!captureResult || !captureResult.photo) {
+      throw new Error('사진 촬영에 실패했습니다.');
+    }
+    const photoData = captureResult.photo;
+
+    // 2. 카메라 끄기
     await stopCalorieCamera();
 
+    // 3. 분석 오버레이에 촬영한 이미지 설정 후 오버레이 노출
+    const analysisPhoto = document.getElementById('analysisPhoto');
+    if (analysisPhoto) {
+      analysisPhoto.src = photoData;
+    }
     showAnalysisOverlay();
 
-    // 카메라 재시작하여 촬영 (이미 stop 했으므로 다시 start)
-    // 사실은 촬영 후 바로 분석해야 하므로, 카메라를 다시 켜고 촬영 후 끔
-    await FoodScanner.startCamera();
-    const result = await FoodScanner.captureAndAnalyzeCalorie();
-    await FoodScanner.stopCamera();
+    // 4. Gemini API 분석 실행 (비동기)
+    const result = await FoodScanner.analyzeCalorie({ photo: photoData });
 
     if (!result || !result.is_food) {
       hideAnalysisOverlay();
@@ -359,6 +378,7 @@ async function takePhotoAndAnalyze() {
     showResultSheet(result);
   } catch (e) {
     hideAnalysisOverlay();
+    await stopCalorieCamera();
     console.error('분석 실패:', e);
     alert('분석에 실패했습니다: ' + (e.message || '다시 시도해주세요'));
   } finally {
