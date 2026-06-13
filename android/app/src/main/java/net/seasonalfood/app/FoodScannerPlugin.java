@@ -428,7 +428,22 @@ public class FoodScannerPlugin extends Plugin {
                             try {
                                 byte[] jpegBytes = imageToByteArray(image);
                                 image.close();
-                                byte[] optimizedBytes = resizeImage(jpegBytes, 800);
+                                
+                                // 1:1 중앙 크롭 (비트맵)
+                                android.graphics.Bitmap originalBitmap = android.graphics.BitmapFactory.decodeByteArray(jpegBytes, 0, jpegBytes.length);
+                                int width = originalBitmap.getWidth();
+                                int height = originalBitmap.getHeight();
+                                int minEdge = Math.min(width, height);
+                                int cropX = (width - minEdge) / 2;
+                                int cropY = (height - minEdge) / 2;
+                                android.graphics.Bitmap croppedBitmap = android.graphics.Bitmap.createBitmap(originalBitmap, cropX, cropY, minEdge, minEdge);
+                                
+                                // 800x800 수준으로 리사이즈를 위한 ByteArray로 변환
+                                java.io.ByteArrayOutputStream out = new java.io.ByteArrayOutputStream();
+                                croppedBitmap.compress(android.graphics.Bitmap.CompressFormat.JPEG, 90, out);
+                                byte[] croppedBytes = out.toByteArray();
+                                
+                                byte[] optimizedBytes = resizeImage(croppedBytes, 800);
                                 String base64Image = Base64.encodeToString(optimizedBytes, Base64.NO_WRAP);
 
                                 JSObject ret = new JSObject();

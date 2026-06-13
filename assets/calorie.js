@@ -241,20 +241,50 @@ function renderMealList() {
   listEl.querySelectorAll('[data-delete]').forEach(btn => {
     btn.addEventListener('click', (e) => {
       e.stopPropagation();
-      if (!confirm('이 기록을 정말 삭제하시겠습니까?')) return;
       const id = btn.dataset.delete;
-      const card = btn.closest('.meal-card');
-      if (card) {
-        card.style.transform = 'translateX(-100%)';
-        card.style.opacity = '0';
-        card.style.transition = 'all 0.3s ease';
-      }
-      setTimeout(() => {
-        deleteMeal(id);
-        renderMealList();
-        updateGauge();
-      }, 300);
+      showCustomConfirm('이 기록을 정말 삭제하시겠습니까?', () => {
+        const card = btn.closest('.meal-card');
+        if (card) {
+          card.style.transform = 'translateX(-100%)';
+          card.style.opacity = '0';
+          card.style.transition = 'all 0.3s ease';
+        }
+        setTimeout(() => {
+          deleteMeal(id);
+          renderMealList();
+          updateGauge();
+        }, 300);
+      });
     });
+  });
+}
+
+function showCustomConfirm(message, onConfirm) {
+  const overlay = document.createElement('div');
+  overlay.className = 'custom-confirm-overlay';
+  overlay.innerHTML = `
+    <div class="custom-confirm-modal">
+      <p>${message}</p>
+      <div class="custom-confirm-btns">
+        <button class="btn-cancel">취소</button>
+        <button class="btn-confirm">삭제</button>
+      </div>
+    </div>
+  `;
+  document.body.appendChild(overlay);
+
+  // 강제 리플로우 후 애니메이션 클래스 추가
+  requestAnimationFrame(() => overlay.classList.add('show'));
+
+  const closeOverlay = () => {
+    overlay.classList.remove('show');
+    setTimeout(() => overlay.remove(), 200);
+  };
+
+  overlay.querySelector('.btn-cancel').addEventListener('click', closeOverlay);
+  overlay.querySelector('.btn-confirm').addEventListener('click', () => {
+    onConfirm();
+    closeOverlay();
   });
 }
 
@@ -419,14 +449,8 @@ async function takePhotoAndAnalyze() {
     }
     const rawPhotoData = captureResult.photo;
 
-    // 2. 가이드라인 상자 부분 크롭 실행
-    let photoData;
-    try {
-      photoData = await cropImageToScannerFrame(rawPhotoData);
-    } catch (cropErr) {
-      console.warn('이미지 크롭 실패, 원본 전송 시도:', cropErr);
-      photoData = rawPhotoData; // 실패 시 안전장치로 원본 사용
-    }
+    // 2. JS 기반 추가 크롭 로직 제거 (네이티브에서 이미 1:1 크롭되어 반환됨)
+    const photoData = rawPhotoData;
 
     // 3. 카메라 끄기
     await stopCalorieCamera();
