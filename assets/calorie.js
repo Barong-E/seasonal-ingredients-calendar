@@ -641,7 +641,7 @@ function handleSaveTarget() {
 }
 
 // ============================================================
-// 8. 토스트 메시지
+// 8. 토스트 메시지 및 앱 설치 유도 모달
 // ============================================================
 function showToast(message) {
   const existing = document.querySelector('.camera-fallback-toast');
@@ -654,8 +654,41 @@ function showToast(message) {
   setTimeout(() => toast.remove(), 3000);
 }
 
+function showCameraFallbackModal() {
+  const existing = document.getElementById('webCameraInfoModal');
+  if (existing) existing.remove();
+
+  const modal = document.createElement('div');
+  modal.id = 'webCameraInfoModal';
+  modal.className = 'info-modal';
+  modal.setAttribute('role', 'dialog');
+  modal.setAttribute('aria-modal', 'true');
+  modal.innerHTML = `
+    <div class="info-modal__backdrop"></div>
+    <div class="info-modal__content">
+      <p class="info-modal__message">📷 음식 칼로리 분석은 모바일 앱 전용 기능이에요. 지금 바로 앱을 다운로드받아 인공지능 음식 인식 및 칼로리 기록 기능을 경험해 보세요! 🌱</p>
+      <div class="info-modal__buttons">
+        <button type="button" class="info-modal__btn info-modal__btn--ios" disabled>iOS (준비중)</button>
+        <a href="https://play.google.com/store/apps/details?id=net.seasonalfood.app&referrer=utm_source%3Dseasonalfood_web%26utm_medium%3Dinternal%26utm_campaign%3Dcalorie_scan_popup" target="_blank" rel="noopener noreferrer" class="info-modal__btn info-modal__btn--android">Android 설치</a>
+      </div>
+      <button type="button" class="info-modal__close">닫기</button>
+    </div>
+  `;
+
+  function close() {
+    modal.remove();
+    document.body.style.overflow = '';
+  }
+
+  modal.querySelector('.info-modal__backdrop').addEventListener('click', close);
+  modal.querySelector('.info-modal__close').addEventListener('click', close);
+
+  document.body.appendChild(modal);
+  document.body.style.overflow = 'hidden';
+}
+
 function showCameraFallbackToast() {
-  showToast('📱 카메라 기능은 앱에서만 사용할 수 있어요!');
+  showCameraFallbackModal();
 }
 
 // ============================================================
