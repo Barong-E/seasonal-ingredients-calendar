@@ -178,6 +178,7 @@
   justify-content: space-between;
   align-items: center;
   margin-bottom: 6px;
+  padding-right: 32px; /* 삭제 버튼(28px)과 칼로리 텍스트 겹침 방지 여백 */
 }
 
 .meal-card__time-tag {

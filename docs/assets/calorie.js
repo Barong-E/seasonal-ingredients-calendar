@@ -8,14 +8,14 @@ import"./app-back-button.js";const k="calorie:target",_="calorie:meals:",z=2e3,$
           </div>
           <p class="meal-card__name">${a.name||"알 수 없는 음식"}</p>
           <div class="meal-card__macros">
-            <span>단 ${a.protein||0}g</span>
             <span>탄 ${a.carbs||0}g</span>
+            <span>단 ${a.protein||0}g</span>
             <span>지 ${a.fat||0}g</span>
           </div>
           ${o}
         </div>
       </div>
-    `}).join(""),t.querySelectorAll("[data-delete]").forEach(a=>{a.addEventListener("click",s=>{s.stopPropagation();const r=a.dataset.delete,o=a.closest(".meal-card");o&&(o.style.transform="translateX(-100%)",o.style.opacity="0",o.style.transition="all 0.3s ease"),setTimeout(()=>{J(r),w(),I()},300)})})}}let O=!1,m=null;function Z(){try{window.Capacitor&&window.Capacitor.isNativePlatform&&window.Capacitor.isNativePlatform()&&(O=!0,m=window.Capacitor.Plugins.FoodScanner)}catch(e){console.warn("네이티브 플러그인 초기화 실패:",e)}}async function ee(){if(!O||!m){de();return}try{await m.startCamera(),document.documentElement.classList.add("body-transparent"),te()}catch(e){console.error("카메라 시작 실패:",e),alert("카메라를 시작할 수 없습니다: "+(e.message||""))}}function te(){let e=document.getElementById("calorieScannerOverlay");e||(e=document.createElement("div"),e.id="calorieScannerOverlay",e.className="scanner-overlay",e.innerHTML=`
+    `}).join(""),t.querySelectorAll("[data-delete]").forEach(a=>{a.addEventListener("click",s=>{if(s.stopPropagation(),!confirm("이 기록을 정말 삭제하시겠습니까?"))return;const r=a.dataset.delete,o=a.closest(".meal-card");o&&(o.style.transform="translateX(-100%)",o.style.opacity="0",o.style.transition="all 0.3s ease"),setTimeout(()=>{J(r),w(),I()},300)})})}}let O=!1,m=null;function Z(){try{window.Capacitor&&window.Capacitor.isNativePlatform&&window.Capacitor.isNativePlatform()&&(O=!0,m=window.Capacitor.Plugins.FoodScanner)}catch(e){console.warn("네이티브 플러그인 초기화 실패:",e)}}async function ee(){if(!O||!m){de();return}try{await m.startCamera(),document.documentElement.classList.add("body-transparent"),te()}catch(e){console.error("카메라 시작 실패:",e),alert("카메라를 시작할 수 없습니다: "+(e.message||""))}}function te(){let e=document.getElementById("calorieScannerOverlay");e||(e=document.createElement("div"),e.id="calorieScannerOverlay",e.className="scanner-overlay",e.innerHTML=`
       <div class="scanner-header">
         <button class="scanner-exit-btn" id="calorieScannerExit" type="button">✕</button>
         <h2 class="scanner-title">🔥 칼로리 분석</h2>

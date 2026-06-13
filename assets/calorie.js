@@ -227,8 +227,8 @@ function renderMealList() {
           </div>
           <p class="meal-card__name">${meal.name || '알 수 없는 음식'}</p>
           <div class="meal-card__macros">
-            <span>단 ${meal.protein || 0}g</span>
             <span>탄 ${meal.carbs || 0}g</span>
+            <span>단 ${meal.protein || 0}g</span>
             <span>지 ${meal.fat || 0}g</span>
           </div>
           ${ingredientChips}
@@ -241,6 +241,7 @@ function renderMealList() {
   listEl.querySelectorAll('[data-delete]').forEach(btn => {
     btn.addEventListener('click', (e) => {
       e.stopPropagation();
+      if (!confirm('이 기록을 정말 삭제하시겠습니까?')) return;
       const id = btn.dataset.delete;
       const card = btn.closest('.meal-card');
       if (card) {
