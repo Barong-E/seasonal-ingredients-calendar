@@ -340,11 +340,14 @@ async function stopCalorieCamera() {
   if (overlay) overlay.style.display = 'none';
 }
 
+let isAnalyzingCancelled = false;
+
 async function takePhotoAndAnalyze() {
   if (!FoodScanner) return;
 
   const shutterBtn = document.getElementById('calorieShutterBtn');
   if (shutterBtn) shutterBtn.disabled = true;
+  isAnalyzingCancelled = false;
 
   try {
     // 1. 촬영 실행 (카메라가 켜진 상태에서 즉시 캡처)
@@ -366,6 +369,8 @@ async function takePhotoAndAnalyze() {
 
     // 4. Gemini API 분석 실행 (비동기)
     const result = await FoodScanner.analyzeCalorie({ photo: photoData });
+
+    if (isAnalyzingCancelled) return; // 분석 중 취소된 경우 무시
 
     if (!result || !result.is_food) {
       hideAnalysisOverlay();
@@ -423,6 +428,7 @@ function showAnalysisOverlay() {
 
   // 취소 버튼
   document.getElementById('analysisCancelBtn').onclick = () => {
+    isAnalyzingCancelled = true;
     hideAnalysisOverlay();
     stopCalorieCamera();
   };

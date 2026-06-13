@@ -799,7 +799,9 @@
   text-underline-offset: 4px;
   transition: opacity 0.2s;
   outline: none;
-  padding: 2px 4px;
+  display: inline-block;
+  padding: 4px 8px;
+  margin: -4px -8px;
   border-radius: 4px;
 }
 .gauge-target-clickable:active {
