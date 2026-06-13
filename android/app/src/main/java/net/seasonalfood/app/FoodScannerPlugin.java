@@ -514,7 +514,10 @@ public class FoodScannerPlugin extends Plugin {
                     "    {\"name\": \"재료명2\", \"calories\": 칼로리숫자}\n" +
                     "  ],\n" +
                     "  \"is_food\": true 또는 false (음식이 아닌 사물이나 사람인 경우 false)\n" +
-                    "}");
+                    "}\n\n" +
+                    "주의사항:\n" +
+                    "1. ingredients 목록에는 물, 소금, 간장, 고춧가루, 식용유 같은 자잘한 조미료나 기본 양념은 제외하고, 주요 식재료(육류, 채소류, 곡류 등) 위주로 적어주세요.\n" +
+                    "2. ingredients 목록에 나열된 모든 개별 재료들의 calories 합계는 반드시 음식 전체의 calories보다 작거나 같아야 합니다. 절대 전체 칼로리를 초과하지 않아야 합니다.");
             parts.put(textPart);
 
             JSONObject imagePart = new JSONObject();

@@ -131,8 +131,9 @@ async function loadRegisteredIngredients() {
 }
 
 function findRegisteredIngredient(name) {
+  if (!name) return null;
   return registeredIngredients.find(i =>
-    name.includes(i.name) || i.name.includes(name)
+    i.name && (name.includes(i.name) || i.name.includes(name))
   );
 }
 
@@ -326,6 +327,11 @@ function showScannerOverlay() {
   }
   overlay.style.display = '';
 
+  const fab = document.getElementById('fabCamera');
+  if (fab) fab.style.display = 'none';
+  const gnb = document.querySelector('.gnb');
+  if (gnb) gnb.style.display = 'none';
+
   // 이벤트 바인딩
   document.getElementById('calorieShutterBtn').onclick = takePhotoAndAnalyze;
   document.getElementById('calorieScannerExit').onclick = stopCalorieCamera;
@@ -338,6 +344,61 @@ async function stopCalorieCamera() {
   document.documentElement.classList.remove('body-transparent');
   const overlay = document.getElementById('calorieScannerOverlay');
   if (overlay) overlay.style.display = 'none';
+
+  const fab = document.getElementById('fabCamera');
+  if (fab) fab.style.display = '';
+  const gnb = document.querySelector('.gnb');
+  if (gnb) gnb.style.display = '';
+}
+
+function cropImageToScannerFrame(photoDataUrl) {
+  return new Promise((resolve, reject) => {
+    const img = new Image();
+    img.onload = () => {
+      try {
+        const canvas = document.createElement('canvas');
+        const ctx = canvas.getContext('2d');
+
+        // 고화질 크롭 이미지용 해상도 설정 (520x520)
+        const targetSize = 520;
+        canvas.width = targetSize;
+        canvas.height = targetSize;
+
+        const screenW = window.innerWidth;
+        const screenH = window.innerHeight;
+        const imgW = img.width;
+        const imgH = img.height;
+
+        const screenRatio = screenW / screenH;
+        const imgRatio = imgW / imgH;
+
+        let scale = 1;
+        if (imgRatio > screenRatio) {
+          // 이미지가 가로로 넓음
+          scale = imgH / screenH;
+        } else {
+          // 이미지가 세로로 김
+          scale = imgW / screenW;
+        }
+
+        const cropSize = 260 * scale;
+        const cropX = (imgW - cropSize) / 2;
+        const cropY = (imgH - cropSize) / 2;
+
+        ctx.drawImage(
+          img,
+          cropX, cropY, cropSize, cropSize,
+          0, 0, targetSize, targetSize
+        );
+
+        resolve(canvas.toDataURL('image/jpeg', 0.9));
+      } catch (err) {
+        reject(err);
+      }
+    };
+    img.onerror = () => reject(new Error('촬영된 이미지 데이터를 분석 범위에 맞추어 처리하는 데 실패했습니다.'));
+    img.src = photoDataUrl;
+  });
 }
 
 let isAnalyzingCancelled = false;
@@ -355,19 +416,28 @@ async function takePhotoAndAnalyze() {
     if (!captureResult || !captureResult.photo) {
       throw new Error('사진 촬영에 실패했습니다.');
     }
-    const photoData = captureResult.photo;
+    const rawPhotoData = captureResult.photo;
 
-    // 2. 카메라 끄기
+    // 2. 가이드라인 상자 부분 크롭 실행
+    let photoData;
+    try {
+      photoData = await cropImageToScannerFrame(rawPhotoData);
+    } catch (cropErr) {
+      console.warn('이미지 크롭 실패, 원본 전송 시도:', cropErr);
+      photoData = rawPhotoData; // 실패 시 안전장치로 원본 사용
+    }
+
+    // 3. 카메라 끄기
     await stopCalorieCamera();
 
-    // 3. 분석 오버레이에 촬영한 이미지 설정 후 오버레이 노출
+    // 4. 분석 오버레이에 크롭된 이미지 설정 후 오버레이 노출
     const analysisPhoto = document.getElementById('analysisPhoto');
     if (analysisPhoto) {
       analysisPhoto.src = photoData;
     }
     showAnalysisOverlay();
 
-    // 4. Gemini API 분석 실행 (비동기)
+    // 5. Gemini API 분석 실행 (비동기)
     const result = await FoodScanner.analyzeCalorie({ photo: photoData });
 
     if (isAnalyzingCancelled) return; // 분석 중 취소된 경우 무시
@@ -468,7 +538,8 @@ function showResultSheet(result) {
     ingredientsEl.innerHTML = `
       <p class="result-ingredients__title">📋 주요 재료</p>
       <div class="result-ingredients__list">
-        ${result.ingredients.map(ing => {
+        ${(result.ingredients || []).map(ing => {
+          if (!ing || !ing.name) return '';
           const reg = findRegisteredIngredient(ing.name);
           if (reg) {
             const seasonal = isCurrentlySeasonal(reg.months);
