@@ -178,7 +178,12 @@
   justify-content: space-between;
   align-items: center;
   margin-bottom: 6px;
-  padding-right: 44px; /* 삭제 버튼(28px)과 칼로리 텍스트 겹침 방지 여백 */
+}
+
+.meal-card__top-right {
+  display: flex;
+  align-items: center;
+  gap: 8px;
 }
 
 .meal-card__time-tag {
@@ -214,11 +219,8 @@
 }
 
 .meal-card__delete-btn {
-  position: absolute;
-  top: 8px;
-  right: 8px;
-  width: 28px;
-  height: 28px;
+  width: 20px;
+  height: 20px;
   border: none;
   background: #f3f4f6;
   border-radius: 50%;
@@ -226,10 +228,9 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 0.75rem;
+  font-size: 0.65rem;
   color: #9ca3af;
   transition: all 0.2s;
-  z-index: 2;
 }
 
 .meal-card__delete-btn:active {

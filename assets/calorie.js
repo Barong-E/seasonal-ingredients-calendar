@@ -220,10 +220,12 @@ function renderMealList() {
     return `
       <div class="meal-card" data-id="${meal.id}">
         <div class="meal-card__inner">
-          <button class="meal-card__delete-btn" data-delete="${meal.id}" aria-label="삭제">✕</button>
           <div class="meal-card__top">
             <span class="meal-card__time-tag">${timeLabel} ${time}</span>
-            <span class="meal-card__cal">${numberWithCommas(meal.calories || 0)} kcal</span>
+            <div class="meal-card__top-right">
+              <span class="meal-card__cal">${numberWithCommas(meal.calories || 0)} kcal</span>
+              <button class="meal-card__delete-btn" data-delete="${meal.id}" aria-label="삭제">✕</button>
+            </div>
           </div>
           <p class="meal-card__name">${meal.name || '알 수 없는 음식'}</p>
           <div class="meal-card__macros">
