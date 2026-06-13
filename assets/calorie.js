@@ -451,9 +451,10 @@ async function takePhotoAndAnalyze() {
       return;
     }
 
-    // 분석 완료 → 결과 바텀시트 표시
-    hideAnalysisOverlay();
-    showResultSheet(result);
+    // 분석 완료 → 결과 바텀시트 표시 (100% 완료 연출 포함)
+    completeAnalysisOverlay(() => {
+      showResultSheet(result);
+    });
   } catch (e) {
     hideAnalysisOverlay();
     await stopCalorieCamera();
@@ -474,7 +475,7 @@ function showAnalysisOverlay() {
   if (!overlay) return;
   overlay.style.display = '';
 
-  // 가짜 프로그레스 (0% → 90%를 3초에 걸쳐)
+  // 가짜 프로그레스 (비선형 감속 연출)
   let progress = 0;
   const circumference = 2 * Math.PI * 26;
   const circle = document.getElementById('analysisProgressCircle');
@@ -490,7 +491,19 @@ function showAnalysisOverlay() {
   ];
 
   progressInterval = setInterval(() => {
-    progress = Math.min(progress + Math.random() * 8, 90);
+    // 0~50%는 빠르게, 50~80%는 보통, 80~95%는 아주 느리게, 95% 이상은 극도로 느리게 증가
+    let increment = 0;
+    if (progress < 50) {
+      increment = Math.random() * 5 + 3; // 3~8%
+    } else if (progress < 80) {
+      increment = Math.random() * 2 + 1; // 1~3%
+    } else if (progress < 95) {
+      increment = Math.random() * 0.5 + 0.1; // 0.1~0.6%
+    } else {
+      increment = Math.random() * 0.05 + 0.01; // 0.01~0.06%
+    }
+    progress = Math.min(progress + increment, 98); // 최대 98%까지 점진적으로 올라감
+
     const offset = circumference * (1 - progress / 100);
     if (circle) circle.style.strokeDashoffset = offset;
     if (text) text.textContent = Math.round(progress) + '%';
@@ -514,6 +527,29 @@ function hideAnalysisOverlay() {
   }
   const overlay = document.getElementById('analysisOverlay');
   if (overlay) overlay.style.display = 'none';
+}
+
+function completeAnalysisOverlay(callback) {
+  if (progressInterval) {
+    clearInterval(progressInterval);
+    progressInterval = null;
+  }
+  
+  const circumference = 2 * Math.PI * 26;
+  const circle = document.getElementById('analysisProgressCircle');
+  const text = document.getElementById('analysisProgressText');
+  const status = document.getElementById('analysisStatus');
+  
+  if (circle) circle.style.strokeDashoffset = 0; // 100% 채움
+  if (text) text.textContent = '100%';
+  if (status) status.textContent = '🎉 분석 완료!';
+  
+  // 350ms 대기 후 오버레이 닫고 다음 단계 진행
+  setTimeout(() => {
+    const overlay = document.getElementById('analysisOverlay');
+    if (overlay) overlay.style.display = 'none';
+    if (callback) callback();
+  }, 350);
 }
 
 // ============================================================
