@@ -8447,66 +8447,6 @@
     "servingsUnit": "ml"
   },
   {
-    "id": "chamoe-muchim",
-    "name": "참외무침",
-    "category": "밑반찬",
-    "description": "아삭한 참외를 매콤새콤하게 무쳐 입맛을 돋우는 반찬입니다.",
-    "image": "recipes/recipe-chamoe-muchim.png",
-    "servings": 2,
-    "cookTime": "15분",
-    "difficulty": "초급",
-    "ingredients": [
-      {
-        "name": "참외",
-        "amount": "1개"
-      }
-    ],
-    "steps": [
-      {
-        "step": 1,
-        "description": "참외는 껍질을 벗겨 씨를 긁어낸 뒤 얇게 반달 썰기 합니다."
-      },
-      {
-        "step": 2,
-        "description": "분량의 양념을 섞어 양념장을 만듭니다."
-      },
-      {
-        "step": 3,
-        "description": "참외와 양념장을 가볍게 버무려 냅니다."
-      }
-    ],
-    "relatedIngredients": [
-      "참외"
-    ],
-    "relatedHolidays": [],
-    "seasoning": [
-      {
-        "name": "고추장",
-        "amount": "1큰술"
-      },
-      {
-        "name": "고춧가루",
-        "amount": "0.5큰술"
-      },
-      {
-        "name": "식초",
-        "amount": "1큰술"
-      },
-      {
-        "name": "설탕",
-        "amount": "0.5큰술"
-      },
-      {
-        "name": "참기름",
-        "amount": "1작은술"
-      },
-      {
-        "name": "통깨",
-        "amount": "1작은술"
-      }
-    ]
-  },
-  {
     "id": "gotgam",
     "name": "곶감",
     "category": "디저트",

@@ -153,8 +153,10 @@
     "description_ja": "",
     "popular_dish": "광어회",
     "months": [
-      10,
-      11
+      11,
+      12,
+      1,
+      2
     ],
     "recommended_for": [
       "소화 기능이 약하신 분",
@@ -207,8 +209,8 @@
     "description_ja": "",
     "popular_dish": "군고구마, 고구마맛탕",
     "months": [
-      9,
-      10
+      10,
+      11
     ],
     "recommended_for": [
       "피부 건강과 미용에 관심 있는 분",
@@ -641,10 +643,9 @@
     "calories_per_serving": "중간 크기 1개(15g) 약 5kcal",
     "popular_dish": "딸기잼",
     "months": [
+      12,
       1,
-      2,
-      3,
-      4
+      2
     ],
     "recommended_for": [
       "만성 피로를 느끼는 직장인이나 수험생",
@@ -694,7 +695,6 @@
     "calories_per_serving": "1개(20g) 약 6kcal",
     "popular_dish": "매실청, 매실장아찌",
     "months": [
-      5,
       6
     ],
     "recommended_for": [
@@ -877,8 +877,7 @@
     "popular_dish": "미나리무침, 미나리전",
     "months": [
       3,
-      4,
-      5
+      4
     ],
     "recommended_for": [
       "가벼운 식단 관리가 필요한 분",
@@ -1011,9 +1010,7 @@
     "calories_per_serving": "한 줌(100g) 약 52kcal",
     "popular_dish": "복분자주, 복분자청",
     "months": [
-      6,
-      7,
-      8
+      6
     ],
     "recommended_for": [
       "만성 피로를 느끼는 직장인이나 수험생",
@@ -1467,9 +1464,10 @@
     "calories_per_serving": "1마리(200g) 약 174kcal",
     "popular_dish": "오징어볶음",
     "months": [
-      6,
       7,
-      8
+      8,
+      9,
+      10
     ],
     "recommended_for": [
       "만성 피로를 느끼는 직장인이나 수험생"
@@ -1653,7 +1651,8 @@
     "calories_per_serving": "1마리(120g) 약 233kcal",
     "popular_dish": "전어구이",
     "months": [
-      9
+      9,
+      10
     ],
     "recommended_for": [
       "성장기 어린이 및 뼈 건강 관리가 필요한 분",
@@ -1687,32 +1686,6 @@
       "장 건강 개선 및 변비 해소가 필요한 분"
     ],
     "selection_ko": "몸통의 색이 짙은 갈색을 띠고 윤기가 나며 흡반(빨판)이 선명하고 촘촘히 살아있는 것이 신선하고 쫄깃합니다."
-  },
-  {
-    "name_ko": "참외",
-    "category": "과일",
-    "image": "ingredients/oriental-melon.png",
-    "description_ko": "아삭하고 시원한 단맛이 특징인 여름 대표 과일. 수분 함량이 높고 칼륨이 풍부하여 이뇨 작용을 도와 몸의 부기를 빼는 데 효과적입니다.",
-    "preparation_ko": "겉을 씻고 세척수 제거 후, 먹기 직전 반 갈라 씨를 긁어냅니다.",
-    "storage_room_temp": "통풍되는 서늘한 곳에 단기 보관, 직사광선은 피합니다.",
-    "storage_refrigerator": "절단 후 랩 밀착해 2~3일 내 섭취 권장.",
-    "storage_freezer": "깍둑 썰어 소분 냉동 가능, 해동 시 수분 유출 감안.",
-    "name_en": "",
-    "name_ja": "",
-    "description_en": "",
-    "description_ja": "",
-    "external_url": "https://link.coupang.com/a/cU4bzq",
-    "calories_per_100g": 31,
-    "calories_per_serving": "1개(300g) 약 93kcal",
-    "popular_dish": "참외무침",
-    "months": [
-      7
-    ],
-    "recommended_for": [
-      "비타민 충전이 필요한 분",
-      "제철 음식으로 입맛을 돋우고 싶은 분"
-    ],
-    "selection_ko": "노란색이 짙고 선명하며 하얀 줄(골)이 깊고 하얗게 뚜렷한 것이 아삭하고 단맛이 강합니다. 크기가 너무 크지 않고 두드렸을 때 맑은 소리가 나는 것을 고르세요."
   },
   {
     "name_ko": "취나물",
@@ -1784,7 +1757,8 @@
     "calories_per_serving": "10알(100g) 약 146kcal",
     "popular_dish": "군밤, 밤조림",
     "months": [
-      9
+      9,
+      10
     ],
     "recommended_for": [
       "만성 피로를 느끼는 직장인이나 수험생",
@@ -2277,8 +2251,6 @@
     "calories_per_serving": "중간 크기 1개(200g) 약 36kcal",
     "popular_dish": "토마토 마리네이드",
     "months": [
-      5,
-      6,
       7,
       8,
       9
@@ -2304,8 +2276,7 @@
     "popular_dish": "아스파라거스 베이컨 말이",
     "months": [
       4,
-      5,
-      6
+      5
     ],
     "external_url": "https://link.coupang.com/a/eCLBad",
     "recommended_for": [
@@ -2400,7 +2371,8 @@
     "months": [
       4,
       5,
-      6
+      10,
+      11
     ],
     "popular_dish": "갑오징어 볶음, 갑오징어 숙회",
     "external_url": "https://link.coupang.com/a/dITp22KYI8",
@@ -2501,9 +2473,9 @@
     "description_ja": "",
     "popular_dish": "부추전",
     "months": [
+      3,
       4,
-      5,
-      6
+      5
     ],
     "recommended_for": [
       "만성 피로를 느끼는 직장인이나 수험생",
@@ -2557,9 +2529,7 @@
     "popular_dish": "참나물무침",
     "months": [
       5,
-      6,
-      7,
-      8
+      6
     ],
     "recommended_for": [
       "만성 피로를 느끼는 직장인이나 수험생",
@@ -2666,9 +2636,10 @@
     "description_ja": "",
     "popular_dish": "상추겉절이",
     "months": [
-      6,
-      7,
-      8
+      4,
+      5,
+      9,
+      10
     ],
     "recommended_for": [
       "스트레스 완화가 필요하신 분",
@@ -2720,7 +2691,7 @@
     "description_en": "",
     "description_ja": "",
     "popular_dish": "아욱된장국",
-    "months": [6, 7],
+    "months": [9, 10],
     "recommended_for": [
       "성장기 어린이 및 뼈 건강 관리가 필요한 분",
       "장 건강 개선 및 변비 해소가 필요한 분"
@@ -2744,7 +2715,7 @@
     "description_en": "",
     "description_ja": "",
     "popular_dish": "근대국",
-    "months": [6, 7, 8],
+    "months": [5, 6, 10, 11],
     "recommended_for": [
       "눈이 쉽게 피로해지는 직장인이나 수험생",
       "빈혈 예방이 필요한 임산부나 여성"
@@ -2816,7 +2787,7 @@
     "description_en": "",
     "description_ja": "",
     "popular_dish": "물미역초무침, 물미역두부무침",
-    "months": [12, 1, 2, 3],
+    "months": [12, 1, 2],
     "recommended_for": [
       "뼈를 튼튼하게 하고 싶은 성장기 어린이",
       "식이섬유 섭취와 식사 관리가 필요한 분"
