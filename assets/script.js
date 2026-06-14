@@ -10,11 +10,12 @@ const FoodScanner = registerPlugin('FoodScanner');
 // 띵동 제철음식 메인 스크립트
 // 규칙: ES 모듈 없이 단일 페이지 스크립트
 
-const CACHE_KEY = 'seasons:ingredients:v66';
+const CACHE_KEY = 'seasons:ingredients:v67';
 const CACHE_TTL_MS = 24 * 60 * 60 * 1000; // 24h
 
 // 구버전 캐시 강제 삭제 (버전 충돌 방지)
 try {
+  localStorage.removeItem('seasons:ingredients:v66');
   localStorage.removeItem('seasons:ingredients:v65');
   localStorage.removeItem('seasons:ingredients:v64');
   localStorage.removeItem('seasons:ingredients:v60');
@@ -394,7 +395,7 @@ async function loadIngredients() {
     }
   } catch {}
 
-  const res = await fetch('data/ingredients.json?v=v53', { cache: 'no-cache' });
+  const res = await fetch('data/ingredients.json?v=v54', { cache: 'no-cache' });
   if (!res.ok) throw new Error('데이터 로드 실패');
   const data = await res.json();
   try {
@@ -486,7 +487,7 @@ function createCard(item) {
   const popularDishValue = node.querySelector('.popular-dish-value');
 
   title.textContent = item.name_ko || '';
-  const imgPath = `images/${item.image || '_fallback.png'}?v=v12`;
+  const imgPath = `images/${item.image || '_fallback.png'}?v=v13`;
   img.alt = item.name_ko ? `${item.name_ko} 이미지` : '재료 이미지';
   img.onerror = () => { 
     img.onerror = null; 

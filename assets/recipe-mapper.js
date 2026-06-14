@@ -183,7 +183,12 @@ export function getRecipeIdFromDishName(dishName) {
     "고사리나물볶음": "recipe-bracken-namul",
     "도루묵찌개": "recipe-sandfish-stew",
     "대게찜": "recipe-steamed-snow-crab",
-    "고추장아찌": "recipe-chili-pickles"
+    "고추장아찌": "recipe-chili-pickles",
+    "머윗대들깨볶음": "recipe-meowidae-stir-fry",
+    "유채나물무침": "recipe-yuchaenamul-muchim",
+    "해삼물회": "recipe-haesam-mulhoe",
+    "조기구이": "recipe-jogi-gui",
+    "대파전": "recipe-daepajeon"
   };
   return mapping[dishName] || null;
 }

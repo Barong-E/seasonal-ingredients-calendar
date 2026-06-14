@@ -1,4 +1,4 @@
-7[
+[
   {
     "name_ko": "가지",
     "category": "채소",
@@ -2951,5 +2951,151 @@
     ],
     "selection_ko": "색이 선명하고 고르며 표면이 매끄럽고 윤기가 흐르고 만졌을 때 단단하고 팽팽한 탄력이 있는 고추가 아삭하고 맛있습니다.",
     "external_url": "https://link.coupang.com/a/eAzZHVD6yG"
+  },
+  {
+    "name_ko": "머위",
+    "category": "채소",
+    "image": "ingredients/meowidae.png",
+    "description_ko": "쌉싸름한 특유의 향과 아작아작 씹히는 식감이 일품인 봄철 대표 채소입니다. 식이섬유와 칼슘이 풍부하여 장 건강과 뼈 건강에 도움을 줍니다.",
+    "preparation_ko": "끓는 물에 소금을 약간 넣고 데친 후 껍질의 섬유질을 벗겨내어 찬물에 담가 쓴맛을 우려냅니다.",
+    "storage_room_temp": "온도와 습도가 높으면 쉽게 무르므로 실온 보관은 권장하지 않습니다.",
+    "storage_refrigerator": "물에 적신 키친타월로 감싼 후 비닐 팩에 담아 냉장 보관하며 2~3일 내에 사용합니다.",
+    "storage_freezer": "데친 후 물기를 약간 남겨 지퍼백에 밀봉 냉동 보관하면 1개월 정도 보관할 수 있습니다.",
+    "calories_per_100g": 27,
+    "calories_per_serving": "1회 분량(100g) 약 27kcal",
+    "name_en": "Butterbur",
+    "name_ja": "",
+    "description_en": "",
+    "description_ja": "",
+    "popular_dish": "머윗대들깨볶음",
+    "months": [
+      3,
+      4,
+      5
+    ],
+    "recommended_for": [
+      "장 건강 개선 및 변비 해소가 필요한 분",
+      "가벼운 식단 관리가 필요한 분",
+      "뼈 건강 관리가 필요한 분"
+    ],
+    "selection_ko": "줄기가 너무 굵지 않고 탄력이 있으며 연한 초록빛을 띠는 것이 좋습니다.",
+    "external_url": ""
+  },
+  {
+    "name_ko": "유채나물",
+    "category": "채소",
+    "image": "ingredients/yuchaenamul.png",
+    "description_ko": "겨울철 매서운 추위를 견디고 자라나 봄철 단맛이 가득한 나물입니다. 비타민 C와 식이섬유가 풍부하여 면역력 강화와 피로 해소에 좋습니다.",
+    "preparation_ko": "시든 잎을 다듬고 흐르는 물에 깨끗이 씻은 후 소금물에 가볍게 데쳐서 찬물에 헹궈 사용합니다.",
+    "storage_room_temp": "쉽게 시들고 무르기 때문에 실온 보관은 피하는 것이 좋습니다.",
+    "storage_refrigerator": "씻지 않은 채 신문지나 키친타월로 감싸 채소칸에 보관하며 3~4일 내에 섭취합니다.",
+    "storage_freezer": "데친 뒤 물기를 꼭 짜서 한 번 먹을 만큼 소분 밀봉하여 냉동하면 1개월 정도 보관 가능합니다.",
+    "calories_per_100g": 32,
+    "calories_per_serving": "1회 분량(70g) 약 22kcal",
+    "name_en": "Rapeseed Green",
+    "name_ja": "",
+    "description_en": "",
+    "description_ja": "",
+    "popular_dish": "유채나물무침",
+    "months": [
+      3,
+      4
+    ],
+    "recommended_for": [
+      "가벼운 식단 관리가 필요한 분",
+      "장 건강 개선 및 변비 해소가 필요한 분",
+      "면역력 강화가 필요한 분"
+    ],
+    "selection_ko": "잎이 연하고 초록색이 선명하며 줄기가 굵지 않고 부드러운 것이 좋습니다.",
+    "external_url": ""
+  },
+  {
+    "name_ko": "해삼",
+    "category": "해산물",
+    "image": "ingredients/haesam.png",
+    "description_ko": "'바다의 인삼'이라 불릴 만큼 영양이 우수하며 오독오독 씹히는 독특한 식감이 매력적입니다. 타우린과 미네랄이 풍부하여 원기 회복과 피부 미용에 탁월합니다.",
+    "preparation_ko": "양 끝을 자르고 배를 갈라 내장과 뻘을 제거한 뒤 흐르는 물에 깨끗이 씻어 소금물에 가볍게 헹굽니다.",
+    "storage_room_temp": "부패가 매우 빨라 상온 보관은 절대 금지합니다.",
+    "storage_refrigerator": "손질 후 물기를 완전히 빼서 밀폐용기에 담아 당일 섭취하는 것을 권장합니다.",
+    "storage_freezer": "손질 후 살만 소분 진공 밀봉하여 급속 냉동하며, 조리 시 냉장 해동하여 단시간 내 사용합니다.",
+    "calories_per_100g": 15,
+    "calories_per_serving": "1회 분량(100g) 약 15kcal",
+    "name_en": "Sea Cucumber",
+    "name_ja": "",
+    "description_en": "",
+    "description_ja": "",
+    "popular_dish": "해삼물회",
+    "months": [
+      12,
+      1,
+      2
+    ],
+    "recommended_for": [
+      "다이어트를 계획 중인 분",
+      "혈관 건강 관리가 필요하신 분",
+      "만성 피로를 느끼는 직장인이나 수험생"
+    ],
+    "selection_ko": "표면의 돌기(가시)가 뾰족하고 단단하며, 만졌을 때 피부가 단단하고 탄력 있는 것이 신선합니다.",
+    "external_url": ""
+  },
+  {
+    "name_ko": "참조기",
+    "category": "해산물",
+    "image": "ingredients/jogi.png",
+    "description_ko": "살이 아주 부드럽고 맛이 담백하여 남녀노소 모두에게 사랑받는 생선입니다. 양질의 단백질이 풍부하고 소화가 아주 잘 되어 영양 보충에 훌륭합니다.",
+    "preparation_ko": "칼등으로 비늘을 긁어내고 지느러미를 다듬은 뒤 깨끗이 씻어 소금간을 한 뒤 물기를 뺍니다.",
+    "storage_room_temp": "실온 보관은 불가합니다.",
+    "storage_refrigerator": "손질 후 키친타월로 감싸 밀폐용기에 담아 1~2일 내에 조리합니다.",
+    "storage_freezer": "손질한 뒤 소금간을 엷게 하여 한 마리씩 랩으로 포장 후 냉동하면 2~3개월간 보관할 수 있습니다.",
+    "calories_per_100g": 135,
+    "calories_per_serving": "중간 크기 1마리(100g) 약 135kcal",
+    "name_en": "Yellow Croaker",
+    "name_ja": "",
+    "description_en": "",
+    "description_ja": "",
+    "popular_dish": "조기구이",
+    "months": [
+      9,
+      10,
+      11,
+      12
+    ],
+    "recommended_for": [
+      "소화 기능이 약하신 분",
+      "단백질 보충이 필요한 운동인이나 성장기 어린이",
+      "영양가 있는 건강한 한 끼가 필요한 분"
+    ],
+    "selection_ko": "눈동자가 맑고 투명하며 비늘이 은빛으로 고르게 빛나고, 배 부분이 노란빛을 띠는 것이 좋은 참조기입니다.",
+    "external_url": ""
+  },
+  {
+    "name_ko": "대파",
+    "category": "채소",
+    "image": "ingredients/daepa.png",
+    "description_ko": "한국 요리에서 빼놓을 수 없는 필수 채소로, 겨울철 대파는 영양과 단맛이 최고조에 달합니다. 알리신 성분이 몸을 따뜻하게 하고 면역력을 돕습니다.",
+    "preparation_ko": "뿌리를 잘라내고 겉껍질을 한 꺼풀 벗겨낸 뒤 흐르는 물에 깨끗이 씻어 용도에 맞춰 썹니다.",
+    "storage_room_temp": "흙이 묻은 채 신문지에 여러 겹 싸서 서늘하고 그늘진 곳에 세워 두면 1주일 정도 보관 가능합니다.",
+    "storage_refrigerator": "깨끗이 씻어 물기를 완전히 닦아내고 밀폐 용기에 키친타월을 깔고 보관합니다.",
+    "storage_freezer": "송송 썰거나 어슷하게 썰어 물기를 완전히 빼고 소분 밀폐하여 냉동하면 2~3개월 사용 가능합니다.",
+    "calories_per_100g": 29,
+    "calories_per_serving": "대파 1대(100g) 약 29kcal",
+    "name_en": "Scallion",
+    "name_ja": "",
+    "description_en": "",
+    "description_ja": "",
+    "popular_dish": "대파전",
+    "months": [
+      12,
+      1,
+      2,
+      3
+    ],
+    "recommended_for": [
+      "면역력 강화가 필요한 분",
+      "몸을 따뜻하게 유지하고 싶은 분",
+      "가벼운 식단 관리가 필요한 분"
+    ],
+    "selection_ko": "흰 대 부분이 길고 단단하며 곧게 뻗어 있고, 초록 잎이 선명하며 마르지 않은 것이 좋습니다.",
+    "external_url": ""
   }
 ]

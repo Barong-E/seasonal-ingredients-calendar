@@ -10591,5 +10591,192 @@
       "풋고추"
     ],
     "relatedHolidays": []
+  },
+  {
+    "id": "recipe-meowidae-stir-fry",
+    "name": "머윗대들깨볶음",
+    "category": "채소",
+    "description": "들깨의 고소함 and 머윗대의 아작한 식감이 어우러져 밥반찬으로 훌륭한 건강식 요리입니다.",
+    "servings": 4,
+    "servingsUnit": "인분",
+    "cookTime": "30분",
+    "difficulty": "초급",
+    "image": "recipes/recipe-meowidae-stir-fry.png",
+    "ingredients": [
+      { "name": "머윗대", "amount": "300g" },
+      { "name": "식용유", "amount": "1큰술" },
+      { "name": "들기름", "amount": "1큰술" },
+      { "name": "다시마 육수", "amount": "0.5컵" }
+    ],
+    "seasoning": [
+      { "name": "다진 마늘", "amount": "1작은술" },
+      { "name": "국간장", "amount": "1큰술" },
+      { "name": "들깨가루", "amount": "3큰술" },
+      { "name": "소금", "amount": "0.5작은술" }
+    ],
+    "steps": [
+      { "step": 1, "description": "데친 머윗대는 껍질을 벗기고 먹기 좋은 크기로 어슷하게 썰어 준비합니다." },
+      { "step": 2, "description": "달군 팬에 식용유와 들기름을 두르고 다진 마늘과 머윗대를 넣어 고루 볶습니다." },
+      { "step": 3, "description": "머윗대에 기름이 돌며 부드러워지면 국간장과 다시마 육수를 붓고 끓입니다." },
+      { "step": 4, "description": "국물이 자작하게 졸아들면 들깨가루를 넣어 고루 섞어줍니다." },
+      { "step": 5, "description": "소금으로 마지막 간을 맞춘 뒤 가볍게 볶아 그릇에 담아냅니다." }
+    ],
+    "tips": [
+      "머윗대를 삶아서 찬물에 반나절 정도 담가두면 특유의 쓴맛과 아린 맛을 뺄 수 있습니다.",
+      "다시마 육수 대신 멸치 육수를 사용하면 더욱 깊은 감칠맛을 즐길 수 있습니다."
+    ],
+    "relatedIngredients": [
+      "머위"
+    ],
+    "relatedHolidays": []
+  },
+  {
+    "id": "recipe-yuchaenamul-muchim",
+    "name": "유채나물무침",
+    "category": "채소",
+    "description": "봄 내음 가득한 유채나물을 구수한 된장에 조물조물 무쳐내어 봄철 입맛을 돋우는 웰빙 반찬입니다.",
+    "servings": 3,
+    "servingsUnit": "인분",
+    "cookTime": "15분",
+    "difficulty": "초급",
+    "image": "recipes/recipe-yuchaenamul-muchim.png",
+    "ingredients": [
+      { "name": "유채나물", "amount": "200g" },
+      { "name": "대파", "amount": "1작은술" }
+    ],
+    "seasoning": [
+      { "name": "된장", "amount": "1큰술" },
+      { "name": "매실청", "amount": "1작은술" },
+      { "name": "다진 마늘", "amount": "0.5작은술" },
+      { "name": "참기름", "amount": "1큰술" },
+      { "name": "깨소금", "amount": "1작은술" }
+    ],
+    "steps": [
+      { "step": 1, "description": "유채나물은 억센 줄기와 시든 잎을 손질하여 흐르는 물에 깨끗이 씻습니다." },
+      { "step": 2, "description": "끓는 물에 소금을 약간 넣고 유채나물을 넣어 살짝 데친 후, 곧바로 찬물에 헹궈 물기를 꼭 짭니다." },
+      { "step": 3, "description": "물기를 짠 유채나물은 먹기 좋은 크기로 썰어 뭉친 부분을 풀어줍니다." },
+      { "step": 4, "description": "볼에 된장, 매실청, 다진 마늘, 다진 대파를 넣어 잘 섞어 양념장을 만듭니다." },
+      { "step": 5, "description": "유채나물에 양념을 넣어 조물조물 무치다가 참기름과 깨소금을 뿌려 가볍게 버무려 완성합니다." }
+    ],
+    "tips": [
+      "유채나물은 특유의 아삭한 식감이 매력이므로 너무 오래 데치지 마세요.",
+      "된장 대신 고추장이나 간장 양념으로 무쳐도 색다른 맛을 즐길 수 있습니다."
+    ],
+    "relatedIngredients": [
+      "유채나물"
+    ],
+    "relatedHolidays": []
+  },
+  {
+    "id": "recipe-haesam-mulhoe",
+    "name": "해삼물회",
+    "category": "해산물",
+    "description": "오독오독 씹히는 매력적인 싱싱한 해삼에 새콤달콤하고 시원한 살얼음 육수를 부어 깔끔하게 즐기는 별미 요리입니다.",
+    "servings": 2,
+    "servingsUnit": "인분",
+    "cookTime": "20분",
+    "difficulty": "초급",
+    "image": "recipes/recipe-haesam-mulhoe.png",
+    "ingredients": [
+      { "name": "해삼", "amount": "200g" },
+      { "name": "오이", "amount": "0.5개" },
+      { "name": "양파", "amount": "0.5개" },
+      { "name": "깻잎", "amount": "5장" },
+      { "name": "양배추", "amount": "50g" },
+      { "name": "물", "amount": "2컵" }
+    ],
+    "seasoning": [
+      { "name": "고추장", "amount": "3큰술" },
+      { "name": "고춧가루", "amount": "1큰술" },
+      { "name": "설탕", "amount": "2큰술" },
+      { "name": "식초", "amount": "4큰술" },
+      { "name": "다진 마늘", "amount": "1큰술" },
+      { "name": "참기름", "amount": "1큰술" },
+      { "name": "통깨", "amount": "1큰술" }
+    ],
+    "steps": [
+      { "step": 1, "description": "손질된 해삼은 깨끗이 씻은 후 물기를 빼고 얇고 먹기 좋은 크기로 썹니다." },
+      { "step": 2, "description": "오이, 양파, 깻잎, 양배추는 얇게 채 썰어 차가운 물에 잠시 담가 아삭함을 더한 뒤 건져 물기를 완전히 뺍니다." },
+      { "step": 3, "description": "볼에 고추장, 고춧가루, 설탕, 식초, 다진 마늘을 넣고 물을 부어 시원한 물회 양념 육수를 만듭니다." },
+      { "step": 4, "description": "대접에 채 썬 채소를 소복하게 둘러 담고 그 위에 썰어 둔 해삼을 풍성하게 얹습니다." },
+      { "step": 5, "description": "차갑게 보관한 물회 육수를 부어준 후 참기름과 통깨를 뿌려 완성합니다." }
+    ],
+    "tips": [
+      "양념 육수를 미리 냉동실에 얼려 살얼음 상태로 부어 먹으면 훨씬 더 시원합니다.",
+      "기호에 따라 소면이나 밥을 곁들여 국물에 말아 드시면 좋습니다."
+    ],
+    "relatedIngredients": [
+      "해삼"
+    ],
+    "relatedHolidays": []
+  },
+  {
+    "id": "recipe-jogi-gui",
+    "name": "조기구이",
+    "category": "해산물",
+    "description": "참조기의 짭조름하고 보들보들한 생선 살 맛을 그대로 느낄 수 있는 노릇노릇하고 바삭한 전통 생선구이입니다.",
+    "servings": 2,
+    "servingsUnit": "인분",
+    "cookTime": "15분",
+    "difficulty": "초급",
+    "image": "recipes/recipe-jogi-gui.png",
+    "ingredients": [
+      { "name": "참조기", "amount": "2마리" },
+      { "name": "식용유", "amount": "2큰술" }
+    ],
+    "seasoning": [
+      { "name": "소금", "amount": "0.5작은술" }
+    ],
+    "steps": [
+      { "step": 1, "description": "조기는 비늘을 긁어내고 지느러미와 꼬리를 손질한 뒤 씻어 키친타월로 물기를 깨끗이 제거합니다." },
+      { "step": 2, "description": "몸통 양면에 어슷하게 칼집을 넣고 소금을 골고루 뿌려 절여둡니다." },
+      { "step": 3, "description": "달군 팬에 식용유를 두르고 중약불에서 조기를 올려 굽습니다." },
+      { "step": 4, "description": "생선 살이 흩어지지 않게 뒤집어 가며 앞뒤로 노릇노릇하고 바삭하게 구워 그릇에 냅니다." }
+    ],
+    "tips": [
+      "조기 겉면에 전분가루나 밀가루를 얇게 입혀 구우면 살이 덜 부서지고 껍질이 더 바삭해집니다.",
+      "너무 자주 뒤집으면 살이 으깨지므로 한쪽 면이 충분히 구워진 후에 뒤집어 주는 것이 좋습니다."
+    ],
+    "relatedIngredients": [
+      "참조기"
+    ],
+    "relatedHolidays": []
+  },
+  {
+    "id": "recipe-daepajeon",
+    "name": "대파전",
+    "category": "채소",
+    "description": "달콤한 겨울 대파를 통째로 가지런히 올려 바삭하고 노릇하게 지져낸 전으로, 대파 고유의 달큰하고 개운한 향을 가득 품은 별미전입니다.",
+    "servings": 2,
+    "servingsUnit": "인분",
+    "cookTime": "20분",
+    "difficulty": "초급",
+    "image": "recipes/recipe-daepajeon.png",
+    "ingredients": [
+      { "name": "대파", "amount": "2대" },
+      { "name": "부침가루", "amount": "1컵" },
+      { "name": "물", "amount": "0.8컵" },
+      { "name": "식용유", "amount": "3큰술" }
+    ],
+    "seasoning": [
+      { "name": "국간장", "amount": "1작은술" },
+      { "name": "홍고추", "amount": "1개" }
+    ],
+    "steps": [
+      { "step": 1, "description": "대파는 깨끗이 씻어 팬의 길이에 맞춰 자르고, 흰 대 부분은 칼끝으로 반을 갈라 구워지기 좋게 펼칩니다." },
+      { "step": 2, "description": "홍고추는 얇게 송송 썰어 고명용으로 둡니다." },
+      { "step": 3, "description": "볼에 부침가루, 물, 국간장을 붓고 뭉치지 않게 잘 풀어 약간 묽은 반죽을 만듭니다." },
+      { "step": 4, "description": "달군 팬에 식용유를 두르고 대파를 나란히 올려 고정합니다." },
+      { "step": 5, "description": "대파 위에 반죽을 골고루 끼얹은 뒤 얇게 펴주고 송송 썬 홍고추를 군데군데 고명으로 올립니다." },
+      { "step": 6, "description": "대파 아랫면이 노릇하고 바삭해지면 뒤집어서 반대면도 뒤집개로 꾹꾹 눌러가며 노릇하게 구워 완성합니다." }
+    ],
+    "tips": [
+      "대파 흰 대 부분을 칼등으로 톡톡 두드려주면 숨이 죽어 흩어지지 않고 반죽과 잘 밀착됩니다.",
+      "부침가루에 튀김가루를 반씩 섞어 사용하면 훨씬 바삭하고 고소합니다."
+    ],
+    "relatedIngredients": [
+      "대파"
+    ],
+    "relatedHolidays": []
   }
 ]
