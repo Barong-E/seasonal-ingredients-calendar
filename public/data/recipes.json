@@ -10457,5 +10457,139 @@
       "단호박"
     ],
     "relatedHolidays": []
+  },
+  {
+    "id": "recipe-bracken-namul",
+    "name": "고사리나물볶음",
+    "category": "채소",
+    "description": "삶은 고사리에 고소한 들기름과 국간장으로 조물조물 간을 해 볶아낸 전통 나물 요리입니다.",
+    "servings": 2,
+    "servingsUnit": "인분",
+    "cookTime": "20분",
+    "difficulty": "하",
+    "image": "recipes/recipe-bracken-namul.png",
+    "ingredients": [
+      { "name": "삶은 고사리", "amount": "200g" },
+      { "name": "대파", "amount": "0.5대" }
+    ],
+    "seasoning": [
+      { "name": "국간장", "amount": "1.5큰술" },
+      { "name": "들기름", "amount": "2큰술" },
+      { "name": "다진 마늘", "amount": "1작은술" },
+      { "name": "통깨", "amount": "1작은술" },
+      { "name": "물", "amount": "3큰술" }
+    ],
+    "steps": [
+      { "step": 1, "description": "삶은 고사리는 지저분한 밑동을 잘라내고 먹기 좋은 길이로 자릅니다." },
+      { "step": 2, "description": "대파는 잘게 다져 준비합니다." },
+      { "step": 3, "description": "볼에 고사리를 넣고 국간장, 들기름, 다진 마늘을 넣어 조물조물 무쳐 밑간을 해둡니다." },
+      { "step": 4, "description": "팬에 밑간한 고사리를 넣어 중불에서 볶다가, 물을 넣고 뚜껑을 덮어 약불에서 뜸을 들이며 익힙니다." },
+      { "step": 5, "description": "국물이 자작해지면 다진 대파를 넣고 가볍게 볶아준 뒤, 불을 끄고 통깨를 뿌려 완성합니다." }
+    ],
+    "relatedIngredients": [
+      "고사리"
+    ],
+    "relatedHolidays": []
+  },
+  {
+    "id": "recipe-sandfish-stew",
+    "name": "도루묵찌개",
+    "category": "해산물",
+    "description": "톡톡 터지는 도루묵 알과 시원하고 칼칼한 국물이 추운 겨울 몸을 따뜻하게 녹여주는 동해안 별미 찌개입니다.",
+    "servings": 2,
+    "servingsUnit": "인분",
+    "cookTime": "30분",
+    "difficulty": "하",
+    "image": "recipes/recipe-sandfish-stew.png",
+    "ingredients": [
+      { "name": "알도루묵", "amount": "4마리" },
+      { "name": "무", "amount": "150g" },
+      { "name": "양파", "amount": "0.5개" },
+      { "name": "대파", "amount": "0.5대" },
+      { "name": "청양고추", "amount": "1개" },
+      { "name": "물", "amount": "600ml" }
+    ],
+    "seasoning": [
+      { "name": "고춧가루", "amount": "2큰술" },
+      { "name": "국간장", "amount": "1.5큰술" },
+      { "name": "맛술", "amount": "1큰술" },
+      { "name": "다진 마늘", "amount": "1큰술" },
+      { "name": "소금", "amount": "0.5작은술" }
+    ],
+    "steps": [
+      { "step": 1, "description": "도루묵은 지느러미와 꼬리를 떼어내고 흐르는 물에 깨끗이 씻어 물기를 뺍니다. 알이 흘러나오지 않게 주의합니다." },
+      { "step": 2, "description": "무는 얇고 네모나게 썰고, 양파는 채 썰고, 대파와 청양고추는 어슷썰기합니다." },
+      { "step": 3, "description": "냄비에 무와 물을 넣고 먼저 끓여 시원한 무 육수를 우려냅니다." },
+      { "step": 4, "description": "무가 투명하게 익으면 고춧가루, 국간장, 맛술, 다진 마늘을 넣어 양념 국물을 끓입니다." },
+      { "step": 5, "description": "국물이 끓어오르면 도루묵과 양파를 넣고 중불에서 생선이 푹 익을 때까지 조리합니다. 알이 완전히 익을 때까지 충분히 끓여줍니다." },
+      { "step": 6, "description": "대파와 청양고추를 올리고 소금으로 마지막 간을 맞춘 뒤 한소끔 더 끓여 완성합니다." }
+    ],
+    "relatedIngredients": [
+      "도루묵",
+      "무"
+    ],
+    "relatedHolidays": []
+  },
+  {
+    "id": "recipe-steamed-snow-crab",
+    "name": "대게찜",
+    "category": "해산물",
+    "description": "살이 꽉 찬 대게를 김이 모락모락 나는 찜기에 부드럽게 쪄내어 달콤하고 담백한 게살 본연의 맛을 그대로 즐기는 보양식입니다.",
+    "servings": 2,
+    "servingsUnit": "인분",
+    "cookTime": "35분",
+    "difficulty": "중",
+    "image": "recipes/recipe-steamed-snow-crab.png",
+    "ingredients": [
+      { "name": "활대게", "amount": "2마리" },
+      { "name": "물", "amount": "1.5L" }
+    ],
+    "seasoning": [
+      { "name": "청주", "amount": "3큰술" }
+    ],
+    "steps": [
+      { "step": 1, "description": "대게는 수돗물에 담가 기절시킨 후 솔을 사용하여 껍질과 다리 사이를 문질러 깨끗이 씻습니다." },
+      { "step": 2, "description": "대게 입 쪽에 칼끝을 살짝 찔러 돌려 민물에 담가두고 배 부분을 꾹꾹 눌러 내부의 짠물을 말끔하게 빼냅니다." },
+      { "step": 3, "description": "찜기에 물을 채우고 청주를 넣어 김이 충분히 올라올 때까지 센 불에서 끓입니다." },
+      { "step": 4, "description": "김이 오른 찜기에 대게의 배가 하늘을 향하도록 눕혀서 넣고 뚜껑을 닫습니다. 내장이 흘러내리지 않도록 배를 반드시 위로 해야 합니다." },
+      { "step": 5, "description": "센 불에서 찐 후, 불을 끈 상태에서 뚜껑을 열지 않고 뜸을 들입니다." },
+      { "step": 6, "description": "뜸이 다 들면 꺼내어 다리와 몸통을 분리하여 먹기 좋게 담아냅니다." }
+    ],
+    "relatedIngredients": [
+      "대게"
+    ],
+    "relatedHolidays": []
+  },
+  {
+    "id": "recipe-chili-pickles",
+    "name": "고추장아찌",
+    "category": "채소",
+    "description": "아삭아삭한 풋고추에 새콤달콤 짭조름한 장아찌 간장을 끓여 부어 삭힌 밑반찬으로, 고기 요리와 환상의 궁합을 이룹니다.",
+    "servings": 500,
+    "servingsUnit": "g",
+    "cookTime": "25분",
+    "difficulty": "하",
+    "image": "recipes/recipe-chili-pickles.png",
+    "ingredients": [
+      { "name": "풋고추", "amount": "400g" },
+      { "name": "물", "amount": "2.5종이컵" }
+    ],
+    "seasoning": [
+      { "name": "간장", "amount": "2.5종이컵" },
+      { "name": "식초", "amount": "1.5종이컵" },
+      { "name": "설탕", "amount": "1.5종이컵" }
+    ],
+    "steps": [
+      { "step": 1, "description": "풋고추는 깨끗이 씻은 뒤 체에 밭쳐 물기를 완전히 제거하고 꼭지를 단정하게 자릅니다." },
+      { "step": 2, "description": "고추 끝부분에 포크나 이쑤시개로 구멍을 송송 뚫어 간장 양념이 잘 스며들도록 준비합니다." },
+      { "step": 3, "description": "냄비에 간장, 설탕, 물을 넣고 설탕이 녹을 때까지 저어준 뒤 불에 올려 한소끔 팔팔 끓입니다." },
+      { "step": 4, "description": "간장 양념이 다 끓어 불을 끈 뒤, 뜨거운 상태에서 식초를 넣어 섞어줍니다." },
+      { "step": 5, "description": "밀폐 용기에 손질한 고추를 담고, 간장 소스를 뜨거울 때 바로 붓습니다. 뜨거울 때 부어야 장아찌가 더 아삭아삭해집니다." },
+      { "step": 6, "description": "누름돌이나 무거운 그릇으로 고추가 간장에 푹 잠기도록 누른 뒤, 실온에서 한 김 식혀 뚜껑을 닫고 냉장고에서 일주일 숙성시킨 후 섭취합니다." }
+    ],
+    "relatedIngredients": [
+      "풋고추"
+    ],
+    "relatedHolidays": []
   }
 ]

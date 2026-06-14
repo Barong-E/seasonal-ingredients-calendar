@@ -1,4 +1,4 @@
-[
+7[
   {
     "name_ko": "가지",
     "category": "채소",
@@ -2841,5 +2841,115 @@
       "달콤하고 부드러워 소화가 잘되는 이유식이나 건강식을 찾는 분"
     ],
     "selection_ko": "크기에 비해 묵직하게 무겁고, 껍질이 얼룩 없이 아주 진한 초록색을 띠며 단단한 것이 맛이 꽉 찬 단호박입니다."
+  },
+  {
+    "name_ko": "고사리",
+    "category": "채소",
+    "image": "ingredients/bracken.png",
+    "description_ko": "산에서 나는 소고기라 불리는 대표적인 봄나물. 식이섬유가 풍부하여 장 건강에 좋고 변비 예방에 탁월하며, 단백질과 칼슘이 가득해 뼈를 튼튼하게 하는 데 도움을 줍니다.",
+    "preparation_ko": "생고사리는 끓는 물에 소금을 넣고 삶아 아린 맛과 독성을 뺀 후, 찬물에 반나절 이상 담갔다 물기를 빼고 요리합니다.",
+    "storage_room_temp": "생고사리는 실온 보관이 불가능하며, 건조 고사리는 밀봉하여 서늘하고 바람이 통하는 그늘에 보관합니다.",
+    "storage_refrigerator": "삶은 고사리는 밀폐 용기에 찬물과 함께 담아 냉장 보관하며, 매일 물을 갈아주면 2~3일 보관할 수 있습니다.",
+    "storage_freezer": "삶은 고사리의 물기를 살짝 남긴 채 소분하여 지퍼백에 밀봉해 냉동 보관하면 한 달 이상 보관 가능합니다.",
+    "calories_per_100g": 39,
+    "calories_per_serving": "나물 한 접시(80g) 약 31kcal",
+    "name_en": "Bracken",
+    "name_ja": "",
+    "description_en": "",
+    "description_ja": "",
+    "popular_dish": "고사리나물볶음",
+    "months": [
+      4,
+      5
+    ],
+    "recommended_for": [
+      "뼈 건강 관리가 필요한 분",
+      "장 건강 개선 및 변비 해소가 필요한 분"
+    ],
+    "selection_ko": "줄기가 너무 길지 않고 연하며 곧게 뻗어 있고, 잎이 피지 않고 주먹처럼 뭉쳐 있는 부드러운 것을 고르세요.",
+    "external_url": "https://link.coupang.com/a/ewBracken"
+  },
+  {
+    "name_ko": "도루묵",
+    "category": "해산물",
+    "image": "ingredients/sandfish.png",
+    "description_ko": "추운 겨울 동해 바다의 대표적인 보양 생선. 알이 가득 찬 암도루묵은 톡톡 터지는 알의 식감과 부드럽고 담백한 속살이 일품입니다.",
+    "preparation_ko": "가위로 지느러미와 꼬리를 자르고, 흐르는 물에 깨끗이 씻어 핏물을 완전히 빼 물기를 닦아 준비합니다.",
+    "storage_room_temp": "실온 보관은 불가합니다.",
+    "storage_refrigerator": "내장 제거 후 밀폐 용기에 담아 0~2℃ 냉장고에 보관하고 하루 내 조리하기를 권장합니다.",
+    "storage_freezer": "손질한 도루묵을 한 번 먹을 만큼 소분 밀봉하여 냉동실에 보관하면 1~2개월 동안 품질을 유지할 수 있습니다.",
+    "calories_per_100g": 116,
+    "calories_per_serving": "두 마리(150g) 약 174kcal",
+    "name_en": "Sailfin Sandfish",
+    "name_ja": "",
+    "description_en": "",
+    "description_ja": "",
+    "popular_dish": "도루묵찌개",
+    "months": [
+      11,
+      12
+    ],
+    "recommended_for": [
+      "영양가 있는 건강한 한 끼가 필요한 분",
+      "제철 음식으로 입맛을 돋우고 싶은 분"
+    ],
+    "selection_ko": "눈이 맑고 투명하며 살이 흐물거리지 않고 팽팽하게 탄력이 있는 것이 싱싱합니다. 알이 통통하게 들어있는 것을 고르세요.",
+    "external_url": "https://link.coupang.com/a/ewSandfish"
+  },
+  {
+    "name_ko": "대게",
+    "category": "해산물",
+    "image": "ingredients/snow-crab.png",
+    "description_ko": "다리 모양이 대나무를 닮아 대게라 불리며, 겨울철 단맛과 감칠맛이 최고조에 달합니다. 저지방 고단백 식품으로 남녀노소 즐기기 좋습니다.",
+    "preparation_ko": "솔로 몸통과 다리 구석구석을 문질러 씻고, 주둥이 부분에 칼집을 넣어 민물에 10분 정도 담가 짠물을 뺀 뒤 삶아 줍니다.",
+    "storage_room_temp": "실온 보관은 불가합니다.",
+    "storage_refrigerator": "살아있는 대게는 젖은 타월로 감싸 0~2℃에서 하루 보관 가능하며, 찐 대게는 밀봉하여 이틀 이내에 섭취합니다.",
+    "storage_freezer": "찐 대게를 한 김 식혀 랩으로 꼼꼼하게 밀봉한 뒤 냉동 보관하면 한 달 동안 품질을 유지할 수 있습니다.",
+    "calories_per_100g": 85,
+    "calories_per_serving": "게살 1인분(150g) 약 128kcal",
+    "name_en": "Snow Crab",
+    "name_ja": "",
+    "description_en": "",
+    "description_ja": "",
+    "popular_dish": "대게찜",
+    "months": [
+      1,
+      2,
+      3
+    ],
+    "recommended_for": [
+      "단백질 보충이 필요한 운동인이나 성장기 어린이",
+      "가벼운 식단 관리가 필요한 분"
+    ],
+    "selection_ko": "다리가 모두 붙어 활발히 움직이며, 배 부분을 눌렀을 때 말랑하지 않고 단단하며 들었을 때 묵직함이 느껴지는 것이 살이 가득 찬 대게입니다.",
+    "external_url": "https://link.coupang.com/a/ewSnowCrab"
+  },
+  {
+    "name_ko": "풋고추",
+    "category": "채소",
+    "image": "ingredients/chili.png",
+    "description_ko": "비타민 C가 풍부하여 면역력 강화와 피로 해소에 탁월한 한여름 밥상의 대표 채소. 아삭아삭한 식감과 은은하게 쏘는 알싸한 매운맛이 특징입니다.",
+    "preparation_ko": "꼭지를 붙인 채 흐르는 물에 깨끗이 씻은 후 요리에 맞게 꼭지를 떼어내고 썰어서 사용합니다.",
+    "storage_room_temp": "상온에서는 수분이 쉽게 빠지고 금방 무르므로 상온 보관은 피해야 합니다.",
+    "storage_refrigerator": "물기를 완전히 말린 뒤 키친타월로 하나씩 싸서 지퍼백에 밀봉해 채소칸에 넣어 1~2주 보관합니다.",
+    "storage_freezer": "용도에 맞게 송송 썰거나 다져서 소분한 뒤 지퍼백에 밀폐 냉동 보관하여 찌개나 양념 등에 조리 시 바로 넣습니다.",
+    "calories_per_100g": 19,
+    "calories_per_serving": "5개(50g) 약 10kcal",
+    "name_en": "Chili Pepper",
+    "name_ja": "",
+    "description_en": "",
+    "description_ja": "",
+    "popular_dish": "고추장아찌",
+    "months": [
+      7,
+      8,
+      9
+    ],
+    "recommended_for": [
+      "만성 피로를 느끼는 직장인이나 수험생",
+      "면역력 강화가 필요한 분"
+    ],
+    "selection_ko": "색이 선명하고 고르며 표면이 매끄럽고 윤기가 흐르고 만졌을 때 단단하고 팽팽한 탄력이 있는 고추가 아삭하고 맛있습니다.",
+    "external_url": "https://link.coupang.com/a/ewChili"
   }
 ]

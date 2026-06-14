@@ -179,7 +179,11 @@ export function getRecipeIdFromDishName(dishName) {
     "돌미역국": "recipe-dolmiyeok-guk",
     "돌미역무침": "recipe-dolmiyeok-muchim",
     "단호박찜": "recipe-danhobak-jjim",
-    "단호박죽": "recipe-danhobak-juk"
+    "단호박죽": "recipe-danhobak-juk",
+    "고사리나물볶음": "recipe-bracken-namul",
+    "도루묵찌개": "recipe-sandfish-stew",
+    "대게찜": "recipe-steamed-snow-crab",
+    "고추장아찌": "recipe-chili-pickles"
   };
   return mapping[dishName] || null;
 }
