@@ -9008,7 +9008,8 @@
         "step": 4,
         "description": "국물이 졸아들면 대파를 넣고 한소끔 더 끓여 완성합니다."
       }
-    ]
+    ],
+    "image": "recipes/recipe-byeongeo-jorim.png"
   },
   {
     "id": "mandarin-cheong",
@@ -9047,7 +9048,8 @@
         "description": "소독한 유리병에 담고 실온에서 하루 보관 후 냉장고에서 숙성합니다."
       }
     ],
-    "servingsUnit": "ml"
+    "servingsUnit": "ml",
+    "image": "recipes/recipe-mandarin-cheong.png"
   },
   {
     "id": "tomato-marinade",
@@ -9103,7 +9105,8 @@
         "description": "드레싱에 껍질 벗긴 방울토마토를 넣고 버무린 뒤, 냉장고에 1시간 이상 차갑게 보관하여 맛을 들인다."
       }
     ],
-    "servingsUnit": "인분"
+    "servingsUnit": "인분",
+    "image": "recipes/recipe-tomato-marinade.png"
   },
   {
     "id": "asparagus-bacon-roll",
@@ -9151,7 +9154,8 @@
         "description": "달군 팬에 식용유를 살짝 두르고 베이컨의 끝부분이 바닥에 닿게 올려 풀어지지 않게 고정한 뒤 돌려가며 바삭하게 굽는다."
       }
     ],
-    "servingsUnit": "개"
+    "servingsUnit": "개",
+    "image": "recipes/recipe-asparagus-bacon-roll.png"
   },
   {
     "id": "shinemuscat-yogurt-salad",
@@ -9198,7 +9202,8 @@
         "step": 3,
         "description": "그릇에 샤인머스캣과 요거트 드레싱을 올리고 견과류를 뿌려 완성합니다."
       }
-    ]
+    ],
+    "image": "recipes/recipe-shinemuscat-yogurt-salad.png"
   },
   {
     "id": "beet-apple-juice",
@@ -9241,7 +9246,8 @@
         "step": 3,
         "description": "믹서기에 비트, 사과, 물을 넣고 곱게 갑니다. 취향에 따라 꿀을 추가합니다."
       }
-    ]
+    ],
+    "image": "recipes/recipe-beet-apple-juice.png"
   },
   {
     "id": "oriental-melon-muchim",
@@ -9301,7 +9307,8 @@
         "description": "썰어둔 참외와 대파를 양념장에 넣고 물이 생기지 않도록 먹기 직전에 가볍게 버무려 낸다."
       }
     ],
-    "servingsUnit": "인분"
+    "servingsUnit": "인분",
+    "image": "recipes/recipe-oriental-melon-muchim.png"
   },
   {
     "id": "cuttlefish-stir-fry",
@@ -9392,7 +9399,8 @@
         "step": 6,
         "description": "오징어가 다 익으면 불을 끄고 참기름과 통깨를 둘러 마무리합니다."
       }
-    ]
+    ],
+    "image": "recipes/recipe-cuttlefish-stir-fry.png"
   },
   {
     "id": "cuttlefish-blanched",
@@ -9443,7 +9451,8 @@
         "step": 5,
         "description": "먹기 좋은 두께로 썰어 접시에 담고 초고추장을 곁들여 냅니다."
       }
-    ]
+    ],
+    "image": "recipes/recipe-cuttlefish-blanched.png"
   },
   {
     "id": "garlic-scapes-shrimp-stir-fry",
@@ -9518,7 +9527,8 @@
         "step": 6,
         "description": "불을 끄고 올리고당, 참기름, 통깨를 넣어 버무려 윤기를 더해 완성합니다."
       }
-    ]
+    ],
+    "image": "recipes/recipe-garlic-scapes-shrimp-stir-fry.png"
   },
   {
     "id": "garlic-scapes-pickle",
@@ -9578,7 +9588,8 @@
         "description": "이후 냉장 보관하며 먹습니다. (더 오래 보관하려면 간장물만 따라내어 다시 끓인 후 완전히 식혀서 붓습니다)"
       }
     ],
-    "servingsUnit": "g"
+    "servingsUnit": "g",
+    "image": "recipes/recipe-garlic-scapes-pickle.png"
   },
   {
     "id": "mulberry-jam",
@@ -10039,22 +10050,58 @@
     "difficulty": "하",
     "image": "recipes/recipe-onion-pickle.png",
     "ingredients": [
-      { "name": "양파", "amount": "500g" },
-      { "name": "청양고추", "amount": "2개" },
-      { "name": "물", "amount": "200ml" }
+      {
+        "name": "양파",
+        "amount": "500g"
+      },
+      {
+        "name": "청양고추",
+        "amount": "2개"
+      },
+      {
+        "name": "물",
+        "amount": "200ml"
+      }
     ],
     "seasoning": [
-      { "name": "간장", "amount": "200ml" },
-      { "name": "식초", "amount": "150ml" },
-      { "name": "설탕", "amount": "150ml" }
+      {
+        "name": "간장",
+        "amount": "200ml"
+      },
+      {
+        "name": "식초",
+        "amount": "150ml"
+      },
+      {
+        "name": "설탕",
+        "amount": "150ml"
+      }
     ],
     "steps": [
-      { "step": 1, "description": "양파는 한입 크기로 큼직하게 썰고, 청양고추는 송송 썰어 준비합니다." },
-      { "step": 2, "description": "냄비에 간장, 설탕, 식초, 물을 한데 넣고 잘 섞어 절임물을 만듭니다." },
-      { "step": 3, "description": "절임물을 불에 올려 설탕이 다 녹고 한소끔 끓어오를 때까지 끓인 후 불을 끕니다." },
-      { "step": 4, "description": "열탕 소독한 유리병에 썰어둔 양파와 청양고추를 차곡차곡 담습니다." },
-      { "step": 5, "description": "뜨거운 상태의 절임물을 양파와 청양고추가 완전히 잠기도록 유리병에 부어줍니다." },
-      { "step": 6, "description": "한김 식힌 후 뚜껑을 덮어 실온에서 하루 보관했다가 냉장고에 넣어 숙성시킵니다." }
+      {
+        "step": 1,
+        "description": "양파는 한입 크기로 큼직하게 썰고, 청양고추는 송송 썰어 준비합니다."
+      },
+      {
+        "step": 2,
+        "description": "냄비에 간장, 설탕, 식초, 물을 한데 넣고 잘 섞어 절임물을 만듭니다."
+      },
+      {
+        "step": 3,
+        "description": "절임물을 불에 올려 설탕이 다 녹고 한소끔 끓어오를 때까지 끓인 후 불을 끕니다."
+      },
+      {
+        "step": 4,
+        "description": "열탕 소독한 유리병에 썰어둔 양파와 청양고추를 차곡차곡 담습니다."
+      },
+      {
+        "step": 5,
+        "description": "뜨거운 상태의 절임물을 양파와 청양고추가 완전히 잠기도록 유리병에 부어줍니다."
+      },
+      {
+        "step": 6,
+        "description": "한김 식힌 후 뚜껑을 덮어 실온에서 하루 보관했다가 냉장고에 넣어 숙성시킵니다."
+      }
     ]
   },
   {
@@ -10068,25 +10115,70 @@
     "difficulty": "하",
     "image": "recipes/recipe-lettuce-geotjeori.png",
     "ingredients": [
-      { "name": "상추", "amount": "100g" },
-      { "name": "대파", "amount": "0.5대" }
+      {
+        "name": "상추",
+        "amount": "100g"
+      },
+      {
+        "name": "대파",
+        "amount": "0.5대"
+      }
     ],
     "seasoning": [
-      { "name": "진간장", "amount": "2큰술" },
-      { "name": "고춧가루", "amount": "1큰술" },
-      { "name": "식초", "amount": "1큰술" },
-      { "name": "설탕", "amount": "0.5큰술" },
-      { "name": "다진 마늘", "amount": "0.5작은술" },
-      { "name": "참기름", "amount": "1큰술" },
-      { "name": "통깨", "amount": "1작은술" }
+      {
+        "name": "진간장",
+        "amount": "2큰술"
+      },
+      {
+        "name": "고춧가루",
+        "amount": "1큰술"
+      },
+      {
+        "name": "식초",
+        "amount": "1큰술"
+      },
+      {
+        "name": "설탕",
+        "amount": "0.5큰술"
+      },
+      {
+        "name": "다진 마늘",
+        "amount": "0.5작은술"
+      },
+      {
+        "name": "참기름",
+        "amount": "1큰술"
+      },
+      {
+        "name": "통깨",
+        "amount": "1작은술"
+      }
     ],
     "steps": [
-      { "step": 1, "description": "상추는 흐르는 물에 깨끗이 씻어 물기를 완전히 털어낸 후 먹기 좋은 크기로 큼직하게 찢어 준비합니다." },
-      { "step": 2, "description": "대파는 어슷하게 송송 썰어 준비합니다." },
-      { "step": 3, "description": "볼에 진간장, 고춧가루, 식초, 설탕, 다진 마늘을 넣고 잘 섞어 양념장을 만듭니다." },
-      { "step": 4, "description": "만들어둔 양념장에 썰어둔 대파와 준비한 상추를 한데 넣습니다." },
-      { "step": 5, "description": "상추가 숨이 죽지 않도록 힘을 빼고 손끝으로 살살 가볍게 버무려줍니다." },
-      { "step": 6, "description": "마지막으로 참기름과 통깨를 둘러 가볍게 섞어 완성합니다. (물이 생기기 쉬우니 먹기 직전에 무치는 것이 좋습니다)" }
+      {
+        "step": 1,
+        "description": "상추는 흐르는 물에 깨끗이 씻어 물기를 완전히 털어낸 후 먹기 좋은 크기로 큼직하게 찢어 준비합니다."
+      },
+      {
+        "step": 2,
+        "description": "대파는 어슷하게 송송 썰어 준비합니다."
+      },
+      {
+        "step": 3,
+        "description": "볼에 진간장, 고춧가루, 식초, 설탕, 다진 마늘을 넣고 잘 섞어 양념장을 만듭니다."
+      },
+      {
+        "step": 4,
+        "description": "만들어둔 양념장에 썰어둔 대파와 준비한 상추를 한데 넣습니다."
+      },
+      {
+        "step": 5,
+        "description": "상추가 숨이 죽지 않도록 힘을 빼고 손끝으로 살살 가볍게 버무려줍니다."
+      },
+      {
+        "step": 6,
+        "description": "마지막으로 참기름과 통깨를 둘러 가볍게 섞어 완성합니다. (물이 생기기 쉬우니 먹기 직전에 무치는 것이 좋습니다)"
+      }
     ]
   },
   {
@@ -10100,21 +10192,54 @@
     "difficulty": "하",
     "image": "recipes/recipe-garlic-pickle.png",
     "ingredients": [
-      { "name": "깐마늘", "amount": "500g" },
-      { "name": "식초", "amount": "300ml" },
-      { "name": "물", "amount": "150ml" }
+      {
+        "name": "깐마늘",
+        "amount": "500g"
+      },
+      {
+        "name": "식초",
+        "amount": "300ml"
+      },
+      {
+        "name": "물",
+        "amount": "150ml"
+      }
     ],
     "seasoning": [
-      { "name": "간장", "amount": "150ml" },
-      { "name": "설탕", "amount": "150ml" }
+      {
+        "name": "간장",
+        "amount": "150ml"
+      },
+      {
+        "name": "설탕",
+        "amount": "150ml"
+      }
     ],
     "steps": [
-      { "step": 1, "description": "깐마늘은 깨끗이 씻어 물기를 완전히 말리고 지저분한 꼭지 부분을 칼로 깔끔하게 잘라냅니다." },
-      { "step": 2, "description": "유리병에 손질한 마늘을 담고, 식초와 물을 부어 마늘의 아린 맛을 빼기 위해 1주일간 실온의 그늘진 곳에 둡니다." },
-      { "step": 3, "description": "1주일 후 마늘을 담가두었던 식초물 중 절반을 냄비에 따라냅니다." },
-      { "step": 4, "description": "따라낸 식초물에 간장와 설탕을 넣고 설탕이 녹을 때까지 한소끔 팔팔 끓인 뒤 완전히 식혀줍니다." },
-      { "step": 5, "description": "식힌 간장 양념물을 마늘이 담긴 병에 다시 부어줍니다." },
-      { "step": 6, "description": "뚜껑을 잘 닫아 그늘진 실온에서 2~3주간 더 숙성시킨 뒤 아린 맛이 빠지면 냉장고에 넣어 두고 먹습니다." }
+      {
+        "step": 1,
+        "description": "깐마늘은 깨끗이 씻어 물기를 완전히 말리고 지저분한 꼭지 부분을 칼로 깔끔하게 잘라냅니다."
+      },
+      {
+        "step": 2,
+        "description": "유리병에 손질한 마늘을 담고, 식초와 물을 부어 마늘의 아린 맛을 빼기 위해 1주일간 실온의 그늘진 곳에 둡니다."
+      },
+      {
+        "step": 3,
+        "description": "1주일 후 마늘을 담가두었던 식초물 중 절반을 냄비에 따라냅니다."
+      },
+      {
+        "step": 4,
+        "description": "따라낸 식초물에 간장와 설탕을 넣고 설탕이 녹을 때까지 한소끔 팔팔 끓인 뒤 완전히 식혀줍니다."
+      },
+      {
+        "step": 5,
+        "description": "식힌 간장 양념물을 마늘이 담긴 병에 다시 부어줍니다."
+      },
+      {
+        "step": 6,
+        "description": "뚜껑을 잘 닫아 그늘진 실온에서 2~3주간 더 숙성시킨 뒤 아린 맛이 빠지면 냉장고에 넣어 두고 먹습니다."
+      }
     ]
   },
   {
@@ -10128,22 +10253,58 @@
     "difficulty": "하",
     "image": "recipes/recipe-awook-doenjang-guk.png",
     "ingredients": [
-      { "name": "아욱", "amount": "150g" },
-      { "name": "건새우", "amount": "20g" },
-      { "name": "물", "amount": "1L" }
+      {
+        "name": "아욱",
+        "amount": "150g"
+      },
+      {
+        "name": "건새우",
+        "amount": "20g"
+      },
+      {
+        "name": "물",
+        "amount": "1L"
+      }
     ],
     "seasoning": [
-      { "name": "된장", "amount": "2큰술" },
-      { "name": "다진 마늘", "amount": "1작은술" },
-      { "name": "국간장", "amount": "1작은술" },
-      { "name": "대파", "amount": "1대" },
-      { "name": "고추장", "amount": "0.5작은술" }
+      {
+        "name": "된장",
+        "amount": "2큰술"
+      },
+      {
+        "name": "다진 마늘",
+        "amount": "1작은술"
+      },
+      {
+        "name": "국간장",
+        "amount": "1작은술"
+      },
+      {
+        "name": "대파",
+        "amount": "1대"
+      },
+      {
+        "name": "고추장",
+        "amount": "0.5작은술"
+      }
     ],
     "steps": [
-      { "step": 1, "description": "아욱은 억센 줄기를 껍질 벗겨 정리한 뒤, 굵은 소금으로 주물러 씻어 풋내를 빼고 찬물에 여러 번 헹궈 먹기 좋은 크기로 썹니다." },
-      { "step": 2, "description": "냄비에 물을 붓고 건새우를 넣어 끓여 육수를 냅니다." },
-      { "step": 3, "description": "육수가 끓으면 된장 and 고추장을 체에 걸러 풀고 손질한 아욱을 넣습니다." },
-      { "step": 4, "description": "아욱이 부드러워질 때까지 끓이다가, 다진 마늘과 대파를 넣고 국간장으로 간을 맞춰 한소끔 더 끓여 완성합니다." }
+      {
+        "step": 1,
+        "description": "아욱은 억센 줄기를 껍질 벗겨 정리한 뒤, 굵은 소금으로 주물러 씻어 풋내를 빼고 찬물에 여러 번 헹궈 먹기 좋은 크기로 썹니다."
+      },
+      {
+        "step": 2,
+        "description": "냄비에 물을 붓고 건새우를 넣어 끓여 육수를 냅니다."
+      },
+      {
+        "step": 3,
+        "description": "육수가 끓으면 된장 and 고추장을 체에 걸러 풀고 손질한 아욱을 넣습니다."
+      },
+      {
+        "step": 4,
+        "description": "아욱이 부드러워질 때까지 끓이다가, 다진 마늘과 대파를 넣고 국간장으로 간을 맞춰 한소끔 더 끓여 완성합니다."
+      }
     ]
   },
   {
@@ -10157,22 +10318,58 @@
     "difficulty": "하",
     "image": "recipes/recipe-geundae-guk.png",
     "ingredients": [
-      { "name": "근대", "amount": "150g" },
-      { "name": "바지락 조개", "amount": "100g" },
-      { "name": "물", "amount": "1L" }
+      {
+        "name": "근대",
+        "amount": "150g"
+      },
+      {
+        "name": "바지락 조개",
+        "amount": "100g"
+      },
+      {
+        "name": "물",
+        "amount": "1L"
+      }
     ],
     "seasoning": [
-      { "name": "된장", "amount": "2큰술" },
-      { "name": "다진 마늘", "amount": "1작은술" },
-      { "name": "국간장", "amount": "1작은술" },
-      { "name": "대파", "amount": "1대" },
-      { "name": "고추장", "amount": "0.5작은술" }
+      {
+        "name": "된장",
+        "amount": "2큰술"
+      },
+      {
+        "name": "다진 마늘",
+        "amount": "1작은술"
+      },
+      {
+        "name": "국간장",
+        "amount": "1작은술"
+      },
+      {
+        "name": "대파",
+        "amount": "1대"
+      },
+      {
+        "name": "고추장",
+        "amount": "0.5작은술"
+      }
     ],
     "steps": [
-      { "step": 1, "description": "근대는 흐르는 물에 깨끗이 씻어 억센 줄기 끝을 잘라내고 한입 크기로 썹니다." },
-      { "step": 2, "description": "냄비에 물과 해감된 바지락 조개를 넣어 조개 육수를 냅니다." },
-      { "step": 3, "description": "육수가 끓으면 된장 and 고추장을 체에 걸러 풀고 손질한 근대를 넣습니다." },
-      { "step": 4, "description": "근대가 부드러워질 때까지 끓이다가, 다진 마늘과 대파를 넣고 국간장으로 간을 맞춰 마무리합니다." }
+      {
+        "step": 1,
+        "description": "근대는 흐르는 물에 깨끗이 씻어 억센 줄기 끝을 잘라내고 한입 크기로 썹니다."
+      },
+      {
+        "step": 2,
+        "description": "냄비에 물과 해감된 바지락 조개를 넣어 조개 육수를 냅니다."
+      },
+      {
+        "step": 3,
+        "description": "육수가 끓으면 된장 and 고추장을 체에 걸러 풀고 손질한 근대를 넣습니다."
+      },
+      {
+        "step": 4,
+        "description": "근대가 부드러워질 때까지 끓이다가, 다진 마늘과 대파를 넣고 국간장으로 간을 맞춰 마무리합니다."
+      }
     ]
   },
   {
@@ -10186,21 +10383,54 @@
     "difficulty": "하",
     "image": "recipes/recipe-bireum-namul-muchim.png",
     "ingredients": [
-      { "name": "비름나물", "amount": "200g" }
+      {
+        "name": "비름나물",
+        "amount": "200g"
+      }
     ],
     "seasoning": [
-      { "name": "고추장", "amount": "1큰술" },
-      { "name": "된장", "amount": "0.5작은술" },
-      { "name": "다진 마늘", "amount": "1작은술" },
-      { "name": "매실청", "amount": "1작은술" },
-      { "name": "참기름", "amount": "1큰술" },
-      { "name": "통깨", "amount": "1작은술" }
+      {
+        "name": "고추장",
+        "amount": "1큰술"
+      },
+      {
+        "name": "된장",
+        "amount": "0.5작은술"
+      },
+      {
+        "name": "다진 마늘",
+        "amount": "1작은술"
+      },
+      {
+        "name": "매실청",
+        "amount": "1작은술"
+      },
+      {
+        "name": "참기름",
+        "amount": "1큰술"
+      },
+      {
+        "name": "통깨",
+        "amount": "1작은술"
+      }
     ],
     "steps": [
-      { "step": 1, "description": "비름나물은 억세고 질긴 줄기 끝을 다듬고 잎 부분 위주로 깨끗이 씻어 준비합니다." },
-      { "step": 2, "description": "끓는 물에 소금을 약간 넣고 손질한 비름나물을 넣어 가볍게 데친 뒤, 즉시 찬물에 헹궈 물기를 꼭 짭니다." },
-      { "step": 3, "description": "볼에 고추장, 된장, 다진 마늘, 매실청, 참기름을 섞어 양념장을 만듭니다." },
-      { "step": 4, "description": "물기를 짠 비름나물을 양념장에 골고루 무친 후 접시에 담고 통깨를 뿌려 완성합니다." }
+      {
+        "step": 1,
+        "description": "비름나물은 억세고 질긴 줄기 끝을 다듬고 잎 부분 위주로 깨끗이 씻어 준비합니다."
+      },
+      {
+        "step": 2,
+        "description": "끓는 물에 소금을 약간 넣고 손질한 비름나물을 넣어 가볍게 데친 뒤, 즉시 찬물에 헹궈 물기를 꼭 짭니다."
+      },
+      {
+        "step": 3,
+        "description": "볼에 고추장, 된장, 다진 마늘, 매실청, 참기름을 섞어 양념장을 만듭니다."
+      },
+      {
+        "step": 4,
+        "description": "물기를 짠 비름나물을 양념장에 골고루 무친 후 접시에 담고 통깨를 뿌려 완성합니다."
+      }
     ]
   },
   {
@@ -10214,22 +10444,58 @@
     "difficulty": "하",
     "image": "recipes/recipe-doraji-namul-bokkeum.png",
     "ingredients": [
-      { "name": "손질한 도라지", "amount": "200g" },
-      { "name": "대파", "amount": "0.5대" },
-      { "name": "식용유", "amount": "1큰술" }
+      {
+        "name": "손질한 도라지",
+        "amount": "200g"
+      },
+      {
+        "name": "대파",
+        "amount": "0.5대"
+      },
+      {
+        "name": "식용유",
+        "amount": "1큰술"
+      }
     ],
     "seasoning": [
-      { "name": "국간장", "amount": "1작은술" },
-      { "name": "다진 마늘", "amount": "1작은술" },
-      { "name": "참기름", "amount": "1큰술" },
-      { "name": "소금", "amount": "0.5작은술" },
-      { "name": "통깨", "amount": "1작은술" }
+      {
+        "name": "국간장",
+        "amount": "1작은술"
+      },
+      {
+        "name": "다진 마늘",
+        "amount": "1작은술"
+      },
+      {
+        "name": "참기름",
+        "amount": "1큰술"
+      },
+      {
+        "name": "소금",
+        "amount": "0.5작은술"
+      },
+      {
+        "name": "통깨",
+        "amount": "1작은술"
+      }
     ],
     "steps": [
-      { "step": 1, "description": "도라지는 소금으로 박박 주물러 쓴맛을 뺀 뒤 물에 헹구고 체에 밭쳐 물기를 뺍니다. 대파는 잘게 다집니다." },
-      { "step": 2, "description": "달군 팬에 식용유를 두르고 다진 마늘과 다진 대파를 넣어 향이 나도록 볶습니다." },
-      { "step": 3, "description": "준비한 도라지를 넣고 중간 불에서 도라지가 부드러워질 때까지 달달 볶아줍니다." },
-      { "step": 4, "description": "도라지가 익으면 국간장과 소금으로 간을 맞추고, 불을 끈 뒤 참기름과 통깨를 뿌려 가볍게 섞어 완성합니다." }
+      {
+        "step": 1,
+        "description": "도라지는 소금으로 박박 주물러 쓴맛을 뺀 뒤 물에 헹구고 체에 밭쳐 물기를 뺍니다. 대파는 잘게 다집니다."
+      },
+      {
+        "step": 2,
+        "description": "달군 팬에 식용유를 두르고 다진 마늘과 다진 대파를 넣어 향이 나도록 볶습니다."
+      },
+      {
+        "step": 3,
+        "description": "준비한 도라지를 넣고 중간 불에서 도라지가 부드러워질 때까지 달달 볶아줍니다."
+      },
+      {
+        "step": 4,
+        "description": "도라지가 익으면 국간장과 소금으로 간을 맞추고, 불을 끈 뒤 참기름과 통깨를 뿌려 가볍게 섞어 완성합니다."
+      }
     ],
     "relatedIngredients": [
       "도라지"
@@ -10247,22 +10513,58 @@
     "difficulty": "중",
     "image": "recipes/recipe-doraji-gui.png",
     "ingredients": [
-      { "name": "통도라지", "amount": "150g" },
-      { "name": "식용유", "amount": "1큰술" }
+      {
+        "name": "통도라지",
+        "amount": "150g"
+      },
+      {
+        "name": "식용유",
+        "amount": "1큰술"
+      }
     ],
     "seasoning": [
-      { "name": "고추장", "amount": "1.5큰술" },
-      { "name": "진간장", "amount": "1작은술" },
-      { "name": "올리고당", "amount": "1큰술" },
-      { "name": "다진 마늘", "amount": "1작은술" },
-      { "name": "참기름", "amount": "1큰술" },
-      { "name": "통깨", "amount": "1작은술" }
+      {
+        "name": "고추장",
+        "amount": "1.5큰술"
+      },
+      {
+        "name": "진간장",
+        "amount": "1작은술"
+      },
+      {
+        "name": "올리고당",
+        "amount": "1큰술"
+      },
+      {
+        "name": "다진 마늘",
+        "amount": "1작은술"
+      },
+      {
+        "name": "참기름",
+        "amount": "1큰술"
+      },
+      {
+        "name": "통깨",
+        "amount": "1작은술"
+      }
     ],
     "steps": [
-      { "step": 1, "description": "도라지는 껍질을 벗겨 쓴맛을 제거한 뒤, 칼집을 내어 반으로 갈라 방망이로 살살 두드려 얇고 평평하게 만듭니다." },
-      { "step": 2, "description": "볼에 고추장, 진간장, 올리고당, 다진 마늘, 참기름을 골고루 섞어 고추장 양념장을 만듭니다." },
-      { "step": 3, "description": "달군 팬에 식용유를 두르고 손질한 도라지를 올려 앞뒤로 노릇노릇하게 초벌구이를 합니다." },
-      { "step": 4, "description": "초벌한 도라지 겉면에 양념장을 꼼꼼하게 바른 뒤, 약한 불에서 타지 않게 뒤집어가며 구운 후 통깨를 뿌려 완성합니다." }
+      {
+        "step": 1,
+        "description": "도라지는 껍질을 벗겨 쓴맛을 제거한 뒤, 칼집을 내어 반으로 갈라 방망이로 살살 두드려 얇고 평평하게 만듭니다."
+      },
+      {
+        "step": 2,
+        "description": "볼에 고추장, 진간장, 올리고당, 다진 마늘, 참기름을 골고루 섞어 고추장 양념장을 만듭니다."
+      },
+      {
+        "step": 3,
+        "description": "달군 팬에 식용유를 두르고 손질한 도라지를 올려 앞뒤로 노릇노릇하게 초벌구이를 합니다."
+      },
+      {
+        "step": 4,
+        "description": "초벌한 도라지 겉면에 양념장을 꼼꼼하게 바른 뒤, 약한 불에서 타지 않게 뒤집어가며 구운 후 통깨를 뿌려 완성합니다."
+      }
     ],
     "relatedIngredients": [
       "도라지"
@@ -10280,23 +10582,62 @@
     "difficulty": "하",
     "image": "recipes/recipe-mulmiyeok-cho-muchim.png",
     "ingredients": [
-      { "name": "물미역", "amount": "250g" },
-      { "name": "오이", "amount": "0.5개" },
-      { "name": "양파", "amount": "0.5개" }
+      {
+        "name": "물미역",
+        "amount": "250g"
+      },
+      {
+        "name": "오이",
+        "amount": "0.5개"
+      },
+      {
+        "name": "양파",
+        "amount": "0.5개"
+      }
     ],
     "seasoning": [
-      { "name": "고추장", "amount": "2큰술" },
-      { "name": "식초", "amount": "2큰술" },
-      { "name": "설탕", "amount": "1큰술" },
-      { "name": "올리고당", "amount": "1작은술" },
-      { "name": "다진 마늘", "amount": "1작은술" },
-      { "name": "통깨", "amount": "1작은술" }
+      {
+        "name": "고추장",
+        "amount": "2큰술"
+      },
+      {
+        "name": "식초",
+        "amount": "2큰술"
+      },
+      {
+        "name": "설탕",
+        "amount": "1큰술"
+      },
+      {
+        "name": "올리고당",
+        "amount": "1작은술"
+      },
+      {
+        "name": "다진 마늘",
+        "amount": "1작은술"
+      },
+      {
+        "name": "통깨",
+        "amount": "1작은술"
+      }
     ],
     "steps": [
-      { "step": 1, "description": "물미역은 끓는 물에 살짝 데쳐 초록빛이 돌면 즉시 꺼내어 찬물에 식히고, 물기를 꽉 짠 후 먹기 좋은 한입 크기로 썹니다." },
-      { "step": 2, "description": "오이는 얇게 어슷 썰고, 양파는 곱게 채 썰어 둡니다." },
-      { "step": 3, "description": "넓은 그릇에 고추장, 식초, 설탕, 올리고당, 다진 마늘을 섞어 새콤달콤한 초무침 양념장을 빚습니다." },
-      { "step": 4, "description": "양념장에 물미역과 채 썬 오이, 양파를 가볍게 무쳐낸 뒤 통깨를 솔솔 뿌려 그릇에 냅니다." }
+      {
+        "step": 1,
+        "description": "물미역은 끓는 물에 살짝 데쳐 초록빛이 돌면 즉시 꺼내어 찬물에 식히고, 물기를 꽉 짠 후 먹기 좋은 한입 크기로 썹니다."
+      },
+      {
+        "step": 2,
+        "description": "오이는 얇게 어슷 썰고, 양파는 곱게 채 썰어 둡니다."
+      },
+      {
+        "step": 3,
+        "description": "넓은 그릇에 고추장, 식초, 설탕, 올리고당, 다진 마늘을 섞어 새콤달콤한 초무침 양념장을 빚습니다."
+      },
+      {
+        "step": 4,
+        "description": "양념장에 물미역과 채 썬 오이, 양파를 가볍게 무쳐낸 뒤 통깨를 솔솔 뿌려 그릇에 냅니다."
+      }
     ],
     "relatedIngredients": [
       "물미역"
@@ -10314,21 +10655,54 @@
     "difficulty": "하",
     "image": "recipes/recipe-mulmiyeok-dubu-muchim.png",
     "ingredients": [
-      { "name": "물미역", "amount": "150g" },
-      { "name": "두부", "amount": "100g" }
+      {
+        "name": "물미역",
+        "amount": "150g"
+      },
+      {
+        "name": "두부",
+        "amount": "100g"
+      }
     ],
     "seasoning": [
-      { "name": "소금", "amount": "0.5작은술" },
-      { "name": "참기름", "amount": "1큰술" },
-      { "name": "다진 마늘", "amount": "1작은술" },
-      { "name": "국간장", "amount": "1작은술" },
-      { "name": "통깨", "amount": "1작은술" }
+      {
+        "name": "소금",
+        "amount": "0.5작은술"
+      },
+      {
+        "name": "참기름",
+        "amount": "1큰술"
+      },
+      {
+        "name": "다진 마늘",
+        "amount": "1작은술"
+      },
+      {
+        "name": "국간장",
+        "amount": "1작은술"
+      },
+      {
+        "name": "통깨",
+        "amount": "1작은술"
+      }
     ],
     "steps": [
-      { "step": 1, "description": "물미역은 소금으로 잘 씻어 물에 헹군 후 끓는 물에 데쳐 즉시 식히고, 물기를 꼭 짜서 3cm 간격으로 자릅니다." },
-      { "step": 2, "description": "두부는 칼등으로 부드럽게 으깬 다음, 면포나 키친타월에 감싸 물기를 말끔히 제거합니다." },
-      { "step": 3, "description": "볼에 준비한 물미역과 으깬 두부를 한데 모으고 소금, 참기름, 다진 마늘, 국간장을 넣습니다." },
-      { "step": 4, "description": "두부가 뭉치지 않게 조물조물 맛있게 무치고 마지막에 통깨를 뿌려 완성합니다." }
+      {
+        "step": 1,
+        "description": "물미역은 소금으로 잘 씻어 물에 헹군 후 끓는 물에 데쳐 즉시 식히고, 물기를 꼭 짜서 3cm 간격으로 자릅니다."
+      },
+      {
+        "step": 2,
+        "description": "두부는 칼등으로 부드럽게 으깬 다음, 면포나 키친타월에 감싸 물기를 말끔히 제거합니다."
+      },
+      {
+        "step": 3,
+        "description": "볼에 준비한 물미역과 으깬 두부를 한데 모으고 소금, 참기름, 다진 마늘, 국간장을 넣습니다."
+      },
+      {
+        "step": 4,
+        "description": "두부가 뭉치지 않게 조물조물 맛있게 무치고 마지막에 통깨를 뿌려 완성합니다."
+      }
     ],
     "relatedIngredients": [
       "물미역"
@@ -10346,22 +10720,58 @@
     "difficulty": "하",
     "image": "recipes/recipe-dolmiyeok-guk.png",
     "ingredients": [
-      { "name": "물", "amount": "1.5L" },
-      { "name": "불린 돌미역", "amount": "200g" },
-      { "name": "국거리 소고기", "amount": "150g" },
-      { "name": "참기름", "amount": "1.5큰술" }
+      {
+        "name": "물",
+        "amount": "1.5L"
+      },
+      {
+        "name": "불린 돌미역",
+        "amount": "200g"
+      },
+      {
+        "name": "국거리 소고기",
+        "amount": "150g"
+      },
+      {
+        "name": "참기름",
+        "amount": "1.5큰술"
+      }
     ],
     "seasoning": [
-      { "name": "국간장", "amount": "2큰술" },
-      { "name": "멸치액젓", "amount": "1큰술" },
-      { "name": "다진 마늘", "amount": "1작은술" },
-      { "name": "소금", "amount": "0.5작은술" }
+      {
+        "name": "국간장",
+        "amount": "2큰술"
+      },
+      {
+        "name": "멸치액젓",
+        "amount": "1큰술"
+      },
+      {
+        "name": "다진 마늘",
+        "amount": "1작은술"
+      },
+      {
+        "name": "소금",
+        "amount": "0.5작은술"
+      }
     ],
     "steps": [
-      { "step": 1, "description": "불린 돌미역은 여러 번 문질러 씻어 먹기 좋게 썰어두고 소고기는 핏물을 제거해 둡니다." },
-      { "step": 2, "description": "냄비에 참기름을 두르고 소고기를 먼저 달달 볶다가 고기가 익으면 준비한 돌미역을 함께 넣어 충분히 볶습니다." },
-      { "step": 3, "description": "미역이 뽀얀 빛을 띠며 부드러워지면 냄비에 물을 붓고 국간장을 넣어 강불에서 보글보글 끓입니다." },
-      { "step": 4, "description": "물이 끓어오르면 약불로 줄여 20분 이상 푹 끓인 뒤, 다진 마늘과 멸치액젓으로 감칠맛을 더하고 부족한 간은 소금으로 맞춰 끓여냅니다." }
+      {
+        "step": 1,
+        "description": "불린 돌미역은 여러 번 문질러 씻어 먹기 좋게 썰어두고 소고기는 핏물을 제거해 둡니다."
+      },
+      {
+        "step": 2,
+        "description": "냄비에 참기름을 두르고 소고기를 먼저 달달 볶다가 고기가 익으면 준비한 돌미역을 함께 넣어 충분히 볶습니다."
+      },
+      {
+        "step": 3,
+        "description": "미역이 뽀얀 빛을 띠며 부드러워지면 냄비에 물을 붓고 국간장을 넣어 강불에서 보글보글 끓입니다."
+      },
+      {
+        "step": 4,
+        "description": "물이 끓어오르면 약불로 줄여 20분 이상 푹 끓인 뒤, 다진 마늘과 멸치액젓으로 감칠맛을 더하고 부족한 간은 소금으로 맞춰 끓여냅니다."
+      }
     ],
     "relatedIngredients": [
       "돌미역"
@@ -10379,21 +10789,54 @@
     "difficulty": "하",
     "image": "recipes/recipe-dolmiyeok-muchim.png",
     "ingredients": [
-      { "name": "생돌미역", "amount": "200g" },
-      { "name": "오이", "amount": "0.5개" }
+      {
+        "name": "생돌미역",
+        "amount": "200g"
+      },
+      {
+        "name": "오이",
+        "amount": "0.5개"
+      }
     ],
     "seasoning": [
-      { "name": "멸치액젓", "amount": "1큰술" },
-      { "name": "참기름", "amount": "1큰술" },
-      { "name": "다진 마늘", "amount": "1작은술" },
-      { "name": "고춧가루", "amount": "1작은술" },
-      { "name": "통깨", "amount": "1작은술" }
+      {
+        "name": "멸치액젓",
+        "amount": "1큰술"
+      },
+      {
+        "name": "참기름",
+        "amount": "1큰술"
+      },
+      {
+        "name": "다진 마늘",
+        "amount": "1작은술"
+      },
+      {
+        "name": "고춧가루",
+        "amount": "1작은술"
+      },
+      {
+        "name": "통깨",
+        "amount": "1작은술"
+      }
     ],
     "steps": [
-      { "step": 1, "description": "생돌미역은 소금으로 잘 문질러 헹군 후 끓는 물에 데쳐 찬물에 빠르게 식힌 뒤, 물기를 짜고 한입 크기로 썹니다." },
-      { "step": 2, "description": "오이는 얇고 둥글게 송송 썰어 준비합니다." },
-      { "step": 3, "description": "볼에 멸치액젓, 참기름, 다진 마늘, 고춧가루를 섞어 맛있는 무침 양념을 만듭니다." },
-      { "step": 4, "description": "양념장에 준비한 돌미역과 오이를 넣어 살살 골고루 버무린 후 통깨를 올려 마칩니다." }
+      {
+        "step": 1,
+        "description": "생돌미역은 소금으로 잘 문질러 헹군 후 끓는 물에 데쳐 찬물에 빠르게 식힌 뒤, 물기를 짜고 한입 크기로 썹니다."
+      },
+      {
+        "step": 2,
+        "description": "오이는 얇고 둥글게 송송 썰어 준비합니다."
+      },
+      {
+        "step": 3,
+        "description": "볼에 멸치액젓, 참기름, 다진 마늘, 고춧가루를 섞어 맛있는 무침 양념을 만듭니다."
+      },
+      {
+        "step": 4,
+        "description": "양념장에 준비한 돌미역과 오이를 넣어 살살 골고루 버무린 후 통깨를 올려 마칩니다."
+      }
     ],
     "relatedIngredients": [
       "돌미역"
@@ -10411,17 +10854,38 @@
     "difficulty": "하",
     "image": "recipes/recipe-danhobak-jjim.png",
     "ingredients": [
-      { "name": "단호박", "amount": "1개" }
+      {
+        "name": "단호박",
+        "amount": "1개"
+      }
     ],
     "seasoning": [
-      { "name": "꿀", "amount": "1큰술" },
-      { "name": "계핏가루", "amount": "0.5작은술" }
+      {
+        "name": "꿀",
+        "amount": "1큰술"
+      },
+      {
+        "name": "계핏가루",
+        "amount": "0.5작은술"
+      }
     ],
     "steps": [
-      { "step": 1, "description": "단호박은 베이킹소다나 물로 표면을 말끔히 씻은 후 반으로 자른 뒤 숟가락으로 속의 씨를 파냅니다." },
-      { "step": 2, "description": "씨를 뺀 단호박을 한입에 먹기 좋은 부채꼴 모양으로 여러 등분하여 썰어 줍니다." },
-      { "step": 3, "description": "김이 듬뿍 오른 찜기에 호박 속살이 위로 향하게 정렬한 뒤, 뚜껑을 닫고 센 불에서 익혀 줍니다." },
-      { "step": 4, "description": "젓가락으로 찔렀을 때 푹 들어가며 찰지게 익으면 꺼내어 취향껏 꿀과 계핏가루를 살짝 뿌려 먹습니다." }
+      {
+        "step": 1,
+        "description": "단호박은 베이킹소다나 물로 표면을 말끔히 씻은 후 반으로 자른 뒤 숟가락으로 속의 씨를 파냅니다."
+      },
+      {
+        "step": 2,
+        "description": "씨를 뺀 단호박을 한입에 먹기 좋은 부채꼴 모양으로 여러 등분하여 썰어 줍니다."
+      },
+      {
+        "step": 3,
+        "description": "김이 듬뿍 오른 찜기에 호박 속살이 위로 향하게 정렬한 뒤, 뚜껑을 닫고 센 불에서 익혀 줍니다."
+      },
+      {
+        "step": 4,
+        "description": "젓가락으로 찔렀을 때 푹 들어가며 찰지게 익으면 꺼내어 취향껏 꿀과 계핏가루를 살짝 뿌려 먹습니다."
+      }
     ],
     "relatedIngredients": [
       "단호박"
@@ -10439,19 +10903,46 @@
     "difficulty": "하",
     "image": "recipes/recipe-danhobak-juk.png",
     "ingredients": [
-      { "name": "물", "amount": "800ml" },
-      { "name": "손질한 단호박", "amount": "400g" },
-      { "name": "찹쌀가루", "amount": "4큰술" }
+      {
+        "name": "물",
+        "amount": "800ml"
+      },
+      {
+        "name": "손질한 단호박",
+        "amount": "400g"
+      },
+      {
+        "name": "찹쌀가루",
+        "amount": "4큰술"
+      }
     ],
     "seasoning": [
-      { "name": "설탕", "amount": "2큰술" },
-      { "name": "소금", "amount": "0.5작은술" }
+      {
+        "name": "설탕",
+        "amount": "2큰술"
+      },
+      {
+        "name": "소금",
+        "amount": "0.5작은술"
+      }
     ],
     "steps": [
-      { "step": 1, "description": "단호박은 껍질을 말끔히 벗겨내고 얇게 썬 다음 냄비에 물과 함께 담습니다." },
-      { "step": 2, "description": "단호박이 물러질 때까지 푹 끓여준 후, 숟가락이나 국자로 눌러 곱게 으깨거나 믹서로 한 번 갈아줍니다." },
-      { "step": 3, "description": "찹쌀가루를 소량의 물(분량 외)에 멍울 없이 곱게 풀어 으깬 단호박 냄비에 저어가며 천천히 붓습니다." },
-      { "step": 4, "description": "죽이 끓어올라 걸쭉해지면 설탕과 소금으로 단맛과 간을 조절하며 눌어붙지 않게 계속 저어 끓여 냅니다." }
+      {
+        "step": 1,
+        "description": "단호박은 껍질을 말끔히 벗겨내고 얇게 썬 다음 냄비에 물과 함께 담습니다."
+      },
+      {
+        "step": 2,
+        "description": "단호박이 물러질 때까지 푹 끓여준 후, 숟가락이나 국자로 눌러 곱게 으깨거나 믹서로 한 번 갈아줍니다."
+      },
+      {
+        "step": 3,
+        "description": "찹쌀가루를 소량의 물(분량 외)에 멍울 없이 곱게 풀어 으깬 단호박 냄비에 저어가며 천천히 붓습니다."
+      },
+      {
+        "step": 4,
+        "description": "죽이 끓어올라 걸쭉해지면 설탕과 소금으로 단맛과 간을 조절하며 눌어붙지 않게 계속 저어 끓여 냅니다."
+      }
     ],
     "relatedIngredients": [
       "단호박"
@@ -10469,22 +10960,58 @@
     "difficulty": "하",
     "image": "recipes/recipe-bracken-namul.png",
     "ingredients": [
-      { "name": "삶은 고사리", "amount": "200g" },
-      { "name": "대파", "amount": "0.5대" }
+      {
+        "name": "삶은 고사리",
+        "amount": "200g"
+      },
+      {
+        "name": "대파",
+        "amount": "0.5대"
+      }
     ],
     "seasoning": [
-      { "name": "국간장", "amount": "1.5큰술" },
-      { "name": "들기름", "amount": "2큰술" },
-      { "name": "다진 마늘", "amount": "1작은술" },
-      { "name": "통깨", "amount": "1작은술" },
-      { "name": "물", "amount": "3큰술" }
+      {
+        "name": "국간장",
+        "amount": "1.5큰술"
+      },
+      {
+        "name": "들기름",
+        "amount": "2큰술"
+      },
+      {
+        "name": "다진 마늘",
+        "amount": "1작은술"
+      },
+      {
+        "name": "통깨",
+        "amount": "1작은술"
+      },
+      {
+        "name": "물",
+        "amount": "3큰술"
+      }
     ],
     "steps": [
-      { "step": 1, "description": "삶은 고사리는 지저분한 밑동을 잘라내고 먹기 좋은 길이로 자릅니다." },
-      { "step": 2, "description": "대파는 잘게 다져 준비합니다." },
-      { "step": 3, "description": "볼에 고사리를 넣고 국간장, 들기름, 다진 마늘을 넣어 조물조물 무쳐 밑간을 해둡니다." },
-      { "step": 4, "description": "팬에 밑간한 고사리를 넣어 중불에서 볶다가, 물을 넣고 뚜껑을 덮어 약불에서 뜸을 들이며 익힙니다." },
-      { "step": 5, "description": "국물이 자작해지면 다진 대파를 넣고 가볍게 볶아준 뒤, 불을 끄고 통깨를 뿌려 완성합니다." }
+      {
+        "step": 1,
+        "description": "삶은 고사리는 지저분한 밑동을 잘라내고 먹기 좋은 길이로 자릅니다."
+      },
+      {
+        "step": 2,
+        "description": "대파는 잘게 다져 준비합니다."
+      },
+      {
+        "step": 3,
+        "description": "볼에 고사리를 넣고 국간장, 들기름, 다진 마늘을 넣어 조물조물 무쳐 밑간을 해둡니다."
+      },
+      {
+        "step": 4,
+        "description": "팬에 밑간한 고사리를 넣어 중불에서 볶다가, 물을 넣고 뚜껑을 덮어 약불에서 뜸을 들이며 익힙니다."
+      },
+      {
+        "step": 5,
+        "description": "국물이 자작해지면 다진 대파를 넣고 가볍게 볶아준 뒤, 불을 끄고 통깨를 뿌려 완성합니다."
+      }
     ],
     "relatedIngredients": [
       "고사리"
@@ -10502,27 +11029,78 @@
     "difficulty": "하",
     "image": "recipes/recipe-sandfish-stew.png",
     "ingredients": [
-      { "name": "알도루묵", "amount": "4마리" },
-      { "name": "무", "amount": "150g" },
-      { "name": "양파", "amount": "0.5개" },
-      { "name": "대파", "amount": "0.5대" },
-      { "name": "청양고추", "amount": "1개" },
-      { "name": "물", "amount": "600ml" }
+      {
+        "name": "알도루묵",
+        "amount": "4마리"
+      },
+      {
+        "name": "무",
+        "amount": "150g"
+      },
+      {
+        "name": "양파",
+        "amount": "0.5개"
+      },
+      {
+        "name": "대파",
+        "amount": "0.5대"
+      },
+      {
+        "name": "청양고추",
+        "amount": "1개"
+      },
+      {
+        "name": "물",
+        "amount": "600ml"
+      }
     ],
     "seasoning": [
-      { "name": "고춧가루", "amount": "2큰술" },
-      { "name": "국간장", "amount": "1.5큰술" },
-      { "name": "맛술", "amount": "1큰술" },
-      { "name": "다진 마늘", "amount": "1큰술" },
-      { "name": "소금", "amount": "0.5작은술" }
+      {
+        "name": "고춧가루",
+        "amount": "2큰술"
+      },
+      {
+        "name": "국간장",
+        "amount": "1.5큰술"
+      },
+      {
+        "name": "맛술",
+        "amount": "1큰술"
+      },
+      {
+        "name": "다진 마늘",
+        "amount": "1큰술"
+      },
+      {
+        "name": "소금",
+        "amount": "0.5작은술"
+      }
     ],
     "steps": [
-      { "step": 1, "description": "도루묵은 지느러미와 꼬리를 떼어내고 흐르는 물에 깨끗이 씻어 물기를 뺍니다. 알이 흘러나오지 않게 주의합니다." },
-      { "step": 2, "description": "무는 얇고 네모나게 썰고, 양파는 채 썰고, 대파와 청양고추는 어슷썰기합니다." },
-      { "step": 3, "description": "냄비에 무와 물을 넣고 먼저 끓여 시원한 무 육수를 우려냅니다." },
-      { "step": 4, "description": "무가 투명하게 익으면 고춧가루, 국간장, 맛술, 다진 마늘을 넣어 양념 국물을 끓입니다." },
-      { "step": 5, "description": "국물이 끓어오르면 도루묵과 양파를 넣고 중불에서 생선이 푹 익을 때까지 조리합니다. 알이 완전히 익을 때까지 충분히 끓여줍니다." },
-      { "step": 6, "description": "대파와 청양고추를 올리고 소금으로 마지막 간을 맞춘 뒤 한소끔 더 끓여 완성합니다." }
+      {
+        "step": 1,
+        "description": "도루묵은 지느러미와 꼬리를 떼어내고 흐르는 물에 깨끗이 씻어 물기를 뺍니다. 알이 흘러나오지 않게 주의합니다."
+      },
+      {
+        "step": 2,
+        "description": "무는 얇고 네모나게 썰고, 양파는 채 썰고, 대파와 청양고추는 어슷썰기합니다."
+      },
+      {
+        "step": 3,
+        "description": "냄비에 무와 물을 넣고 먼저 끓여 시원한 무 육수를 우려냅니다."
+      },
+      {
+        "step": 4,
+        "description": "무가 투명하게 익으면 고춧가루, 국간장, 맛술, 다진 마늘을 넣어 양념 국물을 끓입니다."
+      },
+      {
+        "step": 5,
+        "description": "국물이 끓어오르면 도루묵과 양파를 넣고 중불에서 생선이 푹 익을 때까지 조리합니다. 알이 완전히 익을 때까지 충분히 끓여줍니다."
+      },
+      {
+        "step": 6,
+        "description": "대파와 청양고추를 올리고 소금으로 마지막 간을 맞춘 뒤 한소끔 더 끓여 완성합니다."
+      }
     ],
     "relatedIngredients": [
       "도루묵",
@@ -10541,19 +11119,46 @@
     "difficulty": "중",
     "image": "recipes/recipe-steamed-snow-crab.png",
     "ingredients": [
-      { "name": "활대게", "amount": "2마리" },
-      { "name": "물", "amount": "1.5L" }
+      {
+        "name": "활대게",
+        "amount": "2마리"
+      },
+      {
+        "name": "물",
+        "amount": "1.5L"
+      }
     ],
     "seasoning": [
-      { "name": "청주", "amount": "3큰술" }
+      {
+        "name": "청주",
+        "amount": "3큰술"
+      }
     ],
     "steps": [
-      { "step": 1, "description": "대게는 수돗물에 담가 기절시킨 후 솔을 사용하여 껍질과 다리 사이를 문질러 깨끗이 씻습니다." },
-      { "step": 2, "description": "대게 입 쪽에 칼끝을 살짝 찔러 돌려 민물에 담가두고 배 부분을 꾹꾹 눌러 내부의 짠물을 말끔하게 빼냅니다." },
-      { "step": 3, "description": "찜기에 물을 채우고 청주를 넣어 김이 충분히 올라올 때까지 센 불에서 끓입니다." },
-      { "step": 4, "description": "김이 오른 찜기에 대게의 배가 하늘을 향하도록 눕혀서 넣고 뚜껑을 닫습니다. 내장이 흘러내리지 않도록 배를 반드시 위로 해야 합니다." },
-      { "step": 5, "description": "센 불에서 찐 후, 불을 끈 상태에서 뚜껑을 열지 않고 뜸을 들입니다." },
-      { "step": 6, "description": "뜸이 다 들면 꺼내어 다리와 몸통을 분리하여 먹기 좋게 담아냅니다." }
+      {
+        "step": 1,
+        "description": "대게는 수돗물에 담가 기절시킨 후 솔을 사용하여 껍질과 다리 사이를 문질러 깨끗이 씻습니다."
+      },
+      {
+        "step": 2,
+        "description": "대게 입 쪽에 칼끝을 살짝 찔러 돌려 민물에 담가두고 배 부분을 꾹꾹 눌러 내부의 짠물을 말끔하게 빼냅니다."
+      },
+      {
+        "step": 3,
+        "description": "찜기에 물을 채우고 청주를 넣어 김이 충분히 올라올 때까지 센 불에서 끓입니다."
+      },
+      {
+        "step": 4,
+        "description": "김이 오른 찜기에 대게의 배가 하늘을 향하도록 눕혀서 넣고 뚜껑을 닫습니다. 내장이 흘러내리지 않도록 배를 반드시 위로 해야 합니다."
+      },
+      {
+        "step": 5,
+        "description": "센 불에서 찐 후, 불을 끈 상태에서 뚜껑을 열지 않고 뜸을 들입니다."
+      },
+      {
+        "step": 6,
+        "description": "뜸이 다 들면 꺼내어 다리와 몸통을 분리하여 먹기 좋게 담아냅니다."
+      }
     ],
     "relatedIngredients": [
       "대게"
@@ -10571,21 +11176,54 @@
     "difficulty": "하",
     "image": "recipes/recipe-chili-pickles.png",
     "ingredients": [
-      { "name": "풋고추", "amount": "400g" },
-      { "name": "물", "amount": "2.5종이컵" }
+      {
+        "name": "풋고추",
+        "amount": "400g"
+      },
+      {
+        "name": "물",
+        "amount": "2.5종이컵"
+      }
     ],
     "seasoning": [
-      { "name": "간장", "amount": "2.5종이컵" },
-      { "name": "식초", "amount": "1.5종이컵" },
-      { "name": "설탕", "amount": "1.5종이컵" }
+      {
+        "name": "간장",
+        "amount": "2.5종이컵"
+      },
+      {
+        "name": "식초",
+        "amount": "1.5종이컵"
+      },
+      {
+        "name": "설탕",
+        "amount": "1.5종이컵"
+      }
     ],
     "steps": [
-      { "step": 1, "description": "풋고추는 깨끗이 씻은 뒤 체에 밭쳐 물기를 완전히 제거하고 꼭지를 단정하게 자릅니다." },
-      { "step": 2, "description": "고추 끝부분에 포크나 이쑤시개로 구멍을 송송 뚫어 간장 양념이 잘 스며들도록 준비합니다." },
-      { "step": 3, "description": "냄비에 간장, 설탕, 물을 넣고 설탕이 녹을 때까지 저어준 뒤 불에 올려 한소끔 팔팔 끓입니다." },
-      { "step": 4, "description": "간장 양념이 다 끓어 불을 끈 뒤, 뜨거운 상태에서 식초를 넣어 섞어줍니다." },
-      { "step": 5, "description": "밀폐 용기에 손질한 고추를 담고, 간장 소스를 뜨거울 때 바로 붓습니다. 뜨거울 때 부어야 장아찌가 더 아삭아삭해집니다." },
-      { "step": 6, "description": "누름돌이나 무거운 그릇으로 고추가 간장에 푹 잠기도록 누른 뒤, 실온에서 한 김 식혀 뚜껑을 닫고 냉장고에서 일주일 숙성시킨 후 섭취합니다." }
+      {
+        "step": 1,
+        "description": "풋고추는 깨끗이 씻은 뒤 체에 밭쳐 물기를 완전히 제거하고 꼭지를 단정하게 자릅니다."
+      },
+      {
+        "step": 2,
+        "description": "고추 끝부분에 포크나 이쑤시개로 구멍을 송송 뚫어 간장 양념이 잘 스며들도록 준비합니다."
+      },
+      {
+        "step": 3,
+        "description": "냄비에 간장, 설탕, 물을 넣고 설탕이 녹을 때까지 저어준 뒤 불에 올려 한소끔 팔팔 끓입니다."
+      },
+      {
+        "step": 4,
+        "description": "간장 양념이 다 끓어 불을 끈 뒤, 뜨거운 상태에서 식초를 넣어 섞어줍니다."
+      },
+      {
+        "step": 5,
+        "description": "밀폐 용기에 손질한 고추를 담고, 간장 소스를 뜨거울 때 바로 붓습니다. 뜨거울 때 부어야 장아찌가 더 아삭아삭해집니다."
+      },
+      {
+        "step": 6,
+        "description": "누름돌이나 무거운 그릇으로 고추가 간장에 푹 잠기도록 누른 뒤, 실온에서 한 김 식혀 뚜껑을 닫고 냉장고에서 일주일 숙성시킨 후 섭취합니다."
+      }
     ],
     "relatedIngredients": [
       "풋고추"
@@ -10603,23 +11241,62 @@
     "difficulty": "초급",
     "image": "recipes/recipe-meowidae-stir-fry.png",
     "ingredients": [
-      { "name": "머윗대", "amount": "300g" },
-      { "name": "식용유", "amount": "1큰술" },
-      { "name": "들기름", "amount": "1큰술" },
-      { "name": "다시마 육수", "amount": "0.5컵" }
+      {
+        "name": "머윗대",
+        "amount": "300g"
+      },
+      {
+        "name": "식용유",
+        "amount": "1큰술"
+      },
+      {
+        "name": "들기름",
+        "amount": "1큰술"
+      },
+      {
+        "name": "다시마 육수",
+        "amount": "0.5컵"
+      }
     ],
     "seasoning": [
-      { "name": "다진 마늘", "amount": "1작은술" },
-      { "name": "국간장", "amount": "1큰술" },
-      { "name": "들깨가루", "amount": "3큰술" },
-      { "name": "소금", "amount": "0.5작은술" }
+      {
+        "name": "다진 마늘",
+        "amount": "1작은술"
+      },
+      {
+        "name": "국간장",
+        "amount": "1큰술"
+      },
+      {
+        "name": "들깨가루",
+        "amount": "3큰술"
+      },
+      {
+        "name": "소금",
+        "amount": "0.5작은술"
+      }
     ],
     "steps": [
-      { "step": 1, "description": "데친 머윗대는 껍질을 벗기고 먹기 좋은 크기로 어슷하게 썰어 준비합니다." },
-      { "step": 2, "description": "달군 팬에 식용유와 들기름을 두르고 다진 마늘과 머윗대를 넣어 고루 볶습니다." },
-      { "step": 3, "description": "머윗대에 기름이 돌며 부드러워지면 국간장과 다시마 육수를 붓고 끓입니다." },
-      { "step": 4, "description": "국물이 자작하게 졸아들면 들깨가루를 넣어 고루 섞어줍니다." },
-      { "step": 5, "description": "소금으로 마지막 간을 맞춘 뒤 가볍게 볶아 그릇에 담아냅니다." }
+      {
+        "step": 1,
+        "description": "데친 머윗대는 껍질을 벗기고 먹기 좋은 크기로 어슷하게 썰어 준비합니다."
+      },
+      {
+        "step": 2,
+        "description": "달군 팬에 식용유와 들기름을 두르고 다진 마늘과 머윗대를 넣어 고루 볶습니다."
+      },
+      {
+        "step": 3,
+        "description": "머윗대에 기름이 돌며 부드러워지면 국간장과 다시마 육수를 붓고 끓입니다."
+      },
+      {
+        "step": 4,
+        "description": "국물이 자작하게 졸아들면 들깨가루를 넣어 고루 섞어줍니다."
+      },
+      {
+        "step": 5,
+        "description": "소금으로 마지막 간을 맞춘 뒤 가볍게 볶아 그릇에 담아냅니다."
+      }
     ],
     "tips": [
       "머윗대를 삶아서 찬물에 반나절 정도 담가두면 특유의 쓴맛과 아린 맛을 뺄 수 있습니다.",
@@ -10641,22 +11318,58 @@
     "difficulty": "초급",
     "image": "recipes/recipe-yuchaenamul-muchim.png",
     "ingredients": [
-      { "name": "유채나물", "amount": "200g" },
-      { "name": "대파", "amount": "1작은술" }
+      {
+        "name": "유채나물",
+        "amount": "200g"
+      },
+      {
+        "name": "대파",
+        "amount": "1작은술"
+      }
     ],
     "seasoning": [
-      { "name": "된장", "amount": "1큰술" },
-      { "name": "매실청", "amount": "1작은술" },
-      { "name": "다진 마늘", "amount": "0.5작은술" },
-      { "name": "참기름", "amount": "1큰술" },
-      { "name": "깨소금", "amount": "1작은술" }
+      {
+        "name": "된장",
+        "amount": "1큰술"
+      },
+      {
+        "name": "매실청",
+        "amount": "1작은술"
+      },
+      {
+        "name": "다진 마늘",
+        "amount": "0.5작은술"
+      },
+      {
+        "name": "참기름",
+        "amount": "1큰술"
+      },
+      {
+        "name": "깨소금",
+        "amount": "1작은술"
+      }
     ],
     "steps": [
-      { "step": 1, "description": "유채나물은 억센 줄기와 시든 잎을 손질하여 흐르는 물에 깨끗이 씻습니다." },
-      { "step": 2, "description": "끓는 물에 소금을 약간 넣고 유채나물을 넣어 살짝 데친 후, 곧바로 찬물에 헹궈 물기를 꼭 짭니다." },
-      { "step": 3, "description": "물기를 짠 유채나물은 먹기 좋은 크기로 썰어 뭉친 부분을 풀어줍니다." },
-      { "step": 4, "description": "볼에 된장, 매실청, 다진 마늘, 다진 대파를 넣어 잘 섞어 양념장을 만듭니다." },
-      { "step": 5, "description": "유채나물에 양념을 넣어 조물조물 무치다가 참기름과 깨소금을 뿌려 가볍게 버무려 완성합니다." }
+      {
+        "step": 1,
+        "description": "유채나물은 억센 줄기와 시든 잎을 손질하여 흐르는 물에 깨끗이 씻습니다."
+      },
+      {
+        "step": 2,
+        "description": "끓는 물에 소금을 약간 넣고 유채나물을 넣어 살짝 데친 후, 곧바로 찬물에 헹궈 물기를 꼭 짭니다."
+      },
+      {
+        "step": 3,
+        "description": "물기를 짠 유채나물은 먹기 좋은 크기로 썰어 뭉친 부분을 풀어줍니다."
+      },
+      {
+        "step": 4,
+        "description": "볼에 된장, 매실청, 다진 마늘, 다진 대파를 넣어 잘 섞어 양념장을 만듭니다."
+      },
+      {
+        "step": 5,
+        "description": "유채나물에 양념을 넣어 조물조물 무치다가 참기름과 깨소금을 뿌려 가볍게 버무려 완성합니다."
+      }
     ],
     "tips": [
       "유채나물은 특유의 아삭한 식감이 매력이므로 너무 오래 데치지 마세요.",
@@ -10678,28 +11391,82 @@
     "difficulty": "초급",
     "image": "recipes/recipe-haesam-mulhoe.png",
     "ingredients": [
-      { "name": "해삼", "amount": "200g" },
-      { "name": "오이", "amount": "0.5개" },
-      { "name": "양파", "amount": "0.5개" },
-      { "name": "깻잎", "amount": "5장" },
-      { "name": "양배추", "amount": "50g" },
-      { "name": "물", "amount": "2컵" }
+      {
+        "name": "해삼",
+        "amount": "200g"
+      },
+      {
+        "name": "오이",
+        "amount": "0.5개"
+      },
+      {
+        "name": "양파",
+        "amount": "0.5개"
+      },
+      {
+        "name": "깻잎",
+        "amount": "5장"
+      },
+      {
+        "name": "양배추",
+        "amount": "50g"
+      },
+      {
+        "name": "물",
+        "amount": "2컵"
+      }
     ],
     "seasoning": [
-      { "name": "고추장", "amount": "3큰술" },
-      { "name": "고춧가루", "amount": "1큰술" },
-      { "name": "설탕", "amount": "2큰술" },
-      { "name": "식초", "amount": "4큰술" },
-      { "name": "다진 마늘", "amount": "1큰술" },
-      { "name": "참기름", "amount": "1큰술" },
-      { "name": "통깨", "amount": "1큰술" }
+      {
+        "name": "고추장",
+        "amount": "3큰술"
+      },
+      {
+        "name": "고춧가루",
+        "amount": "1큰술"
+      },
+      {
+        "name": "설탕",
+        "amount": "2큰술"
+      },
+      {
+        "name": "식초",
+        "amount": "4큰술"
+      },
+      {
+        "name": "다진 마늘",
+        "amount": "1큰술"
+      },
+      {
+        "name": "참기름",
+        "amount": "1큰술"
+      },
+      {
+        "name": "통깨",
+        "amount": "1큰술"
+      }
     ],
     "steps": [
-      { "step": 1, "description": "손질된 해삼은 깨끗이 씻은 후 물기를 빼고 얇고 먹기 좋은 크기로 썹니다." },
-      { "step": 2, "description": "오이, 양파, 깻잎, 양배추는 얇게 채 썰어 차가운 물에 잠시 담가 아삭함을 더한 뒤 건져 물기를 완전히 뺍니다." },
-      { "step": 3, "description": "볼에 고추장, 고춧가루, 설탕, 식초, 다진 마늘을 넣고 물을 부어 시원한 물회 양념 육수를 만듭니다." },
-      { "step": 4, "description": "대접에 채 썬 채소를 소복하게 둘러 담고 그 위에 썰어 둔 해삼을 풍성하게 얹습니다." },
-      { "step": 5, "description": "차갑게 보관한 물회 육수를 부어준 후 참기름과 통깨를 뿌려 완성합니다." }
+      {
+        "step": 1,
+        "description": "손질된 해삼은 깨끗이 씻은 후 물기를 빼고 얇고 먹기 좋은 크기로 썹니다."
+      },
+      {
+        "step": 2,
+        "description": "오이, 양파, 깻잎, 양배추는 얇게 채 썰어 차가운 물에 잠시 담가 아삭함을 더한 뒤 건져 물기를 완전히 뺍니다."
+      },
+      {
+        "step": 3,
+        "description": "볼에 고추장, 고춧가루, 설탕, 식초, 다진 마늘을 넣고 물을 부어 시원한 물회 양념 육수를 만듭니다."
+      },
+      {
+        "step": 4,
+        "description": "대접에 채 썬 채소를 소복하게 둘러 담고 그 위에 썰어 둔 해삼을 풍성하게 얹습니다."
+      },
+      {
+        "step": 5,
+        "description": "차갑게 보관한 물회 육수를 부어준 후 참기름과 통깨를 뿌려 완성합니다."
+      }
     ],
     "tips": [
       "양념 육수를 미리 냉동실에 얼려 살얼음 상태로 부어 먹으면 훨씬 더 시원합니다.",
@@ -10721,17 +11488,38 @@
     "difficulty": "초급",
     "image": "recipes/recipe-jogi-gui.png",
     "ingredients": [
-      { "name": "참조기", "amount": "2마리" },
-      { "name": "식용유", "amount": "2큰술" }
+      {
+        "name": "참조기",
+        "amount": "2마리"
+      },
+      {
+        "name": "식용유",
+        "amount": "2큰술"
+      }
     ],
     "seasoning": [
-      { "name": "소금", "amount": "0.5작은술" }
+      {
+        "name": "소금",
+        "amount": "0.5작은술"
+      }
     ],
     "steps": [
-      { "step": 1, "description": "조기는 비늘을 긁어내고 지느러미와 꼬리를 손질한 뒤 씻어 키친타월로 물기를 깨끗이 제거합니다." },
-      { "step": 2, "description": "몸통 양면에 어슷하게 칼집을 넣고 소금을 골고루 뿌려 절여둡니다." },
-      { "step": 3, "description": "달군 팬에 식용유를 두르고 중약불에서 조기를 올려 굽습니다." },
-      { "step": 4, "description": "생선 살이 흩어지지 않게 뒤집어 가며 앞뒤로 노릇노릇하고 바삭하게 구워 그릇에 냅니다." }
+      {
+        "step": 1,
+        "description": "조기는 비늘을 긁어내고 지느러미와 꼬리를 손질한 뒤 씻어 키친타월로 물기를 깨끗이 제거합니다."
+      },
+      {
+        "step": 2,
+        "description": "몸통 양면에 어슷하게 칼집을 넣고 소금을 골고루 뿌려 절여둡니다."
+      },
+      {
+        "step": 3,
+        "description": "달군 팬에 식용유를 두르고 중약불에서 조기를 올려 굽습니다."
+      },
+      {
+        "step": 4,
+        "description": "생선 살이 흩어지지 않게 뒤집어 가며 앞뒤로 노릇노릇하고 바삭하게 구워 그릇에 냅니다."
+      }
     ],
     "tips": [
       "조기 겉면에 전분가루나 밀가루를 얇게 입혀 구우면 살이 덜 부서지고 껍질이 더 바삭해집니다.",
@@ -10753,22 +11541,58 @@
     "difficulty": "초급",
     "image": "recipes/recipe-daepajeon.png",
     "ingredients": [
-      { "name": "대파", "amount": "2대" },
-      { "name": "부침가루", "amount": "1컵" },
-      { "name": "물", "amount": "0.8컵" },
-      { "name": "식용유", "amount": "3큰술" }
+      {
+        "name": "대파",
+        "amount": "2대"
+      },
+      {
+        "name": "부침가루",
+        "amount": "1컵"
+      },
+      {
+        "name": "물",
+        "amount": "0.8컵"
+      },
+      {
+        "name": "식용유",
+        "amount": "3큰술"
+      }
     ],
     "seasoning": [
-      { "name": "국간장", "amount": "1작은술" },
-      { "name": "홍고추", "amount": "1개" }
+      {
+        "name": "국간장",
+        "amount": "1작은술"
+      },
+      {
+        "name": "홍고추",
+        "amount": "1개"
+      }
     ],
     "steps": [
-      { "step": 1, "description": "대파는 깨끗이 씻어 팬의 길이에 맞춰 자르고, 흰 대 부분은 칼끝으로 반을 갈라 구워지기 좋게 펼칩니다." },
-      { "step": 2, "description": "홍고추는 얇게 송송 썰어 고명용으로 둡니다." },
-      { "step": 3, "description": "볼에 부침가루, 물, 국간장을 붓고 뭉치지 않게 잘 풀어 약간 묽은 반죽을 만듭니다." },
-      { "step": 4, "description": "달군 팬에 식용유를 두르고 대파를 나란히 올려 고정합니다." },
-      { "step": 5, "description": "대파 위에 반죽을 골고루 끼얹은 뒤 얇게 펴주고 송송 썬 홍고추를 군데군데 고명으로 올립니다." },
-      { "step": 6, "description": "대파 아랫면이 노릇하고 바삭해지면 뒤집어서 반대면도 뒤집개로 꾹꾹 눌러가며 노릇하게 구워 완성합니다." }
+      {
+        "step": 1,
+        "description": "대파는 깨끗이 씻어 팬의 길이에 맞춰 자르고, 흰 대 부분은 칼끝으로 반을 갈라 구워지기 좋게 펼칩니다."
+      },
+      {
+        "step": 2,
+        "description": "홍고추는 얇게 송송 썰어 고명용으로 둡니다."
+      },
+      {
+        "step": 3,
+        "description": "볼에 부침가루, 물, 국간장을 붓고 뭉치지 않게 잘 풀어 약간 묽은 반죽을 만듭니다."
+      },
+      {
+        "step": 4,
+        "description": "달군 팬에 식용유를 두르고 대파를 나란히 올려 고정합니다."
+      },
+      {
+        "step": 5,
+        "description": "대파 위에 반죽을 골고루 끼얹은 뒤 얇게 펴주고 송송 썬 홍고추를 군데군데 고명으로 올립니다."
+      },
+      {
+        "step": 6,
+        "description": "대파 아랫면이 노릇하고 바삭해지면 뒤집어서 반대면도 뒤집개로 꾹꾹 눌러가며 노릇하게 구워 완성합니다."
+      }
     ],
     "tips": [
       "대파 흰 대 부분을 칼등으로 톡톡 두드려주면 숨이 죽어 흩어지지 않고 반죽과 잘 밀착됩니다.",
