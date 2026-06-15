@@ -242,12 +242,17 @@ function parseAndCalculateAmount(name, amountStr, baseS, currS) {
 
   // ── 큰술 ──────────────────────────────────────────────────────────────────
   if (cu === '큰술') {
-    if (calculated < 0.5) {
-      const tsp = Math.round(calculated * 3 * 2) / 2; // 작은술로 변환하되 0.5단위 반올림
-      return `${tsp < 0.5 ? 0.5 : tsp}작은술`;
-    }
-    const halfTbs = Math.round(calculated * 2) / 2;
-    return `${halfTbs}큰술`;
+    let totalTsp = Math.round(calculated * 3); // 1작은술 정수 단위로 반올림 (1큰술 = 3작은술)
+    if (totalTsp < 1) totalTsp = 1; // 최소 1작은술로 제한
+
+    const tbs = Math.floor(totalTsp / 3);
+    const tsp = totalTsp % 3;
+
+    let parts = [];
+    if (tbs > 0) parts.push(`${tbs}큰술`);
+    if (tsp > 0) parts.push(`${tsp}작은술`);
+
+    return parts.join(' ');
   }
 
   // ── 작은술 ────────────────────────────────────────────────────────────────
