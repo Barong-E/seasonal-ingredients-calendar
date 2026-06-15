@@ -827,9 +827,30 @@ async function init() {
 
       // 플로팅 버튼(FAB) 진입 애니메이션 타이머 (1.5초 후 축소)
       if (btnCamera.classList.contains('fab-scanner')) {
-        setTimeout(() => {
+        let entryTimer = setTimeout(() => {
           btnCamera.classList.remove('expanded');
         }, 1500);
+
+        // 스크롤 감지 확장/축소 애니메이션 추가
+        let isScrolling;
+        window.addEventListener('scroll', () => {
+          // 최초 진입 타이머가 아직 작동 중이면 해제 (스크롤 감지가 우선적으로 덮어씀)
+          if (entryTimer) {
+            clearTimeout(entryTimer);
+            entryTimer = null;
+          }
+
+          // 스크롤 중에는 텍스트 노출 (확장)
+          btnCamera.classList.add('expanded');
+
+          // 기존 스크롤 타이머 해제
+          clearTimeout(isScrolling);
+
+          // 1.2초 동안 스크롤이 움직이지 않으면 원래 아이콘으로 축소
+          isScrolling = setTimeout(() => {
+            btnCamera.classList.remove('expanded');
+          }, 1200);
+        }, { passive: true });
       }
     }
 

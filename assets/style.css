@@ -1797,6 +1797,7 @@ main {
 .body-transparent .app-header,
 .body-transparent #monthNav,
 .body-transparent #holidayBanner,
+.body-transparent .fab-scanner,
 .body-transparent #offlineNotice {
   display: none !important; /* 스캔 중에는 기존 본문 감춤 */
 }
@@ -2220,22 +2221,28 @@ main {
 }
 
 .fab-scanner.expanded {
-  max-width: 300px;
+  max-width: 380px;
   padding: 0 20px 0 24px;
 }
 
 .fab-scanner__text {
+  display: inline-block;
   opacity: 0;
-  margin-right: 12px;
+  max-width: 0;
+  margin-right: 0;
   font-weight: 700;
   font-size: 0.95rem;
-  transition: opacity 0.3s ease;
+  overflow: hidden;
+  white-space: nowrap;
+  transition: max-width 0.4s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.3s ease, margin-right 0.4s ease;
   transition-delay: 0s;
 }
 
 .fab-scanner.expanded .fab-scanner__text {
   opacity: 1;
-  transition-delay: 0.2s; /* 늘어난 후 서서히 보이게 */
+  max-width: 300px;
+  margin-right: 12px;
+  transition-delay: 0.1s;
 }
 
 .fab-scanner:active {
