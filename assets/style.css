@@ -2181,3 +2181,63 @@ main {
   display: block;
   stroke: var(--text, #333);
 }
+
+/* =======================================================
+   감별 카메라 플로팅 버튼 (FAB)
+   ======================================================= */
+.fab-scanner {
+  position: fixed;
+  bottom: calc(80px + env(safe-area-inset-bottom));
+  right: 20px;
+  background-color: var(--primary, #0A7B34);
+  color: #fff;
+  border: none;
+  border-radius: 30px;
+  height: 56px;
+  display: flex;
+  align-items: center;
+  padding: 0 16px;
+  box-shadow: 0 4px 14px rgba(10, 123, 52, 0.4);
+  z-index: 99; /* GNB(100)보다 아래 또는 위에 적절히 배치 (보통 위에 있어야 함, GNB는 100) */
+  transition: max-width 0.5s cubic-bezier(0.4, 0, 0.2, 1), padding 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  max-width: 56px;
+  overflow: hidden;
+  white-space: nowrap;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* z-index GNB위로 설정 */
+.fab-scanner {
+  z-index: 101; 
+}
+
+.fab-scanner__icon {
+  flex-shrink: 0;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.fab-scanner.expanded {
+  max-width: 300px;
+  padding: 0 20px 0 24px;
+}
+
+.fab-scanner__text {
+  opacity: 0;
+  margin-right: 12px;
+  font-weight: 700;
+  font-size: 0.95rem;
+  transition: opacity 0.3s ease;
+  transition-delay: 0s;
+}
+
+.fab-scanner.expanded .fab-scanner__text {
+  opacity: 1;
+  transition-delay: 0.2s; /* 늘어난 후 서서히 보이게 */
+}
+
+.fab-scanner:active {
+  transform: scale(0.95);
+  transition: transform 0.1s;
+}

@@ -824,6 +824,13 @@ async function init() {
         e.preventDefault();
         startCameraScanner();
       });
+
+      // 플로팅 버튼(FAB) 진입 애니메이션 타이머 (1.5초 후 축소)
+      if (btnCamera.classList.contains('fab-scanner')) {
+        setTimeout(() => {
+          btnCamera.classList.remove('expanded');
+        }, 1500);
+      }
     }
 
     const btnExit = document.getElementById('btnExitScanner');
