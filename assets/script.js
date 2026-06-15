@@ -853,10 +853,10 @@ async function init() {
           // 기존 스크롤 타이머 해제
           clearTimeout(isScrolling);
 
-          // 0.5초 동안 스크롤이 움직이지 않으면 원래 아이콘으로 축소
+          // 1초 동안 스크롤이 움직이지 않으면 원래 아이콘으로 축소
           isScrolling = setTimeout(() => {
             btnCamera.classList.remove('expanded');
-          }, 500);
+          }, 1000);
         }, { passive: true });
       }
     }
