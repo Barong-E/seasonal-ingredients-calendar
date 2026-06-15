@@ -7,7 +7,22 @@ document.addEventListener('DOMContentLoaded', () => {
 
   if (isCapacitor) {
     App.addListener('backButton', ({ canGoBack }) => {
-      // 1. 모달이나 열려있는 팝업이 있다면 먼저 닫기 (우선순위)
+      // 0. 카메라 스캐너 오버레이가 열려 있다면 닫기 (우선순위 최상)
+      const cameraOverlay = document.getElementById('cameraScannerOverlay');
+      if (cameraOverlay && cameraOverlay.style.display !== 'none') {
+        const exitBtn = document.getElementById('btnExitScanner');
+        if (exitBtn) exitBtn.click();
+        return; // 뒤로가기 처리를 여기서 마침
+      }
+
+      const calorieOverlay = document.getElementById('calorieScannerOverlay');
+      if (calorieOverlay && calorieOverlay.style.display !== 'none') {
+        const exitBtn = document.getElementById('calorieScannerExit');
+        if (exitBtn) exitBtn.click();
+        return; // 뒤로가기 처리를 여기서 마침
+      }
+
+      // 1. 모달이나 열려있는 팝업이 있다면 먼저 닫기
       const modal = document.querySelector('.modal.active') || document.querySelector('.dialog[open]');
       if (modal) {
         if (typeof modal.close === 'function') {
