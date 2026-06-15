@@ -825,11 +825,18 @@ async function init() {
         startCameraScanner();
       });
 
-      // 플로팅 버튼(FAB) 진입 애니메이션 타이머 (1.5초 후 축소)
+      // 플로팅 버튼(FAB) 진입 애니메이션 타이머
       if (btnCamera.classList.contains('fab-scanner')) {
+        // 진입 직후(100ms 지연) 바로 스르륵 길어짐 애니메이션 노출
         let entryTimer = setTimeout(() => {
-          btnCamera.classList.remove('expanded');
-        }, 1500);
+          btnCamera.classList.add('expanded');
+          
+          // 그 후 2초 동안 길게 보여준 뒤 다시 축소
+          entryTimer = setTimeout(() => {
+            btnCamera.classList.remove('expanded');
+            entryTimer = null;
+          }, 2000);
+        }, 100);
 
         // 스크롤 감지 확장/축소 애니메이션 추가
         let isScrolling;
@@ -846,10 +853,10 @@ async function init() {
           // 기존 스크롤 타이머 해제
           clearTimeout(isScrolling);
 
-          // 1.2초 동안 스크롤이 움직이지 않으면 원래 아이콘으로 축소
+          // 0.5초 동안 스크롤이 움직이지 않으면 원래 아이콘으로 축소
           isScrolling = setTimeout(() => {
             btnCamera.classList.remove('expanded');
-          }, 1200);
+          }, 500);
         }, { passive: true });
       }
     }
