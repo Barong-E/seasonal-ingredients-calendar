@@ -10,12 +10,12 @@
         android:fillColor="#FF000000"
         android:pathData="M49,30h10v7H49z M51,32v3h6v-3z" />
 
-    <!-- 각진 다각형 종 몸통 (Y: 39 ~ 65) - 고리 및 아래 앵두와의 간격 확보 -->
+    <!-- 계단형 직각 다각형 종 몸통 (Y: 39 ~ 65) - 고리 및 자두와의 간격 조절 -->
     <path
         android:fillColor="#FF000000"
-        android:pathData="M47,39h14l5,5v14l6,5v2H36v-2l6,-5v-14Z" />
+        android:pathData="M47,39h14l5,5v12h6v8H36v-8h6v-12Z" />
 
-    <!-- 🍒 동글동글 앵두 타종추 (Y: 69 ~ 79) - 종 몸체와의 경계 확보 -->
+    <!-- 🍒 동글동글 빨간 자두 타종추 (Y: 69 ~ 79) - 종 몸체와의 경계 확보 -->
     <path
         android:fillColor="#FF000000"
         android:pathData="M54,69c-2.76,0 -5,2.24 -5,5c0,2.76 2.24,5 5,5s5,-2.24 5,-5c0,-2.76 -2.24,-5 -5,-5z" />
