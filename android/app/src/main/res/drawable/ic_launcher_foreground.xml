@@ -16,41 +16,7 @@
         android:fillColor="#08000000"
         android:pathData="M 54,70 C 50.7,70 48,72.7 48,76 C 48,79.3 50.7,82 54,82 C 57,82 60,79.3 60,76 C 60,72.7 57,70 54,70 Z" />
 
-    <!-- [3] 듀얼 고리 - 주 고리 (Double Loop - Main Ring) -->
-    <path
-        android:pathData="M 54,39 C 51.5,39 49.5,37 49.5,34.5 C 49.5,32 51.5,30 54,30 C 56.5,30 58.5,32 58.5,34.5 C 58.5,37 56.5,39 54,39 Z M 54,32.5 C 52.9,32.5 52,33.4 52,34.5 C 52,35.6 52.9,36.5 54,36.5 C 55.1,36.5 56,35.6 56,34.5 C 56,33.4 55.1,32.5 54,32.5 Z">
-        <aapt:attr name="android:fillColor">
-            <gradient
-                android:startX="49.5"
-                android:startY="30"
-                android:endX="58.5"
-                android:endY="39"
-                android:type="linear">
-                <item android:color="#FFE082" android:offset="0.0" />
-                <item android:color="#FFB300" android:offset="0.5" />
-                <item android:color="#FF8F00" android:offset="1.0" />
-            </gradient>
-        </aapt:attr>
-    </path>
-
-    <!-- [4] 듀얼 고리 - 연결 꼬임 고리 (Double Loop - Cross Ring) -->
-    <path
-        android:pathData="M 49,36.5 C 47.6,36.5 46.5,35.4 46.5,34 C 46.5,32.6 47.6,31.5 49,31.5 C 50.4,31.5 51.5,32.6 51.5,34 C 51.5,35.4 50.4,36.5 49,36.5 Z M 49,32.5 C 48.2,32.5 47.5,33.2 47.5,34 C 47.5,34.8 48.2,35.5 49,35.5 C 49.8,35.5 50.5,34.8 50.5,34 C 50.5,32.2 49.8,32.5 49,32.5 Z">
-        <aapt:attr name="android:fillColor">
-            <gradient
-                android:startX="46.5"
-                android:startY="31.5"
-                android:endX="51.5"
-                android:endY="36.5"
-                android:type="linear">
-                <item android:color="#FFE082" android:offset="0.0" />
-                <item android:color="#FFB300" android:offset="0.5" />
-                <item android:color="#FF8F00" android:offset="1.0" />
-            </gradient>
-        </aapt:attr>
-    </path>
-
-    <!-- [5] 종 내부 깊숙한 그늘 동굴 (Interior Depth) -->
+    <!-- [3] 종 내부 깊숙한 그늘 동굴 (Interior Depth) -->
     <path
         android:pathData="M 35,66 C 35,58 41,54 54,54 C 67,54 73,58 73,66 Z">
         <aapt:attr name="android:fillColor">
@@ -66,30 +32,7 @@
         </aapt:attr>
     </path>
 
-    <!-- [6] 얇은 체리 가지 (Stem) -->
-    <path
-        android:strokeWidth="1.2"
-        android:strokeColor="#3E2723"
-        android:strokeLineCap="round"
-        android:pathData="M 54,56 C 54,63 51,66 51,72" />
-
-    <!-- [7] 싱그러운 체리 나뭇잎 1개 (Leaf) -->
-    <path
-        android:pathData="M 52,63 C 54,60 58,59 61,61 C 60,64 56,65 52,63 Z">
-        <aapt:attr name="android:fillColor">
-            <gradient
-                android:startX="52"
-                android:startY="59"
-                android:endX="61"
-                android:endY="65"
-                android:type="linear">
-                <item android:color="#8BC34A" android:offset="0.0" />
-                <item android:color="#4CAF50" android:offset="1.0" />
-            </gradient>
-        </aapt:attr>
-    </path>
-
-    <!-- [8] 도톰하고 우아한 황금 종 몸체 (Bell Body) -->
+    <!-- [4] 도톰하고 우아한 황금 종 몸체 (Bell Body) - 뒤에 위치 -->
     <path
         android:pathData="M 54,35 C 46,35 41,39 41,49 C 41,56 38,58 33,60 C 30,61 30,66 35,66 L 73,66 C 78,66 78,61 75,60 C 72,58 69,56 69,49 C 69,39 62,35 54,35 Z">
         <aapt:attr name="android:fillColor">
@@ -106,17 +49,74 @@
         </aapt:attr>
     </path>
 
-    <!-- [9] 종 표면의 우아한 물결 패턴 조각선 (Ornamental Engraving) -->
+    <!-- [5] 종 몸체 3D 입체 반쪽 음영 (3D Half-Shadow) -->
+    <path
+        android:fillColor="#0C000000"
+        android:pathData="M 54,35 L 54,66 L 73,66 C 78,66 78,61 75,60 C 72,58 69,56 69,49 C 69,39 62,35 54,35 Z" />
+
+    <!-- [6] 종 표면의 우아한 물결 패턴 조각선 (Ornamental Engraving) -->
     <path
         android:strokeWidth="0.8"
         android:strokeColor="#8D6E63"
         android:strokeLineCap="round"
         android:pathData="M 42,58 C 45,56 48,60 51,58 C 54,56 57,60 60,58 C 63,56 66,60 69,58" />
 
-    <!-- [10] 종 몸체 3D 입체 반쪽 음영 (3D Half-Shadow) -->
+    <!-- [7] 듀얼 고리 - 주 고리 (Double Loop - Main Ring) - 종 몸체 앞에 얹음 (Y축 2dp 올림) -->
     <path
-        android:fillColor="#0C000000"
-        android:pathData="M 54,35 L 54,66 L 73,66 C 78,66 78,61 75,60 C 72,58 69,56 69,49 C 69,39 62,35 54,35 Z" />
+        android:pathData="M 54,37 C 51.5,37 49.5,35 49.5,32.5 C 49.5,30 51.5,28 54,28 C 56.5,28 58.5,30 58.5,32.5 C 58.5,35 56.5,37 54,37 Z M 54,30.5 C 52.9,30.5 52,31.4 52,32.5 C 52,33.6 52.9,34.5 54,34.5 C 55.1,34.5 56,33.6 56,32.5 C 56,31.4 55.1,30.5 54,30.5 Z">
+        <aapt:attr name="android:fillColor">
+            <gradient
+                android:startX="49.5"
+                android:startY="28"
+                android:endX="58.5"
+                android:endY="37"
+                android:type="linear">
+                <item android:color="#FFE082" android:offset="0.0" />
+                <item android:color="#FFB300" android:offset="0.5" />
+                <item android:color="#FF8F00" android:offset="1.0" />
+            </gradient>
+        </aapt:attr>
+    </path>
+
+    <!-- [8] 듀얼 고리 - 연결 꼬임 고리 (Double Loop - Cross Ring) - 종 몸체 앞에 얹음 (Y축 2dp 올림) -->
+    <path
+        android:pathData="M 49,34.5 C 47.6,34.5 46.5,33.4 46.5,32 C 46.5,30.6 47.6,29.5 49,29.5 C 50.4,29.5 51.5,30.6 51.5,32 C 51.5,33.4 50.4,34.5 49,34.5 Z M 49,30.5 C 48.2,30.5 47.5,31.2 47.5,32 C 47.5,32.8 48.2,33.5 49,33.5 C 49.8,33.5 50.5,32.8 50.5,32 C 50.5,30.2 49.8,30.5 49,30.5 Z">
+        <aapt:attr name="android:fillColor">
+            <gradient
+                android:startX="46.5"
+                android:startY="29.5"
+                android:endX="51.5"
+                android:endY="34.5"
+                android:type="linear">
+                <item android:color="#FFE082" android:offset="0.0" />
+                <item android:color="#FFB300" android:offset="0.5" />
+                <item android:color="#FF8F00" android:offset="1.0" />
+            </gradient>
+        </aapt:attr>
+    </path>
+
+    <!-- [9] 얇은 체리 가지 (Stem) - 종 몸체 앞에 배치되어 선명하게 보임 -->
+    <path
+        android:strokeWidth="1.2"
+        android:strokeColor="#3E2723"
+        android:strokeLineCap="round"
+        android:pathData="M 54,56 C 54,63 51,66 51,72" />
+
+    <!-- [10] 싱그러운 체리 나뭇잎 1개 (Leaf) - 종 몸체 하단 림 위에 예쁘게 얹혀짐 -->
+    <path
+        android:pathData="M 52,63 C 54,60 58,59 61,61 C 60,64 56,65 52,63 Z">
+        <aapt:attr name="android:fillColor">
+            <gradient
+                android:startX="52"
+                android:startY="59"
+                android:endX="61"
+                android:endY="65"
+                android:type="linear">
+                <item android:color="#8BC34A" android:offset="0.0" />
+                <item android:color="#4CAF50" android:offset="1.0" />
+            </gradient>
+        </aapt:attr>
+    </path>
 
     <!-- [11] 🍒 동글동글 앵두 타종추 (Clapper) -->
     <path
@@ -149,7 +149,7 @@
         android:fillColor="#E6FFFFFF"
         android:pathData="M 42,42.5 L 41.5,45 L 42,47.5 L 42.5,45 Z M 39.5,45 L 42,44.5 L 44.5,45 L 42,45.5 Z
                           M 36,59.5 L 35.5,62 L 36,64.5 L 36.5,62 Z M 33.5,62 L 36,61.5 L 38.5,62 L 36,62.5 Z
-                          M 59,30.5 L 58.5,33 L 59,35.5 L 59.5,33 Z M 56.5,33 L 59,32.5 L 61.5,33 L 59,33.5 Z
+                          M 59,28.5 L 58.5,31 L 59,33.5 L 59.5,31 Z M 56.5,31 L 59,30.5 L 61.5,31 L 59,31.5 Z
                           M 73,58.5 L 72.5,61 L 73,63.5 L 73.5,61 Z M 70.5,61 L 73,60.5 L 75.5,61 L 73,61.5 Z" />
 
 </vector>
