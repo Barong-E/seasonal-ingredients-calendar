@@ -4,9 +4,13 @@
 <head>
   <script>
     (function () {
-      const lastTab = localStorage.getItem('lastTab');
-      if (lastTab && lastTab !== 'index.html' && lastTab !== 'index.html/' && !window.location.pathname.endsWith(lastTab)) {
-        window.location.replace(lastTab);
+      const hasRedirected = sessionStorage.getItem('appTabRedirected');
+      if (!hasRedirected) {
+        sessionStorage.setItem('appTabRedirected', 'true');
+        const lastTab = localStorage.getItem('lastTab');
+        if (lastTab && lastTab !== 'index.html' && lastTab !== 'index.html/' && !window.location.pathname.endsWith(lastTab)) {
+          window.location.replace(lastTab);
+        }
       }
     })();
   </script>
