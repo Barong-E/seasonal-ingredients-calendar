@@ -238,7 +238,7 @@ function getMonthsRangeText(months) {
 
 // 데이터 로딩
 async function loadAllData() {
-  const cacheVersion = 'v44';
+  const cacheVersion = 'v45';
   try {
     const [ingRes, holRes, recRes] = await Promise.all([
       fetch(`data/ingredients.json?v=${cacheVersion}`).then(r => r.ok ? r.json() : []),

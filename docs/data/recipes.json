@@ -9641,7 +9641,8 @@
         "description": "뜨거울 때 열탕 소독한 유리병에 담아 밀봉하여 냉장 보관합니다."
       }
     ],
-    "servingsUnit": "ml"
+    "servingsUnit": "ml",
+    "image": "recipes/recipe-mulberry-jam.png"
   },
   {
     "id": "mulberry-smoothie",
@@ -9684,7 +9685,8 @@
         "step": 3,
         "description": "예쁜 컵에 담아 시원하게 즐깁니다. (생과일 오디 몇 알을 토핑으로 올리면 더욱 좋습니다)"
       }
-    ]
+    ],
+    "image": "recipes/recipe-mulberry-smoothie.png"
   },
   {
     "id": "green-pea-soup",
@@ -9740,7 +9742,8 @@
         "description": "간 재료를 냄비에 붓고 우유를 넣어 농도를 맞춘 뒤, 약불에서 끓어오르기 직전까지 뭉근하게 데우며 소금으로 간을 맞춘다."
       }
     ],
-    "servingsUnit": "인분"
+    "servingsUnit": "인분",
+    "image": "recipes/recipe-green-pea-soup.png"
   },
   {
     "id": "chives-pancake",
@@ -9799,7 +9802,8 @@
         "step": 5,
         "description": "앞뒤로 노릇노릇하고 바삭해질 때까지 구워내면 완성입니다."
       }
-    ]
+    ],
+    "image": "recipes/recipe-chives-pancake.png"
   },
   {
     "id": "bamboo-shoot-stir-fry",
@@ -9870,7 +9874,8 @@
         "step": 5,
         "description": "불을 끄고 참기름과 통깨를 둘러 가볍게 섞어 마무리합니다."
       }
-    ]
+    ],
+    "image": "recipes/recipe-bamboo-shoot-stir-fry.png"
   },
   {
     "id": "channamul-muchim",
