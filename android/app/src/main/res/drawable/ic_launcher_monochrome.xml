@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="108dp"
+    android:height="108dp"
+    android:viewportWidth="108"
+    android:viewportHeight="108">
+
+    <!-- 고리 (Y: 34 ~ 42) -->
+    <path
+        android:fillColor="#FF000000"
+        android:pathData="M54,42c1.66,0 3,-1.34 3,-3c0,-1.66 -1.34,-3 -3,-3s-3,1.34 -3,3c0,1.66 1.34,3 3,3z M54,34c2.76,0 5,2.24 5,5c0,2.76 -2.24,5 -5,5s-5,-2.24 -5,-5c0,-2.76 2.24,-5 5,-5z" />
+
+    <!-- 왼쪽 잎사귀 (Y: 27 ~ 36) - 종 몸체와 겹치지 않게 분리 -->
+    <path
+        android:fillColor="#FF000000"
+        android:pathData="M52.5,34.5c-4,-8 -12,-8 -14,-4c0,6 8,10 14,4z" />
+
+    <!-- 오른쪽 잎사귀 (Y: 27 ~ 36) - 종 몸체와 겹치지 않게 분리 -->
+    <path
+        android:fillColor="#FF000000"
+        android:pathData="M55.5,34.5c5,-6 11,-5 13,-1c-1,5 -8,7 -13,1z" />
+
+    <!-- 종 몸통 (Y: 44 ~ 70) - 고리/잎사귀 및 아래 앵두와 경계를 둠 -->
+    <path
+        android:fillColor="#FF000000"
+        android:pathData="M54,44c-6.63,0 -12,5.37 -12,12v10c0,2.21 -1.79,4 -4,4v2h32v-2c-2.21,-0 -4,-1.79 -4,-4V56c0,-6.63 -5.37,-12 -12,-12z" />
+
+    <!-- 🍒 동글동글 앵두 타종추 (Y: 74.5 ~ 84.5) - 종 몸체와 경계를 둠 -->
+    <path
+        android:fillColor="#FF000000"
+        android:pathData="M54,74.5c-2.76,0 -5,2.24 -5,5c0,2.76 2.24,5 5,5s5,-2.24 5,-5c0,-2.76 -2.24,-5 -5,-5z" />
+
+</vector>
