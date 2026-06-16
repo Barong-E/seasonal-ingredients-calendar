@@ -451,11 +451,17 @@ function initHeaderScroll() {
   });
 }
 
-document.addEventListener('DOMContentLoaded', () => {
+function runInit() {
   localStorage.setItem('lastTab', 'holidays.html');
   handleRedirect();
   renderHolidaysList();
   initSearch();
   initHeaderControls();
   initHeaderScroll();
-});
+}
+
+if (document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', runInit);
+} else {
+  runInit();
+}
