@@ -326,6 +326,7 @@ function initBackupAndRestore() {
 
 // 메인 초기화
 async function init() {
+  localStorage.setItem('lastTab', 'favorites.html');
   applySeasonTheme();
   loadFavoritesFromStorage();
   initTabs();

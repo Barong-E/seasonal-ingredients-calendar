@@ -733,6 +733,7 @@ function showCameraFallbackToast() {
 // 9. 초기화
 // ============================================================
 async function init() {
+  localStorage.setItem('lastTab', 'calorie.html');
   initNativePlugin();
   await loadRegisteredIngredients();
   updateGauge();

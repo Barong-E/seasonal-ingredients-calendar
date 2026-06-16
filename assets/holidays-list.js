@@ -452,6 +452,7 @@ function initHeaderScroll() {
 }
 
 document.addEventListener('DOMContentLoaded', () => {
+  localStorage.setItem('lastTab', 'holidays.html');
   handleRedirect();
   renderHolidaysList();
   initSearch();

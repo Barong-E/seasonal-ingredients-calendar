@@ -751,6 +751,7 @@ function showWebNotificationInfoModal() {
 }
 
 async function init() {
+  localStorage.setItem('lastTab', 'index.html');
   try {
     // --- 방문 횟수 체크 및 인앱 리뷰 요청 로직 ---
     let visits = parseInt(localStorage.getItem('app_visits') || '0', 10);
