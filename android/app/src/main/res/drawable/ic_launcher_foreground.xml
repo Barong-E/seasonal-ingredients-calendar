@@ -1,23 +1,84 @@
 <?xml version="1.0" encoding="utf-8"?>
 <vector xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:aapt="http://schemas.android.com/aapt"
     android:width="108dp"
     android:height="108dp"
     android:viewportWidth="108"
     android:viewportHeight="108">
 
-    <!-- 고리 (Y: 30 ~ 39) -->
+    <!-- [1] 종 몸체 소프트 바닥 그림자 (Drop Shadow) -->
     <path
-        android:fillColor="#F9A825"
-        android:pathData="M 54,39 C 51.5,39 49.5,37 49.5,34.5 C 49.5,32 51.5,30 54,30 C 56.5,30 58.5,32 58.5,34.5 C 58.5,37 56.5,39 54,39 Z M 54,32.5 C 52.9,32.5 52,33.4 52,34.5 C 52,35.6 52.9,36.5 54,36.5 C 55.1,36.5 56,35.6 56,34.5 C 56,33.4 55.1,32.5 54,32.5 Z" />
+        android:fillColor="#0D000000"
+        android:pathData="M 54,38 C 44,38 39,43 39,54 C 39,59 37,61 34,62 C 31,63 31,68 35,68 L 73,68 C 77,68 77,63 74,62 C 71,61 69,59 69,54 C 69,43 64,38 54,38 Z" />
 
-    <!-- 둥글둥글 통통하고 뚱뚱한 종 몸통 (Y: 36 ~ 66) -->
+    <!-- [2] 앵두 소프트 바닥 그림자 (Drop Shadow) -->
     <path
-        android:fillColor="#F9A825"
-        android:pathData="M 54,36 C 44,36 39,41 39,52 C 39,57 37,59 34,60 C 31,61 31,66 35,66 L 73,66 C 77,66 77,61 74,60 C 71,59 69,57 69,52 C 69,41 64,36 54,36 Z" />
+        android:fillColor="#08000000"
+        android:pathData="M 54,70 C 50.7,70 48,72.7 48,76 C 48,79.3 50.7,82 54,82 C 57,82 60,79.3 60,76 C 60,72.7 57,70 54,70 Z" />
 
-    <!-- 🍒 동글동글 앵두 타종추 (Y: 68.5 ~ 80.5) -->
+    <!-- [3] 종 고리 (Loop) -->
     <path
-        android:fillColor="#E53935"
-        android:pathData="M 54,68.5 C 50.7,68.5 48,71.2 48,74.5 C 48,77.8 50.7,80.5 54,80.5 C 57,80.5 60,77.8 60,74.5 C 60,71.2 57,68.5 54,68.5 Z" />
+        android:pathData="M 54,39 C 51.5,39 49.5,37 49.5,34.5 C 49.5,32 51.5,30 54,30 C 56.5,30 58.5,32 58.5,34.5 C 58.5,37 56.5,39 54,39 Z M 54,32.5 C 52.9,32.5 52,33.4 52,34.5 C 52,35.6 52.9,36.5 54,36.5 C 55.1,36.5 56,35.6 56,34.5 C 56,33.4 55.1,32.5 54,32.5 Z">
+        <aapt:attr name="android:fillColor">
+            <gradient
+                android:startX="49.5"
+                android:startY="30"
+                android:endX="58.5"
+                android:endY="39"
+                android:type="linear">
+                <item android:color="#FFE082" android:offset="0.0" />
+                <item android:color="#FFB300" android:offset="0.5" />
+                <item android:color="#FF8F00" android:offset="1.0" />
+            </gradient>
+        </aapt:attr>
+    </path>
+
+    <!-- [4] 둥글둥글 통통하고 뚱뚱한 종 몸통 (Bell Body) -->
+    <path
+        android:pathData="M 54,36 C 44,36 39,41 39,52 C 39,57 37,59 34,60 C 31,61 31,66 35,66 L 73,66 C 77,66 77,61 74,60 C 71,59 69,57 69,52 C 69,41 64,36 54,36 Z">
+        <aapt:attr name="android:fillColor">
+            <gradient
+                android:startX="41"
+                android:startY="36"
+                android:endX="74"
+                android:endY="66"
+                android:type="linear">
+                <item android:color="#FFE082" android:offset="0.0" />
+                <item android:color="#FFB300" android:offset="0.5" />
+                <item android:color="#FF8F00" android:offset="1.0" />
+            </gradient>
+        </aapt:attr>
+    </path>
+
+    <!-- [5] 종 몸통 3D 입체 반쪽 음영 (3D Half-Shadow) -->
+    <path
+        android:fillColor="#0D000000"
+        android:pathData="M 54,36 L 54,66 L 73,66 C 77,66 77,61 74,60 C 71,59 69,57 69,52 C 69,41 64,36 54,36 Z" />
+
+    <!-- [6] 🍒 동글동글 앵두 타종추 (Clapper) -->
+    <path
+        android:pathData="M 54,68.5 C 50.7,68.5 48,71.2 48,74.5 C 48,77.8 50.7,80.5 54,80.5 C 57,80.5 60,77.8 60,74.5 C 60,71.2 57,68.5 54,68.5 Z">
+        <aapt:attr name="android:fillColor">
+            <gradient
+                android:startX="48"
+                android:startY="68.5"
+                android:endX="60"
+                android:endY="80.5"
+                android:type="linear">
+                <item android:color="#FF5252" android:offset="0.0" />
+                <item android:color="#C62828" android:offset="1.0" />
+            </gradient>
+        </aapt:attr>
+    </path>
+
+    <!-- [7] 🍒 앵두 3D 입체 반쪽 음영 (Clapper Half-Shadow) -->
+    <path
+        android:fillColor="#0A000000"
+        android:pathData="M 54,68.5 L 54,80.5 C 57,80.5 60,77.8 60,74.5 C 60,71.2 57,68.5 54,68.5 Z" />
+
+    <!-- [8] 🍒 앵두 빛방울 입체 광택 (Cherry Highlight) -->
+    <path
+        android:fillColor="#CCFFFFFF"
+        android:pathData="M 51.5,71.3 c -0.66,0 -1.2,0.54 -1.2,1.2 c 0,0.66 0.54,1.2 1.2,1.2 c 0.66,0 1.2,-0.54 1.2,-1.2 c 0,-0.66 -0.54,-1.2 -1.2,-1.2 z" />
 
 </vector>
