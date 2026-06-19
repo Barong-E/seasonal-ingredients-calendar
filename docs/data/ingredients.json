@@ -3097,5 +3097,80 @@
     ],
     "selection_ko": "흰 대 부분이 길고 단단하며 곧게 뻗어 있고, 초록 잎이 선명하며 마르지 않은 것이 좋습니다.",
     "external_url": "https://link.coupang.com/a/eABNfMDDki"
+  },
+  {
+    "name_ko": "콩나물",
+    "category": "채소",
+    "image": "ingredients/soybean_sprouts.png",
+    "description_ko": "아삭아삭한 식감과 시원한 맛이 매력적인 대표 국민 채소. 아스파라긴산이 풍부하여 숙취 해소에 탁월하며, 칼로리가 낮고 식이섬유와 비타민 C가 풍부해 다이어트와 감기 예방에도 아주 좋습니다.",
+    "preparation_ko": "흐르는 물에 깨끗이 흔들어 씻어 껍질과 상한 머리 부분을 다듬어 냅니다.",
+    "storage_room_temp": "상온 보관 시 쉽게 수분이 빠져나가 질겨지고 변하므로 가급적 실온 보관은 피해야 합니다.",
+    "storage_refrigerator": "씻지 않은 상태는 키친타월에 싸서 신선실에 보관하고, 씻은 콩나물은 밀폐 용기에 담아 잠길 정도로 찬물을 부어 보관(1~2일마다 물을 갈아줌)합니다.",
+    "storage_freezer": "소금물에 1분간 살짝 데친 뒤 찬물에 식히고 물기를 꼭 짜서 소분해 보관합니다.",
+    "calories_per_100g": 30,
+    "calories_per_serving": "1회 제공량(약 70g) 약 21kcal",
+    "name_en": "Soybean Sprouts",
+    "name_ja": "",
+    "description_en": "",
+    "description_ja": "",
+    "popular_dish": "콩나물국, 콩나물무침, 콩나물밥",
+    "months": [12, 1, 2, 3],
+    "recommended_for": [
+      "숙취 해소가 필요한 어른들",
+      "가벼운 식단 관리를 원하는 분",
+      "감기 예방 및 면역력을 키우고 싶은 분"
+    ],
+    "selection_ko": "줄기가 통통하고 아삭하며 머리가 노랗고 검은 반점이 없는 것이 신선하고 좋습니다.",
+    "external_url": ""
+  },
+  {
+    "name_ko": "당근",
+    "category": "채소",
+    "image": "ingredients/carrot.png",
+    "description_ko": "달큰한 맛과 주황빛 고운 색을 가진 대표적인 다소비 채소. 베타카로틴이 풍부하여 체내에서 비타민 A로 변해 눈 건강에 탁월한 효과가 있으며, 강력한 항산화 및 식이섬유 효과가 있습니다.",
+    "preparation_ko": "흐르는 물에 깨끗이 씻은 뒤 껍질을 얇게 깎아 요리 용도에 맞게 썹니다.",
+    "storage_room_temp": "흙이 묻은 흙당근은 신문지에 싸서 서늘하고 통풍이 잘되는 그늘진 곳에 보관합니다.",
+    "storage_refrigerator": "물기를 말끔히 제거한 후 키친타월에 감싸 뿌리가 아래로 향하도록 세워 냉장실 야채칸에 보관합니다.",
+    "storage_freezer": "원하는 크기로 썬 뒤 끓는 소금물에 20초간 살짝 데쳐(블랜칭) 식히고 물기를 완전히 말려 밀폐 용기에 담아 보관합니다.",
+    "calories_per_100g": 37,
+    "calories_per_serving": "중간 크기 1개(약 120g) 약 44kcal",
+    "name_en": "Carrot",
+    "name_ja": "",
+    "description_en": "",
+    "description_ja": "",
+    "popular_dish": "당근라페, 당근전",
+    "months": [11, 12, 1, 2, 3],
+    "recommended_for": [
+      "스마트폰을 오래 보아 눈 건강이 염려되는 분",
+      "피부 건강을 맑게 가꾸고 싶은 분",
+      "식이섬유 섭취를 늘리고 싶은 분"
+    ],
+    "selection_ko": "색상이 선명한 주황빛을 띠고 묵직하며, 단단하고 꼭지 주변이 짙은 초록색을 띠지 않는 것이 답니다.",
+    "external_url": ""
+  },
+  {
+    "name_ko": "양배추",
+    "category": "채소",
+    "image": "ingredients/cabbage.png",
+    "description_ko": "영양 성분이 가득 담겨 위장을 보호해 주는 둥근 모양의 대중 채소. 비타민 U가 풍부해 아픈 위벽을 연고처럼 코팅해 치료해 주며, 식이섬유가 풍부해 훌륭한 다이어트 웰빙 채소입니다.",
+    "preparation_ko": "겉잎을 한두 장 떼어낸 후 심지를 자르고 흐르는 물에 여러 번 씻습니다.",
+    "storage_room_temp": "더위에 약해 실온 보관 시 잎이 노랗게 변하므로 부득이한 경우에만 하루이틀 내 조리합니다.",
+    "storage_refrigerator": "딱딱한 심지를 도려내고 그 자리에 물에 적신 키친타월을 채운 뒤 랩으로 싸서 심지 쪽이 아래로 가도록 보관합니다.",
+    "storage_freezer": "씻어서 썬 양배추를 끓는 물에 10초간 살짝 데쳐 물기를 꽉 짜낸 뒤 지퍼백에 얇게 펴서 얼립니다.",
+    "calories_per_100g": 25,
+    "calories_per_serving": "1회 섭취량(약 90g) 약 23kcal",
+    "name_en": "Cabbage",
+    "name_ja": "",
+    "description_en": "",
+    "description_ja": "",
+    "popular_dish": "양배추쌈, 양배추전",
+    "months": [11, 12, 1, 3, 4, 5],
+    "recommended_for": [
+      "속이 쓰리고 쓰라린 위 건강이 좋지 않은 분",
+      "화장실에 시원하게 가고 싶은 분",
+      "가벼운 다이어트 식단을 원하는 분"
+    ],
+    "selection_ko": "모양이 둥글고 단단하게 감싸여 있으며 들었을 때 단단하고 묵직한 무게감이 느껴지는 것이 아삭하고 신선합니다.",
+    "external_url": ""
   }
 ]

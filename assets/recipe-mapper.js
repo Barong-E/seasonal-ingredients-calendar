@@ -188,7 +188,14 @@ export function getRecipeIdFromDishName(dishName) {
     "유채나물무침": "recipe-yuchaenamul-muchim",
     "해삼물회": "recipe-haesam-mulhoe",
     "조기구이": "recipe-jogi-gui",
-    "대파전": "recipe-daepajeon"
+    "대파전": "recipe-daepajeon",
+    "콩나물국": "recipe-soybean-sprout-soup",
+    "콩나물무침": "recipe-seasoned-soybean-sprouts",
+    "콩나물밥": "recipe-soybean-sprout-rice",
+    "당근라페": "recipe-carrot-rapese",
+    "당근전": "recipe-carrot-jeon",
+    "양배추쌈": "recipe-steamed-cabbage-wraps",
+    "양배추전": "recipe-cabbage-jeon"
   };
   return mapping[dishName] || null;
 }

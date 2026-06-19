@@ -11607,5 +11607,226 @@
       "대파"
     ],
     "relatedHolidays": []
+  },
+  {
+    "id": "recipe-soybean-sprout-soup",
+    "name": "콩나물국",
+    "category": "채소",
+    "description": "맑고 개운하게 끓여내 아침 해장용이나 따뜻한 일상 국물로 남녀노소 즐기기 좋은 대표 국민 국 요리입니다.",
+    "image": "recipes/recipe_soybean_sprout_soup.png",
+    "servings": 2,
+    "servingsUnit": "인분",
+    "cookTime": "15분",
+    "difficulty": "하",
+    "ingredients": [
+      { "name": "콩나물", "amount": "200g" },
+      { "name": "대파", "amount": "0.5대" },
+      { "name": "물", "amount": "1L" }
+    ],
+    "seasoning": [
+      { "name": "다진 마늘", "amount": "1작은술" },
+      { "name": "국간장", "amount": "1작은술" },
+      { "name": "새우젓", "amount": "1작은술" },
+      { "name": "소금", "amount": "0.5작은술" }
+    ],
+    "steps": [
+      { "step": 1, "description": "콩나물은 흐르는 물에 깨끗이 씻어 다듬고, 대파는 어슷하게 썰어둡니다." },
+      { "step": 2, "description": "냄비에 물과 씻어둔 콩나물을 함께 넣은 다음 냄비 뚜껑을 닫고 끓입니다." },
+      { "step": 3, "description": "국물이 한소끔 팔팔 끓어오르면 뚜껑을 열고 다진 마늘, 국간장, 새우젓, 소금을 차례로 넣어 간을 해줍니다." },
+      { "step": 4, "description": "마지막으로 어슷 썰어둔 대파를 국에 넣고 한 번 더 가볍게 끓여 완성합니다." }
+    ],
+    "relatedIngredients": ["콩나물"],
+    "relatedHolidays": []
+  },
+  {
+    "id": "recipe-seasoned-soybean-sprouts",
+    "name": "콩나물무침",
+    "category": "채소",
+    "description": "데친 콩나물에 고소한 참기름과 양념을 조물조물 무쳐 만드는 한국 대표 아삭아삭한 기본 밑반찬입니다.",
+    "image": "recipes/recipe_seasoned_soybean_sprouts.png",
+    "servings": 2,
+    "servingsUnit": "인분",
+    "cookTime": "10분",
+    "difficulty": "하",
+    "ingredients": [
+      { "name": "콩나물", "amount": "200g" },
+      { "name": "쪽파", "amount": "2대" }
+    ],
+    "seasoning": [
+      { "name": "다진 마늘", "amount": "1작은술" },
+      { "name": "국간장", "amount": "1작은술" },
+      { "name": "소금", "amount": "0.5작은술" },
+      { "name": "고춧가루", "amount": "1작은술" },
+      { "name": "참기름", "amount": "1작은술" },
+      { "name": "통깨", "amount": "1작은술" }
+    ],
+    "steps": [
+      { "step": 1, "description": "콩나물은 깨끗이 씻어 물기를 빼고, 쪽파는 송송 썰어 준비합니다." },
+      { "step": 2, "description": "냄비에 물과 소금을 약간 넣은 뒤 물이 끓기 시작하면 콩나물을 넣어 데쳐준 다음 찬물에 빠르게 헹구고 채반에 밭쳐 물기를 완전히 뺍니다." },
+      { "step": 3, "description": "무침용 볼에 데쳐서 물기를 뺀 콩나물과 송송 썬 쪽파를 한데 담습니다." },
+      { "step": 4, "description": "콩나물이 담긴 볼에 다진 마늘, 국간장, 소금, 고춧가루, 참기름, 통깨를 골고루 넣고 손으로 조물조물 무쳐 완성합니다." }
+    ],
+    "relatedIngredients": ["콩나물"],
+    "relatedHolidays": []
+  },
+  {
+    "id": "recipe-soybean-sprout-rice",
+    "name": "콩나물밥",
+    "category": "채소",
+    "description": "고슬고슬한 밥과 콩나물의 고소함이 찰떡궁합을 이루어 비빔 양념장과 한 그릇 먹는 맛있는 한 그릇 요리입니다.",
+    "image": "recipes/recipe_soybean_sprout_rice.png",
+    "servings": 2,
+    "servingsUnit": "인분",
+    "cookTime": "40분",
+    "difficulty": "하",
+    "ingredients": [
+      { "name": "쌀", "amount": "200g" },
+      { "name": "콩나물", "amount": "200g" },
+      { "name": "물", "amount": "200ml" }
+    ],
+    "seasoning": [
+      { "name": "진간장", "amount": "3큰술" },
+      { "name": "참기름", "amount": "1큰술" },
+      { "name": "통깨", "amount": "1작은술" },
+      { "name": "다진 대파", "amount": "1큰술" },
+      { "name": "다진 마늘", "amount": "0.5작은술" },
+      { "name": "올리고당", "amount": "1작은술" },
+      { "name": "고춧가루", "amount": "1작은술" }
+    ],
+    "steps": [
+      { "step": 1, "description": "쌀을 깨끗하게 씻은 뒤 찬물에 넣어 불려놓고, 다 불린 쌀은 체에 올려 물기를 빼냅니다." },
+      { "step": 2, "description": "콩나물은 흐르는 물에 여러 번 씻은 다음 체에 밭쳐 남은 물기를 털어냅니다." },
+      { "step": 3, "description": "밥솥에 불려둔 쌀을 편평하게 담고 밥물을 부어준 뒤, 그 위에 씻어둔 콩나물을 넉넉히 얹어 일반 취사 모드로 밥을 짓습니다." },
+      { "step": 4, "description": "밥이 완성되는 동안 그릇에 진간장, 참기름, 통깨, 다진 대파, 다진 마늘, 올리고당, 고춧가루를 섞어 맛있는 비빔 양념장을 만들어 둡니다." },
+      { "step": 5, "description": "고슬고슬하게 다 지어진 콩나물밥을 대접에 골고루 담고, 준비한 양념장을 곁들여 비벼 드실 수 있도록 차려냅니다." }
+    ],
+    "relatedIngredients": ["콩나물"],
+    "relatedHolidays": []
+  },
+  {
+    "id": "recipe-carrot-rapese",
+    "name": "당근라페",
+    "category": "채소",
+    "description": "아삭한 당근 채를 올리브유와 상큼한 머스터드 양념에 절여 브런치 샐러드로 즐기는 요즘 제일 인기 있는 프랑스식 당근 샐러드입니다.",
+    "image": "recipes/recipe_carrot_rapese.png",
+    "servings": 2,
+    "servingsUnit": "인분",
+    "cookTime": "15분",
+    "difficulty": "하",
+    "ingredients": [
+      { "name": "당근", "amount": "1개" }
+    ],
+    "seasoning": [
+      { "name": "소금", "amount": "0.5작은술" },
+      { "name": "올리브오일", "amount": "2큰술" },
+      { "name": "레몬즙", "amount": "1큰술" },
+      { "name": "알룰로스", "amount": "1작은술" },
+      { "name": "홀그레인 머스터드", "amount": "1큰술" }
+    ],
+    "steps": [
+      { "step": 1, "description": "당근을 깨끗이 씻어 껍질을 벗긴 후 채칼로 얇게 채 썹니다." },
+      { "step": 2, "description": "채 썬 당근에 소금을 골고루 섞어 절입니다." },
+      { "step": 3, "description": "절인 당근에서 나온 물기를 손으로 꽉 짜서 제거합니다." },
+      { "step": 4, "description": "물기를 짠 당근에 올리브오일, 레몬즙, 알룰로스, 홀그레인 머스터드를 넣고 골고루 버무립니다." },
+      { "step": 5, "description": "완성된 당근라페를 밀폐용기에 담아 냉장고에서 숙성시킵니다." }
+    ],
+    "relatedIngredients": ["당근"],
+    "relatedHolidays": []
+  },
+  {
+    "id": "recipe-carrot-jeon",
+    "name": "당근전",
+    "category": "채소",
+    "description": "채 썬 당근에 얇게 부침옷을 입혀 달콤하게 구워내어 당근 싫어하는 어린이들도 맛있게 즐길 수 있는 달달한 전 요리입니다.",
+    "image": "recipes/recipe_carrot_jeon.png",
+    "servings": 5,
+    "servingsUnit": "개",
+    "cookTime": "20분",
+    "difficulty": "하",
+    "ingredients": [
+      { "name": "당근", "amount": "1개" },
+      { "name": "부침가루", "amount": "1컵" },
+      { "name": "물", "amount": "1컵" },
+      { "name": "식용유", "amount": "3큰술" }
+    ],
+    "seasoning": [
+      { "name": "소금", "amount": "0.5작은술" }
+    ],
+    "steps": [
+      { "step": 1, "description": "당근을 흐르는 물에 씻은 뒤 껍질을 깎아 가늘게 채 썹니다." },
+      { "step": 2, "description": "볼에 부침가루, 물, 소금을 넣고 덩어리가 지지 않도록 잘 섞어 반죽을 만듭니다." },
+      { "step": 3, "description": "반죽에 채 썬 당근을 넣고 골고루 버무려 섞어 줍니다." },
+      { "step": 4, "description": "달군 팬에 식용유를 두르고 반죽을 한 국자씩 나누어 올려 앞뒤로 노릇하게 부칩니다." },
+      { "step": 5, "description": "다 구워진 당근전을 접시에 담아 완성합니다." }
+    ],
+    "relatedIngredients": ["당근"],
+    "relatedHolidays": []
+  },
+  {
+    "id": "recipe-steamed-cabbage-wraps",
+    "name": "양배추쌈",
+    "category": "채소",
+    "description": "한 김 푹 쪄낸 부드러운 양배추 잎에 매콤 짭조름한 쌈장을 곁들여 한 입 가득 싸서 먹는 한국의 전통 건강식 웰빙 요리입니다.",
+    "image": "recipes/recipe_steamed_cabbage_wraps.png",
+    "servings": 2,
+    "servingsUnit": "인분",
+    "cookTime": "15분",
+    "difficulty": "하",
+    "ingredients": [
+      { "name": "양배추", "amount": "300g" },
+      { "name": "물", "amount": "500ml" }
+    ],
+    "seasoning": [
+      { "name": "된장", "amount": "2큰술" },
+      { "name": "고추장", "amount": "1큰술" },
+      { "name": "다진 마늘", "amount": "1작은술" },
+      { "name": "참기름", "amount": "1작은술" },
+      { "name": "설탕", "amount": "1작은술" },
+      { "name": "깨소금", "amount": "1작은술" }
+    ],
+    "steps": [
+      { "step": 1, "description": "양배추는 잎을 한 장씩 조심조심 뜯어낸 뒤, 흐르는 물에 깨끗하게 씻어줍니다." },
+      { "step": 2, "description": "냄비에 물을 붓고 위에 찜기를 올린 다음, 씻어둔 양배추를 차곡차곡 얹어줍니다." },
+      { "step": 3, "description": "냄비 뚜껑을 꼭 닫고 강한 불에서 쪄줍니다." },
+      { "step": 4, "description": "잘 쪄진 양배추를 꺼내 넓은 접시에 펼쳐서 뜨거운 김을 식혀줍니다." },
+      { "step": 5, "description": "작은 그릇에 된장, 고추장, 다진 마늘, 참기름, 설탕, 깨소금을 한데 넣고 골고루 섞어 쌈장을 만듭니다." },
+      { "step": 6, "description": "한 김 식은 부드러운 양배추 잎을 쌈장과 함께 그릇에 보기 좋게 담아 완성합니다." }
+    ],
+    "relatedIngredients": ["양배추"],
+    "relatedHolidays": []
+  },
+  {
+    "id": "recipe-cabbage-jeon",
+    "name": "양배추전",
+    "category": "채소",
+    "description": "채 썬 양배추와 당근을 아삭고소하게 부쳐 새콤한 초간장에 찍어 가볍게 먹을 수 있는 영양가 높고 든든한 퓨전식 전 요리입니다.",
+    "image": "recipes/recipe_cabbage_jeon.png",
+    "servings": 5,
+    "servingsUnit": "개",
+    "cookTime": "20분",
+    "difficulty": "하",
+    "ingredients": [
+      { "name": "양배추", "amount": "250g" },
+      { "name": "당근", "amount": "50g" },
+      { "name": "부침가루", "amount": "100g" },
+      { "name": "물", "amount": "120ml" },
+      { "name": "식용유", "amount": "3큰술" }
+    ],
+    "seasoning": [
+      { "name": "소금", "amount": "0.5작은술" },
+      { "name": "진간장", "amount": "1큰술" },
+      { "name": "식초", "amount": "1작은술" },
+      { "name": "설탕", "amount": "1작은술" }
+    ],
+    "steps": [
+      { "step": 1, "description": "양배추와 당근을 깨끗이 씻은 다음, 칼을 사용해 얇고 길게 채를 썰어 줍니다." },
+      { "step": 2, "description": "둥글고 그릇에 채 썬 양배추와 당근을 담고, 부침가루와 소금, 물을 넣어 가루가 안 보일 때까지 살살 섞어 반죽을 만듭니다." },
+      { "step": 3, "description": "달군 프라이팬에 식용유를 넓게 두른 후, 전 반죽을 한 숟가락씩 동그랗게 떼어 팬 위에 올립니다." },
+      { "step": 4, "description": "아랫면이 고소하게 구워지면 뒤집개로 뒤집어 가며 중약 불에서 부쳐냅니다." },
+      { "step": 5, "description": "작은 종지에 진간장, 식초, 설탕을 함께 섞어 새콤달콤한 초간장을 만듭니다." },
+      { "step": 6, "description": "노릇노릇 잘 익은 양배추전을 초간장과 함께 담아내어 완성합니다." }
+    ],
+    "relatedIngredients": ["양배추"],
+    "relatedHolidays": []
   }
 ]
