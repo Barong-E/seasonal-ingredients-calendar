@@ -195,7 +195,13 @@ export function getRecipeIdFromDishName(dishName) {
     "당근라페": "recipe-carrot-rapese",
     "당근전": "recipe-carrot-jeon",
     "양배추쌈": "recipe-steamed-cabbage-wraps",
-    "양배추전": "recipe-cabbage-jeon"
+    "양배추전": "recipe-cabbage-jeon",
+    "우럭매운탕": "recipe-rockfish-stew",
+    "우럭구이": "recipe-grilled-rockfish",
+    "돌나물초무침": "recipe-stonecrop-salad",
+    "돌나물물김치": "recipe-stonecrop-water-kimchi",
+    "청경채 굴소스볶음": "recipe-bokchoy-oyster-sauce",
+    "청경채무침": "recipe-bokchoy-seasoned"
   };
   return mapping[dishName] || null;
 }

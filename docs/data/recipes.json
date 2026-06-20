@@ -11828,5 +11828,201 @@
     ],
     "relatedIngredients": ["양배추"],
     "relatedHolidays": []
+  },
+  {
+    "id": "recipe-rockfish-stew",
+    "name": "우럭매운탕",
+    "category": "국/탕/찌개",
+    "description": "얼큰하고 시원한 국물이 일품이며 우럭의 쫄깃한 속살을 가득 즐길 수 있는 대표 생선 매운탕입니다.",
+    "servings": 2,
+    "servingsUnit": "인분",
+    "cookTime": "30분",
+    "difficulty": "중",
+    "image": "recipes/recipe-rockfish-stew.png",
+    "ingredients": [
+      { "name": "우럭", "amount": "400g" },
+      { "name": "무", "amount": "100g" },
+      { "name": "쑥갓", "amount": "30g" },
+      { "name": "대파", "amount": "20g" },
+      { "name": "청양고추", "amount": "2개" },
+      { "name": "홍고추", "amount": "1개" },
+      { "name": "팽이버섯", "amount": "50g" },
+      { "name": "멸치육수", "amount": "800ml" }
+    ],
+    "seasoning": [
+      { "name": "고춧가루", "amount": "2큰술" },
+      { "name": "국간장", "amount": "1큰술" },
+      { "name": "다진 마늘", "amount": "1큰술" },
+      { "name": "된장", "amount": "1작은술" },
+      { "name": "고추장", "amount": "1작은술" },
+      { "name": "맛술", "amount": "1큰술" },
+      { "name": "소금", "amount": "0.5작은술" }
+    ],
+    "steps": [
+      { "step": 1, "description": "우럭은 비늘과 내장을 깨끗이 씻어내고 먹기 좋게 토막 낸다." },
+      { "step": 2, "description": "무는 얇고 납작하게 썰고, 대파와 고추는 어슷하게 썬다. 쑥갓은 깨끗이 씻고 팽이버섯은 밑동을 정리한다." },
+      { "step": 3, "description": "냄비에 멸치육수를 붓고 무와 된장, 고추장을 풀어 한소끔 끓인다." },
+      { "step": 4, "description": "육수가 끓으면 우럭과 고춧가루, 국간장, 다진 마늘, 맛술을 넣고 중불에서 끓인다." },
+      { "step": 5, "description": "우럭이 익어 맛이 우러나면 대파, 청양고추, 홍고추, 팽이버섯을 넣고 끓이다가 소금으로 모자란 간을 맞춘다." },
+      { "step": 6, "description": "마지막에 쑥갓을 얹어 불을 끄고 마무리한다." }
+    ],
+    "relatedIngredients": ["우럭"],
+    "relatedHolidays": []
+  },
+  {
+    "id": "recipe-grilled-rockfish",
+    "name": "우럭구이",
+    "category": "구이",
+    "description": "칼집을 낸 우럭에 소금을 뿌려 바삭하고 고소하게 구워낸 촉촉한 생선구이입니다.",
+    "servings": 2,
+    "servingsUnit": "인분",
+    "cookTime": "20분",
+    "difficulty": "하",
+    "image": "recipes/recipe-grilled-rockfish.png",
+    "ingredients": [
+      { "name": "우럭", "amount": "350g" },
+      { "name": "식용유", "amount": "2큰술" }
+    ],
+    "seasoning": [
+      { "name": "굵은소금", "amount": "1작은술" },
+      { "name": "레몬즙", "amount": "1작은술" }
+    ],
+    "steps": [
+      { "step": 1, "description": "우럭은 비늘, 지느러미, 내장을 말끔히 제거하고 깨끗이 씻은 뒤 앞뒤로 깊게 칼집을 낸다." },
+      { "step": 2, "description": "칼집을 낸 우럭의 앞뒤와 속살에 굵은소금을 골고루 뿌려 절여둔다." },
+      { "step": 3, "description": "팬에 식용유를 두르고 중약불로 충분히 달군 뒤 우럭을 올린다." },
+      { "step": 4, "description": "우럭의 겉면이 바삭하고 속까지 잘 익도록 앞뒤로 노릇하게 구워낸 뒤 레몬즙을 뿌려 낸다." }
+    ],
+    "relatedIngredients": ["우럭"],
+    "relatedHolidays": []
+  },
+  {
+    "id": "recipe-stonecrop-salad",
+    "name": "돌나물초무침",
+    "category": "무침",
+    "description": "새콤달콤한 초고추장 양념장에 아삭한 돌나물을 살살 버무려 입맛을 돋우는 초간단 봄 반찬입니다.",
+    "servings": 2,
+    "servingsUnit": "인분",
+    "cookTime": "10분",
+    "difficulty": "하",
+    "image": "recipes/recipe-stonecrop-salad.png",
+    "ingredients": [
+      { "name": "돌나물", "amount": "100g" },
+      { "name": "양파", "amount": "20g" },
+      { "name": "당근", "amount": "10g" }
+    ],
+    "seasoning": [
+      { "name": "고추장", "amount": "1큰술" },
+      { "name": "식초", "amount": "1큰술" },
+      { "name": "올리고당", "amount": "1큰술" },
+      { "name": "다진 마늘", "amount": "1작은술" },
+      { "name": "통깨", "amount": "1작은술" }
+    ],
+    "steps": [
+      { "step": 1, "description": "돌나물은 찬물에 살살 흔들어 씻으며 흙과 티끌을 털어내고 체에 밭쳐 물기를 완전히 뺀다." },
+      { "step": 2, "description": "양파와 당근은 가늘게 채 썬다." },
+      { "step": 3, "description": "그릇에 고추장, 식초, 올리고당, 다진 마늘을 골고루 섞어 초무침 양념장을 만든다." },
+      { "step": 4, "description": "넓은 볼에 양념장과 돌나물, 양파, 당근을 넣고 풋내가 나지 않도록 살살 버무린다." },
+      { "step": 5, "description": "마지막에 통깨를 고루 뿌려 가볍게 섞어 완성한다." }
+    ],
+    "relatedIngredients": ["돌나물"],
+    "relatedHolidays": []
+  },
+  {
+    "id": "recipe-stonecrop-water-kimchi",
+    "name": "돌나물물김치",
+    "category": "김치",
+    "description": "시원하고 톡 쏘는 청량한 국물에 아삭한 돌나물과 향긋한 미나리를 띄워 낸 시원한 물김치입니다.",
+    "servings": 1,
+    "servingsUnit": "kg",
+    "cookTime": "30분",
+    "difficulty": "중",
+    "image": "recipes/recipe-stonecrop-water-kimchi.png",
+    "ingredients": [
+      { "name": "돌나물", "amount": "200g" },
+      { "name": "미나리", "amount": "30g" },
+      { "name": "오이", "amount": "50g" },
+      { "name": "홍고추", "amount": "1개" },
+      { "name": "마늘", "amount": "15g" },
+      { "name": "생강", "amount": "5g" },
+      { "name": "물", "amount": "1L" }
+    ],
+    "seasoning": [
+      { "name": "천일염", "amount": "2큰술" },
+      { "name": "올리고당", "amount": "1큰술" }
+    ],
+    "steps": [
+      { "step": 1, "description": "돌나물은 깨끗이 씻어 물기를 완전히 빼두고 오이는 반으로 갈라 어슷 썰며 미나리는 적당한 크기로 썬다." },
+      { "step": 2, "description": "마늘과 생강은 얇게 편으로 썰고 홍고추는 얇게 썰어 씨를 턴다." },
+      { "step": 3, "description": "큰 그릇에 분량의 물을 담고 천일염과 올리고당을 넣어 소금이 녹을 때까지 잘 저어 김치 국물을 만든다." },
+      { "step": 4, "description": "밀폐 용기에 준비한 돌나물, 미나리, 오이, 홍고추, 마늘, 생강을 보기 좋게 섞어 담는다." },
+      { "step": 5, "description": "소금물을 살며시 붓고 뚜껑을 덮어 실온에서 하루 정도 익힌 뒤 냉장고에 넣어 차갑게 둔다." }
+    ],
+    "relatedIngredients": ["돌나물"],
+    "relatedHolidays": []
+  },
+  {
+    "id": "recipe-bokchoy-oyster-sauce",
+    "name": "청경채 굴소스볶음",
+    "category": "볶음",
+    "description": "아삭한 청경채를 편마늘과 대파 기름으로 향을 내어 감칠맛 가득한 굴소스에 휘리릭 볶아낸 요리입니다.",
+    "servings": 2,
+    "servingsUnit": "인분",
+    "cookTime": "15분",
+    "difficulty": "하",
+    "image": "recipes/recipe-bokchoy-oyster-sauce.png",
+    "ingredients": [
+      { "name": "청경채", "amount": "250g" },
+      { "name": "마늘", "amount": "20g" },
+      { "name": "대파", "amount": "20g" },
+      { "name": "식용유", "amount": "2큰술" }
+    ],
+    "seasoning": [
+      { "name": "굴소스", "amount": "1큰술" },
+      { "name": "국간장", "amount": "1작은술" },
+      { "name": "참기름", "amount": "1작은술" },
+      { "name": "통깨", "amount": "1작은술" }
+    ],
+    "steps": [
+      { "step": 1, "description": "청경채는 밑동을 자르고 잎을 분리하여 찬물에 깨끗이 씻은 뒤 체에 밭쳐 물기를 뺀다. 큰 포기는 세로로 이등분한다." },
+      { "step": 2, "description": "마늘은 얇게 편 썰고 대파는 송송 썬다." },
+      { "step": 3, "description": "팬에 식용유를 두르고 준비한 마늘과 대파를 넣어 약불에서 향이 올라올 때까지 볶아 기름을 낸다." },
+      { "step": 4, "description": "불을 강하게 올리고 청경채를 넣어 재빨리 볶는다." },
+      { "step": 5, "description": "청경채 숨이 살짝 죽으면 굴소스와 국간장을 넣고 소스가 겉돌지 않게 골고루 빠르게 볶아낸다." },
+      { "step": 6, "description": "불을 끄고 참기름과 통깨를 둘러 섞어 완성한다." }
+    ],
+    "relatedIngredients": ["청경채"],
+    "relatedHolidays": []
+  },
+  {
+    "id": "recipe-bokchoy-seasoned",
+    "name": "청경채무침",
+    "category": "무침",
+    "description": "살짝 데쳐 아삭함이 가득한 청경채를 고소한 참기름과 간장 양념으로 가볍게 버무려 낸 건강 반찬입니다.",
+    "servings": 2,
+    "servingsUnit": "인분",
+    "cookTime": "10분",
+    "difficulty": "하",
+    "image": "recipes/recipe-bokchoy-seasoned.png",
+    "ingredients": [
+      { "name": "청경채", "amount": "300g" },
+      { "name": "소금", "amount": "1작은술" }
+    ],
+    "seasoning": [
+      { "name": "국간장", "amount": "1작은술" },
+      { "name": "다진 마늘", "amount": "1작은술" },
+      { "name": "참기름", "amount": "1큰술" },
+      { "name": "깨소금", "amount": "1작은술" },
+      { "name": "소금", "amount": "0.5작은술" }
+    ],
+    "steps": [
+      { "step": 1, "description": "청경채는 씻어서 큰 것은 세로로 사등분으로 쪼개어 손질한다." },
+      { "step": 2, "description": "냄비에 물이 끓으면 끓는 물용 소금을 넣고 청경채 밑동부터 넣어 짧게 데쳐낸다." },
+      { "step": 3, "description": "데쳐낸 청경채는 찬물에 헹궈 아삭함을 살리고 손으로 쥐어 수분을 꼭 짜낸다." },
+      { "step": 4, "description": "양념 그릇에 국간장, 다진 마늘, 참기름, 깨소금, 무침용 소금을 넣어 고루 섞는다." },
+      { "step": 5, "description": "데친 청경채를 넣어 양념이 고루 배도록 조물조물 가볍게 무쳐 낸다." }
+    ],
+    "relatedIngredients": ["청경채"],
+    "relatedHolidays": []
   }
 ]

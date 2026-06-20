@@ -55,7 +55,7 @@ function saveFavoritesToStorage(type) {
 
 // 비동기 데이터 fetch (캐시 버전 맞춰서 로드)
 async function fetchData() {
-  const cacheVersion = 'v45'; // recipes.json 및 ingredients.json 최신 캐시 버전
+  const cacheVersion = 'v62'; // recipes.json 및 ingredients.json 최신 캐시 버전
   try {
     const [ingRes, recRes, holRes] = await Promise.all([
       fetch(`data/ingredients.json?v=${cacheVersion}`).then(r => r.ok ? r.json() : []),
