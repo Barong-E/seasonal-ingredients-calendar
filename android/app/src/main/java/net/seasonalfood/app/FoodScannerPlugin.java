@@ -16,6 +16,7 @@ import androidx.camera.core.ImageCapture;
 import androidx.camera.core.ImageCaptureException;
 import androidx.camera.core.ImageProxy;
 import androidx.camera.core.Preview;
+import androidx.camera.core.AspectRatio;
 import androidx.camera.lifecycle.ProcessCameraProvider;
 import androidx.camera.view.PreviewView;
 import androidx.core.content.ContextCompat;
@@ -128,17 +129,46 @@ public class FoodScannerPlugin extends Plugin {
             try {
                 cameraProvider = cameraProviderFuture.get();
 
-                // 프리뷰(뷰파인더) 설정
-                Preview preview = new Preview.Builder().build();
+                // 프리뷰(뷰파인더) 설정 (화면 잘림을 최소화하기 위해 16:9 종횡비로 지정)
+                Preview preview = new Preview.Builder()
+                        .setTargetAspectRatio(AspectRatio.RATIO_16_9)
+                        .build();
                 preview.setSurfaceProvider(previewView.getSurfaceProvider());
 
-                // 사진 캡처 전용 유즈케이스 바인딩 (딜레이 최소화 모드)
+                // 사진 캡처 전용 유즈케이스 바인딩 (딜레이 최소화 모드, 16:9 종횡비 동일 세팅)
                 imageCapture = new ImageCapture.Builder()
                         .setCaptureMode(ImageCapture.CAPTURE_MODE_MINIMIZE_LATENCY)
+                        .setTargetAspectRatio(AspectRatio.RATIO_16_9)
                         .build();
 
-                // 후면 카메라 사용
-                CameraSelector cameraSelector = CameraSelector.DEFAULT_BACK_CAMERA;
+                // 후면 카메라 중 표준 광각(Wide / Main) 카메라 필터링 선택
+                // 폰에 여러 후면 카메라(초광각, 표준광각, 망원, 접사 등)가 있을 때 메인(1x) 카메라를 정확히 잡도록 함
+                CameraSelector cameraSelector = new CameraSelector.Builder()
+                        .requireLensFacing(CameraSelector.LENS_FACING_BACK)
+                        .addCameraFilter(cameraInfos -> {
+                            java.util.List<androidx.camera.core.CameraInfo> filtered = new java.util.ArrayList<>();
+                            for (androidx.camera.core.CameraInfo info : cameraInfos) {
+                                try {
+                                    androidx.camera.camera2.interop.Camera2CameraInfo camera2Info = 
+                                            androidx.camera.camera2.interop.Camera2CameraInfo.from(info);
+                                    float[] focalLengths = camera2Info.getCameraCharacteristic(
+                                            android.hardware.camera2.CameraCharacteristics.LENS_INFO_AVAILABLE_FOCAL_LENGTHS);
+                                    if (focalLengths != null && focalLengths.length > 0) {
+                                        float focalLength = focalLengths[0];
+                                        // 일반 표준 광각 카메라는 초점 거리가 보통 3.0mm ~ 6.0mm 사이입니다.
+                                        // (초광각 렌즈는 2.x mm 이하, 망원 렌즈는 6.x mm 이상 또는 매크로 전용 렌즈 필터링)
+                                        if (focalLength >= 3.0f && focalLength <= 6.0f) {
+                                            filtered.add(info);
+                                        }
+                                    }
+                                } catch (Exception e) {
+                                    // 예외 발생 시 안전장치로 후보군에 추가
+                                    filtered.add(info);
+                                }
+                            }
+                            return filtered.isEmpty() ? cameraInfos : filtered;
+                        })
+                        .build();
 
                 // 기존 바인딩 전부 풀고 새로 프리뷰와 캡처 연결
                 cameraProvider.unbindAll();
