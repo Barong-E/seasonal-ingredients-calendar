@@ -814,7 +814,7 @@
 /* 카메라 스캔 네모 가이드라인 (CalAI 스타일) */
 .scanner-frame-container {
   position: absolute;
-  top: 50%;
+  top: 35%;
   left: 50%;
   transform: translate(-50%, -50%);
   width: 260px;
