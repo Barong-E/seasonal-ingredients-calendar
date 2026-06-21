@@ -201,7 +201,13 @@ export function getRecipeIdFromDishName(dishName) {
     "돌나물초무침": "recipe-stonecrop-salad",
     "돌나물물김치": "recipe-stonecrop-water-kimchi",
     "청경채 굴소스볶음": "recipe-bokchoy-oyster-sauce",
-    "청경채무침": "recipe-bokchoy-seasoned"
+    "청경채무침": "recipe-bokchoy-seasoned",
+    "꽈리고추 멸치볶음": "recipe-shishito-anchovy",
+    "꽈리고추 메추리알 장조림": "recipe-shishito-quail-egg",
+    "새송이버섯 볶음": "recipe-king-oyster-stir-fry",
+    "새송이버섯전": "recipe-king-oyster-jeon",
+    "파김치": "recipe-green-onion-kimchi",
+    "해물파전": "recipe-seafood-pajeon"
   };
   return mapping[dishName] || null;
 }

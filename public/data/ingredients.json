@@ -3232,5 +3232,77 @@
     "description_ja": "",
     "selection_ko": "잎이 넓고 짙은 녹색을 띠며, 밑동이 단단하고 퉁퉁하여 가로로 통통하게 오른 것이 수분이 많고 맛있습니다.",
     "external_url": "https://link.coupang.com/a/eKw0vIMq3E"
+  },
+  {
+    "name_ko": "꽈리고추",
+    "category": "채소",
+    "image": "ingredients/shishito-pepper.png",
+    "description_ko": "표면이 쭈글쭈글하고 연녹색을 띠는 고추로, 일반 고추보다 매운맛이 덜하고 아삭한 식감이 특징입니다. 비타민 C와 루틴이 풍부하여 면역력 강화와 혈관 건강에 도움을 줍니다.",
+    "preparation_ko": "흐르는 물에 깨끗이 씻은 후 꼭지를 떼어내고, 양념이 잘 배도록 포크나 이쑤시개로 콕콕 찔러 구멍을 내어 사용합니다.",
+    "storage_room_temp": "수분에 매우 취약하므로 실온 보관은 가급적 피하는 것이 좋습니다.",
+    "storage_refrigerator": "물기를 완전히 제거한 후 키친타월로 감싸 지퍼백에 넣어 냉장 보관하면 3~5일간 신선함이 유지됩니다.",
+    "storage_freezer": "깨끗이 씻어 물기와 꼭지를 제거한 후 소분 밀폐하여 냉동 보관하면 약 1개월간 두고 조리용으로 쓸 수 있습니다.",
+    "months": [7, 8, 9],
+    "popular_dish": "꽈리고추 멸치볶음, 꽈리고추 메추리알 장조림",
+    "calories_per_100g": 27,
+    "calories_per_serving": "한 줌(약 50g) 기준 약 14kcal",
+    "name_en": "",
+    "name_ja": "",
+    "description_en": "",
+    "description_ja": "",
+    "recommended_for": [
+      "피로 해소와 활력이 필요한 분",
+      "혈관 건강 관리가 필요한 분"
+    ],
+    "selection_ko": "연녹색을 띠며 표면의 주름이 선명하고 만졌을 때 탄력이 있어 단단한 것이 좋습니다. 꼭지가 시들지 않고 싱싱한 것을 고르세요.",
+    "external_url": ""
+  },
+  {
+    "name_ko": "새송이버섯",
+    "category": "채소",
+    "image": "ingredients/king-oyster-mushroom.png",
+    "description_ko": "송이버섯과 비슷하게 생겼으나 대가 굵고 쫄깃쫄깃한 식감이 특징인 버섯입니다. 비타민 C와 식이섬유가 풍부하여 면역력 강화와 다이어트에 좋으며, 다양한 한식 반찬에 두루 활용됩니다.",
+    "preparation_ko": "밑동을 칼로 살짝 잘라낸 뒤, 겉면의 이물질을 젖은 키친타월이나 흐르는 물에 가볍게 씻어 물기를 닦아냅니다.",
+    "storage_room_temp": "상온에서는 쉽게 무르고 곰팡이가 생길 수 있어 권장하지 않습니다.",
+    "storage_refrigerator": "물기를 닦아낸 버섯을 키친타월로 하나씩 감싸 밀폐 용기나 지퍼백에 넣어 채소칸에 보관하면 5~7일간 보관 가능합니다.",
+    "storage_freezer": "한입 크기나 요리용으로 썰어 지퍼백에 소분하여 밀폐 냉동하면 2~3개월간 보관하고 조리용으로 사용할 수 있습니다.",
+    "months": [10, 11],
+    "popular_dish": "새송이버섯 볶음, 새송이버섯전",
+    "calories_per_100g": 35,
+    "calories_per_serving": "중간 크기 1개(약 80g) 기준 약 28kcal",
+    "name_en": "",
+    "name_ja": "",
+    "description_en": "",
+    "description_ja": "",
+    "recommended_for": [
+      "가벼운 식단 관리가 필요한 분",
+      "면역력 강화가 필요한 분"
+    ],
+    "selection_ko": "대가 희고 통통하며 단단하고, 갓의 모양이 둥글고 가장자리가 안쪽으로 살짝 말려 있으며 갈색빛을 띠는 것이 좋습니다.",
+    "external_url": ""
+  },
+  {
+    "name_ko": "쪽파",
+    "category": "채소",
+    "image": "ingredients/scallion.png",
+    "description_ko": "대파보다 가늘고 부드러우며 알싸한 매운맛과 단맛을 동시에 가지고 있는 채소입니다. 파김치, 파전의 주재료로 널리 쓰이며, 칼슘과 비타민 K가 풍부하여 뼈 건강과 혈관 건강에 좋습니다.",
+    "preparation_ko": "뿌리를 잘라내고 겉껍질을 한 풀 벗겨낸 뒤, 흐르는 물에 깨끗이 씻어 흙을 제거하고 물기를 빼서 사용합니다.",
+    "storage_room_temp": "흙이 묻은 상태라면 신문지에 싸서 서늘하고 그늘진 곳에 보관하지만, 다듬은 쪽파는 실온 보관을 피해야 합니다.",
+    "storage_refrigerator": "물기를 완전히 제거한 후 키친타월로 감싸 뿌리가 아래로 가도록 세워서 밀폐 용기나 지퍼백에 보관하면 5~7일간 신선함이 유지됩니다.",
+    "storage_freezer": "깨끗이 씻어 물기를 제거한 후 송송 썰거나 요리용 크기로 잘라 밀폐하여 냉동 보관하면 약 1개월간 국, 찌개용으로 사용할 수 있습니다.",
+    "months": [10, 11],
+    "popular_dish": "파김치, 해물파전",
+    "calories_per_100g": 27,
+    "calories_per_serving": "한 줌(약 30g) 기준 약 8kcal",
+    "name_en": "",
+    "name_ja": "",
+    "description_en": "",
+    "description_ja": "",
+    "recommended_for": [
+      "뼈 건강 관리가 필요한 분",
+      "혈관 건강 관리가 필요한 분"
+    ],
+    "selection_ko": "줄기가 연하고 탄력이 있으며, 흰 부분이 선명하고 길며 잎 끝부분이 마르지 않고 초록빛이 생생한 것이 좋습니다. 알뿌리가 너무 크지 않고 둥근 것을 고르세요.",
+    "external_url": ""
   }
 ]

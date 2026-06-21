@@ -10,11 +10,12 @@ const FoodScanner = registerPlugin('FoodScanner');
 // 띵동 제철음식 메인 스크립트
 // 규칙: ES 모듈 없이 단일 페이지 스크립트
 
-const CACHE_KEY = 'seasons:ingredients:v71';
+const CACHE_KEY = 'seasons:ingredients:v72';
 const CACHE_TTL_MS = 24 * 60 * 60 * 1000; // 24h
 
 // 구버전 캐시 강제 삭제 (버전 충돌 방지)
 try {
+  localStorage.removeItem('seasons:ingredients:v71');
   localStorage.removeItem('seasons:ingredients:v70');
   localStorage.removeItem('seasons:ingredients:v69');
   localStorage.removeItem('seasons:ingredients:v67');
