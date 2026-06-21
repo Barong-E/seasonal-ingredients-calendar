@@ -207,7 +207,13 @@ export function getRecipeIdFromDishName(dishName) {
     "새송이버섯 볶음": "recipe-king-oyster-stir-fry",
     "새송이버섯전": "recipe-king-oyster-jeon",
     "파김치": "recipe-green-onion-kimchi",
-    "해물파전": "recipe-seafood-pajeon"
+    "해물파전": "recipe-seafood-pajeon",
+    "파프리카잡채": "recipe-paprika-japchae",
+    "파프리카전": "recipe-paprika-jeon",
+    "김무침": "recipe-laver-muchim",
+    "김국": "recipe-laver-guk",
+    "톳두부무침": "recipe-hijiki-tofu",
+    "톳밥": "recipe-hijiki-rice"
   };
   return mapping[dishName] || null;
 }
