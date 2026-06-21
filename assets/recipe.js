@@ -124,6 +124,23 @@ function parseAndCalculateAmount(name, amountStr, baseS, currS) {
 
   const str = amountStr.trim();
 
+  // ─── 🤏 단계 0: 꼬집과 괄호 안 작은술 연산 처리 ───
+  // 예: "1꼬집(0.1작은술)"
+  const kkojibMatch = str.match(/^(\d+)꼬집\(([\d.]+)작은술\)$/);
+  if (kkojibMatch) {
+    const kkojibVal = parseFloat(kkojibMatch[1]);
+    const tspVal = parseFloat(kkojibMatch[2]);
+    const ratio = currS / baseS;
+    
+    let newKkojib = Math.round(kkojibVal * ratio);
+    if (newKkojib < 1) newKkojib = 1;
+    
+    let newTsp = Math.round((tspVal * ratio) * 10) / 10;
+    if (newTsp < 0.1) newTsp = 0.1;
+    
+    return `${newKkojib}꼬집(${newTsp}작은술)`;
+  }
+
   // ─── 🌿 단계 1: 취향껏·기호껏 같은 완전 주관적 표현은 무조건 유지 ────
   // "취향껏" 넣는 건 아무도 정량화 못 해요!
   const absolutelySubjective = ['취향껏', '기호껏', '취향에 따라', '원하는 만큼', '알맞게 조절', '넉넉히 (찜통 깔기용, 생략 가능)', '적당량 (찜통 깔기용, 생략 가능)'];
