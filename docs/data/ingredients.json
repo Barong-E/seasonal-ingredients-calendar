@@ -3385,5 +3385,77 @@
     ],
     "selection_ko": "광택이 있고 잎이 통통하며 만졌을 때 톡톡 터지는 탄력이 느껴지는 것이 신선합니다.",
     "external_url": "https://link.coupang.com/a/eLFYeuNYlg"
+  },
+  {
+    "name_ko": "고구마줄기",
+    "category": "채소",
+    "image": "ingredients/sweet-potato-stems.png",
+    "description_ko": "고구마의 줄기 부분으로, 아삭한 식감과 식이섬유가 풍부해 여름철 밥반찬으로 큰 사랑을 받습니다. 비타민 A, C와 루테인이 풍부하여 눈 건강과 피로 해소에 좋습니다.",
+    "preparation_ko": "줄기 끝부분을 살짝 부러뜨리며 아래쪽으로 당겨 질긴 겉껍질을 벗겨낸 후, 끓는 물에 소금을 넣고 부드러워질 때까지 데쳐 헹굽니다.",
+    "storage_room_temp": "수분이 쉽게 마르므로 가급적 실온 보관은 피하는 것이 좋으나, 껍질을 벗기기 전 하루 정도 실온에 두면 시들해져 껍질이 더 잘 벗겨집니다.",
+    "storage_refrigerator": "손질 후 물기를 제거하고 키친타월에 싸서 밀폐 용기에 담아 채소칸에 3~5일간 보관합니다.",
+    "storage_freezer": "데친 고구마줄기를 한 번 먹을 만큼 소분해 수분 유지를 위한 물을 아주 조금 함께 넣어 지퍼백에 밀폐 냉동하면 1개월 보관 가능합니다.",
+    "months": [7, 8],
+    "popular_dish": "고구마줄기 들깨볶음, 고구마줄기 멸치조림",
+    "calories_per_100g": 18,
+    "calories_per_serving": "볶음 1접시(약 100g) 기준 약 48kcal",
+    "name_en": "",
+    "name_ja": "",
+    "description_en": "",
+    "description_ja": "",
+    "recommended_for": [
+      "피로 해소와 눈 건강 관리가 필요한 분",
+      "장 건강 개선 및 식이섬유 섭취가 필요한 분"
+    ],
+    "selection_ko": "줄기가 너무 얇지 않고 통통하며 단단하고 탄력이 있는 것이 껍질이 잘 벗겨지고 아삭합니다.",
+    "external_url": ""
+  },
+  {
+    "name_ko": "도토리",
+    "category": "기타",
+    "image": "ingredients/acorn.png",
+    "description_ko": "참나무류의 열매로, 떫은맛을 내는 타닌 성분이 풍부하여 체내 유해 물질 배출과 혈관 건강에 도움을 줍니다. 주로 묵을 쑤어 무침이나 묵사발 등으로 요리해 먹는 저칼로리 건강 식재료입니다.",
+    "preparation_ko": "껍질을 까고 찬물에 담가 떫은맛을 뺀 후 물기를 제거하여 말린 뒤 가루를 내거나, 시판 도토리묵은 한입 크기로 썰어 사용합니다.",
+    "storage_room_temp": "생도토리나 가공된 묵은 실온에서 상하기 쉬우므로 상온 보관은 권장하지 않습니다.",
+    "storage_refrigerator": "도토리묵은 수분이 날아가지 않도록 밀폐 용기에 물과 함께 담아 냉장 보관하며, 3~4일 이내에 소비하는 것이 좋습니다.",
+    "storage_freezer": "도토리 가루는 지퍼백에 밀봉하여 냉동 보관이 가능하지만, 도토리묵은 얼릴 경우 묵 조직이 파괴되어 식감이 크게 떨어지므로 냉동하지 않습니다.",
+    "months": [9, 10],
+    "popular_dish": "도토리묵무침, 도토리묵사발",
+    "calories_per_100g": 45,
+    "calories_per_serving": "도토리묵 1접시(약 150g) 기준 약 68kcal",
+    "name_en": "",
+    "name_ja": "",
+    "description_en": "",
+    "description_ja": "",
+    "recommended_for": [
+      "가벼운 식단 관리가 필요한 분",
+      "장 건강 개선이 필요한 분"
+    ],
+    "selection_ko": "생도토리는 껍질이 단단하고 매끄러운 것이 좋으며, 도토리묵은 표면에 윤기가 흐르고 탱글탱글한 탄력이 있는 것을 고르세요.",
+    "external_url": ""
+  },
+  {
+    "name_ko": "느타리버섯",
+    "category": "채소",
+    "image": "ingredients/oyster-mushroom.png",
+    "description_ko": "송이버섯과 대조적으로 갓의 모양이 둥글고 납작하며 쫄깃한 감칠맛이 가득한 버섯입니다. 엽산과 비타민 B, D가 풍부해 뼈 건강과 면역력을 높여 줍니다.",
+    "preparation_ko": "밑동의 이물질을 칼로 잘라내고 가닥가닥 손으로 찢어 준비하며, 물에 씻지 않거나 젖은 타월로 먼지만 털어내는 것이 좋습니다.",
+    "storage_room_temp": "상온 보관 시 수분이 차서 쉽게 상하고 곰팡이가 생기므로 상온 보관은 절대 피해야 합니다.",
+    "storage_refrigerator": "씻지 않은 상태로 키친타월에 감싸 밀폐 용기나 지퍼백에 보관하며 3~5일 이내 섭취합니다.",
+    "storage_freezer": "끓는 물에 살짝 데쳐 수분을 꼭 짜낸 뒤 소분하여 밀폐 냉동하면 약 1개월 보관 및 조리용으로 사용 가능합니다.",
+    "months": [9, 10],
+    "popular_dish": "느타리버섯 볶음, 소고기 버섯전골",
+    "calories_per_100g": 25,
+    "calories_per_serving": "한 줌(약 70g) 기준 약 18kcal",
+    "name_en": "",
+    "name_ja": "",
+    "description_en": "",
+    "description_ja": "",
+    "recommended_for": [
+      "뼈와 혈관 건강 관리가 필요한 분",
+      "면역력 강화가 필요한 분"
+    ],
+    "selection_ko": "갓 표면이 회색빛을 띠고 갓 가장자리가 깨끗하며 마르지 않은 것이 좋습니다. 대가 곧고 단단한 것을 고르세요.",
+    "external_url": ""
   }
 ]

@@ -13516,5 +13516,208 @@
       "톳"
     ],
     "relatedHolidays": []
+  },
+  {
+    "id": "recipe-sweet-potato-stems-perilla",
+    "name": "고구마줄기 들깨볶음",
+    "category": "채소",
+    "description": "껍질을 깐 아삭한 고구마줄기를 부드럽게 볶아 고소한 들깨가루와 들기름에 버무린 영양 만점 반찬입니다.",
+    "servings": 4,
+    "servingsUnit": "인분",
+    "cookTime": "15분",
+    "difficulty": "하",
+    "image": "recipes/recipe-sweet-potato-stems-perilla.png",
+    "ingredients": [
+      { "name": "고구마줄기", "amount": "200g" },
+      { "name": "식용유", "amount": "1큰술" }
+    ],
+    "seasoning": [
+      { "name": "국간장", "amount": "1큰술" },
+      { "name": "들기름", "amount": "1큰술" },
+      { "name": "들깨가루", "amount": "2큰술" },
+      { "name": "다진 마늘", "amount": "1작은술" },
+      { "name": "소금", "amount": "0.5작은술" }
+    ],
+    "steps": [
+      { "step": 1, "description": "껍질을 깐 고구마줄기는 물에 깨끗이 씻어 끓는 물에 소금을 넣고 데쳐냅니다." },
+      { "step": 2, "description": "데친 고구마줄기를 찬물에 헹궈 아삭함을 살리고 먹기 좋은 크기로 썹니다." },
+      { "step": 3, "description": "팬에 식용유를 두르고 다진 마늘을 볶아 향을 냅니다." },
+      { "step": 4, "description": "고구마줄기를 넣고 중간 불에서 숨이 죽을 때까지 볶아줍니다." },
+      { "step": 5, "description": "국간장과 소금으로 간을 한 뒤, 들기름과 들깨가루를 넣어 양념이 고루 배도록 볶습니다." },
+      { "step": 6, "description": "가볍게 버무린 후 불을 끄고 그릇에 담아 완성합니다." }
+    ],
+    "relatedIngredients": ["고구마줄기"],
+    "relatedHolidays": []
+  },
+  {
+    "id": "recipe-sweet-potato-stems-anchovy",
+    "name": "고구마줄기 멸치조림",
+    "category": "채소",
+    "description": "고소한 멸치와 함께 부드럽게 졸여내어 깊은 맛이 나는 여름철 밥도둑 조림 반찬입니다.",
+    "servings": 4,
+    "servingsUnit": "인분",
+    "cookTime": "25분",
+    "difficulty": "하",
+    "image": "recipes/recipe-sweet-potato-stems-anchovy.png",
+    "ingredients": [
+      { "name": "고구마줄기", "amount": "300g" },
+      { "name": "국물용 멸치", "amount": "10마리" },
+      { "name": "물", "amount": "300ml" }
+    ],
+    "seasoning": [
+      { "name": "양조간장", "amount": "3큰술" },
+      { "name": "고춧가루", "amount": "1큰술" },
+      { "name": "다진 마늘", "amount": "1큰술" },
+      { "name": "들기름", "amount": "1큰술" },
+      { "name": "올리고당", "amount": "1큰술" }
+    ],
+    "steps": [
+      { "step": 1, "description": "고구마줄기는 껍질을 벗겨 씻은 뒤 먹기 좋은 길이로 자릅니다." },
+      { "step": 2, "description": "국물용 멸치는 머리와 내장을 제거하고 마른 팬에 가볍게 볶아 비린내를 날립니다." },
+      { "step": 3, "description": "냄비에 손질한 고구마줄기와 볶은 멸치를 담아줍니다." },
+      { "step": 4, "description": "물, 양조간장, 고춧가루, 다진 마늘을 섞어 만든 양념을 붓고 끓입니다." },
+      { "step": 5, "description": "조림장이 끓어오르면 약한 불로 줄여 고구마줄기가 부드러워질 때까지 자작하게 졸입니다." },
+      { "step": 6, "description": "국물이 자작해지면 올리고당과 들기름을 두르고 가볍게 섞어 불을 끕니다." }
+    ],
+    "relatedIngredients": ["고구마줄기"],
+    "relatedHolidays": []
+  },
+  {
+    "id": "recipe-acorn-jelly-salad",
+    "name": "도토리묵무침",
+    "category": "기타",
+    "description": "탱글탱글한 도토리묵에 오이, 상추 등을 푸짐하게 넣어 매콤새콤하고 고소한 양념장으로 가볍게 버무린 무침 요리입니다.",
+    "servings": 4,
+    "servingsUnit": "인분",
+    "cookTime": "15분",
+    "difficulty": "하",
+    "image": "recipes/recipe-acorn-jelly-salad.png",
+    "ingredients": [
+      { "name": "도토리묵", "amount": "300g" },
+      { "name": "오이", "amount": "0.5개" },
+      { "name": "상추", "amount": "5장" },
+      { "name": "당근", "amount": "20g" }
+    ],
+    "seasoning": [
+      { "name": "간장", "amount": "3큰술" },
+      { "name": "고춧가루", "amount": "1큰술" },
+      { "name": "참기름", "amount": "1큰술" },
+      { "name": "매실청", "amount": "1큰술" },
+      { "name": "다진 마늘", "amount": "1작은술" },
+      { "name": "통깨", "amount": "1작은술" }
+    ],
+    "steps": [
+      { "step": 1, "description": "도토리묵은 두께를 지켜 한입 크기로 도톰하게 썰어 줍니다." },
+      { "step": 2, "description": "오이와 당근은 얇게 어슷 썰고, 상추는 한입 크기로 큼직하게 찢어 둡니다." },
+      { "step": 3, "description": "볼에 간장, 고춧가루, 참기름, 매실청, 다진 마늘을 섞어 매콤새콤한 양념장을 만듭니다." },
+      { "step": 4, "description": "양념장에 손질한 오이, 당근, 상추를 넣고 가볍게 버무려 채소에 양념을 묻힙니다." },
+      { "step": 5, "description": "썰어둔 도토리묵을 넣고 묵이 으깨지지 않도록 살살 버무려 줍니다." },
+      { "step": 6, "description": "통깨를 골고루 뿌려 완성한 뒤 접시에 담아냅니다." }
+    ],
+    "relatedIngredients": ["도토리"],
+    "relatedHolidays": []
+  },
+  {
+    "id": "recipe-acorn-jelly-soup",
+    "name": "도토리묵사발",
+    "category": "기타",
+    "description": "탱탱한 도토리묵에 아삭한 채소와 시원하고 깔끔한 육수를 부어 마시는 새콤개운한 묵사발입니다.",
+    "servings": 2,
+    "servingsUnit": "인분",
+    "cookTime": "15분",
+    "difficulty": "하",
+    "image": "recipes/recipe-acorn-jelly-soup.png",
+    "ingredients": [
+      { "name": "도토리묵", "amount": "200g" },
+      { "name": "오이", "amount": "30g" },
+      { "name": "신김치", "amount": "50g" },
+      { "name": "냉면 육수", "amount": "300ml" },
+      { "name": "김가루", "amount": "2큰술" }
+    ],
+    "seasoning": [
+      { "name": "참기름", "amount": "1작은술" },
+      { "name": "설탕", "amount": "1작은술" },
+      { "name": "통깨", "amount": "1작은술" }
+    ],
+    "steps": [
+      { "step": 1, "description": "도토리묵은 얇고 길게 채 썰어 끓는 물에 가볍게 데친 후 찬물에 식혀 물기를 뺍니다." },
+      { "step": 2, "description": "오이는 얇게 채 썰어 준비합니다." },
+      { "step": 3, "description": "신김치는 잘게 다진 후 설탕과 참기름을 넣어 조물조물 밑간을 해 줍니다." },
+      { "step": 4, "description": "그릇에 물기를 뺀 도토리묵을 소복하게 담아줍니다." },
+      { "step": 5, "description": "묵 위에 준비한 오이 채, 밑간 한 김치, 김가루를 보기 좋게 고명으로 얹어줍니다." },
+      { "step": 6, "description": "차갑게 보관한 냉면 육수를 그릇 가장자리에 살며시 붓고 통깨를 뿌려 완성합니다." }
+    ],
+    "relatedIngredients": ["도토리"],
+    "relatedHolidays": []
+  },
+  {
+    "id": "recipe-oyster-mushroom-stir-fry",
+    "name": "느타리버섯 볶음",
+    "category": "채소",
+    "description": "느타리버섯 고유의 쫄깃한 식감과 감칠맛을 야채들과 함께 담백하게 볶아낸 대표 버섯 요리입니다.",
+    "servings": 2,
+    "servingsUnit": "인분",
+    "cookTime": "15분",
+    "difficulty": "하",
+    "image": "recipes/recipe-oyster-mushroom-stir-fry.png",
+    "ingredients": [
+      { "name": "느타리버섯", "amount": "200g" },
+      { "name": "양파", "amount": "0.5개" },
+      { "name": "당근", "amount": "30g" },
+      { "name": "식용유", "amount": "1큰술" }
+    ],
+    "seasoning": [
+      { "name": "굴소스", "amount": "1큰술" },
+      { "name": "참기름", "amount": "1작은술" },
+      { "name": "다진 마늘", "amount": "1작은술" },
+      { "name": "소금", "amount": "0.5작은술" },
+      { "name": "통깨", "amount": "1작은술" }
+    ],
+    "steps": [
+      { "step": 1, "description": "느타리버섯은 밑동을 자르고 가닥가닥 먹기 좋게 찢어 둡니다." },
+      { "step": 2, "description": "양파와 당근은 가늘게 채 썰어 준비합니다." },
+      { "step": 3, "description": "팬에 식용유를 두르고 다진 마늘을 볶아 고소한 마늘 기름을 냅니다." },
+      { "step": 4, "description": "채 썬 양파와 당근을 먼저 볶다가 야채가 투명해지면 느타리버섯을 넣습니다." },
+      { "step": 5, "description": "버섯이 숨이 죽기 시작하면 굴소스 and 소금을 넣어 간을 고루 맞춰 볶습니다." },
+      { "step": 6, "description": "불을 끄고 참기름과 통깨를 둘러 가볍게 버무려 완성합니다." }
+    ],
+    "relatedIngredients": ["느타리버섯"],
+    "relatedHolidays": []
+  },
+  {
+    "id": "recipe-beef-mushroom-hotpot",
+    "name": "소고기 버섯전골",
+    "category": "기타",
+    "description": "쫄깃한 느타리버섯과 불고기용 소고기, 신선한 야채들을 담백한 육수에 끓여내는 따끈한 전골 요리입니다.",
+    "servings": 4,
+    "servingsUnit": "인분",
+    "cookTime": "30분",
+    "difficulty": "중",
+    "image": "recipes/recipe-beef-mushroom-hotpot.png",
+    "ingredients": [
+      { "name": "소고기 (불고기용)", "amount": "150g" },
+      { "name": "느타리버섯", "amount": "100g" },
+      { "name": "팽이버섯", "amount": "50g" },
+      { "name": "표고버섯", "amount": "2개" },
+      { "name": "알배기배추", "amount": "3장" },
+      { "name": "대파", "amount": "0.5대" },
+      { "name": "멸치다시마 육수", "amount": "600ml" }
+    ],
+    "seasoning": [
+      { "name": "국간장", "amount": "2큰술" },
+      { "name": "다진 마늘", "amount": "1큰술" },
+      { "name": "소금", "amount": "0.5작은술" },
+      { "name": "후춧가루", "amount": "0.5작은술" }
+    ],
+    "steps": [
+      { "step": 1, "description": "느타리와 팽이버섯은 밑동을 떼어 찢고, 표고버섯은 슬라이스하고 대파와 배추는 큼직하게 썹니다." },
+      { "step": 2, "description": "소고기는 핏물을 닦아 한입 크기로 잘라 다진 마늘과 국간장을 넣어 가볍게 밑간합니다." },
+      { "step": 3, "description": "전골냄비 가장자리를 따라 배추, 대파, 버섯류를 보기 좋게 빙 둘러 담습니다." },
+      { "step": 4, "description": "냄비 중앙에 밑간 해둔 소고기를 얹어 줍니다." },
+      { "step": 5, "description": "준비한 멸치다시마 육수를 조심스럽게 부어 중간 불에서 끓여 줍니다." },
+      { "step": 6, "description": "재료가 고루 익으면 소금과 후춧가루로 간을 맞춰 따뜻하게 끓여가며 섭취합니다." }
+    ],
+    "relatedIngredients": ["느타리버섯"],
+    "relatedHolidays": []
   }
 ]
