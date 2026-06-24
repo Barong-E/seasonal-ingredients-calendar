@@ -3457,5 +3457,74 @@
     ],
     "selection_ko": "갓 표면이 회색빛을 띠고 갓 가장자리가 깨끗하며 마르지 않은 것이 좋습니다. 대가 곧고 단단한 것을 고르세요.",
     "external_url": "https://link.coupang.com/a/eQqrzs0gUK"
+  },
+  {
+    "name_ko": "양송이버섯",
+    "category": "채소",
+    "image": "ingredients/button_mushroom.png",
+    "description_ko": "둥글고 흰 갓이 특징인 버섯으로, 단백질 함량이 높아 '밭에서 나는 고기'라고도 불립니다. 은은한 향과 쫄깃한 식감으로 구이, 볶음, 수프 등 동서양 요리에 두루 사랑받는 식재료입니다.",
+    "preparation_ko": "수분을 쉽게 흡수하므로 물에 씻지 않고, 젖은 면포나 키친타월로 표면의 이물질만 가볍게 털어내거나 닦아내어 손질합니다.",
+    "storage_room_temp": "실온 보관은 권장하지 않으며, 구매 후 바로 조리하는 것이 좋습니다.",
+    "storage_refrigerator": "키친타월로 감싸 밀폐용기나 종이봉투에 넣어 채소칸에 보관하며 3~5일 이내 사용합니다.",
+    "storage_freezer": "기둥을 떼거나 슬라이스한 뒤 소분 밀폐하여 냉동 보관하고, 요리 시 해동 없이 바로 사용합니다.",
+    "months": [10],
+    "popular_dish": "양송이버섯구이, 양송이버섯버터볶음",
+    "calories_per_100g": 22,
+    "calories_per_serving": "5개(약 100g) 기준 약 22kcal",
+    "name_en": "",
+    "name_ja": "",
+    "description_en": "",
+    "description_ja": "",
+    "recommended_for": [
+      "피로 회복과 면역력 증진이 필요한 분",
+      "가볍고 건강한 식단을 유지하고 싶은 분"
+    ],
+    "selection_ko": "갓의 모양이 둥글고 갓과 대를 잇는 하얀 막이 터지지 않은 것, 표면이 뽀얗고 단단하며 주름 부분이 검게 변하지 않은 것을 고릅니다."
+  },
+  {
+    "name_ko": "브로콜리",
+    "category": "채소",
+    "image": "ingredients/broccoli.png",
+    "description_ko": "짙은 녹색 꽃봉오리가 다닥다닥 붙어 있는 십자화과 채소로, 비타민 C와 식이섬유가 풍부한 대표적인 웰빙 식품입니다. 살짝 데쳐 아삭한 식감으로 무치거나 볶음 요리에 널리 활용됩니다.",
+    "preparation_ko": "물에 거꾸로 10~20분 담가 꽃봉오리 속 이물질을 배출시킨 뒤 흐르는 물에 깨끗이 헹굽니다. 한입 크기로 자른 후 끓는 물에 소금을 넣고 30초~1분 데칩니다.",
+    "storage_room_temp": "실온에서는 꽃봉오리가 쉽게 노랗게 변하므로 가급적 바로 조리하거나 냉장 보관합니다.",
+    "storage_refrigerator": "씻지 않은 채 키친타월로 감싸 지퍼백에 담아 냉장고에 세워 보관하며 3~5일 이내 사용합니다.",
+    "storage_freezer": "살짝 데쳐 물기를 완전히 제거한 뒤, 한김 식혀 소분 밀폐용기에 담아 냉동 보관합니다.",
+    "months": [11, 12, 1, 2],
+    "popular_dish": "브로콜리숙회, 브로콜리새우볶음",
+    "calories_per_100g": 28,
+    "calories_per_serving": "1송이(약 200g) 기준 약 56kcal",
+    "name_en": "",
+    "name_ja": "",
+    "description_en": "",
+    "description_ja": "",
+    "recommended_for": [
+      "피로 회복과 면역력 증진이 필요한 분",
+      "가벼운 식단 관리가 필요한 분"
+    ],
+    "selection_ko": "꽃봉오리가 촘촘하고 가운데가 둥글고 단단하며, 짙은 녹색이나 자줏빛을 띠는 것을 고릅니다. 노란 꽃이 피기 시작한 것은 피하세요."
+  },
+  {
+    "name_ko": "임연수어",
+    "category": "해산물",
+    "image": "ingredients/atka_mackerel.png",
+    "description_ko": "껍질이 고소하고 살이 부드러워 생선구이 백반의 인기 메뉴입니다. 단백질과 오메가-3 지방산이 풍부하여 혈관 건강에 좋고 빈혈 예방과 뼈 건강에도 도움을 줍니다.",
+    "preparation_ko": "지느러미를 제거하고 흐르는 물에 씻은 뒤 반으로 갈라 남은 내장과 핏물을 깨끗이 씻어냅니다. 요리에 따라 소금으로 밑간을 합니다.",
+    "storage_room_temp": "",
+    "storage_refrigerator": "물기를 키친타월로 닦고 소금 간을 한 뒤 밀폐용기에 담아 냉장 보관하며 1~2일 내 조리합니다.",
+    "storage_freezer": "손질 후 물기를 제거하고 한 토막씩 랩으로 꽁꽁 싸서 지퍼백에 담아 냉동 보관합니다.",
+    "months": [2, 3, 4, 5],
+    "popular_dish": "임연수어구이, 임연수어조림",
+    "calories_per_100g": 180,
+    "calories_per_serving": "1토막(약 100g) 기준 약 180kcal",
+    "name_en": "",
+    "name_ja": "",
+    "description_en": "",
+    "description_ja": "",
+    "recommended_for": [
+      "혈관 건강 관리가 필요하신 분",
+      "빈혈 예방이 필요한 임산부나 여성"
+    ],
+    "selection_ko": "눈알이 투명하고, 비늘이 고르게 붙어 있으며 얼룩무늬가 선명하고 살이 단단하며 탄력이 있는 것을 고릅니다."
   }
 ]

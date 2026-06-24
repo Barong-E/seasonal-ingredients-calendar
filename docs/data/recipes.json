@@ -13719,5 +13719,193 @@
     ],
     "relatedIngredients": ["느타리버섯"],
     "relatedHolidays": []
+  },
+  {
+    "id": "button-mushroom-gui",
+    "name": "양송이버섯구이",
+    "category": "채소",
+    "description": "기둥을 뗀 양송이버섯을 팬에 노릇하게 구워 버섯 내부에 고소하고 향긋한 채즙이 가득 차오르게 하는 요리입니다.",
+    "servings": 2,
+    "servingsUnit": "인분",
+    "cookTime": "10분",
+    "difficulty": "하",
+    "image": "recipes/recipe-button-mushroom-gui.png",
+    "ingredients": [
+      { "name": "양송이버섯", "amount": "10개" },
+      { "name": "올리브유", "amount": "1작은술" }
+    ],
+    "seasoning": [
+      { "name": "소금", "amount": "0.5작은술" },
+      { "name": "후춧가루", "amount": "0.5작은술" }
+    ],
+    "steps": [
+      { "step": 1, "description": "양송이버섯은 젖은 키친타월로 표면의 이물질을 닦아낸 뒤 기둥을 떼어내 갓 부분만 준비합니다." },
+      { "step": 2, "description": "달군 팬에 올리브유를 두르고 양송이버섯의 기둥을 뗀 움푹한 면이 위를 향하도록 올려놓습니다." },
+      { "step": 3, "description": "약불에서 버섯을 서서히 익히며 소금과 후춧가루를 갓 안쪽에 살짝 뿌려 간을 맞춥니다." },
+      { "step": 4, "description": "버섯 안쪽에 향긋한 채즙이 투명하게 고이고 버섯 밑면이 노릇해지면 불을 끄고 그릇에 담아냅니다." }
+    ],
+    "relatedIngredients": ["양송이버섯"],
+    "relatedHolidays": []
+  },
+  {
+    "id": "button-mushroom-butter-fry",
+    "name": "양송이버섯버터볶음",
+    "category": "채소",
+    "description": "쫄깃한 양송이버섯을 향긋한 마늘과 부드러운 버터로 볶아내어 버섯의 풍미를 한껏 끌어올린 요리입니다.",
+    "servings": 2,
+    "servingsUnit": "인분",
+    "cookTime": "15분",
+    "difficulty": "하",
+    "image": "recipes/recipe-button-mushroom-butter-fry.png",
+    "ingredients": [
+      { "name": "양송이버섯", "amount": "200g" },
+      { "name": "올리브유", "amount": "1작은술" },
+      { "name": "버터", "amount": "20g" },
+      { "name": "마늘", "amount": "5쪽" },
+      { "name": "쪽파", "amount": "1대" }
+    ],
+    "seasoning": [
+      { "name": "간장", "amount": "1작은술" },
+      { "name": "소금", "amount": "0.5작은술" },
+      { "name": "후춧가루", "amount": "0.5작은술" }
+    ],
+    "steps": [
+      { "step": 1, "description": "양송이버섯은 이물질을 닦아낸 후 반으로 자르거나 4등분 하고 마늘은 편 썰며 쪽파는 송송 썹니다." },
+      { "step": 2, "description": "팬에 올리브유를 두르고 편 썬 마늘을 넣어 약불에서 향이 올라올 때까지 볶아줍니다." },
+      { "step": 3, "description": "썰어둔 양송이버섯을 넣고 중불에서 수분이 날아가며 노릇해질 때까지 달달 볶아줍니다." },
+      { "step": 4, "description": "버섯의 숨이 죽으면 버터와 간장을 넣고 버터가 녹아 버섯에 잘 배도록 고르게 볶습니다." },
+      { "step": 5, "description": "소금 and 후춧가루로 마지막 간을 맞춘 뒤 송송 썬 쪽파를 뿌려 완성합니다." }
+    ],
+    "relatedIngredients": ["양송이버섯"],
+    "relatedHolidays": []
+  },
+  {
+    "id": "broccoli-sukhoe",
+    "name": "브로콜리숙회",
+    "category": "채소",
+    "description": "꽃봉오리를 깨끗이 세척한 브로콜리를 끓는 소금물에 아삭하게 데쳐내어 매콤달콤한 초고추장에 찍어 먹는 웰빙 반찬입니다.",
+    "servings": 2,
+    "servingsUnit": "인분",
+    "cookTime": "10분",
+    "difficulty": "하",
+    "image": "recipes/recipe-broccoli-sukhoe.png",
+    "ingredients": [
+      { "name": "브로콜리", "amount": "1송이" },
+      { "name": "물", "amount": "1L" },
+      { "name": "식초", "amount": "1큰술" }
+    ],
+    "seasoning": [
+      { "name": "소금", "amount": "1큰술" },
+      { "name": "초고추장", "amount": "3큰술" }
+    ],
+    "steps": [
+      { "step": 1, "description": "브로콜리는 송이송이 잘라주고 줄기는 겉껍질의 질긴 부분을 벗겨내어 얇게 편 썹니다." },
+      { "step": 2, "description": "볼에 브로콜리가 잠길 정도의 물을 붓고 식초를 섞은 후 잘라둔 브로콜리를 넣어 담가두어 불순물을 제거합니다." },
+      { "step": 3, "description": "물에서 건져낸 브로콜리를 흐르는 물에 여러 번 헹구어 채반에 밭쳐 물기를 뺍니다." },
+      { "step": 4, "description": "냄비에 물과 소금을 넣고 끓여 끓어오르면 단단한 줄기부터 넣고 꽃송이 부분을 넣어 약 1분간 살짝 데칩니다." },
+      { "step": 5, "description": "데친 브로콜리를 찬물에 헹궈 아삭함을 살린 뒤 물기를 꽉 짜서 접시에 담고 초고추장을 곁들입니다." }
+    ],
+    "relatedIngredients": ["브로콜리"],
+    "relatedHolidays": []
+  },
+  {
+    "id": "broccoli-shrimp-fry",
+    "name": "브로콜리새우볶음",
+    "category": "채소",
+    "description": "영양이 풍부한 브로콜리와 탱글탱글한 새우를 편마늘과 굴소스로 볶아내어 맛과 영양을 모두 잡은 인기 반찬입니다.",
+    "servings": 2,
+    "servingsUnit": "인분",
+    "cookTime": "20분",
+    "difficulty": "하",
+    "image": "recipes/recipe-broccoli-shrimp-fry.png",
+    "ingredients": [
+      { "name": "브로콜리", "amount": "0.5송이" },
+      { "name": "새우", "amount": "10마리" },
+      { "name": "마늘", "amount": "5쪽" },
+      { "name": "올리브유", "amount": "1큰술" }
+    ],
+    "seasoning": [
+      { "name": "굴소스", "amount": "1큰술" },
+      { "name": "맛술", "amount": "1큰술" },
+      { "name": "간장", "amount": "1작은술" },
+      { "name": "후춧가루", "amount": "0.5작은술" },
+      { "name": "참기름", "amount": "1작은술" }
+    ],
+    "steps": [
+      { "step": 1, "description": "브로콜리는 세척하여 한입 크기로 작게 썰어 끓는 물에 소금을 약간 넣고 데쳐서 준비하고 마늘은 편 썹니다." },
+      { "step": 2, "description": "새우는 흐르는 물에 씻어 물기를 제거한 뒤 맛술과 후춧가루를 약간 뿌려 밑간해 둡니다." },
+      { "step": 3, "description": "달군 팬에 올리브유를 두르고 편 썰어둔 마늘을 넣어 은은한 향이 날 때까지 볶아줍니다." },
+      { "step": 4, "description": "밑간한 새우를 팬에 넣어 겉면이 붉은빛이 돌 때까지 볶아준 뒤 데친 브로콜리를 함께 넣어줍니다." },
+      { "step": 5, "description": "굴소스와 간장을 넣고 중불에서 양념이 골고루 배도록 빠르게 볶은 후 참기름을 뿌려 마무리합니다." }
+    ],
+    "relatedIngredients": ["브로콜리"],
+    "relatedHolidays": []
+  },
+  {
+    "id": "atka-mackerel-gui",
+    "name": "임연수어구이",
+    "category": "해산물",
+    "description": "노릇하게 구워내어 바삭하고 짭조름한 껍질과 촉촉하고 부드러운 속살의 조화가 뛰어난 한국 밥상의 단골 생선구이입니다.",
+    "servings": 2,
+    "servingsUnit": "인분",
+    "cookTime": "20분",
+    "difficulty": "하",
+    "image": "recipes/recipe-atka-mackerel-gui.png",
+    "ingredients": [
+      { "name": "임연수어", "amount": "1마리" },
+      { "name": "맛술", "amount": "1큰술" },
+      { "name": "식용유", "amount": "2큰술" },
+      { "name": "밀가루", "amount": "1큰술" }
+    ],
+    "seasoning": [
+      { "name": "소금", "amount": "1작은술" },
+      { "name": "후춧가루", "amount": "0.5작은술" }
+    ],
+    "steps": [
+      { "step": 1, "description": "손질된 임연수어는 흐르는 물에 깨끗이 씻은 뒤 키친타월로 물기를 꼼꼼하게 제거합니다." },
+      { "step": 2, "description": "살 부분에 어슷하게 칼집을 내고 소금, 후춧가루, 맛술을 뿌려 간이 배도록 재워둡니다." },
+      { "step": 3, "description": "재워둔 임연수어의 앞뒷면에 밀가루를 얇게 묻히고 톡톡 털어 여분의 가루를 제거합니다." },
+      { "step": 4, "description": "달군 팬에 식용유를 넉넉히 두르고 껍질 면부터 올려 중불에서 노릇노릇하게 구워줍니다." },
+      { "step": 5, "description": "밑면이 바삭하게 익으면 뒤집어서 살 부분도 은근하게 익혀 속까지 촉촉하게 구워 완성합니다." }
+    ],
+    "relatedIngredients": ["임연수어"],
+    "relatedHolidays": []
+  },
+  {
+    "id": "atka-mackerel-jorim",
+    "name": "임연수어조림",
+    "category": "해산물",
+    "description": "무와 양파를 깔고 칼칼한 양념장을 얹어 조려낸 요리로, 부드러운 임연수어 살에 짭조름한 양념이 쏙 배어든 밥도둑 조림입니다.",
+    "servings": 2,
+    "servingsUnit": "인분",
+    "cookTime": "30분",
+    "difficulty": "중",
+    "image": "recipes/recipe-atka-mackerel-jorim.png",
+    "ingredients": [
+      { "name": "임연수어", "amount": "1마리" },
+      { "name": "무", "amount": "200g" },
+      { "name": "양파", "amount": "0.5개" },
+      { "name": "대파", "amount": "1대" },
+      { "name": "청양고추", "amount": "1개" },
+      { "name": "물", "amount": "400ml" }
+    ],
+    "seasoning": [
+      { "name": "간장", "amount": "4큰술" },
+      { "name": "고춧가루", "amount": "2큰술" },
+      { "name": "맛술", "amount": "2큰술" },
+      { "name": "다진 마늘", "amount": "1큰술" },
+      { "name": "설탕", "amount": "1작은술" },
+      { "name": "다진 생강", "amount": "0.5작은술" },
+      { "name": "후춧가루", "amount": "0.5작은술" }
+    ],
+    "steps": [
+      { "step": 1, "description": "임연수어는 깨끗이 씻어 지느러미를 자르고 3~4토막으로 자르며 무는 도톰하게 나박 썰고 양파는 채 썹니다." },
+      { "step": 2, "description": "대파와 청양고추는 어슷썰기 하고 볼에 간장, 고춧가루, 맛술, 다진 마늘, 설탕, 다진 생강, 후춧가루를 섞어 양념장을 만듭니다." },
+      { "step": 3, "description": "냄비 바닥에 썰어둔 무를 깔고 물을 부은 뒤 먼저 끓여 무를 반쯤 익혀줍니다." },
+      { "step": 4, "description": "무가 투명해지기 시작하면 그 위에 자른 임연수어와 양파를 얹고 양념장을 고루 끼얹어 끓입니다." },
+      { "step": 5, "description": "끓어오르면 약불로 줄여 국물을 끼얹어가며 조리다가 대파와 청양고추를 넣고 양념이 자작하게 졸아들 때까지 더 조려줍니다." }
+    ],
+    "relatedIngredients": ["임연수어"],
+    "relatedHolidays": []
   }
 ]

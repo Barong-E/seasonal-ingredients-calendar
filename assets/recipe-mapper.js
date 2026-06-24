@@ -219,7 +219,13 @@ export function getRecipeIdFromDishName(dishName) {
     "도토리묵무침": "recipe-acorn-jelly-salad",
     "도토리묵사발": "recipe-acorn-jelly-soup",
     "느타리버섯 볶음": "recipe-oyster-mushroom-stir-fry",
-    "소고기 버섯전골": "recipe-beef-mushroom-hotpot"
+    "소고기 버섯전골": "recipe-beef-mushroom-hotpot",
+    "양송이버섯구이": "button-mushroom-gui",
+    "양송이버섯버터볶음": "button-mushroom-butter-fry",
+    "브로콜리숙회": "broccoli-sukhoe",
+    "브로콜리새우볶음": "broccoli-shrimp-fry",
+    "임연수어구이": "atka-mackerel-gui",
+    "임연수어조림": "atka-mackerel-jorim"
   };
   return mapping[dishName] || null;
 }
