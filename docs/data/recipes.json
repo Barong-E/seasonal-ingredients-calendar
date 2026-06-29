@@ -13907,5 +13907,224 @@
     ],
     "relatedIngredients": ["임연수어"],
     "relatedHolidays": []
+  },
+  {
+    "id": "muneo-sukhoe",
+    "name": "문어숙회",
+    "category": "해산물",
+    "description": "삶은 문어를 얇게 썰어 참기름장이나 초고추장에 곁들여 먹는 담백하고 쫄깃한 해산물 요리입니다.",
+    "image": "recipes/recipe-muneo-sukhoe.png",
+    "servings": 2,
+    "cookTime": "25분",
+    "difficulty": "하",
+    "ingredients": [
+      { "name": "문어", "amount": "500g" },
+      { "name": "무", "amount": "100g" },
+      { "name": "대파", "amount": "1대" },
+      { "name": "물", "amount": "2L" }
+    ],
+    "seasoning": [
+      { "name": "청주", "amount": "2큰술" },
+      { "name": "밀가루", "amount": "3큰술" },
+      { "name": "굵은 소금", "amount": "1큰술" },
+      { "name": "참기름", "amount": "1큰술" },
+      { "name": "소금", "amount": "0.5작은술" },
+      { "name": "통깨", "amount": "1작은술" },
+      { "name": "고추장", "amount": "2큰술" },
+      { "name": "식초", "amount": "1큰술" },
+      { "name": "설탕", "amount": "1큰술" }
+    ],
+    "steps": [
+      { "step": 1, "description": "문어 머리를 뒤집어 내장, 눈, 입을 가위로 제거합니다." },
+      { "step": 2, "description": "밀가루와 굵은 소금을 넣고 빨판 사이사이를 바락바락 문질러 씻은 뒤 흐르는 물에 깨끗이 헹굽니다." },
+      { "step": 3, "description": "냄비에 물을 붓고 무와 대파, 청주를 넣어 팔팔 끓입니다." },
+      { "step": 4, "description": "물이 끓으면 문어 머리를 잡고 다리 부분을 끓는 물에 3번 넣었다 빼기를 반복하여 다리 모양을 잡아줍니다." },
+      { "step": 5, "description": "문어를 완전히 넣고 센 불에서 5분간 삶아줍니다." },
+      { "step": 6, "description": "삶은 문어를 즉시 얼음물에 담가 식혀 탱글탱글한 식감을 살립니다." },
+      { "step": 7, "description": "물기를 제거한 문어를 먹기 좋은 크기로 얇게 썰어 접시에 담습니다." },
+      { "step": 8, "description": "참기름에 소금과 통깨를 섞어 참기름장을 만들고, 고추장에 식초와 설탕을 섞어 초고추장도 함께 곁들여 냅니다." }
+    ],
+    "relatedIngredients": ["문어"],
+    "relatedHolidays": []
+  },
+  {
+    "id": "muneo-chomuchim",
+    "name": "문어초무침",
+    "category": "해산물",
+    "description": "삶은 문어와 싱싱한 채소를 새콤달콤한 초고추장에 버무린 입맛 돋우는 해산물 무침 요리입니다.",
+    "image": "recipes/recipe-muneo-chomuchim.png",
+    "servings": 2,
+    "cookTime": "20분",
+    "difficulty": "하",
+    "ingredients": [
+      { "name": "삶은 문어", "amount": "250g" },
+      { "name": "오이", "amount": "1개" },
+      { "name": "양파", "amount": "0.5개" },
+      { "name": "미나리", "amount": "50g" },
+      { "name": "당근", "amount": "30g" }
+    ],
+    "seasoning": [
+      { "name": "고추장", "amount": "2큰술" },
+      { "name": "식초", "amount": "2큰술" },
+      { "name": "설탕", "amount": "1큰술" },
+      { "name": "고춧가루", "amount": "1큰술" },
+      { "name": "다진 마늘", "amount": "1작은술" },
+      { "name": "참기름", "amount": "1큰술" },
+      { "name": "통깨", "amount": "1큰술" }
+    ],
+    "steps": [
+      { "step": 1, "description": "삶은 문어를 한입 크기로 얇게 썰어줍니다." },
+      { "step": 2, "description": "오이는 반 갈라 어슷 썰고 소금에 살짝 절인 뒤 물기를 꼭 짜줍니다." },
+      { "step": 3, "description": "양파는 채 썰어 찬물에 담가 매운기를 빼고, 당근도 채 썰어 준비합니다." },
+      { "step": 4, "description": "미나리는 먹기 좋은 길이로 잘라 깨끗이 씻어 준비합니다." },
+      { "step": 5, "description": "볼에 고추장, 식초, 설탕, 고춧가루, 다진 마늘, 참기름, 통깨를 넣어 초고추장 양념을 만듭니다." },
+      { "step": 6, "description": "큰 볼에 문어와 채소를 모두 넣고 양념장을 더해 손끝으로 가볍게 버무립니다." },
+      { "step": 7, "description": "접시에 담고 통깨를 뿌려 완성합니다." }
+    ],
+    "relatedIngredients": ["문어"],
+    "relatedHolidays": []
+  },
+  {
+    "id": "recipe-nogak-muchim",
+    "name": "노각무침",
+    "category": "채소",
+    "description": "노각을 소금과 설탕에 절여 꼬들꼬들하게 만든 뒤, 매콤새콤한 고추장 양념에 버무려 여름철 밥도둑으로 즐기는 반찬입니다.",
+    "image": "recipes/recipe-nogak-muchim.png",
+    "servings": 2,
+    "servingsUnit": "인분",
+    "cookTime": "30분",
+    "difficulty": "하",
+    "ingredients": [
+      { "name": "노각", "amount": "1개" },
+      { "name": "대파", "amount": "1대" },
+      { "name": "청양고추", "amount": "1개" }
+    ],
+    "seasoning": [
+      { "name": "굵은 소금(절임용)", "amount": "1큰술" },
+      { "name": "설탕(절임용)", "amount": "2큰술" },
+      { "name": "고추장", "amount": "1큰술" },
+      { "name": "고춧가루", "amount": "1큰술" },
+      { "name": "식초", "amount": "1큰술" },
+      { "name": "다진 마늘", "amount": "1큰술" },
+      { "name": "매실액", "amount": "1큰술" },
+      { "name": "참기름", "amount": "1큰술" },
+      { "name": "통깨", "amount": "0.5작은술" }
+    ],
+    "steps": [
+      { "step": 1, "description": "노각은 필러로 누런 겉껍질을 벗긴 뒤, 반으로 갈라 숟가락으로 속의 씨를 깨끗하게 긁어냅니다." },
+      { "step": 2, "description": "씨를 제거한 노각을 반달 모양으로 얇게 썬 후, 굵은 소금과 설탕을 넣고 버무려 20분간 절여줍니다." },
+      { "step": 3, "description": "절여진 노각에서 나온 물은 버리고, 면보에 감싸 물기를 최대한 꽉 짜줍니다." },
+      { "step": 4, "description": "물기를 짠 노각에 고추장, 고춧가루, 식초, 다진 마늘, 매실액을 넣고 골고루 버무립니다." },
+      { "step": 5, "description": "송송 썬 대파와 청양고추를 넣고 조물조물 무친 뒤, 참기름과 통깨를 뿌려 마무리합니다." }
+    ],
+    "relatedIngredients": ["노각"],
+    "relatedHolidays": []
+  },
+  {
+    "id": "recipe-nogak-naengguk",
+    "name": "노각냉국",
+    "category": "채소",
+    "description": "새콤달콤한 냉국 국물에 아삭하게 손질한 노각을 띄워 여름철 더위를 시원하게 날려주는 별미 국입니다.",
+    "image": "recipes/recipe-nogak-naengguk.png",
+    "servings": 2,
+    "servingsUnit": "인분",
+    "cookTime": "20분",
+    "difficulty": "하",
+    "ingredients": [
+      { "name": "물", "amount": "500ml" },
+      { "name": "노각", "amount": "300g" },
+      { "name": "쪽파", "amount": "2대" }
+    ],
+    "seasoning": [
+      { "name": "식초", "amount": "2큰술" },
+      { "name": "설탕", "amount": "2큰술" },
+      { "name": "매실청", "amount": "1큰술" },
+      { "name": "소금", "amount": "0.5작은술" },
+      { "name": "다진 마늘", "amount": "1작은술" },
+      { "name": "참기름", "amount": "1작은술" },
+      { "name": "통깨", "amount": "0.5작은술" }
+    ],
+    "steps": [
+      { "step": 1, "description": "노각은 필러로 껍질을 벗기고 반으로 갈라 숟가락으로 씨를 긁어낸 뒤 얇게 채 썰어줍니다." },
+      { "step": 2, "description": "채 썬 노각에 소금을 살짝 뿌려 5분간 절인 뒤 찬물에 헹궈 물기를 꽉 짜줍니다." },
+      { "step": 3, "description": "물기를 짠 노각에 다진 마늘과 참기름을 넣고 조물조물 밑간해 둡니다." },
+      { "step": 4, "description": "볼에 물, 식초, 설탕, 매실청, 소금을 넣고 설탕과 소금이 녹을 때까지 잘 섞어 냉국 국물을 만듭니다." },
+      { "step": 5, "description": "냉국 국물에 밑간한 노각을 넣고 송송 썬 쪽파와 통깨를 뿌린 뒤, 차갑게 냉장하거나 얼음을 띄워 시원하게 냅니다." }
+    ],
+    "relatedIngredients": ["노각"],
+    "relatedHolidays": []
+  },
+  {
+    "id": "ureong-gang-doenjang",
+    "name": "우렁강된장",
+    "category": "해산물",
+    "description": "쫄깃한 우렁이살과 채소를 된장 양념에 자작하게 끓여낸 밥도둑 요리입니다.",
+    "image": "recipes/recipe-ureong-gang-doenjang.png",
+    "servings": 2,
+    "cookTime": "25분",
+    "difficulty": "중",
+    "ingredients": [
+      { "name": "우렁이살", "amount": "200g" },
+      { "name": "애호박", "amount": "100g" },
+      { "name": "양파", "amount": "0.5개" },
+      { "name": "두부", "amount": "100g" },
+      { "name": "대파", "amount": "0.5대" },
+      { "name": "청양고추", "amount": "2개" },
+      { "name": "물", "amount": "200ml" }
+    ],
+    "seasoning": [
+      { "name": "된장", "amount": "2큰술" },
+      { "name": "고추장", "amount": "1큰술" },
+      { "name": "고춧가루", "amount": "1큰술" },
+      { "name": "다진 마늘", "amount": "1큰술" },
+      { "name": "올리고당", "amount": "1큰술" },
+      { "name": "들기름", "amount": "1큰술" }
+    ],
+    "steps": [
+      { "step": 1, "description": "우렁이살에 밀가루를 넣고 바락바락 주물러 씻은 뒤, 흐르는 물에 깨끗이 헹궈 체에 밭쳐 물기를 뺍니다." },
+      { "step": 2, "description": "애호박과 양파는 깍둑썰기하고, 두부는 으깨고, 대파와 청양고추는 송송 썰어 준비합니다." },
+      { "step": 3, "description": "냄비에 들기름을 두르고 양파와 애호박을 먼저 볶다가 다진 마늘을 넣어 향을 냅니다." },
+      { "step": 4, "description": "된장, 고추장, 고춧가루를 넣고 함께 볶은 뒤 물을 붓고 끓입니다." },
+      { "step": 5, "description": "국물이 끓어오르면 으깬 두부를 넣고 중불에서 자작하게 끓입니다." },
+      { "step": 6, "description": "우렁이살과 대파, 청양고추를 넣고 올리고당을 더해 약 3분간 더 끓여 완성합니다." }
+    ],
+    "relatedIngredients": ["우렁이"],
+    "relatedHolidays": []
+  },
+  {
+    "id": "ureong-minari-muchim",
+    "name": "우렁이미나리무침",
+    "category": "해산물",
+    "description": "새콤달콤한 양념에 쫄깃한 우렁이살과 향긋한 미나리를 버무린 상큼한 무침 요리입니다.",
+    "image": "recipes/recipe-ureong-minari-muchim.png",
+    "servings": 2,
+    "cookTime": "15분",
+    "difficulty": "하",
+    "ingredients": [
+      { "name": "우렁이살", "amount": "200g" },
+      { "name": "미나리", "amount": "100g" },
+      { "name": "오이", "amount": "0.5개" },
+      { "name": "양파", "amount": "0.25개" }
+    ],
+    "seasoning": [
+      { "name": "고추장", "amount": "2큰술" },
+      { "name": "고춧가루", "amount": "1큰술" },
+      { "name": "식초", "amount": "2큰술" },
+      { "name": "매실액", "amount": "1큰술" },
+      { "name": "설탕", "amount": "1큰술" },
+      { "name": "다진 마늘", "amount": "1작은술" },
+      { "name": "참기름", "amount": "1큰술" },
+      { "name": "통깨", "amount": "1큰술" }
+    ],
+    "steps": [
+      { "step": 1, "description": "우렁이살에 밀가루를 넣고 주물러 씻은 뒤 깨끗이 헹구고, 끓는 물에 살짝 데쳐 찬물에 헹궈 물기를 뺍니다." },
+      { "step": 2, "description": "미나리는 깨끗이 씻어 먹기 좋은 길이로 자르고, 오이는 반 갈라 어슷썰기, 양파는 채 썰어 준비합니다." },
+      { "step": 3, "description": "볼에 고추장, 고춧가루, 식초, 매실액, 설탕, 다진 마늘을 넣고 골고루 섞어 양념장을 만듭니다." },
+      { "step": 4, "description": "오이와 양파를 넣고 양념장의 절반을 넣어 먼저 버무립니다." },
+      { "step": 5, "description": "데친 우렁이살과 미나리를 넣고 남은 양념장을 모두 넣어 살살 버무립니다." },
+      { "step": 6, "description": "마지막으로 참기름과 통깨를 뿌려 가볍게 섞어 완성합니다." }
+    ],
+    "relatedIngredients": ["우렁이"],
+    "relatedHolidays": []
   }
 ]

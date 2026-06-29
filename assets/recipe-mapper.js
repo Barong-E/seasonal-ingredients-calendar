@@ -225,7 +225,13 @@ export function getRecipeIdFromDishName(dishName) {
     "브로콜리숙회": "broccoli-sukhoe",
     "브로콜리새우볶음": "broccoli-shrimp-fry",
     "임연수어구이": "atka-mackerel-gui",
-    "임연수어조림": "atka-mackerel-jorim"
+    "임연수어조림": "atka-mackerel-jorim",
+    "문어숙회": "muneo-sukhoe",
+    "문어초무침": "muneo-chomuchim",
+    "노각무침": "recipe-nogak-muchim",
+    "노각냉국": "recipe-nogak-naengguk",
+    "우렁강된장": "ureong-gang-doenjang",
+    "우렁이미나리무침": "ureong-minari-muchim"
   };
   return mapping[dishName] || null;
 }
