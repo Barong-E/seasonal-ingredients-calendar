@@ -231,7 +231,13 @@ export function getRecipeIdFromDishName(dishName) {
     "노각무침": "recipe-nogak-muchim",
     "노각냉국": "recipe-nogak-naengguk",
     "우렁강된장": "ureong-gang-doenjang",
-    "우렁이미나리무침": "ureong-minari-muchim"
+    "우렁이미나리무침": "ureong-minari-muchim",
+    "산딸기잼": "wild-raspberry-jam",
+    "산딸기에이드": "wild-raspberry-ade",
+    "재첩국": "recipe-jaecheop-soup",
+    "재첩회무침": "recipe-jaecheop-salad",
+    "멜론 프로슈토": "melon-prosciutto",
+    "멜론빙수": "melon-bingsu"
   };
   return mapping[dishName] || null;
 }
