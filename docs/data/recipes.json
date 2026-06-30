@@ -14306,5 +14306,214 @@
     ],
     "relatedIngredients": ["멜론"],
     "relatedHolidays": []
+  },
+  {
+    "id": "mideodeok-doenjang-jjigae",
+    "name": "미더덕 된장찌개",
+    "category": "해산물",
+    "description": "향긋한 미더덕의 풍미와 된장의 구수함이 어우러진 시원하고 칼칼한 찌개 요리입니다.",
+    "image": "recipes/recipe-mideodeok-doenjang-jjigae.png",
+    "servings": 2,
+    "servingsUnit": "인분",
+    "cookTime": "20분",
+    "difficulty": "하",
+    "ingredients": [
+      { "name": "미더덕", "amount": "100g" },
+      { "name": "두부", "amount": "150g" },
+      { "name": "애호박", "amount": "80g" },
+      { "name": "양파", "amount": "60g" },
+      { "name": "대파", "amount": "30g" },
+      { "name": "청양고추", "amount": "1개" },
+      { "name": "홍고추", "amount": "1개" },
+      { "name": "멸치 다시마 육수", "amount": "500ml" }
+    ],
+    "seasoning": [
+      { "name": "된장", "amount": "2큰술" },
+      { "name": "다진 마늘", "amount": "1작은술" },
+      { "name": "고춧가루", "amount": "1작은술" }
+    ],
+    "steps": [
+      { "step": 1, "description": "냄비에 멸치 다시마 육수를 붓고 끓입니다." },
+      { "step": 2, "description": "육수가 끓으면 된장을 체에 걸러 곱게 풀어줍니다." },
+      { "step": 3, "description": "된장 국물에 손질한 미더덕, 애호박, 양파를 넣고 끓입니다." },
+      { "step": 4, "description": "호박이 익으면 먹기 좋은 크기로 썬 두부를 넣습니다." },
+      { "step": 5, "description": "다진 마늘, 고춧가루를 넣어 한소끔 끓인 후 어슷 썬 대파, 청양고추, 홍고추를 넣고 마무리합니다." }
+    ],
+    "relatedIngredients": ["미더덕"],
+    "relatedHolidays": []
+  },
+  {
+    "id": "mideodeok-kongnamul-jjim",
+    "name": "미더덕 콩나물찜",
+    "category": "해산물",
+    "description": "아삭한 콩나물과 오도독 터지는 향긋한 미더덕에 매콤한 양념이 어우러진 별미 찜 요리입니다.",
+    "image": "recipes/recipe-mideodeok-kongnamul-jjim.png",
+    "servings": 2,
+    "servingsUnit": "인분",
+    "cookTime": "25분",
+    "difficulty": "중",
+    "ingredients": [
+      { "name": "미더덕", "amount": "200g" },
+      { "name": "찜용 콩나물", "amount": "250g" },
+      { "name": "미나리", "amount": "50g" },
+      { "name": "양파", "amount": "50g" },
+      { "name": "대파", "amount": "40g" },
+      { "name": "청양고추", "amount": "1개" },
+      { "name": "멸치 다시마 육수", "amount": "100ml" }
+    ],
+    "seasoning": [
+      { "name": "고춧가루", "amount": "3큰술" },
+      { "name": "국간장", "amount": "2큰술" },
+      { "name": "다진 마늘", "amount": "1큰술" },
+      { "name": "설탕", "amount": "1큰술" },
+      { "name": "참기름", "amount": "1큰술" },
+      { "name": "전분가루", "amount": "1큰술" },
+      { "name": "물", "amount": "2큰술" },
+      { "name": "통깨", "amount": "1작은술" }
+    ],
+    "steps": [
+      { "step": 1, "description": "콩나물은 머리와 꼬리를 다듬어 씻고, 미나리는 먹기 좋은 크기로 썹니다." },
+      { "step": 2, "description": "대파와 청양고추는 어슷하게 썰고 양파는 채 썹니다." },
+      { "step": 3, "description": "고춧가루, 국간장, 다진 마늘, 설탕을 섞어 양념장을 만듭니다." },
+      { "step": 4, "description": "냄비에 손질한 미더덕, 콩나물, 멸치 다시마 육수를 넣고 뚜껑을 덮어 익힙니다." },
+      { "step": 5, "description": "콩나물이 숨이 죽으면 준비한 양념장과 채 썬 양파, 어슷 썬 대파, 청양고추를 넣어 함께 볶아줍니다." },
+      { "step": 6, "description": "미나리를 넣고 살짝 볶은 후, 전분가루와 물을 섞어 만든 전분물을 부어가며 농도를 맞춥니다." },
+      { "step": 7, "description": "마지막으로 참기름과 통깨를 뿌려 가볍게 섞은 후 불을 끄고 마무리합니다." }
+    ],
+    "relatedIngredients": ["미더덕"],
+    "relatedHolidays": []
+  },
+  {
+    "id": "umu-kongguk",
+    "name": "우무콩국",
+    "category": "해산물",
+    "description": "탱글탱글한 우무묵 채에 시원하고 고소한 콩국을 부어 간편하게 즐기는 여름철 대표 영양 간식입니다.",
+    "image": "recipes/recipe-umu-kongguk.png",
+    "servings": 2,
+    "servingsUnit": "인분",
+    "cookTime": "10분",
+    "difficulty": "하",
+    "ingredients": [
+      { "name": "우무묵", "amount": "400g" },
+      { "name": "오이", "amount": "50g" },
+      { "name": "얼음", "amount": "100g" },
+      { "name": "콩국물", "amount": "600ml" }
+    ],
+    "seasoning": [
+      { "name": "소금", "amount": "0.5작은술" },
+      { "name": "통깨", "amount": "1작은술" }
+    ],
+    "steps": [
+      { "step": 1, "description": "우무묵을 찬물에 가볍게 헹군 뒤 물기를 빼고 가늘게 채를 썹니다." },
+      { "step": 2, "description": "오이는 깨끗이 씻은 후 가늘게 채를 썰어 준비합니다." },
+      { "step": 3, "description": "대접에 준비한 우무묵 채를 나누어 담고 시원한 콩국물을 자작하게 붓습니다." },
+      { "step": 4, "description": "채 썬 오이와 얼음을 고명으로 얹고, 소금과 통깨를 뿌려 가볍게 섞어 먹습니다." }
+    ],
+    "relatedIngredients": ["우뭇가사리"],
+    "relatedHolidays": []
+  },
+  {
+    "id": "umumuk-chomuchim",
+    "name": "우무묵초무침",
+    "category": "해산물",
+    "description": "탱탱한 우무묵에 아삭한 오이와 당근을 더해 새콤달콤하고 매콤한 양념으로 무쳐낸 입맛 돋우는 별미입니다.",
+    "image": "recipes/recipe-umumuk-chomuchim.png",
+    "servings": 2,
+    "servingsUnit": "인분",
+    "cookTime": "15분",
+    "difficulty": "하",
+    "ingredients": [
+      { "name": "우무묵", "amount": "400g" },
+      { "name": "오이", "amount": "50g" },
+      { "name": "당근", "amount": "30g" }
+    ],
+    "seasoning": [
+      { "name": "국간장", "amount": "1큰술" },
+      { "name": "식초", "amount": "2큰술" },
+      { "name": "매실액", "amount": "1큰술" },
+      { "name": "고춧가루", "amount": "1큰술" },
+      { "name": "참기름", "amount": "1작은술" },
+      { "name": "통깨", "amount": "1작은술" }
+    ],
+    "steps": [
+      { "step": 1, "description": "우무묵은 찬물에 헹군 다음 먹기 좋은 크기로 도톰하게 썰어 줍니다." },
+      { "step": 2, "description": "오이와 당근은 세척 후 얇게 채를 썰어 둡니다." },
+      { "step": 3, "description": "넓은 그릇에 국간장, 식초, 매실액, 고춧가루, 참기름을 골고루 섞어 매콤새콤한 양념장을 만듭니다." },
+      { "step": 4, "description": "양념장이 담긴 그릇에 준비한 우무묵, 오이, 당근을 넣고 모양이 망가지지 않게 살살 버무립니다." },
+      { "step": 5, "description": "접시에 소담하게 담아낸 뒤 통깨를 골고루 뿌려 마무리합니다." }
+    ],
+    "relatedIngredients": ["우뭇가사리"],
+    "relatedHolidays": []
+  },
+  {
+    "id": "domi-jorim",
+    "name": "도미조림",
+    "category": "해산물",
+    "description": "달콤 짭조름한 양념장에 조려내어 입맛을 돋우는 대표적인 도미 요리입니다.",
+    "image": "recipes/recipe-domi-jorim.png",
+    "servings": 2,
+    "cookTime": "30분",
+    "difficulty": "중",
+    "ingredients": [
+      { "name": "도미", "amount": "1마리" },
+      { "name": "무", "amount": "150g" },
+      { "name": "대파", "amount": "0.5대" },
+      { "name": "청양고추", "amount": "1개" },
+      { "name": "홍고추", "amount": "1개" },
+      { "name": "물", "amount": "200ml" }
+    ],
+    "seasoning": [
+      { "name": "진간장", "amount": "3큰술" },
+      { "name": "설탕", "amount": "1큰술" },
+      { "name": "청주", "amount": "2큰술" },
+      { "name": "다진 마늘", "amount": "1큰술" },
+      { "name": "올리고당", "amount": "1큰술" },
+      { "name": "다진 생강", "amount": "0.5작은술" }
+    ],
+    "steps": [
+      { "step": 1, "description": "도미는 비늘을 긁어내고 내장을 제거한 뒤 깨끗이 씻어 토막을 냅니다." },
+      { "step": 2, "description": "무는 도톰하게 썰고, 대파와 고추는 어슷하게 썰어 준비합니다." },
+      { "step": 3, "description": "볼에 진간장, 설탕, 청주, 다진 마늘, 올리고당, 다진 생강을 넣어 양념장을 만듭니다." },
+      { "step": 4, "description": "냄비 바닥에 무를 깔고 그 위에 도미를 얹은 뒤 양념장 and 물을 붓습니다." },
+      { "step": 5, "description": "센 불에서 끓이다가 끓어오르면 약 불로 줄이고, 뚜껑을 덮어 15분간 조려줍니다. 중간중간 양념을 도미 위에 끼얹어 줍니다." },
+      { "step": 6, "description": "국물이 자작해지면 대파와 고추를 넣고 3분간 더 끓여 완성합니다." }
+    ],
+    "relatedIngredients": ["참돔"],
+    "relatedHolidays": []
+  },
+  {
+    "id": "domi-malgeuntang",
+    "name": "도미맑은탕",
+    "category": "해산물",
+    "description": "신선한 도미와 무, 미나리를 넣어 끓여내어 시원하고 담백한 국물 요리입니다.",
+    "image": "recipes/recipe-domi-malgeuntang.png",
+    "servings": 2,
+    "cookTime": "25분",
+    "difficulty": "중",
+    "ingredients": [
+      { "name": "도미", "amount": "1마리" },
+      { "name": "무", "amount": "100g" },
+      { "name": "미나리", "amount": "50g" },
+      { "name": "대파", "amount": "0.5대" },
+      { "name": "쑥갓", "amount": "30g" },
+      { "name": "홍고추", "amount": "1개" },
+      { "name": "물", "amount": "1L" }
+    ],
+    "seasoning": [
+      { "name": "청주", "amount": "2큰술" },
+      { "name": "소금", "amount": "1작은술" },
+      { "name": "다진 마늘", "amount": "1작은술" },
+      { "name": "국간장", "amount": "1작은술" }
+    ],
+    "steps": [
+      { "step": 1, "description": "도미는 비늘과 내장을 깨끗이 제거하고 씻어 토막을 냅니다." },
+      { "step": 2, "description": "무는 나박 썰고, 미나리와 쑥갓은 한입 크기로 썰며, 대파와 고추는 어슷하게 썹니다." },
+      { "step": 3, "description": "냄비에 물과 무를 넣고 불에 올려 무가 반쯤 익을 때까지 끓립니다." },
+      { "step": 4, "description": "끓는 국물에 손질한 도미와 청주를 넣고 끓여줍니다." },
+      { "step": 5, "description": "도미가 익으면 다진 마늘, 국간장, 소금을 넣어 간을 맞추고, 거품은 숟가락으로 걷어냅니다." },
+      { "step": 6, "description": "대파, 미나리, 쑥갓, 홍고추를 넣고 2분간 더 끓여 완성합니다." }
+    ],
+    "relatedIngredients": ["참돔"],
+    "relatedHolidays": []
   }
 ]

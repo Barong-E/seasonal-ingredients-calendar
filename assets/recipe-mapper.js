@@ -237,7 +237,13 @@ export function getRecipeIdFromDishName(dishName) {
     "재첩국": "recipe-jaecheop-soup",
     "재첩회무침": "recipe-jaecheop-salad",
     "멜론 프로슈토": "melon-prosciutto",
-    "멜론빙수": "melon-bingsu"
+    "멜론빙수": "melon-bingsu",
+    "미더덕 된장찌개": "mideodeok-doenjang-jjigae",
+    "미더덕 콩나물찜": "mideodeok-kongnamul-jjim",
+    "우무콩국": "umu-kongguk",
+    "우무묵초무침": "umumuk-chomuchim",
+    "도미조림": "domi-jorim",
+    "도미맑은탕": "domi-malgeuntang"
   };
   return mapping[dishName] || null;
 }
