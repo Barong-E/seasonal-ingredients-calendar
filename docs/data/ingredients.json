@@ -3553,7 +3553,7 @@
     "description_en": "",
     "description_ja": "",
     "selection_ko": "빨판이 크고 규칙적이며, 다리를 만졌을 때 빨판이 착 달라붙는 것이 신선합니다. 눌렀을 때 탄력이 있고 표면에 윤기가 나는 것을 고릅니다.",
-    "external_url": ""
+    "external_url": "https://link.coupang.com/a/eYOoCg51s4"
   },
   {
     "name_ko": "노각",
@@ -3578,7 +3578,7 @@
     "description_en": "",
     "description_ja": "",
     "selection_ko": "표면이 누렇게 잘 익고 무거우며, 씨가 너무 크지 않은 것을 고릅니다. 껍질에 상처가 없고 단단한 것이 좋습니다.",
-    "external_url": ""
+    "external_url": "https://link.coupang.com/a/eYOpYuwD7Y"
   },
   {
     "name_ko": "우렁이",
@@ -3603,6 +3603,156 @@
     "description_en": "",
     "description_ja": "",
     "selection_ko": "껍데기가 깨끗하고 갈라지지 않으며, 살이 통통하고 탄력이 있는 것을 고릅니다. 냄새가 비릿하지 않은 것이 신선합니다.",
-    "external_url": ""
+    "external_url": "https://link.coupang.com/a/eYOqRiSt9U"
+  },
+  {
+    "name_ko": "산딸기",
+    "category": "과일",
+    "image": "ingredients/wild-raspberry.png",
+    "description_ko": "산딸기는 한국의 야생에서 자라는 붉고 앙증맞은 열매로, 새콤달콤한 맛과 톡톡 터지는 식감이 매력적입니다. 비타민 C와 안토시아닌이 풍부하게 들어있어 피로 해소와 세포 노화 방지에 큰 도움을 줍니다.",
+    "recommended_for": [
+      "눈 건강 관리가 필요한 분",
+      "피로 해소와 면역력 강화가 필요한 분",
+      "체중 관리를 위해 칼로리가 낮은 간식을 찾는 분"
+    ],
+    "preparation_ko": "식초를 1작은술 넣은 물에 산딸기를 넣고 30초 이내로 재빨리 흔들어 씻은 뒤, 채반에 받쳐 물기를 완전히 빼냅니다.",
+    "storage_room_temp": "실온에서는 하루만 지나도 쉽게 무르고 곰팡이가 피기 때문에 실온 보관은 하지 않는 것이 좋습니다.",
+    "storage_refrigerator": "물에 씻지 않은 상태 그대로 밀폐 용기 바닥에 키친타월을 깔고 겹치지 않게 담아 채소칸에서 3일에서 5일간 보관합니다.",
+    "storage_freezer": "물에 깨끗이 씻어 물기를 완전히 말린 후, 밀폐 용기나 지퍼백에 소분하여 얼리면 6개월 이상 맛있게 보관할 수 있습니다.",
+    "months": [6],
+    "popular_dish": "산딸기잼, 산딸기에이드",
+    "calories_per_100g": 52,
+    "calories_per_serving": "종이컵 1컵(약 100g) 기준 약 52kcal",
+    "name_en": "",
+    "name_ja": "",
+    "description_en": "",
+    "description_ja": "",
+    "selection_ko": "붉은 색깔이 전체적으로 선명하고 알이 통통하며 만졌을 때 단단하고 탄력이 있는 것이 신선합니다.",
+    "external_url": "https://link.coupang.com/a/eZwkyteweG"
+  },
+  {
+    "name_ko": "재첩",
+    "category": "해산물",
+    "image": "ingredients/jaecheop.png",
+    "description_ko": "강과 바다가 만나는 섬진강 하구에서 주로 채취하는 작은 민물조개로, 맑고 시원한 감칠맛이 일품입니다. 타우린과 필수 아미노산이 풍부하게 함유되어 있어 간 건강 개선과 피로 회복에 탁월한 효능이 있습니다.",
+    "recommended_for": [
+      "잦은 음주로 숙취 해소와 간 해독이 필요하신 분",
+      "만성 피로를 느끼며 기력 회복을 원하시는 분",
+      "철분 보충을 통해 빈혈을 예방하고 싶으신 분"
+    ],
+    "preparation_ko": "옅은 소금물에 재첩을 담그고 어두운 곳에서 3시간 이상 두어 모래를 해감합니다. 해감된 재첩은 흐르는 물에서 서로 문질러 깨끗이 씻은 후 끓는 물에 삶아 살을 분리해 냅니다.",
+    "storage_room_temp": "",
+    "storage_refrigerator": "손질된 재첩은 수분을 제거하고 밀폐 용기에 담아 냉장 보관하며, 2일 이내에 조리해 드시는 것을 권장합니다.",
+    "storage_freezer": "삶은 재첩살을 육수와 함께 지퍼백에 나누어 담아 냉동 보관하면 약 1개월간 맛과 영양을 유지하며 보관할 수 있습니다.",
+    "months": [5, 6],
+    "popular_dish": "재첩국, 재첩회무침",
+    "calories_per_100g": 94,
+    "calories_per_serving": "1회 제공량(100g) 약 94kcal",
+    "name_en": "",
+    "name_ja": "",
+    "description_en": "",
+    "description_ja": "",
+    "selection_ko": "껍질이 깨지지 않고 고유의 회갈색 광택이 나며 입을 꽉 다물고 있는 것이 싱싱합니다.",
+    "external_url": "https://link.coupang.com/a/eZwl7SLINo"
+  },
+  {
+    "name_ko": "멜론",
+    "category": "과일",
+    "image": "ingredients/melon.png",
+    "description_ko": "멜론은 달콤한 과즙과 부드러운 식감이 특징인 과일로, 수분과 칼륨이 풍부해 체내 노폐물 배출과 부종 완화에 효과적입니다. 베타카로틴과 비타민 C 등 항산화 성분이 다량 함유되어 있어 면역력 증진과 피부 미용에도 도움을 줍니다.",
+    "recommended_for": [
+      "체내 부종을 완화하고 싶은 분",
+      "가벼운 식단 관리가 필요한 분",
+      "제철 음식으로 입맛을 돋우고 싶은 분"
+    ],
+    "preparation_ko": "꼭지와 밑동을 잘라내고 반으로 가른 뒤, 숟가락으로 가운데 씨를 깨끗이 긁어냅니다. 이후 먹기 좋게 조각내어 껍질과 과육 사이에 칼을 넣어 살만 발라냅니다.",
+    "storage_room_temp": "직사광선을 피하고 통풍이 잘되는 서늘한 실온에서 2일에서 4일간 보관하며 꼭지 반대편 배꼽을 눌러 말랑해질 때까지 후숙합니다.",
+    "storage_refrigerator": "후숙이 완료된 멜론은 신문지나 랩으로 감싸 냉장고 채소칸에 보관하며, 남은 과육은 씨를 제거하고 밀폐 용기에 담아 보관합니다.",
+    "storage_freezer": "씨와 껍질을 제거한 과육을 한입 크기로 썰어 서로 붙지 않게 지퍼백에 소분하여 밀폐 후 보관합니다.",
+    "months": [7, 8],
+    "popular_dish": "멜론 프로슈토, 멜론빙수",
+    "calories_per_100g": 38,
+    "calories_per_serving": "1/4통(200g) 기준 약 76kcal",
+    "name_en": "",
+    "name_ja": "",
+    "description_en": "",
+    "description_ja": "",
+    "selection_ko": "그물망 모양의 네트가 촘촘하고 굵직하며 일정한 모양을 가진 것이 좋습니다. 꼭지가 시들지 않고 배꼽 부분이 살짝 말랑해진 것이 잘 익은 상태입니다.",
+    "external_url": "https://link.coupang.com/a/eZwnFZfjoq"
+  },
+  {
+    "name_ko": "미더덕",
+    "category": "해산물",
+    "image": "ingredients/mideodeok.png",
+    "description_ko": "미더덕은 봄철 남해안에서 주로 채취되는 해산물로, 특유의 향긋한 바다 풍미와 오도독 씹히는 식감이 매력적입니다. 불포화지방산인 EPA와 DHA가 풍부하여 성인병 예방에 탁월하며, 타우린 성분이 들어있어 피로 해소와 간 기능 개선에 큰 도움을 줍니다.",
+    "recommended_for": [
+      "성인병 예방이 필요한 분",
+      "피로 해소와 간 기능 개선을 원하는 분",
+      "다이어트 중인 분"
+    ],
+    "preparation_ko": "미더덕을 얇은 바늘이나 칼끝으로 찔러 내부의 바닷물을 살짝 빼냅니다. 칼로 껍질을 살짝 갈라 속에 든 내장과 뻘을 긁어내어 제거합니다. 그 후 소금물에 가볍게 흔들어 씻어 헹궈줍니다.",
+    "storage_room_temp": "실온에서는 상하기 쉬우므로 보관하지 않습니다.",
+    "storage_refrigerator": "손질 후 물기를 제거하고 밀폐용기에 담아 1~2일 내에 섭취합니다.",
+    "storage_freezer": "끓는 물에 살짝 데친 후 찬물에 식혀 물기를 빼고, 1회분씩 소분하여 냉동 보관합니다.",
+    "months": [3, 4, 5],
+    "popular_dish": "미더덕 된장찌개, 미더덕 콩나물찜",
+    "calories_per_100g": 23,
+    "calories_per_serving": "1회 제공량(약 100g) 기준 23kcal입니다.",
+    "name_en": "",
+    "name_ja": "",
+    "description_en": "",
+    "description_ja": "",
+    "selection_ko": "몸통이 붉은빛을 띠고 만졌을 때 탱글탱글하고 탄력이 있는 것이 좋습니다. 크기가 너무 작은 것보다는 손가락 한 마디 정도로 통통한 것이 맛이 좋습니다.",
+    "external_url": "https://link.coupang.com/a/e08fNoLOjA"
+  },
+  {
+    "name_ko": "우뭇가사리",
+    "category": "해산물",
+    "image": "ingredients/agar.png",
+    "description_ko": "바다의 해조류로 끓여서 식히면 탱글탱글하고 투명한 우무묵이 됩니다. 수분과 식이섬유가 풍부하고 칼로리가 매우 낮아 체중 관리와 장 건강에 효과적입니다.",
+    "recommended_for": [
+      "칼로리가 낮아 가벼운 식단 관리가 필요한 분",
+      "식이섬유가 풍부하여 장 건강과 배변 활동 개선을 원하는 분",
+      "여름철 시원하고 건강한 별미로 입맛을 돋우고 싶은 분"
+    ],
+    "preparation_ko": "말린 우뭇가사리는 물에 담가 불린 뒤 모래와 잡티를 깨끗이 씻어냅니다. 냄비에 물과 식초를 조금 넣고 푹 삶아 뽀얗게 우러난 물을 체에 걸러 식히면 굳어서 우무묵이 됩니다.",
+    "storage_room_temp": "말린 상태의 우뭇가사리는 직사광선을 피해 서늘하고 건조한 실온에 밀봉하여 보관하며, 우무묵으로 만든 경우에는 실온 보관을 피합니다.",
+    "storage_refrigerator": "완성된 우무묵은 깨끗한 찬물에 담가 밀폐 용기 안에 넣은 뒤 냉장 보관하며, 매일 물을 새것으로 갈아주는 것이 좋습니다.",
+    "storage_freezer": "",
+    "months": [5, 6],
+    "popular_dish": "우무콩국, 우무묵초무침",
+    "calories_per_100g": 3,
+    "calories_per_serving": "1회 제공량(1대접, 150g) 기준 약 5kcal",
+    "name_en": "Agar-agar",
+    "name_ja": "",
+    "description_en": "",
+    "description_ja": "",
+    "selection_ko": "말린 것은 이물질이 적고 빛깔이 연한 황색을 띠는 것이 좋으며, 가공된 우무묵은 탄력이 있고 투명하며 깨끗한 것을 고릅니다.",
+    "external_url": "https://link.coupang.com/a/e08H9vh9UW"
+  },
+  {
+    "name_ko": "참돔",
+    "category": "해산물",
+    "image": "ingredients/red_seabream.png",
+    "description_ko": "생선의 왕이라 불리는 참돔은 예로부터 귀한 대접을 받아온 생선으로, 단백질이 풍부하고 지방이 적어 맛이 담백하며 소화가 잘됩니다. 타우린과 비타민 B군이 다량 함유되어 있어 피로 해소와 기력 충전에 뛰어난 효능을 발휘합니다.",
+    "recommended_for": [
+      "소화가 잘되는 고단백 식단을 원하는 분",
+      "기력 충전과 피로 해소가 필요한 분",
+      "심혈관 건강을 관리하고자 하는 분"
+    ],
+    "preparation_ko": "비늘 제거용 칼이나 칼등을 이용해 꼬리에서 머리 방향으로 비늘을 깨끗이 긁어냅니다. 지느러미와 아가미를 잘라내고 배를 갈라 내장을 제거한 뒤, 흐르는 물에 깨끗이 씻어 키친타월로 물기를 완전히 제거합니다.",
+    "storage_room_temp": "",
+    "storage_refrigerator": "물기를 완전히 닦고 랩으로 감싸 밀폐용기에 담아 냉장 보관하며, 1~2일 이내에 조리해 먹습니다.",
+    "storage_freezer": "토막을 낸 후 랩으로 개별 포장하여 지퍼백에 밀봉한 뒤 냉동 보관하면 약 1개월 동안 보관할 수 있습니다.",
+    "months": [11, 12, 1, 2, 3, 4],
+    "popular_dish": "도미조림, 도미맑은탕",
+    "calories_per_100g": 103,
+    "calories_per_serving": "1회 제공량(100g) 기준 약 103kcal",
+    "name_en": "",
+    "name_ja": "",
+    "description_en": "",
+    "description_ja": "",
+    "selection_ko": "눈동자가 맑고 투명하며 껍질에 붉은빛이 돌고 윤기가 나는 것을 고릅니다. 눌러보았을 때 살이 단단하고 탄력이 있어야 신선합니다.",
+    "external_url": "https://link.coupang.com/a/e08JBVH604"
   }
 ]
