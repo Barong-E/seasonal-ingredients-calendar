@@ -54,7 +54,7 @@ public class FoodScannerPlugin extends Plugin {
     // ====================================================================
     // 🔑기에 발급받으신 Gemini API 키를 입력해 주세요. (따옴표 안에 넣어주시면 됩니다!)
     // ====================================================================
-    private static final String GEMINI_API_KEY = "AQ.Ab8RN6Iu-bU4wqPG0yy1FXXKwIa3rCDGUvO3aRoUSBCffRfy1A";
+    private static final String GEMINI_API_KEY = BuildConfig.GEMINI_API_KEY;
 
     private PreviewView previewView;
     private ProcessCameraProvider cameraProvider;
