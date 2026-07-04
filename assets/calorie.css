@@ -1176,15 +1176,13 @@
   border-radius: 12px;
   cursor: pointer;
   transition: all 0.2s ease;
-  position: absolute;
-  right: 16px;
-  top: 50%;
-  transform: translateY(-50%);
+  margin-left: auto;
+  flex-shrink: 0;
 }
 
 .header-chart-btn:active {
   background: rgba(16, 185, 129, 0.1);
-  transform: translateY(-50%) scale(0.9);
+  transform: scale(0.9);
 }
 
 /* 바텀시트 기본 레이아웃 */
