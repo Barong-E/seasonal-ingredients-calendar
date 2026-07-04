@@ -15,6 +15,9 @@ const STORAGE_KEY_TARGET = 'calorie:target';
 const STORAGE_KEY_MEALS_PREFIX = 'calorie:meals:';
 const DEFAULT_TARGET = 2000;
 
+// 전역 날짜 상태 (기본값: 오늘)
+let selectedDate = new Date();
+
 // 식사 시간대 기준
 const MEAL_TIME_RULES = [
   { key: 'breakfast', label: '🌅 아침', start: 5, end: 9 },
@@ -24,12 +27,20 @@ const MEAL_TIME_RULES = [
 ];
 const SNACK_OPTION = { key: 'snack', label: '🍪 간식' };
 
+// selectedDate 기준의 YYYY-MM-DD 키 반환
 function getTodayKey() {
-  const d = new Date();
-  const y = d.getFullYear();
-  const m = String(d.getMonth() + 1).padStart(2, '0');
-  const day = String(d.getDate()).padStart(2, '0');
+  const y = selectedDate.getFullYear();
+  const m = String(selectedDate.getMonth() + 1).padStart(2, '0');
+  const day = String(selectedDate.getDate()).padStart(2, '0');
   return `${y}-${m}-${day}`;
+}
+
+// 특정 Date 객체를 YYYY-MM-DD 형태로 변환
+function formatDateStr(date) {
+  const y = date.getFullYear();
+  const m = String(date.getMonth() + 1).padStart(2, '0');
+  const d = String(date.getDate()).padStart(2, '0');
+  return `${y}-${m}-${d}`;
 }
 
 function getMealTimeKey(date) {
@@ -66,13 +77,16 @@ function numberWithCommas(n) {
 // ============================================================
 // 1. 데이터 관리 (localStorage)
 // ============================================================
-function getTargetCalorie() {
-  const v = localStorage.getItem(STORAGE_KEY_TARGET);
+function getTargetCalorie(dateStr) {
+  const key = dateStr ? `calorie:target:${dateStr}` : `calorie:target:${getTodayKey()}`;
+  const v = localStorage.getItem(key) || localStorage.getItem(STORAGE_KEY_TARGET);
   return v ? parseInt(v, 10) : DEFAULT_TARGET;
 }
 
-function setTargetCalorie(val) {
-  localStorage.setItem(STORAGE_KEY_TARGET, val);
+function setTargetCalorie(val, dateStr) {
+  const key = dateStr ? `calorie:target:${dateStr}` : `calorie:target:${getTodayKey()}`;
+  localStorage.setItem(key, val);
+  localStorage.setItem(STORAGE_KEY_TARGET, val); // Fallback 기본값 동기화
 }
 
 function getTodayMeals() {
@@ -630,6 +644,14 @@ function initMealTimeTags() {
 function handleSaveMeal() {
   if (!currentResult) return;
 
+  // 과거 날짜 기록 시 연월일은 selectedDate 기준, 시분초는 현재 시간 기준 조합
+  const now = new Date();
+  const recordDate = new Date(selectedDate);
+  recordDate.setHours(now.getHours());
+  recordDate.setMinutes(now.getMinutes());
+  recordDate.setSeconds(now.getSeconds());
+  recordDate.setMilliseconds(now.getMilliseconds());
+
   const meal = {
     name: currentResult.name || '알 수 없는 음식',
     calories: currentResult.calories || 0,
@@ -638,7 +660,7 @@ function handleSaveMeal() {
     fat: currentResult.fat || 0,
     ingredients: currentResult.ingredients || [],
     mealTime: selectedMealTime || 'snack',
-    timestamp: new Date().toISOString(),
+    timestamp: recordDate.toISOString(),
   };
 
   addMeal(meal);
@@ -730,6 +752,419 @@ function showCameraFallbackToast() {
 }
 
 // ============================================================
+// 8.6. [추가] 월간 캘린더 모달 제어 로직
+// ============================================================
+let currentCalYear = new Date().getFullYear();
+let currentCalMonth = new Date().getMonth();
+
+function showCalendarModal() {
+  const modal = document.getElementById('calendarModal');
+  if (!modal) return;
+  
+  currentCalYear = selectedDate.getFullYear();
+  currentCalMonth = selectedDate.getMonth();
+  
+  renderCalendar();
+  modal.style.display = '';
+}
+
+function hideCalendarModal() {
+  const modal = document.getElementById('calendarModal');
+  if (modal) modal.style.display = 'none';
+}
+
+function handleMonthChange(offset) {
+  currentCalMonth += offset;
+  if (currentCalMonth < 0) {
+    currentCalMonth = 11;
+    currentCalYear -= 1;
+  } else if (currentCalMonth > 11) {
+    currentCalMonth = 0;
+    currentCalYear += 1;
+  }
+  renderCalendar();
+}
+
+function renderCalendar() {
+  const gridBody = document.getElementById('calendarGridBody');
+  const title = document.getElementById('calendarMonthTitle');
+  if (!gridBody || !title) return;
+
+  title.textContent = `${currentCalYear}년 ${String(currentCalMonth + 1).padStart(2, '0')}월`;
+
+  // 1일의 요일 (0: 일, 1: 월, ...)
+  const firstDayIndex = new Date(currentCalYear, currentCalMonth, 1).getDay();
+  // 해당 월의 마지막 날짜
+  const lastDate = new Date(currentCalYear, currentCalMonth + 1, 0).getDate();
+
+  let html = '';
+
+  // 1일 시작 전 공백 칸 채우기
+  for (let i = 0; i < firstDayIndex; i++) {
+    html += '<div class="calendar-day calendar-day--empty"></div>';
+  }
+
+  const todayStr = formatDateStr(new Date());
+  const selectedStr = formatDateStr(selectedDate);
+
+  // 날짜별 루프
+  for (let d = 1; d <= lastDate; d++) {
+    const iterDate = new Date(currentCalYear, currentCalMonth, d);
+    const iterDateStr = formatDateStr(iterDate);
+
+    // 해당 날짜의 총 칼로리 계산
+    const mealsKey = STORAGE_KEY_MEALS_PREFIX + iterDateStr;
+    const mealsData = localStorage.getItem(mealsKey);
+    const meals = mealsData ? JSON.parse(mealsData) : [];
+    const totalCal = meals.reduce((acc, m) => acc + (m.calories || 0), 0);
+
+    const targetCal = getTargetCalorie(iterDateStr);
+
+    const isToday = iterDateStr === todayStr;
+    const isSelected = iterDateStr === selectedStr;
+    const classes = ['calendar-day'];
+    if (isToday) classes.push('calendar-day--today');
+    if (isSelected) classes.push('calendar-day--selected');
+
+    let calText = '';
+    let dotHtml = '';
+    
+    if (totalCal > 0) {
+      calText = `${numberWithCommas(totalCal)}`;
+      // 목표 이하이면 초록불, 초과이면 빨간불
+      const dotClass = totalCal <= targetCal ? 'calendar-day__dot--success' : 'calendar-day__dot--danger';
+      dotHtml = `<div class="calendar-day__dot ${dotClass}"></div>`;
+    }
+
+    html += `
+      <div class="${classes.join(' ')}" data-date="${iterDateStr}">
+        <span class="calendar-day__num">${d}</span>
+        <span class="calendar-day__cal">${calText}</span>
+        ${dotHtml}
+      </div>
+    `;
+  }
+
+  gridBody.innerHTML = html;
+
+  // 날짜 클릭 이벤트 바인딩
+  gridBody.querySelectorAll('.calendar-day').forEach(el => {
+    if (el.classList.contains('calendar-day--empty')) return;
+    el.addEventListener('click', () => {
+      const dateStr = el.dataset.date;
+      if (dateStr) {
+        changeDate(new Date(dateStr));
+        hideCalendarModal();
+      }
+    });
+  });
+}
+
+// ============================================================
+// 8.7. [추가] 주간 통계 바텀시트 제어 로직
+// ============================================================
+function showStatsSheet() {
+  const sheet = document.getElementById('statsBottomSheet');
+  if (!sheet) return;
+
+  // 최근 7일 날짜 데이터 준비
+  const daysData = [];
+  const weekDays = ['일', '월', '화', '수', '목', '금', '토'];
+
+  for (let i = 6; i >= 0; i--) {
+    const d = new Date();
+    d.setDate(d.getDate() - i);
+    const dateStr = formatDateStr(d);
+    
+    // 식사 데이터 합산
+    const key = STORAGE_KEY_MEALS_PREFIX + dateStr;
+    const mealsData = localStorage.getItem(key);
+    const meals = mealsData ? JSON.parse(mealsData) : [];
+    const calories = meals.reduce((acc, m) => acc + (m.calories || 0), 0);
+
+    // 날짜별 목표 칼로리
+    const target = getTargetCalorie(dateStr);
+
+    daysData.push({
+      dateStr,
+      label: weekDays[d.getDay()],
+      calories,
+      target
+    });
+  }
+
+  // 1. 차트 그리기
+  drawStatsChart(daysData);
+
+  // 2. 통계 텍스트 업데이트
+  const totalCal = daysData.reduce((acc, d) => acc + d.calories, 0);
+  const avgCal = Math.round(totalCal / 7);
+  document.getElementById('statsAvgCal').textContent = `${numberWithCommas(avgCal)} kcal`;
+
+  const successCount = daysData.filter(d => d.calories > 0 && d.calories <= d.target).length;
+  document.getElementById('statsSuccessCount').textContent = `${successCount}회 / 7일`;
+
+  sheet.style.display = '';
+}
+
+function hideStatsSheet() {
+  const sheet = document.getElementById('statsBottomSheet');
+  if (sheet) sheet.style.display = 'none';
+}
+
+function drawStatsChart(data) {
+  const container = document.getElementById('statsChartContainer');
+  if (!container) return;
+
+  const width = 300;
+  const height = 180;
+  const paddingLeft = 35;
+  const paddingRight = 15;
+  const paddingTop = 25;
+  const paddingBottom = 25;
+
+  const chartW = width - paddingLeft - paddingRight;
+  const chartH = height - paddingTop - paddingBottom;
+
+  // Y축 최대 스케일 계산 (최소 2000)
+  const maxVal = Math.max(...data.map(d => Math.max(d.calories, d.target)), 2000);
+
+  // Y좌표 변환 헬퍼
+  const getY = val => paddingTop + chartH * (1 - val / maxVal);
+  // X좌표 변환 (7개 막대 균등 분할)
+  const getX = index => paddingLeft + (chartW / 6) * index;
+
+  // SVG 생성
+  let svgHtml = `
+    <svg class="chart-svg" viewBox="0 0 ${width} ${height}" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <!-- 초록색 그라데이션 (막대용) -->
+        <linearGradient id="chartBarGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+          <stop offset="0%" stop-color="#10b981" />
+          <stop offset="100%" stop-color="#059669" />
+        </linearGradient>
+      </defs>
+  `;
+
+  // 1. 배경 가이드라인 (3개 수평선)
+  const gridVals = [maxVal * 0.33, maxVal * 0.66, maxVal];
+  gridVals.forEach(v => {
+    const y = getY(v);
+    svgHtml += `<line class="chart-grid-line" x1="${paddingLeft}" y1="${y}" x2="${width - paddingRight}" y2="${y}" />`;
+    // Y축 라벨
+    svgHtml += `<text x="${paddingLeft - 5}" y="${y + 3}" font-size="7" font-weight="600" fill="#9ca3af" text-anchor="end">${Math.round(v)}</text>`;
+  });
+
+  // 2. 막대 배경 및 막대 그래프 그리기
+  const barWidth = 14;
+  data.forEach((d, i) => {
+    const x = getX(i);
+    const barH = chartH * (d.calories / maxVal);
+    const barY = getY(d.calories);
+    const bgY = paddingTop;
+
+    // 회색 배경 막대
+    svgHtml += `
+      <rect class="chart-bar-bg" x="${x - barWidth/2}" y="${bgY}" width="${barWidth}" height="${chartH}" />
+    `;
+
+    // 실제 칼로리 막대 (칼로리가 있는 경우만)
+    if (d.calories > 0) {
+      svgHtml += `
+        <rect class="chart-bar-fill" x="${x - barWidth/2}" y="${barY}" width="${barWidth}" height="${barH}" />
+        <!-- 칼로리 텍스트 -->
+        <text class="chart-text chart-text--cal" x="${x}" y="${barY - 5}">${Math.round(d.calories)}</text>
+      `;
+    }
+
+    // X축 요일 표시
+    svgHtml += `
+      <text class="chart-text chart-text--date" x="${x}" y="${height - paddingBottom + 16}">${d.label}</text>
+    `;
+  });
+
+  // 3. 목표 칼로리 꺾은선 (Polyline/Path) 그리기
+  let linePoints = [];
+  data.forEach((d, i) => {
+    const x = getX(i);
+    const y = getY(d.target);
+    linePoints.push(`${x},${y}`);
+  });
+
+  // 주황색 가이드라인 꺾은선
+  svgHtml += `
+    <polyline class="chart-target-line" points="${linePoints.join(' ')}" />
+  `;
+
+  // 목표 꺾은선 위의 도트들
+  data.forEach((d, i) => {
+    const x = getX(i);
+    const y = getY(d.target);
+    svgHtml += `
+      <circle class="chart-target-point" cx="${x}" cy="${y}" r="3.5" />
+    `;
+  });
+
+  svgHtml += '</svg>';
+  container.innerHTML = svgHtml;
+}
+
+// ============================================================
+// 8.5. [추가] 날짜 네비게이터 & 스와이프 제스처 핸들링
+// ============================================================
+function updateDateDisplay() {
+  const dateText = document.getElementById('dateText');
+  const todayTag = document.getElementById('dateTodayTag');
+  
+  if (!dateText) return;
+
+  const y = selectedDate.getFullYear();
+  const m = String(selectedDate.getMonth() + 1).padStart(2, '0');
+  const d = String(selectedDate.getDate()).padStart(2, '0');
+  dateText.textContent = `${y}.${m}.${d}`;
+
+  // 오늘/어제 여부 태그 표시
+  const todayStr = formatDateStr(new Date());
+  const selectedStr = formatDateStr(selectedDate);
+
+  if (todayStr === selectedStr) {
+    if (todayTag) {
+      todayTag.style.display = '';
+      todayTag.textContent = '오늘';
+    }
+  } else {
+    const yesterday = new Date();
+    yesterday.setDate(yesterday.getDate() - 1);
+    const yesterdayStr = formatDateStr(yesterday);
+    if (selectedStr === yesterdayStr) {
+      if (todayTag) {
+        todayTag.style.display = '';
+        todayTag.textContent = '어제';
+      }
+    } else {
+      if (todayTag) todayTag.style.display = 'none';
+    }
+  }
+
+  // 내일 버튼 활성화 여부 (미래 날짜는 기록할 수 없도록 방지)
+  const btnNextDate = document.getElementById('btnNextDate');
+  if (btnNextDate) {
+    const isToday = todayStr === selectedStr;
+    btnNextDate.disabled = isToday;
+    btnNextDate.style.opacity = isToday ? '0.3' : '1';
+  }
+}
+
+function changeDate(offsetOrDate) {
+  let newDate;
+  let direction = 0; // -1: 어제, 1: 내일
+
+  if (typeof offsetOrDate === 'number') {
+    newDate = new Date(selectedDate);
+    newDate.setDate(selectedDate.getDate() + offsetOrDate);
+    direction = offsetOrDate;
+  } else if (offsetOrDate instanceof Date) {
+    newDate = offsetOrDate;
+    direction = offsetOrDate.getTime() > selectedDate.getTime() ? 1 : -1;
+  } else {
+    return;
+  }
+
+  // 미래 날짜 선택 제한
+  const today = new Date();
+  today.setHours(0,0,0,0);
+  const checkNew = new Date(newDate);
+  checkNew.setHours(0,0,0,0);
+  if (checkNew.getTime() > today.getTime()) {
+    showToast('💡 미래 날짜는 미리 기록할 수 없어요!');
+    return;
+  }
+
+  const mainEl = document.querySelector('.calorie-main');
+  
+  // 애니메이션 연출 (좌우 슥 사라지는 효과)
+  if (mainEl) {
+    mainEl.classList.remove('swipe-fade-in', 'swipe-left', 'swipe-right');
+    void mainEl.offsetWidth; // 브라우저 리플로우 유도
+    mainEl.classList.add(direction > 0 ? 'swipe-left' : 'swipe-right');
+  }
+
+  setTimeout(() => {
+    selectedDate = newDate;
+    
+    // 데이터 로드 & UI 갱신
+    updateGauge();
+    renderMealList();
+    updateDateDisplay();
+
+    // 혹시 떠있을지 모르는 음식 결과 바텀시트는 닫기
+    hideResultSheet();
+
+    if (mainEl) {
+      mainEl.classList.remove('swipe-left', 'swipe-right');
+      mainEl.classList.add('swipe-fade-in');
+    }
+  }, 150);
+}
+
+// 스와이프 제스처 관련 전역 상태
+let touchStartX = 0;
+let touchStartY = 0;
+let touchEndX = 0;
+let touchEndY = 0;
+
+function initSwipeGestures() {
+  const mainEl = document.querySelector('.calorie-main');
+  if (!mainEl) return;
+
+  mainEl.addEventListener('touchstart', (e) => {
+    // 팝업 모달이나 분석 중 오버레이 등이 떠 있을 때는 날짜 스와이프 금지
+    if (isModalOrSheetOpen()) return;
+    touchStartX = e.changedTouches[0].screenX;
+    touchStartY = e.changedTouches[0].screenY;
+  }, { passive: true });
+
+  mainEl.addEventListener('touchend', (e) => {
+    if (isModalOrSheetOpen()) return;
+    touchEndX = e.changedTouches[0].screenX;
+    touchEndY = e.changedTouches[0].screenY;
+    handleSwipeGesture();
+  }, { passive: true });
+}
+
+function isModalOrSheetOpen() {
+  const calendarModal = document.getElementById('calendarModal');
+  const statsSheet = document.getElementById('statsBottomSheet');
+  const targetModal = document.getElementById('targetModal');
+  const resultSheet = document.getElementById('resultSheet');
+  const scannerOverlay = document.getElementById('calorieScannerOverlay');
+  const analysisOverlay = document.getElementById('analysisOverlay');
+
+  return (calendarModal && calendarModal.style.display !== 'none') ||
+         (statsSheet && statsSheet.style.display !== 'none') ||
+         (targetModal && targetModal.style.display !== 'none') ||
+         (resultSheet && resultSheet.style.display !== 'none') ||
+         (scannerOverlay && scannerOverlay.style.display !== 'none') ||
+         (analysisOverlay && analysisOverlay.style.display !== 'none');
+}
+
+function handleSwipeGesture() {
+  const diffX = touchEndX - touchStartX;
+  const diffY = touchEndY - touchStartY;
+
+  // 가로 스와이프가 세로 스크롤보다 우세하고 60px 이상 이동 시 판정
+  if (Math.abs(diffX) > Math.abs(diffY) && Math.abs(diffX) > 60) {
+    if (diffX > 0) {
+      // 오른쪽으로 슉 -> 이전 날짜 (어제)
+      changeDate(-1);
+    } else {
+      // 왼쪽으로 슉 -> 다음 날짜 (내일)
+      changeDate(1);
+    }
+  }
+}
+
+// ============================================================
 // 9. 초기화
 // ============================================================
 async function init() {
@@ -757,6 +1192,36 @@ async function init() {
   // 결과 저장 버튼
   const saveBtn = document.getElementById('resultSaveBtn');
   if (saveBtn) saveBtn.addEventListener('click', handleSaveMeal);
+
+  // [추가] 날짜 네비게이션 버튼 연동
+  const btnPrev = document.getElementById('btnPrevDate');
+  if (btnPrev) btnPrev.addEventListener('click', () => changeDate(-1));
+  const btnNext = document.getElementById('btnNextDate');
+  if (btnNext) btnNext.addEventListener('click', () => changeDate(1));
+
+  // [추가] 캘린더 모달 제어 이벤트 연동
+  const dateDisplay = document.getElementById('dateDisplay');
+  if (dateDisplay) dateDisplay.addEventListener('click', showCalendarModal);
+  const calendarBackdrop = document.getElementById('calendarModalBackdrop');
+  if (calendarBackdrop) calendarBackdrop.addEventListener('click', hideCalendarModal);
+  const btnCloseCal = document.getElementById('btnCloseCalendar');
+  if (btnCloseCal) btnCloseCal.addEventListener('click', hideCalendarModal);
+  const btnPrevMonth = document.getElementById('btnPrevMonth');
+  if (btnPrevMonth) btnPrevMonth.addEventListener('click', () => handleMonthChange(-1));
+  const btnNextMonth = document.getElementById('btnNextMonth');
+  if (btnNextMonth) btnNextMonth.addEventListener('click', () => handleMonthChange(1));
+
+  // [추가] 주간 통계 바텀시트 제어 이벤트 연동
+  const btnOpenStats = document.getElementById('btnOpenStats');
+  if (btnOpenStats) btnOpenStats.addEventListener('click', showStatsSheet);
+  const statsBackdrop = document.getElementById('statsSheetBackdrop');
+  if (statsBackdrop) statsBackdrop.addEventListener('click', hideStatsSheet);
+  const btnCloseSt = document.getElementById('btnCloseStats');
+  if (btnCloseSt) btnCloseSt.addEventListener('click', hideStatsSheet);
+
+  // [추가] 날짜 표시 초기화 및 스와이프 이벤트 개시
+  updateDateDisplay();
+  initSwipeGestures();
 }
 
 if (document.readyState === 'loading') {
