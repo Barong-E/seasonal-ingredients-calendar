@@ -113,6 +113,17 @@ function deleteMeal(id) {
   saveTodayMeals(meals);
 }
 
+let editingMealId = null;
+
+function updateMeal(id, updatedFields) {
+  const meals = getTodayMeals();
+  const idx = meals.findIndex(m => m.id === id);
+  if (idx !== -1) {
+    meals[idx] = { ...meals[idx], ...updatedFields };
+    saveTodayMeals(meals);
+  }
+}
+
 // 매크로 합계 계산
 function calcTotals() {
   const meals = getTodayMeals();
@@ -271,6 +282,22 @@ function renderMealList() {
         renderMealList();
         updateGauge();
       }, 300);
+    });
+  });
+
+  // 카드 클릭 이벤트 (수정 모드 바텀시트 연동)
+  listEl.querySelectorAll('.meal-card').forEach(card => {
+    card.addEventListener('click', (e) => {
+      // ✕(삭제 버튼)이나 재료 칩(a 링크) 클릭 시에는 바텀시트 열기를 건너뛴다
+      if (e.target.closest('[data-delete]') || e.target.closest('a')) {
+        return;
+      }
+      const id = card.dataset.id;
+      const meals = getTodayMeals();
+      const meal = meals.find(m => m.id === id);
+      if (meal) {
+        showResultSheet(meal, true, id);
+      }
     });
   });
 }
@@ -573,30 +600,45 @@ function completeAnalysisOverlay(callback) {
 let currentResult = null;
 let selectedMealTime = null;
 
-function showResultSheet(result) {
+function showResultSheet(result, isEdit = false, mealId = null) {
   currentResult = result;
+  editingMealId = isEdit ? mealId : null;
+
   const sheet = document.getElementById('resultSheet');
   if (!sheet) return;
   sheet.style.display = '';
 
+  // 저장 버튼 텍스트 변경
+  const saveBtn = document.getElementById('resultSaveBtn');
+  if (saveBtn) {
+    saveBtn.textContent = isEdit ? '✅ 수정하기' : '✅ 기록하기';
+  }
+
   // 음식 이름
   document.getElementById('resultFoodName').textContent = result.name || '알 수 없는 음식';
 
-  // 섭취량 슬라이더 초기화
+  // 100% 기준의 원본 영양소 구하기 (슬라이더 조절 시 복원하기 위함)
+  const origCal = result.originalCalories || (result.portion ? Math.round(result.calories / (result.portion / 100)) : result.calories) || 0;
+  const origCarbs = result.originalCarbs || (result.portion ? Math.round(result.carbs / (result.portion / 100)) : result.carbs) || 0;
+  const origProtein = result.originalProtein || (result.portion ? Math.round(result.protein / (result.portion / 100)) : result.protein) || 0;
+  const origFat = result.originalFat || (result.portion ? Math.round(result.fat / (result.portion / 100)) : result.fat) || 0;
+
+  // 섭취량 슬라이더 설정
+  const initialPortion = isEdit ? (result.portion || 100) : 100;
   const slider = document.getElementById('portionSlider');
   const sliderVal = document.getElementById('portionValue');
   if (slider && sliderVal) {
-    slider.value = 100;
-    sliderVal.textContent = '100';
+    slider.value = initialPortion;
+    sliderVal.textContent = initialPortion;
   }
 
   // 실시간 영양성분 갱신 헬퍼
   function updateDisplayedNutrients(portionPercent) {
     const factor = portionPercent / 100;
-    const calories = Math.round((result.calories || 0) * factor);
-    const carbs = Math.round((result.carbs || 0) * factor);
-    const protein = Math.round((result.protein || 0) * factor);
-    const fat = Math.round((result.fat || 0) * factor);
+    const calories = Math.round(origCal * factor);
+    const carbs = Math.round(origCarbs * factor);
+    const protein = Math.round(origProtein * factor);
+    const fat = Math.round(origFat * factor);
 
     document.getElementById('resultCalories').textContent = numberWithCommas(calories);
     document.getElementById('resultCarbs').textContent = carbs + 'g';
@@ -613,8 +655,8 @@ function showResultSheet(result) {
     };
   }
 
-  // 초기값 기준으로 수치 출력 (100%)
-  updateDisplayedNutrients(100);
+  // 초기값 기준으로 수치 출력
+  updateDisplayedNutrients(initialPortion);
 
   // 재료 목록
   const ingredientsEl = document.getElementById('resultIngredients');
@@ -641,7 +683,7 @@ function showResultSheet(result) {
   }
 
   // 식사 시간대 자동 선택
-  selectedMealTime = getMealTimeKey(new Date());
+  selectedMealTime = isEdit ? (result.mealTime || 'snack') : getMealTimeKey(new Date());
   updateMealTimeTags();
 
   // 백드롭 클릭
@@ -687,25 +729,54 @@ function handleSaveMeal() {
   const portion = slider ? parseInt(slider.value, 10) : 100;
   const factor = portion / 100;
 
-  const meal = {
-    name: currentResult.name || '알 수 없는 음식',
-    calories: Math.round((currentResult.calories || 0) * factor),
-    protein: Math.round((currentResult.protein || 0) * factor),
-    carbs: Math.round((currentResult.carbs || 0) * factor),
-    fat: Math.round((currentResult.fat || 0) * factor),
-    ingredients: currentResult.ingredients || [],
-    mealTime: selectedMealTime || 'snack',
-    timestamp: recordDate.toISOString(),
-    portion: portion,
-  };
+  // 100% 기준의 원본 영양소 구하기 (슬라이더 조절 시 복원하기 위함)
+  const origCal = currentResult.originalCalories || (currentResult.portion ? Math.round(currentResult.calories / (currentResult.portion / 100)) : currentResult.calories) || 0;
+  const origCarbs = currentResult.originalCarbs || (currentResult.portion ? Math.round(currentResult.carbs / (currentResult.portion / 100)) : currentResult.carbs) || 0;
+  const origProtein = currentResult.originalProtein || (currentResult.portion ? Math.round(currentResult.protein / (currentResult.portion / 100)) : currentResult.protein) || 0;
+  const origFat = currentResult.originalFat || (currentResult.portion ? Math.round(currentResult.fat / (currentResult.portion / 100)) : currentResult.fat) || 0;
 
-  addMeal(meal);
+  if (editingMealId) {
+    const timestamp = currentResult.timestamp || new Date().toISOString();
+    const mealUpdate = {
+      name: currentResult.name || '알 수 없는 음식',
+      calories: Math.round(origCal * factor),
+      protein: Math.round(origProtein * factor),
+      carbs: Math.round(origCarbs * factor),
+      fat: Math.round(origFat * factor),
+      originalCalories: origCal,
+      originalProtein: origProtein,
+      originalCarbs: origCarbs,
+      originalFat: origFat,
+      ingredients: currentResult.ingredients || [],
+      mealTime: selectedMealTime || 'snack',
+      timestamp: timestamp,
+      portion: portion,
+    };
+    updateMeal(editingMealId, mealUpdate);
+    showToast('✅ 기록이 수정되었어요!');
+  } else {
+    const meal = {
+      name: currentResult.name || '알 수 없는 음식',
+      calories: Math.round(origCal * factor),
+      protein: Math.round(origProtein * factor),
+      carbs: Math.round(origCarbs * factor),
+      fat: Math.round(origFat * factor),
+      originalCalories: origCal,
+      originalProtein: origProtein,
+      originalCarbs: origCarbs,
+      originalFat: origFat,
+      ingredients: currentResult.ingredients || [],
+      mealTime: selectedMealTime || 'snack',
+      timestamp: recordDate.toISOString(),
+      portion: portion,
+    };
+    addMeal(meal);
+    showToast('✅ 기록이 저장되었어요!');
+  }
+
   hideResultSheet();
   renderMealList();
   updateGauge();
-
-  // 저장 성공 토스트
-  showToast('✅ 기록이 저장되었어요!');
 }
 
 // ============================================================
