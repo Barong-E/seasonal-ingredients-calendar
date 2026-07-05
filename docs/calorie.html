@@ -193,6 +193,16 @@
             <span class="result-macro__value" id="resultFat">0g</span>
           </div>
         </div>
+        <!-- 내가 먹은 양 조절 슬라이더 -->
+        <div class="result-portion">
+          <div class="result-portion__header">
+            <span class="result-portion__label">🍽️ 내가 먹은 양</span>
+            <span class="result-portion__value"><span id="portionValue">100</span>%</span>
+          </div>
+          <div class="portion-slider-container">
+            <input type="range" id="portionSlider" min="0" max="100" step="5" value="100" class="portion-slider">
+          </div>
+        </div>
         <div class="result-ingredients" id="resultIngredients">
           <!-- 재료 목록 동적 렌더링 -->
         </div>

@@ -1362,3 +1362,92 @@
 .stats-sheet__close-btn:active {
   background: #e5e7eb;
 }
+
+/* 내가 먹은 양 조절 슬라이더 스타일 */
+.result-portion {
+  background: #f9fafb;
+  border-radius: 16px;
+  padding: 16px;
+  margin-bottom: 20px;
+}
+
+.result-portion__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+.result-portion__label {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: #374151;
+}
+
+.result-portion__value {
+  font-size: 1.15rem;
+  font-weight: 800;
+  color: #059669;
+}
+
+.portion-slider-container {
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+.portion-slider {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 100%;
+  height: 8px;
+  border-radius: 4px;
+  background: #e5e7eb;
+  outline: none;
+  margin: 0;
+  transition: background 0.2s;
+}
+
+.portion-slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background: #10b981;
+  border: 3px solid #ffffff;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+  cursor: pointer;
+  transition: transform 0.1s;
+}
+
+.portion-slider::-webkit-slider-thumb:active {
+  transform: scale(1.2);
+}
+
+.portion-slider::-moz-range-thumb {
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: #10b981;
+  border: 3px solid #ffffff;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+  cursor: pointer;
+  transition: transform 0.1s;
+}
+
+.portion-slider::-moz-range-thumb:active {
+  transform: scale(1.2);
+}
+
+/* 오늘 먹은 음식 리스트 내의 섭취 비율 배지 */
+.meal-card__portion-tag {
+  display: inline-flex;
+  align-items: center;
+  font-size: 0.7rem;
+  font-weight: 700;
+  color: #059669;
+  background: #e6f4ea;
+  padding: 2px 6px;
+  border-radius: 8px;
+}

@@ -237,6 +237,7 @@ function renderMealList() {
           <div class="meal-card__top">
             <span class="meal-card__time-tag">${timeLabel} ${time}</span>
             <div class="meal-card__top-right">
+              ${meal.portion && meal.portion !== 100 ? `<span class="meal-card__portion-tag">섭취 ${meal.portion}%</span>` : ''}
               <span class="meal-card__cal">${numberWithCommas(meal.calories || 0)} kcal</span>
               <button class="meal-card__delete-btn" data-delete="${meal.id}" aria-label="삭제">✕</button>
             </div>
@@ -580,10 +581,40 @@ function showResultSheet(result) {
 
   // 음식 이름
   document.getElementById('resultFoodName').textContent = result.name || '알 수 없는 음식';
-  document.getElementById('resultCalories').textContent = numberWithCommas(result.calories || 0);
-  document.getElementById('resultProtein').textContent = (result.protein || 0) + 'g';
-  document.getElementById('resultCarbs').textContent = (result.carbs || 0) + 'g';
-  document.getElementById('resultFat').textContent = (result.fat || 0) + 'g';
+
+  // 섭취량 슬라이더 초기화
+  const slider = document.getElementById('portionSlider');
+  const sliderVal = document.getElementById('portionValue');
+  if (slider && sliderVal) {
+    slider.value = 100;
+    sliderVal.textContent = '100';
+  }
+
+  // 실시간 영양성분 갱신 헬퍼
+  function updateDisplayedNutrients(portionPercent) {
+    const factor = portionPercent / 100;
+    const calories = Math.round((result.calories || 0) * factor);
+    const carbs = Math.round((result.carbs || 0) * factor);
+    const protein = Math.round((result.protein || 0) * factor);
+    const fat = Math.round((result.fat || 0) * factor);
+
+    document.getElementById('resultCalories').textContent = numberWithCommas(calories);
+    document.getElementById('resultCarbs').textContent = carbs + 'g';
+    document.getElementById('resultProtein').textContent = protein + 'g';
+    document.getElementById('resultFat').textContent = fat + 'g';
+  }
+
+  // 슬라이더 이벤트 장착
+  if (slider) {
+    slider.oninput = (e) => {
+      const val = parseInt(e.target.value, 10);
+      if (sliderVal) sliderVal.textContent = val;
+      updateDisplayedNutrients(val);
+    };
+  }
+
+  // 초기값 기준으로 수치 출력 (100%)
+  updateDisplayedNutrients(100);
 
   // 재료 목록
   const ingredientsEl = document.getElementById('resultIngredients');
@@ -652,15 +683,20 @@ function handleSaveMeal() {
   recordDate.setSeconds(now.getSeconds());
   recordDate.setMilliseconds(now.getMilliseconds());
 
+  const slider = document.getElementById('portionSlider');
+  const portion = slider ? parseInt(slider.value, 10) : 100;
+  const factor = portion / 100;
+
   const meal = {
     name: currentResult.name || '알 수 없는 음식',
-    calories: currentResult.calories || 0,
-    protein: currentResult.protein || 0,
-    carbs: currentResult.carbs || 0,
-    fat: currentResult.fat || 0,
+    calories: Math.round((currentResult.calories || 0) * factor),
+    protein: Math.round((currentResult.protein || 0) * factor),
+    carbs: Math.round((currentResult.carbs || 0) * factor),
+    fat: Math.round((currentResult.fat || 0) * factor),
     ingredients: currentResult.ingredients || [],
     mealTime: selectedMealTime || 'snack',
     timestamp: recordDate.toISOString(),
+    portion: portion,
   };
 
   addMeal(meal);
