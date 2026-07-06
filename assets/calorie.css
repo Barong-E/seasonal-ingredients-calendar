@@ -814,11 +814,11 @@
 /* 카메라 스캔 네모 가이드라인 (CalAI 스타일) */
 .scanner-frame-container {
   position: absolute;
-  top: calc(100vw * 2 / 3);
+  top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 260px;
-  height: 260px;
+  width: 300px;
+  height: 300px;
   pointer-events: none;
   z-index: 5;
 }

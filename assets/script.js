@@ -916,6 +916,56 @@ async function init() {
 //  AI 카메라 스캐너 바인딩 함수군 (Gemini 1.5 Flash 셔터 방식)
 // =======================================================
 
+function cropImageToScannerFrame(photoDataUrl) {
+  return new Promise((resolve, reject) => {
+    const img = new Image();
+    img.onload = () => {
+      try {
+        const canvas = document.createElement('canvas');
+        const ctx = canvas.getContext('2d');
+
+        // 고화질 크롭 이미지용 해상도 설정 (520x520)
+        const targetSize = 520;
+        canvas.width = targetSize;
+        canvas.height = targetSize;
+
+        const screenW = window.innerWidth;
+        const screenH = window.innerHeight;
+        const imgW = img.width;
+        const imgH = img.height;
+
+        const screenRatio = screenW / screenH;
+        const imgRatio = imgW / imgH;
+
+        let scale = 1;
+        if (imgRatio > screenRatio) {
+          // 이미지가 가로로 넓음
+          scale = imgH / screenH;
+        } else {
+          // 이미지가 세로로 김
+          scale = imgW / screenW;
+        }
+
+        const cropSize = 300 * scale; // 300px 크기로 크롭
+        const cropX = (imgW - cropSize) / 2;
+        const cropY = (imgH - cropSize) / 2;
+
+        ctx.drawImage(
+          img,
+          cropX, cropY, cropSize, cropSize,
+          0, 0, targetSize, targetSize
+        );
+
+        resolve(canvas.toDataURL('image/jpeg', 0.9));
+      } catch (err) {
+        reject(err);
+      }
+    };
+    img.onerror = () => reject(new Error('촬영된 이미지 데이터를 분석 범위에 맞추어 처리하는 데 실패했습니다.'));
+    img.src = photoDataUrl;
+  });
+}
+
 async function startCameraScanner() {
   if (!window.Capacitor || !window.Capacitor.isNativePlatform()) {
     showCameraFallbackModal();
@@ -993,8 +1043,17 @@ async function takePhotoAndAnalyze() {
     if (loadingEl) loadingEl.style.display = 'flex';
     if (card) card.style.display = 'none';
 
-    // 1차 이미지 분석 호출 (식재료 이름 & 여부 판정)
-    const result = await FoodScanner.captureAndAnalyze();
+    // 1. 네이티브 카메라에서 사진 촬영 (Base64)
+    const captureResult = await FoodScanner.capturePhoto();
+    if (!captureResult || !captureResult.photo) {
+      throw new Error("사진 촬영 결과가 없습니다.");
+    }
+
+    // 2. 가이드라인 네모 박스 크기(300px)에 맞게 크롭
+    const croppedPhoto = await cropImageToScannerFrame(captureResult.photo);
+
+    // 3. 크롭된 이미지로 네이티브 식재료 분석 API 호출
+    const result = await FoodScanner.analyzeIngredient({ photo: croppedPhoto });
     
     if (result && result.is_food && result.name) {
       const foodNameKo = result.name;

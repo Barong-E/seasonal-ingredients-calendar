@@ -504,6 +504,37 @@ public class FoodScannerPlugin extends Plugin {
         });
     }
 
+    @PluginMethod
+    public void analyzeIngredient(PluginCall call) {
+        String base64Image = call.getString("photo");
+        if (base64Image == null || base64Image.isEmpty()) {
+            call.reject("분석할 이미지 데이터가 없습니다.");
+            return;
+        }
+
+        if ("YOUR_GEMINI_API_KEY".equals(GEMINI_API_KEY) || GEMINI_API_KEY.isEmpty()) {
+            call.reject("Gemini API 키가 설정되지 않았습니다.", "API_KEY_MISSING");
+            return;
+        }
+
+        if (base64Image.startsWith("data:image/jpeg;base64,")) {
+            base64Image = base64Image.substring("data:image/jpeg;base64,".length());
+        } else if (base64Image.startsWith("data:image/png;base64,")) {
+            base64Image = base64Image.substring("data:image/png;base64,".length());
+        }
+
+        final String finalBase64 = base64Image;
+        cameraExecutor.execute(() -> {
+            try {
+                byte[] imageBytes = Base64.decode(finalBase64, Base64.DEFAULT);
+                callGeminiAPI(imageBytes, call);
+            } catch (Exception e) {
+                Log.e(TAG, "식재료 분석 API 연동 중 예외 발생", e);
+                call.reject("이미지 디코딩 또는 분석 실패: " + e.getMessage(), "NETWORK_ERROR");
+            }
+        });
+    }
+
     private void callGeminiAPIForCalorie(byte[] imageBytes, PluginCall call) {
         try {
             URL url = new URL(

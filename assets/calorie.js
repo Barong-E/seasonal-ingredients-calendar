@@ -426,7 +426,7 @@ function cropImageToScannerFrame(photoDataUrl) {
           scale = imgW / screenW;
         }
 
-        const cropSize = 260 * scale;
+        const cropSize = 300 * scale;
         const cropX = (imgW - cropSize) / 2;
         const cropY = (imgH - cropSize) / 2;
 
