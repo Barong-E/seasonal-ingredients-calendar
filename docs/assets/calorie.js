@@ -24,17 +24,20 @@ import"./app-back-button.js";const J="calorie:target",A="calorie:meals:",ut=2e3;
         <h2 class="scanner-title">🔥 칼로리 분석</h2>
       </div>
       
-      <!-- 네모 가이드라인 (CalAI 스타일) -->
-      <div class="scanner-frame-container">
-        <div class="scanner-frame">
-          <div class="corner corner-tl"></div>
-          <div class="corner corner-tr"></div>
-          <div class="corner corner-bl"></div>
-          <div class="corner corner-br"></div>
+      <!-- 카메라 영역 (헤더와 하단 사이의 중앙 정렬 기준) -->
+      <div class="scanner-camera-area">
+        <!-- 네모 가이드라인 (CalAI 스타일) -->
+        <div class="scanner-frame-container">
+          <div class="scanner-frame">
+            <div class="corner corner-tl"></div>
+            <div class="corner corner-tr"></div>
+            <div class="corner corner-bl"></div>
+            <div class="corner corner-br"></div>
+          </div>
         </div>
+        <p class="scanner-guide-text">음식을 화면 중앙에 맞추고<br>아래 버튼을 눌러주세요</p>
       </div>
 
-      <p class="scanner-guide-text">음식을 화면 중앙에 맞추고<br>아래 버튼을 눌러주세요</p>
       <div class="scanner-bottom-area">
         <button class="scanner-shutter-btn" id="calorieShutterBtn" type="button">
           <span class="shutter-inner"></span>

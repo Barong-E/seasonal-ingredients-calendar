@@ -1802,10 +1802,17 @@ main {
   display: none !important; /* 스캔 중에는 기존 본문 감춤 */
 }
 
-/* 1.5 카메라 스캔 네모 가이드라인 (CalAI 스타일) */
+/* 1.5 카메라 영역 래퍼 (헤더와 하단 셔터 사이) */
+.scanner-camera-area {
+  flex: 1;
+  position: relative;
+  pointer-events: none;
+}
+
+/* 1.6 카메라 스캔 네모 가이드라인 */
 .scanner-frame-container {
   position: absolute;
-  top: 55%;
+  top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   width: 300px;
@@ -1921,7 +1928,7 @@ main {
   color: rgba(255, 255, 255, 0.9);
   text-shadow: 0 2px 4px rgba(0, 0, 0, 0.8);
   position: absolute;
-  top: calc(55% - 200px);
+  top: calc(50% - 200px);
   left: 0;
   right: 0;
   pointer-events: none;
