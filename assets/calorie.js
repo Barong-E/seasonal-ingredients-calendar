@@ -417,19 +417,14 @@ function cropImageToScannerFrame(photoDataUrl) {
         const imgW = img.width;
         const imgH = img.height;
 
-        const screenRatio = screenW / screenH;
-        const imgRatio = imgW / imgH;
-
-        let scale = 1;
-        if (imgRatio > screenRatio) {
-          // 이미지가 가로로 넓음
-          scale = imgH / screenH;
-        } else {
-          // 이미지가 세로로 김
-          scale = imgW / screenW;
-        }
-
-        const cropSize = 300 * scale;
+        // 카메라 영상은 기기 너비에 꽉 차게 렌더링됨 (FIT_START)
+        // 실제 화면에 보이는 이미지의 스케일은 원본 가로 / 화면 가로 비율
+        const scale = imgW / screenW;
+        
+        // CSS에서 설정한 네모 박스 크기(340px)를 원본 해상도 스케일로 환산
+        const cropSize = 340 * scale;
+        
+        // 정중앙 자르기
         const cropX = (imgW - cropSize) / 2;
         const cropY = (imgH - cropSize) / 2;
 
