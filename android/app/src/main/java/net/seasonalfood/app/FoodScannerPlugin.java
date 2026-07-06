@@ -105,9 +105,18 @@ public class FoodScannerPlugin extends Plugin {
                 previewView = new PreviewView(getActivity());
                 previewView.setScaleType(PreviewView.ScaleType.FIT_START);
 
-                ViewGroup.LayoutParams params = new ViewGroup.LayoutParams(
+                // 상태 표시줄(상단 바) 높이 구하기
+                int resourceId = getActivity().getResources().getIdentifier("status_bar_height", "dimen", "android");
+                int statusBarHeight = 0;
+                if (resourceId > 0) {
+                    statusBarHeight = getActivity().getResources().getDimensionPixelSize(resourceId);
+                }
+
+                // FrameLayout.LayoutParams를 사용해 topMargin 적용
+                FrameLayout.LayoutParams params = new FrameLayout.LayoutParams(
                         ViewGroup.LayoutParams.MATCH_PARENT,
                         ViewGroup.LayoutParams.MATCH_PARENT);
+                params.topMargin = statusBarHeight;
 
                 // 웹뷰 레이어 아래(인덱스 0)에 삽입
                 container.addView(previewView, 0, params);
