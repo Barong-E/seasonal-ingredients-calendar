@@ -1812,7 +1812,7 @@ main {
   justify-content: space-between;
   background: transparent;
   color: #fff;
-  padding: calc(env(safe-area-inset-top) + 20px) 20px calc(env(safe-area-inset-bottom) + 30px) 20px;
+  padding: 0 20px calc(env(safe-area-inset-bottom) + 30px) 20px;
 }
 
 /* 3. 스캐너 상단 헤더 */
@@ -1820,7 +1820,12 @@ main {
   display: flex;
   align-items: center;
   gap: 16px;
-  width: 100%;
+  width: calc(100% + 40px);
+  margin-left: -20px;
+  margin-right: -20px;
+  background: #000000;
+  padding: calc(env(safe-area-inset-top) + 20px) 20px 20px 20px;
+  box-sizing: border-box;
 }
 
 .scanner-exit-btn {

@@ -9,6 +9,9 @@ import android.util.Base64;
 import android.util.Log;
 import android.view.ViewGroup;
 import android.widget.FrameLayout;
+import android.view.Window;
+import android.view.View;
+import android.os.Build;
 
 import androidx.annotation.NonNull;
 import androidx.camera.core.CameraSelector;
@@ -98,6 +101,14 @@ public class FoodScannerPlugin extends Plugin {
                 // 1. 웹뷰 배경을 투명하게 만들어 네이티브 프리뷰가 보이도록 함
                 bridge.getWebView().setBackgroundColor(Color.TRANSPARENT);
 
+                // 상태 표시줄 검은색 배경 & 글씨 흰색으로 변경 (어두운 배경 모드)
+                Window window = getActivity().getWindow();
+                window.setStatusBarColor(Color.BLACK);
+                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+                    View decorView = window.getDecorView();
+                    decorView.setSystemUiVisibility(decorView.getSystemUiVisibility() & ~View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR);
+                }
+
                 // 2. 웹뷰의 부모 레이아웃 가져오기
                 container = (ViewGroup) bridge.getWebView().getParent();
 
@@ -112,11 +123,15 @@ public class FoodScannerPlugin extends Plugin {
                     statusBarHeight = getActivity().getResources().getDimensionPixelSize(resourceId);
                 }
 
+                // 84dp(헤더의 패딩 및 높이)를 픽셀 단위로 변환
+                float density = getActivity().getResources().getDisplayMetrics().density;
+                int headerHeightPx = Math.round(84 * density);
+
                 // FrameLayout.LayoutParams를 사용해 topMargin 적용
                 FrameLayout.LayoutParams params = new FrameLayout.LayoutParams(
                         ViewGroup.LayoutParams.MATCH_PARENT,
                         ViewGroup.LayoutParams.MATCH_PARENT);
-                params.topMargin = statusBarHeight;
+                params.topMargin = statusBarHeight + headerHeightPx;
 
                 // 웹뷰 레이어 아래(인덱스 0)에 삽입
                 container.addView(previewView, 0, params);
@@ -773,6 +788,14 @@ public class FoodScannerPlugin extends Plugin {
 
                 // 웹뷰 배경색 복원
                 bridge.getWebView().setBackgroundColor(Color.WHITE);
+
+                // 원래 상태 표시줄(투명 배경, 검은색 글씨)로 복원
+                Window window = getActivity().getWindow();
+                window.setStatusBarColor(Color.TRANSPARENT);
+                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+                    View decorView = window.getDecorView();
+                    decorView.setSystemUiVisibility(decorView.getSystemUiVisibility() | View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR);
+                }
 
                 call.resolve();
             } catch (Exception e) {
