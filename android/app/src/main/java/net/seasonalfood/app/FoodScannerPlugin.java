@@ -857,63 +857,79 @@ public class FoodScannerPlugin extends Plugin {
         }
 
         if (result.getResultCode() == Activity.RESULT_CANCELED) {
+            Log.d(TAG, "사진 선택 취소됨");
             call.reject("사진 선택이 취소되었습니다.");
             return;
         }
 
         Intent data = result.getData();
         if (data == null || data.getData() == null) {
+            Log.e(TAG, "사진 데이터 없음");
             call.reject("사진 데이터를 가져오지 못했습니다.");
             return;
         }
 
         Uri photoUri = data.getData();
-        cameraExecutor.execute(() -> {
-            try {
-                // Uri로부터 이미지 스트림 열어 비트맵 로드
-                InputStream imageStream = getActivity().getContentResolver().openInputStream(photoUri);
-                Bitmap selectedImage = BitmapFactory.decodeStream(imageStream);
-                if (imageStream != null) {
-                    imageStream.close();
-                }
+        Log.d(TAG, "사진 선택 완료 URI: " + photoUri.toString());
 
-                if (selectedImage == null) {
-                    call.reject("이미지를 디코딩할 수 없습니다.");
-                    return;
-                }
-
-                // 크롭 없이, 최대 1080px로 비율 유지 리사이징
-                int width = selectedImage.getWidth();
-                int height = selectedImage.getHeight();
-                int maxDim = 1080;
-                
-                Bitmap finalBmp = selectedImage;
-                if (width > maxDim || height > maxDim) {
-                    float ratio = Math.min((float) maxDim / width, (float) maxDim / height);
-                    int newWidth = Math.round(ratio * width);
-                    int newHeight = Math.round(ratio * height);
-                    finalBmp = Bitmap.createScaledBitmap(selectedImage, newWidth, newHeight, true);
-                }
-
-                ByteArrayOutputStream byteArrayOutputStream = new ByteArrayOutputStream();
-                finalBmp.compress(Bitmap.CompressFormat.JPEG, 90, byteArrayOutputStream);
-                byte[] byteArray = byteArrayOutputStream.toByteArray();
-                String base64Image = "data:image/jpeg;base64," + Base64.encodeToString(byteArray, Base64.NO_WRAP);
-
-                // 메모리 해제
-                if (finalBmp != selectedImage) {
-                    finalBmp.recycle();
-                }
-                selectedImage.recycle();
-
-                JSObject ret = new JSObject();
-                ret.put("photo", base64Image);
-                call.resolve(ret);
-            } catch (Exception e) {
-                Log.e(TAG, "갤러리 이미지 처리 실패", e);
-                call.reject("이미지 처리 중 에러 발생: " + e.getMessage());
+        try {
+            // [중요] 임시 URI 읽기 권한을 유지하기 위해 getContentResolver 및 디코딩은 
+            // 백그라운드 스레드가 아닌 메인(UI) 스레드에서 즉시 수행해야 SecurityException을 방지합니다.
+            InputStream imageStream = getActivity().getContentResolver().openInputStream(photoUri);
+            Bitmap selectedImage = BitmapFactory.decodeStream(imageStream);
+            if (imageStream != null) {
+                imageStream.close();
             }
-        });
+
+            if (selectedImage == null) {
+                Log.e(TAG, "비트맵 디코딩 실패 (null)");
+                call.reject("이미지를 디코딩할 수 없습니다.");
+                return;
+            }
+
+            Log.d(TAG, "비트맵 로드 성공. 크기: " + selectedImage.getWidth() + "x" + selectedImage.getHeight());
+
+            // 무거운 리사이징 및 Base64 인코딩 연산만 백그라운드 스레드로 위임
+            cameraExecutor.execute(() -> {
+                try {
+                    int width = selectedImage.getWidth();
+                    int height = selectedImage.getHeight();
+                    int maxDim = 1080;
+                    
+                    Bitmap finalBmp = selectedImage;
+                    if (width > maxDim || height > maxDim) {
+                        float ratio = Math.min((float) maxDim / width, (float) maxDim / height);
+                        int newWidth = Math.round(ratio * width);
+                        int newHeight = Math.round(ratio * height);
+                        finalBmp = Bitmap.createScaledBitmap(selectedImage, newWidth, newHeight, true);
+                    }
+
+                    ByteArrayOutputStream byteArrayOutputStream = new ByteArrayOutputStream();
+                    finalBmp.compress(Bitmap.CompressFormat.JPEG, 90, byteArrayOutputStream);
+                    byte[] byteArray = byteArrayOutputStream.toByteArray();
+                    String base64Image = "data:image/jpeg;base64," + Base64.encodeToString(byteArray, Base64.NO_WRAP);
+
+                    // 메모리 해제
+                    if (finalBmp != selectedImage) {
+                        finalBmp.recycle();
+                    }
+                    selectedImage.recycle();
+
+                    Log.d(TAG, "Base64 인코딩 완료, 결과 반환");
+                    JSObject ret = new JSObject();
+                    ret.put("photo", base64Image);
+                    
+                    // Capacitor 콜백은 메인 스레드에서 안전하게 resolve
+                    getActivity().runOnUiThread(() -> call.resolve(ret));
+                } catch (Exception e) {
+                    Log.e(TAG, "백그라운드 이미지 처리 실패", e);
+                    getActivity().runOnUiThread(() -> call.reject("이미지 처리 중 에러 발생: " + e.getMessage()));
+                }
+            });
+        } catch (Exception e) {
+            Log.e(TAG, "이미지 스트림 열기 실패", e);
+            call.reject("이미지를 읽어오지 못했습니다: " + e.getMessage());
+        }
     }
 
     @Override

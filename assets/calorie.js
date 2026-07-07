@@ -421,6 +421,7 @@ async function triggerGallerySelection(e) {
 
   if (!isNativeApp || !FoodScanner) {
     // 웹 브라우저 환경 등 폴백
+    alert('웹 브라우저 환경으로 판단됨 - 폴백 input click');
     const fileInput = document.getElementById('calorieGalleryInput');
     if (fileInput) {
       fileInput.value = ''; // 같은 이미지 재선택시에도 이벤트 발생 보장
@@ -430,15 +431,17 @@ async function triggerGallerySelection(e) {
   }
 
   try {
+    alert('네이티브 selectPhoto 호출 전');
     const result = await FoodScanner.selectPhoto();
+    alert('네이티브 selectPhoto 결과 반환됨: ' + (result ? '성공' : '실패'));
     if (result && result.photo) {
       openCropModal(result.photo);
+    } else {
+      alert('결과에 photo가 없습니다.');
     }
   } catch (err) {
     console.warn('네이티브 사진 선택 취소 또는 실패:', err);
-    if (err.message && !err.message.includes('취소')) {
-      alert('사진을 선택하는 중 에러가 발생했습니다: ' + err.message);
-    }
+    alert('네이티브 사진 선택 에러 캐치: ' + err.message);
   }
 }
 
@@ -447,6 +450,7 @@ function handleGalleryFileChange(e) {
     const file = e.target.files[0];
     if (!file) return;
 
+    alert('웹 파일 선택 완료: ' + file.name);
     const imageUrl = URL.createObjectURL(file);
     openCropModal(imageUrl);
   } catch (err) {
@@ -456,6 +460,7 @@ function handleGalleryFileChange(e) {
 }
 
 function openCropModal(imageUrl) {
+  alert('openCropModal 호출됨, 이미지 길이: ' + (imageUrl ? imageUrl.length : 0));
   try {
     const modal = document.getElementById('cropModal');
     const cropImage = document.getElementById('cropImage');
@@ -469,15 +474,18 @@ function openCropModal(imageUrl) {
 
     if (cropperInstance) {
       cropperInstance.destroy();
+      cropperInstance = null;
     }
 
     // ES 모듈 default export 안전장치
+    alert('Cropper 객체 로드 시도. 객체 존재여부: ' + (typeof Cropper !== 'undefined'));
     const CropperClass = Cropper.default || Cropper;
     if (typeof CropperClass !== 'function') {
       throw new Error('Cropper 라이브러리 클래스를 불러오지 못했습니다.');
     }
 
     // 1:1 비율로 미려하고 둥근 핀치 줌 크롭 연동
+    alert('Cropper 인스턴스 생성 직전');
     cropperInstance = new CropperClass(cropImage, {
       aspectRatio: 1,
       viewMode: 1,
@@ -491,6 +499,7 @@ function openCropModal(imageUrl) {
       cropBoxResizable: true,
       toggleDragModeOnDblclick: false,
     });
+    alert('Cropper 인스턴스 생성 완료');
 
     // 버튼 이벤트 연결
     document.getElementById('cropModalExit').onclick = closeCropModal;
