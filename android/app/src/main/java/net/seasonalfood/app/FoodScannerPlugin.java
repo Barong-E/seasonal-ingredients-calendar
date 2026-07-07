@@ -845,7 +845,7 @@ public class FoodScannerPlugin extends Plugin {
     @PluginMethod
     public void selectPhoto(PluginCall call) {
         saveCall(call);
-        Intent intent = new Intent(Intent.ACTION_PICK);
+        Intent intent = new Intent(Intent.ACTION_GET_CONTENT);
         intent.setType("image/*");
         startActivityForResult(call, intent, "pickImageResult");
     }
@@ -882,28 +882,28 @@ public class FoodScannerPlugin extends Plugin {
                     return;
                 }
 
-                // 520x520 리사이징 처리까지 네이티브에서 처리하여 메모리와 전송 데이터 최소화
+                // 크롭 없이, 최대 1080px로 비율 유지 리사이징
                 int width = selectedImage.getWidth();
                 int height = selectedImage.getHeight();
-                int size = Math.min(width, height);
+                int maxDim = 1080;
                 
-                // 정중앙 크롭 좌표 계산
-                int x = (width - size) / 2;
-                int y = (height - size) / 2;
-                
-                Bitmap croppedBmp = Bitmap.createBitmap(selectedImage, x, y, size, size);
-                Bitmap resizedBmp = Bitmap.createScaledBitmap(croppedBmp, 520, 520, true);
+                Bitmap finalBmp = selectedImage;
+                if (width > maxDim || height > maxDim) {
+                    float ratio = Math.min((float) maxDim / width, (float) maxDim / height);
+                    int newWidth = Math.round(ratio * width);
+                    int newHeight = Math.round(ratio * height);
+                    finalBmp = Bitmap.createScaledBitmap(selectedImage, newWidth, newHeight, true);
+                }
 
                 ByteArrayOutputStream byteArrayOutputStream = new ByteArrayOutputStream();
-                resizedBmp.compress(Bitmap.CompressFormat.JPEG, 90, byteArrayOutputStream);
+                finalBmp.compress(Bitmap.CompressFormat.JPEG, 90, byteArrayOutputStream);
                 byte[] byteArray = byteArrayOutputStream.toByteArray();
                 String base64Image = "data:image/jpeg;base64," + Base64.encodeToString(byteArray, Base64.NO_WRAP);
 
                 // 메모리 해제
-                if (croppedBmp != selectedImage) {
-                    croppedBmp.recycle();
+                if (finalBmp != selectedImage) {
+                    finalBmp.recycle();
                 }
-                resizedBmp.recycle();
                 selectedImage.recycle();
 
                 JSObject ret = new JSObject();
