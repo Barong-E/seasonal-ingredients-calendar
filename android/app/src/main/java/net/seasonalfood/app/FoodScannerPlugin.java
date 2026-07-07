@@ -13,6 +13,12 @@ import android.view.Window;
 import android.view.View;
 import android.os.Build;
 
+import android.content.Intent;
+import android.net.Uri;
+import android.app.Activity;
+import androidx.activity.result.ActivityResult;
+import com.getcapacitor.annotation.ActivityCallback;
+
 import androidx.annotation.NonNull;
 import androidx.camera.core.CameraSelector;
 import androidx.camera.core.ImageCapture;
@@ -832,6 +838,78 @@ public class FoodScannerPlugin extends Plugin {
             } catch (Exception e) {
                 Log.e(TAG, "카메라 정지 실패", e);
                 call.reject("카메라를 끄는 중 에러 발생: " + e.getMessage());
+            }
+        });
+    @PluginMethod
+    public void selectPhoto(PluginCall call) {
+        saveCall(call);
+        Intent intent = new Intent(Intent.ACTION_PICK);
+        intent.setType("image/*");
+        startActivityForResult(call, intent, "pickImageResult");
+    }
+
+    @ActivityCallback
+    private void pickImageResult(PluginCall call, ActivityResult result) {
+        if (call == null) {
+            return;
+        }
+
+        if (result.getResultCode() == Activity.RESULT_CANCELED) {
+            call.reject("사진 선택이 취소되었습니다.");
+            return;
+        }
+
+        Intent data = result.getData();
+        if (data == null || data.getData() == null) {
+            call.reject("사진 데이터를 가져오지 못했습니다.");
+            return;
+        }
+
+        Uri photoUri = data.getData();
+        cameraExecutor.execute(() -> {
+            try {
+                // Uri로부터 이미지 스트림 열어 비트맵 로드
+                InputStream imageStream = getActivity().getContentResolver().openInputStream(photoUri);
+                Bitmap selectedImage = BitmapFactory.decodeStream(imageStream);
+                if (imageStream != null) {
+                    imageStream.close();
+                }
+
+                if (selectedImage == null) {
+                    call.reject("이미지를 디코딩할 수 없습니다.");
+                    return;
+                }
+
+                // 520x520 리사이징 처리까지 네이티브에서 처리하여 메모리와 전송 데이터 최소화
+                int width = selectedImage.getWidth();
+                int height = selectedImage.getHeight();
+                int size = Math.min(width, height);
+                
+                // 정중앙 크롭 좌표 계산
+                int x = (width - size) / 2;
+                int y = (height - size) / 2;
+                
+                Bitmap croppedBmp = Bitmap.createBitmap(selectedImage, x, y, size, size);
+                Bitmap resizedBmp = Bitmap.createScaledBitmap(croppedBmp, 520, 520, true);
+
+                ByteArrayOutputStream byteArrayOutputStream = new ByteArrayOutputStream();
+                resizedBmp.compress(Bitmap.CompressFormat.JPEG, 90, byteArrayOutputStream);
+                byte[] byteArray = byteArrayOutputStream.toByteArray();
+                String base64Image = "data:image/jpeg;base64," + Base64.encodeToString(byteArray, Base64.NO_WRAP);
+
+                // 메모리 해제
+                if (croppedBmp != selectedImage) {
+                    croppedBmp.recycle();
+                }
+                resizedBmp.recycle();
+                selectedImage.recycle();
+
+                JSObject ret = new JSObject();
+                ret.put("photo", base64Image);
+                call.resolve(ret);
+            } catch (Exception e) {
+                Log.e(TAG, "갤러리 이미지 처리 실패", e);
+                call.reject("이미지 처리 중 에러 발생: " + e.getMessage());
             }
         });
     }

@@ -413,15 +413,32 @@ async function stopCalorieCamera() {
 
 let cropperInstance = null;
 
-function triggerGallerySelection(e) {
+async function triggerGallerySelection(e) {
   if (e) {
     e.stopPropagation();
     e.preventDefault();
   }
-  const fileInput = document.getElementById('calorieGalleryInput');
-  if (fileInput) {
-    fileInput.value = ''; // 같은 이미지 재선택시에도 이벤트 발생 보장
-    fileInput.click();
+
+  if (!isNativeApp || !FoodScanner) {
+    // 웹 브라우저 환경 등 폴백
+    const fileInput = document.getElementById('calorieGalleryInput');
+    if (fileInput) {
+      fileInput.value = ''; // 같은 이미지 재선택시에도 이벤트 발생 보장
+      fileInput.click();
+    }
+    return;
+  }
+
+  try {
+    const result = await FoodScanner.selectPhoto();
+    if (result && result.photo) {
+      openCropModal(result.photo);
+    }
+  } catch (err) {
+    console.warn('네이티브 사진 선택 취소 또는 실패:', err);
+    if (err.message && !err.message.includes('취소')) {
+      alert('사진을 선택하는 중 에러가 발생했습니다: ' + err.message);
+    }
   }
 }
 
