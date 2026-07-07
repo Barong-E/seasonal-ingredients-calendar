@@ -840,6 +840,8 @@ public class FoodScannerPlugin extends Plugin {
                 call.reject("카메라를 끄는 중 에러 발생: " + e.getMessage());
             }
         });
+    }
+
     @PluginMethod
     public void selectPhoto(PluginCall call) {
         saveCall(call);
