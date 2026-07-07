@@ -413,7 +413,11 @@ async function stopCalorieCamera() {
 
 let cropperInstance = null;
 
-function triggerGallerySelection() {
+function triggerGallerySelection(e) {
+  if (e) {
+    e.stopPropagation();
+    e.preventDefault();
+  }
   const fileInput = document.getElementById('calorieGalleryInput');
   if (fileInput) {
     fileInput.value = ''; // 같은 이미지 재선택시에도 이벤트 발생 보장
@@ -422,43 +426,62 @@ function triggerGallerySelection() {
 }
 
 function handleGalleryFileChange(e) {
-  const file = e.target.files[0];
-  if (!file) return;
+  try {
+    const file = e.target.files[0];
+    if (!file) return;
 
-  const imageUrl = URL.createObjectURL(file);
-  openCropModal(imageUrl);
+    const imageUrl = URL.createObjectURL(file);
+    openCropModal(imageUrl);
+  } catch (err) {
+    console.error('갤러리 이미지 처리 실패:', err);
+    alert('이미지를 불러오는 중 에러가 발생했습니다: ' + err.message);
+  }
 }
 
 function openCropModal(imageUrl) {
-  const modal = document.getElementById('cropModal');
-  const cropImage = document.getElementById('cropImage');
-  if (!modal || !cropImage) return;
+  try {
+    const modal = document.getElementById('cropModal');
+    const cropImage = document.getElementById('cropImage');
+    if (!modal || !cropImage) {
+      alert('크롭 모달 화면을 구성하는 요소를 찾을 수 없습니다.');
+      return;
+    }
 
-  cropImage.src = imageUrl;
-  modal.style.display = 'flex';
+    cropImage.src = imageUrl;
+    modal.style.display = 'flex';
 
-  if (cropperInstance) {
-    cropperInstance.destroy();
+    if (cropperInstance) {
+      cropperInstance.destroy();
+    }
+
+    // ES 모듈 default export 안전장치
+    const CropperClass = Cropper.default || Cropper;
+    if (typeof CropperClass !== 'function') {
+      throw new Error('Cropper 라이브러리 클래스를 불러오지 못했습니다.');
+    }
+
+    // 1:1 비율로 미려하고 둥근 핀치 줌 크롭 연동
+    cropperInstance = new CropperClass(cropImage, {
+      aspectRatio: 1,
+      viewMode: 1,
+      dragMode: 'move',
+      autoCropArea: 0.8,
+      restore: false,
+      guides: true,
+      center: true,
+      highlight: false,
+      cropBoxMovable: true,
+      cropBoxResizable: true,
+      toggleDragModeOnDblclick: false,
+    });
+
+    // 버튼 이벤트 연결
+    document.getElementById('cropModalExit').onclick = closeCropModal;
+    document.getElementById('cropModalSubmit').onclick = submitCroppedImage;
+  } catch (err) {
+    console.error('크롭 인스턴스 생성 실패:', err);
+    alert('이미지 크롭 초기화 실패: ' + err.message);
   }
-
-  // 1:1 비율로 미려하고 둥근 핀치 줌 크롭 연동
-  cropperInstance = new Cropper(cropImage, {
-    aspectRatio: 1,
-    viewMode: 1,
-    dragMode: 'move',
-    autoCropArea: 0.8,
-    restore: false,
-    guides: true,
-    center: true,
-    highlight: false,
-    cropBoxMovable: true,
-    cropBoxResizable: true,
-    toggleDragModeOnDblclick: false,
-  });
-
-  // 버튼 이벤트 연결
-  document.getElementById('cropModalExit').onclick = closeCropModal;
-  document.getElementById('cropModalSubmit').onclick = submitCroppedImage;
 }
 
 function closeCropModal() {
