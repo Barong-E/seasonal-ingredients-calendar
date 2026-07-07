@@ -14515,5 +14515,192 @@
     ],
     "relatedIngredients": ["참돔"],
     "relatedHolidays": []
+  },
+  {
+    "id": "recipe-carrot-lape",
+    "name": "당근라페",
+    "category": "채소",
+    "description": "새콤달콤하고 아삭해 샌드위치나 샐러드에 찰떡궁합인 프랑스식 당근 절임입니다.",
+    "image": "recipes/recipe-carrot-lape.png",
+    "servings": 2,
+    "servingsUnit": "인분",
+    "cookTime": "15분",
+    "difficulty": "하",
+    "ingredients": [
+      { "name": "당근", "amount": "1개" },
+      { "name": "소금", "amount": "0.5작은술" }
+    ],
+    "seasoning": [
+      { "name": "올리브유", "amount": "2큰술" },
+      { "name": "레몬즙", "amount": "1큰술" },
+      { "name": "홀그레인 머스터드", "amount": "1큰술" },
+      { "name": "알룰로스", "amount": "1큰술" },
+      { "name": "후추", "amount": "0.5작은술" }
+    ],
+    "steps": [
+      { "step": 1, "description": "당근은 깨끗이 씻어 필러로 껍질을 벗긴 뒤 얇게 채 썹니다." },
+      { "step": 2, "description": "채 썬 당근에 소금을 뿌려 골고루 버무린 후 실온에서 절입니다." },
+      { "step": 3, "description": "절여진 당근의 물기를 손으로 꼭 짭니다." },
+      { "step": 4, "description": "올리브유, 레몬즙, 홀그레인 머스터드, 알룰로스, 후추를 섞어 양념장을 만듭니다." },
+      { "step": 5, "description": "물기를 짠 당근에 양념장을 넣어 조물조물 버무린 뒤 밀폐 용기에 담아 냉장 보관하여 차갑게 즐깁니다." }
+    ],
+    "relatedIngredients": ["당근"],
+    "relatedHolidays": []
+  },
+  {
+    "id": "recipe-carrot-jeon",
+    "name": "당근전",
+    "category": "채소",
+    "description": "당근 특유의 달큰함을 극대화하고 쫀득하게 부쳐내어 아이들도 잘 먹는 영양 만점 부침개입니다.",
+    "image": "recipes/recipe-carrot-jeon.png",
+    "servings": 5,
+    "servingsUnit": "개",
+    "cookTime": "20분",
+    "difficulty": "하",
+    "ingredients": [
+      { "name": "당근", "amount": "1개" },
+      { "name": "전분가루", "amount": "3큰술" },
+      { "name": "식용유", "amount": "2큰술" }
+    ],
+    "seasoning": [
+      { "name": "소금", "amount": "0.5작은술" }
+    ],
+    "steps": [
+      { "step": 1, "description": "당근은 흐르는 물에 깨끗이 씻어 물기를 닦은 후 얇게 채 썹니다." },
+      { "step": 2, "description": "볼에 채 썬 당근을 담고 소금을 넣어 골고루 섞어 절입니다." },
+      { "step": 3, "description": "절인 당근에 전분가루를 넣고 가루가 겉돌지 않게 버무립니다." },
+      { "step": 4, "description": "팬에 식용유를 두르고 달군 후 당근 반죽을 동그랗고 얇게 펼쳐 얹습니다." },
+      { "step": 5, "description": "약한 불에서 앞뒤로 노릇노릇하고 바삭하게 부쳐냅니다." }
+    ],
+    "relatedIngredients": ["당근"],
+    "relatedHolidays": []
+  },
+  {
+    "id": "recipe-cabbage-ssam",
+    "name": "양배추쌈",
+    "category": "채소",
+    "description": "양배추를 부드럽게 쪄내어 쌈장과 함께 밥을 싸 먹는 건강하고 소화가 잘되는 시골풍 웰빙 밥반찬입니다.",
+    "image": "recipes/recipe-cabbage-ssam.png",
+    "servings": 2,
+    "servingsUnit": "인분",
+    "cookTime": "15분",
+    "difficulty": "하",
+    "ingredients": [
+      { "name": "양배추", "amount": "0.25통" },
+      { "name": "물", "amount": "2컵" }
+    ],
+    "seasoning": [
+      { "name": "된장", "amount": "2큰술" },
+      { "name": "고추장", "amount": "1큰술" },
+      { "name": "다진 마늘", "amount": "1작은술" },
+      { "name": "참기름", "amount": "1큰술" },
+      { "name": "올리고당", "amount": "1큰술" }
+    ],
+    "steps": [
+      { "step": 1, "description": "양배추는 잎을 한 장씩 떼어 흐르는 물에 깨끗이 씻어 체에 받칩니다." },
+      { "step": 2, "description": "냄비에 물을 붓고 찜기를 얹은 뒤 뚜껑을 덮어 한 김 올립니다." },
+      { "step": 3, "description": "김이 오르면 찜기 위에 양배추 잎을 차곡차곡 얹고 뚜껑을 덮어 찝니다." },
+      { "step": 4, "description": "양배추가 투명해질 때까지 푹 쪄낸 후 꺼내서 한 김 식힙니다." },
+      { "step": 5, "description": "된장, 고추장, 다진 마늘, 참기름, 올리고당을 섞어 쌈장을 만들어 찐 양배추에 곁들여 냅니다." }
+    ],
+    "relatedIngredients": ["양배추"],
+    "relatedHolidays": []
+  },
+  {
+    "id": "recipe-cabbage-jeon",
+    "name": "양배추전",
+    "category": "채소",
+    "description": "양배추 채를 듬뿍 넣어 아삭하면서도 쫀득한 식감과 달콤한 맛이 매력적인 가벼운 야채 부침개입니다.",
+    "image": "recipes/recipe-cabbage-jeon.png",
+    "servings": 5,
+    "servingsUnit": "개",
+    "cookTime": "20분",
+    "difficulty": "하",
+    "ingredients": [
+      { "name": "양배추", "amount": "200g" },
+      { "name": "당근", "amount": "30g" },
+      { "name": "부침가루", "amount": "5큰술" },
+      { "name": "달걀", "amount": "1개" },
+      { "name": "물", "amount": "0.25컵" },
+      { "name": "식용유", "amount": "2큰술" }
+    ],
+    "seasoning": [
+      { "name": "소금", "amount": "0.5작은술" }
+    ],
+    "steps": [
+      { "step": 1, "description": "양배추와 당근은 흐르는 물에 씻어 얇게 채 썹니다." },
+      { "step": 2, "description": "볼에 부침가루, 달걀, 물, 소금을 넣어 덩어리 지지 않게 반죽을 만듭니다." },
+      { "step": 3, "description": "반죽에 채 썬 양배추와 당근을 넣고 골고루 섞어줍니다." },
+      { "step": 4, "description": "달군 팬에 식용유를 두르고 반죽을 한 입 크기로 동그랗고 도톰하게 얹습니다." },
+      { "step": 5, "description": "중간 불에서 앞뒤로 뒤집어가며 노릇노릇하고 바삭하게 구워냅니다." }
+    ],
+    "relatedIngredients": ["양배추"],
+    "relatedHolidays": []
+  },
+  {
+    "id": "recipe-rockfish-maeuntang",
+    "name": "우럭매운탕",
+    "category": "해산물",
+    "description": "우럭의 뼈에서 우러나온 시원하고 깊은 국물 맛과 쫄깃한 생선 살이 일품인 대한민국 대표 매운탕입니다.",
+    "image": "recipes/recipe-rockfish-maeuntang.png",
+    "servings": 3,
+    "servingsUnit": "인분",
+    "cookTime": "30분",
+    "difficulty": "중",
+    "ingredients": [
+      { "name": "우럭", "amount": "1마리" },
+      { "name": "무", "amount": "100g" },
+      { "name": "대파", "amount": "0.5대" },
+      { "name": "미나리", "amount": "50g" },
+      { "name": "물", "amount": "4컵" }
+    ],
+    "seasoning": [
+      { "name": "고춧가루", "amount": "2큰술" },
+      { "name": "고추장", "amount": "1큰술" },
+      { "name": "된장", "amount": "0.5작은술" },
+      { "name": "국간장", "amount": "1큰술" },
+      { "name": "다진 마늘", "amount": "1큰술" },
+      { "name": "다진 생강", "amount": "0.5작은술" },
+      { "name": "청주", "amount": "1큰술" },
+      { "name": "소금", "amount": "0.5작은술" }
+    ],
+    "steps": [
+      { "step": 1, "description": "우럭은 비늘과 지느러미, 내장을 깨끗이 제거하고 토막 내어 흐르는 물에 씻어 핏물을 완전히 뺍니다." },
+      { "step": 2, "description": "무는 얇고 납작하게 썰고, 대파는 어슷 썰며, 미나리는 깨끗이 씻어 길이대로 자릅니다." },
+      { "step": 3, "description": "냄비에 물과 무를 넣고 끓이다가 고춧가루, 고추장, 된장, 국간장을 넣어 한소끔 끓입니다." },
+      { "step": 4, "description": "무가 익기 시작하면 손질한 우럭, 청주, 다진 마늘, 다진 생강을 넣고 센 불에서 끓여 거품을 걷어냅니다." },
+      { "step": 5, "description": "우럭이 완전히 익으면 대파를 넣고 5분간 더 끓인 뒤 소금으로 간을 맞추고 미나리를 얹어 마무리합니다." }
+    ],
+    "relatedIngredients": ["우럭"],
+    "relatedHolidays": []
+  },
+  {
+    "id": "recipe-rockfish-gui",
+    "name": "우럭구이",
+    "category": "해산물",
+    "description": "속살이 탱탱하고 부드러운 우럭에 칼집을 넣어 기름에 노릇하게 지져낸 겉바속촉 밥도둑 구이 요리입니다.",
+    "image": "recipes/recipe-rockfish-gui.png",
+    "servings": 2,
+    "servingsUnit": "인분",
+    "cookTime": "25분",
+    "difficulty": "하",
+    "ingredients": [
+      { "name": "우럭", "amount": "1마리" },
+      { "name": "식용유", "amount": "2큰술" }
+    ],
+    "seasoning": [
+      { "name": "소금", "amount": "1작은술" },
+      { "name": "청주", "amount": "1큰술" },
+      { "name": "레몬즙", "amount": "1작은술" }
+    ],
+    "steps": [
+      { "step": 1, "description": "우럭은 내장과 비늘을 깨끗이 정리하고 물기를 키친타월로 완전히 닦아냅니다." },
+      { "step": 2, "description": "우럭의 양쪽 몸통에 어슷하게 깊은 칼집을 여러 개 냅니다." },
+      { "step": 3, "description": "칼집 낸 우럭에 청주와 레몬즙을 뿌리고 소금을 겉과 안쪽에 골고루 뿌려 밑간을 합니다." },
+      { "step": 4, "description": "팬에 식용유를 넉넉히 두르고 강한 불로 달군 뒤 우럭을 얹습니다." },
+      { "step": 5, "description": "불을 중간 불로 줄이고 뒤집어가며 겉면이 바삭하고 속까지 다 익도록 노릇하게 굽습니다." }
+    ],
+    "relatedIngredients": ["우럭"],
+    "relatedHolidays": []
   }
 ]
