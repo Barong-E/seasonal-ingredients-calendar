@@ -27,6 +27,7 @@
     "@capacitor/core": "^7.4.4",
     "@capacitor/local-notifications": "^7.0.4",
     "@capacitor/push-notifications": "^7.0.4",
+    "cropperjs": "^1.6.2",
     "korean-lunar-calendar": "^0.3.6"
   },
   "devDependencies": {

@@ -324,6 +324,26 @@
       <span class="gnb__label">분석</span>
     </a>
 
+  <!-- 갤러리 사진 선택을 위한 숨겨진 인풋 -->
+  <input type="file" id="calorieGalleryInput" accept="image/*" style="display: none;">
+
+  <!-- 이미지 크롭 모달 -->
+  <div id="cropModal" class="crop-modal" style="display: none;">
+    <div class="crop-modal__backdrop"></div>
+    <div class="crop-modal__content">
+      <div class="crop-modal__header">
+        <button class="crop-modal__exit-btn" id="cropModalExit" type="button">✕ 취소</button>
+        <h2 class="crop-modal__title">이미지 자르기</h2>
+        <button class="crop-modal__submit-btn" id="cropModalSubmit" type="button">완료</button>
+      </div>
+      <div class="crop-modal__body">
+        <div class="crop-container">
+          <img id="cropImage" src="" alt="크롭할 이미지">
+        </div>
+      </div>
+    </div>
+  </div>
+
   <script>
     function syncHeaderOffset() {
       const header = document.querySelector('.app-header');

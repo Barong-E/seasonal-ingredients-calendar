@@ -1,3 +1,6 @@
+import Cropper from 'cropperjs';
+import 'cropperjs/dist/cropper.css';
+
 /**
  * 칼로리 분석 페이지 전체 로직
  * - localStorage 기반 일일 칼로리 데이터 CRUD
@@ -366,9 +369,17 @@ function showScannerOverlay() {
       </div>
 
       <div class="scanner-bottom-area">
-        <button class="scanner-shutter-btn" id="calorieShutterBtn" type="button">
-          <span class="shutter-inner"></span>
-        </button>
+        <div class="scanner-action-buttons">
+          <button class="scanner-gallery-btn" id="calorieGalleryBtn" type="button" aria-label="갤러리에서 사진 선택">
+            <svg viewBox="0 0 24 24" width="24" height="24" fill="#ffffff">
+              <path d="M21 19V5c0-1.1-.9-2-2-2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2zM8.5 13.5l2.5 3.01L14.5 12l4.5 6H5l3.5-4.5z"/>
+            </svg>
+          </button>
+          <button class="scanner-shutter-btn" id="calorieShutterBtn" type="button">
+            <span class="shutter-inner"></span>
+          </button>
+          <div style="width: 52px;"></div> <!-- 좌우 균형을 위한 더미 공간 -->
+        </div>
       </div>
     `;
     document.body.appendChild(overlay);
@@ -383,6 +394,7 @@ function showScannerOverlay() {
   // 이벤트 바인딩
   document.getElementById('calorieShutterBtn').onclick = takePhotoAndAnalyze;
   document.getElementById('calorieScannerExit').onclick = stopCalorieCamera;
+  document.getElementById('calorieGalleryBtn').onclick = triggerGallerySelection;
 }
 
 async function stopCalorieCamera() {
@@ -397,6 +409,123 @@ async function stopCalorieCamera() {
   if (fab) fab.style.display = '';
   const gnb = document.querySelector('.gnb');
   if (gnb) gnb.style.display = '';
+}
+
+let cropperInstance = null;
+
+function triggerGallerySelection() {
+  const fileInput = document.getElementById('calorieGalleryInput');
+  if (fileInput) {
+    fileInput.value = ''; // 같은 이미지 재선택시에도 이벤트 발생 보장
+    fileInput.click();
+  }
+}
+
+function handleGalleryFileChange(e) {
+  const file = e.target.files[0];
+  if (!file) return;
+
+  const imageUrl = URL.createObjectURL(file);
+  openCropModal(imageUrl);
+}
+
+function openCropModal(imageUrl) {
+  const modal = document.getElementById('cropModal');
+  const cropImage = document.getElementById('cropImage');
+  if (!modal || !cropImage) return;
+
+  cropImage.src = imageUrl;
+  modal.style.display = 'flex';
+
+  if (cropperInstance) {
+    cropperInstance.destroy();
+  }
+
+  // 1:1 비율로 미려하고 둥근 핀치 줌 크롭 연동
+  cropperInstance = new Cropper(cropImage, {
+    aspectRatio: 1,
+    viewMode: 1,
+    dragMode: 'move',
+    autoCropArea: 0.8,
+    restore: false,
+    guides: true,
+    center: true,
+    highlight: false,
+    cropBoxMovable: true,
+    cropBoxResizable: true,
+    toggleDragModeOnDblclick: false,
+  });
+
+  // 버튼 이벤트 연결
+  document.getElementById('cropModalExit').onclick = closeCropModal;
+  document.getElementById('cropModalSubmit').onclick = submitCroppedImage;
+}
+
+function closeCropModal() {
+  const modal = document.getElementById('cropModal');
+  if (modal) modal.style.display = 'none';
+
+  if (cropperInstance) {
+    cropperInstance.destroy();
+    cropperInstance = null;
+  }
+}
+
+async function submitCroppedImage() {
+  if (!cropperInstance) return;
+
+  const submitBtn = document.getElementById('cropModalSubmit');
+  if (submitBtn) submitBtn.disabled = true;
+
+  try {
+    // 520x520 해상도로 제한하여 이미지 토큰 비용을 아낌
+    const canvas = cropperInstance.getCroppedCanvas({
+      width: 520,
+      height: 520,
+    });
+
+    if (!canvas) {
+      throw new Error('이미지를 자르는 데 실패했습니다.');
+    }
+
+    const croppedDataUrl = canvas.toDataURL('image/jpeg', 0.9);
+
+    // 모달창 닫기 및 카메라 끄기
+    closeCropModal();
+    await stopCalorieCamera();
+
+    // 분석 오버레이에 자른 이미지 표시 및 분석 로딩 노출
+    const analysisPhoto = document.getElementById('analysisPhoto');
+    if (analysisPhoto) {
+      analysisPhoto.src = croppedDataUrl;
+    }
+    showAnalysisOverlay();
+
+    isAnalyzingCancelled = false;
+
+    // AI 분석 실행 (Gemini API 호출)
+    const result = await FoodScanner.analyzeCalorie({ photo: croppedDataUrl });
+
+    if (isAnalyzingCancelled) return;
+
+    if (!result || !result.is_food) {
+      hideAnalysisOverlay();
+      alert('음식이 인식되지 않았어요. 다시 촬영해 보세요! 📸');
+      return;
+    }
+
+    // 분석 성공 → 결과 바텀시트
+    completeAnalysisOverlay(() => {
+      showResultSheet(result);
+    });
+
+  } catch (e) {
+    hideAnalysisOverlay();
+    console.error('분석 실패:', e);
+    alert('분석에 실패했습니다: ' + (e.message || '다시 시도해주세요'));
+  } finally {
+    if (submitBtn) submitBtn.disabled = false;
+  }
 }
 
 function cropImageToScannerFrame(photoDataUrl) {
@@ -1327,6 +1456,10 @@ async function init() {
   // [추가] 날짜 표시 초기화 및 스와이프 이벤트 개시
   updateDateDisplay();
   initSwipeGestures();
+
+  // 갤러리 파일 입력 이벤트 연동
+  const galleryInput = document.getElementById('calorieGalleryInput');
+  if (galleryInput) galleryInput.addEventListener('change', handleGalleryFileChange);
 }
 
 if (document.readyState === 'loading') {

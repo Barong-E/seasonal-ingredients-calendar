@@ -1394,3 +1394,144 @@
   padding: 2px 6px;
   border-radius: 8px;
 }
+
+/* ============================================================
+ * [추가] 갤러리 선택 버튼 & 이미지 크롭 모달 스타일
+ * ============================================================ */
+
+/* 카메라 화면 하단 액션 버튼 배치용 컨테이너 */
+.scanner-action-buttons {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 32px;
+  width: 100%;
+}
+
+/* 갤러리 업로드 버튼 */
+.scanner-gallery-btn {
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.15);
+  border: 1.5px solid rgba(255, 255, 255, 0.35);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  outline: none;
+  transition: background 0.2s, transform 0.1s;
+  padding: 0;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.scanner-gallery-btn:active {
+  transform: scale(0.9);
+  background: rgba(255, 255, 255, 0.35);
+}
+
+.scanner-gallery-btn svg {
+  display: block;
+}
+
+/* 크롭 모달 (풀스크린 어두운 배경) */
+.crop-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 700;
+  display: flex;
+  flex-direction: column;
+  background: #000000;
+}
+
+.crop-modal__backdrop {
+  position: absolute;
+  inset: 0;
+  background: #000000;
+}
+
+.crop-modal__content {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+/* 크롭 모달 헤더 */
+.crop-modal__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: calc(env(safe-area-inset-top) + 16px) 20px 16px;
+  background: #000000;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.crop-modal__title {
+  margin: 0;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #ffffff;
+}
+
+.crop-modal__exit-btn,
+.crop-modal__submit-btn {
+  background: none;
+  border: none;
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  outline: none;
+  transition: opacity 0.2s, transform 0.1s;
+}
+
+.crop-modal__exit-btn {
+  color: #9ca3af;
+  padding: 6px 12px;
+}
+
+.crop-modal__exit-btn:active {
+  opacity: 0.7;
+}
+
+.crop-modal__submit-btn {
+  color: #10b981;
+  background: rgba(16, 185, 129, 0.15);
+  padding: 8px 16px;
+  border-radius: 12px;
+  border: 1px solid rgba(16, 185, 129, 0.3);
+}
+
+.crop-modal__submit-btn:active {
+  transform: scale(0.95);
+  background: rgba(16, 185, 129, 0.25);
+}
+
+/* 크롭 모달 바디 */
+.crop-modal__body {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  padding: 20px;
+  background: #0d0d0d;
+}
+
+/* 크로퍼가 로드될 컨테이너 */
+.crop-container {
+  width: 100%;
+  height: 100%;
+  max-height: 70vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.crop-container img {
+  max-width: 100%;
+  max-height: 100%;
+  display: block;
+}
+
