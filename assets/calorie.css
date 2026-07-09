@@ -1437,11 +1437,14 @@
 /* 크롭 모달 (풀스크린 어두운 배경) */
 .crop-modal {
   position: fixed;
-  inset: 0;
-  z-index: 700;
+  top: 0 !important;
+  left: 0 !important;
+  width: 100vw !important;
+  height: 100vh !important;
+  z-index: 9999 !important; /* 어떤 요소보다도 위에 오도록 변경 */
   display: flex;
   flex-direction: column;
-  background: #000000;
+  background: #000000 !important;
 }
 
 .crop-modal__backdrop {

@@ -469,6 +469,12 @@ function openCropModal(imageUrl) {
       return;
     }
 
+    // [추가] 크롭 모달이 열리면 기존 카메라 오버레이 화면을 가려 렌더링 꼬임을 완전히 차단합니다.
+    const scannerOverlay = document.getElementById('calorieScannerOverlay');
+    if (scannerOverlay) {
+      scannerOverlay.style.display = 'none';
+    }
+
     cropImage.src = imageUrl;
     modal.style.display = 'flex';
 
@@ -513,6 +519,12 @@ function openCropModal(imageUrl) {
 function closeCropModal() {
   const modal = document.getElementById('cropModal');
   if (modal) modal.style.display = 'none';
+
+  // [추가] 크롭 창을 닫으면 다시 스캐너 카메라 화면이 비치도록 원복합니다.
+  const scannerOverlay = document.getElementById('calorieScannerOverlay');
+  if (scannerOverlay) {
+    scannerOverlay.style.display = '';
+  }
 
   if (cropperInstance) {
     cropperInstance.destroy();
