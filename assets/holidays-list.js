@@ -451,10 +451,10 @@ function initHeaderScroll() {
   });
 }
 
-function runInit() {
+async function runInit() {
   localStorage.setItem('lastTab', 'holidays.html');
   handleRedirect();
-  renderHolidaysList();
+  await renderHolidaysList();
   initSearch();
   initHeaderControls();
   initHeaderScroll();

@@ -14702,5 +14702,195 @@
     ],
     "relatedIngredients": ["우럭"],
     "relatedHolidays": []
+  },
+  {
+    "id": "recipe-beef-bean-sprouts",
+    "name": "차돌박이 숙주볶음",
+    "category": "채소",
+    "description": "센 불에 빠르게 볶아내어 차돌박이의 고소한 기름과 숙주나물의 아삭한 식감이 조화를 이루는 인기 볶음 요리입니다.",
+    "image": "recipes/recipe-beef-bean-sprouts.png",
+    "servings": 2,
+    "servingsUnit": "인분",
+    "cookTime": "15분",
+    "difficulty": "하",
+    "ingredients": [
+      { "name": "차돌박이", "amount": "200g" },
+      { "name": "숙주나물", "amount": "200g" },
+      { "name": "대파", "amount": "0.5대" },
+      { "name": "식용유", "amount": "1큰술" }
+    ],
+    "seasoning": [
+      { "name": "굴소스", "amount": "1큰술" },
+      { "name": "진간장", "amount": "1작은술" },
+      { "name": "다진 마늘", "amount": "1작은술" },
+      { "name": "올리고당", "amount": "1작은술" },
+      { "name": "참기름", "amount": "1작은술" },
+      { "name": "후추", "amount": "0.5작은술" }
+    ],
+    "steps": [
+      { "step": 1, "description": "숙주나물은 깨끗이 씻어 물기를 완전히 빼두고, 대파는 어슷 썹니다." },
+      { "step": 2, "description": "달군 팬에 식용유를 두르고 대파와 다진 마늘을 넣어 향을 내며 볶습니다." },
+      { "step": 3, "description": "팬에 차돌박이를 넣고 고기가 핏기가 가실 때까지 중간 불에서 볶아줍니다." },
+      { "step": 4, "description": "차돌박이가 익으면 굴소스, 진간장, 올리고당을 넣어 양념이 고루 베이게 섞습니다." },
+      { "step": 5, "description": "강한 불로 올린 뒤 숙주나물을 넣고 빠르게 1분간 볶아낸 후 참기름과 후추를 뿌려 마무리합니다." }
+    ],
+    "relatedIngredients": ["숙주나물"],
+    "relatedHolidays": []
+  },
+  {
+    "id": "recipe-seasoned-bean-sprouts",
+    "name": "숙주나물무침",
+    "category": "채소",
+    "description": "데친 숙주나물을 참기름과 소금으로 조물조물 무쳐내어 아삭아삭하고 담백하게 먹는 초간단 기본 밑반찬입니다.",
+    "image": "recipes/recipe-seasoned-bean-sprouts.png",
+    "servings": 2,
+    "servingsUnit": "인분",
+    "cookTime": "10분",
+    "difficulty": "하",
+    "ingredients": [
+      { "name": "숙주나물", "amount": "250g" },
+      { "name": "대파", "amount": "10g" },
+      { "name": "물", "amount": "4컵" }
+    ],
+    "seasoning": [
+      { "name": "소금", "amount": "0.5작은술" },
+      { "name": "참기름", "amount": "1작은술" },
+      { "name": "다진 마늘", "amount": "0.5작은술" },
+      { "name": "통깨", "amount": "1작은술" }
+    ],
+    "steps": [
+      { "step": 1, "description": "숙주나물은 흐르는 물에 깨끗이 씻어 체에 받쳐 물기를 뺍니다." },
+      { "step": 2, "description": "냄비에 물을 붓고 끓으면 소금을 약간 넣고 숙주나물을 넣어 데칩니다." },
+      { "step": 3, "description": "데친 숙주나물은 즉시 찬물에 헹궈 열기를 식힌 후 손으로 물기를 꼭 짭니다." },
+      { "step": 4, "description": "볼에 물기를 짠 숙주나물, 다진 대파, 소금, 참기름, 다진 마늘을 넣고 조물조물 무칩니다." },
+      { "step": 5, "description": "통깨를 골고루 뿌려 가볍게 섞어 완성합니다." }
+    ],
+    "relatedIngredients": ["숙주나물"],
+    "relatedHolidays": []
+  },
+  {
+    "id": "recipe-sea-snail-salad",
+    "name": "골뱅이무침",
+    "category": "해산물",
+    "description": "새콤달콤하고 매콤한 초고추장 양념에 쫄깃한 골뱅이와 아삭한 오이, 파채를 함께 버무려 소면과 즐기는 야식의 강자입니다.",
+    "image": "recipes/recipe-sea-snail-salad.png",
+    "servings": 2,
+    "servingsUnit": "인분",
+    "cookTime": "20분",
+    "difficulty": "하",
+    "ingredients": [
+      { "name": "통조림 골뱅이", "amount": "200g" },
+      { "name": "오이", "amount": "0.5개" },
+      { "name": "양파", "amount": "0.5개" },
+      { "name": "파채", "amount": "50g" },
+      { "name": "소면", "amount": "100g" },
+      { "name": "물", "amount": "4컵" }
+    ],
+    "seasoning": [
+      { "name": "고추장", "amount": "2큰술" },
+      { "name": "고춧가루", "amount": "1큰술" },
+      { "name": "식초", "amount": "2큰술" },
+      { "name": "올리고당", "amount": "1큰술" },
+      { "name": "다진 마늘", "amount": "1작은술" },
+      { "name": "참기름", "amount": "1작은술" },
+      { "name": "통깨", "amount": "1작은술" }
+    ],
+    "steps": [
+      { "step": 1, "description": "골뱅이는 체에 밭쳐 국물을 빼고 먹기 좋은 크기로 반 가릅니다." },
+      { "step": 2, "description": "오이와 양파는 반 가른 뒤 어슷 썰고, 파채는 찬물에 담갔다 건져 매운맛을 빼고 물기를 뺍니다." },
+      { "step": 3, "description": "볼에 고추장, 고춧가루, 식초, 올리고당, 다진 마늘을 골고루 섞어 양념장을 만듭니다." },
+      { "step": 4, "description": "끓는 물에 소면을 넣고 삶아 찬물에 전분기가 빠지도록 씻어 물기를 꼭 짜서 사리를 만듭니다." },
+      { "step": 5, "description": "볼에 양념장, 골뱅이, 오이, 양파, 파채를 넣어 양념이 고루 베이게 무친 뒤 참기름을 두르고 통깨를 뿌린 후 소면과 함께 담아냅니다." }
+    ],
+    "relatedIngredients": ["골뱅이"],
+    "relatedHolidays": []
+  },
+  {
+    "id": "recipe-sea-snail-soup",
+    "name": "골뱅이탕",
+    "category": "해산물",
+    "description": "통통한 생골뱅이를 껍질째 끓여내어 바다 향이 물씬 나며 고추의 칼칼함과 시원하고 깊은 국물 맛이 일품인 탕 요리입니다.",
+    "image": "recipes/recipe-sea-snail-soup.png",
+    "servings": 2,
+    "servingsUnit": "인분",
+    "cookTime": "25분",
+    "difficulty": "중",
+    "ingredients": [
+      { "name": "생골뱅이", "amount": "500g" },
+      { "name": "무", "amount": "100g" },
+      { "name": "대파", "amount": "0.5대" },
+      { "name": "청양고추", "amount": "1개" },
+      { "name": "물", "amount": "5컵" }
+    ],
+    "seasoning": [
+      { "name": "청주", "amount": "1큰술" },
+      { "name": "다진 마늘", "amount": "1작은술" },
+      { "name": "소금", "amount": "0.5작은술" },
+      { "name": "후추", "amount": "0.5작은술" }
+    ],
+    "steps": [
+      { "step": 1, "description": "생골뱅이는 흐르는 물에 솔로 껍질을 깨끗이 문질러 씻어 이물질을 제거합니다." },
+      { "step": 2, "description": "무는 얇고 납작하게 썰고, 대파와 청양고추는 어슷 썹니다." },
+      { "step": 3, "description": "냄비에 물과 무를 넣고 불에 올려 무가 익을 때까지 끓입니다." },
+      { "step": 4, "description": "물이 끓어오르면 손질한 생골뱅이와 청주를 넣고 끓여주며 거품을 걷어냅니다." },
+      { "step": 5, "description": "대파, 청양고추, 다진 마늘을 넣고 더 끓인 뒤 소금과 후추로 간을 맞추어 따뜻하게 냅니다." }
+    ],
+    "relatedIngredients": ["골뱅이"],
+    "relatedHolidays": []
+  },
+  {
+    "id": "recipe-jujube-tea",
+    "name": "대추차",
+    "category": "기타",
+    "description": "말린 대추를 오랜 시간 뭉근하게 끓여내어 대추 특유의 은은한 단맛과 한방의 깊은 풍미가 가득 우러난 수제 건강차입니다.",
+    "image": "recipes/recipe-jujube-tea.png",
+    "servings": 500,
+    "servingsUnit": "ml",
+    "cookTime": "60분",
+    "difficulty": "중",
+    "ingredients": [
+      { "name": "말린 대추", "amount": "100g" },
+      { "name": "물", "amount": "6컵" }
+    ],
+    "seasoning": [
+      { "name": "꿀", "amount": "1큰술" }
+    ],
+    "steps": [
+      { "step": 1, "description": "말린 대추는 물에 담가 솔로 깨끗이 씻은 후 건집니다." },
+      { "step": 2, "description": "대추 몸통에 칼집을 서너 군데 내어 성분이 잘 우러나오게 준비합니다." },
+      { "step": 3, "description": "냄비에 대추와 물을 붓고 끓하다가 끓어오르면 약한 불로 줄여 뭉근하게 끓입니다." },
+      { "step": 4, "description": "대추가 부드럽게 푹 불어 국물이 붉게 변하면 체에 밭쳐 주걱으로 대추를 으깨어 씨를 걸러냅니다." },
+      { "step": 5, "description": "으깬 펄프와 육수를 고루 섞어 대접에 담고 기호에 따라 꿀을 얹어 따뜻하게 즐깁니다." }
+    ],
+    "relatedIngredients": ["대추"],
+    "relatedHolidays": []
+  },
+  {
+    "id": "recipe-jujube-ginger-cheong",
+    "name": "대추생강청",
+    "category": "기타",
+    "description": "몸을 따뜻하게 지켜주는 대추와 생강을 절여 환절기 감기 예방과 면역력 증진에 아주 훌륭한 달콤한 수제 청입니다.",
+    "image": "recipes/recipe-jujube-ginger-cheong.png",
+    "servings": 500,
+    "servingsUnit": "ml",
+    "cookTime": "30분",
+    "difficulty": "하",
+    "ingredients": [
+      { "name": "말린 대추", "amount": "100g" },
+      { "name": "생강", "amount": "100g" }
+    ],
+    "seasoning": [
+      { "name": "설탕", "amount": "150g" },
+      { "name": "꿀", "amount": "50g" }
+    ],
+    "steps": [
+      { "step": 1, "description": "대추는 씻어 칼칼하게 씨를 도려내고 얇게 채 썹니다." },
+      { "step": 2, "description": "생강은 껍질을 긁어 벗기고 깨끗이 씻은 후 아주 얇게 편 썰어 곱게 채 썹니다." },
+      { "step": 3, "description": "볼에 채 썬 대추, 채 썬 생강, 설탕, 꿀을 넣고 골고루 섞어 설탕이 녹을 때까지 가볍게 버무려 둡니다." },
+      { "step": 4, "description": "열탕 소독하여 완전히 건조한 유리병에 버무린 대추생강을 꾹꾹 눌러 담습니다." },
+      { "step": 5, "description": "밀봉하여 실온에서 하루 보관 후 냉장고에서 숙성시켜 따뜻한 물에 타서 마십니다." }
+    ],
+    "relatedIngredients": ["대추"],
+    "relatedHolidays": []
   }
 ]

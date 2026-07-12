@@ -243,7 +243,13 @@ export function getRecipeIdFromDishName(dishName) {
     "우무콩국": "umu-kongguk",
     "우무묵초무침": "umumuk-chomuchim",
     "도미조림": "domi-jorim",
-    "도미맑은탕": "domi-malgeuntang"
+    "도미맑은탕": "domi-malgeuntang",
+    "차돌박이 숙주볶음": "recipe-beef-bean-sprouts",
+    "숙주나물무침": "recipe-seasoned-bean-sprouts",
+    "골뱅이무침": "recipe-sea-snail-salad",
+    "골뱅이탕": "recipe-sea-snail-soup",
+    "대추차": "recipe-jujube-tea",
+    "대추생강청": "recipe-jujube-ginger-cheong"
   };
   return mapping[dishName] || null;
 }

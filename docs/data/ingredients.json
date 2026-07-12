@@ -3839,5 +3839,83 @@
     "description_ja": "",
     "selection_ko": "눈동자가 투명하고 아가미가 선명한 붉은색을 띠며, 몸통을 눌렀을 때 단단한 탄력이 느껴지고 윤기가 흐르는 것이 싱싱합니다.",
     "external_url": "https://link.coupang.com/a/fcAWSS4wUe"
+  },
+  {
+    "name_ko": "숙주나물",
+    "category": "채소",
+    "image": "ingredients/mung-bean-sprouts.png",
+    "description_ko": "녹두의 싹을 틔워 키운 채소로, 아삭아삭한 식감과 은은한 고소함이 특징입니다. 비타민 C와 식이섬유가 풍부하며, 체내 독소 배출을 돕고 소화를 원활하게 해줍니다.",
+    "recommended_for": [
+      "가벼운 식단 관리가 필요한 분",
+      "장 건강 개선 및 변비 해소가 필요한 분"
+    ],
+    "preparation_ko": "흐르는 물에 깨끗이 흔들어 씻으며 껍질을 골라내고, 지저분한 꼬리 부분을 다듬어 사용합니다.",
+    "storage_room_temp": "쉽게 물러지므로 실온 보관은 피해야 합니다.",
+    "storage_refrigerator": "밀폐 용기에 담아 숙주나물이 자작하게 잠길 정도로 물을 부어 냉장고에 보관하며, 매일 물을 신선하게 갈아줍니다.",
+    "storage_freezer": "수분이 많아 얼리면 아삭함이 완전히 사라지므로 냉동 보관은 피합니다.",
+    "months": [
+      1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12
+    ],
+    "popular_dish": "차돌박이 숙주볶음, 숙주나물무침",
+    "calories_per_100g": 30,
+    "calories_per_serving": "한 줌(50g) 기준 약 15kcal",
+    "name_en": "",
+    "name_ja": "",
+    "description_en": "",
+    "description_ja": "",
+    "selection_ko": "줄기가 통통하고 하얗며 아삭한 탄력이 느껴지는 것이 신선합니다. 머리가 노란색을 띠고 짓무르지 않은 것을 선택하세요.",
+    "external_url": ""
+  },
+  {
+    "name_ko": "골뱅이",
+    "category": "해산물",
+    "image": "ingredients/sea-snail.png",
+    "description_ko": "동해 바다 깊은 곳에서 잡히는 고둥류로, 쫄깃깃한 식감과 씹을수록 배어 나오는 단맛이 일품입니다. 저지방 고단백 식품으로 타우린이 풍부하여 간 피로 해소와 기력 충전에 탁월합니다.",
+    "recommended_for": [
+      "잦은 회식으로 숙취 해소가 필요한 분",
+      "다이어트를 계획 중인 분"
+    ],
+    "preparation_ko": "껍질째 삶아 살만 뺀 후 내장을 정리하고, 살만 소금물에 가볍게 문질러 씻어 헹굽니다.",
+    "storage_room_temp": "신선도가 급격히 저하되므로 실온 보관은 불가합니다.",
+    "storage_refrigerator": "살을 발라내어 밀폐 용기에 담아 냉장고 신선칸에서 1~2일 보관합니다.",
+    "storage_freezer": "삶은 골뱅이살을 소분 밀봉하여 냉동 보관합니다.",
+    "months": [
+      5, 6, 7, 8
+    ],
+    "popular_dish": "골뱅이무침, 골뱅이탕",
+    "calories_per_100g": 86,
+    "calories_per_serving": "살 10개(100g) 기준 약 86kcal",
+    "name_en": "",
+    "name_ja": "",
+    "description_en": "",
+    "description_ja": "",
+    "selection_ko": "껍질에 광택이 흐르고 껍질 안의 살이 겉으로 보기에 탄탄하게 차 있으며 눌렀을 때 탄력이 있고 비린내가 심하지 않은 것이 싱싱합니다.",
+    "external_url": ""
+  },
+  {
+    "name_ko": "대추",
+    "category": "기타",
+    "image": "ingredients/jujube.png",
+    "description_ko": "천연 신경안정제라 불릴 만큼 몸의 긴장을 풀어주고 마음을 차분하게 해주는 가을철 대표 열매. 당도가 높고 비타민 C가 풍부하여 면역력 강화와 감기 예방에 매우 효과적입니다.",
+    "recommended_for": [
+      "스트레스 완화가 필요하신 분",
+      "면역력 강화가 필요한 분"
+    ],
+    "preparation_ko": "베이킹소다를 푼 물에 잠시 담갔다가 부드러운 솔로 문질러 흐르는 물에 깨끗이 씻습니다.",
+    "storage_room_temp": "건조한 대추는 통풍이 잘되는 서늘한 그늘에서 오랜 기간 상온 보관할 수 있습니다.",
+    "storage_refrigerator": "생대추는 물기를 완전히 말려 키친타월로 감싸 지퍼백에 밀봉해 냉장 보관합니다.",
+    "storage_freezer": "말린 대추를 씨앗을 발라낸 후 용도에 맞게 썰어 소분 밀봉 냉동 보관합니다.",
+    "months": [
+      9, 10
+    ],
+    "popular_dish": "대추차, 대추생강청",
+    "calories_per_100g": 104,
+    "calories_per_serving": "생대추 5개(50g) 기준 약 52kcal",
+    "name_en": "",
+    "name_ja": "",
+    "description_en": "",
+    "description_ja": "",
+    "selection_ko": "껍질에 상처가 없고 팽팽하며 붉은빛이 짙고 광택이 나는 것이 좋습니다. 눌러보았을 때 껍질이 딱딱하고 묵직한 것을 고르세요.",
+    "external_url": ""
   }
 ]
