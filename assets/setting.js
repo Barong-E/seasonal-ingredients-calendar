@@ -564,11 +564,24 @@ async function updateNotificationSchedule() {
 
         if (notiDate > new Date()) {
           const foodNames = holiday.details?.foods?.slice(0, 2).map(f => f.name).join(', ') || '맛있는 음식';
+          const sMonth = solarDate.getMonth() + 1;
+          const sDay = solarDate.getDate();
           
+          let titleText = '';
+          let bodyText = '';
+          
+          if (dDay === 0) {
+            titleText = `오늘(${sMonth}/${sDay})은 ${holiday.name}입니다 🌕`;
+            bodyText = `${holiday.name} 대표 음식인 ${foodNames}을(를) 맛보시는 건 어떨까요?`;
+          } else {
+            titleText = `${dDay}일 후(${sMonth}/${sDay})는 ${holiday.name}이에요 🌕`;
+            bodyText = `${holiday.name}에는 대표적으로 ${foodNames}을(를) 먹어요.`;
+          }
+
           notis.push({
             id: 20000 + (listIdx * 1000) + idx, // 리스트 인덱스별로 ID 대역 분리
-            title: `곧 ${holiday.name}입니다 🌕`,
-            body: `${holiday.name}에는 ${foodNames}을(를) 먹어요.`,
+            title: titleText,
+            body: bodyText,
             schedule: { at: notiDate },
             extra: { 
               type: 'holiday', 

@@ -1,6 +1,183 @@
 // holiday.js
 // 명절 상세 페이지 로직
 import { getRecipeIdFromDishName } from './recipe-mapper.js';
+import KoreanLunarCalendar from 'korean-lunar-calendar';
+
+// 명절/절기 날짜 계산 로직 모음
+function getSolarOverrideDate(holiday, year) {
+  const overrides = holiday.solar_overrides;
+  if (!overrides) return null;
+  const key = String(year);
+  const data = overrides[key];
+  if (!data) return null;
+  if (typeof data === 'string') {
+    const parts = data.split('-');
+    if (parts.length !== 2) return null;
+    const mm = parseInt(parts[0], 10);
+    const dd = parseInt(parts[1], 10);
+    if (!mm || !dd) return null;
+    return new Date(year, mm - 1, dd);
+  }
+  if (typeof data === 'object' && data.month && data.day) {
+    return new Date(year, data.month - 1, data.day);
+  }
+  return null;
+}
+
+function getDongjiDateForYear(year) {
+  if (year === 2025) return new Date(2025, 11, 22);
+  if (year === 2026) return new Date(2026, 11, 22);
+  return new Date(year, 11, 22);
+}
+
+function isGyeongDay(date) {
+  const baseDate = new Date(2025, 6, 20); // 2025년 7월 20일 (경자일 - 경일)
+  const d1 = new Date(date.getFullYear(), date.getMonth(), date.getDate());
+  const d2 = new Date(baseDate.getFullYear(), baseDate.getMonth(), baseDate.getDate());
+  const diffTime = d1.getTime() - d2.getTime();
+  const diffDays = Math.round(diffTime / (1000 * 60 * 60 * 24));
+  return (diffDays % 10 + 10) % 10 === 0;
+}
+
+function getIpchunDateForYear(year) {
+  const dY = year - 2000;
+  const base = 4.861;
+  const leapCount = Math.floor((dY + 3) / 4);
+  const dayVal = Math.floor(base + 0.242194 * dY - leapCount);
+  return new Date(year, 1, dayVal); // 2월은 index 1
+}
+
+function getHajiDateForYear(year) {
+  const dY = year - 2000;
+  const base = 21.533;
+  const leapCount = Math.floor(dY / 4);
+  const dayVal = Math.floor(base + 0.242194 * dY - leapCount);
+  return new Date(year, 5, dayVal); // 6월은 index 5
+}
+
+function getIpchuDateForYear(year) {
+  const dY = year - 2000;
+  const base = 7.65;
+  const leapCount = Math.floor(dY / 4);
+  const dayVal = Math.floor(base + 0.242194 * dY - leapCount);
+  return new Date(year, 7, dayVal); // 8월은 index 7
+}
+
+function getChobokDateForYear(year) {
+  const hajiDate = getHajiDateForYear(year);
+  let currentDate = new Date(hajiDate);
+  let gyeongCount = 0;
+  while (gyeongCount < 3) {
+    currentDate.setDate(currentDate.getDate() + 1);
+    if (isGyeongDay(currentDate)) {
+      gyeongCount++;
+    }
+  }
+  return currentDate;
+}
+
+function getJungbokDateForYear(year) {
+  const hajiDate = getHajiDateForYear(year);
+  let currentDate = new Date(hajiDate);
+  let gyeongCount = 0;
+  while (gyeongCount < 4) {
+    currentDate.setDate(currentDate.getDate() + 1);
+    if (isGyeongDay(currentDate)) {
+      gyeongCount++;
+    }
+  }
+  return currentDate;
+}
+
+function getMalbokDateForYear(year) {
+  const ipchuDate = getIpchuDateForYear(year);
+  let currentDate = new Date(ipchuDate);
+  if (isGyeongDay(currentDate)) {
+    return currentDate;
+  }
+  while (true) {
+    currentDate.setDate(currentDate.getDate() + 1);
+    if (isGyeongDay(currentDate)) {
+      return currentDate;
+    }
+  }
+}
+
+function getHolidaySolarDateForYear(holiday, year) {
+  const { type, month, day } = holiday.date;
+  const overrideDate = getSolarOverrideDate(holiday, year);
+  if (overrideDate) return overrideDate;
+
+  if (holiday.id === 'hansik') {
+    const dongjiDate = getDongjiDateForYear(year - 1);
+    if (!dongjiDate) return null;
+    const hansikDate = new Date(dongjiDate);
+    hansikDate.setDate(hansikDate.getDate() + 105);
+    return hansikDate;
+  }
+
+  // 섣달그믐: 음력 12월 마지막 날
+  if (holiday.id === 'seotdal') {
+    const calendar = new KoreanLunarCalendar();
+    let ok = calendar.setLunarDate(year, 12, 30, false);
+    if (!ok) ok = calendar.setLunarDate(year, 12, 29, false);
+    if (!ok) return null;
+    const solar = calendar.getSolarCalendar();
+    if (!solar || !solar.year || !solar.month || !solar.day) return null;
+    return new Date(solar.year, solar.month - 1, solar.day);
+  }
+
+  // 입춘: 절기 공식으로 자동 계산
+  if (holiday.id === 'ipchun') {
+    return getIpchunDateForYear(year);
+  }
+
+  // 초복: 하지 후 3번째 경일로 자동 계산
+  if (holiday.id === 'chobok') {
+    return getChobokDateForYear(year);
+  }
+
+  // 중복: 하지 후 4번째 경일로 자동 계산
+  if (holiday.id === 'jungbok') {
+    return getJungbokDateForYear(year);
+  }
+
+  // 말복: 입추 후 1번째 경일로 자동 계산
+  if (holiday.id === 'malbok') {
+    return getMalbokDateForYear(year);
+  }
+
+  if (type === 'lunar') {
+    const calendar = new KoreanLunarCalendar();
+    const intercalation = Boolean(holiday.date.intercalation);
+    const ok = calendar.setLunarDate(year, month, day, intercalation);
+    if (!ok) return null;
+    const solar = calendar.getSolarCalendar();
+    if (!solar || !solar.year || !solar.month || !solar.day) return null;
+    return new Date(solar.year, solar.month - 1, solar.day);
+  }
+  if (type === 'solar') {
+    return new Date(year, month - 1, day);
+  }
+  // 'dynamic' — 동지 또는 solar_overrides 전용
+  if (holiday.date.name === '동지') return getDongjiDateForYear(year);
+  return null;
+}
+
+// 당해 년도를 기준으로 날짜 계산
+function getHolidaySolarDate(holiday, today) {
+  const baseYear = today.getFullYear();
+  let date = getHolidaySolarDateForYear(holiday, baseYear);
+  if (!date) return null;
+  return date;
+}
+
+function formatDateString(date) {
+  const year = date.getFullYear();
+  const month = date.getMonth() + 1;
+  const day = date.getDate();
+  return `${year}년 ${month}월 ${day}일`;
+}
 
 
 async function loadHolidayData() {
@@ -48,6 +225,17 @@ async function init() {
   document.getElementById('detailImage').src = `images/${item.image || '_fallback.png'}`;
   document.getElementById('detailImage').alt = item.name;
   document.getElementById('detailTitle').textContent = item.name;
+
+  // 올해 날짜 정보 표시
+  const today = new Date();
+  const solarDate = getHolidaySolarDate(item, today);
+  const dateEl = document.getElementById('detailDate');
+  if (solarDate && dateEl) {
+    dateEl.textContent = formatDateString(solarDate);
+  } else if (dateEl) {
+    dateEl.style.display = 'none';
+  }
+
   document.getElementById('detailDesc').textContent = item.summary || '';
 
   // 관련 이야기
