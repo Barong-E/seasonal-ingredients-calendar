@@ -1538,3 +1538,10 @@
   display: block;
 }
 
+/* 크로퍼 격자 배경을 검은색으로 덮어씌움 */
+.cropper-bg {
+  background-image: none !important;
+  background-color: #000000 !important;
+}
+
+
