@@ -1,5 +1,15 @@
 import Cropper from 'cropperjs';
 import 'cropperjs/dist/cropper.css';
+import { auth, listenToAuthChanges } from './firebase-init.js';
+import { 
+  migrateLocalDataToServer, 
+  saveMealsToServer, 
+  getMealsFromServer, 
+  saveTargetCalorieToServer, 
+  getTargetCalorieFromServer 
+} from './firebase-sync.js';
+import { showRewardAd } from './admob-reward.js';
+import { checkUsageLimitAllowed } from './usage-limiter.js';
 
 /**
  * 칼로리 분석 페이지 전체 로직
@@ -78,7 +88,7 @@ function numberWithCommas(n) {
 }
 
 // ============================================================
-// 1. 데이터 관리 (localStorage)
+// 1. 데이터 관리 (localStorage & Firestore 동기화)
 // ============================================================
 function getTargetCalorie(dateStr) {
   const key = dateStr ? `calorie:target:${dateStr}` : `calorie:target:${getTodayKey()}`;
@@ -87,9 +97,15 @@ function getTargetCalorie(dateStr) {
 }
 
 function setTargetCalorie(val, dateStr) {
-  const key = dateStr ? `calorie:target:${dateStr}` : `calorie:target:${getTodayKey()}`;
+  const dKey = dateStr ? dateStr : getTodayKey();
+  const key = `calorie:target:${dKey}`;
   localStorage.setItem(key, val);
   localStorage.setItem(STORAGE_KEY_TARGET, val); // Fallback 기본값 동기화
+
+  // 로그인 상태인 경우 서버에 백업
+  if (auth.currentUser) {
+    saveTargetCalorieToServer(auth.currentUser.uid, dKey, val);
+  }
 }
 
 function getTodayMeals() {
@@ -99,8 +115,14 @@ function getTodayMeals() {
 }
 
 function saveTodayMeals(meals) {
-  const key = STORAGE_KEY_MEALS_PREFIX + getTodayKey();
+  const dKey = getTodayKey();
+  const key = STORAGE_KEY_MEALS_PREFIX + dKey;
   localStorage.setItem(key, JSON.stringify(meals));
+
+  // 로그인 상태인 경우 서버에 백업
+  if (auth.currentUser) {
+    saveMealsToServer(auth.currentUser.uid, dKey, meals);
+  }
 }
 
 function addMeal(meal) {
@@ -328,17 +350,40 @@ async function startCalorieCamera() {
     return;
   }
 
-  try {
-    // 카메라 시작
-    await FoodScanner.startCamera();
-
-    // 스캐너 오버레이 표시 (기존 index.html의 scanner-overlay 재활용 안 함, 자체 처리)
-    document.documentElement.classList.add('body-transparent');
-    showScannerOverlay();
-  } catch (e) {
-    console.error('카메라 시작 실패:', e);
-    alert('카메라를 시작할 수 없습니다: ' + (e.message || ''));
-  }
+  // 하루 3번 사용 제한 및 4번째 보상 광고 시청 제어 연동
+  checkUsageLimitAllowed(
+    // 1. 촬영이 허가된 경우
+    async () => {
+      try {
+        await FoodScanner.startCamera();
+        document.documentElement.classList.add('body-transparent');
+        showScannerOverlay();
+      } catch (e) {
+        console.error('카메라 시작 실패:', e);
+        alert('카메라를 시작할 수 없습니다: ' + (e.message || ''));
+      }
+    },
+    // 2. 광고 시청이 필요한 경우
+    () => {
+      showRewardAd(
+        // 광고 시청 성공
+        async () => {
+          try {
+            await FoodScanner.startCamera();
+            document.documentElement.classList.add('body-transparent');
+            showScannerOverlay();
+            showToast('🎉 광고 시청 보상 1회 촬영권 획득!');
+          } catch (e) {
+            console.error('카메라 시작 실패:', e);
+          }
+        },
+        // 광고 시청 실패/취소
+        (cancelMsg) => {
+          alert(cancelMsg || '광고 시청이 취소되어 촬영할 수 없습니다.');
+        }
+      );
+    }
+  );
 }
 
 function showScannerOverlay() {
@@ -1466,6 +1511,36 @@ async function init() {
   localStorage.setItem('lastTab', 'calorie.html');
   initNativePlugin();
   await loadRegisteredIngredients();
+  
+  // 로그인 상태 및 백그라운드 데이터 연동 감지
+  listenToAuthChanges(async (user) => {
+    if (user) {
+      try {
+        // 1. 로컬 데이터 서버 백업 (최초 1회 실행)
+        await migrateLocalDataToServer(user.uid);
+        
+        // 2. 서버에서 오늘자 식사 일기 및 목표 칼로리 가져오기
+        const todayStr = getTodayKey();
+        const serverMeals = await getMealsFromServer(user.uid, todayStr);
+        if (serverMeals) {
+          localStorage.setItem(STORAGE_KEY_MEALS_PREFIX + todayStr, JSON.stringify(serverMeals));
+        }
+        
+        const serverTarget = await getTargetCalorieFromServer(user.uid, todayStr);
+        if (serverTarget) {
+          localStorage.setItem(`calorie:target:${todayStr}`, serverTarget);
+          localStorage.setItem(STORAGE_KEY_TARGET, serverTarget);
+        }
+        
+        // 데이터가 바뀌었으므로 화면 갱신
+        updateGauge();
+        renderMealList();
+      } catch (err) {
+        console.error('서버 데이터 동기화 에러:', err);
+      }
+    }
+  });
+
   updateGauge();
   renderMealList();
   initMealTimeTags();

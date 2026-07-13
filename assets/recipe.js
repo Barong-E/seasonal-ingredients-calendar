@@ -1,4 +1,6 @@
 // 레시피 페이지 스크립트
+import { auth } from './firebase-init.js';
+import { saveFavoritesToServer } from './firebase-sync.js';
 
 let currentRecipe = null;
 let baseServings = 2;
@@ -556,6 +558,16 @@ async function init() {
         favBtn.setAttribute('aria-label', '즐겨찾기 해제');
       }
       localStorage.setItem(STORAGE_KEY, JSON.stringify(favorites));
+
+      // 로그인 상태라면 서버에 즐겨찾기 동기화
+      if (auth.currentUser) {
+        const allFavorites = {
+          ingredients: JSON.parse(localStorage.getItem('seasons:favorites:ingredients')) || [],
+          recipes: favorites,
+          holidays: JSON.parse(localStorage.getItem('seasons:favorites:holidays')) || []
+        };
+        saveFavoritesToServer(auth.currentUser.uid, allFavorites);
+      }
     };
   }
 

@@ -21,13 +21,19 @@
   "homepage": "https://github.com/Barong-E/seasonal-ingredients-calendar#readme",
   "description": "",
   "dependencies": {
+    "@capacitor-community/admob": "^8.0.0",
     "@capacitor-community/in-app-review": "^7.1.0",
+    "@capacitor-firebase/authentication": "^7.5.0",
+    "@capacitor-firebase/firestore": "^7.5.0",
     "@capacitor/android": "^7.4.4",
     "@capacitor/app": "^7.1.2",
     "@capacitor/core": "^7.4.4",
     "@capacitor/local-notifications": "^7.0.4",
     "@capacitor/push-notifications": "^7.0.4",
+    "@capawesome/capacitor-google-sign-in": "^0.1.2",
+    "cordova-plugin-purchase": "^13.17.2",
     "cropperjs": "^1.6.2",
+    "firebase": "^12.16.0",
     "korean-lunar-calendar": "^0.3.6"
   },
   "devDependencies": {

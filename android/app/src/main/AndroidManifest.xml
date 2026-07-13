@@ -129,6 +129,11 @@
                 android:resource="@xml/hybrid_dashboard_info" />
         </receiver>
 
+        <!-- Google AdMob App ID (개발 및 테스트용 구글 공식 테스트 ID 선등록) -->
+        <meta-data
+            android:name="com.google.android.gms.ads.APPLICATION_ID"
+            android:value="ca-app-pub-3940256099942544~3347511713"/>
+
     </application>
 
     <!-- Permissions -->

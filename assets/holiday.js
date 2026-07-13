@@ -1,6 +1,8 @@
 // holiday.js
 // 명절 상세 페이지 로직
 import { getRecipeIdFromDishName } from './recipe-mapper.js';
+import { auth } from './firebase-init.js';
+import { saveFavoritesToServer } from './firebase-sync.js';
 import KoreanLunarCalendar from 'korean-lunar-calendar';
 
 // 명절/절기 날짜 계산 로직 모음
@@ -325,6 +327,16 @@ async function init() {
         favBtn.setAttribute('aria-label', '즐겨찾기 해제');
       }
       localStorage.setItem(STORAGE_KEY, JSON.stringify(favorites));
+
+      // 로그인 상태라면 서버에 즐겨찾기 동기화
+      if (auth.currentUser) {
+        const allFavorites = {
+          ingredients: JSON.parse(localStorage.getItem('seasons:favorites:ingredients')) || [],
+          recipes: JSON.parse(localStorage.getItem('seasons:favorites:recipes')) || [],
+          holidays: favorites
+        };
+        saveFavoritesToServer(auth.currentUser.uid, allFavorites);
+      }
     };
   }
 

@@ -1,6 +1,8 @@
 // ingredient.js
 // 식재료 상세 페이지 로직
 import { getRecipeIdFromDishName } from './recipe-mapper.js';
+import { auth } from './firebase-init.js';
+import { saveFavoritesToServer } from './firebase-sync.js';
 
 
 async function loadIngredientData() {
@@ -212,6 +214,16 @@ async function init() {
         favBtn.setAttribute('aria-label', '즐겨찾기 해제');
       }
       localStorage.setItem(STORAGE_KEY, JSON.stringify(favorites));
+
+      // 로그인 상태라면 서버에 즐겨찾기 동기화
+      if (auth.currentUser) {
+        const allFavorites = {
+          ingredients: favorites,
+          recipes: JSON.parse(localStorage.getItem('seasons:favorites:recipes')) || [],
+          holidays: JSON.parse(localStorage.getItem('seasons:favorites:holidays')) || []
+        };
+        saveFavoritesToServer(auth.currentUser.uid, allFavorites);
+      }
     };
   }
 

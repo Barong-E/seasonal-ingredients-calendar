@@ -2,6 +2,8 @@ import { Capacitor, registerPlugin } from '@capacitor/core';
 import { initPush } from './push.js';
 import KoreanLunarCalendar from 'korean-lunar-calendar';
 import { getRecipeIdFromDishName } from './recipe-mapper.js';
+import { showRewardAd } from './admob-reward.js';
+import { checkUsageLimitAllowed } from './usage-limiter.js';
 
 // AI 식재료 스캔용 커스텀 네이티브 플러그인 등록
 const FoodScanner = registerPlugin('FoodScanner');
@@ -970,33 +972,74 @@ async function startCameraScanner() {
     return;
   }
 
-  try {
-    // 1. 웹뷰 배경 투명화 및 레이아웃 숨김
-    document.documentElement.classList.add('body-transparent');
-    const overlay = document.getElementById('cameraScannerOverlay');
-    if (overlay) overlay.style.display = 'flex';
+  // 하루 3번 사용 제한 및 4번째 보상 광고 시청 제어 연동
+  checkUsageLimitAllowed(
+    // 1. 촬영이 허가된 경우
+    async () => {
+      try {
+        // 1. 웹뷰 배경 투명화 및 레이아웃 숨김
+        document.documentElement.classList.add('body-transparent');
+        const overlay = document.getElementById('cameraScannerOverlay');
+        if (overlay) overlay.style.display = 'flex';
 
-    // 2. 결과 카드 및 로딩 상태 초기화
-    const card = document.getElementById('scannerResultCard');
-    if (card) card.style.display = 'none';
+        // 2. 결과 카드 및 로딩 상태 초기화
+        const card = document.getElementById('scannerResultCard');
+        if (card) card.style.display = 'none';
 
-    const shutterBtn = document.getElementById('btnCapturePhoto');
-    const loadingEl = document.getElementById('scannerLoading');
-    if (shutterBtn) {
-      shutterBtn.style.display = 'flex';
-      shutterBtn.disabled = false;
-      // 이벤트 리스너 중복 방지를 위한 단일 바인딩
-      shutterBtn.onclick = takePhotoAndAnalyze;
+        const shutterBtn = document.getElementById('btnCapturePhoto');
+        const loadingEl = document.getElementById('scannerLoading');
+        if (shutterBtn) {
+          shutterBtn.style.display = 'flex';
+          shutterBtn.disabled = false;
+          // 이벤트 리스너 중복 방지를 위한 단일 바인딩
+          shutterBtn.onclick = takePhotoAndAnalyze;
+        }
+        if (loadingEl) loadingEl.style.display = 'none';
+
+        // 3. 네이티브 카메라 켜기
+        await FoodScanner.startCamera();
+      } catch (err) {
+        console.error('카메라 시작 에러:', err);
+        alert('카메라 실행 중 에러가 발생했습니다: ' + err.message);
+        closeCameraScanner();
+      }
+    },
+    // 2. 광고 시청이 필요한 경우
+    () => {
+      showRewardAd(
+        // 광고 시청 성공
+        async () => {
+          try {
+            document.documentElement.classList.add('body-transparent');
+            const overlay = document.getElementById('cameraScannerOverlay');
+            if (overlay) overlay.style.display = 'flex';
+
+            const card = document.getElementById('scannerResultCard');
+            if (card) card.style.display = 'none';
+
+            const shutterBtn = document.getElementById('btnCapturePhoto');
+            const loadingEl = document.getElementById('scannerLoading');
+            if (shutterBtn) {
+              shutterBtn.style.display = 'flex';
+              shutterBtn.disabled = false;
+              shutterBtn.onclick = takePhotoAndAnalyze;
+            }
+            if (loadingEl) loadingEl.style.display = 'none';
+
+            await FoodScanner.startCamera();
+            alert('🎉 광고 시청 보상 1회 촬영 기회를 획득하셨습니다!');
+          } catch (err) {
+            console.error('카메라 시작 에러:', err);
+            closeCameraScanner();
+          }
+        },
+        // 광고 시청 실패/취소
+        (cancelMsg) => {
+          alert(cancelMsg || '광고 시청이 완료되지 않아 촬영할 수 없습니다.');
+        }
+      );
     }
-    if (loadingEl) loadingEl.style.display = 'none';
-
-    // 3. 네이티브 카메라 켜기
-    await FoodScanner.startCamera();
-  } catch (err) {
-    console.error('카메라 시작 에러:', err);
-    alert('카메라 실행 중 에러가 발생했습니다: ' + err.message);
-    closeCameraScanner();
-  }
+  );
 }
 
 async function closeCameraScanner() {

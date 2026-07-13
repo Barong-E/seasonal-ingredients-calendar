@@ -1,5 +1,7 @@
 import { LocalNotifications } from '@capacitor/local-notifications';
 import KoreanLunarCalendar from 'korean-lunar-calendar';
+import { loginWithGoogle, logout, listenToAuthChanges } from './firebase-init.js';
+import { checkVIPStatusLocal, syncVIPStatusFromServer, purchaseSubscription } from './subscription.js';
 
 // 전역 데이터 캐시 (로컬 스토리지에 캐시할 수도 있지만, 설정 팝업에서 간단히 메모리로 사용)
 let cachedIngredients = null;
@@ -375,6 +377,19 @@ export function initSettingsPage() {
   
   const saveBtn = document.getElementById('saveSettingButton');
 
+  // 계정 관리 관련 엘리먼트
+  const btnGoogleLogin = document.getElementById('btnGoogleLogin');
+  const btnGoogleLogout = document.getElementById('btnGoogleLogout');
+  const userInfoContainer = document.getElementById('userInfoContainer');
+  const userEmailText = document.getElementById('userEmailText');
+  const accountDesc = document.getElementById('accountDesc');
+
+  // 프리미엄 멤버십 관련 엘리먼트
+  const btnSubscribe = document.getElementById('btnSubscribe');
+  const premiumVipBadge = document.getElementById('premiumVipBadge');
+  const vipActiveContainer = document.getElementById('vipActiveContainer');
+  const vipExpireText = document.getElementById('vipExpireText');
+
   if (!ingToggle || !saveBtn) return;
 
   // 식재료 날짜 옵션 생성
@@ -402,6 +417,9 @@ export function initSettingsPage() {
     holiToggle.checked = Settings.holiday.enabled;
     holiDetail.style.display = Settings.holiday.enabled ? 'block' : 'none';
     renderNotificationList('holiday');
+    
+    // VIP UI 초기값 반영
+    updateVipUI();
   });
 
   // 이벤트 리스너
@@ -415,6 +433,115 @@ export function initSettingsPage() {
 
   addIngBtn.addEventListener('click', () => addNotification('ingredient'));
   addHoliBtn.addEventListener('click', () => addNotification('holiday'));
+
+  // 구글 로그인 / 로그아웃 이벤트 및 상태 수신
+  if (btnGoogleLogin && btnGoogleLogout && userInfoContainer && userEmailText && accountDesc) {
+    btnGoogleLogin.addEventListener('click', async () => {
+      try {
+        btnGoogleLogin.disabled = true;
+        btnGoogleLogin.style.opacity = '0.6';
+        await loginWithGoogle();
+      } catch (err) {
+        console.error(err);
+        alert('구글 로그인에 실패했습니다.\n(앱 설정이 완료된 실제 기기에서 작동합니다)');
+      } finally {
+        btnGoogleLogin.disabled = false;
+        btnGoogleLogin.style.opacity = '1';
+      }
+    });
+
+    btnGoogleLogout.addEventListener('click', async () => {
+      if (!confirm('로그아웃 하시겠습니까?')) return;
+      try {
+        btnGoogleLogout.disabled = true;
+        await logout();
+      } catch (err) {
+        console.error(err);
+        alert('로그아웃 실패: ' + err.message);
+      } finally {
+        btnGoogleLogout.disabled = false;
+      }
+    });
+
+    listenToAuthChanges(async (user) => {
+      if (user) {
+        btnGoogleLogin.style.display = 'none';
+        userInfoContainer.style.display = 'flex';
+        userEmailText.textContent = user.email || '구글 로그인 완료';
+        accountDesc.textContent = '로그인되었습니다. 데이터를 안전하게 백업 중입니다.';
+        
+        // 로그인 성공 시 서버에서 VIP 정보 동기화 및 UI 갱신
+        try {
+          await syncVIPStatusFromServer(user.uid);
+          updateVipUI();
+        } catch (e) {
+          console.error(e);
+        }
+      } else {
+        btnGoogleLogin.style.display = 'flex';
+        userInfoContainer.style.display = 'none';
+        userEmailText.textContent = '';
+        accountDesc.textContent = '로그인하여 데이터를 안전하게 보관하세요.';
+        
+        // 로그아웃 시 로컬 VIP 정보 클리어 및 UI 갱신
+        localStorage.removeItem('subscription:is_vip');
+        localStorage.removeItem('subscription:expires_at');
+        updateVipUI();
+      }
+    });
+  }
+
+  // VIP 구독 UI 제어 함수
+  function updateVipUI() {
+    const isVip = checkVIPStatusLocal();
+    if (isVip) {
+      if (premiumVipBadge) {
+        premiumVipBadge.textContent = 'VIP';
+        premiumVipBadge.classList.add('vip');
+      }
+      if (btnSubscribe) btnSubscribe.style.display = 'none';
+      if (vipActiveContainer) vipActiveContainer.style.display = 'flex';
+      
+      const expireDate = localStorage.getItem('subscription:expires_at');
+      if (vipExpireText && expireDate) {
+        const d = new Date(expireDate);
+        vipExpireText.textContent = `구독 만료일: ${d.getFullYear()}.${String(d.getMonth() + 1).padStart(2, '0')}.${String(d.getDate()).padStart(2, '0')}`;
+      }
+    } else {
+      if (premiumVipBadge) {
+        premiumVipBadge.textContent = 'BASIC';
+        premiumVipBadge.classList.remove('vip');
+      }
+      if (btnSubscribe) btnSubscribe.style.display = 'block';
+      if (vipActiveContainer) vipActiveContainer.style.display = 'none';
+    }
+  }
+
+  // 구독하기 버튼 클릭 연동
+  if (btnSubscribe) {
+    btnSubscribe.addEventListener('click', async () => {
+      try {
+        btnSubscribe.disabled = true;
+        btnSubscribe.textContent = "결제창 여는 중...";
+        await purchaseSubscription(
+          () => {
+            // 결제 성공
+            alert('🎉 프리미엄 구독이 시작되었습니다! 이제 무제한으로 사용하실 수 있습니다.');
+            updateVipUI();
+          },
+          (errMsg) => {
+            // 결제 에러/취소
+            alert('결제 처리 실패: ' + errMsg);
+          }
+        );
+      } catch (err) {
+        console.error(err);
+      } finally {
+        btnSubscribe.disabled = false;
+        btnSubscribe.textContent = "무제한 구독하기 (월 2,900원)";
+      }
+    });
+  }
 
   // 저장 버튼
   saveBtn.addEventListener('click', async () => {

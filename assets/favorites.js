@@ -1,5 +1,7 @@
 // favorites.js
 // 즐겨찾기 목록 연동 및 데이터 관리 스크립트
+import { auth, listenToAuthChanges } from './firebase-init.js';
+import { saveFavoritesToServer, getFavoritesFromServer } from './firebase-sync.js';
 
 // 글로벌 상태
 const State = {
@@ -48,6 +50,11 @@ function loadFavoritesFromStorage() {
 function saveFavoritesToStorage(type) {
   try {
     localStorage.setItem(STORAGE_KEYS[type], JSON.stringify(State.favorites[type]));
+    
+    // 구글 로그인 상태라면 서버 데이터베이스와 동기화
+    if (auth.currentUser) {
+      saveFavoritesToServer(auth.currentUser.uid, State.favorites);
+    }
   } catch (e) {
     console.error('즐겨찾기 데이터를 저장하는 데 실패했습니다.', e);
   }
@@ -331,6 +338,20 @@ async function init() {
   loadFavoritesFromStorage();
   initTabs();
   initBackupAndRestore();
+
+  // 로그인 상태 변화 리스너 연동
+  listenToAuthChanges(async (user) => {
+    if (user) {
+      const serverFavs = await getFavoritesFromServer(user.uid);
+      if (serverFavs) {
+        State.favorites = serverFavs;
+        localStorage.setItem(STORAGE_KEYS.ingredients, JSON.stringify(State.favorites.ingredients));
+        localStorage.setItem(STORAGE_KEYS.recipes, JSON.stringify(State.favorites.recipes));
+        localStorage.setItem(STORAGE_KEYS.holidays, JSON.stringify(State.favorites.holidays));
+        renderCurrentTab();
+      }
+    }
+  });
 
   // 데이터 로딩 중 표시
   const listEl = document.getElementById('favoritesList');
