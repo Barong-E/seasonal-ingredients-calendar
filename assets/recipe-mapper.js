@@ -249,7 +249,13 @@ export function getRecipeIdFromDishName(dishName) {
     "골뱅이무침": "recipe-sea-snail-salad",
     "골뱅이탕": "recipe-sea-snail-soup",
     "대추차": "recipe-jujube-tea",
-    "대추생강청": "recipe-jujube-ginger-cheong"
+    "대추생강청": "recipe-jujube-ginger-cheong",
+    "시래기된장국": "recipe-siraegi-doenjang-guk",
+    "시래기나물볶음": "recipe-siraegi-namul-bokkeum",
+    "쑥갓무침": "recipe-crown-daisy-muchim",
+    "쑥갓전": "recipe-crown-daisy-jeon",
+    "숭어회무침": "recipe-mullet-hoe-muchim",
+    "숭어미역국": "recipe-mullet-miyeok-guk"
   };
   return mapping[dishName] || null;
 }

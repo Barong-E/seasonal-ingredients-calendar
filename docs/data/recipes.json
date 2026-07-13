@@ -14892,5 +14892,192 @@
     ],
     "relatedIngredients": ["대추"],
     "relatedHolidays": []
+  },
+  {
+    "id": "recipe-siraegi-doenjang-guk",
+    "name": "시래기된장국",
+    "category": "채소",
+    "description": "구수한 된장과 부드러운 시래기가 만나 속을 편안하게 풀어주는 대한민국 대표 데일리 건강 국물 요리입니다.",
+    "image": "recipes/recipe-siraegi-doenjang-guk.png",
+    "servings": 2,
+    "servingsUnit": "인분",
+    "cookTime": "20분",
+    "difficulty": "하",
+    "ingredients": [
+      { "name": "삶은 시래기", "amount": "150g" },
+      { "name": "대파", "amount": "0.5대" },
+      { "name": "청양고추", "amount": "1개" },
+      { "name": "물", "amount": "4컵" }
+    ],
+    "seasoning": [
+      { "name": "된장", "amount": "2큰술" },
+      { "name": "국간장", "amount": "1작은술" },
+      { "name": "다진 마늘", "amount": "1작은술" }
+    ],
+    "steps": [
+      { "step": 1, "description": "삶은 시래기는 물기를 꼭 짠 후 먹기 좋은 크기로 송송 썰어줍니다." },
+      { "step": 2, "description": "썰어둔 시래기에 된장, 다진 마늘을 넣고 조물조물 버무려 밑간을 해둡니다." },
+      { "step": 3, "description": "냄비에 물을 붓고 끓으면 밑간한 시래기를 넣어 중약 불에서 뭉근하게 끓여냅니다." },
+      { "step": 4, "description": "시래기가 한소끔 푹 끓으면 어슷 썬 대파와 청양고추를 넣어줍니다." },
+      { "step": 5, "description": "국간장으로 부족한 간을 맞추고 더 끓여 구수하게 완성합니다." }
+    ],
+    "relatedIngredients": ["시래기"],
+    "relatedHolidays": []
+  },
+  {
+    "id": "recipe-siraegi-namul-bokkeum",
+    "name": "시래기나물볶음",
+    "category": "채소",
+    "description": "삶은 시래기에 국간장 양념을 한 후 들기름과 들깨가루를 듬뿍 넣어 볶아내어 씹을수록 구수하고 촉촉한 겨울 별미 나물반찬입니다.",
+    "image": "recipes/recipe-siraegi-namul-bokkeum.png",
+    "servings": 3,
+    "servingsUnit": "인분",
+    "cookTime": "25분",
+    "difficulty": "하",
+    "ingredients": [
+      { "name": "삶은 시래기", "amount": "200g" },
+      { "name": "대파", "amount": "0.25대" },
+      { "name": "들기름", "amount": "1큰술" },
+      { "name": "물", "amount": "0.25컵" }
+    ],
+    "seasoning": [
+      { "name": "국간장", "amount": "1큰술" },
+      { "name": "다진 마늘", "amount": "1작은술" },
+      { "name": "들깨가루", "amount": "2큰술" }
+    ],
+    "steps": [
+      { "step": 1, "description": "삶아둔 시래기는 껍질을 벗겨 부드럽게 다듬은 뒤 먹기 좋은 길이로 자릅니다." },
+      { "step": 2, "description": "볼에 시래기와 국간장, 다진 마늘을 넣어 조물조물 밑간을 합니다." },
+      { "step": 3, "description": "팬에 들기름을 두르고 밑간한 시래기를 넣어 중간 불에서 충분히 볶아냅니다." },
+      { "step": 4, "description": "시래기가 촉촉해지도록 물을 약간 붓고 뚜껑을 덮어 한 김 올려 시래기를 부드럽게 익힙니다." },
+      { "step": 5, "description": "들깨가루와 송송 썬 대파를 넣고 가볍게 볶아낸 후 고소하게 마무리합니다." }
+    ],
+    "relatedIngredients": ["시래기"],
+    "relatedHolidays": []
+  },
+  {
+    "id": "recipe-crown-daisy-muchim",
+    "name": "쑥갓무침",
+    "category": "채소",
+    "description": "데친 쑥갓과 부드러운 으깬 두부를 버무려 쑥갓 특유의 쌉싸름한 향과 두부의 고소함이 담백하게 어우러진 건강 나물입니다.",
+    "image": "recipes/recipe-crown-daisy-muchim.png",
+    "servings": 2,
+    "servingsUnit": "인분",
+    "cookTime": "10분",
+    "difficulty": "하",
+    "ingredients": [
+      { "name": "쑥갓", "amount": "100g" },
+      { "name": "두부", "amount": "0.5모" },
+      { "name": "물", "amount": "4컵" }
+    ],
+    "seasoning": [
+      { "name": "참기름", "amount": "1작은술" },
+      { "name": "소금", "amount": "0.5작은술" },
+      { "name": "다진 마늘", "amount": "0.5작은술" },
+      { "name": "통깨", "amount": "1작은술" }
+    ],
+    "steps": [
+      { "step": 1, "description": "쑥갓은 연한 잎 위주로 다듬어 깨끗이 씻어둡니다." },
+      { "step": 2, "description": "끓는 물에 소금을 약간 넣고 쑥갓 줄기부터 넣어 빠르게 데친 후 찬물에 헹궈 물기를 짭니다." },
+      { "step": 3, "description": "두부는 살짝 데쳐낸 뒤 면포나 키친타월에 싸서 으깨며 물기를 완전히 제거합니다." },
+      { "step": 4, "description": "볼에 으깬 두부, 데친 쑥갓, 다진 마늘, 소금, 참기름을 넣어 골고루 무쳐냅니다." },
+      { "step": 5, "description": "그릇에 담고 통깨를 솔솔 뿌려 담백하게 냅니다." }
+    ],
+    "relatedIngredients": ["쑥갓"],
+    "relatedHolidays": []
+  },
+  {
+    "id": "recipe-crown-daisy-jeon",
+    "name": "쑥갓전",
+    "category": "채소",
+    "description": "쑥갓 고유의 깊은 향과 쫀득하고 바삭한 전 반죽이 입 안 가득 어우러져 비 오는 날 특히 별미인 향긋한 전 요리입니다.",
+    "image": "recipes/recipe-crown-daisy-jeon.png",
+    "servings": 5,
+    "servingsUnit": "개",
+    "cookTime": "20분",
+    "difficulty": "하",
+    "ingredients": [
+      { "name": "쑥갓", "amount": "100g" },
+      { "name": "부침가루", "amount": "1컵" },
+      { "name": "달걀", "amount": "1개" },
+      { "name": "물", "amount": "0.75컵" },
+      { "name": "식용유", "amount": "3큰술" }
+    ],
+    "seasoning": [
+      { "name": "소금", "amount": "0.5작은술" }
+    ],
+    "steps": [
+      { "step": 1, "description": "쑥갓은 흐르는 물에 깨끗이 씻어 듬성듬성 자릅니다." },
+      { "step": 2, "description": "볼에 부침가루, 달걀, 물, 소금을 넣어 반죽을 곱게 풉니다." },
+      { "step": 3, "description": "만들어진 반죽에 잘라둔 쑥갓을 넣고 골고루 버무려 줍니다." },
+      { "step": 4, "description": "달군 팬에 식용유를 넉넉히 두르고 반죽을 한 입 크기로 동그랗고 얇게 얹어 올립니다." },
+      { "step": 5, "description": "앞뒤로 노릇노릇하고 바삭해질 때까지 구워 완성합니다." }
+    ],
+    "relatedIngredients": ["쑥갓"],
+    "relatedHolidays": []
+  },
+  {
+    "id": "recipe-mullet-hoe-muchim",
+    "name": "숭어회무침",
+    "category": "해산물",
+    "description": "단단하고 쫄깃쫄깃한 제철 숭어 횟감에 신선한 미나리, 오이를 썰어 넣고 새콤매콤한 비법 양념장으로 버무린 봄철 입맛 저격 회무침 요리입니다.",
+    "image": "recipes/recipe-mullet-hoe-muchim.png",
+    "servings": 2,
+    "servingsUnit": "인분",
+    "cookTime": "20분",
+    "difficulty": "하",
+    "ingredients": [
+      { "name": "숭어 횟감", "amount": "200g" },
+      { "name": "미나리", "amount": "40g" },
+      { "name": "오이", "amount": "0.5개" },
+      { "name": "양배추", "amount": "50g" }
+    ],
+    "seasoning": [
+      { "name": "초고추장", "amount": "3큰술" },
+      { "name": "고춧가루", "amount": "1큰술" },
+      { "name": "다진 마늘", "amount": "1작은술" },
+      { "name": "참기름", "amount": "1작은술" },
+      { "name": "통깨", "amount": "1작은술" }
+    ],
+    "steps": [
+      { "step": 1, "description": "숭어 횟감은 키친타월로 기름기와 물기를 닦고 한 입 크기로 도톰하게 썰어둡니다." },
+      { "step": 2, "description": "미나리는 깨끗이 씻어 자르고, 오이는 반으로 갈라 어슷 썰며, 양배추는 얇게 채 썹니다." },
+      { "step": 3, "description": "볼에 초고추장, 고춧가루, 다진 마늘을 섞어 양념장을 만듭니다." },
+      { "step": 4, "description": "볼에 손질한 숭어살, 오이, 양배추, 미나리를 담고 준비된 양념장을 넣어 부드럽게 무쳐줍니다." },
+      { "step": 5, "description": "양념이 골고루 베이면 참기름을 두르고 통깨를 가득 뿌려 고소하게 완성합니다." }
+    ],
+    "relatedIngredients": ["숭어"],
+    "relatedHolidays": []
+  },
+  {
+    "id": "recipe-mullet-miyeok-guk",
+    "name": "숭어미역국",
+    "category": "해산물",
+    "description": "숭어를 푹 끓여 곰탕처럼 뽀얗고 시원한 생선 육수를 낸 뒤, 참기름에 볶은 부드러운 미역을 함께 달여 몸을 보양해 주는 전통 국물 요리입니다.",
+    "image": "recipes/recipe-mullet-miyeok-guk.png",
+    "servings": 3,
+    "servingsUnit": "인분",
+    "cookTime": "30분",
+    "difficulty": "중",
+    "ingredients": [
+      { "name": "숭어", "amount": "300g" },
+      { "name": "불린 미역", "amount": "1.5컵" },
+      { "name": "참기름", "amount": "1큰술" },
+      { "name": "물", "amount": "5컵" }
+    ],
+    "seasoning": [
+      { "name": "국간장", "amount": "1큰술" },
+      { "name": "다진 마늘", "amount": "1작은술" },
+      { "name": "소금", "amount": "0.5작은술" }
+    ],
+    "steps": [
+      { "step": 1, "description": "불린 미역은 물기를 꼭 짜서 먹기 좋은 크기로 잘라 둡니다." },
+      { "step": 2, "description": "토막 낸 숭어는 흐르는 물에 핏물을 말끔히 제거하고 깨끗이 씻어 받쳐 둡니다." },
+      { "step": 3, "description": "냄비에 참기름을 두르고 불린 미역을 넣어 미역 색이 파랗게 선명해질 때까지 볶아줍니다." },
+      { "step": 4, "description": "냄비에 물을 붓고 국간장을 넣어 물이 끓기 시작하면 손질한 숭어와 다진 마늘을 넣고 중불에서 푹 끓입니다." },
+      { "step": 5, "description": "생선에서 뽀얀 육수가 우러나오면 숭어살이 부서지지 않게 주의하며 소금으로 최종 간을 맞춰 담아냅니다." }
+    ],
+    "relatedIngredients": ["숭어"],
+    "relatedHolidays": []
   }
 ]

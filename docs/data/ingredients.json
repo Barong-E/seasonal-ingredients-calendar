@@ -3917,5 +3917,83 @@
     "description_ja": "",
     "selection_ko": "껍질에 상처가 없고 팽팽하며 붉은빛이 짙고 광택이 나는 것이 좋습니다. 눌러보았을 때 껍질이 딱딱하고 묵직한 것을 고르세요.",
     "external_url": "https://link.coupang.com/a/fkZPaTbcom"
+  },
+  {
+    "name_ko": "시래기",
+    "category": "채소",
+    "image": "ingredients/dried-radish-greens.png",
+    "description_ko": "무청을 그늘에서 말려 겨울철 내내 영양을 보충해 주던 조상의 지혜가 담긴 채소. 말리는 과정에서 비타민 D와 식이섬유가 배로 증가하여 변비 해소와 대장암 예방에 도움을 줍니다.",
+    "recommended_for": [
+      "만성 변비로 고생하시는 분",
+      "칼슘 섭취가 필요한 골다공증 위험군"
+    ],
+    "preparation_ko": "미지근한 물에 반나절 이상 불린 뒤 냄비에 푹 삶아내고, 껍질을 한 꺼풀 벗겨내어 부드럽게 한 뒤 물에 헹구어 사용합니다.",
+    "storage_room_temp": "완전히 마른 시래기는 상온의 서늘하고 통풍이 잘되는 곳에 보관합니다.",
+    "storage_refrigerator": "삶은 시래기는 수분이 날아가지 않도록 밀폐하여 냉장 보관하며 하루 내 조리합니다.",
+    "storage_freezer": "삶은 시래기를 자작하게 물을 약간 넣은 지퍼백에 함께 담아 냉동 보관해야 질겨지지 않고 보존됩니다.",
+    "months": [
+      12, 1, 2
+    ],
+    "popular_dish": "시래기된장국, 시래기나물볶음",
+    "calories_per_100g": 32,
+    "calories_per_serving": "한 접시(70g) 기준 약 22kcal",
+    "name_en": "",
+    "name_ja": "",
+    "description_en": "",
+    "description_ja": "",
+    "selection_ko": "푸른빛이 많이 남아있고 노랗게 바래지 않은 것이 좋으며, 만졌을 때 부서지지 않고 유연하며 구수한 향이 나는 것을 고르세요.",
+    "external_url": ""
+  },
+  {
+    "name_ko": "쑥갓",
+    "category": "채소",
+    "image": "ingredients/crown-daisy.png",
+    "description_ko": "독특한 향과 아삭한 식감으로 입맛을 돋우는 대표적인 봄, 가을철 쌈채소. 비타민과 무기질이 풍부하여 면역력 증진에 좋으며, 위장을 따뜻하게 하여 소화를 돕습니다.",
+    "recommended_for": [
+      "식욕 부진으로 입맛을 돋우고 싶으신 분",
+      "소화 불량 및 만성 피로가 있는 분"
+    ],
+    "preparation_ko": "시든 잎과 질긴 줄기 끝부분을 잘라내고 찬물에 흔들어 씻어 흙을 제거한 뒤 물기를 빼서 씁니다.",
+    "storage_room_temp": "수분이 빠지면 쉽게 시들기 때문에 실온 보관은 삼갑니다.",
+    "storage_refrigerator": "물에 가볍게 씻은 쑥갓을 물기를 털어내고 구멍 뚫린 비닐봉지나 키친타월에 싸서 채소칸에 세워 보관합니다.",
+    "storage_freezer": "나물이나 부침용으로 삶아낸 뒤 물기를 가볍게 짜서 밀봉 후 냉동 보관합니다.",
+    "months": [
+      3, 4, 5, 9, 10, 11
+    ],
+    "popular_dish": "쑥갓무침, 쑥갓전",
+    "calories_per_100g": 26,
+    "calories_per_serving": "한 접시(50g) 기준 약 13kcal",
+    "name_en": "",
+    "name_ja": "",
+    "description_en": "",
+    "description_ja": "",
+    "selection_ko": "줄기가 가늘고 잎이 촘촘하며 선명한 녹색을 띠는 것이 신선합니다. 꽃봉오리가 생기지 않고 향이 짙은 것을 고르세요.",
+    "external_url": ""
+  },
+  {
+    "name_ko": "숭어",
+    "category": "해산물",
+    "image": "ingredients/flathead-grey-mullet.png",
+    "description_ko": "겨울부터 봄까지 살이 단단하고 찰져 횟감과 탕으로 한국인에게 큰 인기를 끄는 해산물. 양질의 단백질과 철분이 풍부하여 빈혈 예방과 원기 회복에 매우 훌륭한 보양식품입니다.",
+    "recommended_for": [
+      "피로 누적으로 기력 회복이 필요한 분",
+      "빈혈이나 혈액 순환 개선이 필요하신 분"
+    ],
+    "preparation_ko": "비늘을 깨끗이 긁어내고 지느러미와 내장을 제거한 뒤 뼈 사이에 고인 피를 흐르는 물로 씻어내어 핏물을 완전히 제거합니다.",
+    "storage_room_temp": "신선도가 핵심이므로 절대로 실온 보관하지 않습니다.",
+    "storage_refrigerator": "손질 후 물기를 키친타월로 닦고 밀착 랩핑하여 냉장고 가장 신선한 칸에 두어 반나절 내 조리합니다.",
+    "storage_freezer": "토막 낸 숭어살에 맛술을 가볍게 뿌린 후 개별 진공 포장하여 냉동 보관합니다.",
+    "months": [
+      11, 12, 1, 2, 3, 4, 5
+    ],
+    "popular_dish": "숭어회무침, 숭어미역국",
+    "calories_per_100g": 118,
+    "calories_per_serving": "살 한 토막(120g) 기준 약 140kcal",
+    "name_en": "",
+    "name_ja": "",
+    "description_en": "",
+    "description_ja": "",
+    "selection_ko": "눈동자가 맑고 깨끗하며 비늘이 껍질에 단단히 밀착되어 빛나고, 몸통을 살짝 눌렀을 때 탄탄한 탄력이 있는 것을 선택하세요.",
+    "external_url": ""
   }
 ]
