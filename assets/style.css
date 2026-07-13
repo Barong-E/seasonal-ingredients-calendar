@@ -1927,7 +1927,7 @@ main {
   color: rgba(255, 255, 255, 0.95);
   text-shadow: 0 2px 4px rgba(0, 0, 0, 0.8);
   position: absolute;
-  top: calc(66.666vw - 220px);
+  top: calc(66.666vw + 195px);
   left: 12px;
   right: 12px;
   pointer-events: none;
