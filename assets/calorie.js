@@ -365,7 +365,7 @@ function showScannerOverlay() {
             <div class="corner corner-br"></div>
           </div>
         </div>
-        <p class="scanner-guide-text"><span class="guide-tip-badge">💡 Tip</span> 숟가락, 젓가락, 포크 등을 그릇 옆에 <strong>내려놓고</strong> 함께 찍어주세요.<br>AI가 크기를 비교하여 칼로리를 더 정확하게 분석합니다.</p>
+        <p class="scanner-guide-text"><span class="guide-tip-badge">💡 Tip</span> 더 정확한 분석을 위해 숟가락, 젓가락, 포크 등을 그릇 옆에 <strong>내려놓고</strong> 함께 찍어주세요.</p>
       </div>
 
       <div class="scanner-bottom-area">
