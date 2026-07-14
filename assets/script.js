@@ -724,10 +724,6 @@ function initHeaderControls() {
 
   if (settingButton) {
     settingButton.addEventListener('click', () => {
-      if (!Capacitor.isNativePlatform()) {
-        showWebNotificationInfoModal();
-        return;
-      }
       window.location.href = 'setting.html';
     });
   }

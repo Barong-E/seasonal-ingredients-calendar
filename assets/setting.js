@@ -588,6 +588,13 @@ if (document.readyState === 'loading') {
 // --------------------------------------------------------
 
 async function updateNotificationSchedule() {
+  // 웹 브라우저 환경에서는 로컬 알림 스케줄 예약을 건너뜁니다.
+  const isNative = window.Capacitor && window.Capacitor.isNativePlatform && window.Capacitor.isNativePlatform();
+  if (!isNative) {
+    console.log("웹 브라우저 환경: 로컬 알림 예약을 생략합니다.");
+    return;
+  }
+
   // 0. LocalNotifications 권한 확인 및 요청
   const permStatus = await LocalNotifications.checkPermissions();
   if (permStatus.display !== 'granted') {
