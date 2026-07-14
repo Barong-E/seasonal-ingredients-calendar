@@ -514,6 +514,12 @@ function parseQueryFromUrl() {
     searchInput.value = q;
     searchInput.focus();
   }
+
+  if (q) {
+    import('./search-overlay.js').then(({ saveSearchHistory }) => {
+      saveSearchHistory(q);
+    }).catch(() => {});
+  }
 }
 
 // 탭 바 가로 스크롤 상태를 감시하여 우측 그라데이션 가이드 표시 조절

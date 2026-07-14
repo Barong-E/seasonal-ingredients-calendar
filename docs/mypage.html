@@ -1,0 +1,160 @@
+<!doctype html>
+<html lang="ko">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, user-scalable=no">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <title>띵동 제철음식 - 내 페이지</title>
+  <meta name="description" content="프로필, 즐겨찾기, 알림 설정과 멤버십을 관리하는 내 페이지입니다.">
+  <meta name="robots" content="index, follow">
+
+  <link rel="manifest" href="/manifest.webmanifest">
+  <meta name="theme-color" content="#0A7B34">
+  <link rel="icon" href="/images/icons/app-icon-192.png" type="image/png">
+  <link rel="apple-touch-icon" href="/images/icons/app-icon-192.png">
+
+  <script type="module" crossorigin src="/assets/mypage.js"></script>
+  <link rel="modulepreload" crossorigin href="/assets/app-back-button.js">
+  <link rel="modulepreload" crossorigin href="/assets/firebase-init.js">
+  <link rel="modulepreload" crossorigin href="/assets/gnb-avatar.js">
+  <link rel="modulepreload" crossorigin href="/assets/subscription.js">
+  <link rel="stylesheet" crossorigin href="/assets/app-back-button.css">
+  <link rel="stylesheet" crossorigin href="/assets/gnb-avatar.css">
+  <link rel="stylesheet" crossorigin href="/assets/notification-history2.css">
+</head>
+
+<body class="mypage-page">
+  <header class="app-header">
+    <h1 class="visually-hidden">내 페이지</h1>
+    <div class="header-bar" role="banner">
+      <div class="brand" aria-label="브랜드">
+        <span class="brand__primary">내 페이지</span>
+      </div>
+      <div class="header-controls">
+        <a href="setting.html" class="header-icon-btn" id="mypageSettingsBtn" aria-label="설정" title="설정">
+          <svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor">
+            <path d="M19.14 12.94c.04-.31.06-.63.06-.94s-.02-.63-.06-.94l2.03-1.58a.49.49 0 0 0 .12-.61l-1.92-3.32a.49.49 0 0 0-.59-.22l-2.39.96c-.5-.38-1.03-.7-1.62-.94l-.36-2.54A.48.48 0 0 0 14 2h-4a.48.48 0 0 0-.48.41l-.36 2.54c-.59.24-1.13.57-1.62.94l-2.39-.96a.49.49 0 0 0-.59.22L2.25 8.87a.48.48 0 0 0 .12.61l2.03 1.58c-.04.31-.06.63-.06.94s.02.63.06.94l-2.03 1.58a.49.49 0 0 0-.12.61l1.92 3.32c.12.22.37.29.59.22l2.39-.96c.5.38 1.03.7 1.62.94l.36 2.54c.05.24.24.41.48.41h4c.24 0 .44-.17.48-.41l.36-2.54c.59-.24 1.13-.56 1.62-.94l2.39.96c.22.08.47 0 .59-.22l1.92-3.32a.49.49 0 0 0-.12-.61l-2.03-1.58zM12 15.6A3.6 3.6 0 1 1 12 8.4a3.6 3.6 0 0 1 0 7.2z"/>
+          </svg>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <main class="mypage-main">
+    <section id="mypageProfile" class="mypage-profile mypage-profile--guest" aria-label="프로필">
+      <div class="mypage-profile__main">
+        <img id="mypageAvatarImg" class="mypage-profile__avatar" alt="" hidden width="56" height="56">
+        <div id="mypageAvatarPlaceholder" class="mypage-profile__avatar mypage-profile__avatar--placeholder" aria-hidden="true">
+          <svg viewBox="0 0 24 24" width="28" height="28" fill="currentColor">
+            <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/>
+          </svg>
+        </div>
+        <div class="mypage-profile__info">
+          <h2 id="mypageName" class="mypage-profile__name">로그인이 필요해요</h2>
+          <p id="mypageEmail" class="mypage-profile__email">데이터를 기기에 안전하게 보관하려면 로그인하세요</p>
+          <button type="button" id="mypageEditProfile" class="mypage-profile__edit" hidden>프로필 수정</button>
+        </div>
+      </div>
+      <button type="button" id="mypageBtnLogin" class="mypage-btn-google">
+        <svg viewBox="0 0 24 24" width="18" height="18">
+          <path fill="#EA4335" d="M12.24 10.285V14.4h6.887c-.275 1.565-1.88 4.604-6.887 4.604-4.33 0-7.859-3.583-7.859-8s3.529-8 7.859-8c2.46 0 4.105 1.025 5.047 1.926l3.227-3.107C18.29 1.98 15.44 1 12.24 1 6.01 1 1 6.01 1 12.24s5.01 11.24 11.24 11.24c6.5 0 10.82-4.57 10.82-11.02 0-.74-.08-1.3-.18-1.88H12.24z"/>
+        </svg>
+        <span>구글로 로그인</span>
+      </button>
+    </section>
+
+    <section class="mypage-premium" aria-label="프리미엄 멤버십">
+      <div class="mypage-premium__header">
+        <span id="mypagePremiumBadge" class="mypage-premium__badge">BASIC</span>
+        <span class="mypage-premium__title">👑 프리미엄 멤버십</span>
+      </div>
+      <p id="mypagePremiumDesc" class="mypage-premium__desc">광고 없이 무제한 사용</p>
+      <button type="button" id="mypageBtnSubscribe" class="mypage-premium__btn">무제한 구독하기 ₩2,900</button>
+      <div id="mypageVipInfo" class="mypage-premium__vip-info">
+        <span class="mypage-premium__vip-label">✨ 무제한 VIP 회원 이용 중</span>
+        <span id="mypageVipExpire" class="mypage-premium__vip-expire"></span>
+      </div>
+    </section>
+
+    <nav class="mypage-menu" aria-label="내 페이지 메뉴">
+      <a href="favorites.html" class="mypage-menu__item">
+        <span class="mypage-menu__icon" aria-hidden="true">❤️</span>
+        <span>내 즐겨찾기</span>
+        <span class="mypage-menu__chevron" aria-hidden="true">›</span>
+      </a>
+      <a href="privacy.html" class="mypage-menu__item">
+        <span class="mypage-menu__icon" aria-hidden="true">📜</span>
+        <span>개인정보처리방침</span>
+        <span class="mypage-menu__chevron" aria-hidden="true">›</span>
+      </a>
+      <button type="button" id="mypageBtnLogout" class="mypage-menu__item mypage-menu__item--danger" hidden>
+        <span class="mypage-menu__icon" aria-hidden="true">🚪</span>
+        <span>로그아웃</span>
+      </button>
+    </nav>
+  </main>
+
+  <div id="mypageNickModal" class="mypage-nick-modal" role="dialog" aria-modal="true" aria-labelledby="mypageNickTitle">
+    <div class="mypage-nick-modal__backdrop"></div>
+    <div class="mypage-nick-modal__box">
+      <h2 id="mypageNickTitle" class="mypage-nick-modal__title">닉네임 수정</h2>
+      <input id="mypageNickInput" class="mypage-nick-modal__input" type="text" maxlength="20" placeholder="닉네임 입력">
+      <div class="mypage-nick-modal__actions">
+        <button type="button" id="mypageNickCancel" class="mypage-nick-modal__cancel">취소</button>
+        <button type="button" id="mypageNickSave" class="mypage-nick-modal__save">저장</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- 하단 탭바 (GNB) -->
+  <nav class="gnb" aria-label="하단 네비게이션">
+    <a href="index.html" class="gnb__item">
+      <svg class="gnb__icon" viewBox="0 0 24 24" width="20" height="20" fill="currentColor">
+        <path d="M12 6c-2.5 0-4.5 1.8-4.9 4.2-.1.4-.1.8-.1 1.3 0 3.5 2.5 6.5 5 6.5s5-3 5-6.5c0-.5 0-.9-.1-1.3C16.5 7.8 14.5 6 12 6zm2.5-4c-1.4 0-2.5 1.1-2.5 2.5V5h1.5V4.5c0-.6.4-1 1-1h.5V2h-.5z" />
+      </svg>
+      <span class="gnb__label">재료</span>
+    </a>
+    <a href="holidays.html" class="gnb__item">
+      <svg class="gnb__icon" viewBox="0 0 24 24" width="20" height="20" fill="currentColor">
+        <path d="M17 4a4 4 0 1 1 0 8 4 4 0 0 1 0-8zm-5 7a7.5 7.5 0 0 0-7.5 7.5C4.5 20.43 6.07 22 8 22h12c1.93 0 3.5-1.57 3.5-3.5 0-3.3-2.34-6.07-5.5-6.47V15c0 .55-.45 1-1 1s-1-.45-1-1v-2.88c-.64-.08-1.3-.12-2-.12z M7 15c-.55 0-1 .45-1 1v4h2v-4c0-.55-.45-1-1-1z" />
+      </svg>
+      <span class="gnb__label">세시</span>
+    </a>
+    <a href="calorie.html" class="gnb__item">
+      <svg class="gnb__icon" viewBox="0 0 24 24" width="20" height="20" fill="currentColor">
+        <path d="M13.5 0.67s.74 2.65.74 4.8c0 2.06-1.35 3.73-3.41 3.73-2.07 0-3.63-1.67-3.63-3.73l.03-.36C5.21 7.51 4 10.62 4 14c0 4.42 3.58 8 8 8s8-3.58 8-8C20 8.61 17.41 3.8 13.5.67zM11.71 19c-1.78 0-3.22-1.4-3.22-3.14 0-1.62 1.05-2.76 2.81-3.12 1.77-.36 3.6-1.21 4.62-2.58.39 1.29.59 2.65.59 4.04 0 2.65-2.15 4.8-4.8 4.8z"/>
+      </svg>
+      <span class="gnb__label">분석</span>
+    </a>
+    <a href="mypage.html" class="gnb__item gnb__item--my active" aria-current="page">
+      <span class="gnb__avatar-wrap">
+        <svg class="gnb__icon gnb__icon--person" viewBox="0 0 24 24" width="20" height="20" fill="currentColor">
+          <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/>
+        </svg>
+        <img class="gnb__avatar" alt="" width="22" height="22" hidden>
+      </span>
+      <span class="gnb__label">MY</span>
+    </a>
+  </nav>
+
+  <script>
+    function syncHeaderOffset() {
+      const header = document.querySelector('.app-header');
+      if (header) {
+        document.documentElement.style.setProperty('--header-offset', header.offsetHeight + 'px');
+      }
+    }
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', syncHeaderOffset);
+    } else {
+      syncHeaderOffset();
+    }
+    window.addEventListener('load', syncHeaderOffset);
+    window.addEventListener('resize', syncHeaderOffset);
+  </script>
+</body>
+
+</html>

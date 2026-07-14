@@ -38,8 +38,17 @@
   </style>
   <script type="module" crossorigin src="/assets/holidays.js"></script>
   <link rel="modulepreload" crossorigin href="/assets/app-back-button.js">
+  <link rel="modulepreload" crossorigin href="/assets/notification-history.js">
+  <link rel="modulepreload" crossorigin href="/assets/inline-noti-card.js">
+  <link rel="modulepreload" crossorigin href="/assets/firebase-init.js">
+  <link rel="modulepreload" crossorigin href="/assets/gnb-avatar.js">
   <link rel="modulepreload" crossorigin href="/assets/korean-lunar-calendar.js">
+  <link rel="modulepreload" crossorigin href="/assets/search-overlay.js">
   <link rel="stylesheet" crossorigin href="/assets/app-back-button.css">
+  <link rel="stylesheet" crossorigin href="/assets/notification-history.css">
+  <link rel="stylesheet" crossorigin href="/assets/inline-noti-card.css">
+  <link rel="stylesheet" crossorigin href="/assets/gnb-avatar.css">
+  <link rel="stylesheet" crossorigin href="/assets/notification-history2.css">
 </head>
 
 <body class="page-holidays">
@@ -49,22 +58,23 @@
       <div class="brand" aria-label="브랜드">
         <span class="brand__primary">띵동 제철음식</span>
       </div>
-      <div class="header-controls">
-        <form id="filtersForm" class="header-search" onsubmit="return false;" role="search">
-          <input id="searchInput" class="search-input" type="search" placeholder="이름·설명 검색" autocomplete="off"
-            inputmode="search" aria-describedby="searchHelp">
-          <p id="searchHelp" class="visually-hidden">이름과 설명에서 검색합니다. 대소문자를 구분하지 않습니다.</p>
-        </form>
-        <button id="settingButton" class="setting-button" type="button" aria-label="알림 설정" title="알림 설정">
-          <svg class="setting-icon" viewBox="0 0 24 24" width="20" height="20" fill="currentColor">
-            <path
-              d="M12 22c1.1 0 2-.9 2-2h-4c0 1.1.89 2 2 2zm6-6v-5c0-3.07-1.64-5.64-4.5-6.32V4c0-.83-.67-1.5-1.5-1.5s-1.5.67-1.5 1.5v.68C7.63 5.36 6 7.92 6 11v5l-2 2v1h16v-1l-2-2z" />
+      <div class="header-controls" style="position: relative;">
+        <button id="searchIconBtn" class="header-icon-btn" type="button" aria-label="검색" title="검색">
+          <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor">
+            <path d="M15.5 14h-.79l-.28-.27A6.471 6.471 0 0 0 16 9.5 6.5 6.5 0 1 0 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/>
           </svg>
+        </button>
+        <button id="notiHistoryBtn" class="header-icon-btn" type="button" aria-label="알림" title="알림">
+          <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor">
+            <path d="M12 22c1.1 0 2-.9 2-2h-4c0 1.1.89 2 2 2zm6-6v-5c0-3.07-1.64-5.64-4.5-6.32V4c0-.83-.67-1.5-1.5-1.5s-1.5.67-1.5 1.5v.68C7.63 5.36 6 7.92 6 11v5l-2 2v1h16v-1l-2-2z"/>
+          </svg>
+          <span class="noti-dot" aria-hidden="true"></span>
         </button>
       </div>
     </div>
   </header>
 
+  <div class="inline-noti-mount" data-inline-noti="holiday"></div>
   <main class="holidays-container" id="holidayListContainer">
     <!-- JS로 리스트 렌더링 -->
   </main>
@@ -83,22 +93,28 @@
       </svg>
       <span class="gnb__label">세시</span>
     </a>
-    <a href="favorites.html" class="gnb__item">
-      <svg class="gnb__icon" viewBox="0 0 24 24" width="20" height="20" fill="currentColor">
-        <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
-      </svg>
-      <span class="gnb__label">찜</span>
-    </a>
     <a href="calorie.html" class="gnb__item">
       <svg class="gnb__icon" viewBox="0 0 24 24" width="20" height="20" fill="currentColor">
         <path d="M13.5 0.67s.74 2.65.74 4.8c0 2.06-1.35 3.73-3.41 3.73-2.07 0-3.63-1.67-3.63-3.73l.03-.36C5.21 7.51 4 10.62 4 14c0 4.42 3.58 8 8 8s8-3.58 8-8C20 8.61 17.41 3.8 13.5.67zM11.71 19c-1.78 0-3.22-1.4-3.22-3.14 0-1.62 1.05-2.76 2.81-3.12 1.77-.36 3.6-1.21 4.62-2.58.39 1.29.59 2.65.59 4.04 0 2.65-2.15 4.8-4.8 4.8z"/>
       </svg>
       <span class="gnb__label">분석</span>
     </a>
+    <a href="mypage.html" class="gnb__item gnb__item--my">
+      <span class="gnb__avatar-wrap">
+        <svg class="gnb__icon gnb__icon--person" viewBox="0 0 24 24" width="20" height="20" fill="currentColor">
+          <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/>
+        </svg>
+        <img class="gnb__avatar" alt="" width="22" height="22" hidden>
+      </span>
+      <span class="gnb__label">MY</span>
+    </a>
+  </nav>
+
+
 
   <script>
     window.addEventListener('load', () => {
-      const header = document.querySelector('.holidays-header');
+      const header = document.querySelector('.app-header');
       if (header) {
         document.documentElement.style.setProperty('--header-offset', `${header.offsetHeight}px`);
       }

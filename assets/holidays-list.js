@@ -370,22 +370,11 @@ function handleRedirect() {
 }
 
 function initHeaderControls() {
-  const settingButton = document.getElementById('settingButton');
   const brandEl = document.querySelector('.brand');
 
   if (brandEl) {
     brandEl.addEventListener('click', () => {
       window.location.href = 'index.html';
-    });
-  }
-
-  if (settingButton) {
-    settingButton.addEventListener('click', () => {
-      if (!Capacitor.isNativePlatform()) {
-        showWebNotificationInfoModal();
-        return;
-      }
-      window.location.href = 'setting.html';
     });
   }
 }
@@ -428,13 +417,16 @@ function initHeaderScroll() {
 
   const updateScrollState = () => {
     const currentScrollY = window.scrollY;
+    const mount = document.querySelector('.inline-noti-mount');
     
     if (currentScrollY !== lastScrollY) {
       if (currentScrollY < lastScrollY || currentScrollY <= 50) {
         header.classList.remove('header--hidden');
+        if (mount) mount.classList.remove('header--hidden');
       } else {
         if (currentScrollY > 50) {
           header.classList.add('header--hidden');
+          if (mount) mount.classList.add('header--hidden');
         }
       }
     }

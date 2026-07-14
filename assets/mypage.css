@@ -1,0 +1,357 @@
+/* ── 내 페이지 (MY) ── */
+.mypage-main {
+  padding: calc(var(--header-offset, 80px) + 20px) 16px 120px;
+  max-width: 500px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.mypage-profile {
+  background: #fff;
+  border-radius: 16px;
+  padding: 16px;
+  box-shadow: 0 2px 16px rgba(0, 0, 0, 0.06);
+}
+
+.mypage-profile__main {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  text-align: left;
+}
+
+.mypage-profile__avatar {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  object-fit: cover;
+  background: #e5e7eb;
+  margin: 0;
+  display: block;
+  flex-shrink: 0;
+}
+
+.mypage-profile__avatar[hidden] {
+  display: none !important;
+}
+
+.mypage-profile__avatar--placeholder {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #9ca3af;
+}
+
+.mypage-profile__info {
+  flex: 1;
+  min-width: 0;
+}
+
+.mypage-profile__name {
+  margin: 0 0 4px;
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: #111827;
+}
+
+.mypage-profile__email {
+  margin: 0;
+  font-size: 0.82rem;
+  color: #6b7280;
+  word-break: break-all;
+  line-height: 1.35;
+}
+
+.mypage-profile__edit {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  margin-top: 8px;
+  border: 1px solid #e5e7eb;
+  background: #fff;
+  color: #374151;
+  border-radius: 999px;
+  padding: 5px 12px;
+  font-size: 0.78rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.mypage-profile__edit[hidden] {
+  display: none !important;
+}
+
+.mypage-profile__edit:active {
+  background: #f9fafb;
+}
+
+.mypage-btn-google {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  width: 100%;
+  margin-top: 14px;
+  background: #fff;
+  color: #374151;
+  border: 1px solid #d1d5db;
+  border-radius: 12px;
+  padding: 11px 16px;
+  font-size: 0.92rem;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+.mypage-btn-google[hidden] {
+  display: none !important;
+}
+
+.mypage-btn-google:active {
+  transform: scale(0.98);
+  background: #f9fafb;
+}
+
+/* 로그인 상태: 아바타·이름 위주, 버튼 없음 */
+.mypage-profile--user .mypage-profile__main {
+  align-items: flex-start;
+}
+
+.mypage-profile--user .mypage-profile__avatar,
+.mypage-profile--user .mypage-profile__avatar--placeholder {
+  width: 64px;
+  height: 64px;
+}
+
+.mypage-premium {
+  background: linear-gradient(135deg, #1f2937 0%, #111827 100%);
+  border-radius: 20px;
+  padding: 20px;
+  color: #fff;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+}
+
+.mypage-premium__header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 8px;
+}
+
+.mypage-premium__badge {
+  background: #4b5563;
+  color: #fff;
+  font-size: 0.7rem;
+  font-weight: 800;
+  padding: 2px 8px;
+  border-radius: 99px;
+  letter-spacing: 0.5px;
+}
+
+.mypage-premium__badge.is-vip {
+  background: #10b981;
+}
+
+.mypage-premium__title {
+  font-size: 1.1rem;
+  font-weight: 800;
+}
+
+.mypage-premium__desc {
+  margin: 0 0 16px;
+  font-size: 0.85rem;
+  color: #d1d5db;
+  line-height: 1.4;
+}
+
+.mypage-premium__btn {
+  background: #10b981;
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  padding: 10px 20px;
+  font-size: 0.9rem;
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow: 0 2px 8px rgba(16, 185, 129, 0.3);
+}
+
+.mypage-premium__btn:active {
+  transform: scale(0.97);
+  background: #059669;
+}
+
+.mypage-premium__vip-info {
+  display: none;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.mypage-premium__vip-info.is-visible {
+  display: flex;
+}
+
+.mypage-premium__vip-label {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: #10b981;
+}
+
+.mypage-premium__vip-expire {
+  font-size: 0.8rem;
+  color: #9ca3af;
+}
+
+.mypage-menu {
+  background: #fff;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 2px 16px rgba(0, 0, 0, 0.06);
+}
+
+.mypage-menu__item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  width: 100%;
+  padding: 16px 18px;
+  border: none;
+  border-bottom: 1px solid #f3f4f6;
+  background: #fff;
+  color: #111827;
+  font-size: 0.95rem;
+  font-weight: 600;
+  text-decoration: none;
+  cursor: pointer;
+  text-align: left;
+}
+
+.mypage-menu__item[hidden] {
+  display: none !important;
+}
+
+.mypage-menu__item:last-child {
+  border-bottom: none;
+}
+
+.mypage-menu__item:active {
+  background: #f9fafb;
+}
+
+.mypage-menu__item--danger {
+  color: #ef4444;
+}
+
+.mypage-menu__icon {
+  font-size: 1.15rem;
+  width: 28px;
+  text-align: center;
+}
+
+.mypage-menu__chevron {
+  margin-left: auto;
+  color: #d1d5db;
+  font-size: 1.1rem;
+}
+
+.mypage-nick-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 3000;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.mypage-nick-modal.is-open {
+  display: flex;
+}
+
+.mypage-nick-modal__backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.4);
+}
+
+.mypage-nick-modal__box {
+  position: relative;
+  background: #fff;
+  border-radius: 16px;
+  padding: 24px 20px;
+  width: min(360px, 100%);
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.2);
+}
+
+.mypage-nick-modal__title {
+  margin: 0 0 12px;
+  font-size: 1.1rem;
+  font-weight: 800;
+}
+
+.mypage-nick-modal__input {
+  width: 100%;
+  border: 1px solid #e5e7eb;
+  border-radius: 10px;
+  padding: 12px;
+  font-size: 1rem;
+  margin-bottom: 16px;
+}
+
+.mypage-nick-modal__actions {
+  display: flex;
+  gap: 8px;
+  justify-content: flex-end;
+}
+
+.mypage-nick-modal__actions button {
+  border: none;
+  border-radius: 10px;
+  padding: 10px 16px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.mypage-nick-modal__cancel {
+  background: #f3f4f6;
+  color: #374151;
+}
+
+.mypage-nick-modal__save {
+  background: var(--primary-gradient, linear-gradient(135deg, #065f46, #059669));
+  color: #fff;
+}
+
+/* GNB MY 아바타 */
+.gnb__avatar-wrap {
+  position: relative;
+  width: 22px;
+  height: 22px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.gnb__avatar {
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 1.5px solid currentColor;
+}
+
+.gnb__item--avatar .gnb__avatar-wrap {
+  width: 24px;
+  height: 24px;
+}
+
+.gnb__item--avatar .gnb__avatar {
+  width: 24px;
+  height: 24px;
+}
+
+.gnb__item.active .gnb__avatar {
+  border-color: var(--primary, #065f46);
+}

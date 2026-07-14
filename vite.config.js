@@ -15,7 +15,8 @@ export default defineConfig({
         setting: resolve(__dirname, 'setting.html'),
         favorites: resolve(__dirname, 'favorites.html'),
         search: resolve(__dirname, 'search.html'),
-        calorie: resolve(__dirname, 'calorie.html')
+        calorie: resolve(__dirname, 'calorie.html'),
+        mypage: resolve(__dirname, 'mypage.html')
       },
       output: {
         entryFileNames: `assets/[name].js`,

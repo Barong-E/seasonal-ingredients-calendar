@@ -3,8 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, user-scalable=no">
-    <title>띵동 제철음식 - 알림 설정</title>
-    
+    <title>띵동 제철음식 - 설정</title>
 
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=%VITE_GA_ID%"></script>
@@ -31,21 +30,47 @@
       .back-button {
         display: flex; align-items: center; justify-content: center;
         width: 40px; height: 40px; background: transparent; color: #333;
-        border: none; border-radius: 50%; cursor: pointer; margin-left: -8px; 
+        border: none; border-radius: 50%; cursor: pointer; margin-left: -8px;
       }
       .back-button:hover { background: rgba(0, 0, 0, 0.05); }
-      
+
       .setting-container {
         padding: calc(var(--header-offset, 80px) + 20px) 20px 120px;
         max-width: 500px; margin: 0 auto;
       }
       .setting-card {
-        background: #fff; border-radius: var(--border-radius-lg, 24px);
-        box-shadow: var(--shadow-md, 0 8px 24px rgba(0,0,0,0.12));
-        padding: 24px;
+        background: #fff; border-radius: 16px;
+        box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+        padding: 16px 18px;
+        margin-bottom: 16px;
       }
       .setting-card-title {
-        margin: 0 0 24px; font-size: 1.5rem; font-weight: 800; color: var(--primary);
+        margin: 0 0 8px; font-size: 1rem; font-weight: 700; color: #111827;
+      }
+      .setting-card-desc {
+        margin: 0 0 16px; font-size: 0.85rem; color: #6b7280; line-height: 1.4;
+      }
+      .setting-row--simple {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 12px;
+        min-height: 48px;
+        padding: 4px 0;
+      }
+      .setting-row--simple .setting-name {
+        font-size: 0.95rem;
+        font-weight: 500;
+        color: #374151;
+      }
+      .setting-noti-body .setting-divider {
+        height: 1px;
+        background: #f3f4f6;
+        margin: 2px 0;
+      }
+      .setting-noti-body .setting-detail {
+        padding: 8px 0 12px;
+        border-top: none;
       }
       .saving-overlay {
         position: fixed; top: 0; left: 0; right: 0; bottom: 0;
@@ -83,185 +108,114 @@
         box-shadow: 0 4px 12px rgba(0,0,0,0.15);
         transition: transform 0.2s;
       }
-      .btn-save:active {
-        transform: scale(0.98);
+      .btn-save:active { transform: scale(0.98); }
+      .data-action-btn {
+        width: 100%;
+        text-align: left;
+        border: 1px solid #e5e7eb;
+        background: #fff;
+        border-radius: 12px;
+        padding: 14px 16px;
+        font-size: 0.95rem;
+        font-weight: 600;
+        color: #111827;
+        cursor: pointer;
+        margin-bottom: 10px;
       }
-      .btn-google-login {
-        display: flex; align-items: center; justify-content: center; gap: 8px;
-        background: #fff; color: #374151; border: 1px solid #d1d5db;
-        border-radius: var(--border-radius-md, 12px); padding: 10px 16px;
-        font-size: 0.95rem; font-weight: 600; cursor: pointer;
-        box-shadow: 0 1px 3px rgba(0,0,0,0.05); transition: all 0.2s;
+      .data-action-btn:active { background: #f9fafb; }
+      .data-action-btn--danger { color: #ef4444; border-color: #fecaca; }
+      .app-info-row {
+        display: flex; justify-content: space-between; align-items: center;
+        padding: 12px 0; border-bottom: 1px solid #f3f4f6;
+        font-size: 0.95rem;
       }
-      .btn-google-login:active { background: #f9fafb; transform: scale(0.98); }
-      .google-icon { width: 18px; height: 18px; }
-      .btn-logout {
-        background: transparent; color: #ef4444; border: 1px solid #fee2e2;
-        border-radius: var(--border-radius-md, 8px); padding: 6px 12px;
-        font-size: 0.85rem; font-weight: 600; cursor: pointer; transition: all 0.2s;
-      }
-      .btn-logout:active { background: #fef2f2; }
-      .account-actions { display: flex; align-items: center; justify-content: flex-end; }
-      
-      .premium-card-ui {
-        background: linear-gradient(135deg, #1f2937 0%, #111827 100%);
-        border-radius: var(--border-radius-md, 16px); padding: 20px;
-        color: #fff; box-shadow: 0 4px 15px rgba(0,0,0,0.15); margin-top: 10px;
-      }
-      .premium-card-ui__header { display: flex; align-items: center; gap: 10px; margin-bottom: 10px; }
-      .premium-card-ui__title { font-size: 1.15rem; font-weight: 800; }
-      .premium-badge {
-        background: #4b5563; color: #fff; font-size: 0.7rem; font-weight: 800;
-        padding: 2px 8px; border-radius: 99px; letter-spacing: 0.5px;
-      }
-      .premium-badge.vip { background: #10b981; color: #fff; }
-      .premium-card-ui__desc { font-size: 0.85rem; color: #d1d5db; margin: 0 0 20px 0; line-height: 1.4; }
-      .premium-action-area { display: flex; align-items: center; justify-content: flex-start; }
-      .btn-subscribe {
-        background: #10b981; color: #fff; border: none;
-        border-radius: var(--border-radius-md, 10px); padding: 10px 20px;
-        font-size: 0.9rem; font-weight: 700; cursor: pointer; transition: all 0.2s;
-        box-shadow: 0 2px 8px rgba(16,185,129,0.3);
-      }
-      .btn-subscribe:active { transform: scale(0.97); background: #059669; }
+      .app-info-row:last-child { border-bottom: none; }
+      .app-info-row a { color: var(--primary); font-weight: 600; text-decoration: none; }
     </style>
   </head>
   <body>
     <header class="app-header">
       <div class="header-bar page-header">
-        <button class="back-button" onclick="history.back()" aria-label="뒤로가기">
+        <button class="back-button" onclick="location.href='mypage.html'" aria-label="뒤로가기">
           <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
             <polyline points="15 18 9 12 15 6"></polyline>
           </svg>
         </button>
         <div class="brand">
-          <span class="brand__primary">알림 설정</span>
+          <span class="brand__primary">설정</span>
         </div>
       </div>
     </header>
 
     <main class="setting-container">
       <article class="setting-card">
-        <h1 class="setting-card-title">알림 설정</h1>
-        
-        <div class="setting-body" style="padding: 0;">
-          <!-- 1. 제철 식재료 알림 -->
+        <h1 class="setting-card-title">알림 관리</h1>
+
+        <div class="setting-noti-body">
           <div class="setting-group">
-            <div class="setting-row">
-              <div class="setting-label">
-                <span class="setting-icon">🥦</span>
-                <span class="setting-name">새로운 제철 식재료 알림</span>
-                <p class="setting-desc">매달 새로 등장하는 제철 식재료를 알려드려요.</p>
-              </div>
+            <div class="setting-row setting-row--simple">
+              <span class="setting-name">제철 식재료 알림</span>
               <label class="switch">
-                <input type="checkbox" id="ingredientNotiToggle">
+                <input type="checkbox" id="ingredientNotiToggle" aria-label="제철 식재료 알림">
                 <span class="slider round"></span>
               </label>
             </div>
             <div id="ingredientNotiDetail" class="setting-detail" style="display: none;">
               <div class="setting-field setting-field--row">
                 <label for="ingredientNotiDay" class="setting-field__label">알림 받을 날짜</label>
-                <select id="ingredientNotiDay" class="setting-select">
-                  <!-- JS로 채움 -->
-                </select>
+                <select id="ingredientNotiDay" class="setting-select"></select>
               </div>
               <div class="setting-field setting-field--row">
                 <label for="ingredientNotiTime" class="setting-field__label">알림 받을 시간</label>
                 <input id="ingredientNotiTime" class="setting-select setting-time" type="time" step="300" value="09:00">
               </div>
               <button id="addIngredientNoti" class="add-noti-btn" type="button">+ 알림 추가</button>
-              
-              <div id="ingredientNotiList" class="noti-list">
-                <!-- 추가된 알림 리스트가 여기에 렌더링됨 -->
-              </div>
+              <div id="ingredientNotiList" class="noti-list"></div>
             </div>
           </div>
 
           <div class="setting-divider"></div>
 
-          <!-- 2. 명절/절기 알림 -->
           <div class="setting-group">
-            <div class="setting-row">
-              <div class="setting-label">
-                <span class="setting-icon">🌕</span>
-                <span class="setting-name">명절·절기 알림</span>
-                <p class="setting-desc">명절과 절기에 먹는 음식을 미리 알려드려요.</p>
-              </div>
+            <div class="setting-row setting-row--simple">
+              <span class="setting-name">명절·절기 알림</span>
               <label class="switch">
-                <input type="checkbox" id="holidayNotiToggle">
+                <input type="checkbox" id="holidayNotiToggle" aria-label="명절·절기 알림">
                 <span class="slider round"></span>
               </label>
             </div>
             <div id="holidayNotiDetail" class="setting-detail" style="display: none;">
               <div class="setting-field setting-field--row">
                 <label for="holidayNotiDday" class="setting-field__label">알림 시점</label>
-                <select id="holidayNotiDday" class="setting-select">
-                  <!-- JS로 채움 -->
-                </select>
+                <select id="holidayNotiDday" class="setting-select"></select>
               </div>
               <div class="setting-field setting-field--row">
                 <label for="holidayNotiTime" class="setting-field__label">알림 받을 시간</label>
                 <input id="holidayNotiTime" class="setting-select setting-time" type="time" step="300" value="09:00">
               </div>
               <button id="addHolidayNoti" class="add-noti-btn" type="button">+ 알림 추가</button>
-
-              <div id="holidayNotiList" class="noti-list">
-                <!-- 추가된 알림 리스트가 여기에 렌더링됨 -->
-              </div>
+              <div id="holidayNotiList" class="noti-list"></div>
             </div>
           </div>
-          
-          <div class="setting-divider"></div>
+        </div>
+      </article>
 
-          <!-- 2.5. 프리미엄 멤버십 -->
-          <div class="setting-group" id="premiumGroup">
-            <div class="premium-card-ui">
-              <div class="premium-card-ui__header">
-                <span class="premium-badge" id="premiumVipBadge">BASIC</span>
-                <span class="premium-card-ui__title">👑 프리미엄 멤버십</span>
-              </div>
-              <p class="premium-card-ui__desc" id="premiumDesc">하루 3회 카메라 촬영 제한과 광고 시청이 없어집니다.</p>
-              
-              <div class="premium-action-area">
-                <button id="btnSubscribe" class="btn-subscribe" type="button">무제한 구독하기 (월 2,900원)</button>
-                <div id="vipActiveContainer" style="display: none; flex-direction: column; gap: 4px;">
-                  <span style="font-size: 0.95rem; font-weight: 700; color: #10b981;">✨ 무제한 VIP 회원 이용 중</span>
-                  <span id="vipExpireText" style="font-size: 0.8rem; color: #9ca3af;">만료일: YYYY.MM.DD</span>
-                </div>
-              </div>
-            </div>
-          </div>
+      <article class="setting-card">
+        <h2 class="setting-card-title">📊 데이터 관리</h2>
+        <p class="setting-card-desc">기기 변경 전 백업하거나, 식사 기록을 초기화할 수 있습니다.</p>
+        <button type="button" class="data-action-btn" id="btnGoFavoritesBackup">📂 즐겨찾기 백업/복구로 이동</button>
+        <button type="button" class="data-action-btn data-action-btn--danger" id="btnResetMeals">식사 기록 초기화</button>
+      </article>
 
-          <div class="setting-divider"></div>
-
-          <!-- 3. 계정 관리 (구글 로그인) -->
-          <div class="setting-group" id="accountGroup">
-            <div class="setting-row">
-              <div class="setting-label">
-                <span class="setting-icon">👤</span>
-                <span class="setting-name">계정 관리</span>
-                <p class="setting-desc" id="accountDesc">로그인하여 데이터를 안전하게 보관하세요.</p>
-              </div>
-              <div class="account-actions">
-                <button id="btnGoogleLogin" class="btn-google-login" type="button">
-                  <svg class="google-icon" viewBox="0 0 24 24" width="18" height="18">
-                    <path fill="#EA4335" d="M12.24 10.285V14.4h6.887c-.275 1.565-1.88 4.604-6.887 4.604-4.33 0-7.859-3.583-7.859-8s3.529-8 7.859-8c2.46 0 4.105 1.025 5.047 1.926l3.227-3.107C18.29 1.98 15.44 1 12.24 1 6.01 1 1 6.01 1 12.24s5.01 11.24 11.24 11.24c6.5 0 10.82-4.57 10.82-11.02 0-.74-.08-1.3-.18-1.88H12.24z"/>
-                  </svg>
-                  <span>구글 로그인</span>
-                </button>
-                <div id="userInfoContainer" style="display: none; align-items: center; gap: 12px;">
-                  <span id="userEmailText" style="font-size: 0.95rem; color: #4b5563; font-weight: 500; word-break: break-all; max-width: 150px; text-align: right;">user@example.com</span>
-                  <button id="btnGoogleLogout" class="btn-logout" type="button">로그아웃</button>
-                </div>
-              </div>
-            </div>
-          </div>
-          
-          <div class="setting-divider"></div>
-          
-          <div style="text-align: right; margin-top: 16px;">
-            <a href="privacy.html" class="privacy-link" style="color: #666; font-size: 0.85rem; text-decoration: underline;">개인정보처리방침</a>
-          </div>
+      <article class="setting-card">
+        <h2 class="setting-card-title">ℹ️ 앱 정보</h2>
+        <div class="app-info-row">
+          <span>버전</span>
+          <span id="appVersionText">1.0.0</span>
+        </div>
+        <div class="app-info-row">
+          <span>개인정보처리방침</span>
+          <a href="privacy.html">보기</a>
         </div>
       </article>
     </main>
@@ -272,7 +226,7 @@
 
     <div id="savingOverlay" class="saving-overlay">저장되었습니다</div>
 
-    <script type="module" src="assets/setting.js?v=v11"></script>
+    <script type="module" src="assets/setting.js?v=v12"></script>
     <script>
       window.addEventListener('load', () => {
         const header = document.querySelector('.app-header');
@@ -280,7 +234,23 @@
           document.documentElement.style.setProperty('--header-offset', `${header.offsetHeight}px`);
         }
       });
+
+      document.getElementById('btnGoFavoritesBackup')?.addEventListener('click', () => {
+        location.href = 'favorites.html';
+      });
+
+      document.getElementById('btnResetMeals')?.addEventListener('click', () => {
+        if (!confirm('모든 식사 기록(칼로리)을 삭제할까요? 이 작업은 되돌릴 수 없습니다.')) return;
+        const keys = [];
+        for (let i = 0; i < localStorage.length; i++) {
+          const k = localStorage.key(i);
+          if (k && (k.startsWith('calorie:meals:') || k.startsWith('calorie:target:'))) keys.push(k);
+        }
+        keys.forEach((k) => localStorage.removeItem(k));
+        localStorage.removeItem('calorie:target');
+        alert('식사 기록이 초기화되었습니다.');
+      });
     </script>
-      <script type="module" src="assets/app-back-button.js"></script>
+    <script type="module" src="assets/app-back-button.js"></script>
   </body>
 </html>

@@ -696,7 +696,7 @@ function initMonthNav() {
   }, { passive: true });
 }
 
-// 검색 이벤트
+// 검색 이벤트 (레거시 인라인 검색폼이 있을 때만)
 function initSearch() {
   const form = document.getElementById('filtersForm');
   if (form && searchInputEl) {
@@ -713,23 +713,12 @@ function initSearch() {
 // 메인 초기화
 function initHeaderControls() {
   const brandEl = document.querySelector('.brand');
-  const settingButton = document.getElementById('settingButton');
 
   if (brandEl) {
     brandEl.addEventListener('click', () => {
       const today = new Date().getMonth() + 1;
       const cur = getActiveMonth();
       setActiveMonth(today, today >= cur ? 'right' : 'left');
-    });
-  }
-
-  if (settingButton) {
-    settingButton.addEventListener('click', () => {
-      if (!Capacitor.isNativePlatform()) {
-        showWebNotificationInfoModal();
-        return;
-      }
-      window.location.href = 'setting.html';
     });
   }
 }

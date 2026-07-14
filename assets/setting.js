@@ -1,7 +1,44 @@
+import { Capacitor } from '@capacitor/core';
 import { LocalNotifications } from '@capacitor/local-notifications';
 import KoreanLunarCalendar from 'korean-lunar-calendar';
 import { loginWithGoogle, logout, listenToAuthChanges } from './firebase-init.js';
 import { checkVIPStatusLocal, syncVIPStatusFromServer, purchaseSubscription } from './subscription.js';
+
+function isNativeApp() {
+  return typeof Capacitor !== 'undefined' && Capacitor.isNativePlatform && Capacitor.isNativePlatform();
+}
+
+function showWebNotificationInfoModal() {
+  const existing = document.getElementById('webNotificationInfoModal');
+  if (existing) existing.remove();
+
+  const modal = document.createElement('div');
+  modal.id = 'webNotificationInfoModal';
+  modal.className = 'info-modal';
+  modal.setAttribute('role', 'dialog');
+  modal.setAttribute('aria-modal', 'true');
+  modal.innerHTML = `
+    <div class="info-modal__backdrop"></div>
+    <div class="info-modal__content">
+      <p class="info-modal__message">알림 기능은 앱에서 이용하실 수 있어요. 앱을 설치하고 제철 식재료 소식을 받아보세요! 🌱</p>
+      <div class="info-modal__buttons">
+        <button type="button" class="info-modal__btn info-modal__btn--ios" disabled>iOS (준비중)</button>
+        <a href="https://play.google.com/store/apps/details?id=net.seasonalfood.app&referrer=utm_source%3Dseasonalfood_web%26utm_medium%3Dinternal%26utm_campaign%3Dsetting_noti" target="_blank" rel="noopener noreferrer" class="info-modal__btn info-modal__btn--android">Android 설치</a>
+      </div>
+      <button type="button" class="info-modal__close">닫기</button>
+    </div>
+  `;
+
+  function close() {
+    modal.remove();
+    document.body.style.overflow = '';
+  }
+
+  modal.querySelector('.info-modal__backdrop').addEventListener('click', close);
+  modal.querySelector('.info-modal__close').addEventListener('click', close);
+  document.body.appendChild(modal);
+  document.body.style.overflow = 'hidden';
+}
 
 // 전역 데이터 캐시 (로컬 스토리지에 캐시할 수도 있지만, 설정 팝업에서 간단히 메모리로 사용)
 let cachedIngredients = null;
@@ -422,13 +459,66 @@ export function initSettingsPage() {
     updateVipUI();
   });
 
-  // 이벤트 리스너
-  ingToggle.addEventListener('change', (e) => {
-    ingDetail.style.display = e.target.checked ? 'block' : 'none';
+  async function persistToggle(type, enabled) {
+    const next = {
+      ingredient: { ...Settings.ingredient },
+      holiday: { ...Settings.holiday }
+    };
+    next[type].enabled = enabled;
+
+    if (enabled && (!next[type].list || next[type].list.length === 0)) {
+      if (type === 'ingredient') {
+        next[type].list = [{ id: Date.now(), day: 1, time: '09:00' }];
+      } else {
+        next[type].list = [{ id: Date.now(), dDay: 3, time: '09:00' }];
+      }
+    }
+
+    try {
+      await saveSettings(next);
+      Settings[type] = next[type];
+    } catch (error) {
+      console.error('알림 토글 저장 실패:', error);
+      if (type === 'ingredient') ingToggle.checked = !enabled;
+      else holiToggle.checked = !enabled;
+      alert('알림 권한이 필요합니다.\n기기 설정에서 알림을 허용해주세요.');
+      throw error;
+    }
+  }
+
+  // 이벤트 리스너: OFF면 바로 저장, ON이면 펼치고 즉시 활성화
+  ingToggle.addEventListener('change', async (e) => {
+    if (!isNativeApp()) {
+      e.target.checked = !e.target.checked;
+      ingDetail.style.display = e.target.checked ? 'block' : 'none';
+      showWebNotificationInfoModal();
+      return;
+    }
+    const enabled = e.target.checked;
+    ingDetail.style.display = enabled ? 'block' : 'none';
+    try {
+      await persistToggle('ingredient', enabled);
+      if (enabled) renderNotificationList('ingredient');
+    } catch (_) {
+      ingDetail.style.display = 'none';
+    }
   });
 
-  holiToggle.addEventListener('change', (e) => {
-    holiDetail.style.display = e.target.checked ? 'block' : 'none';
+  holiToggle.addEventListener('change', async (e) => {
+    if (!isNativeApp()) {
+      e.target.checked = !e.target.checked;
+      holiDetail.style.display = e.target.checked ? 'block' : 'none';
+      showWebNotificationInfoModal();
+      return;
+    }
+    const enabled = e.target.checked;
+    holiDetail.style.display = enabled ? 'block' : 'none';
+    try {
+      await persistToggle('holiday', enabled);
+      if (enabled) renderNotificationList('holiday');
+    } catch (_) {
+      holiDetail.style.display = 'none';
+    }
   });
 
   addIngBtn.addEventListener('click', () => addNotification('ingredient'));
@@ -545,6 +635,10 @@ export function initSettingsPage() {
 
   // 저장 버튼
   saveBtn.addEventListener('click', async () => {
+    if (!isNativeApp()) {
+      showWebNotificationInfoModal();
+      return;
+    }
     const newSettings = {
       ingredient: {
         enabled: ingToggle.checked,
