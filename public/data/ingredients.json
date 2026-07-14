@@ -3995,5 +3995,83 @@
     "description_ja": "",
     "selection_ko": "눈동자가 맑고 깨끗하며 비늘이 껍질에 단단히 밀착되어 빛나고, 몸통을 살짝 눌렀을 때 탄탄한 탄력이 있는 것을 선택하세요.",
     "external_url": "https://link.coupang.com/a/fmHeJfBRF6"
+  },
+  {
+    "name_ko": "메밀",
+    "category": "기타",
+    "image": "ingredients/buckwheat.png",
+    "description_ko": "척박한 땅에서도 잘 자라 우리 민족의 구황작물이 되어 준 향기롭고 구수한 잡곡. 전분을 분해하는 효소와 루틴 성분이 풍부하여 소화를 돕고 혈관 건강 및 고혈압 예방에 탁월합니다.",
+    "recommended_for": [
+      "혈압 관리가 필요하여 고혈압이 걱정되시는 분",
+      "체기가 잦고 소화 기능이 활발하지 못한 분"
+    ],
+    "preparation_ko": "가루 형태로 반죽하여 활용하거나, 껍질을 벗긴 메밀알은 물에 깨끗이 씻어 밥을 지을 때 섞어 씁니다.",
+    "storage_room_temp": "밀봉하여 직사광선을 피해 서늘하고 건조한 곳에 보관합니다.",
+    "storage_refrigerator": "밀봉 밀폐 용기에 담아 보관하며 장기간 보관 시 습기를 주의합니다.",
+    "storage_freezer": "메밀가루나 메밀면은 지퍼백에 밀봉하여 냉동 보관하면 풍미가 오래 유지됩니다.",
+    "months": [
+      6, 7, 10, 11
+    ],
+    "popular_dish": "메밀막국수, 메밀전병",
+    "calories_per_100g": 374,
+    "calories_per_serving": "국수 한 대접(150g) 기준 약 170kcal",
+    "name_en": "",
+    "name_ja": "",
+    "description_en": "",
+    "description_ja": "",
+    "selection_ko": "메밀알은 크기가 고르고 윤기가 나며 모서리가 뚜렷한 주황빛 도는 갈색의 것이 좋습니다. 가루는 입자가 곱고 은은한 메밀 향이 짙은 것을 고르세요.",
+    "external_url": ""
+  },
+  {
+    "name_ko": "갓",
+    "category": "채소",
+    "image": "ingredients/mustard-greens.png",
+    "description_ko": "특유의 알싸한 향과 매콤한 맛으로 입맛을 자극하는 대표적인 십자화과 채소. 엽산과 비타민 C가 풍부하여 면역력 증진과 빈혈 예방에 좋으며 항산화 성분이 가득합니다.",
+    "recommended_for": [
+      "계절 환절기 면역력 저하로 감기가 걱정되는 분",
+      "몸에 활력이 없고 피로를 쉽게 느끼시는 분"
+    ],
+    "preparation_ko": "흐르는 물에 잎사귀 사이사이의 흙을 깨끗이 씻어낸 뒤 억센 줄기 끝부분을 조금 잘라내어 씁니다.",
+    "storage_room_temp": "잎이 얇아 쉽게 상온에서 무르므로 실온 보관은 삼갑니다.",
+    "storage_refrigerator": "씻지 않은 채로 신문지에 싸서 비닐봉지에 담아 채소칸에 똑바로 세워 보관합니다.",
+    "storage_freezer": "소금물에 살짝 데쳐 찬물에 식힌 뒤 물기를 꼭 짜서 팩에 밀봉 보관합니다.",
+    "months": [
+      9, 10, 11, 12
+    ],
+    "popular_dish": "갓김치, 갓피클",
+    "calories_per_100g": 28,
+    "calories_per_serving": "한 접시(70g) 약 20kcal",
+    "name_en": "",
+    "name_ja": "",
+    "description_en": "",
+    "description_ja": "",
+    "selection_ko": "잎이 선명한 녹색을 띠고 싱싱하며 줄기가 너무 두껍지 않고 부드러운 것이 좋습니다. 반점이 없고 향이 알싸하고 짙은 것을 선택하세요.",
+    "external_url": ""
+  },
+  {
+    "name_ko": "황태",
+    "category": "해산물",
+    "image": "ingredients/dried-pollack.png",
+    "description_ko": "추운 겨울철 명태를 덕장에서 얼렸다 녹였다를 반복하며 정성스럽게 말려낸 노란 보물. 고단백 저지방 식품으로 메티오닌과 리신 등 아미노산이 풍부해 숙취 해소와 간 해독에 명약입니다.",
+    "recommended_for": [
+      "과음 후 빠르고 시원한 숙취 해소가 필요한 분",
+      "간 건강을 지키고 피로를 풀고 싶으신 분"
+    ],
+    "preparation_ko": "찬물에 가볍게 샤워하듯 적신 후 물기를 꼭 짜서 촉촉하게 불린 뒤, 머리와 지느러미, 잔가시를 가위로 손질해 사용합니다.",
+    "storage_room_temp": "건조된 상태이므로 통풍이 잘되는 서늘하고 건조한 그늘에 보관합니다.",
+    "storage_refrigerator": "불린 황태는 수분이 날아가지 않게 밀봉하여 냉장 보관하고 빠르게 사용합니다.",
+    "storage_freezer": "지퍼백에 밀봉하여 냉동 보관하면 묵은내가 나지 않고 오래 신선하게 유지됩니다.",
+    "months": [
+      12, 1, 2, 3, 4
+    ],
+    "popular_dish": "황태해장국, 황태구이",
+    "calories_per_100g": 370,
+    "calories_per_serving": "한 마리(살 약 60g) 기준 약 220kcal",
+    "name_en": "",
+    "name_ja": "",
+    "description_en": "",
+    "description_ja": "",
+    "selection_ko": "빛깔이 맑은 노란색을 띠고 살이 두툼하며 만졌을 때 폭신폭신하고 부드러운 느낌이 드는 것이 신선하고 구수한 최상품 황태입니다.",
+    "external_url": ""
   }
 ]

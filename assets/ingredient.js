@@ -7,7 +7,7 @@ import { saveFavoritesToServer } from './firebase-sync.js';
 
 async function loadIngredientData() {
   try {
-    const res = await fetch('data/ingredients.json?v=v85', { cache: 'no-cache' });
+    const res = await fetch('data/ingredients.json?v=v86', { cache: 'no-cache' });
     if (!res.ok) throw new Error('Failed to load data');
     return await res.json();
   } catch (err) {

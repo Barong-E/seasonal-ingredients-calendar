@@ -15079,5 +15079,210 @@
     ],
     "relatedIngredients": ["숭어"],
     "relatedHolidays": []
+  },
+  {
+    "id": "recipe-buckwheat-makguksu",
+    "name": "메밀막국수",
+    "category": "기타",
+    "description": "시원하고 담백한 동치미 육수에 양념장과 메밀면을 비벼 먹는 한여름의 더위를 싹 날려주는 대표 메밀 면 요리입니다.",
+    "image": "recipes/recipe-buckwheat-makguksu.png",
+    "servings": 2,
+    "servingsUnit": "인분",
+    "cookTime": "15분",
+    "difficulty": "하",
+    "ingredients": [
+      { "name": "메밀면", "amount": "200g" },
+      { "name": "오이", "amount": "0.5개" },
+      { "name": "쌈무", "amount": "4장" },
+      { "name": "김가루", "amount": "2큰술" },
+      { "name": "삶은 달걀", "amount": "1개" },
+      { "name": "물", "amount": "8컵" }
+    ],
+    "seasoning": [
+      { "name": "동치미 육수", "amount": "2컵" },
+      { "name": "고추장", "amount": "2큰술" },
+      { "name": "진간장", "amount": "1작은술" },
+      { "name": "식초", "amount": "1큰술" },
+      { "name": "설탕", "amount": "1큰술" },
+      { "name": "참기름", "amount": "1작은술" },
+      { "name": "통깨", "amount": "1작은술" }
+    ],
+    "steps": [
+      { "step": 1, "description": "오이는 깨끗이 씻어 얇게 채 썰고, 삶은 달걀은 반으로 갈라 둡니다." },
+      { "step": 2, "description": "볼에 고추장, 진간장, 식초, 설탕을 섞어 매콤한 양념장을 만듭니다." },
+      { "step": 3, "description": "끓는 물에 메밀면을 넣어 4분간 삶은 뒤 찬물에 바락바락 헹구어 물기를 꼭 짜서 사리를 만듭니다." },
+      { "step": 4, "description": "그릇에 메밀면 사리를 담고 준비된 양념장과 시원한 동치미 육수를 자작하게 부어 줍니다." },
+      { "step": 5, "description": "오이채, 쌈무, 삶은 달걀을 얹은 뒤 김가루와 통깨, 참기름을 뿌려 고소하게 완성합니다." }
+    ],
+    "relatedIngredients": ["메밀"],
+    "relatedHolidays": []
+  },
+  {
+    "id": "recipe-buckwheat-jeonbyeong",
+    "name": "메밀전병",
+    "category": "전",
+    "description": "구수한 메밀 반죽을 얇게 밀어 부치고, 맵싸한 김치와 당면 소를 채워 돌돌 말아 지져낸 고소한 강원도식 정통 메밀전병입니다.",
+    "image": "recipes/recipe-buckwheat-jeonbyeong.png",
+    "servings": 5,
+    "servingsUnit": "개",
+    "cookTime": "25분",
+    "difficulty": "하",
+    "ingredients": [
+      { "name": "메밀가루", "amount": "1컵" },
+      { "name": "신김치", "amount": "100g" },
+      { "name": "돼지고기 다짐육", "amount": "50g" },
+      { "name": "당면", "amount": "30g" },
+      { "name": "물", "amount": "1.25컵" },
+      { "name": "식용유", "amount": "2큰술" }
+    ],
+    "seasoning": [
+      { "name": "간장", "amount": "1작은술" },
+      { "name": "참기름", "amount": "1작은술" },
+      { "name": "다진 마늘", "amount": "1작은술" },
+      { "name": "후추", "amount": "0.5작은술" },
+      { "name": "소금", "amount": "0.5작은술" }
+    ],
+    "steps": [
+      { "step": 1, "description": "메밀가루와 물, 소금을 볼에 섞어 흐르는 농도의 묽은 반죽을 만듭니다." },
+      { "step": 2, "description": "김치는 송송 썰고, 당면은 끓는 물에 삶아 찬물에 헹군 뒤 잘게 다져 둡니다." },
+      { "step": 3, "description": "팬에 다짐육, 김치, 당면을 다진 마늘과 간장, 참기름, 후추로 밑간하여 함께 볶아 전병 소를 만듭니다." },
+      { "step": 4, "description": "달군 팬에 식용유를 두르고 반죽을 얇고 타원형 모양으로 동그랗게 펼쳐 굽습니다." },
+      { "step": 5, "description": "메밀 반죽이 투명해지면 볶아둔 소를 얹고 가장자리부터 밀어내듯 돌돌 말아 앞뒤로 노릇하게 지져 완성합니다." }
+    ],
+    "relatedIngredients": ["메밀"],
+    "relatedHolidays": []
+  },
+  {
+    "id": "recipe-gat-kimchi",
+    "name": "갓김치",
+    "category": "채소",
+    "description": "알싸하게 매운 돌산갓을 매콤한 양념과 멸치액젓으로 푹 버무려 갓 특유의 톡 쏘는 청량감이 살아있는 여수 정통 김치 요리입니다.",
+    "image": "recipes/recipe-gat-kimchi.png",
+    "servings": 5,
+    "servingsUnit": "인분",
+    "cookTime": "60분",
+    "difficulty": "중",
+    "ingredients": [
+      { "name": "돌산갓", "amount": "1kg" },
+      { "name": "굵은소금", "amount": "0.5컵" },
+      { "name": "쪽파", "amount": "100g" },
+      { "name": "물", "amount": "4컵" }
+    ],
+    "seasoning": [
+      { "name": "고춧가루", "amount": "1컵" },
+      { "name": "멸치액젓", "amount": "0.5컵" },
+      { "name": "다진 마늘", "amount": "2큰술" },
+      { "name": "다진 생강", "amount": "1작은술" },
+      { "name": "찹쌀풀", "amount": "0.5컵" },
+      { "name": "매실청", "amount": "2큰술" }
+    ],
+    "steps": [
+      { "step": 1, "description": "갓은 깨끗이 다듬어 씻은 뒤 굵은소금을 뿌려 1시간 동안 뒤집어가며 절여 물기를 뺍니다." },
+      { "step": 2, "description": "쪽파는 씻어 갓과 비슷한 길이로 잘라 둡니다." },
+      { "step": 3, "description": "볼에 찹쌀풀, 고춧가루, 멸치액젓, 다진 마늘, 다진 생강, 매실청을 섞어 김치 양념장을 만듭니다." },
+      { "step": 4, "description": "절여진 갓과 쪽파에 양념장을 넣고 숨이 죽지 않도록 살살 버무려 가며 양념을 골고루 입힙니다." },
+      { "step": 5, "description": "통에 차곡차곡 눌러 담아 실온에서 하루 숙성한 뒤 냉장고에 넣어 차갑게 익혀 먹습니다." }
+    ],
+    "relatedIngredients": ["갓"],
+    "relatedHolidays": []
+  },
+  {
+    "id": "recipe-gat-pickle",
+    "name": "갓피클",
+    "category": "채소",
+    "description": "알싸한 갓을 새콤달콤한 초절임 물에 담가 아삭아삭하고 상큼하게 즐기는 느끼함을 잡아주는 이색 피클 요리입니다.",
+    "image": "recipes/recipe-gat-pickle.png",
+    "servings": 500,
+    "servingsUnit": "ml",
+    "cookTime": "20분",
+    "difficulty": "하",
+    "ingredients": [
+      { "name": "갓", "amount": "200g" },
+      { "name": "물", "amount": "2컵" }
+    ],
+    "seasoning": [
+      { "name": "식초", "amount": "1컵" },
+      { "name": "설탕", "amount": "1컵" },
+      { "name": "소금", "amount": "1큰술" },
+      { "name": "피클링 스파이스", "amount": "1작은술" }
+    ],
+    "steps": [
+      { "step": 1, "description": "갓은 물에 씻어 물기를 완전히 털어낸 후 3cm 크기로 먹기 좋게 자릅니다." },
+      { "step": 2, "description": "냄비에 물, 식초, 설탕, 소금, 피클링 스파이스를 넣고 설탕이 녹을 때까지 센 불에서 한소끔 끓여 단초물을 만듭니다." },
+      { "step": 3, "description": "열탕 소독한 유리병에 물기를 뺀 갓을 꾹꾹 눌러 가며 가득 채워 담습니다." },
+      { "step": 4, "description": "갓을 담은 유리병에 뜨거운 단초물을 뜨거울 때 바로 부어 갓이 잠기도록 해줍니다." },
+      { "step": 5, "description": "뚜껑을 덮어 한 김 식힌 뒤 실온에서 반나절 보관 후 냉장고에 넣어 하루 숙성시켜 아삭하게 즐깁니다." }
+    ],
+    "relatedIngredients": ["갓"],
+    "relatedHolidays": []
+  },
+  {
+    "id": "recipe-dried-pollack-soup",
+    "name": "황태해장국",
+    "category": "해산물",
+    "description": "참기름에 고소하게 볶아낸 황태채와 시원한 무를 함께 끓여 곰탕처럼 뽀얀 국물이 우러나오는 영양 만점 숙취 해소 국물 요리입니다.",
+    "image": "recipes/recipe-dried-pollack-soup.png",
+    "servings": 2,
+    "servingsUnit": "인분",
+    "cookTime": "20분",
+    "difficulty": "하",
+    "ingredients": [
+      { "name": "황태채", "amount": "50g" },
+      { "name": "무", "amount": "100g" },
+      { "name": "대파", "amount": "0.5대" },
+      { "name": "달걀", "amount": "1개" },
+      { "name": "물", "amount": "5컵" }
+    ],
+    "seasoning": [
+      { "name": "참기름", "amount": "1큰술" },
+      { "name": "다진 마늘", "amount": "1작은술" },
+      { "name": "국간장", "amount": "1작은술" },
+      { "name": "새우젓", "amount": "1작은술" },
+      { "name": "소금", "amount": "0.5작은술" }
+    ],
+    "steps": [
+      { "step": 1, "description": "황태채는 물에 살짝 적셔 가볍게 짠 뒤 가위로 먹기 좋은 크기로 썰고 잔가시를 다듬습니다." },
+      { "step": 2, "description": "무는 얇고 작게 나박 썰고, 대파는 송송 썰며, 달걀은 부드럽게 풀어 둡니다." },
+      { "step": 3, "description": "달군 냄비에 참기름을 두르고 준비한 황태채와 무를 넣어 고소한 향이 날 때까지 볶아줍니다." },
+      { "step": 4, "description": "냄비에 물을 붓고 국간장을 넣어 무가 완전히 익을 때까지 센 불에서 팔팔 끓여 국물을 우려냅니다." },
+      { "step": 5, "description": "다진 마늘, 새우젓으로 간을 하고 푼 달걀과 대파를 넣어 한소끔 끓여 마무리합니다." }
+    ],
+    "relatedIngredients": ["황태"],
+    "relatedHolidays": []
+  },
+  {
+    "id": "recipe-dried-pollack-gui",
+    "name": "황태구이",
+    "category": "해산물",
+    "description": "촉촉하게 불린 황태에 매콤 새콤달콤한 고추장 양념장을 발라 구워내어 부드럽고 쫄깃한 식감을 느낄 수 있는 대표 밥도둑 구이 요리입니다.",
+    "image": "recipes/recipe-dried-pollack-gui.png",
+    "servings": 2,
+    "servingsUnit": "인분",
+    "cookTime": "25분",
+    "difficulty": "하",
+    "ingredients": [
+      { "name": "황태포", "amount": "1마리" },
+      { "name": "식용유", "amount": "2큰술" },
+      { "name": "쪽파", "amount": "10g" },
+      { "name": "물", "amount": "0.5컵" }
+    ],
+    "seasoning": [
+      { "name": "고추장", "amount": "2큰술" },
+      { "name": "고춧가루", "amount": "1큰술" },
+      { "name": "진간장", "amount": "1큰술" },
+      { "name": "올리고당", "amount": "1큰술" },
+      { "name": "다진 마늘", "amount": "1작은술" },
+      { "name": "참기름", "amount": "1큰술" },
+      { "name": "통깨", "amount": "1작은술" }
+    ],
+    "steps": [
+      { "step": 1, "description": "황태포는 대가리와 지느러미를 가위로 잘라내고, 물을 촉촉하게 뿌려 10분간 불려 둡니다." },
+      { "step": 2, "description": "불린 황태포의 잔가시를 손으로 발라내고 양면에 칼집을 넣어 구울 때 오그라들지 않게 합니다." },
+      { "step": 3, "description": "볼에 고추장, 고춧가루, 진간장, 올리고당, 다진 마늘, 참기름을 골고루 섞어 매운 양념장을 만듭니다." },
+      { "step": 4, "description": "달군 팬에 식용유를 두르고 손질한 황태포의 살 부분부터 얹어 중간 불에서 앞뒤로 초벌구이를 해줍니다." },
+      { "step": 5, "description": "황태포의 양면에 양념장을 꼼꼼히 바른 뒤 약한 불로 낮추어 타지 않게 노릇하게 지진 후 다진 쪽파와 통깨를 뿌려 완성합니다." }
+    ],
+    "relatedIngredients": ["황태"],
+    "relatedHolidays": []
   }
 ]

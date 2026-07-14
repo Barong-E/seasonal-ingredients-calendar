@@ -255,7 +255,13 @@ export function getRecipeIdFromDishName(dishName) {
     "쑥갓무침": "recipe-crown-daisy-muchim",
     "쑥갓전": "recipe-crown-daisy-jeon",
     "숭어회무침": "recipe-mullet-hoe-muchim",
-    "숭어미역국": "recipe-mullet-miyeok-guk"
+    "숭어미역국": "recipe-mullet-miyeok-guk",
+    "메밀막국수": "recipe-buckwheat-makguksu",
+    "메밀전병": "recipe-buckwheat-jeonbyeong",
+    "갓김치": "recipe-gat-kimchi",
+    "갓피클": "recipe-gat-pickle",
+    "황태해장국": "recipe-dried-pollack-soup",
+    "황태구이": "recipe-dried-pollack-gui"
   };
   return mapping[dishName] || null;
 }
